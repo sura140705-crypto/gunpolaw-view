@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>군포시 고향사랑 기부금 모금 및 운용에 관한 조례 — 정비 권고(분석 결과)</title><style>
+/* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
+   자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
+.page, .ord { --navy:#13325b; --navy2:#1d4e89;
+  --mech:#1d4ed8; --rev:#b45309; --chk:#52525b; --fmt:#6d28d9; --cur:#15803d;
+  --ink:#1f2937; --muted:#6b7280; --line:#d8dee6; --soft:#f6f8fb; }
+* { box-sizing: border-box; }
+/* 독립 권고서 페이지 한정(body.report·.page) — 대시보드 주입 시 충돌 방지.
+   대시보드는 자체 body/h1/.cards/.sub/.card 를 가져 prefix 없으면 덮어쓴다. */
+body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       color:var(--ink); margin:0; background:#eef1f5; line-height:1.55;
+       -webkit-text-size-adjust:100%; }
+.page { max-width:840px; margin:24px auto; padding:38px 44px 52px; background:#fff;
+        border-top:4px solid var(--navy); box-shadow:0 1px 5px rgba(15,33,66,.10); }
+/* 문서 머리 — 공문 단정형(머리표·제목·요지, 아래 굵은 밑줄) */
+.page .dochd { border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:22px; }
+.page .dochd .kicker { font-size:11.5px; letter-spacing:3px; color:var(--navy2);
+        font-weight:700; margin:0 0 6px; }
+.page h1 { font-size:22px; line-height:1.34; margin:0; color:var(--navy);
+     font-weight:700; letter-spacing:-.3px; }
+.page .sub { color:var(--muted); font-size:12.5px; margin-top:7px; }
+.page .cards { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 20px; }
+.page .card { flex:1 1 138px; border:1px solid var(--line); border-top:3px solid var(--chk);
+        border-radius:6px; padding:12px 15px; }
+.page .card .n { font-size:25px; font-weight:700; line-height:1; color:var(--ink); }
+.page .card .t { font-size:12.5px; color:var(--muted); margin-top:6px; }
+.page .g-mech { border-top-color:var(--mech);} .page .g-mech .n { color:var(--mech);}
+.page .g-rev { border-top-color:var(--rev);} .page .g-rev .n { color:var(--rev);}
+.page .g-chk { border-top-color:var(--chk);} .page .g-chk .n { color:var(--chk);}
+.page .g-fmt { border-top-color:var(--fmt);} .page .g-fmt .n { color:var(--fmt);}
+.page .g-cur { border-top-color:var(--cur);} .page .g-cur .n { color:var(--cur);}
+.ord { border:1px solid var(--line); border-radius:7px; padding:18px 20px;
+       margin:0 0 16px; page-break-inside:avoid; }
+.ord h2 { font-size:16.5px; margin:0 0 3px; color:var(--navy); font-weight:700;
+          padding-left:10px; border-left:4px solid var(--navy); }
+.ord .meta { color:var(--muted); font-size:12px; margin:0 0 12px; padding-left:14px; }
+.badges { margin:0 0 12px; }
+.badge { display:inline-block; font-size:11.5px; padding:2px 10px; border-radius:4px;
+         margin-right:6px; border:1px solid currentColor; background:#fff; font-weight:600; }
+.b-mech { color:var(--mech);} .b-rev { color:var(--rev);}
+.b-chk { color:var(--chk);} .b-fmt { color:var(--fmt);}
+.artsec { margin:0 0 8px; }
+.arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
+         border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
+         margin:14px 0 6px; }
+.item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
+.iline { margin-bottom:3px; }
+.item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
+             margin-right:8px; white-space:nowrap; }
+.t-mech { background:#dbeafe; color:#1e40af;} .t-rev { background:#fef3c7; color:#92400e;}
+.t-chk { background:#f3f4f6; color:#374151;}
+.t-naked { background:#ede9fe; color:#5b21b6;}
+.t-cur { background:#dcfce7; color:#166534;}
+.t-space { background:#fef9c3; color:#854d0e;}
+details.citem.cur > summary { opacity:.72; }
+details.citem.cur .law { font-weight:500; }
+/* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
+details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
+    display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+details.citem > summary::-webkit-details-marker { display:none; }
+details.citem > summary::before { content:"▸"; color:#9ca3af; font-size:11px; margin-right:2px; }
+details.citem[open] > summary::before { content:"▾"; color:var(--navy2); }
+details.citem[open] { background:#fbfcfe; }
+details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 10px; }
+details.citem > .diff { margin:6px 10px 10px; }
+details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
+.item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+.basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
+.basis b { color:#374151; font-weight:600; }
+.ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
+           border-left:3px solid var(--navy2); border-radius:0 6px 6px 0; padding:8px 11px;
+           margin:5px 0 9px; white-space:pre-wrap; line-height:1.7; }
+.ordtext b { color:var(--navy); margin-right:5px; }
+mark.cite-law { background:#eff6ff; color:#1e3a8a;
+   text-decoration:underline; text-decoration-color:#2563eb; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-naked { background:#f5f3ff; color:#5b21b6;
+   text-decoration:underline dashed; text-decoration-color:#7c3aed; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-local { background:#f1f5f9; color:#475569;
+   text-decoration:underline dotted; text-decoration-color:#94a3b8; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+.page .leg { font-size:12px; color:var(--muted); margin:0 0 18px; display:flex; gap:14px;
+        flex-wrap:wrap; align-items:center; }
+.page .leg mark { padding:0 4px; border-radius:2px; }
+.item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
+            background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
+.diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
+.drow + .drow { border-top:1px solid #f1f3f5; }
+.dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
+.dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
+.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
+         border-radius:2px; padding:0 1px; }
+mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
+mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
+          padding:0 2px; cursor:help; }
+.page footer { color:#9aa3af; font-size:11.5px; margin-top:34px; padding-top:14px;
+         border-top:1px solid var(--line); text-align:center; }
+@media print {
+  @page { size:A4; margin:16mm; }
+  body { background:#fff; }
+  .page { max-width:none; margin:0; padding:0; border-top:none; box-shadow:none; }
+  .ord, .card { border-color:#c4cbd4; }
+  .dochd { border-bottom-color:#000; }
+  mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 고향사랑 기부금 모금 및 운용에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">22</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 고향사랑 기부금 모금 및 운용에 관한 조례</h2><div class="meta">시행 2025-10-10 · 정비 항목 22건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(답례품 선정위원회의 구성ㆍ운영) 
+① <mark class="cite-law" title="고향사랑 기부금에 관한 법률 시행령제6조">「고향사랑 기부금에 관한 법률 시행령」(이하 “영”이라 한다) 제6조</mark>에 따라 다음 각 호의 사항을 심의하기 위해 군포시장(이하 “시장”이라 한다) 소속으로 군포시 답례품선정위원회(이하 “선정위원회”라 한다)를 둘 수 있다.
+1. <mark class="cite-law" title="고향사랑 기부금에 관한 법률제9조">「고향사랑 기부금에 관한 법률」(이하 “법”이라 한다) 제9조제1항</mark>에 따른 답례품(이하 “답례품”이라 한다)의 선정에 관한 사항
+2. 답례품 공급업체의 공모 및 선정에 관한 사항
+3. 그 밖에 시장이 답례품 및 공급업체 선정과 관련하여 필요하다고 인정하는 사항
+② 선정위원회는 10명 이내의 위원으로 구성하고 위원은 다음 각 호의 어느 하나의 자격을 갖춘 사람 중에서 시장이 임명ㆍ위촉하되, 위촉직 위원의 경우는 특정 성별이 위촉직 위원 수의 10분의 6을 초과하지 않도록 하여야 한다.
+1. 고향사랑 기부업무 담당 부서장
+2. 지역의 특산품 선정에 경험이 풍부한 사람
+3. 군포시의회 의장이 추천하는 사람
+4. 지역의 생산 또는 제조 분야를 대표하는 사람
+5. 상품ㆍ유통ㆍ홍보에 전문적 지식을 갖춘 사람
+6. 그 밖에 고향사랑기부제에 대한 학식과 경험이 풍부한 사람으로서 시장이 필요하다고 인정한 사람
+③ 선정위원회 위원의 임기는 2년으로 하되, 2회에 한하여 연임할 수 있다.
+④ 위원장은 공무원이 아닌 민간위원 중에서 호선한다.
+⑤ 선정위원회 회의는 위원장이 답례품 선정 등의 여건을 고려하여 소집한다.
+⑥ 선정위원회의 회의는 재적위원 과반수의 출석으로 개의하고, 출석위원 과반수의 찬성으로 의결한다. &lt;신설 2025.10.10.&gt;
+⑦ 그 밖에 선정위원회의 운영에 대해서는 제15조부터 제16조까지와 제18조 및 제21조를 준용한다. &lt;개정 2025.10.10.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률 시행령」 제6조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2025-01-01</b> → 현행 조문 <b>2026-03-26</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률」 제9조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2025-01-01</b> → 현행 조문 <b>2024-02-20</b></div></div></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(답례품의 종류) 
+① 시장은 <mark class="cite-law" title="고향사랑 기부금에 관한 법률제9조">법 제9조제2항제3호</mark>에 따라 답례품을 선정할 경우에는 다음 각 호의 어느 하나에 해당하는 제품 등을 우선 선정할 수 있다. &lt;개정 2024.5.15.&gt;
+1. <mark class="cite-law" title="친환경농어업 육성 및 유기식품 등의 관리ㆍ지원에 관한 법률">「친환경농어업 육성 및 유기식품 등의 관리ㆍ지원에 관한 법률」</mark>에 따른 친환경농수산물 및 유기식품
+2. <mark class="cite-law" title="축산법제42조의2">「축산법」 제42조의2</mark>에 따른 무항생제축산물
+3. <mark class="cite-law" title="축산물위생관리법제9조">「축산물위생관리법」 제9조</mark>에 따라 안전관리인증을 받은 자가 생산한 축산물
+4. <mark class="cite-law" title="전통주 등의 산업진흥에 관한 법률">「전통주 등의 산업진흥에 관한 법률」</mark>에 따른 전통주
+5. <mark class="cite-law" title="농수산물품질관리법">「농수산물품질관리법」</mark>에 따른 농산물우수관리 인증을 받은 자가 생산한 농산물
+6. <mark class="cite-law" title="농수산물품질관리법">「농수산물품질관리법」</mark>에 따른 지리적표시 등록을 한 자가 생산한 농산물
+7. <mark class="cite-law" title="농촌융복합산업 육성 및 지원에 관한 법률">「농촌융복합산업 육성 및 지원에 관한 법률」</mark>에 따른 농촌융복합산업 사업자가 생산한 물품
+8. 군포시에서 인증한 품목 또는 공동브랜드 사용 품목
+9. 농수산가공품 등의 제조품일 경우 군포시에서 생산되는 원재료의 사용 비율이 50퍼센트 이상인 품목
+10. 군포시의 마을기업, 사회적 기업, 자활기업 등 사회적 경제 기업 및 장애인 단체가 생산한 물품
+11. <mark class="cite-law" title="무형유산의 보전 및 진흥에 관한 법률">「무형유산의 보전 및 진흥에 관한 법률」</mark>에 따른 전승공예품
+12. 군포시 지역사랑 상품권, 관광 입장권 등 군포시 관할구역 내에서만 통용되는 유가증권
+13. 그 밖에 시장이 지역 경제의 활성화를 목적으로 선정ㆍ운영하는 각종 서비스의 상품
+② 시장은 <mark class="cite-law" title="고향사랑 기부금에 관한 법률제9조">법 제9조제2항</mark>에 따라 답례품을 제공하기 위하여 군포시에서 생산ㆍ채취된 농산물ㆍ축산물ㆍ수산물 및 임산물 등의 지역특산품과 군포시에 생산 기반을 둔 업체가 생산ㆍ제조한 물품 등을 답례품으로 제공할 수 있다.
+③ 시장은 <mark class="cite-law" title="고향사랑 기부금에 관한 법률제9조">법 제9조제2항제2호</mark>에 따라 답례품을 제공하기 위하여 군포시의 경제 활성화에 기여할 수 있는 체험, 숙박, 관광, 서비스 상품 등을 포함한 고향사랑 상품권을 발행하여 답례품으로 제공할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「축산법」 제42조의2</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-12-20</b> → 현행 조문 <b>2026-01-23</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「축산물위생관리법」 제9조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2020-12-29</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률」 제9조제2항제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2025-01-01</b> → 현행 조문 <b>2024-02-20</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률」 제9조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2025-01-01</b> → 현행 조문 <b>2024-02-20</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률」 제9조제2항제2호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2025-01-01</b> → 현행 조문 <b>2024-02-20</b></div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(답례품 등의 선정 시 고려사항) 
+① 시장은 <mark class="cite-law" title="고향사랑 기부금에 관한 법률 시행령제6조">영 제6조</mark>에 따라 답례품 및 답례품 공급업체를 선정하는 경우에는 다음 각 호의 사항을 고려해야 한다.
+1. 답례품의 안정적 공급 가능 여부
+2. 답례품의 보관ㆍ상품화ㆍ품질관리ㆍ배송에 필요한 인력ㆍ시설ㆍ장비 등 업무수행 능력
+3. 군포시 관할구역 안에 생산ㆍ제조 기반의 보유 여부
+4. 최근 3년간 생산ㆍ공급 실적 및 매출액
+5. 답례품의 품질과 안전성 확보 능력
+6. 대형유통업체 입점 여부, 군포시 및 민간업체 온라인 쇼핑몰 및 TV 홈쇼핑 입점ㆍ판매 여부
+7. 그 밖에 답례품 및 답례품 공급업체 선정 시 고려할 필요가 있다고 시장이 인정하는 사항</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률 시행령」 제6조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2025-01-01</b> → 현행 조문 <b>2026-03-26</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(답례품 공급업체의 공모) 
+① 시장은 <mark class="cite-law" title="고향사랑 기부금에 관한 법률 시행령제6조">영 제6조</mark>에 따라 답례품 공급업체를 공모하여 선정할 수 있다.
+② 시장은 제1항에 따라 공급업체를 선정하는 경우에는 다음 각 호의 사항을 포함한 공고문을 공모 접수 시작일로부터 14일 전에 공고해야 한다.
+1. 제3조에 따라 선정위원회에서 정한 답례품의 품목
+2. 제4조에 따른 답례품 선정 시 고려사항
+3. 답례품 공급업체의 선정을 위한 평가 항목
+4. 그 밖에 시장이 필요하다고 인정하는 사항
+③ 시장은 선정위원회의 심사를 거쳐 공모 결과를 공고하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률 시행령」 제6조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2025-01-01</b> → 현행 조문 <b>2026-03-26</b></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(답례품비의 지급) 시장은 <mark class="cite-law" title="고향사랑 기부금에 관한 법률제9조">법 제9조제1항</mark>에 따라 기부자에게 제공하는 답례품 비용을 지급하기 위해 별도의 예산을 편성할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률」 제9조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2025-01-01</b> → 현행 조문 <b>2024-02-20</b></div></div></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(지정 금융기관의 위탁) 시장은 <mark class="cite-law" title="지방자치법제117조">「지방자치법」 제117조제3항</mark>에 따라 다음 각 호의 사무를 <mark class="cite-law" title="고향사랑 기부금에 관한 법률제8조">법 제8조제1항</mark>에 따른 지정 금융기관에 위탁한다.
+1. <mark class="cite-law" title="고향사랑 기부금에 관한 법률 시행령제4조">영 제4조제1항</mark>에 따른 고향사랑 기부금 기탁서의 접수
+2. <mark class="cite-law" title="고향사랑 기부금에 관한 법률 시행령제4조">영 제4조제2항</mark>에 따른 고향사랑 기부금 기탁서의 확인
+3. <mark class="cite-law" title="고향사랑 기부금에 관한 법률 시행령제4조">영 제4조제3항</mark>에 따른 행정정보의 공동이용을 통한 확인
+4. 고향사랑 기부금 납부방법 등의 안내
+5. 고향사랑 기부금 납부 영수증의 발급</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제117조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2025-10-02</b> → 현행 조문 <b>2026-06-02</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률 시행령」 제4조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-08-13</b> → 현행 조문 <b>2024-08-13</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률 시행령」 제4조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-08-13</b> → 현행 조문 <b>2024-08-13</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률 시행령」 제4조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-08-13</b> → 현행 조문 <b>2024-08-13</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률」 제8조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-02-20</b> → 현행 조문 <b>2024-02-20</b></div></div></div><div class="artsec" data-oc="제8조"><div class="arthd">조례 제8조</div><div class="ordtext"><b>제8조</b> 제8조(기금의 관리 및 운용) 
+① 시장은 기금의 수입과 지출을 명확히 하기 위해 별도의 기금 계좌를 설치하여 관리ㆍ운용한다.
+② 기금은 <mark class="cite-law" title="지방회계법제38조">「지방회계법」 제38조</mark>에 따라 지정한 금고에 예치ㆍ관리한다.
+③ 기금은 적립기금과 운용기금으로 구분하여 관리한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방회계법」 제38조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2017-07-26</b></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(기금의 사용 목적) 
+① 시장은 <mark class="cite-law" title="고향사랑 기부금에 관한 법률제11조">법 제11조제4항</mark>에 따라 고향사랑 기금을 관리ㆍ운용할 경우에는 <mark class="cite-law" title="고향사랑 기부금에 관한 법률제11조">법 제11조제2항제1호</mark>에서 제4호까지에 해당하는 사업 중에서 지정하여 기부금을 모집할 수 있다. 이 경우 <mark class="cite-law" title="고향사랑 기부금에 관한 법률 시행령제3조">영 제3조</mark>에 따라 지정한 사업에 관한 정보를 제공해야 한다. &lt;개정 2025.10.10.&gt;
+② 시장은 <mark class="cite-law" title="고향사랑 기부금에 관한 법률제11조">법 제11조제3항</mark> 및 <mark class="cite-law" title="고향사랑 기부금에 관한 법률 시행령제7조">영 제7조제2항</mark>에 따른 비율에 해당하는 금액을 홍보비, 인쇄비, 운영경비 등 기부금 모집과 운용을 위한 비용으로 사용할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률 시행령」 제3조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-08-13</b> → 현행 조문 <b>2024-08-13</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률 시행령」 제7조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-08-13</b> → 현행 조문 <b>2024-08-13</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률」 제11조제4항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-02-20</b> → 현행 조문 <b>2024-02-20</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률」 제11조제2항제1호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-02-20</b> → 현행 조문 <b>2024-02-20</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「고향사랑 기부금에 관한 법률」 제11조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-02-20</b> → 현행 조문 <b>2024-02-20</b></div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(고향사랑기금운용심의위원회) 시장은 <mark class="cite-law" title="지방자치단체 기금관리 기본법제13조">「지방자치단체 기금관리 기본법」 제13조제1항</mark>에 따라 기금의 관리ㆍ운용에 관한 사항을 심의하기 위해 군포시 고향사랑기금운용심의위원회(이하 “심의위원회”라 한다)를 둔다. 다만, 필요한 경우 심의위원회를 군포시 지방재정계획 및 재정공시심의위원회에서 통합하여 운영할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치단체 기금관리 기본법」 제13조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2023-07-10</b> → 현행 조문 <b>2026-04-09</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

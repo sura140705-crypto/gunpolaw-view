@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>군포시 가축사육 제한지역 지정에 관한 조례 — 정비 권고(분석 결과)</title><style>
+/* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
+   자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
+.page, .ord { --navy:#13325b; --navy2:#1d4e89;
+  --mech:#1d4ed8; --rev:#b45309; --chk:#52525b; --fmt:#6d28d9; --cur:#15803d;
+  --ink:#1f2937; --muted:#6b7280; --line:#d8dee6; --soft:#f6f8fb; }
+* { box-sizing: border-box; }
+/* 독립 권고서 페이지 한정(body.report·.page) — 대시보드 주입 시 충돌 방지.
+   대시보드는 자체 body/h1/.cards/.sub/.card 를 가져 prefix 없으면 덮어쓴다. */
+body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       color:var(--ink); margin:0; background:#eef1f5; line-height:1.55;
+       -webkit-text-size-adjust:100%; }
+.page { max-width:840px; margin:24px auto; padding:38px 44px 52px; background:#fff;
+        border-top:4px solid var(--navy); box-shadow:0 1px 5px rgba(15,33,66,.10); }
+/* 문서 머리 — 공문 단정형(머리표·제목·요지, 아래 굵은 밑줄) */
+.page .dochd { border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:22px; }
+.page .dochd .kicker { font-size:11.5px; letter-spacing:3px; color:var(--navy2);
+        font-weight:700; margin:0 0 6px; }
+.page h1 { font-size:22px; line-height:1.34; margin:0; color:var(--navy);
+     font-weight:700; letter-spacing:-.3px; }
+.page .sub { color:var(--muted); font-size:12.5px; margin-top:7px; }
+.page .cards { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 20px; }
+.page .card { flex:1 1 138px; border:1px solid var(--line); border-top:3px solid var(--chk);
+        border-radius:6px; padding:12px 15px; }
+.page .card .n { font-size:25px; font-weight:700; line-height:1; color:var(--ink); }
+.page .card .t { font-size:12.5px; color:var(--muted); margin-top:6px; }
+.page .g-mech { border-top-color:var(--mech);} .page .g-mech .n { color:var(--mech);}
+.page .g-rev { border-top-color:var(--rev);} .page .g-rev .n { color:var(--rev);}
+.page .g-chk { border-top-color:var(--chk);} .page .g-chk .n { color:var(--chk);}
+.page .g-fmt { border-top-color:var(--fmt);} .page .g-fmt .n { color:var(--fmt);}
+.page .g-cur { border-top-color:var(--cur);} .page .g-cur .n { color:var(--cur);}
+.ord { border:1px solid var(--line); border-radius:7px; padding:18px 20px;
+       margin:0 0 16px; page-break-inside:avoid; }
+.ord h2 { font-size:16.5px; margin:0 0 3px; color:var(--navy); font-weight:700;
+          padding-left:10px; border-left:4px solid var(--navy); }
+.ord .meta { color:var(--muted); font-size:12px; margin:0 0 12px; padding-left:14px; }
+.badges { margin:0 0 12px; }
+.badge { display:inline-block; font-size:11.5px; padding:2px 10px; border-radius:4px;
+         margin-right:6px; border:1px solid currentColor; background:#fff; font-weight:600; }
+.b-mech { color:var(--mech);} .b-rev { color:var(--rev);}
+.b-chk { color:var(--chk);} .b-fmt { color:var(--fmt);}
+.artsec { margin:0 0 8px; }
+.arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
+         border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
+         margin:14px 0 6px; }
+.item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
+.iline { margin-bottom:3px; }
+.item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
+             margin-right:8px; white-space:nowrap; }
+.t-mech { background:#dbeafe; color:#1e40af;} .t-rev { background:#fef3c7; color:#92400e;}
+.t-chk { background:#f3f4f6; color:#374151;}
+.t-naked { background:#ede9fe; color:#5b21b6;}
+.t-cur { background:#dcfce7; color:#166534;}
+.t-space { background:#fef9c3; color:#854d0e;}
+details.citem.cur > summary { opacity:.72; }
+details.citem.cur .law { font-weight:500; }
+/* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
+details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
+    display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+details.citem > summary::-webkit-details-marker { display:none; }
+details.citem > summary::before { content:"▸"; color:#9ca3af; font-size:11px; margin-right:2px; }
+details.citem[open] > summary::before { content:"▾"; color:var(--navy2); }
+details.citem[open] { background:#fbfcfe; }
+details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 10px; }
+details.citem > .diff { margin:6px 10px 10px; }
+details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
+.item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+.basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
+.basis b { color:#374151; font-weight:600; }
+.ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
+           border-left:3px solid var(--navy2); border-radius:0 6px 6px 0; padding:8px 11px;
+           margin:5px 0 9px; white-space:pre-wrap; line-height:1.7; }
+.ordtext b { color:var(--navy); margin-right:5px; }
+mark.cite-law { background:#eff6ff; color:#1e3a8a;
+   text-decoration:underline; text-decoration-color:#2563eb; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-naked { background:#f5f3ff; color:#5b21b6;
+   text-decoration:underline dashed; text-decoration-color:#7c3aed; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-local { background:#f1f5f9; color:#475569;
+   text-decoration:underline dotted; text-decoration-color:#94a3b8; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+.page .leg { font-size:12px; color:var(--muted); margin:0 0 18px; display:flex; gap:14px;
+        flex-wrap:wrap; align-items:center; }
+.page .leg mark { padding:0 4px; border-radius:2px; }
+.item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
+            background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
+.diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
+.drow + .drow { border-top:1px solid #f1f3f5; }
+.dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
+.dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
+.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
+         border-radius:2px; padding:0 1px; }
+mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
+mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
+          padding:0 2px; cursor:help; }
+.page footer { color:#9aa3af; font-size:11.5px; margin-top:34px; padding-top:14px;
+         border-top:1px solid var(--line); text-align:center; }
+@media print {
+  @page { size:A4; margin:16mm; }
+  body { background:#fff; }
+  .page { max-width:none; margin:0; padding:0; border-top:none; box-shadow:none; }
+  .ord, .card { border-color:#c4cbd4; }
+  .dochd { border-bottom-color:#000; }
+  mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 가축사육 제한지역 지정에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">3</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">1</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 가축사육 제한지역 지정에 관한 조례</h2><div class="meta">시행 2017-09-29 · 정비 항목 4건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 3</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(가축사육 제한구역의 지정)  
+① 시장은 <mark class="cite-law" title="가축분뇨의 관리 및 이용에 관한 법률제8조">「가축분뇨의 관리 및 이용에 관한 법률」(이하 “법”이라 한다) 제8조제1항</mark>에 따라 “전부제한구역”과 “일부제한구역”으로 가축사육제한 구역을 나누어 지정한다. 
+② 제1항에 따라 사육이 제한되는 가축은 <mark class="cite-law" title="가축분뇨의 관리 및 이용에 관한 법률제2조">법 제2조제1호</mark>에 규정된 가축으로 하며, 제한구역은  별표와 같다. 
+③ 시장은 필요하다고 인정되는 경우에는 제1항에 따라 지정된 가축사육제한구역을 변경하거나 해제할 수 있다. &lt;신설 2017.9.29.&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「가축분뇨의 관리 및 이용에 관한 법률」 제8조제1항</span></div><div class="act">「가축분뇨의 관리 및 이용에 관한 법률」 제8조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2017-09-29</b> · 당시 법령본 <b>2015-12-01</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 시장ㆍ군수ㆍ구청장은 지역주민의 생활환경보전 또는 상수원의 수질보전을 위하여 다음 각 호의 어느 하나에 해당하는 지역 중 가축사육의 제한이 필요하다고 인정되는 지역에 대하여는 해당 지방자치단체의 조례로 정하는 바에 따라 일정한 구역을 지정ㆍ고시하여 가축의 사육을 제한할 수 있다. 다만, 지방자치단체 간 경계지역에서 인접 지방자치단체의 요청이 있으면 <mark class="d">환경부령으로</mark> 정하는 바에 따라 해당 지방자치단체와 협의를 거쳐 일정한 구역을 지정ㆍ고시하여 가축의 사육을 제한할 수 있다. &lt;개정 2015.12<mark class="pt" title=".1, 2025.10 추가됨">‸</mark>.1&gt;
+1.  주거 밀집지역으로 생활환경의 보호가 필요한 지역
+2.  「수도법」 제7조에 따른 상수원보호구역, 「환경정책기본법」 제38조에 따른 특별대책지역, 그 밖에 이에 준하는 수질환경보전이 필요한 지역
+3.  「한강수계 상수원수질개선 및 주민지원 등에 관한 법률」 제4조제1항, 「낙동강수계 물관리 및 주민지원 등에 관한 법률」 제4조제1항, 「금강수계 물관리 및 주민지원 등에 관한 법률」 제4조제1항, 「영산강ㆍ섬진강수계 물관리 및 주민지원 등에 관한 법률」 제4조제1항에 따라 지정ㆍ고시된 수변구역
+4.  「환경정책기본법」 제12조에 따른 환경기준을 초과한 지역
+5.  제2항에 따라 <mark class="d">환경부장관</mark> 또는 시ㆍ도지사가 가축의 사육을 제한할 수 있는 구역으로 지정ㆍ고시하도록 요청한 지역</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">① 시장ㆍ군수ㆍ구청장은 지역주민의 생활환경보전 또는 상수원의 수질보전을 위하여 다음 각 호의 어느 하나에 해당하는 지역 중 가축사육의 제한이 필요하다고 인정되는 지역에 대하여는 해당 지방자치단체의 조례로 정하는 바에 따라 일정한 구역을 지정ㆍ고시하여 가축의 사육을 제한할 수 있다. 다만, 지방자치단체 간 경계지역에서 인접 지방자치단체의 요청이 있으면 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 해당 지방자치단체와 협의를 거쳐 일정한 구역을 지정ㆍ고시하여 가축의 사육을 제한할 수 있다. &lt;개정 2015.12<mark class="i">.1, 2025.10</mark>.1&gt;
+1.  주거 밀집지역으로 생활환경의 보호가 필요한 지역
+2.  「수도법」 제7조에 따른 상수원보호구역, 「환경정책기본법」 제38조에 따른 특별대책지역, 그 밖에 이에 준하는 수질환경보전이 필요한 지역
+3.  「한강수계 상수원수질개선 및 주민지원 등에 관한 법률」 제4조제1항, 「낙동강수계 물관리 및 주민지원 등에 관한 법률」 제4조제1항, 「금강수계 물관리 및 주민지원 등에 관한 법률」 제4조제1항, 「영산강ㆍ섬진강수계 물관리 및 주민지원 등에 관한 법률」 제4조제1항에 따라 지정ㆍ고시된 수변구역
+4.  「환경정책기본법」 제12조에 따른 환경기준을 초과한 지역
+5.  제2항에 따라 <mark class="i">기후에너지환경부장관</mark> 또는 시ㆍ도지사가 가축의 사육을 제한할 수 있는 구역으로 지정ㆍ고시하도록 요청한 지역</span></div></div></div></div><div class="artsec" data-oc="제2조의2"><div class="arthd">조례 제2조의2</div><div class="ordtext"><b>제2조의2</b> 제2조의2(제한구역의 지정 및 변경 ㆍ 해제 절차)  
+① 시장은 <mark class="cite-law" title="가축분뇨의 관리 및 이용에 관한 법률제8조">법 제8조 제1항</mark> 및 제8조제5항에 따라 가축사육제한구역을 지정하거나 그 지정을 변경ㆍ해제할 경우에는 해당 지역과 그 지역의 경계에 있는 주민 또는 지방자치단체의 의견을 수렴하고 <mark class="cite-law" title="행정절차법제46조">「행정절차법」 제46조</mark>에 따른 행정예고를 거친 후 시보 및 군포시청 홈페이지에 고시한다. 
+② 제1항에 따라 제한구역의 지정 및 변경ㆍ해제 사항을 고시할 때에는 다음 각 호의 사항을 기재한다. 
+1. 지정 및 변경ㆍ해제의 근거 또는 사유 
+2. 지정 및 변경ㆍ해제된 구역의 위치, 범위 및 면적 등 필요사항 
+3. 그 밖에 시장이 필요하다고 인정하는 내용
+[신설 2017.9.29.]</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「행정절차법」 제46조</span></div><div class="act">「행정절차법」 제46조 개정 내용을 반영하여 이 조례 제2조의2을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2017-09-29</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2022-01-11</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제46조(행정예고)
+① 행정청은 <mark class="d">다음 각 호의 어느 하나에 해당하는 사항에 대한 </mark>정책, 제도 및 <mark class="d">계획을</mark> 수립ㆍ시행하거나 변경하려는 경우에는 이를 예고하여야 한다. 다만, <mark class="d">예고로</mark> <mark class="d">인하여</mark> 공공의 안전 또는 복리를 현저히 해칠 우려가 <mark class="d">있거나</mark> <mark class="d">그 밖에 예고하기 곤란한 특별한 사유가 있는 경우에는 예고하지 아니할 수 있다.
+1.  국민생활에 매우 큰 영향을 주는 사항
+2.  많은 국민의 이해가 상충되는 사항
+3.  많은 국민에게 불편이나 부담을 주는 사항
+4.  그 밖에 널리 국민의 의견을 수렴할 필요가 있는 사항</mark>
+② 제1항에도 불구하고 법령등의 입법을 포함하는 행정예고는 입법예고로 갈음할 수 있다.
+③ 행정예고기간은 예고 내용의 성격 등을 고려하여 정하되, <mark class="d">특별한 사정이 없으면 </mark>20일 이상으로 한다.<mark class="pt" title="&lt;개정 2022.1.11&gt;
+④ 제3항에도 불구하고 행정목적을 달성하기 위 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제46조(행정예고)
+① 행정청은 <mark class="pt" title="다음 각 호의 어느 하나에 해당하는 사항에 대한 삭제됨">‸</mark>정책, 제도 및 <mark class="i">계획(이하 &quot;정책등&quot;이라 한다)을</mark> 수립ㆍ시행하거나 변경하려는 경우에는 이를 예고하여야 한다. 다만, <mark class="i">다음</mark> <mark class="i">각 호의 어느 하나에 해당하는 경우에는 예고를 하지 아니할 수 있다. &lt;개정 2019.12.10&gt;
+1.  신속하게 국민의 권리를 보호하여야 하거나 예측이 어려운 특별한 사정이 발생하는 등 긴급한 사유로 예고가 현저히 곤란한 경우
+2.  법령등의 단순한 집행을 위한 경우
+3.  정책등의 내용이 국민의 권리ㆍ의무 또는 일상생활과 관련이 없는 경우
+4.  정책등의 예고가</mark> 공공의 안전 또는 복리를 현저히 해칠 우려가 <mark class="i">상당한</mark> <mark class="i">경우</mark>
+② 제1항에도 불구하고 법령등의 입법을 포함하는 행정예고는 입법예고로 갈음할 수 있다.
+③ 행정예고기간은 예고 내용의 성격 등을 고려하여 정하되, <mark class="pt" title="특별한 사정이 없으면 삭제됨">‸</mark>20일 이상으로 한다.<mark class="i"> &lt;개정 2022.1.11&gt;
+④ 제3항에도 불구하고 행정목적을 달성하기 위하여 긴급한 필요가 있는 경우에는 행정예고기간을 단축할 수 있다. 이 경우 단축된 행정예고기간은 10일 이상으로 한다. &lt;신설 2022.1.11&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(가축사육 제한구역의 지정)  
+① 시장은 <mark class="cite-law" title="가축분뇨의 관리 및 이용에 관한 법률제8조">「가축분뇨의 관리 및 이용에 관한 법률」(이하 “법”이라 한다) 제8조제1항</mark>에 따라 “전부제한구역”과 “일부제한구역”으로 가축사육제한 구역을 나누어 지정한다. 
+② 제1항에 따라 사육이 제한되는 가축은 <mark class="cite-law" title="가축분뇨의 관리 및 이용에 관한 법률제2조">법 제2조제1호</mark>에 규정된 가축으로 하며, 제한구역은  별표와 같다. 
+③ 시장은 필요하다고 인정되는 경우에는 제1항에 따라 지정된 가축사육제한구역을 변경하거나 해제할 수 있다. &lt;신설 2017.9.29.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「가축분뇨의 관리 및 이용에 관한 법률」 제2조제1호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2017-09-29</b> · 당시 법령본 <b>2016-12-27</b> → 현행 조문 <b>2025-10-01</b></div></div></div><div class="artsec" data-oc="제2조의2"><div class="arthd">조례 제2조의2</div><div class="ordtext"><b>제2조의2</b> 제2조의2(제한구역의 지정 및 변경 ㆍ 해제 절차)  
+① 시장은 <mark class="cite-law" title="가축분뇨의 관리 및 이용에 관한 법률제8조">법 제8조 제1항</mark> 및 제8조제5항에 따라 가축사육제한구역을 지정하거나 그 지정을 변경ㆍ해제할 경우에는 해당 지역과 그 지역의 경계에 있는 주민 또는 지방자치단체의 의견을 수렴하고 <mark class="cite-law" title="행정절차법제46조">「행정절차법」 제46조</mark>에 따른 행정예고를 거친 후 시보 및 군포시청 홈페이지에 고시한다. 
+② 제1항에 따라 제한구역의 지정 및 변경ㆍ해제 사항을 고시할 때에는 다음 각 호의 사항을 기재한다. 
+1. 지정 및 변경ㆍ해제의 근거 또는 사유 
+2. 지정 및 변경ㆍ해제된 구역의 위치, 범위 및 면적 등 필요사항 
+3. 그 밖에 시장이 필요하다고 인정하는 내용
+[신설 2017.9.29.]</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「가축분뇨의 관리 및 이용에 관한 법률」 제8조제1항</span></div><div class="act">「가축분뇨의 관리 및 이용에 관한 법률」 제8조 개정 내용을 반영하여 이 조례 제2조의2을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2017-09-29</b> · 당시 법령본 <b>2015-12-01</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 시장ㆍ군수ㆍ구청장은 지역주민의 생활환경보전 또는 상수원의 수질보전을 위하여 다음 각 호의 어느 하나에 해당하는 지역 중 가축사육의 제한이 필요하다고 인정되는 지역에 대하여는 해당 지방자치단체의 조례로 정하는 바에 따라 일정한 구역을 지정ㆍ고시하여 가축의 사육을 제한할 수 있다. 다만, 지방자치단체 간 경계지역에서 인접 지방자치단체의 요청이 있으면 <mark class="d">환경부령으로</mark> 정하는 바에 따라 해당 지방자치단체와 협의를 거쳐 일정한 구역을 지정ㆍ고시하여 가축의 사육을 제한할 수 있다. &lt;개정 2015.12<mark class="pt" title=".1, 2025.10 추가됨">‸</mark>.1&gt;
+1.  주거 밀집지역으로 생활환경의 보호가 필요한 지역
+2.  「수도법」 제7조에 따른 상수원보호구역, 「환경정책기본법」 제38조에 따른 특별대책지역, 그 밖에 이에 준하는 수질환경보전이 필요한 지역
+3.  「한강수계 상수원수질개선 및 주민지원 등에 관한 법률」 제4조제1항, 「낙동강수계 물관리 및 주민지원 등에 관한 법률」 제4조제1항, 「금강수계 물관리 및 주민지원 등에 관한 법률」 제4조제1항, 「영산강ㆍ섬진강수계 물관리 및 주민지원 등에 관한 법률」 제4조제1항에 따라 지정ㆍ고시된 수변구역
+4.  「환경정책기본법」 제12조에 따른 환경기준을 초과한 지역
+5.  제2항에 따라 <mark class="d">환경부장관</mark> 또는 시ㆍ도지사가 가축의 사육을 제한할 수 있는 구역으로 지정ㆍ고시하도록 요청한 지역</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">① 시장ㆍ군수ㆍ구청장은 지역주민의 생활환경보전 또는 상수원의 수질보전을 위하여 다음 각 호의 어느 하나에 해당하는 지역 중 가축사육의 제한이 필요하다고 인정되는 지역에 대하여는 해당 지방자치단체의 조례로 정하는 바에 따라 일정한 구역을 지정ㆍ고시하여 가축의 사육을 제한할 수 있다. 다만, 지방자치단체 간 경계지역에서 인접 지방자치단체의 요청이 있으면 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 해당 지방자치단체와 협의를 거쳐 일정한 구역을 지정ㆍ고시하여 가축의 사육을 제한할 수 있다. &lt;개정 2015.12<mark class="i">.1, 2025.10</mark>.1&gt;
+1.  주거 밀집지역으로 생활환경의 보호가 필요한 지역
+2.  「수도법」 제7조에 따른 상수원보호구역, 「환경정책기본법」 제38조에 따른 특별대책지역, 그 밖에 이에 준하는 수질환경보전이 필요한 지역
+3.  「한강수계 상수원수질개선 및 주민지원 등에 관한 법률」 제4조제1항, 「낙동강수계 물관리 및 주민지원 등에 관한 법률」 제4조제1항, 「금강수계 물관리 및 주민지원 등에 관한 법률」 제4조제1항, 「영산강ㆍ섬진강수계 물관리 및 주민지원 등에 관한 법률」 제4조제1항에 따라 지정ㆍ고시된 수변구역
+4.  「환경정책기본법」 제12조에 따른 환경기준을 초과한 지역
+5.  제2항에 따라 <mark class="i">기후에너지환경부장관</mark> 또는 시ㆍ도지사가 가축의 사육을 제한할 수 있는 구역으로 지정ㆍ고시하도록 요청한 지역</span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>군포시 국가보훈대상자 등 예우 및 지원에 관한 조례 — 정비 권고(분석 결과)</title><style>
+/* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
+   자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
+.page, .ord { --navy:#13325b; --navy2:#1d4e89;
+  --mech:#1d4ed8; --rev:#b45309; --chk:#52525b; --fmt:#6d28d9; --cur:#15803d;
+  --ink:#1f2937; --muted:#6b7280; --line:#d8dee6; --soft:#f6f8fb; }
+* { box-sizing: border-box; }
+/* 독립 권고서 페이지 한정(body.report·.page) — 대시보드 주입 시 충돌 방지.
+   대시보드는 자체 body/h1/.cards/.sub/.card 를 가져 prefix 없으면 덮어쓴다. */
+body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       color:var(--ink); margin:0; background:#eef1f5; line-height:1.55;
+       -webkit-text-size-adjust:100%; }
+.page { max-width:840px; margin:24px auto; padding:38px 44px 52px; background:#fff;
+        border-top:4px solid var(--navy); box-shadow:0 1px 5px rgba(15,33,66,.10); }
+/* 문서 머리 — 공문 단정형(머리표·제목·요지, 아래 굵은 밑줄) */
+.page .dochd { border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:22px; }
+.page .dochd .kicker { font-size:11.5px; letter-spacing:3px; color:var(--navy2);
+        font-weight:700; margin:0 0 6px; }
+.page h1 { font-size:22px; line-height:1.34; margin:0; color:var(--navy);
+     font-weight:700; letter-spacing:-.3px; }
+.page .sub { color:var(--muted); font-size:12.5px; margin-top:7px; }
+.page .cards { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 20px; }
+.page .card { flex:1 1 138px; border:1px solid var(--line); border-top:3px solid var(--chk);
+        border-radius:6px; padding:12px 15px; }
+.page .card .n { font-size:25px; font-weight:700; line-height:1; color:var(--ink); }
+.page .card .t { font-size:12.5px; color:var(--muted); margin-top:6px; }
+.page .g-mech { border-top-color:var(--mech);} .page .g-mech .n { color:var(--mech);}
+.page .g-rev { border-top-color:var(--rev);} .page .g-rev .n { color:var(--rev);}
+.page .g-chk { border-top-color:var(--chk);} .page .g-chk .n { color:var(--chk);}
+.page .g-fmt { border-top-color:var(--fmt);} .page .g-fmt .n { color:var(--fmt);}
+.page .g-cur { border-top-color:var(--cur);} .page .g-cur .n { color:var(--cur);}
+.ord { border:1px solid var(--line); border-radius:7px; padding:18px 20px;
+       margin:0 0 16px; page-break-inside:avoid; }
+.ord h2 { font-size:16.5px; margin:0 0 3px; color:var(--navy); font-weight:700;
+          padding-left:10px; border-left:4px solid var(--navy); }
+.ord .meta { color:var(--muted); font-size:12px; margin:0 0 12px; padding-left:14px; }
+.badges { margin:0 0 12px; }
+.badge { display:inline-block; font-size:11.5px; padding:2px 10px; border-radius:4px;
+         margin-right:6px; border:1px solid currentColor; background:#fff; font-weight:600; }
+.b-mech { color:var(--mech);} .b-rev { color:var(--rev);}
+.b-chk { color:var(--chk);} .b-fmt { color:var(--fmt);}
+.artsec { margin:0 0 8px; }
+.arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
+         border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
+         margin:14px 0 6px; }
+.item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
+.iline { margin-bottom:3px; }
+.item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
+             margin-right:8px; white-space:nowrap; }
+.t-mech { background:#dbeafe; color:#1e40af;} .t-rev { background:#fef3c7; color:#92400e;}
+.t-chk { background:#f3f4f6; color:#374151;}
+.t-naked { background:#ede9fe; color:#5b21b6;}
+.t-cur { background:#dcfce7; color:#166534;}
+.t-space { background:#fef9c3; color:#854d0e;}
+details.citem.cur > summary { opacity:.72; }
+details.citem.cur .law { font-weight:500; }
+/* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
+details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
+    display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+details.citem > summary::-webkit-details-marker { display:none; }
+details.citem > summary::before { content:"▸"; color:#9ca3af; font-size:11px; margin-right:2px; }
+details.citem[open] > summary::before { content:"▾"; color:var(--navy2); }
+details.citem[open] { background:#fbfcfe; }
+details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 10px; }
+details.citem > .diff { margin:6px 10px 10px; }
+details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
+.item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+.basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
+.basis b { color:#374151; font-weight:600; }
+.ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
+           border-left:3px solid var(--navy2); border-radius:0 6px 6px 0; padding:8px 11px;
+           margin:5px 0 9px; white-space:pre-wrap; line-height:1.7; }
+.ordtext b { color:var(--navy); margin-right:5px; }
+mark.cite-law { background:#eff6ff; color:#1e3a8a;
+   text-decoration:underline; text-decoration-color:#2563eb; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-naked { background:#f5f3ff; color:#5b21b6;
+   text-decoration:underline dashed; text-decoration-color:#7c3aed; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-local { background:#f1f5f9; color:#475569;
+   text-decoration:underline dotted; text-decoration-color:#94a3b8; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+.page .leg { font-size:12px; color:var(--muted); margin:0 0 18px; display:flex; gap:14px;
+        flex-wrap:wrap; align-items:center; }
+.page .leg mark { padding:0 4px; border-radius:2px; }
+.item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
+            background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
+.diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
+.drow + .drow { border-top:1px solid #f1f3f5; }
+.dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
+.dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
+.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
+         border-radius:2px; padding:0 1px; }
+mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
+mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
+          padding:0 2px; cursor:help; }
+.page footer { color:#9aa3af; font-size:11.5px; margin-top:34px; padding-top:14px;
+         border-top:1px solid var(--line); text-align:center; }
+@media print {
+  @page { size:A4; margin:16mm; }
+  body { background:#fff; }
+  .page { max-width:none; margin:0; padding:0; border-top:none; box-shadow:none; }
+  .ord, .card { border-color:#c4cbd4; }
+  .dochd { border-bottom-color:#000; }
+  mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 국가보훈대상자 등 예우 및 지원에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">2</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 국가보훈대상자 등 예우 및 지원에 관한 조례</h2><div class="meta">시행 2024-10-02 · 정비 항목 6건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span><span class="badge b-fmt">📐 서식 정비 2</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
+1. “희생·공헌자”란 다음 각 목의 어느 하나에 해당하는 목적을 위하여 특별히 희생하거나 공헌한 사람으로서 국가보훈관계 법령이 정하는 적용대상 요건에 해당되는 사람을 말한다.
+가. 일제로부터 조국의 자주독립
+나. 국가의 수호 또는 안전보장
+다. 대한민국의 자유민주주의 발전
+라. 국민의 생명 또는 재산보호 등 공무수행
+2. “국가보훈대상자”란 희생·공헌자와 그 유족 또는 가족으로서 국가보훈관계 법령의 적용대상자가 되어 예우 및 지원을 받는 사람을 말한다.
+3. “보훈단체”란 <mark class="cite-law" title="국가유공자 등 단체설립에 관한 법률제1조">「국가유공자 등 단체설립에 관한 법률」 제1조</mark>에서 정한 단체와 국가보훈처장의 인가를 받아 설립한 법인을 말한다.
+4. “국가보훈관계 법령”이란 국가보훈대상자에 대한 예우 및 지원과 관련된 법령을 말한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「국가유공자 등 단체설립에 관한 법률」 제1조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2023-06-05</b> → 현행 조문 <b>2026-05-20</b></div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(지원대상) 이 조례에 따른 지원대상은 다음 각 호의 어느 하나에 해당되는 자로 한다. &lt;개정 2021.12.31.&gt;
+1. <mark class="cite-law" title="국가유공자 등 예우 및 지원에 관한 법률">「국가유공자 등 예우 및 지원에 관한 법률」</mark>의 적용을 받는 사람
+2. <mark class="cite-law" title="국가유공자 등 단체 설립에 관한 법률">「국가유공자 등 단체 설립에 관한 법률」</mark>의 적용을 받는 사람 또는 단체
+3. <mark class="cite-law" title="참전유공자예우 및 단체설립에 관한 법률">「참전유공자예우 및 단체설립에 관한 법률」</mark>의 적용을 받는 사람(사망한 경우 그 배우자) 또는 단체
+4. <mark class="cite-law" title="고엽제후유의증 등 환자지원 및 단체설립에 관한 법률">「고엽제후유의증 등 환자지원 및 단체설립에 관한 법률」</mark>의 적용을 받는 사람 또는 단체
+5. <mark class="cite-law" title="특수임무유공자 예우 및 단체설립에 관한 법률">「특수임무유공자 예우 및 단체설립에 관한 법률」</mark>의 적용을 받는 사람 또는 단체
+6. <mark class="cite-law" title="5·18민주유공자예우에 관한 법률">「5·18민주유공자예우에 관한 법률」</mark>의 적용을 받는 사람
+7. <mark class="cite-law" title="보훈보상대상자 지원에 관한 법률">「보훈보상대상자 지원에 관한 법률」</mark>의 적용을 받는 사람&lt;신설 2015.3.23&gt;
+
+[제목개정 2021.12.31.]</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「5·18민주유공자예우에 관한 법률」</span></div><div class="act">인용한 「5·18민주유공자예우에 관한 법률」이(가) 현행 「5ㆍ18민주유공자예우 및 단체설립에 관한 법률」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(수당 등) 시장은 예산의 범위에서 보훈 명예수당, 보훈 생계지원수당, 사망위로금(이하 “수당 등”이라 한다)을 지급할 수 있다. 다만, 제1호와 제2호의 수당은 중복 지급하지 아니한다. &lt;개정 2024.10.2.&gt;
+1. 보훈 명예수당(이하 “명예수당”이라 한다): 제4조 각 호의 어느 하나에 해당하는 사람에게 1인당 월 15만원
+2. 보훈 생계지원수당(이하 “지원수당”이라 한다): 제4조 각 호의 어느 하나에 해당하는 사람 중 저소득층(<mark class="cite-naked" title="국민기초생활보장법제2조">국민기초생활보장법 제2조</mark> 및 <mark class="cite-law" title="국민기초생활보장법 시행령제3조">같은 법 시행령 제3조</mark>에 따른 차상위계층 이하)에게 1인당 월 15만원
+3. 사망위로금: 1인당 20만원
+
+[전문개정 2023.9.27.]</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「국민기초생활보장법」 제2조</span></div><div class="act">「국민기초생활보장법」 제2조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제7조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2014-12-30</b> → 현행 조문 <b>2014-12-30</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「국민기초생활보장법 시행령」 제3조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2023-11-16</b> → 현행 조문 <b>2026-01-02</b></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(수당 등의 신청) 
+① 명예수당 또는 지원수당을 신청하고자 하는 사람은 별지 제1호서식의 명예수당 지급신청서 또는 별지 제3호서식의 지원수당 지급신청서를 주민등록지 관할 동장에게 제출하여야 한다. &lt;개정 2023.9.27.&gt;
+② 제1항과 제6항에 따라 신청서를 제출받은 시장은 <mark class="cite-naked" title="전자정부법제36조">전자정부법 제36조 제1항</mark>에 따른 행정정보의 공동이용을 통하여 다음 각 호의 서류를 확인하여 적격 여부를 신청인에게 통보하여야 한다. 다만 신청인이 행정정보의 공동이용을 통한 확인에 동의하지 아니하는 경우에는 서류를 제출하여야 한다.&lt;신설 219.4.18.&gt;
+1. 국가유공자(유족)확인원
+2. 주민등록등(초)본
+3. 입금계좌확인정보(통장사본)
+③ 명예수당 또는 지원수당 지급신청서를 접수한 주민등록지 관할 동장은 거주기간 등을 확인한 후 신청서 접수일로부터 7일 이내에 신청서류를 시장에게 제출하여야 한다. &lt;개정 2019.4.18., 2023.9.27.&gt;
+④ 본인이 부득이한 사유로 명예수당 또는 지원수당을 신청할 수 없을 경우에는 배우자, 부양의무자 등이 신청할 수 있다. &lt;개정 2023.9.27.&gt;
+⑤ 사망위로금 신청자는 사망위로금 지급대상자의 유가족으로 한다. 다만, 유가족이 없는 국가보훈대상자의 경우에는 장제를 직접 행한 자로 한다.
+⑥ 사망위로금을 신청하고자 하는 사람은 사망위로금 지급대상자의 사망일로부터 1년 이내에 별지 제2호서식의 사망위로금 지급신청서를 시장에게 제출하여야 하며, 지급 순위는 <mark class="cite-law" title="국가유공자 등 예우 및 지원에 관한 법률제5조">「국가유공자 등 예우 및 지원에 관한 법률」제5조</mark>를 준용한다.&lt;개정 2019.4.18.&gt;</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「전자정부법」 제36조제1항</span></div><div class="act">「전자정부법」 제36조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제9조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2017-07-26</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「국가유공자 등 예우 및 지원에 관한 법률」 제5조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2019-12-31</b> → 현행 조문 <b>2019-12-31</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

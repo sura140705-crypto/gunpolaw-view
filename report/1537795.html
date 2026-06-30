@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>군포시 도시공원 및 녹지 등에 관한 조례 — 정비 권고(분석 결과)</title><style>
+/* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
+   자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
+.page, .ord { --navy:#13325b; --navy2:#1d4e89;
+  --mech:#1d4ed8; --rev:#b45309; --chk:#52525b; --fmt:#6d28d9; --cur:#15803d;
+  --ink:#1f2937; --muted:#6b7280; --line:#d8dee6; --soft:#f6f8fb; }
+* { box-sizing: border-box; }
+/* 독립 권고서 페이지 한정(body.report·.page) — 대시보드 주입 시 충돌 방지.
+   대시보드는 자체 body/h1/.cards/.sub/.card 를 가져 prefix 없으면 덮어쓴다. */
+body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       color:var(--ink); margin:0; background:#eef1f5; line-height:1.55;
+       -webkit-text-size-adjust:100%; }
+.page { max-width:840px; margin:24px auto; padding:38px 44px 52px; background:#fff;
+        border-top:4px solid var(--navy); box-shadow:0 1px 5px rgba(15,33,66,.10); }
+/* 문서 머리 — 공문 단정형(머리표·제목·요지, 아래 굵은 밑줄) */
+.page .dochd { border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:22px; }
+.page .dochd .kicker { font-size:11.5px; letter-spacing:3px; color:var(--navy2);
+        font-weight:700; margin:0 0 6px; }
+.page h1 { font-size:22px; line-height:1.34; margin:0; color:var(--navy);
+     font-weight:700; letter-spacing:-.3px; }
+.page .sub { color:var(--muted); font-size:12.5px; margin-top:7px; }
+.page .cards { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 20px; }
+.page .card { flex:1 1 138px; border:1px solid var(--line); border-top:3px solid var(--chk);
+        border-radius:6px; padding:12px 15px; }
+.page .card .n { font-size:25px; font-weight:700; line-height:1; color:var(--ink); }
+.page .card .t { font-size:12.5px; color:var(--muted); margin-top:6px; }
+.page .g-mech { border-top-color:var(--mech);} .page .g-mech .n { color:var(--mech);}
+.page .g-rev { border-top-color:var(--rev);} .page .g-rev .n { color:var(--rev);}
+.page .g-chk { border-top-color:var(--chk);} .page .g-chk .n { color:var(--chk);}
+.page .g-fmt { border-top-color:var(--fmt);} .page .g-fmt .n { color:var(--fmt);}
+.page .g-cur { border-top-color:var(--cur);} .page .g-cur .n { color:var(--cur);}
+.ord { border:1px solid var(--line); border-radius:7px; padding:18px 20px;
+       margin:0 0 16px; page-break-inside:avoid; }
+.ord h2 { font-size:16.5px; margin:0 0 3px; color:var(--navy); font-weight:700;
+          padding-left:10px; border-left:4px solid var(--navy); }
+.ord .meta { color:var(--muted); font-size:12px; margin:0 0 12px; padding-left:14px; }
+.badges { margin:0 0 12px; }
+.badge { display:inline-block; font-size:11.5px; padding:2px 10px; border-radius:4px;
+         margin-right:6px; border:1px solid currentColor; background:#fff; font-weight:600; }
+.b-mech { color:var(--mech);} .b-rev { color:var(--rev);}
+.b-chk { color:var(--chk);} .b-fmt { color:var(--fmt);}
+.artsec { margin:0 0 8px; }
+.arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
+         border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
+         margin:14px 0 6px; }
+.item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
+.iline { margin-bottom:3px; }
+.item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
+             margin-right:8px; white-space:nowrap; }
+.t-mech { background:#dbeafe; color:#1e40af;} .t-rev { background:#fef3c7; color:#92400e;}
+.t-chk { background:#f3f4f6; color:#374151;}
+.t-naked { background:#ede9fe; color:#5b21b6;}
+.t-cur { background:#dcfce7; color:#166534;}
+.t-space { background:#fef9c3; color:#854d0e;}
+details.citem.cur > summary { opacity:.72; }
+details.citem.cur .law { font-weight:500; }
+/* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
+details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
+    display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+details.citem > summary::-webkit-details-marker { display:none; }
+details.citem > summary::before { content:"▸"; color:#9ca3af; font-size:11px; margin-right:2px; }
+details.citem[open] > summary::before { content:"▾"; color:var(--navy2); }
+details.citem[open] { background:#fbfcfe; }
+details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 10px; }
+details.citem > .diff { margin:6px 10px 10px; }
+details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
+.item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+.basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
+.basis b { color:#374151; font-weight:600; }
+.ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
+           border-left:3px solid var(--navy2); border-radius:0 6px 6px 0; padding:8px 11px;
+           margin:5px 0 9px; white-space:pre-wrap; line-height:1.7; }
+.ordtext b { color:var(--navy); margin-right:5px; }
+mark.cite-law { background:#eff6ff; color:#1e3a8a;
+   text-decoration:underline; text-decoration-color:#2563eb; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-naked { background:#f5f3ff; color:#5b21b6;
+   text-decoration:underline dashed; text-decoration-color:#7c3aed; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-local { background:#f1f5f9; color:#475569;
+   text-decoration:underline dotted; text-decoration-color:#94a3b8; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+.page .leg { font-size:12px; color:var(--muted); margin:0 0 18px; display:flex; gap:14px;
+        flex-wrap:wrap; align-items:center; }
+.page .leg mark { padding:0 4px; border-radius:2px; }
+.item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
+            background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
+.diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
+.drow + .drow { border-top:1px solid #f1f3f5; }
+.dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
+.dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
+.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
+         border-radius:2px; padding:0 1px; }
+mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
+mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
+          padding:0 2px; cursor:help; }
+.page footer { color:#9aa3af; font-size:11.5px; margin-top:34px; padding-top:14px;
+         border-top:1px solid var(--line); text-align:center; }
+@media print {
+  @page { size:A4; margin:16mm; }
+  body { background:#fff; }
+  .page { max-width:none; margin:0; padding:0; border-top:none; box-shadow:none; }
+  .ord, .card { border-color:#c4cbd4; }
+  .dochd { border-bottom-color:#000; }
+  mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 도시공원 및 녹지 등에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">1</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">13</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 도시공원 및 녹지 등에 관한 조례</h2><div class="meta">시행 2020-09-29 · 정비 항목 15건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(적용범위) 이 조례는 <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제2조">「도시공원 및 녹지 등에 관한 법률」(이하 “법”이라 한다) 제2조제1호</mark>에 따른 공원녹지에 적용한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제2조제1호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2020-06-09</b></div></div></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(도시공원조성계획의 경미한 변경) <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률 시행령제13조">「도시공원 및 녹지 등에 관한 법률 시행령」(이하 “영”이라 한다) 제13조제4호</mark>에서 규정한 “조례로 정하는 사항”이란 다음 각 호의 어느 하나에 해당하는 사항을 말한다.
+1. 근린공원, 어린이공원의 조성계획 변경
+2. 공원 및 녹지 관리를 위한 시설의 보수ㆍ개량으로 인한 변경</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률 시행령」 제13조제4호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2019-06-11</b> → 현행 조문 <b>2019-06-11</b></div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(도시공원의 설치ㆍ관리) 
+① <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제19조">법 제19조</mark>에 따라 도시공원(이하 “공원”이라 한다)은 군포시장(이하 “시장”이라 한다)이 공원조성계획에 의하여 설치ㆍ관리함을 원칙으로 한다. 다만, <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제21조">법 제21조제1항</mark>에 따라 시장이 아닌 자는 시장의 공원조성계획에 의하여 공원 및 공원시설을 설치할 수 있다.
+② 제1항에 따른 공원의 설치는 도시계획으로 결정된 공원단위로 조성한다. 다만, 대단위 공원조성의 경우 공익상 시장이 필요하다고 인정할 때에는 공원면적의 일부에 공원시설을 설치할 수 있다.
+③ 시장은 공원 및 녹지를 시민이 편리하게 이용할 수 있도록 개방하여 관리한다. 다만, 시장이 시설물의 보호를 위하여 필요하다고 인정하는 경우에는 이용시간을 제한할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제19조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2013-03-23</b> → 현행 조문 <b>2013-03-23</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제21조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2015-01-20</b> → 현행 조문 <b>2015-01-20</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(공원점용허가) 
+① <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제24조">법 제24조</mark>에 따라 점용허가를 할 수 있는 공원은 다음 각 호와 같다.
+1. 도시계획사업 또는 다른 법률에 따라 공원조성이 완료(일부 조성이 완료된 경우는 완료된 부분)된 공원
+2. <mark class="cite-law" title="국토의 계획 및 이용에 관한 법률제85조">「국토의 계획 및 이용에 관한 법률」제85조제3항</mark>에 따른 단계별 집행계획상 제1단계 집행계획에 포함되지 아니한 공원
+3. <mark class="cite-law" title="국토의 계획 및 이용에 관한 법률제85조">「국토의 계획 및 이용에 관한 법률」제85조제3항</mark>에 따라 단계별 집행계획수립 대상 공원으로서 점용허가 신청일을 기준으로 단계별 집행계획이 수립되지 아니한 상태에서 도시계획 결정의 고시일부터 2년이 경과한 공원
+② 제1항의 규정에 불구하고 다음 각 호의 어느 하나에 해당하는 공원에 대하여는 점용허가를 할 수 있다.
+1. 제1항제1호부터 제3호까지에 해당하지 아니하는 공원으로서 <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제16조">법 제16조</mark>에 따른 공원 조성계획상 공원시설 계획이 없고, 시장이 공원조성 및 관리에 지장이 없다고 인정하는 경우
+2. 제1항제2호 또는 제3호에 해당하는 공원으로서 <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제16조">법 제16조</mark>에 따른 공원조성계획상 공원시설이 계획된 지역
+3. <mark class="cite-local" title="도시계획시설의 결정ㆍ구조 및 설치기준에 관한 규칙제3조">「도시계획시설의 결정ㆍ구조 및 설치기준에 관한 규칙」제3조</mark>에 따라 설치하는 다른 도시계획시설
+③ <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제24조">법 제24조제2항</mark>에 따라 공원점용허가를 하고자 하는 경우 다음 각 호의 조건에 적합하여야 한다.
+1. 점용목적을 구체적으로 기재하여 점용목적 이외의 용도로 사용되지 아니하도록 할 것
+2. 지하에 독립된 시설물을 설치하는 경우로서 출입구 및 환기구 등 반드시 설치하여야 할 부대시설의 일부를 공원의 지상에 설치하는 경우에는 그 규모를 최소화하고 성토ㆍ차폐ㆍ수목식재 등의 조경을 하여 주변경관과 조화되도록 할 것
+3. 오ㆍ폐수 및 매연의 과다 배출 등 환경오염을 유발하는 시설이 아닐 것
+4. 가설건축물의 설치 시에는 다른 지목에 해당하는 용도로 변경시킬 목적이 아닌 임시적이고 일시적인 용도의 변경일 것
+5. 가설건축물의 경우 점용허가로 인하여 새로운 진입도로의 설치를 요하지 아니할 것
+6. 형질변경 시에는 적절한 토공계획을 수립하여 절ㆍ성토를 최소화하여야 하며, 절ㆍ성토 사면에 대하여 별도의 사면보강 및 식재 계획 등을 수립할 것
+7. 죽목의 벌채 시에는 보존가치가 높은 죽목은 원형보존을 하고 부득이한 경우에는 이식계획을 수립할 것
+8. 그 밖에 <mark class="cite-law" title="건축법">「건축법」</mark>등 관계 법령에 위배되지 아니할 것</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「국토의 계획 및 이용에 관한 법률」 제85조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2017-12-26</b> → 현행 조문 <b>2017-12-26</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제24조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2016-05-29</b> → 현행 조문 <b>2016-05-29</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제16조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2016-05-29</b> → 현행 조문 <b>2016-05-29</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제24조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2016-05-29</b> → 현행 조문 <b>2016-05-29</b></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(녹지점용허가) 
+① <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제38조">법 제38조</mark>에 따라 점용허가를 할 수 있는 녹지는 다음 각 호와 같다.
+1. 도시계획사업 또는 다른 법률에 따라 녹지조성이 완료(일부 조성이 완료된 경우는 완료된 부분)된 녹지
+2. <mark class="cite-law" title="국토의 계획 및 이용에 관한 법률제85조">「국토의 계획 및 이용에 관한 법률」제85조제3항</mark>에 따른 단계별 집행계획상 제1단계 집행계획에 포함되지 아니한 녹지
+3. <mark class="cite-law" title="국토의 계획 및 이용에 관한 법률제85조">「국토의 계획 및 이용에 관한 법률」제85조제3항</mark>에 따른 단계별 집행계획수립 대상 녹지로서 점용허가 신청일을 기준으로 단계별 집행계획이 수립되지 않은 상태에서 도시계획결정 고시일 부터 2년이 경과한 녹지
+② 제1항제1호부터 제3호까지의 규정에 불구하고 <mark class="cite-local" title="도시계획시설의 결정ㆍ구조 및 설치기준에 관한 규칙제3조">「도시계획시설의 결정ㆍ구조 및 설치기준에 관한 규칙」제3조</mark>에 따라 녹지와 중복 결정되어 있는 다른 도시계획시설의 설치에 대하여는 점용허가를 할 수 있다.
+③ <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제38조">법 제38조</mark>에 따른 녹지 안에서의 점용허가는 다음 각 호의 기준에 적합한 경우에 허가를 할 수 있다.
+1. 제5조제3항제1호부터 제5호까지와, 제8호의 규정에 따른 기준에 적합할 것
+2. 녹지를 가로 지르는 진입도로
+가. 진입도로의 규모는 원칙적으로 8미터 이하로 할 것
+나. 이면도로가 이미 도시계획으로 결정된 경우에는 도로개설 전까지의 기간에 한할 것
+다. 도로변의 녹지를 가로 지르는 진입도로 간의 최소거리는 250미터 이상으로 할 것. 다만, 현지여건상 불가피하거나 교통의 원활한 소통을 위하여 시설물의 특성상 진ㆍ출입구의 분리가 필요한 경우에는 그러하지 아니한다.
+라. 도로변의 녹지를 가로 지르는 보행전용 진입도로 간의 최소거리는 100미터 이상으로 할 것. 다만, 현지 여건상 불가피한 경우에는 그러하지 아니한다.
+3. 철도변 녹지 안에 점용허가를 하고자 할 때에는 <mark class="cite-law" title="철도안전법">「철도안전법」</mark>시행령 제63조에 따라 철도보호지구 관리자와 사전에 협의할 것
+4. 녹지의 결정으로 인하여 <mark class="cite-law" title="지적법">「지적법」</mark>에 따른 지목이 대지인 토지가 맹지가 된 경우에는 토지의 현지여건을 고려하여 이면도로를 계획한 후 점용 허가할 것
+④ 제3항의 규정에 불구하고 다음 각 호의 어느 하나에 해당하는 경우에는 허가할 수 없다.
+1. 건축법상 도로로 사용하기 위하여 점용하고자 하는 경우. 다만, 제3항제2호나목에 해당하는 경우에는 그러하지 아니하다.
+2. 자동차 전용 도로변 또는 우회 도로변의 녹지. 다만, 진입도로의 개설이 녹지의 기능을 저해하지 아니하면서 주변의 교통체증을 현격히 감소시키는 등 그 필요성이 인정되는 경우로서 도로 관리청과 협의한 경우에는 그러하지 아니하다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「국토의 계획 및 이용에 관한 법률」 제85조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2017-12-26</b> → 현행 조문 <b>2017-12-26</b></div></div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「지적법」</span></div><div class="act">「지적법」 제명변경·폐지 여부를 확인하고 이 조례 제6조의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제38조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2020-06-11</b> → 현행 조문 <b>2024-05-17</b></div></div></div><div class="artsec" data-oc="제12조"><div class="arthd">조례 제12조</div><div class="ordtext"><b>제12조</b> 제12조(공원 및 공원시설의 사용허가) 
+① 다음 각 호의 어느 하나에 해당하는 사유로 공원 및 공원시설을 사용하고자 하는 경우에는 시장의 허가를 받아야 하며, 허가사항을 변경하고자 하는 경우에도 또한 같다.
+1. <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제2조">법 제2조제4호</mark>의 공원시설의 사용
+2. 체육대회ㆍ집회 등을 하기 위하여 일정한 지역의 일시 사용
+3. 제1호부터 제2호의 사항과 유사하다고 시장이 인정하는 경우
+② 제1항의 규정에 불구하고 다음 각 호의 어느 하나에 해당하는 경우에는 사용허가를 하지 아니할 수 있다.
+1. 중앙공원
+2. 공익을 저해할 우려가 있다고 판단되는 경우
+3. 공공질서와 지역주민의 정서를 해할 우려가 있는 경우
+4. 시설 또는 기반시설물의 관리에 지장이 있다고 인정하는 경우
+5. 특정 단체 및 기업의 홍보 등이 목적인 경우
+6. 그 밖에 사용허가가 부적당하다고 시장이 인정하는 경우
+③ 제1항에 따른 허가는 접수순위 및 군포시민을 우선으로 하고, 법인 또는 단체의 경우에는 그 소재지가 군포시 이거나 주사업장이 군포시에 소재한 경우에 한한다. 다만, 시장이 특별한 사유가 있다고 인정하는 때에는 그러하지 아니하다.
+④ 사용허가 신청방법 및 구비서류 등 그 밖에 필요한 사항은 규칙으로 정한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제2조제4호</span></div><div class="act">「도시공원 및 녹지 등에 관한 법률」 제2조 개정 내용을 반영하여 이 조례 제12조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2020-06-09</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">4.  &quot;공원시설&quot;이란 도시공원의 효용을 다하기 위하여 설치하는 다음 각 목의 시설을 말한다.
+가.  도로 또는 광장
+나.  화단, 분수, 조각 등 조경시설
+다.  휴게소, 긴 의자 등 휴양시설
+라.  그네, 미끄럼틀 등 유희시설
+마.  테니스장, 수영장, 궁도장 등 운동시설
+바.  식물원, 동물원, 수족관, 박물관, 야외음악당 등 교양시설
+사.  주차장, 매점, 화장실 등 이용자를 위한 편익시설
+아.  관리사무소, 출입문, 울타리, 담장 등 공원관리시설
+자.  실습장, 체험장, 학습장, 농자재 보관창고 등 도시농업(「도시농업의 육성 및 지원에 관한 법률」 제2조제1호에 따른 도시농업을 말한다. 이하 같다)을 위한 시설
+차.  <mark class="pt" title="내진성 저수조, 발전시설, 소화 및 급수시설, 비상용 화장실 등 재난관리 추가됨">‸</mark>그 밖에 도시공원의 효용을 다하기 위한 시설로서 국토교통부령으로 정하는 시설</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">4.  &quot;공원시설&quot;이란 도시공원의 효용을 다하기 위하여 설치하는 다음 각 목의 시설을 말한다.
+가.  도로 또는 광장
+나.  화단, 분수, 조각 등 조경시설
+다.  휴게소, 긴 의자 등 휴양시설
+라.  그네, 미끄럼틀 등 유희시설
+마.  테니스장, 수영장, 궁도장 등 운동시설
+바.  식물원, 동물원, 수족관, 박물관, 야외음악당 등 교양시설
+사.  주차장, 매점, 화장실 등 이용자를 위한 편익시설
+아.  관리사무소, 출입문, 울타리, 담장 등 공원관리시설
+자.  실습장, 체험장, 학습장, 농자재 보관창고 등 도시농업(「도시농업의 육성 및 지원에 관한 법률」 제2조제1호에 따른 도시농업을 말한다. 이하 같다)을 위한 시설
+차.  <mark class="i">내진성 저수조, 발전시설, 소화 및 급수시설, 비상용 화장실 등 재난관리시설
+카.  </mark>그 밖에 도시공원의 효용을 다하기 위한 시설로서 국토교통부령으로 정하는 시설</span></div></div></div></div><div class="artsec" data-oc="제15조"><div class="arthd">조례 제15조</div><div class="ordtext"><b>제15조</b> 제15조(과태료 부과기준) <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제56조">법 제56조제1항 및 제2항</mark>에 따른 과태료의 부과기준은 <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률 시행령제51조">영 제51조제1항</mark>의 별표 4에 따른다.
+
+[전문개정 2015. 12. 31]
+
+[제목개정 2015. 12. 31]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제56조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2013-05-22</b> → 현행 조문 <b>2013-05-22</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률 시행령」 제51조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2012-03-13</b> → 현행 조문 <b>2012-03-13</b></div></div></div><div class="artsec" data-oc="제16조"><div class="arthd">조례 제16조</div><div class="ordtext"><b>제16조</b> 제16조(설치 및 기능) <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제50조">법 제50조제2항</mark>에서 규정한 사항을 심의하기 위하여 군포시도시공원위원회(이하 “위원회”라 한다)를 둔다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제50조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2020-06-11</b> → 현행 조문 <b>2024-05-17</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

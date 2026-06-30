@@ -1,0 +1,366 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>군포시 전통시장 및 상점가 육성을 위한 조례 — 정비 권고(분석 결과)</title><style>
+/* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
+   자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
+.page, .ord { --navy:#13325b; --navy2:#1d4e89;
+  --mech:#1d4ed8; --rev:#b45309; --chk:#52525b; --fmt:#6d28d9; --cur:#15803d;
+  --ink:#1f2937; --muted:#6b7280; --line:#d8dee6; --soft:#f6f8fb; }
+* { box-sizing: border-box; }
+/* 독립 권고서 페이지 한정(body.report·.page) — 대시보드 주입 시 충돌 방지.
+   대시보드는 자체 body/h1/.cards/.sub/.card 를 가져 prefix 없으면 덮어쓴다. */
+body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       color:var(--ink); margin:0; background:#eef1f5; line-height:1.55;
+       -webkit-text-size-adjust:100%; }
+.page { max-width:840px; margin:24px auto; padding:38px 44px 52px; background:#fff;
+        border-top:4px solid var(--navy); box-shadow:0 1px 5px rgba(15,33,66,.10); }
+/* 문서 머리 — 공문 단정형(머리표·제목·요지, 아래 굵은 밑줄) */
+.page .dochd { border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:22px; }
+.page .dochd .kicker { font-size:11.5px; letter-spacing:3px; color:var(--navy2);
+        font-weight:700; margin:0 0 6px; }
+.page h1 { font-size:22px; line-height:1.34; margin:0; color:var(--navy);
+     font-weight:700; letter-spacing:-.3px; }
+.page .sub { color:var(--muted); font-size:12.5px; margin-top:7px; }
+.page .cards { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 20px; }
+.page .card { flex:1 1 138px; border:1px solid var(--line); border-top:3px solid var(--chk);
+        border-radius:6px; padding:12px 15px; }
+.page .card .n { font-size:25px; font-weight:700; line-height:1; color:var(--ink); }
+.page .card .t { font-size:12.5px; color:var(--muted); margin-top:6px; }
+.page .g-mech { border-top-color:var(--mech);} .page .g-mech .n { color:var(--mech);}
+.page .g-rev { border-top-color:var(--rev);} .page .g-rev .n { color:var(--rev);}
+.page .g-chk { border-top-color:var(--chk);} .page .g-chk .n { color:var(--chk);}
+.page .g-fmt { border-top-color:var(--fmt);} .page .g-fmt .n { color:var(--fmt);}
+.page .g-cur { border-top-color:var(--cur);} .page .g-cur .n { color:var(--cur);}
+.ord { border:1px solid var(--line); border-radius:7px; padding:18px 20px;
+       margin:0 0 16px; page-break-inside:avoid; }
+.ord h2 { font-size:16.5px; margin:0 0 3px; color:var(--navy); font-weight:700;
+          padding-left:10px; border-left:4px solid var(--navy); }
+.ord .meta { color:var(--muted); font-size:12px; margin:0 0 12px; padding-left:14px; }
+.badges { margin:0 0 12px; }
+.badge { display:inline-block; font-size:11.5px; padding:2px 10px; border-radius:4px;
+         margin-right:6px; border:1px solid currentColor; background:#fff; font-weight:600; }
+.b-mech { color:var(--mech);} .b-rev { color:var(--rev);}
+.b-chk { color:var(--chk);} .b-fmt { color:var(--fmt);}
+.artsec { margin:0 0 8px; }
+.arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
+         border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
+         margin:14px 0 6px; }
+.item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
+.iline { margin-bottom:3px; }
+.item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
+             margin-right:8px; white-space:nowrap; }
+.t-mech { background:#dbeafe; color:#1e40af;} .t-rev { background:#fef3c7; color:#92400e;}
+.t-chk { background:#f3f4f6; color:#374151;}
+.t-naked { background:#ede9fe; color:#5b21b6;}
+.t-cur { background:#dcfce7; color:#166534;}
+.t-space { background:#fef9c3; color:#854d0e;}
+details.citem.cur > summary { opacity:.72; }
+details.citem.cur .law { font-weight:500; }
+/* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
+details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
+    display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+details.citem > summary::-webkit-details-marker { display:none; }
+details.citem > summary::before { content:"▸"; color:#9ca3af; font-size:11px; margin-right:2px; }
+details.citem[open] > summary::before { content:"▾"; color:var(--navy2); }
+details.citem[open] { background:#fbfcfe; }
+details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 10px; }
+details.citem > .diff { margin:6px 10px 10px; }
+details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
+.item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+.basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
+.basis b { color:#374151; font-weight:600; }
+.ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
+           border-left:3px solid var(--navy2); border-radius:0 6px 6px 0; padding:8px 11px;
+           margin:5px 0 9px; white-space:pre-wrap; line-height:1.7; }
+.ordtext b { color:var(--navy); margin-right:5px; }
+mark.cite-law { background:#eff6ff; color:#1e3a8a;
+   text-decoration:underline; text-decoration-color:#2563eb; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-naked { background:#f5f3ff; color:#5b21b6;
+   text-decoration:underline dashed; text-decoration-color:#7c3aed; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-local { background:#f1f5f9; color:#475569;
+   text-decoration:underline dotted; text-decoration-color:#94a3b8; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+.page .leg { font-size:12px; color:var(--muted); margin:0 0 18px; display:flex; gap:14px;
+        flex-wrap:wrap; align-items:center; }
+.page .leg mark { padding:0 4px; border-radius:2px; }
+.item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
+            background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
+.diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
+.drow + .drow { border-top:1px solid #f1f3f5; }
+.dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
+.dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
+.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
+         border-radius:2px; padding:0 1px; }
+mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
+mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
+          padding:0 2px; cursor:help; }
+.page footer { color:#9aa3af; font-size:11.5px; margin-top:34px; padding-top:14px;
+         border-top:1px solid var(--line); text-align:center; }
+@media print {
+  @page { size:A4; margin:16mm; }
+  body { background:#fff; }
+  .page { max-width:none; margin:0; padding:0; border-top:none; box-shadow:none; }
+  .ord, .card { border-color:#c4cbd4; }
+  .dochd { border-bottom-color:#000; }
+  mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 전통시장 및 상점가 육성을 위한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">10</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">1</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">34</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 전통시장 및 상점가 육성을 위한 조례</h2><div class="meta">시행 2019-07-09 · 정비 항목 45건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 10</span><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
+1. “전통시장”이란 <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제2조">「전통시장 및 상점가 육성을 위한 특별법」(이하 “법”이라 한다) 제2조제1호</mark>에 따라 대규모 점포로 등록된 시장과 <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법 시행령제2조">「전통시장 및 상점가 육성을 위한 특별법 시행령」(이하 “영”이라 한다) 제2조 규정</mark>에 의한 50개 이상의 점포가 있는 군포시장이 인정하는 시장으로써 시설물의 노후로 인한 정비, 유통개선 등 현대화가 필요한 시장을 말한다.&lt;개정 2016. 12. 30., 2017.9.29&gt;
+2. “인정시장”이란  <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제2조">법 제2조제1호나목</mark>과 <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법 시행령제2조">영 제2조 규정</mark>에 의한 전통시장의 기능을 하고 있는 군포시장이 인정하는 시장을 말한다.&lt;개정 2016. 12. 30.&gt;
+3. “임시시장”이란  <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제14조">법 제14조제1항</mark> 각 호의 기능을 행하기 위하여 일정한 기간동안 군포시장이 개설한 시장 또는 군포시장에게 신고한 시장을 말한다.&lt;개정 2016. 12. 30.&gt;
+4. “상점가”란 <mark class="cite-law" title="유통산업발전법제2조">「유통산업발전법」 제2조제7호</mark>, <mark class="cite-law" title="유통산업발전법 시행령제5조">같은 법 시행령 제5조 규정</mark>에 따라 일정범위 안에 가로 또는 지하도를 따라 형성된 상권 지역으로 도ㆍ소매업 또는 용역업에 제공되는 건축물이 점유하는 토지면적 합계가 2천제곱미터 이내 50점포 이상 밀집한 지역을 말한다.&lt;개정 2016. 12. 30.&gt;
+5. “상인”이란 전통시장ㆍ상점가 및 시장활성화구역에서 점포를 소유 또는 임차하여 상품을 매매하거나 용역을 제공하는 등 직접 영업에 종사하는 사람을 말한다. 다만, 시장전체가 지붕 가리개형 시장의 경우에는 노점에서 상품을 매매하거나 용역을 제공하는 사람을 포함한다.&lt;개정 2016. 12. 30.&gt;
+6. “점포”란 상가건축물 또는 지붕이 있는 상가건물에서 도매업ㆍ소매업 및 용역업을 영위하는 장소나 공간을 말한다. 다만, 시장전체가 지붕 가리개형 시장의 경우에는 지붕이 없더라도 상인들의 영업에 제공되는 일정 면적의 단위 장소를 하나의 점포로 본다.
+7. “시설현대화사업으로 설치한 시설물”(이하 “시설물”이라 한다)이란 상권 활성화를 위하여 정부와 군포시(이하 “시”라 한다)로부터 보조금을 지원받아 전통시장ㆍ상점가 및 시장활성화구역 안과 밖에 설치한 시설물을 말한다.&lt;개정 2016. 12. 30.&gt;
+8. “편의시설”이란 상인과 고객에게 안전 및 편의를 제공하기 위하여 설치한 주차장, 비 가리개, 도로, 화장실, 전기ㆍ소방ㆍ가스ㆍ상하수도 및 냉ㆍ난방시설, 고객지원센터, 콜센터 및 행사공간을 말한다.
+9. “상인회”란  <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제65조">법 제65조</mark> 및<mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법 시행규칙">「전통시장 및 상점가 육성을 위한 특별법 시행규칙」</mark>(이하 “규칙”이라 한다.) 제12조에 따라 상인들이 자율적으로 설립하여 군포시장에게 등록한 단체나 법인조직을 말한다.&lt;개정 2017.9.29&gt;
+10. “시장관리자”란  <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제67조">법 제67조제1항</mark> 각 호의 업무를 수행하는 자로서 <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제67조">법 제67조제2항</mark> 각 호 중 군포시장이 지정하는 자를 말한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제2조제1호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-06-12</b> → 현행 조문 <b>2025-12-16</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법 시행령」 제2조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-02-12</b> → 현행 조문 <b>2019-02-12</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「유통산업발전법」 제2조제7호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2015-02-03</b> → 현행 조문 <b>2025-10-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「유통산업발전법 시행령」 제5조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-01-30</b> → 현행 조문 <b>2018-01-30</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제2조제1호나목</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-06-12</b> → 현행 조문 <b>2025-12-16</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제14조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-06-12</b> → 현행 조문 <b>2018-06-12</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제65조</span></div><div class="act">「전통시장 및 상점가 육성을 위한 특별법」 제65조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-01-08</b> → 현행 조문 <b>2024-02-20</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제65조(상인회)
+① 시장등에서 사업을 직접 경영하는 상인의 전부 또는 일부는 상인회를 자율적으로 설립할 수 있다. &lt;개정 2013.5.28&gt;
+② <mark class="d">법인인</mark> 상인회는 주된 사무소의 소재지에서 설립등기를 함으로써 성립한다.<mark class="pt" title="&lt;개정 2021.4.20&gt; 추가됨">‸</mark>
+③ 상인회를 설립하려는 자는 중소벤처기업부령으로 정하는 바에 따라 시장ㆍ군수ㆍ구청장에게 등록하여야 한다. 이 경우 법인인 상인회는 정관을 작성하여 시장ㆍ군수ㆍ구청장의 인가를 받아야 한다. 정관을 변경할 때에도 같다. &lt;개정 2013.3.23, 2017.7.26&gt;
+④ 상인회는 다음 각 호의 사업을 할 수 있다. &lt;개정 2013.5.28, 2018.6.12<mark class="pt" title=", 2024.2.20 추가됨">‸</mark>&gt;
+1.  시설 및 경영의 현대화를 위한 사업
+2.  상인의 매출 증대 및 영업활성화를 위한 공동사업
+3.  상인 교육 및 지역주민과의 협력사업
+4.  상거래 질서유지 및 고객불만 처리에 관한 업무
+5.  상업기반시설 관리업무(제67조에 따른 시장관리자의 역할을 겸하는 경우만 해당한다)
+6.  <mark class="d">화재예방과</mark> <mark class="d">화재안전관리를</mark> 위한 체계 구축ㆍ운영에 관한 업무
+7.  그 밖에 정부와 지방자치단체에서 시장등의 상권활성화를 위하여 위탁하거나 인정하는 사업
+⑤ 상인회는 상인회의 운영 및 제4항 각 호의 사업 수행에 필요한 경비를 회원으로부터 징수할 수 있다.
+⑥ 중소벤처기업부장관 및 시장ㆍ군수ㆍ구청장은 필요한 경우 상인회의 운영에 관한 서류의 제출을 요구할 수 있다. &lt;개정 2017.7.26&gt;
+⑦ 정부와 지방자치단체는 상인회가 제4항 각 호에 따른 사업을 수행할 때 필요한 비용을 예산의 범위에서 지원할 수 있다.
+⑧ 시장ㆍ군수ㆍ구청장은 제3항에 따라 등록된 상인회가 다음 각 호의 어느 하나에 해당하는 경우에는 그 등록을 취소할 수 있다. 다만, 제1호에 해당하는 경우에는 등록을 취소하여야 한다. &lt;신설 2019.1.8<mark class="pt" title=", 2021.4.20 추가됨">‸</mark>&gt;
+1.  거짓이나 그 밖의 부정한 방법으로 등록받은 경우
+2.  시장등의 상인이 아닌 자를 대표임원으로 선출한 경우
+3.  상인회의 정관 또는 규약에서 정하는 설립 목적에 위배되는 사업을 한 경우
+4.  등록된 상인회와 동일한 시장등의 상인 2분의 1 이상, <mark class="d">건축물ㆍ토지소유자의</mark> 2분의 1 이상의 동의로 등록 취소를 요청하는 경우
+⑨ 시장ㆍ군수ㆍ구청장은 제8항에 따라 상인회의 등록을 취소하려면 청문을 하여야 한다. &lt;신설 2019.1.8&gt;
+⑩ 제8항 및 제9항에 따른 상인회의 등록 취소 절차에 관하여 필요한 사항은 시ㆍ군ㆍ구의 조례로 정한다. &lt;신설 2019.1.8&gt;
+⑪ 상인회의 설립과 운영, 그 밖에 필요한 사항은 중소벤처기업부령으로 정하는 바에 따라 시ㆍ군ㆍ구의 조례로 정한다. &lt;개정 2013.3.23, 2017.7.26, 2019.1.8&gt;
+⑫ 법인인 상인회에 관하여 이 법에서 규정한 것을 제외하고는 「민법」 중 사단법인에 관한 규정을 준용한다. &lt;개정 2019.1.8&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제65조(상인회)
+① 시장등에서 사업을 직접 경영하는 상인의 전부 또는 일부는 상인회를 자율적으로 설립할 수 있다. &lt;개정 2013.5.28&gt;
+② <mark class="i">상인회를 법인으로 설립하려는 경우</mark> 상인회는 주된 사무소의 소재지에서 설립등기를 함으로써 성립한다.<mark class="i"> &lt;개정 2021.4.20&gt;</mark>
+③ 상인회를 설립하려는 자는 중소벤처기업부령으로 정하는 바에 따라 시장ㆍ군수ㆍ구청장에게 등록하여야 한다. 이 경우 법인인 상인회는 정관을 작성하여 시장ㆍ군수ㆍ구청장의 인가를 받아야 한다. 정관을 변경할 때에도 같다. &lt;개정 2013.3.23, 2017.7.26&gt;
+④ 상인회는 다음 각 호의 사업을 할 수 있다. &lt;개정 2013.5.28, 2018.6.12<mark class="i">, 2024.2.20</mark>&gt;
+1.  시설 및 경영의 현대화를 위한 사업
+2.  상인의 매출 증대 및 영업활성화를 위한 공동사업
+3.  상인 교육 및 지역주민과의 협력사업
+4.  상거래 질서유지 및 고객불만 처리에 관한 업무
+5.  상업기반시설 관리업무(제67조에 따른 시장관리자의 역할을 겸하는 경우만 해당한다)
+6.  <mark class="i">화재나</mark> <mark class="i">자연재해의 예방 및 안전관리를</mark> 위한 체계 구축ㆍ운영에 관한 업무
+7.  그 밖에 정부와 지방자치단체에서 시장등의 상권활성화를 위하여 위탁하거나 인정하는 사업
+⑤ 상인회는 상인회의 운영 및 제4항 각 호의 사업 수행에 필요한 경비를 회원으로부터 징수할 수 있다.
+⑥ 중소벤처기업부장관 및 시장ㆍ군수ㆍ구청장은 필요한 경우 상인회의 운영에 관한 서류의 제출을 요구할 수 있다. &lt;개정 2017.7.26&gt;
+⑦ 정부와 지방자치단체는 상인회가 제4항 각 호에 따른 사업을 수행할 때 필요한 비용을 예산의 범위에서 지원할 수 있다.
+⑧ 시장ㆍ군수ㆍ구청장은 제3항에 따라 등록된 상인회가 다음 각 호의 어느 하나에 해당하는 경우에는 그 등록을 취소할 수 있다. 다만, 제1호에 해당하는 경우에는 등록을 취소하여야 한다. &lt;신설 2019.1.8<mark class="i">, 2021.4.20</mark>&gt;
+1.  거짓이나 그 밖의 부정한 방법으로 등록받은 경우
+2.  시장등의 상인이 아닌 자를 대표임원으로 선출한 경우
+3.  상인회의 정관 또는 규약에서 정하는 설립 목적에 위배되는 사업을 한 경우
+4.  등록된 상인회와 동일한 시장등의 상인 2분의 1 이상, <mark class="i">토지소유자 총수 및 건축물 소유자 총수 각</mark> 2분의 1 이상의 동의로 등록 취소를 요청하는 경우
+⑨ 시장ㆍ군수ㆍ구청장은 제8항에 따라 상인회의 등록을 취소하려면 청문을 하여야 한다. &lt;신설 2019.1.8&gt;
+⑩ 제8항 및 제9항에 따른 상인회의 등록 취소 절차에 관하여 필요한 사항은 시ㆍ군ㆍ구의 조례로 정한다. &lt;신설 2019.1.8&gt;
+⑪ 상인회의 설립과 운영, 그 밖에 필요한 사항은 중소벤처기업부령으로 정하는 바에 따라 시ㆍ군ㆍ구의 조례로 정한다. &lt;개정 2013.3.23, 2017.7.26, 2019.1.8&gt;
+⑫ 법인인 상인회에 관하여 이 법에서 규정한 것을 제외하고는 「민법」 중 사단법인에 관한 규정을 준용한다. &lt;개정 2019.1.8&gt;</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제67조제1항</span></div><div class="act">「전통시장 및 상점가 육성을 위한 특별법」 제67조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-06-12</b> → 현행 조문 <b>2024-02-20</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 시장ㆍ군수ㆍ구청장은 해당 시장에 「유통산업발전법」 제12조제1항부터 제3항까지의 규정에 따른 대규모점포 개설자의 업무를 수행하는 자가 없을 때에는 제2항 각 호의 자 중에서 다음 각 호의 업무를 수행할 자(이하 &quot;시장관리자&quot;라 한다)를 지정할 수 있다. &lt;개정 2018.6.12<mark class="pt" title=", 2024.2.20 추가됨">‸</mark>&gt;
+1.  상업기반시설의 유지 및 관리
+2.  <mark class="d">화재예방과</mark> <mark class="d">화재안전관리를</mark> 위한 체계 구축ㆍ운영, 청소 및 방범 활동
+3.  고객의 안전유지 및 고객과 인근 지역 주민의 피해ㆍ불만의 처리
+4.  상거래 질서의 확립
+5.  그 밖에 시장 관리를 위하여 필요하다고 시장ㆍ군수ㆍ구청장이 인정하는 업무</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">① 시장ㆍ군수ㆍ구청장은 해당 시장에 「유통산업발전법」 제12조제1항부터 제3항까지의 규정에 따른 대규모점포 개설자의 업무를 수행하는 자가 없을 때에는 제2항 각 호의 자 중에서 다음 각 호의 업무를 수행할 자(이하 &quot;시장관리자&quot;라 한다)를 지정할 수 있다. &lt;개정 2018.6.12<mark class="i">, 2024.2.20</mark>&gt;
+1.  상업기반시설의 유지 및 관리
+2.  <mark class="i">화재나</mark> <mark class="i">자연재해의 예방 및 안전관리를</mark> 위한 체계 구축ㆍ운영, 청소 및 방범 활동
+3.  고객의 안전유지 및 고객과 인근 지역 주민의 피해ㆍ불만의 처리
+4.  상거래 질서의 확립
+5.  그 밖에 시장 관리를 위하여 필요하다고 시장ㆍ군수ㆍ구청장이 인정하는 업무</span></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제67조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-06-12</b> → 현행 조문 <b>2024-02-20</b></div></div></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(시장의 구역과 지정) 
+① 도매업ㆍ소매업 또는 용역업을 영위하는 점포가 밀집되어 하나의 상권을 이루고 있는 곳으로써, 등록시장은 <mark class="cite-law" title="유통산업발전법제8조">「유통산업발전법」 제8조</mark>에 따라 대규모 점포로 등록된 구역과, 인정시장은 규칙 제2조에 따라 군포시장으로부터 인정받은 구역을 말한다.
+② 새로이 시장구역을 설정하고자 하는 경우에는 건축물 배치가 상호 격리되지 않은 일단의 구역을 형성하여야 한다.
+③ 제2항에 따라 폭 12미터 이상의 양방통행 도로를 구획으로 건축물이 배치된 경우 이를 상호 격리된 것으로 보며, 보행자 전용도로 또는 일방통행로 및 폭 12미터 미만의 양방통행로를 구획으로 건축물이 배치된 경우에는 격리된 것으로 보지 않는다.
+④ 군포시장은 시장을 대표하는 자의 신청을 받아 시장구역을 다시 선정하고자 하는 경우에는 하나의 상권을 연결되는 범위 안에서 지정되도록 하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「유통산업발전법」 제8조</span></div><div class="act">「유통산업발전법」 제8조 개정 내용을 반영하여 이 조례 제3조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2016-01-06</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제8조(대규모점포등의 개설등록 및 변경등록)
+① 대규모점포를 개설하거나 제13조의3에 따른 전통상업보존구역에 준대규모점포를 개설하려는 자는 영업을 시작하기 전에 <mark class="d">산업통상자원부령으로</mark> 정하는 바에 따라 상권영향평가서 및 지역협력계획서를 첨부하여 특별자치시장ㆍ시장ㆍ군수ㆍ구청장에게 등록하여야 한다. 등록한 내용을 변경하려는 경우에도 또한 같다. &lt;개정 2013.3.23<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
+② 특별자치시장ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따라 제출받은 상권영향평가서 및 지역협력계획서가 미진하다고 판단하는 경우에는 제출받은 날부터 대통령령으로 정하는 기간 내에 그 사유를 명시하여 보완을 요청할 수 있다.
+③ 특별자치시장ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따라 개설등록 또는 변경등록[점포의 소재지를 변경하거나 매장면적이 개설등록(매장면적을 변경등록한 경우에는 변경등록) 당시의 매장면적보다 10분의 1이상 증가하는 경우로 한정한다]을 하려는 대규모점포등의 위치가 제13조의3에 따른 전통상업보존구역에 있을 때에는 등록을 제한하거나 조건을 붙일 수 있다. &lt;개정 2014.3.18&gt;
+④ 제3항에 따른 등록 제한 및 조건에 관한 세부 사항은 해당 지방자치단체의 조례로 정한다.
+⑤ 특별자치시장ㆍ시장ㆍ군수ㆍ구청장은 개설등록 또는 변경등록하려는 점포의 소재지로부터 <mark class="d">산업통상자원부령으로</mark> 정하는 거리 이내의 범위 일부가 인접 특별자치시ㆍ시ㆍ군ㆍ구(자치구를 말한다. 이하 같다)에 속하여 있는 경우 인접지역의 특별자치시장ㆍ시장ㆍ군수ㆍ구청장에게 개설등록 또는 변경등록을 신청 받은 사실을 통보하여야 한다. &lt;신설 2016.1.6<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
+⑥ 제5항에 따라 신청 사실을 통보받은 인접지역의 특별자치시장ㆍ시장ㆍ군수ㆍ구청장은 신청 사실을 통보받은 날로부터 20일 이내에 개설등록 또는 변경등록에 대한 의견을 제시할 수 있다. &lt;신설 2016.1.6&gt;
+⑦ 특별자치시장ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따라 제출받은 상권영향평가서 및 지역협력계획서를 검토하는 경우 협의회의 의견을 청취하여야 하며, 필요한 때에는 대통령령으로 정하는 전문기관에 이에 대한 조사를 하게 할 수 있다. &lt;신설 2016.1.6&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제8조(대규모점포등의 개설등록 및 변경등록)
+① 대규모점포를 개설하거나 제13조의3에 따른 전통상업보존구역에 준대규모점포를 개설하려는 자는 영업을 시작하기 전에 <mark class="i">산업통상부령으로</mark> 정하는 바에 따라 상권영향평가서 및 지역협력계획서를 첨부하여 특별자치시장ㆍ시장ㆍ군수ㆍ구청장에게 등록하여야 한다. 등록한 내용을 변경하려는 경우에도 또한 같다. &lt;개정 2013.3.23<mark class="i">, 2025.10.1</mark>&gt;
+② 특별자치시장ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따라 제출받은 상권영향평가서 및 지역협력계획서가 미진하다고 판단하는 경우에는 제출받은 날부터 대통령령으로 정하는 기간 내에 그 사유를 명시하여 보완을 요청할 수 있다.
+③ 특별자치시장ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따라 개설등록 또는 변경등록[점포의 소재지를 변경하거나 매장면적이 개설등록(매장면적을 변경등록한 경우에는 변경등록) 당시의 매장면적보다 10분의 1이상 증가하는 경우로 한정한다]을 하려는 대규모점포등의 위치가 제13조의3에 따른 전통상업보존구역에 있을 때에는 등록을 제한하거나 조건을 붙일 수 있다. &lt;개정 2014.3.18&gt;
+④ 제3항에 따른 등록 제한 및 조건에 관한 세부 사항은 해당 지방자치단체의 조례로 정한다.
+⑤ 특별자치시장ㆍ시장ㆍ군수ㆍ구청장은 개설등록 또는 변경등록하려는 점포의 소재지로부터 <mark class="i">산업통상부령으로</mark> 정하는 거리 이내의 범위 일부가 인접 특별자치시ㆍ시ㆍ군ㆍ구(자치구를 말한다. 이하 같다)에 속하여 있는 경우 인접지역의 특별자치시장ㆍ시장ㆍ군수ㆍ구청장에게 개설등록 또는 변경등록을 신청 받은 사실을 통보하여야 한다. &lt;신설 2016.1.6<mark class="i">, 2025.10.1</mark>&gt;
+⑥ 제5항에 따라 신청 사실을 통보받은 인접지역의 특별자치시장ㆍ시장ㆍ군수ㆍ구청장은 신청 사실을 통보받은 날로부터 20일 이내에 개설등록 또는 변경등록에 대한 의견을 제시할 수 있다. &lt;신설 2016.1.6&gt;
+⑦ 특별자치시장ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따라 제출받은 상권영향평가서 및 지역협력계획서를 검토하는 경우 협의회의 의견을 청취하여야 하며, 필요한 때에는 대통령령으로 정하는 전문기관에 이에 대한 조사를 하게 할 수 있다. &lt;신설 2016.1.6&gt;</span></div></div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(주요 시설물과 편의시설의 관리) 
+① 상인조직 또는 시장관리자는 시장의 시설물 및 편의시설이 본래의 기능을 유지할 수 있도록 유지ㆍ보수하고 관리하여야 한다.
+② 군포시장은 상인조직 또는 시장관리자와 협약에 의하여 시장활성화사업으로 설치된 주차장, 화장실, 비가림시설 등의 시설물을 위탁하여 관리할 수 있으며, 소요되는 비용을 지원할 수 있다.
+③ 군포시장은 시장에 설치된 편의시설의 재산가치가 지속적으로 감소하여 그 재산 가치가 상실돼서 상인조직 또는 시장관리자가 상인의 의견을 수렴하여 편의시설의 철거를 요구하는 경우에는 중소벤처기업부장관이 고시한 <mark class="cite-law" title="전통시장 및 상점가 시설현대화사업 운영지침">「전통시장 및 상점가 시설현대화사업 운영지침」</mark>을 위반하지 않는 범위 내에서 그 편의시설을 직접 철거하거나, 철거를 허락할 수 있으며 상인조직 또는 시장관리자가 직접 철거할 경우에는 예산의 범위 안에서 시설물의 공공성과 소유자 특성을 고려하여 소요비용의 전부 또는 일부를 지원할 수 있다.&lt;개정 2016. 12. 30, 2018.4.20&gt;
+④ 상인조직 또는 시장관리자는 주요 시설물과 편의시설에 대한 전기ㆍ가스ㆍ소방시설 등에 대하여 전문 업체와 유지관리계약 등의 방법으로 정기적인 점검을 실시하는 등 화재예방 및 안전 확보를 위한 조치를 취하여야 한다.
+⑤ 군포시장은 상인조직 또는 시장관리자의 청소 및 화재예방, 안전관리 등에 관한 업무 이행여부를 정기적으로 점검할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「전통시장 및 상점가 시설현대화사업 운영지침」</span></div><div class="act">「전통시장 및 상점가 시설현대화사업 운영지침」 제명변경·폐지 여부를 확인하고 이 조례 제4조의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(인정시장의 기준 등) 
+① <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법 시행령제2조">영 제2조제1항</mark>에 따라 도매업ㆍ소매업 또는 용역업을 영위하는 점포의 수가 50개 이상인 곳으로 다음 각 호의 어느 하나에 해당하여야 한다.
+1. 점포에 제공되는 건축물과 편의시설(도로를 제외한다)이 점유하는 토지면적의 합계가 1천 제곱미터 이상인 곳
+2. 상가건물 또는 복합형 상가건물인 경우에는 판매 및 영업시설과 편의시설을 합한 건축물의 연면적이 1천 제곱미터 이상인 곳
+② 점포의 수를 산정할 때에는 점포의 크기와 관계없이 사업을 직접 영위하는 자를 기준으로 한다. 다만, 동일한 상인이 2곳 이상에서 영업을 영위할 경우에는 각각 따로 본다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법 시행령」 제2조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-02-12</b> → 현행 조문 <b>2019-02-12</b></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(인정시장의 면적에서 제외되는 시설과 부지) 인정시장의 면적에서 제외되는 시설과 부지는 다음 각 호와 같다.
+1. <mark class="cite-law" title="건축법제2조">「건축법」 제2조제1항제11호</mark>에 따른 도로
+2. <mark class="cite-law" title="건축법제2조,제2조">「건축법」 제2조제2항제1호 및 제2호</mark>에 따른 단독주택 및 공동주택의 용도로 사용되는 건축물
+3. 건축 중에 있는 건축물
+4. 임시로 설치한 가설물
+5. 기타 교육연구 및 복지시설(학원은 제외한다), 공장, 공공용시설 등 도매업ㆍ소매업 또는 용역업에 제공되지 않는 건축물</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「건축법」 제2조제1항제11호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2017-12-26</b> → 현행 조문 <b>2022-11-15</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「건축법」 제2조제2항제1호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2017-12-26</b> → 현행 조문 <b>2022-11-15</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「건축법」 제2조제2항제2호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2017-12-26</b> → 현행 조문 <b>2022-11-15</b></div></div></div><div class="artsec" data-oc="제10조"><div class="arthd">조례 제10조</div><div class="ordtext"><b>제10조</b> 제10조(인정시장의 인정 및 취소) 
+① 법에 의한 전통시장 중 인정시장으로 인정받으려면 시장관리 법인ㆍ조합상인회장 등 대표자가 규칙 제2조의 절차를 거쳐 신청하여야 한다.&lt;개정 2016. 12. 30.&gt;
+② 군포시장은 <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법 시행령제2조">영 제2조</mark>에 따른 인정시장의 인정요건을 충족하지 못한 때에는 인정을 취소할 수 있다.
+③ 군포시장은 제2항에 따라 인정을 취소할 경우에는 <mark class="cite-law" title="행정절차법">「행정절차법」</mark>에 따른 청문절차를 거친다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법 시행령」 제2조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-02-12</b> → 현행 조문 <b>2019-02-12</b></div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(시장활성화구역의 요건) 시장은  <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제10조">법 제10조</mark>에 따라 시장활성화구역을 지정할 수 있으며, 시장활성화구역은 2개 이상의 시장 또는 시장과 상점가가 인접하여 하나의 상권을 이루고 있어 규모의 상권을 형성함으로써 고객유치와 매출증대를 도모하면서 지역발전을 촉진하고자 하는 지역으로 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제10조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-07-09</b> → 현행 조문 <b>2026-06-17</b></div></div></div><div class="artsec" data-oc="제15조"><div class="arthd">조례 제15조</div><div class="ordtext"><b>제15조</b> 제15조(임시시장의 개설) 군포시장은  <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제14조">법 제14조제1항</mark>에 따라 임시시장을 직접 개설하거나, 신청에 의하여 개설할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제14조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-06-12</b> → 현행 조문 <b>2018-06-12</b></div></div></div><div class="artsec" data-oc="제16조"><div class="arthd">조례 제16조</div><div class="ordtext"><b>제16조</b> 제16조(임시시장의 신고) <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제14조">법 제14조제1항</mark> 각 호 이외의 부분단서에 따라 토지의 면적이 1천 제곱미터 이상이거나 건축물의 연면적이 1천 제곱미터 이상인 임시시장을 개설하고자 하는 자는 군포시장에게 신고하여야 한다.&lt;개정 2016. 12. 30.&gt;
+
+[제목개정 2016. 12. 30.] : 조의 제목 개정</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제14조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-06-12</b> → 현행 조문 <b>2018-06-12</b></div></div></div><div class="artsec" data-oc="제19조"><div class="arthd">조례 제19조</div><div class="ordtext"><b>제19조</b> 제19조(상인회의 설립) 
+① <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제65조">법 제65조</mark>에 따라 전통시장ㆍ상점가 및 시장활성화구역의 상인회(이하 “상인회”라 한다)는 규칙 제12조제1항의 기준에 해당하는 상인의 동의를 얻어 설립한다.&lt;개정 2016. 12. 30.&gt;
+② 상인회 회원은 1점포당 1인을 기준으로 하며, 그 점포에서 실제 영업을 하는 상인을 회원으로 하는 것을 원칙으로 한다. 다만, 시장의 특성에 따라 점포 없이 노상에서 영업을 하는 자를 회원으로 할 수도 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제65조</span></div><div class="act">「전통시장 및 상점가 육성을 위한 특별법」 제65조 개정 내용을 반영하여 이 조례 제19조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-01-08</b> → 현행 조문 <b>2024-02-20</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제65조(상인회)
+① 시장등에서 사업을 직접 경영하는 상인의 전부 또는 일부는 상인회를 자율적으로 설립할 수 있다. &lt;개정 2013.5.28&gt;
+② <mark class="d">법인인</mark> 상인회는 주된 사무소의 소재지에서 설립등기를 함으로써 성립한다.<mark class="pt" title="&lt;개정 2021.4.20&gt; 추가됨">‸</mark>
+③ 상인회를 설립하려는 자는 중소벤처기업부령으로 정하는 바에 따라 시장ㆍ군수ㆍ구청장에게 등록하여야 한다. 이 경우 법인인 상인회는 정관을 작성하여 시장ㆍ군수ㆍ구청장의 인가를 받아야 한다. 정관을 변경할 때에도 같다. &lt;개정 2013.3.23, 2017.7.26&gt;
+④ 상인회는 다음 각 호의 사업을 할 수 있다. &lt;개정 2013.5.28, 2018.6.12<mark class="pt" title=", 2024.2.20 추가됨">‸</mark>&gt;
+1.  시설 및 경영의 현대화를 위한 사업
+2.  상인의 매출 증대 및 영업활성화를 위한 공동사업
+3.  상인 교육 및 지역주민과의 협력사업
+4.  상거래 질서유지 및 고객불만 처리에 관한 업무
+5.  상업기반시설 관리업무(제67조에 따른 시장관리자의 역할을 겸하는 경우만 해당한다)
+6.  <mark class="d">화재예방과</mark> <mark class="d">화재안전관리를</mark> 위한 체계 구축ㆍ운영에 관한 업무
+7.  그 밖에 정부와 지방자치단체에서 시장등의 상권활성화를 위하여 위탁하거나 인정하는 사업
+⑤ 상인회는 상인회의 운영 및 제4항 각 호의 사업 수행에 필요한 경비를 회원으로부터 징수할 수 있다.
+⑥ 중소벤처기업부장관 및 시장ㆍ군수ㆍ구청장은 필요한 경우 상인회의 운영에 관한 서류의 제출을 요구할 수 있다. &lt;개정 2017.7.26&gt;
+⑦ 정부와 지방자치단체는 상인회가 제4항 각 호에 따른 사업을 수행할 때 필요한 비용을 예산의 범위에서 지원할 수 있다.
+⑧ 시장ㆍ군수ㆍ구청장은 제3항에 따라 등록된 상인회가 다음 각 호의 어느 하나에 해당하는 경우에는 그 등록을 취소할 수 있다. 다만, 제1호에 해당하는 경우에는 등록을 취소하여야 한다. &lt;신설 2019.1.8<mark class="pt" title=", 2021.4.20 추가됨">‸</mark>&gt;
+1.  거짓이나 그 밖의 부정한 방법으로 등록받은 경우
+2.  시장등의 상인이 아닌 자를 대표임원으로 선출한 경우
+3.  상인회의 정관 또는 규약에서 정하는 설립 목적에 위배되는 사업을 한 경우
+4.  등록된 상인회와 동일한 시장등의 상인 2분의 1 이상, <mark class="d">건축물ㆍ토지소유자의</mark> 2분의 1 이상의 동의로 등록 취소를 요청하는 경우
+⑨ 시장ㆍ군수ㆍ구청장은 제8항에 따라 상인회의 등록을 취소하려면 청문을 하여야 한다. &lt;신설 2019.1.8&gt;
+⑩ 제8항 및 제9항에 따른 상인회의 등록 취소 절차에 관하여 필요한 사항은 시ㆍ군ㆍ구의 조례로 정한다. &lt;신설 2019.1.8&gt;
+⑪ 상인회의 설립과 운영, 그 밖에 필요한 사항은 중소벤처기업부령으로 정하는 바에 따라 시ㆍ군ㆍ구의 조례로 정한다. &lt;개정 2013.3.23, 2017.7.26, 2019.1.8&gt;
+⑫ 법인인 상인회에 관하여 이 법에서 규정한 것을 제외하고는 「민법」 중 사단법인에 관한 규정을 준용한다. &lt;개정 2019.1.8&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제65조(상인회)
+① 시장등에서 사업을 직접 경영하는 상인의 전부 또는 일부는 상인회를 자율적으로 설립할 수 있다. &lt;개정 2013.5.28&gt;
+② <mark class="i">상인회를 법인으로 설립하려는 경우</mark> 상인회는 주된 사무소의 소재지에서 설립등기를 함으로써 성립한다.<mark class="i"> &lt;개정 2021.4.20&gt;</mark>
+③ 상인회를 설립하려는 자는 중소벤처기업부령으로 정하는 바에 따라 시장ㆍ군수ㆍ구청장에게 등록하여야 한다. 이 경우 법인인 상인회는 정관을 작성하여 시장ㆍ군수ㆍ구청장의 인가를 받아야 한다. 정관을 변경할 때에도 같다. &lt;개정 2013.3.23, 2017.7.26&gt;
+④ 상인회는 다음 각 호의 사업을 할 수 있다. &lt;개정 2013.5.28, 2018.6.12<mark class="i">, 2024.2.20</mark>&gt;
+1.  시설 및 경영의 현대화를 위한 사업
+2.  상인의 매출 증대 및 영업활성화를 위한 공동사업
+3.  상인 교육 및 지역주민과의 협력사업
+4.  상거래 질서유지 및 고객불만 처리에 관한 업무
+5.  상업기반시설 관리업무(제67조에 따른 시장관리자의 역할을 겸하는 경우만 해당한다)
+6.  <mark class="i">화재나</mark> <mark class="i">자연재해의 예방 및 안전관리를</mark> 위한 체계 구축ㆍ운영에 관한 업무
+7.  그 밖에 정부와 지방자치단체에서 시장등의 상권활성화를 위하여 위탁하거나 인정하는 사업
+⑤ 상인회는 상인회의 운영 및 제4항 각 호의 사업 수행에 필요한 경비를 회원으로부터 징수할 수 있다.
+⑥ 중소벤처기업부장관 및 시장ㆍ군수ㆍ구청장은 필요한 경우 상인회의 운영에 관한 서류의 제출을 요구할 수 있다. &lt;개정 2017.7.26&gt;
+⑦ 정부와 지방자치단체는 상인회가 제4항 각 호에 따른 사업을 수행할 때 필요한 비용을 예산의 범위에서 지원할 수 있다.
+⑧ 시장ㆍ군수ㆍ구청장은 제3항에 따라 등록된 상인회가 다음 각 호의 어느 하나에 해당하는 경우에는 그 등록을 취소할 수 있다. 다만, 제1호에 해당하는 경우에는 등록을 취소하여야 한다. &lt;신설 2019.1.8<mark class="i">, 2021.4.20</mark>&gt;
+1.  거짓이나 그 밖의 부정한 방법으로 등록받은 경우
+2.  시장등의 상인이 아닌 자를 대표임원으로 선출한 경우
+3.  상인회의 정관 또는 규약에서 정하는 설립 목적에 위배되는 사업을 한 경우
+4.  등록된 상인회와 동일한 시장등의 상인 2분의 1 이상, <mark class="i">토지소유자 총수 및 건축물 소유자 총수 각</mark> 2분의 1 이상의 동의로 등록 취소를 요청하는 경우
+⑨ 시장ㆍ군수ㆍ구청장은 제8항에 따라 상인회의 등록을 취소하려면 청문을 하여야 한다. &lt;신설 2019.1.8&gt;
+⑩ 제8항 및 제9항에 따른 상인회의 등록 취소 절차에 관하여 필요한 사항은 시ㆍ군ㆍ구의 조례로 정한다. &lt;신설 2019.1.8&gt;
+⑪ 상인회의 설립과 운영, 그 밖에 필요한 사항은 중소벤처기업부령으로 정하는 바에 따라 시ㆍ군ㆍ구의 조례로 정한다. &lt;개정 2013.3.23, 2017.7.26, 2019.1.8&gt;
+⑫ 법인인 상인회에 관하여 이 법에서 규정한 것을 제외하고는 「민법」 중 사단법인에 관한 규정을 준용한다. &lt;개정 2019.1.8&gt;</span></div></div></div></div><div class="artsec" data-oc="제22조의2"><div class="arthd">조례 제22조의2</div><div class="ordtext"><b>제22조의2</b> 제22조의2(상인회 등록 취소) &lt;신설 2019.7.9&gt;
+① 군포시장은 <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제65조">법 제65조 제10항</mark>에 따라 청문을 실시하려는 경우에는 청문의 일시와 장소를 적은 출석요구서를 등록 취소의 대상이 되는 상인회 대표에게 송부하여야 한다.
+② 제1항에 따른 청문 출석요구서를 받은 상인회 대표가 지정된 일시에 부득이한 사유로 출석할 수 없는 경우에는 그 일시를 조정할 수 있다.
+③ 군포시장이 <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제65조">법 제65조 제8항</mark>에 따라 상인회의 등록을 취소한 때에는 지체없이 그 사유를 명시하여 상인회에 알려야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제65조제10항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-01-08</b> → 현행 조문 <b>2024-02-20</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제65조제8항</span></div><div class="act">「전통시장 및 상점가 육성을 위한 특별법」 제65조 개정 내용을 반영하여 이 조례 제22조의2을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-01-08</b> → 현행 조문 <b>2024-02-20</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">⑧ 시장ㆍ군수ㆍ구청장은 제3항에 따라 등록된 상인회가 다음 각 호의 어느 하나에 해당하는 경우에는 그 등록을 취소할 수 있다. 다만, 제1호에 해당하는 경우에는 등록을 취소하여야 한다. &lt;신설 2019.1.8<mark class="pt" title=", 2021.4.20 추가됨">‸</mark>&gt;
+1.  거짓이나 그 밖의 부정한 방법으로 등록받은 경우
+2.  시장등의 상인이 아닌 자를 대표임원으로 선출한 경우
+3.  상인회의 정관 또는 규약에서 정하는 설립 목적에 위배되는 사업을 한 경우
+4.  등록된 상인회와 동일한 시장등의 상인 2분의 1 이상, <mark class="d">건축물ㆍ토지소유자의</mark> 2분의 1 이상의 동의로 등록 취소를 요청하는 경우</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">⑧ 시장ㆍ군수ㆍ구청장은 제3항에 따라 등록된 상인회가 다음 각 호의 어느 하나에 해당하는 경우에는 그 등록을 취소할 수 있다. 다만, 제1호에 해당하는 경우에는 등록을 취소하여야 한다. &lt;신설 2019.1.8<mark class="i">, 2021.4.20</mark>&gt;
+1.  거짓이나 그 밖의 부정한 방법으로 등록받은 경우
+2.  시장등의 상인이 아닌 자를 대표임원으로 선출한 경우
+3.  상인회의 정관 또는 규약에서 정하는 설립 목적에 위배되는 사업을 한 경우
+4.  등록된 상인회와 동일한 시장등의 상인 2분의 1 이상, <mark class="i">토지소유자 총수 및 건축물 소유자 총수 각</mark> 2분의 1 이상의 동의로 등록 취소를 요청하는 경우</span></div></div></div></div><div class="artsec" data-oc="제23조"><div class="arthd">조례 제23조</div><div class="ordtext"><b>제23조</b> 제23조(예산의 지원) 
+① 상인회는  <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제65조">법 제65조제4항</mark>에 따른 사업을 추진할 경우 소요되는 예산의 일부부담을 전제로 사업계획서를 작성하여 군포시장에게 보조금을 신청할 수 있다.
+② 군포시장은 제1항에 따라 상인회로부터 보조금이 신청된 경우  <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제65조">법 제65조제7항</mark> 및 <mark class="cite-law" title="보조금 관리에 관한 법률">「보조금 관리에 관한 법률」</mark> 또는 <mark class="cite-local" title="군포시 지방보조금 관리 조례">「군포시 지방보조금 관리 조례」</mark>에서 정하는 바에 따라 예산의 범위 안에서 필요한 비용을 지원 또는 보조할 수 있다.&lt;개정 2014.12.10&gt; &lt;개정 2019.7.9&gt;
+③ 상인회가 직접 사업을 수행하기 위하여 군포시장에게 보조금을 신청할 때에는 사업계획서(설계서, 견적서 등을 포함한다)와 보조금 신청금액에 해당하는 보증보험증권을 첨부하여야 한다.
+④ 상인회가 보조사업을 완료한 경우 14일 이내에 정산을 완료하고 군포시장에게 정산보고서를 제출하여야 하며, 정산에 따른 집행잔액, 부가가치세환급금, 이자발생액 등을 반납하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제65조제4항</span></div><div class="act">「전통시장 및 상점가 육성을 위한 특별법」 제65조 개정 내용을 반영하여 이 조례 제23조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-01-08</b> → 현행 조문 <b>2024-02-20</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">④ 상인회는 다음 각 호의 사업을 할 수 있다. &lt;개정 2013.5.28, 2018.6.12<mark class="pt" title=", 2024.2.20 추가됨">‸</mark>&gt;
+1.  시설 및 경영의 현대화를 위한 사업
+2.  상인의 매출 증대 및 영업활성화를 위한 공동사업
+3.  상인 교육 및 지역주민과의 협력사업
+4.  상거래 질서유지 및 고객불만 처리에 관한 업무
+5.  상업기반시설 관리업무(제67조에 따른 시장관리자의 역할을 겸하는 경우만 해당한다)
+6.  <mark class="d">화재예방과</mark> <mark class="d">화재안전관리를</mark> 위한 체계 구축ㆍ운영에 관한 업무
+7.  그 밖에 정부와 지방자치단체에서 시장등의 상권활성화를 위하여 위탁하거나 인정하는 사업</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">④ 상인회는 다음 각 호의 사업을 할 수 있다. &lt;개정 2013.5.28, 2018.6.12<mark class="i">, 2024.2.20</mark>&gt;
+1.  시설 및 경영의 현대화를 위한 사업
+2.  상인의 매출 증대 및 영업활성화를 위한 공동사업
+3.  상인 교육 및 지역주민과의 협력사업
+4.  상거래 질서유지 및 고객불만 처리에 관한 업무
+5.  상업기반시설 관리업무(제67조에 따른 시장관리자의 역할을 겸하는 경우만 해당한다)
+6.  <mark class="i">화재나</mark> <mark class="i">자연재해의 예방 및 안전관리를</mark> 위한 체계 구축ㆍ운영에 관한 업무
+7.  그 밖에 정부와 지방자치단체에서 시장등의 상권활성화를 위하여 위탁하거나 인정하는 사업</span></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제65조제7항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-01-08</b> → 현행 조문 <b>2024-02-20</b></div></div></div><div class="artsec" data-oc="제27조"><div class="arthd">조례 제27조</div><div class="ordtext"><b>제27조</b> 제27조(시장관리자의 지정) 
+① 군포시장은 규칙 제14조에 따라  <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제67조">법 제67조제2항</mark>에 해당하는 자 중에서 시장관리자를 직접 지정하거나 신청에 의하여 지정할 수 있다.
+② 군포시장은 시장관리자가  <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제67조">법 제67조제1항</mark> 각 호에서 규정한 업무를 수행하는 경우 시장의 특성에 따라 당해 업무의 공공성 등을 감안하여 필요한 경비의 일부를 예산의 범위 안에서 지원할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제67조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-06-12</b> → 현행 조문 <b>2024-02-20</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제67조제1항</span></div><div class="act">「전통시장 및 상점가 육성을 위한 특별법」 제67조 개정 내용을 반영하여 이 조례 제27조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-06-12</b> → 현행 조문 <b>2024-02-20</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 시장ㆍ군수ㆍ구청장은 해당 시장에 「유통산업발전법」 제12조제1항부터 제3항까지의 규정에 따른 대규모점포 개설자의 업무를 수행하는 자가 없을 때에는 제2항 각 호의 자 중에서 다음 각 호의 업무를 수행할 자(이하 &quot;시장관리자&quot;라 한다)를 지정할 수 있다. &lt;개정 2018.6.12<mark class="pt" title=", 2024.2.20 추가됨">‸</mark>&gt;
+1.  상업기반시설의 유지 및 관리
+2.  <mark class="d">화재예방과</mark> <mark class="d">화재안전관리를</mark> 위한 체계 구축ㆍ운영, 청소 및 방범 활동
+3.  고객의 안전유지 및 고객과 인근 지역 주민의 피해ㆍ불만의 처리
+4.  상거래 질서의 확립
+5.  그 밖에 시장 관리를 위하여 필요하다고 시장ㆍ군수ㆍ구청장이 인정하는 업무</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">① 시장ㆍ군수ㆍ구청장은 해당 시장에 「유통산업발전법」 제12조제1항부터 제3항까지의 규정에 따른 대규모점포 개설자의 업무를 수행하는 자가 없을 때에는 제2항 각 호의 자 중에서 다음 각 호의 업무를 수행할 자(이하 &quot;시장관리자&quot;라 한다)를 지정할 수 있다. &lt;개정 2018.6.12<mark class="i">, 2024.2.20</mark>&gt;
+1.  상업기반시설의 유지 및 관리
+2.  <mark class="i">화재나</mark> <mark class="i">자연재해의 예방 및 안전관리를</mark> 위한 체계 구축ㆍ운영, 청소 및 방범 활동
+3.  고객의 안전유지 및 고객과 인근 지역 주민의 피해ㆍ불만의 처리
+4.  상거래 질서의 확립
+5.  그 밖에 시장 관리를 위하여 필요하다고 시장ㆍ군수ㆍ구청장이 인정하는 업무</span></div></div></div></div><div class="artsec" data-oc="제28조의2"><div class="arthd">조례 제28조의2</div><div class="ordtext"><b>제28조의2</b> 제28조의2(시장관리자의 지정 취소) &lt;신설 2019.7.9&gt;
+① 군포시장은 <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제68조">법 제68조 제2항</mark>에 따라 청문을 실시하려는 경우에는 청문의 일시와 장소를 적은 출석요구서를 지정 취소의 대상이 되는 시장관리자에게 송부하여야 한다.
+② 제1항에 따른 청문 출석요구서를 받은 시장관리자가 지정된 일시에 부득이한 사유로 출석할 수 없는 경우에는 그 일시를 조정할 수 있다.
+③ 군포시장이 <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제68조">법 제68조 제1항</mark>에 따라 시장관리자의 지정을 취소한 때에는 지체없이 그 사유를 명시하여 시장관리자에게 알려야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제68조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-07-09</b> → 현행 조문 <b>2026-06-17</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제68조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-07-09</b> → 현행 조문 <b>2026-06-17</b></div></div></div><div class="artsec" data-oc="제29조"><div class="arthd">조례 제29조</div><div class="ordtext"><b>제29조</b> 제29조(시설물의 소유권) 
+① <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제11조,제20조">법 제11조 및  제20조</mark>에 따라 정부 및 지방자치단체로부터 예산을 지원받아 전통시장ㆍ상점가 및 시장활성화구역에 설치한 시설물 중 군포시장의 소유로 하는 시설물은 다음 각 호와 같다. .&lt;개정 2016. 12. 30.&gt;
+1. 보조사업에 의하여 취득한 종전의 시장부지 안과 밖의 시설물로써 도로, 토지 및 건축물(시장건물, 주차장, 화장실, 고객지원센터, 물류시설, 비 가리개 등 공동시설을 말한다)
+2. 제1항 이외의 시설물로서 정부 및 지방자치단체가 설치비용을 부담하여 설치한 시설물. 다만, 시설물이 독립되어 있지 아니하여 소유권 분리에 어려움이 있다고 군포시장이 인정한 시설물은 협약에 의해 군포시장의 소유로 아니 할 수 있다.
+② 군포시장은 제1항에 따라 취득한 재산에 대해서는 60일 이내에 소유권 등기를 하고 공유재산관리대장 등 관련되는 부속 증빙서류를 비치하고 시설물의 관리 및 변동사항을 기록 유지하여야 한다.
+③ 정부ㆍ지방자치단체ㆍ상인조직이 분담하여 설치한 시설물을 폐기 또는 매각할 경우에 잔여가치 매각대금은 분담비율에 따라 정산하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제11조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-07-09</b> → 현행 조문 <b>2026-06-17</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제20조</span></div><div class="act">「전통시장 및 상점가 육성을 위한 특별법」 제20조 개정 내용을 반영하여 이 조례 제29조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-08-14</b> → 현행 조문 <b>2025-12-16</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제20조(상업기반시설 현대화사업의 지원)
+① 정부와 지방자치단체는 시장의 상인조직 또는 제67조에 따른 시장관리자가 추진하는 다음 각 호의 상업기반시설 현대화사업(이하 &quot;시설현대화사업&quot;이라 한다)에 필요한 비용을 예산의 범위에서 지원하거나 보조할 수 있다. 이 경우 주차장, 비 가리개 및 <mark class="d">안전시설물을</mark> 설치ㆍ개량ㆍ보수하는 사업은 시장등별로 제2항에 따른 사업신청을 위한 동의비율을 달성한 정도, 점포 및 상인의 <mark class="d">숫자</mark> 등을 종합적으로 고려하여 우선순위를 두어 지원할 수 있다. &lt;개정 2011.3.30, 2015.2.3, 2016.12.2, 2018.8.14<mark class="pt" title=", 2020.2.11, 2024.2.20, 2025.12.16 추가됨">‸</mark>&gt;
+1.  상업시설: 영업에 직접 제공되는 건물과 시설물 등의 개량, 수리
+2.  공동시설: 상인이나 고객이 공동으로 이용하는 비 가리개, 창고, 상인교육시설,<mark class="d"> 전기ㆍ가스ㆍ화재 등에 관한</mark> 안전시설물 등의 설치ㆍ개량ㆍ보수 및 관광(테마)거리 등의 조성
+3.  고객편의시설: 고객이 주로 이용하는 주차장, 진입로, 화장실, 고객지원센터 등의 설치ㆍ확장 및 수리 등
+3의2.  「장애인ㆍ노인ㆍ임산부 등의 편의증진보장에 관한 법률」 제2조제2호의 편의시설의 설치ㆍ확장 및 보수 등
+3의3.  홍보시설: 고객을 대상으로 홍보용으로 설치하는 게시시설, 전광판, 방송시설 등의 설치ㆍ개량ㆍ보수
+4.  공설시장에 대한 제1호부터 제3호까지, 제3호의2 및 제3호의3에 해당하는 시설의 신축 또는 개축 등
+② 시설현대화사업의 지원대상, 사업별 지원한도, 사업신청을 위한 상인, 토지나 건축물의 소유자 및 지상권자의 동의비율, 절차 및 사후 관리, 그 밖에 필요한 사항은 대통령령으로 정한다. &lt;개정 2016.3.29&gt;
+③ 정부와 지방자치단체는 전통시장으로 인정되지 아니한 곳 중 대통령령으로 정하는 기준에 적합한 곳에 대하여는 제1항제2호의 공동시설 중 <mark class="d">전기ㆍ가스ㆍ화재 등에 관한 </mark>안전시설물 등의 설치ㆍ개량ㆍ보수에 대한 지원을 할 수 있다. &lt;신설 2012.12.11, 2015.2.3<mark class="pt" title=", 2024.2.20, 2025.12.16 추가됨">‸</mark>&gt;
+④ 정부와 지방자치단체가 시설현대화사업을 지원ㆍ보조하는 경우 제24조의2제1항에 따른 전통시장 화재공제의 가입률이 중소벤처기업부장관이 정하여 고시하는 기준 이상인 전통시장을 우대할 수 있다. &lt;신설 2016.3.29, 2017.7.26&gt;
+⑤ 상인조직 또는 시장관리자가 제1항에 따른 사업 중 비 가리개 설치를 위한 비용의 지원ㆍ보조를 받기 위하여 다음 각 호의 동의를 받은 경우에는 「건축법」 제20조에 따른 가설건축물의 건축허가ㆍ축조신고에 필요한 대지사용승낙서를 모두 받은 것으로 본다. &lt;신설 2016.3.29&gt;
+1.  해당 시장 상인의 5분의 4 이상의 동의
+2.  비 가리개 설치 지역의 토지나 건축물의 소유자 및 지상권자 10분의 9 이상의 동의<mark class="pt" title="⑥ 정부와 지방자치단체가 제1항제2호의 공동시설 중 비 가리개 및 안전시 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제20조(상업기반시설 현대화사업의 지원)
+① 정부와 지방자치단체는 시장의 상인조직 또는 제67조에 따른 시장관리자가 추진하는 다음 각 호의 상업기반시설 현대화사업(이하 &quot;시설현대화사업&quot;이라 한다)에 필요한 비용을 예산의 범위에서 지원하거나 보조할 수 있다. 이 경우 주차장, 비 가리개 및 <mark class="i">전기ㆍ가스ㆍ화재ㆍ풍수해 등에 관한 안전시설물(이하 &quot;안전시설물&quot;이라 한다)을</mark> 설치ㆍ개량ㆍ보수하는 사업은 시장등별로 제2항에 따른 사업신청을 위한 동의비율을 달성한 정도, 점포 및 상인의 <mark class="i">수, 안전점검 결과</mark> 등을 종합적으로 고려하여 우선순위를 두어 지원할 수 있다. &lt;개정 2011.3.30, 2015.2.3, 2016.12.2, 2018.8.14<mark class="i">, 2020.2.11, 2024.2.20, 2025.12.16</mark>&gt;
+1.  상업시설: 영업에 직접 제공되는 건물과 시설물 등의 개량, 수리
+2.  공동시설: 상인이나 고객이 공동으로 이용하는 비 가리개, 창고, 상인교육시설,<mark class="pt" title="전기ㆍ가스ㆍ화재 등에 관한 삭제됨">‸</mark> 안전시설물 등의 설치ㆍ개량ㆍ보수 및 관광(테마)거리 등의 조성
+3.  고객편의시설: 고객이 주로 이용하는 주차장, 진입로, 화장실, 고객지원센터 등의 설치ㆍ확장 및 수리 등
+3의2.  「장애인ㆍ노인ㆍ임산부 등의 편의증진보장에 관한 법률」 제2조제2호의 편의시설의 설치ㆍ확장 및 보수 등
+3의3.  홍보시설: 고객을 대상으로 홍보용으로 설치하는 게시시설, 전광판, 방송시설 등의 설치ㆍ개량ㆍ보수
+4.  공설시장에 대한 제1호부터 제3호까지, 제3호의2 및 제3호의3에 해당하는 시설의 신축 또는 개축 등
+② 시설현대화사업의 지원대상, 사업별 지원한도, 사업신청을 위한 상인, 토지나 건축물의 소유자 및 지상권자의 동의비율, 절차 및 사후 관리, 그 밖에 필요한 사항은 대통령령으로 정한다. &lt;개정 2016.3.29&gt;
+③ 정부와 지방자치단체는 전통시장으로 인정되지 아니한 곳 중 대통령령으로 정하는 기준에 적합한 곳에 대하여는 제1항제2호의 공동시설 중 <mark class="pt" title="전기ㆍ가스ㆍ화재 등에 관한 삭제됨">‸</mark>안전시설물 등의 설치ㆍ개량ㆍ보수에 대한 지원을 할 수 있다. &lt;신설 2012.12.11, 2015.2.3<mark class="i">, 2024.2.20, 2025.12.16</mark>&gt;
+④ 정부와 지방자치단체가 시설현대화사업을 지원ㆍ보조하는 경우 제24조의2제1항에 따른 전통시장 화재공제의 가입률이 중소벤처기업부장관이 정하여 고시하는 기준 이상인 전통시장을 우대할 수 있다. &lt;신설 2016.3.29, 2017.7.26&gt;
+⑤ 상인조직 또는 시장관리자가 제1항에 따른 사업 중 비 가리개 설치를 위한 비용의 지원ㆍ보조를 받기 위하여 다음 각 호의 동의를 받은 경우에는 「건축법」 제20조에 따른 가설건축물의 건축허가ㆍ축조신고에 필요한 대지사용승낙서를 모두 받은 것으로 본다. &lt;신설 2016.3.29&gt;
+1.  해당 시장 상인의 5분의 4 이상의 동의
+2.  비 가리개 설치 지역의 토지나 건축물의 소유자 및 지상권자 10분의 9 이상의 동의<mark class="i">
+⑥ 정부와 지방자치단체가 제1항제2호의 공동시설 중 비 가리개 및 안전시설물을 설치ㆍ개량ㆍ보수하는 사업을 지원ㆍ보조하는 경우 대통령령으로 정하는 난연등급 이상의 성능을 갖춘 시설자재와 「소방시설 설치 및 관리에 관한 법률」 제2조제1항제7호에 따른 소방용품을 사용하는 등 화재안전 확보를 위하여 노력하여야 한다. &lt;신설 2023.10.31, 2025.12.16&gt;
+⑦ 정부와 지방자치단체가 제6항에 따른 설치ㆍ개량ㆍ보수 사업에 대한 지원ㆍ보조 계획을 수립하는 때에는 대통령령으로 정하는 바에 따라 시장등의 상인, 제65조에 따른 상인회 등 이해관계자의 의견을 들어야 한다. 이 경우 이해관계자의 의견이 타당하다고 인정되면 그 의견이 지원ㆍ보조 계획에 반영되도록 노력하여야 한다. &lt;신설 2025.12.16&gt;
+⑧ 시장ㆍ군수ㆍ구청장은 제1항제2호의 공동시설 중 비 가리개 및 안전시설물을 설치ㆍ개량ㆍ보수하는 사업을 지원ㆍ보조하는 경우 제6항에 따라 대통령령으로 정하는 난연등급 이상의 성능을 갖춘 시설자재를 사용하는지 확인하여야 한다. &lt;신설 2023.10.31, 2025.12.16&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제35조"><div class="arthd">조례 제35조</div><div class="ordtext"><b>제35조</b> 제35조(시장정비사업 추진계획의 승인 및 승인 취소에 대한 동의의 철회) &lt;신설 2019.7.9&gt;
+<mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제38조의2">법 제38조의2 제1항 및 제2항</mark>에 따라 토지 소유주가 시장정비사업 추진계획의 승인 및   승인 취소에 대한 동의를 철회하고자 할 때에는 당사자의 성명 또는 명칭, 주소, 철회하고자 하는 사유를 기재한 서면을 군포시장에게 제출해야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제38조의2제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-07-09</b> → 현행 조문 <b>2026-06-17</b></div></div></div><div class="artsec" data-oc="제36조"><div class="arthd">조례 제36조</div><div class="ordtext"><b>제36조</b> 제36조(공유재산의 사용ㆍ수익허가 및 대부에 관한 특례) &lt;신설 2019.7.9&gt;
+① <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제17조의2">법 제17조의2 제2항</mark>에 따라 사용ㆍ수익허가 또는 대부계약을 갱신할 경우에 갱신 횟수는 1회로 한정한다.
+② <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제17조의2">법 제17조의2 제3항</mark>에 따라 수의계약의 방법으로 사용ㆍ수익허가 또는 대부계약을 갱신할 경우 갱신 기간은 5년 이내로 한다.
+③ 제1항 및 제2항에 따라 계약을 갱신하고자 하는 대상자는 <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제17조의2">법 제17조의2 제5항</mark>을 준수한 자에 한한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제17조의2제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-07-09</b> → 현행 조문 <b>2026-06-17</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제17조의2제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-07-09</b> → 현행 조문 <b>2026-06-17</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제17조의2제5항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2019-07-09</b> → 현행 조문 <b>2026-06-17</b></div></div></div><div class="artsec" data-oc="제37조"><div class="arthd">조례 제37조</div><div class="ordtext"><b>제37조</b> 제37조(과태료 부과ㆍ징수) &lt;개정 2019.7.9&gt;
+① <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법제74조">법 제74조</mark> 및 <mark class="cite-law" title="전통시장 및 상점가 육성을 위한 특별법 시행령제35조">영 제35조</mark>에 따라 과태료를 군포시장이 부과ㆍ징수한다.
+② 제1항에 따른 과태료의 부과ㆍ징수절차는  <mark class="cite-law" title="질서위반행위규제법제16조,제17조,제18조,제19조,제20조,제21조,제22조,제23조,제24조">「질서위반행위규제법」 제16조부터 제24조까지의 규정</mark>을 따른다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「질서위반행위규제법」 제16조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-12-18</b> → 현행 조문 <b>2021-01-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「질서위반행위규제법」 제17조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2011-04-05</b> → 현행 조문 <b>2011-04-05</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「질서위반행위규제법」 제18조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-12-18</b> → 현행 조문 <b>2021-01-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「질서위반행위규제법」 제19조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-12-18</b> → 현행 조문 <b>2021-01-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「질서위반행위규제법」 제20조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-12-18</b> → 현행 조문 <b>2021-01-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「질서위반행위규제법」 제21조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-12-18</b> → 현행 조문 <b>2021-01-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「질서위반행위규제법」 제22조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-12-18</b> → 현행 조문 <b>2021-01-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「질서위반행위규제법」 제23조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2018-12-18</b> → 현행 조문 <b>2021-01-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「질서위반행위규제법」 제24조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2016-12-02</b> → 현행 조문 <b>2016-12-02</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법」 제74조</span></div><div class="act">「전통시장 및 상점가 육성을 위한 특별법」 제74조 개정 내용을 반영하여 이 조례 제37조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2025-12-16</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제74조(과태료)
+① 다음 각 호의 어느 하나에 해당하는 자에게는 2천만원 이하의 과태료를 부과한다. &lt;신설 2013.5.28<mark class="pt" title=", 2025.12.16 추가됨">‸</mark>&gt;
+1.  <mark class="d">제26조의5제1항제2호를</mark> 위반하여<mark class="pt" title="가맹점 외에서 거래하여 수취한 추가됨">‸</mark> 온누리상품권을 환전하거나 환전대행가맹점에 환전을 요청한 개별가맹점
+2.  <mark class="pt" title="제26조의5제1항제3호를 위반하여 수취한 온누리상품권을 다른 자에게 물품 추가됨">‸</mark>제26조의5제3항을 위반하여 환전을 대행한 환전대행가맹점<mark class="pt" title="4.  제26조의5제4항을 위반하여 개별가맹점으로 등록하지 아니하고 온누 추가됨">‸</mark>
+② 다음 각 호의 어느 하나에 해당하는 자에게는 500만원 이하의 과태료를 부과한다. &lt;개정 2012.12.11, 2013.5.28<mark class="pt" title=", 2025.12.16 추가됨">‸</mark>&gt;
+1.  제14조제1항을 위반하여 신고를 하지 아니하고 임시시장을 개설하거나, 거짓이나 그 밖의 부정한 방법으로 임시시장 개설신고를 한 자
+2<mark class="pt" title=".  제26조의5제1항제1호를 위반하여 온누리상품권 결제를 거절하거나 온 추가됨">‸</mark>.  제69조제2항 각 호의 사람(시장ㆍ군수ㆍ구청장은 제외한다) 중 정당한 사유 없이 자료의 제출을 거부하거나 거짓 보고를 하는 자
+③ 제1항 및 제2항에 따른 과태료는 대통령령으로 정하는 바에 따라 중소벤처기업부장관 또는 지방자치단체의 장이 부과ㆍ징수한다. &lt;개정 2013.5.28, 2017.7.26&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제74조(과태료)
+① 다음 각 호의 어느 하나에 해당하는 자에게는 2천만원 이하의 과태료를 부과한다. &lt;신설 2013.5.28<mark class="i">, 2025.12.16</mark>&gt;
+1.  <mark class="i">제26조의5제1항제2호다목을</mark> 위반하여<mark class="i"> 가맹점 외에서 거래하여 수취한</mark> 온누리상품권을 환전하거나 환전대행가맹점에 환전을 요청한 개별가맹점
+2.  <mark class="i">제26조의5제1항제3호를 위반하여 수취한 온누리상품권을 다른 자에게 물품 판매 또는 용역 제공의 대가로 지급한 개별가맹점
+3.  </mark>제26조의5제3항을 위반하여 환전을 대행한 환전대행가맹점<mark class="i">
+4.  제26조의5제4항을 위반하여 개별가맹점으로 등록하지 아니하고 온누리상품권을 수취한 자
+5.  제26조의10제1항을 위반하여 중소벤처기업부장관 또는 발행업무수탁기관의 장과 판매대행 협약을 체결하지 아니하고 온누리상품권의 보관ㆍ판매ㆍ회수ㆍ환전 등의 업무를 대행한 자</mark>
+② 다음 각 호의 어느 하나에 해당하는 자에게는 500만원 이하의 과태료를 부과한다. &lt;개정 2012.12.11, 2013.5.28<mark class="i">, 2025.12.16</mark>&gt;
+1.  제14조제1항을 위반하여 신고를 하지 아니하고 임시시장을 개설하거나, 거짓이나 그 밖의 부정한 방법으로 임시시장 개설신고를 한 자
+2<mark class="i">.  제26조의5제1항제1호를 위반하여 온누리상품권 결제를 거절하거나 온누리상품권 사용자를 불리하게 대우한 개별가맹점
+3.  제26조의12에 따른 보고를 하지 아니하거나 거짓 보고를 한 자, 자료를 제출하지 아니하거나 거짓 자료를 제출한 자 또는 출입ㆍ검사를 거부ㆍ방해하거나 기피한 자
+4</mark>.  제69조제2항 각 호의 사람(시장ㆍ군수ㆍ구청장은 제외한다) 중 정당한 사유 없이 자료의 제출을 거부하거나 거짓 보고를 하는 자
+③ 제1항 및 제2항에 따른 과태료는 대통령령으로 정하는 바에 따라 중소벤처기업부장관 또는 지방자치단체의 장이 부과ㆍ징수한다. &lt;개정 2013.5.28, 2017.7.26&gt;</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「전통시장 및 상점가 육성을 위한 특별법 시행령」 제35조</span></div><div class="act">「전통시장 및 상점가 육성을 위한 특별법 시행령」 제35조 개정 내용을 반영하여 이 조례 제37조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-07-09</b> · 당시 법령본 <b>2013-11-20</b> → 현행 조문 <b>2026-06-16</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제35조(과태료의 부과기준) 법 제74조제1항 및 제2항에 따른 과태료의 부과기준은 별표 <mark class="d">2와</mark> 같다. &lt;개정 2013.11.20<mark class="pt" title=", 2026.6.16 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제35조(과태료의 부과기준) 법 제74조제1항 및 제2항에 따른 과태료의 부과기준은 별표 <mark class="i">3과</mark> 같다. &lt;개정 2013.11.20<mark class="i">, 2026.6.16</mark>&gt;</span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

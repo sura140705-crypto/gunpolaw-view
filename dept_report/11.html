@@ -1,0 +1,551 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>아동청소년과 자치법규 정비 권고</title><style>
+/* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
+   자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
+.page, .ord { --navy:#13325b; --navy2:#1d4e89;
+  --mech:#1d4ed8; --rev:#b45309; --chk:#52525b; --fmt:#6d28d9; --cur:#15803d;
+  --ink:#1f2937; --muted:#6b7280; --line:#d8dee6; --soft:#f6f8fb; }
+* { box-sizing: border-box; }
+/* 독립 권고서 페이지 한정(body.report·.page) — 대시보드 주입 시 충돌 방지.
+   대시보드는 자체 body/h1/.cards/.sub/.card 를 가져 prefix 없으면 덮어쓴다. */
+body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       color:var(--ink); margin:0; background:#eef1f5; line-height:1.55;
+       -webkit-text-size-adjust:100%; }
+.page { max-width:840px; margin:24px auto; padding:38px 44px 52px; background:#fff;
+        border-top:4px solid var(--navy); box-shadow:0 1px 5px rgba(15,33,66,.10); }
+/* 문서 머리 — 공문 단정형(머리표·제목·요지, 아래 굵은 밑줄) */
+.page .dochd { border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:22px; }
+.page .dochd .kicker { font-size:11.5px; letter-spacing:3px; color:var(--navy2);
+        font-weight:700; margin:0 0 6px; }
+.page h1 { font-size:22px; line-height:1.34; margin:0; color:var(--navy);
+     font-weight:700; letter-spacing:-.3px; }
+.page .sub { color:var(--muted); font-size:12.5px; margin-top:7px; }
+.page .cards { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 20px; }
+.page .card { flex:1 1 138px; border:1px solid var(--line); border-top:3px solid var(--chk);
+        border-radius:6px; padding:12px 15px; }
+.page .card .n { font-size:25px; font-weight:700; line-height:1; color:var(--ink); }
+.page .card .t { font-size:12.5px; color:var(--muted); margin-top:6px; }
+.page .g-mech { border-top-color:var(--mech);} .page .g-mech .n { color:var(--mech);}
+.page .g-rev { border-top-color:var(--rev);} .page .g-rev .n { color:var(--rev);}
+.page .g-chk { border-top-color:var(--chk);} .page .g-chk .n { color:var(--chk);}
+.page .g-fmt { border-top-color:var(--fmt);} .page .g-fmt .n { color:var(--fmt);}
+.page .g-cur { border-top-color:var(--cur);} .page .g-cur .n { color:var(--cur);}
+.ord { border:1px solid var(--line); border-radius:7px; padding:18px 20px;
+       margin:0 0 16px; page-break-inside:avoid; }
+.ord h2 { font-size:16.5px; margin:0 0 3px; color:var(--navy); font-weight:700;
+          padding-left:10px; border-left:4px solid var(--navy); }
+.ord .meta { color:var(--muted); font-size:12px; margin:0 0 12px; padding-left:14px; }
+.badges { margin:0 0 12px; }
+.badge { display:inline-block; font-size:11.5px; padding:2px 10px; border-radius:4px;
+         margin-right:6px; border:1px solid currentColor; background:#fff; font-weight:600; }
+.b-mech { color:var(--mech);} .b-rev { color:var(--rev);}
+.b-chk { color:var(--chk);} .b-fmt { color:var(--fmt);}
+.artsec { margin:0 0 8px; }
+.arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
+         border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
+         margin:14px 0 6px; }
+.item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
+.iline { margin-bottom:3px; }
+.item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
+             margin-right:8px; white-space:nowrap; }
+.t-mech { background:#dbeafe; color:#1e40af;} .t-rev { background:#fef3c7; color:#92400e;}
+.t-chk { background:#f3f4f6; color:#374151;}
+.t-naked { background:#ede9fe; color:#5b21b6;}
+.t-cur { background:#dcfce7; color:#166534;}
+.t-space { background:#fef9c3; color:#854d0e;}
+details.citem.cur > summary { opacity:.72; }
+details.citem.cur .law { font-weight:500; }
+/* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
+details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
+    display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+details.citem > summary::-webkit-details-marker { display:none; }
+details.citem > summary::before { content:"▸"; color:#9ca3af; font-size:11px; margin-right:2px; }
+details.citem[open] > summary::before { content:"▾"; color:var(--navy2); }
+details.citem[open] { background:#fbfcfe; }
+details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 10px; }
+details.citem > .diff { margin:6px 10px 10px; }
+details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
+.item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+.basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
+.basis b { color:#374151; font-weight:600; }
+.ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
+           border-left:3px solid var(--navy2); border-radius:0 6px 6px 0; padding:8px 11px;
+           margin:5px 0 9px; white-space:pre-wrap; line-height:1.7; }
+.ordtext b { color:var(--navy); margin-right:5px; }
+mark.cite-law { background:#eff6ff; color:#1e3a8a;
+   text-decoration:underline; text-decoration-color:#2563eb; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-naked { background:#f5f3ff; color:#5b21b6;
+   text-decoration:underline dashed; text-decoration-color:#7c3aed; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-local { background:#f1f5f9; color:#475569;
+   text-decoration:underline dotted; text-decoration-color:#94a3b8; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+.page .leg { font-size:12px; color:var(--muted); margin:0 0 18px; display:flex; gap:14px;
+        flex-wrap:wrap; align-items:center; }
+.page .leg mark { padding:0 4px; border-radius:2px; }
+.item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
+            background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
+.diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
+.drow + .drow { border-top:1px solid #f1f3f5; }
+.dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
+.dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
+.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
+         border-radius:2px; padding:0 1px; }
+mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
+mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
+          padding:0 2px; cursor:help; }
+.page footer { color:#9aa3af; font-size:11.5px; margin-top:34px; padding-top:14px;
+         border-top:1px solid var(--line); text-align:center; }
+@media print {
+  @page { size:A4; margin:16mm; }
+  body { background:#fff; }
+  .page { max-width:none; margin:0; padding:0; border-top:none; box-shadow:none; }
+  .ord, .card { border-color:#c4cbd4; }
+  .dochd { border-bottom-color:#000; }
+  mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>아동청소년과 자치법규 정비 권고</h1><div class="sub">전체 19개 조례 중 정비 대상 9개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">13</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">3</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">3</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">56</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 청소년육성위원회 등의 설치 및 운영에 관한 조례</h2><div class="meta">시행 2023-01-31 · 정비 항목 4건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 4</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
+1. “청소년”이란 <mark class="cite-law" title="청소년기본법제3조">「청소년기본법」 제3조제1호</mark>에 따른 청소년을 말한다.
+2. “군포시청소년육성위원회”(이하 “위원회”라 한다)란 <mark class="cite-law" title="청소년기본법제11조">「청소년기본법」 제11조</mark>에 따라 설치된 위원회를 말한다.
+3. “군포시차세대위원회”(이하 “차세대위원회”라 한다)란 <mark class="cite-law" title="청소년기본법제5조의2">「청소년기본법」 제5조의2</mark>에 따라 청소년으로 구성된 위원회를 말한다.
+4. “군포시청소년지도위원”(이하 “지도위원”이라 한다)이란 <mark class="cite-law" title="청소년기본법제27조">「청소년기본법」 제27조</mark>에 따라 위촉된 위원을 말한다.
+5. “군포시 청소년유해환경감시단”(이하 “감시단”이라 한다)이란 <mark class="cite-law" title="청소년보호법제5조,제48조">「청소년보호법」 제5조 및 제48조</mark>에 따라 지정된 단체를 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「청소년기본법」 제11조</span></div><div class="act">「청소년기본법」 제11조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-01-31</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2026-04-28</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제11조(<mark class="d">지방청소년육성위원회의</mark> 설치)
+① <mark class="d">청소년육성에</mark> 관한 <mark class="d">지방자치단체의 </mark>주요 <mark class="d">시책을</mark> 심의하기 위하여 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사ㆍ특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 및 시장ㆍ군수ㆍ구청장(자치구의 구청장을 말한다. 이하 같다)의 소속으로 <mark class="d">지방청소년육성위원회를</mark> 둔다.<mark class="pt" title="다만, 지방청소년정책위원회의 기능을 담당하기에 적합한 다른 위원회가 있는 추가됨">‸</mark>
+② <mark class="d">지방청소년육성위원회의</mark> 구성ㆍ조직 및 운영 등에 필요한 사항은 조례로 정한다.<mark class="pt" title="&lt;개정 2026.4.28&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제11조(<mark class="i">지방청소년정책위원회의</mark> 설치)
+① <mark class="i">지방자치단체의 청소년정책에</mark> 관한 <mark class="pt" title="지방자치단체의 삭제됨">‸</mark>주요 <mark class="i">사항을</mark> 심의하기 위하여 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사ㆍ특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다) 및 시장ㆍ군수ㆍ구청장(자치구의 구청장을 말한다. 이하 같다)의 소속으로 <mark class="i">지방청소년정책위원회를</mark> 둔다.<mark class="i"> 다만, 지방청소년정책위원회의 기능을 담당하기에 적합한 다른 위원회가 있는 경우에는 해당 지방자치단체의 조례로 정하는 바에 따라 그 위원회가 지방청소년정책위원회의 기능을 대신하거나 지방청소년정책위원회의 기능을 포함하여 운영할 수 있다. &lt;개정 2026.4.28&gt;</mark>
+② <mark class="i">지방청소년정책위원회의 위원에는 해당 지역의 청소년을 대표하는 청소년이 포함되어야 한다. &lt;신설 2026.4.28&gt;
+③ 그 밖에 지방청소년정책위원회의</mark> 구성ㆍ조직 및 운영 등에 필요한 사항은 조례로 정한다.<mark class="i"> &lt;개정 2026.4.28&gt;</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「청소년보호법」 제48조</span></div><div class="act">「청소년보호법」 제48조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-01-31</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제48조(민간단체에 대한 행정적 지원 등)
+① <mark class="d">여성가족부장관</mark> 또는 지방자치단체의 장은 청소년유해환경 개선활동을 수행하는 민간단체에 행정적ㆍ재정적 지원을 할 수 있으며, 지방자치단체의 장은 필요한 경우 효율적인 업무 수행을 위하여 대통령령으로 정하는 바에 따라 청소년유해환경으로부터 청소년을 보호하는 활동을 하고 있음을 나타내는 증표를 발급할 수 있다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
+② 제1항에 따른 민간단체의 구체적인 종류 등은 <mark class="d">여성가족부령으로</mark> 정한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제48조(민간단체에 대한 행정적 지원 등)
+① <mark class="i">성평등가족부장관</mark> 또는 지방자치단체의 장은 청소년유해환경 개선활동을 수행하는 민간단체에 행정적ㆍ재정적 지원을 할 수 있으며, 지방자치단체의 장은 필요한 경우 효율적인 업무 수행을 위하여 대통령령으로 정하는 바에 따라 청소년유해환경으로부터 청소년을 보호하는 활동을 하고 있음을 나타내는 증표를 발급할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+② 제1항에 따른 민간단체의 구체적인 종류 등은 <mark class="i">성평등가족부령으로</mark> 정한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제15조"><div class="arthd">조례 제15조</div><div class="ordtext"><b>제15조</b> 제15조(지도위원의 결격사유) 다음 각 호의 어느 하나에 해당하는 사람은 지도위원이 될 수 없다.
+1. 피성년후견인 또는 피한정후견인&lt;개정 2017.07.11.&gt;
+2. 파산선고를 받은 자로서 복권되지 아니한 사람
+3. 금고이상의 형을 받고 그 집행이 종료되거나 집행을 받지 아니하기로 확정된 후 2년이 경과하지 아니한 사람
+4. 금고이상의 형을 받고 그 집행유예의 기간이 종료되지 아니한 사람
+5. 법원의 판결 또는 법률에 따라 자격이 상실되거나 정지된 사람
+6. <mark class="cite-law" title="청소년보호법">「청소년보호법」</mark>을 비롯한 법률 위반행위로 사법처리 또는 행정처분을 받은 사람
+7. <mark class="cite-law" title="청소년보호법제2조">「청소년보호법」 제2조제5호</mark>에 따른 청소년유해업소를 운영하는 사람</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「청소년보호법」 제2조제5호</span></div><div class="act">「청소년보호법」 제2조 개정 내용을 반영하여 이 조례 제15조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-01-31</b> · 당시 법령본 <b>2018-12-11</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">5.  &quot;청소년유해업소&quot;란 청소년의 출입과 고용이 청소년에게 유해한 것으로 인정되는 다음 가목의 업소(이하 &quot;청소년 출입ㆍ고용금지업소&quot;라 한다)와 청소년의 출입은 가능하나 고용이 청소년에게 유해한 것으로 인정되는 다음 나목의 업소(이하 &quot;청소년고용금지업소&quot;라 한다)를 말한다. 이 경우 업소의 구분은 그 업소가 영업을 할 때 다른 법령에 따라 요구되는 허가ㆍ인가ㆍ등록ㆍ신고 등의 여부와 관계없이 실제로 이루어지고 있는 영업행위를 기준으로 한다.
+가.  청소년 출입ㆍ고용금지업소						
+
+						    1) 「게임산업진흥에 관한 법률」에 따른 일반게임제공업 및 복합유통게임제공업 중 대통령령으로 정하는 것
+						
+
+						    2) 「사행행위 등 규제 및 처벌 특례법」에 따른 사행행위영업
+						
+
+						    3) 「식품위생법」에 따른 식품접객업 중 대통령령으로 정하는 것
+						
+
+						    4) 「영화 및 비디오물의 진흥에 관한 법률」 제2조제16호에 따른 비디오물감상실업ㆍ제한관람가비디오물소극장업 및 복합영상물제공업
+						
+
+						    5) 「음악산업진흥에 관한 법률」에 따른 노래연습장업 중 대통령령으로 정하는 것
+						
+
+						    6) 「체육시설의 설치ㆍ이용에 관한 법률」에 따른 무도학원업 및 무도장업
+						
+
+						    7) 전기통신설비를 갖추고 불특정한 사람들 사이의 음성대화 또는 화상대화를 매개하는 것을 주된 목적으로 하는 영업. 다만, 「전기통신사업법」 등 다른 법률에 따라 통신을 매개하는 영업은 제외한다.
+						
+
+						    8) 불특정한 사람 사이의 신체적인 접촉 또는 은밀한 부분의 노출 등 성적 행위가 이루어지거나 이와 유사한 행위가 이루어질 우려가 있는 서비스를 제공하는 영업으로서 청소년보호위원회가 결정하고 <mark class="d">여성가족부장관이</mark> 고시한 것
+						
+
+						    9) 청소년유해매체물 및 청소년유해약물등을 제작ㆍ생산ㆍ유통하는 영업 등 청소년의 출입과 고용이 청소년에게 유해하다고 인정되는 영업으로서 대통령령으로 정하는 기준에 따라 청소년보호위원회가 결정하고 <mark class="d">여성가족부장관이</mark> 고시한 것
+						
+
+						    10) 「한국마사회법」 제6조제2항에 따른 장외발매소
+						
+
+						    11) 「경륜ㆍ경정법」 제9조제2항에 따른 장외매장
+나.  청소년고용금지업소						
+
+						    1) 「게임산업진흥에 관한 법률」에 따른 청소년게임제공업 및 인터넷컴퓨터게임시설제공업
+						
+
+						    2) 「공중위생관리법」에 따른 숙박업, 목욕장업, 이용업 중 대통령령으로 정하는 것
+						
+
+						    3) 「식품위생법」에 따른 식품접객업 중 대통령령으로 정하는 것
+						
+
+						    4) 「영화 및 비디오물의 진흥에 관한 법률」에 따른 비디오물소극장업
+						
+
+						    5) 「화학물질관리법」에 따른 유해화학물질 영업. 다만, 유해화학물질 사용과 직접 관련이 없는 영업으로서 대통령령으로 정하는 영업은 제외한다.
+						
+
+						    6) 회비 등을 받거나 유료로 만화를 빌려 주는 만화대여업
+						
+
+						    7) 청소년유해매체물 및 청소년유해약물등을 제작ㆍ생산ㆍ유통하는 영업 등 청소년의 고용이 청소년에게 유해하다고 인정되는 영업으로서 대통령령으로 정하는 기준에 따라 청소년보호위원회가 결정하고 <mark class="d">여성가족부장관이</mark> 고시한 것</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">5.  &quot;청소년유해업소&quot;란 청소년의 출입과 고용이 청소년에게 유해한 것으로 인정되는 다음 가목의 업소(이하 &quot;청소년 출입ㆍ고용금지업소&quot;라 한다)와 청소년의 출입은 가능하나 고용이 청소년에게 유해한 것으로 인정되는 다음 나목의 업소(이하 &quot;청소년고용금지업소&quot;라 한다)를 말한다. 이 경우 업소의 구분은 그 업소가 영업을 할 때 다른 법령에 따라 요구되는 허가ㆍ인가ㆍ등록ㆍ신고 등의 여부와 관계없이 실제로 이루어지고 있는 영업행위를 기준으로 한다.
+가.  청소년 출입ㆍ고용금지업소						
+
+						    1) 「게임산업진흥에 관한 법률」에 따른 일반게임제공업 및 복합유통게임제공업 중 대통령령으로 정하는 것
+						
+
+						    2) 「사행행위 등 규제 및 처벌 특례법」에 따른 사행행위영업
+						
+
+						    3) 「식품위생법」에 따른 식품접객업 중 대통령령으로 정하는 것
+						
+
+						    4) 「영화 및 비디오물의 진흥에 관한 법률」 제2조제16호에 따른 비디오물감상실업ㆍ제한관람가비디오물소극장업 및 복합영상물제공업
+						
+
+						    5) 「음악산업진흥에 관한 법률」에 따른 노래연습장업 중 대통령령으로 정하는 것
+						
+
+						    6) 「체육시설의 설치ㆍ이용에 관한 법률」에 따른 무도학원업 및 무도장업
+						
+
+						    7) 전기통신설비를 갖추고 불특정한 사람들 사이의 음성대화 또는 화상대화를 매개하는 것을 주된 목적으로 하는 영업. 다만, 「전기통신사업법」 등 다른 법률에 따라 통신을 매개하는 영업은 제외한다.
+						
+
+						    8) 불특정한 사람 사이의 신체적인 접촉 또는 은밀한 부분의 노출 등 성적 행위가 이루어지거나 이와 유사한 행위가 이루어질 우려가 있는 서비스를 제공하는 영업으로서 청소년보호위원회가 결정하고 <mark class="i">성평등가족부장관이</mark> 고시한 것
+						
+
+						    9) 청소년유해매체물 및 청소년유해약물등을 제작ㆍ생산ㆍ유통하는 영업 등 청소년의 출입과 고용이 청소년에게 유해하다고 인정되는 영업으로서 대통령령으로 정하는 기준에 따라 청소년보호위원회가 결정하고 <mark class="i">성평등가족부장관이</mark> 고시한 것
+						
+
+						    10) 「한국마사회법」 제6조제2항에 따른 장외발매소
+						
+
+						    11) 「경륜ㆍ경정법」 제9조제2항에 따른 장외매장
+나.  청소년고용금지업소						
+
+						    1) 「게임산업진흥에 관한 법률」에 따른 청소년게임제공업 및 인터넷컴퓨터게임시설제공업
+						
+
+						    2) 「공중위생관리법」에 따른 숙박업, 목욕장업, 이용업 중 대통령령으로 정하는 것
+						
+
+						    3) 「식품위생법」에 따른 식품접객업 중 대통령령으로 정하는 것
+						
+
+						    4) 「영화 및 비디오물의 진흥에 관한 법률」에 따른 비디오물소극장업
+						
+
+						    5) 「화학물질관리법」에 따른 유해화학물질 영업. 다만, 유해화학물질 사용과 직접 관련이 없는 영업으로서 대통령령으로 정하는 영업은 제외한다.
+						
+
+						    6) 회비 등을 받거나 유료로 만화를 빌려 주는 만화대여업
+						
+
+						    7) 청소년유해매체물 및 청소년유해약물등을 제작ㆍ생산ㆍ유통하는 영업 등 청소년의 고용이 청소년에게 유해하다고 인정되는 영업으로서 대통령령으로 정하는 기준에 따라 청소년보호위원회가 결정하고 <mark class="i">성평등가족부장관이</mark> 고시한 것</span></div></div></div></div><div class="artsec" data-oc="제20조"><div class="arthd">조례 제20조</div><div class="ordtext"><b>제20조</b> 제20조(감시단 지정 등) 시장은 <mark class="cite-law" title="청소년보호법제5조,제48조">「청소년보호법」 제5조 및 제48조</mark>에 따라 청소년유해환경 개선활동을 수행하는 학교관련단체 및 시민단체를 감시단 운영기관으로 지정하고, 별지 제2호서식의 지정서를 발급할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「청소년보호법」 제48조</span></div><div class="act">「청소년보호법」 제48조 개정 내용을 반영하여 이 조례 제20조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-01-31</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제48조(민간단체에 대한 행정적 지원 등)
+① <mark class="d">여성가족부장관</mark> 또는 지방자치단체의 장은 청소년유해환경 개선활동을 수행하는 민간단체에 행정적ㆍ재정적 지원을 할 수 있으며, 지방자치단체의 장은 필요한 경우 효율적인 업무 수행을 위하여 대통령령으로 정하는 바에 따라 청소년유해환경으로부터 청소년을 보호하는 활동을 하고 있음을 나타내는 증표를 발급할 수 있다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
+② 제1항에 따른 민간단체의 구체적인 종류 등은 <mark class="d">여성가족부령으로</mark> 정한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제48조(민간단체에 대한 행정적 지원 등)
+① <mark class="i">성평등가족부장관</mark> 또는 지방자치단체의 장은 청소년유해환경 개선활동을 수행하는 민간단체에 행정적ㆍ재정적 지원을 할 수 있으며, 지방자치단체의 장은 필요한 경우 효율적인 업무 수행을 위하여 대통령령으로 정하는 바에 따라 청소년유해환경으로부터 청소년을 보호하는 활동을 하고 있음을 나타내는 증표를 발급할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+② 제1항에 따른 민간단체의 구체적인 종류 등은 <mark class="i">성평등가족부령으로</mark> 정한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 학교폭력예방 및 대책에 관한 조례</h2><div class="meta">시행 2020-09-29 · 정비 항목 4건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 3</span><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 정의는 다음과 같다. 
+  1. &quot;학교폭력&quot;이란 <mark class="cite-law" title="학교폭력예방 및 대책에 관한 법률제2조">「학교폭력예방 및 대책에 관한 법률」(이하 &quot;법&quot;이라 한다) 제2조제1호</mark>, 같은 조 제1의2호 및 제1의3호에 해당하는 행위를 말한다. 
+2. &quot;학교&quot;란 군포시(이하 &quot;시&quot;라 한다)에 소재한<mark class="cite-law" title="초ㆍ중등교육법제2조">「초ㆍ중등교육법」제2조</mark>에 따른 초등학교ㆍ중학교ㆍ고등학교ㆍ특수학교 및 각종학교와 <mark class="cite-law" title="초ㆍ중등교육법제61조">같은 법 제61조</mark>에 따라 운영하는 학교를 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「학교폭력예방 및 대책에 관한 법률」 제2조제1호</span></div><div class="act">「학교폭력예방 및 대책에 관한 법률」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2012-03-21</b> → 현행 조문 <b>2025-01-31</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">1.  &quot;학교폭력&quot;이란 학교 내외에서 학생을 대상으로 발생한 상해, 폭행, 감금, 협박, 약취ㆍ유인, 명예훼손ㆍ모욕, 공갈, 강요ㆍ강제적인 심부름 및 성폭력, 따돌림, <mark class="d">사이버 따돌림, 정보통신망을 이용한 음란ㆍ폭력 정보</mark> 등에 의하여 신체ㆍ정신 또는 재산상의 피해를 수반하는 행위를 말한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">1.  &quot;학교폭력&quot;이란 학교 내외에서 학생을 대상으로 발생한 상해, 폭행, 감금, 협박, 약취ㆍ유인, 명예훼손ㆍ모욕, 공갈, 강요ㆍ강제적인 심부름 및 성폭력, 따돌림, <mark class="i">사이버폭력</mark> 등에 의하여 신체ㆍ정신 또는 재산상의 피해를 수반하는 행위를 말한다.</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「초ㆍ중등교육법」 제61조</span></div><div class="act">「초ㆍ중등교육법」 제61조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-08-14</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제61조(학교 및 교육과정 운영의 특례)
+① 학교교육제도를 포함한 교육제도의 개선과 발전을 위하여 특히 필요하다고 인정되는 경우에는 대통령령으로 정하는 바에 따라 <mark class="d">제21조제1항ㆍ제24조제1항ㆍ제26조제1항ㆍ제29조제1항ㆍ제31조ㆍ제39조ㆍ제42조</mark> 및 제46조를 한시적으로 적용하지 아니하는 학교 또는 교육과정을 운영할 수 있다.<mark class="pt" title="&lt;개정 2025.8.14&gt; 추가됨">‸</mark>
+② 제1항에 따라 운영되는 학교 또는 교육과정에 참여하는 교원과 학생 등은 이로 인하여 불이익을 받지 아니한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제61조(학교 및 교육과정 운영의 특례)
+① 학교교육제도를 포함한 교육제도의 개선과 발전을 위하여 특히 필요하다고 인정되는 경우에는 대통령령으로 정하는 바에 따라 <mark class="i">제21조제1항ㆍ제24조제1항ㆍ제26조제1항ㆍ제29조제3항ㆍ제31조ㆍ제39조ㆍ제42조</mark> 및 제46조를 한시적으로 적용하지 아니하는 학교 또는 교육과정을 운영할 수 있다.<mark class="i"> &lt;개정 2025.8.14&gt;</mark>
+② 제1항에 따라 운영되는 학교 또는 교육과정에 참여하는 교원과 학생 등은 이로 인하여 불이익을 받지 아니한다.</span></div></div></div><div class="item"><div class="iline"><span class="tag t-chk">미확인</span><span class="law">「학교폭력예방 및 대책에 관한 법률」 제61조</span></div><div class="act">「학교폭력예방 및 대책에 관한 법률」 제61조 소재를 확인(삭제·이동·오기 여부) — 이 조례 제2조</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2020-03-01</b> → 현행 조문 <b>—</b></div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(학교폭력 예방교육 등)  
+① 시장은 <mark class="cite-law" title="학교폭력예방 및 대책에 관한 법률제15조">법 제15조</mark> 및 같은 법 시행령(이하 &quot;영&quot;이라 한다) 제17조에 따라 실시하는 학교폭력 예방교육 외에 학교폭력 예방을 위하여 필요하다고 판단될 때에는 청소년 상담 전문기관 및 유관기관, 지역사회청소년통합지원체계 등을 활용하여 학교폭력 예방교육을 실시할 수 있다. 
+② 시장은 청소년 관련 기관ㆍ단체에 위탁하여 학교폭력 예방과 관련된 자료를 홍보하거나 배부할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「학교폭력예방 및 대책에 관한 법률」 제15조</span></div><div class="act">「학교폭력예방 및 대책에 관한 법률」 제15조 개정 내용을 반영하여 이 조례 제4조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2012-03-21</b> → 현행 조문 <b>2023-10-24</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제15조(학교폭력 예방교육 등)
+① 학교의 장은 학생의 육체적ㆍ정신적 보호와 학교폭력의 예방을 위한 학생들에 대한 교육(학교폭력의 개념ㆍ실태 및 대처방안 등을 포함하여야 한다)을 학기별로 1회 이상 실시하여야 한다. &lt;개정 2012.1.26&gt;
+② 학교의 장은 학교폭력의 예방 및 대책 등을 위한 교직원 및 학부모에 대한 교육을 학기별로 1회 이상 실시하여야 한다. &lt;개정 2012.3.21&gt;
+③ 학교의 장은 <mark class="pt" title="학교폭력을 예방하기 위하여 교사ㆍ학생ㆍ학부모 등 학교구성원이 학교폭력에  추가됨">‸</mark>제1항에 따른 학교폭력 예방교육 프로그램의 구성 및 그 운용 등을 전담기구와 협의하여 전문단체 또는 전문가에게 위탁할 수 있다.<mark class="pt" title="&lt;개정 2023.10.24&gt; 추가됨">‸</mark>
+<mark class="d">④</mark> 교육장은 <mark class="d">제1항부터</mark> <mark class="d">제3항까지의</mark> <mark class="d">규정에</mark> 따른 학교폭력 예방교육 프로그램의 구성과 운용계획을 학부모가 쉽게 확인할 수 있도록 <mark class="pt" title="휴대전화를 이용한 문자메시지 전송, 추가됨">‸</mark>인터넷 <mark class="d">홈페이지에</mark> <mark class="d">게시하고,</mark> 그 밖에 다양한 방법으로 학부모에게 <mark class="d">알릴</mark> 수 있도록 노력하여야 한다. &lt;개정 2012.1.26<mark class="pt" title=", 2023.10.24 추가됨">‸</mark>&gt;
+<mark class="d">⑤</mark> 그 밖에 학교폭력 예방교육의 실시와 관련한 사항은 대통령령으로 정한다. &lt;개정 2011.5.19<mark class="pt" title=", 2023.10.24 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제15조(학교폭력 예방교육 등)
+① 학교의 장은 학생의 육체적ㆍ정신적 보호와 학교폭력의 예방을 위한 학생들에 대한 교육(학교폭력의 개념ㆍ실태 및 대처방안 등을 포함하여야 한다)을 학기별로 1회 이상 실시하여야 한다. &lt;개정 2012.1.26&gt;
+② 학교의 장은 학교폭력의 예방 및 대책 등을 위한 교직원 및 학부모에 대한 교육을 학기별로 1회 이상 실시하여야 한다. &lt;개정 2012.3.21&gt;
+③ 학교의 장은 <mark class="i">학교폭력을 예방하기 위하여 교사ㆍ학생ㆍ학부모 등 학교구성원이 학교폭력에 대한 책임을 인식하고 실천할 수 있도록 필요한 사항을 정하여 운영할 수 있다. &lt;신설 2023.10.24&gt;
+④ 학교의 장은 </mark>제1항에 따른 학교폭력 예방교육 프로그램의 구성 및 그 운용 등을 전담기구와 협의하여 전문단체 또는 전문가에게 위탁할 수 있다.<mark class="i"> &lt;개정 2023.10.24&gt;</mark>
+<mark class="i">⑤</mark> 교육장은 <mark class="i">제1항,</mark> <mark class="i">제2항</mark> <mark class="i">및 제4항에</mark> 따른 학교폭력 예방교육 프로그램의 구성과 운용계획을 학부모가 쉽게 확인할 수 있도록 <mark class="i">휴대전화를 이용한 문자메시지 전송, </mark>인터넷 <mark class="i">홈페이지</mark> <mark class="i">게시 및</mark> 그 밖에 다양한 방법으로 학부모에게 <mark class="i">홍보하여 참여가 활성화될</mark> 수 있도록 노력하여야 한다. &lt;개정 2012.1.26<mark class="i">, 2023.10.24</mark>&gt;
+<mark class="i">⑥ 교육부장관은 학교폭력 예방 및 대책 등에 관한 홍보영상을 제작하여 「방송법」 제2조제3호에 따른 방송사업자에게 배포하고 송출을 요청할 수 있다. &lt;신설 2023.10.24&gt;
+⑦</mark> 그 밖에 학교폭력 예방교육의 실시와 관련한 사항은 대통령령으로 정한다. &lt;개정 2011.5.19<mark class="i">, 2023.10.24</mark>&gt;</span></div></div></div></div></div><div class="ord"><h2>군포시 다함께 돌봄 지원에 관한 조례</h2><div class="meta">시행 2020-09-29 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(비용의 면제 등)  
+① 시장은 다음 각 호의 어느 하나에 해당하는 경우에는 비용을 면제할 수 있다. 
+1. <mark class="cite-law" title="국가유공자 등 예우 및 지원에 관한 법률">「국가유공자 등 예우 및 지원에 관한 법률」</mark>에 따른 국가유공자의 자녀 
+2. <mark class="cite-law" title="국민기초생활보장법제2조">「국민기초생활보장법」제2조제2호</mark>에 따른 수급자의 자녀 
+3. <mark class="cite-law" title="한부모가족지원법제5조,제5조의2">「한부모가족지원법」제5조 또는 제5조의2</mark>에 따른 한부모가족 보호대상자의 자녀 
+4. <mark class="cite-law" title="장애인복지법제2조">「장애인복지법」제2조</mark>에 따른 장애인의 자녀 
+② 시장은 다음 각 호의 어느 하나에 해당하는 경우 해당 비용의 100분의 50을 감면할 수 있다. 
+1. <mark class="cite-local" title="군포시 인구정책 추진 및 지원에 관한 조례제2조">「군포시 인구정책 추진 및 지원에 관한 조례」제2조제2호</mark>에 따른 다자녀 가정의 자녀 
+2. <mark class="cite-law" title="국민기초생활보장법제2조">「국민기초생활보장법」제2조제10호</mark>에 따른 차상위계층의 자녀 
+③ 그 밖에 시장이 면제대상자로 인정하는 사람 
+④ 제1항 및 제2항에 따라 이용료의 면제 및 감경을 받고자 하는 사람은 그 사실을 증명할 수 있는 서류를 제출하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「한부모가족지원법」 제5조의2</span></div><div class="act">「한부모가족지원법」 제5조의2 개정 내용을 반영하여 이 조례 제7조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2018-01-16</b> → 현행 조문 <b>2023-04-11</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제5조의2(지원대상자의 범위에 대한 특례)
+① 혼인 관계에 있지 아니한 자로서 출산 전 임신부와 출산 후 해당 아동을 양육하지 아니하는 모는 제5조에도 불구하고 <mark class="d">제19조제1항제3호의</mark> <mark class="d">미혼모자가족복지시설을</mark> 이용할 때에는 이 법에 따른 지원대상자가 된다. &lt;개정 2011.4.12, 2014.1.21, 2018.1.16<mark class="pt" title=", 2023.4.11 추가됨">‸</mark>&gt;
+② 다음 각 호의 어느 하나에 해당하는 아동과 그 아동을 양육하는 조부 또는 조모로서 여성가족부령으로 정하는 자는 제5조에도 불구하고 이 법에 따른 지원대상자가 된다. &lt;개정 2008.2.29, 2010.1.18, 2011.4.12, 2014.1.21&gt;
+1.  부모가 사망하거나 생사가 분명하지 아니한 아동
+2.  부모가 정신 또는 신체의 장애ㆍ질병으로 장기간 노동능력을 상실한 아동
+3.  부모의 장기복역 등으로 부양을 받을 수 없는 아동
+4.  부모가 이혼하거나 유기하여 부양을 받을 수 없는 아동
+5.  제1호부터 제4호까지에 규정된 자에 준하는 자로서 여성가족부령으로 정하는 아동
+③ 국내에 체류하고 있는 외국인 중 대한민국 <mark class="d">국민과 혼인하여 대한민국 </mark>국적의 아동을 양육하고 있는 <mark class="d">사람으로서</mark> 대통령령으로 정하는 사람이 제5조에 해당하면 이 법에 따른 지원대상자가 된다. &lt;개정 2014.1.21<mark class="pt" title=", 2020.10.20 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제5조의2(지원대상자의 범위에 대한 특례)
+① 혼인 관계에 있지 아니한 자로서 출산 전 임신부와 출산 후 해당 아동을 양육하지 아니하는 모는 제5조에도 불구하고 <mark class="i">제19조제1항제1호의</mark> <mark class="i">출산지원시설을</mark> 이용할 때에는 이 법에 따른 지원대상자가 된다. &lt;개정 2011.4.12, 2014.1.21, 2018.1.16<mark class="i">, 2023.4.11</mark>&gt;
+② 다음 각 호의 어느 하나에 해당하는 아동과 그 아동을 양육하는 조부 또는 조모로서 여성가족부령으로 정하는 자는 제5조에도 불구하고 이 법에 따른 지원대상자가 된다. &lt;개정 2008.2.29, 2010.1.18, 2011.4.12, 2014.1.21&gt;
+1.  부모가 사망하거나 생사가 분명하지 아니한 아동
+2.  부모가 정신 또는 신체의 장애ㆍ질병으로 장기간 노동능력을 상실한 아동
+3.  부모의 장기복역 등으로 부양을 받을 수 없는 아동
+4.  부모가 이혼하거나 유기하여 부양을 받을 수 없는 아동
+5.  제1호부터 제4호까지에 규정된 자에 준하는 자로서 여성가족부령으로 정하는 아동
+③ 국내에 체류하고 있는 외국인 중 대한민국 <mark class="pt" title="국민과 혼인하여 대한민국 삭제됨">‸</mark>국적의 아동을 양육하고 있는 <mark class="i">모 또는 부로서</mark> 대통령령으로 정하는 사람이 제5조에 해당하면 이 법에 따른 지원대상자가 된다. &lt;개정 2014.1.21<mark class="i">, 2020.10.20</mark>&gt;</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「장애인복지법」 제2조</span></div><div class="act">「장애인복지법」 제2조 개정 내용을 반영하여 이 조례 제7조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2015-06-22</b> → 현행 조문 <b>2020-12-29</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(장애인의 정의 등)
+①&quot;장애인&quot;이란 신체적ㆍ정신적 장애로 오랫동안 일상생활이나 사회생활에서 상당한 제약을 받는 자를 말한다.
+②이 법을 적용받는 장애인은 제1항에 따른 장애인 중 다음 각 호의 어느 하나에 해당하는 장애가 있는 자로서 대통령령으로 정하는 장애의 종류 및 기준에 해당하는 자를 말한다.
+1.  &quot;신체적 장애&quot;란 주요 외부 신체 기능의 장애, 내부기관의 장애 등을 말한다.
+2.  &quot;정신적 장애&quot;란 발달장애 또는 정신 질환으로 발생하는 장애를 말한다.
+③ &quot;장애인학대&quot;란 장애인에 대하여 신체적ㆍ정신적ㆍ정서적ㆍ언어적ㆍ성적 폭력이나 가혹행위, 경제적 착취, 유기 또는 방임을 하는 것을 말한다. &lt;신설 2012.10.22, 2015.6.22&gt;<mark class="pt" title="④ &quot;장애인학대관련범죄&quot;란 장애인학대로서 다음 각 호의 어느 하나에 해당 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제2조(장애인의 정의 등)
+①&quot;장애인&quot;이란 신체적ㆍ정신적 장애로 오랫동안 일상생활이나 사회생활에서 상당한 제약을 받는 자를 말한다.
+②이 법을 적용받는 장애인은 제1항에 따른 장애인 중 다음 각 호의 어느 하나에 해당하는 장애가 있는 자로서 대통령령으로 정하는 장애의 종류 및 기준에 해당하는 자를 말한다.
+1.  &quot;신체적 장애&quot;란 주요 외부 신체 기능의 장애, 내부기관의 장애 등을 말한다.
+2.  &quot;정신적 장애&quot;란 발달장애 또는 정신 질환으로 발생하는 장애를 말한다.
+③ &quot;장애인학대&quot;란 장애인에 대하여 신체적ㆍ정신적ㆍ정서적ㆍ언어적ㆍ성적 폭력이나 가혹행위, 경제적 착취, 유기 또는 방임을 하는 것을 말한다. &lt;신설 2012.10.22, 2015.6.22&gt;<mark class="i">
+④ &quot;장애인학대관련범죄&quot;란 장애인학대로서 다음 각 호의 어느 하나에 해당하는 죄를 말한다. &lt;신설 2020.12.29&gt;
+1.  「형법」 제2편제24장 살인의 죄 중 제250조(살인, 존속살해), 제252조(촉탁, 승낙에 의한 살인 등), 제253조(위계 등에 의한 촉탁살인 등) 및 제254조(미수범)의 죄
+2.  「형법」 제2편제25장 상해와 폭행의 죄 중 제257조(상해, 존속상해), 제258조(중상해, 존속중상해), 제258조의2(특수상해), 제259조(상해치사), 제260조(폭행, 존속폭행)제1항ㆍ제2항, 제261조(특수폭행) 및 262조(폭행치사상)의 죄
+3.  「형법」 제2편제28장 유기와 학대의 죄 중 제271조(유기, 존속유기)제1항ㆍ제2항, 제272조(영아유기), 제273조(학대, 존속학대), 제274조(아동혹사) 및 제275조(유기등 치사상)의 죄
+4.  「형법」 제2편제29장 체포와 감금의 죄 중 제276조(체포, 감금, 존속체포, 존속감금), 제277조(중체포, 중감금, 존속중체포, 존속중감금), 제278조(특수체포, 특수감금), 제280조(미수범) 및 제281조(체포ㆍ감금등의 치사상)의 죄
+5.  「형법」 제2편제30장 협박의 죄 중 제283조(협박, 존속협박)제1항ㆍ제2항, 제284조(특수협박) 및 제286조(미수범)의 죄
+6.  「형법」 제2편제31장 약취, 유인 및 인신매매의 죄 중 제287조(미성년자의 약취, 유인), 제288조(추행 등 목적 약취, 유인 등), 제289조(인신매매) 및 제290조(약취, 유인, 매매, 이송 등 상해ㆍ치상), 제291조(약취, 유인, 매매, 이송 등 살인ㆍ치사) 및 제292조(약취, 유인, 매매, 이송된 사람의 수수ㆍ은닉 등) 및 제294조(미수범)의 죄
+7.  「형법」 제2편제32장 강간과 추행의 죄 중 제297조(강간), 제297조의2(유사강간), 제298조(강제추행), 제299조(준강간, 준강제추행), 제300조(미수범), 제301조(강간 등 상해ㆍ치상), 제301조의2(강간등 살인ㆍ치사), 제302조(미성년자 등에 대한 간음), 제303조(업무상위력 등에 의한 간음) 및 제305조(미성년자에 대한 간음, 추행)의 죄
+8.  「형법」 제2편제33장 명예에 관한 죄 중 제307조(명예훼손), 제309조(출판물 등에 의한 명예훼손) 및 제311조(모욕)의 죄
+9.  「형법」 제2편제36장 주거침입의 죄 중 제321조(주거ㆍ신체 수색)의 죄
+10.  「형법」 제2편제37장 권리행사를 방해하는 죄 중 제324조(강요) 및 제324조의5(미수범)(제324조의 죄에만 해당한다)의 죄
+11.  「형법」 제2편제39장 사기와 공갈의 죄 중 제347조(사기), 제347조의2(컴퓨터등 사용사기), 제348조(준사기), 제350조(공갈), 제350조의2(특수공갈) 및 제352조(미수범)의 죄
+12.  「형법」 제2편제40장 횡령과 배임의 죄 중 제355조(횡령, 배임), 제356조(업무상의 횡령과 배임) 및 제357조(배임수증재)의 죄
+13.  「형법」 제2편제42장 손괴의 죄 중 제366조(재물손괴등)의 죄
+14.  제86조제1항ㆍ제2항, 같은 조 제3항제3호, 같은 조 제4항제2호 및 같은 조 제5항의 죄
+15.  「성매매알선 등 행위의 처벌에 관한 법률」 제18조 및 제23조(제18조의 죄에만 해당한다)의 죄
+16.  「장애인차별금지 및 권리구제 등에 관한 법률」 제49조제1항의 죄
+17.  「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제70조제1항 및 제2항의 죄
+18.  「정신건강증진 및 정신질환자 복지서비스 지원에 관한 법률」 제84조제1호 및 제11호의 죄
+19.  제1호부터 제18호까지의 죄로서 다른 법률에 따라 가중처벌되는 죄</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 청소년 권리 증진을 위한 조례</h2><div class="meta">시행 2023-01-31 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(정의)  
+① 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
+1. “청소년”이란 군포시에 주민등록이 되어 있거나 군포시 관내 학교에 재학 중인 9세 이상 24세 이하인 사람을 말한다. 
+2. “청소년 권리”란 <mark class="cite-law" title="대한민국헌법">「대한민국헌법」</mark>과 유엔아동권리협약에서 규정하는 생존권ㆍ보호권ㆍ발달권ㆍ참여권 등을 말한다. 
+3. “공론”이란 공동의 주제에 대해 당사자가 함께 모여 하는 논의를 말한다. 
+4. “공론장”이란 공론 형성을 목적으로 구성된 추상적·구체적 공간을 모두 의미한다. 
+② 그 밖에 이 조례에서 규정하지 않은 용어의 뜻은 <mark class="cite-law" title="청소년 기본법제3조">「청소년 기본법」 제3조</mark>, <mark class="cite-law" title="청소년활동 진흥법제2조">「청소년활동 진흥법」 제2조</mark>, <mark class="cite-law" title="청소년 보호법제2조">「청소년 보호법」 제2조</mark>, <mark class="cite-law" title="청소년복지 지원법제2조">「청소년복지 지원법」 제2조</mark>에서 정한 바에 따른다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「청소년 보호법」 제2조</span></div><div class="act">「청소년 보호법」 제2조 개정 내용을 반영하여 이 조례 제3조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-01-31</b> · 당시 법령본 <b>2018-12-11</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2013.3.22, 2013.6.4, 2014.3.24, 2016.1.6, 2016.12.20, 2017.12.12, 2018.12.11<mark class="pt" title=", 2025.4.22, 2025.10.1 추가됨">‸</mark>&gt;
+1.  &quot;청소년&quot;이란<mark class="d"> 만</mark> 19세 미만인 사람을 말한다. 다만,<mark class="d"> 만</mark> 19세가 되는 해의 1월 1일을 맞이한 사람은 제외한다.
+2.  &quot;매체물&quot;이란 다음 각 목의 어느 하나에 해당하는 것을 말한다.
+가.  「영화 및 비디오물의 진흥에 관한 법률」에 따른 영화 및 비디오물
+나.  「게임산업진흥에 관한 법률」에 따른 게임물
+다.  「음악산업진흥에 관한 법률」에 따른 음반, 음악파일, 음악영상물 및 음악영상파일
+라.  「공연법」에 따른 공연(국악공연은 제외한다)
+마.  「전기통신사업법」에 따른 전기통신을 통한 부호ㆍ문언ㆍ음향 또는 영상정보
+바.  「방송법」에 따른 방송프로그램(보도 방송프로그램은 제외한다)
+사.  「신문 등의 진흥에 관한 법률」에 따른 일반일간신문(주로 정치ㆍ경제ㆍ사회에 관한 보도ㆍ논평 및 여론을 전파하는 신문은 제외한다), 특수일간신문(경제ㆍ산업ㆍ과학ㆍ종교 분야는 제외한다), 일반주간신문(정치ㆍ경제 분야는 제외한다), 특수주간신문(경제ㆍ산업ㆍ과학ㆍ시사ㆍ종교 분야는 제외한다), 인터넷신문(주로 보도ㆍ논평 및 여론을 전파하는 기사는 제외한다) 및 인터넷뉴스서비스
+아.  「잡지 등 정기간행물의 진흥에 관한 법률」에 따른 잡지(정치ㆍ경제ㆍ사회ㆍ시사ㆍ산업ㆍ과학ㆍ종교 분야는 제외한다), 정보간행물, 전자간행물 및 그 밖의 간행물
+자.  「출판문화산업 진흥법」에 따른 간행물, 전자출판물 및 외국간행물(사목 및 아목에 해당하는 매체물은 제외한다)
+차.  「옥외광고물 등의 관리와 옥외광고산업 진흥에 관한 법률」에 따른 옥외광고물과 가목부터 자목까지의 매체물에 수록ㆍ게재ㆍ전시되거나 그 밖의 방법으로 포함된 상업적 광고선전물
+카.  그 밖에 청소년의 정신적ㆍ신체적 건강을 해칠 우려가 있어 대통령령으로 정하는 매체물
+3.  &quot;청소년유해매체물&quot;이란 다음 각 목의 어느 하나에 해당하는 것을 말한다.
+가.  제7조제1항 본문 및 제11조에 따라 청소년보호위원회가 청소년에게 유해한 것으로 결정하거나 확인하여 <mark class="d">여성가족부장관이</mark> 고시한 매체물
+나.  제7조제1항 단서 및 제11조에 따라 각 심의기관이 청소년에게 유해한 것으로 심의하거나 확인하여 <mark class="d">여성가족부장관이</mark> 고시한 매체물
+4.  &quot;청소년유해약물등&quot;이란 청소년에게 유해한 것으로 인정되는 다음 가목의 약물(이하 &quot;청소년유해약물&quot;이라 한다)과 청소년에게 유해한 것으로 인정되는 다음 나목의 물건(이하 &quot;청소년유해물건&quot;이라 한다)을 말한다.
+가.  청소년유해약물						
+
+						    1) 「주세법」에 따른 주류
+						
+
+						    2) 「담배사업법」에 따른 담배
+						
+
+						    3) 「마약류 관리에 관한 법률」에 따른 마약류
+						
+
+						    4) 「화학물질관리법」에 따른 환각물질
+						
+
+						    5) 그 밖에 중추신경에 작용하여 습관성, 중독성, 내성 등을 유발하여 인체에 유해하게 작용할 수 있는 약물 등 청소년의 사용을 제한하지 아니하면 청소년의 심신을 심각하게 손상시킬 우려가 있는 약물로서 대통령령으로 정하는 기준에 따라 관계 기관의 의견을 들어 제36조에 따른 청소년보호위원회(이하 &quot;청소년보호위원회&quot;라 한다)가 결정하고 <mark class="d">여성가족부장관이</mark> 고시한 것
+나.  청소년유해물건						
+
+						    1) 청소년에게 음란한 행위를 조장하는 성기구 등 청소년의 사용을 제한하지 아니하면 청소년의 심신을 심각하게 손상시킬 우려가 있는 성 관련 물건으로서 대통령령으로 정하는 기준에 따라 청소년보호위원회가 결정하고 <mark class="d">여성가족부장관이</mark> 고시한 것
+						
+
+						    2) 청소년에게 음란성ㆍ포악성ㆍ잔인성ㆍ사행성 등을 조장하는 완구류 등 청소년의 사용을 제한하지 아니하면 청소년의 심신을 심각하게 손상시킬 우려가 있는 물건으로서 대통령령으로 정하는 기준에 따라 청소년보호위원회가 결정하고 <mark class="d">여성가족부장관이</mark> 고시한 것
+						
+
+						    3) 청소년유해약물과 유사한 형태의 제품으로 청소년의 사용을 제한하지 아니하면 청소년의 청소년유해약물 이용습관을 심각하게 조장할 우려가 있는 물건으로서 대통령령으로 정하는 기준에 따라 청소년보호위원회가 결정하고 <mark class="d">여성가족부장관이</mark> 고시한 것
+5.  &quot;청소년유해업소&quot;란 청소년의 출입과 고용이 청소년에게 유해한 것으로 인정되는 다음 가목의 업소(이하 &quot;청소년 출입ㆍ고용금지업소&quot;라 한다)와 청소년의 출입은 가능하나 고용이 청소년에게 유해한 것으로 인정되는 다음 나목의 업소(이하 &quot;청소년고용금지업소&quot;라 한다)를 말한다. 이 경우 업소의 구분은 그 업소가 영업을 할 때 다른 법령에 따라 요구되는 허가ㆍ인가ㆍ등록ㆍ신고 등의 여부와 관계없이 실제로 이루어지고 있는 영업행위를 기준으로 한다.
+가.  청소년 출입ㆍ고용금지업소						
+
+						    1) 「게임산업진흥에 관한 법률」에 따른 일반게임제공업 및 복합유통게임제공업 중 대통령령으로 정하는 것
+						
+
+						    2) 「사행행위 등 규제 및 처벌 특례법」에 따른 사행행위영업
+						
+
+						    3) 「식품위생법」에 따른 식품접객업 중 대통령령으로 정하는 것
+						
+
+						    4) 「영화 및 비디오물의 진흥에 관한 법률」 제2조제16호에 따른 비디오물감상실업ㆍ제한관람가비디오물소극장업 및 복합영상물제공업
+						
+
+						    5) 「음악산업진흥에 관한 법률」에 따른 노래연습장업 중 대통령령으로 정하는 것
+						
+
+						    6) 「체육시설의 설치ㆍ이용에 관한 법률」에 따른 무도학원업 및 무도장업
+						
+
+						    7) 전기통신설비를 갖추고 불특정한 사람들 사이의 음성대화 또는 화상대화를 매개하는 것을 주된 목적으로 하는 영업. 다만, 「전기통신사업법」 등 다른 법률에 따라 통신을 매개하는 영업은 제외한다.
+						
+
+						    8) 불특정한 사람 사이의 신체적인 접촉 또는<mark class="d"> 은밀한 부분의 노출 등 성적 행위가 이루어지</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2013.3.22, 2013.6.4, 2014.3.24, 2016.1.6, 2016.12.20, 2017.12.12, 2018.12.11<mark class="i">, 2025.4.22, 2025.10.1</mark>&gt;
+1.  &quot;청소년&quot;이란<mark class="pt" title="만 삭제됨">‸</mark> 19세 미만인 사람을 말한다. 다만,<mark class="pt" title="만 삭제됨">‸</mark> 19세가 되는 해의 1월 1일을 맞이한 사람은 제외한다.
+2.  &quot;매체물&quot;이란 다음 각 목의 어느 하나에 해당하는 것을 말한다.
+가.  「영화 및 비디오물의 진흥에 관한 법률」에 따른 영화 및 비디오물
+나.  「게임산업진흥에 관한 법률」에 따른 게임물
+다.  「음악산업진흥에 관한 법률」에 따른 음반, 음악파일, 음악영상물 및 음악영상파일
+라.  「공연법」에 따른 공연(국악공연은 제외한다)
+마.  「전기통신사업법」에 따른 전기통신을 통한 부호ㆍ문언ㆍ음향 또는 영상정보
+바.  「방송법」에 따른 방송프로그램(보도 방송프로그램은 제외한다)
+사.  「신문 등의 진흥에 관한 법률」에 따른 일반일간신문(주로 정치ㆍ경제ㆍ사회에 관한 보도ㆍ논평 및 여론을 전파하는 신문은 제외한다), 특수일간신문(경제ㆍ산업ㆍ과학ㆍ종교 분야는 제외한다), 일반주간신문(정치ㆍ경제 분야는 제외한다), 특수주간신문(경제ㆍ산업ㆍ과학ㆍ시사ㆍ종교 분야는 제외한다), 인터넷신문(주로 보도ㆍ논평 및 여론을 전파하는 기사는 제외한다) 및 인터넷뉴스서비스
+아.  「잡지 등 정기간행물의 진흥에 관한 법률」에 따른 잡지(정치ㆍ경제ㆍ사회ㆍ시사ㆍ산업ㆍ과학ㆍ종교 분야는 제외한다), 정보간행물, 전자간행물 및 그 밖의 간행물
+자.  「출판문화산업 진흥법」에 따른 간행물, 전자출판물 및 외국간행물(사목 및 아목에 해당하는 매체물은 제외한다)
+차.  「옥외광고물 등의 관리와 옥외광고산업 진흥에 관한 법률」에 따른 옥외광고물과 가목부터 자목까지의 매체물에 수록ㆍ게재ㆍ전시되거나 그 밖의 방법으로 포함된 상업적 광고선전물
+카.  그 밖에 청소년의 정신적ㆍ신체적 건강을 해칠 우려가 있어 대통령령으로 정하는 매체물
+3.  &quot;청소년유해매체물&quot;이란 다음 각 목의 어느 하나에 해당하는 것을 말한다.
+가.  제7조제1항 본문 및 제11조에 따라 청소년보호위원회가 청소년에게 유해한 것으로 결정하거나 확인하여 <mark class="i">성평등가족부장관이</mark> 고시한 매체물
+나.  제7조제1항 단서 및 제11조에 따라 각 심의기관이 청소년에게 유해한 것으로 심의하거나 확인하여 <mark class="i">성평등가족부장관이</mark> 고시한 매체물
+4.  &quot;청소년유해약물등&quot;이란 청소년에게 유해한 것으로 인정되는 다음 가목의 약물(이하 &quot;청소년유해약물&quot;이라 한다)과 청소년에게 유해한 것으로 인정되는 다음 나목의 물건(이하 &quot;청소년유해물건&quot;이라 한다)을 말한다.
+가.  청소년유해약물						
+
+						    1) 「주세법」에 따른 주류
+						
+
+						    2) 「담배사업법」에 따른 담배
+						
+
+						    3) 「마약류 관리에 관한 법률」에 따른 마약류
+						
+
+						    4) 「화학물질관리법」에 따른 환각물질
+						
+
+						    5) 그 밖에 중추신경에 작용하여 습관성, 중독성, 내성 등을 유발하여 인체에 유해하게 작용할 수 있는 약물 등 청소년의 사용을 제한하지 아니하면 청소년의 심신을 심각하게 손상시킬 우려가 있는 약물로서 대통령령으로 정하는 기준에 따라 관계 기관의 의견을 들어 제36조에 따른 청소년보호위원회(이하 &quot;청소년보호위원회&quot;라 한다)가 결정하고 <mark class="i">성평등가족부장관이</mark> 고시한 것
+나.  청소년유해물건						
+
+						    1) 청소년에게 음란한 행위를 조장하는 성기구 등 청소년의 사용을 제한하지 아니하면 청소년의 심신을 심각하게 손상시킬 우려가 있는 성 관련 물건으로서 대통령령으로 정하는 기준에 따라 청소년보호위원회가 결정하고 <mark class="i">성평등가족부장관이</mark> 고시한 것
+						
+
+						    2) 청소년에게 음란성ㆍ포악성ㆍ잔인성ㆍ사행성 등을 조장하는 완구류 등 청소년의 사용을 제한하지 아니하면 청소년의 심신을 심각하게 손상시킬 우려가 있는 물건으로서 대통령령으로 정하는 기준에 따라 청소년보호위원회가 결정하고 <mark class="i">성평등가족부장관이</mark> 고시한 것
+						
+
+						    3) 청소년유해약물과 유사한 형태의 제품으로 청소년의 사용을 제한하지 아니하면 청소년의 청소년유해약물 이용습관을 심각하게 조장할 우려가 있는 물건으로서 대통령령으로 정하는 기준에 따라 청소년보호위원회가 결정하고 <mark class="i">성평등가족부장관이</mark> 고시한 것
+5.  &quot;청소년유해업소&quot;란 청소년의 출입과 고용이 청소년에게 유해한 것으로 인정되는 다음 가목의 업소(이하 &quot;청소년 출입ㆍ고용금지업소&quot;라 한다)와 청소년의 출입은 가능하나 고용이 청소년에게 유해한 것으로 인정되는 다음 나목의 업소(이하 &quot;청소년고용금지업소&quot;라 한다)를 말한다. 이 경우 업소의 구분은 그 업소가 영업을 할 때 다른 법령에 따라 요구되는 허가ㆍ인가ㆍ등록ㆍ신고 등의 여부와 관계없이 실제로 이루어지고 있는 영업행위를 기준으로 한다.
+가.  청소년 출입ㆍ고용금지업소						
+
+						    1) 「게임산업진흥에 관한 법률」에 따른 일반게임제공업 및 복합유통게임제공업 중 대통령령으로 정하는 것
+						
+
+						    2) 「사행행위 등 규제 및 처벌 특례법」에 따른 사행행위영업
+						
+
+						    3) 「식품위생법」에 따른 식품접객업 중 대통령령으로 정하는 것
+						
+
+						    4) 「영화 및 비디오물의 진흥에 관한 법률」 제2조제16호에 따른 비디오물감상실업ㆍ제한관람가비디오물소극장업 및 복합영상물제공업
+						
+
+						    5) 「음악산업진흥에 관한 법률」에 따른 노래연습장업 중 대통령령으로 정하는 것
+						
+
+						    6) 「체육시설의 설치ㆍ이용에 관한 법률」에 따른 무도학원업 및 무도장업
+						
+
+						    7) 전기통신설비를 갖추고 불특정한 사람들 사이의 음성대화 또는 화상대화를 매개하는 것을 주된 목적으로 하는 영업. 다만, 「전기통신사업법」 등 다른 법률에 따라 통신을 매개하는 영업은 제외한다.
+						
+
+						    8) 불특정한 사람 사이의 신체적인 접촉 또는<mark class="pt" title="은밀한 부분의 노출 등 성적 행위가 이루어지 삭제됨">‸</mark></span></div></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(시장의 책무)  
+① 군포시장(이하 “시장”이라 한다)은 청소년의 권리 증진을 위해 다음 각 호와 관련된 정책과 사업을 지원하여야 한다. 
+1. 청소년의 균형 있는 성장 
+2. 청소년 참여 및 권리 증진 
+3. 청소년 자립 및 보호 지원 
+4. 청소년활동에 관한 안전대책 
+5. 청소년의 노동권익 보호 지원 
+6. 그 밖에 청소년이 제안한 사항 중 시장이 청소년 권리 증진을 위해 필요하다고 인정하는 사항 
+② 시장은 <mark class="cite-law" title="청소년 기본법제14조">「청소년 기본법」 제14조</mark>에 따라 청소년육성에 관한 연도별 시행계획을 수립할 때에는 제1항 각 호의 사업을 포함하도록 노력하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「청소년 기본법」 제14조</span></div><div class="act">「청소년 기본법」 제14조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-01-31</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제14조(연도별 시행계획의 수립 등)
+① <mark class="d">여성가족부장관</mark> 및 관계 중앙행정기관의 장과 지방자치단체의 장은 기본계획에 따라 연도별 시행계획(이하 &quot;시행계획&quot;이라 한다)을 수립ㆍ시행하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
+② 관계 중앙행정기관의 장과 지방자치단체의 장은 다음 연도 시행계획 및 전년도 시행계획에 따른 추진실적을 대통령령으로 정하는 바에 따라 매년 <mark class="d">여성가족부장관에게</mark> 제출하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
+③ <mark class="d">여성가족부장관은</mark> 전년도 시행계획에 따른 추진실적을 분석ㆍ평가하고, 그 결과를 관계 중앙행정기관의 장과 지방자치단체의 장에게 통보한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
+④ <mark class="d">여성가족부장관</mark> 및 관계 중앙행정기관의 장과 지방자치단체의 장은 제3항에 따른 분석ㆍ평가 결과를 다음 연도 시행계획에 반영하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
+⑤ <mark class="d">여성가족부장관은</mark> 제3항에 따른 추진실적의 분석ㆍ평가를 위하여 필요한 경우에는 국공립 연구기관 또는 「정부출연연구기관 등의 설립ㆍ운영 및 육성에 관한 법률」에 따른 정부출연연구기관을 청소년정책 분석ㆍ평가에 관한 전문지원기관으로 지정하여 분석ㆍ평가 업무를 지원하게 할 수 있다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
+⑥ 시행계획의 수립, 추진실적의 분석ㆍ평가 및 제5항에 따른 전문지원기관의 지정 등에 필요한 사항은 대통령령으로 정한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제14조(연도별 시행계획의 수립 등)
+① <mark class="i">성평등가족부장관</mark> 및 관계 중앙행정기관의 장과 지방자치단체의 장은 기본계획에 따라 연도별 시행계획(이하 &quot;시행계획&quot;이라 한다)을 수립ㆍ시행하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+② 관계 중앙행정기관의 장과 지방자치단체의 장은 다음 연도 시행계획 및 전년도 시행계획에 따른 추진실적을 대통령령으로 정하는 바에 따라 매년 <mark class="i">성평등가족부장관에게</mark> 제출하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+③ <mark class="i">성평등가족부장관은</mark> 전년도 시행계획에 따른 추진실적을 분석ㆍ평가하고, 그 결과를 관계 중앙행정기관의 장과 지방자치단체의 장에게 통보한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+④ <mark class="i">성평등가족부장관</mark> 및 관계 중앙행정기관의 장과 지방자치단체의 장은 제3항에 따른 분석ㆍ평가 결과를 다음 연도 시행계획에 반영하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+⑤ <mark class="i">성평등가족부장관은</mark> 제3항에 따른 추진실적의 분석ㆍ평가를 위하여 필요한 경우에는 국공립 연구기관 또는 「정부출연연구기관 등의 설립ㆍ운영 및 육성에 관한 법률」에 따른 정부출연연구기관을 청소년정책 분석ㆍ평가에 관한 전문지원기관으로 지정하여 분석ㆍ평가 업무를 지원하게 할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+⑥ 시행계획의 수립, 추진실적의 분석ㆍ평가 및 제5항에 따른 전문지원기관의 지정 등에 필요한 사항은 대통령령으로 정한다.</span></div></div></div></div></div><div class="ord"><h2>군포시 청소년시설 설치 및 운영 조례</h2><div class="meta">시행 2025-12-10 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(청소년시설의 휴무일) 청소년시설의 휴무일은 <mark class="cite-law" title="관공서의 공휴일에 관한 규정제2조">「관공서의 공휴일에 관한 규정」 제2조</mark>에서 정하는 공휴일로 한다. 다만, 시장은 필요한 경우 따로 휴무일을 지정할 수 있으며 이 경우 홈페이지 등에 미리 공지하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「관공서의 공휴일에 관한 규정」 제2조</span></div><div class="act">「관공서의 공휴일에 관한 규정」 제2조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2025-12-10</b> · 당시 법령본 <b>2017-10-17</b> → 현행 조문 <b>2026-04-30</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(공휴일) 관공서의 공휴일은 다음 각 호와 같다. 다만, 재외공관의 공휴일은 <mark class="d">우리나라의</mark> <mark class="d">국경일</mark> <mark class="d">중</mark> <mark class="d">공휴일과</mark> 주재국의 공휴일로 한다. &lt;개정 1998.12.18, 2005.6.30, 2006.9.6, 2012.12.28, 2017.10.17<mark class="pt" title=", 2026.4.30 추가됨">‸</mark>&gt;
+1.  일요일
+2.  <mark class="pt" title="「국경일에 관한 법률」에 따른 추가됨">‸</mark>국경일<mark class="d"> 중 3ㆍ1절, 광복절, 개천절 및 한글날</mark>
+3.  1월 1일
+4.  설날 전날, 설날, 설날 <mark class="d">다음날</mark> <mark class="pt" title="날 추가됨">‸</mark>(음력 12월 말일, 1월 1일, 2일)
+5.  <mark class="d">삭제</mark> <mark class="d">&lt;2005.6.30&gt;
+6.  부처님오신날</mark> <mark class="pt" title="날 추가됨">‸</mark>(음력 4월 8일)
+<mark class="pt" title="6.  노동절(5월 1일) 추가됨">‸</mark>7.  <mark class="pt" title="어린이날( 추가됨">‸</mark>5월 5일<mark class="d"> (어린이날</mark>)
+8.  <mark class="pt" title="현충일( 추가됨">‸</mark>6월 6일<mark class="d"> (현충일</mark>)
+9.  추석 전날, 추석, 추석 <mark class="d">다음날</mark> <mark class="pt" title="날 추가됨">‸</mark>(음력 8월 14일, 15일, 16일)
+10.  <mark class="pt" title="기독탄신일( 추가됨">‸</mark>12월 25일<mark class="d"> (기독탄신일</mark>)
+10의2.  「공직선거법」 제34조에 따른 임기만료에 의한 선거의 선거일
+11.  <mark class="d">기타</mark> 정부에서 수시 지정하는 날</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제2조(공휴일) 관공서의 공휴일은 다음 각 호와 같다. 다만, 재외공관의 공휴일은 <mark class="i">「국경일에</mark> <mark class="i">관한</mark> <mark class="i">법률」에</mark> <mark class="i">따른 국경일과</mark> 주재국의 공휴일로 한다. &lt;개정 1998.12.18, 2005.6.30, 2006.9.6, 2012.12.28, 2017.10.17<mark class="i">, 2026.4.30</mark>&gt;
+1.  일요일
+2.  <mark class="i">「국경일에 관한 법률」에 따른 </mark>국경일<mark class="pt" title="중 3ㆍ1절, 광복절, 개천절 및 한글날 삭제됨">‸</mark>
+3.  1월 1일
+4.  설날 전날, 설날, 설날 <mark class="i">다음</mark> <mark class="i">날</mark>(음력 12월 말일, 1월 1일, 2일)
+5.  <mark class="i">부처님</mark> <mark class="i">오신</mark> <mark class="i">날</mark>(음력 4월 8일)
+<mark class="i">6.  노동절(5월 1일)
+</mark>7.  <mark class="i">어린이날(</mark>5월 5일<mark class="pt" title="(어린이날 삭제됨">‸</mark>)
+8.  <mark class="i">현충일(</mark>6월 6일<mark class="pt" title="(현충일 삭제됨">‸</mark>)
+9.  추석 전날, 추석, 추석 <mark class="i">다음</mark> <mark class="i">날</mark>(음력 8월 14일, 15일, 16일)
+10.  <mark class="i">기독탄신일(</mark>12월 25일<mark class="pt" title="(기독탄신일 삭제됨">‸</mark>)
+10의2.  「공직선거법」 제34조에 따른 임기만료에 의한 선거의 선거일
+11.  <mark class="i">그 밖에</mark> 정부에서 수시 지정하는 날</span></div></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(사용료의 반환) 
+① 삭제 &lt;2025.12.10.&gt;
+② 사용료 반환은 공정거래위원회 고시 <mark class="cite-law" title="소비자분쟁해결기준">「소비자분쟁해결기준」</mark>을 준용한다.
+③ 사용료 등을 반환받고자 하는 자는 별지 서식에 따라 반환신청서를 시장에게 제출하여야 한다. &lt;일부개정 2025.12.10.&gt;</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「소비자분쟁해결기준」</span></div><div class="act">「소비자분쟁해결기준」 제명변경·폐지 여부를 확인하고 이 조례 제9조의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2025-12-10</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><div class="ord"><h2>군포시 지역아동센터 운영 및 지원에 관한 조례</h2><div class="meta">시행 2019-12-13 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(지역아동센터의 설치ㆍ운영) 개인 또는 사회복지법인, 비영리법인, 종교단체를 포함한 비영리단체 중 <mark class="cite-law" title="아동복지법 시행규칙제24조">「아동복지법 시행규칙」 제24조</mark>의 적합한 기준을 갖춘 자는 <mark class="cite-law" title="아동복지법 시행규칙제23조">「아동복지법 시행규칙」 제23조</mark>에 따른 신고에 따라 센터를 설치ㆍ운영할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「아동복지법 시행규칙」 제23조</span></div><div class="act">「아동복지법 시행규칙」 제23조 개정 내용을 반영하여 이 조례 제4조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-12-13</b> · 당시 법령본 <b>2015-10-19</b> → 현행 조문 <b>2024-07-10</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제23조(아동복지시설의 설치 신고 등)
+① 법 제50조제2항에 따라 국가 또는 지방자치단체 외의 자가 아동복지시설을 설치하려는 경우에는 별지 제21호서식의 아동복지시설 설치 신고서(전자문서로 된 신고서를 포함한다)에 다음 각 호의 서류(전자문서를 포함한다)를 첨부하여 시장ㆍ군수ㆍ구청장에게 제출하여야 한다. 이 경우 시장ㆍ군수ㆍ구청장은 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 건물등기부 등본 및 토지등기부 등본과 「부동산 <mark class="d">가격공시 및 감정평가에</mark> 관한 법률」 <mark class="d">제11조</mark> 및 같은 법 시행규칙 별지 <mark class="d">제7호서식에</mark> 따른 개별공시지가 확인서(이하 &quot;개별공시지가 확인서&quot;라 한다)를 확인하여야 한다. &lt;개정 2015.10.19<mark class="pt" title=", 2024.7.10 추가됨">‸</mark>&gt;
+1.  정관(법인인 경우만 해당한다)
+2.  아동복지시설 운영에 필요한 재산 목록(소유 또는 사용에 관한 권리를 증명하는 서류를 첨부하되, 시장ㆍ군수ㆍ구청장이 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 소유 또는 사용에 관한 권리를 확인할 수 있는 경우에는 그 확인으로 첨부서류를 갈음한다)
+3.  사업계획서 및 예산서
+4.  재산의 평가조서(「<mark class="d">부동산 가격공시</mark> 및 <mark class="d">감정평가에</mark> 관한 법률」 <mark class="d">제2조제9호에</mark> 따른 <mark class="d">감정평가업자의</mark> 감정평가서를 첨부하되, 개별공시지가 확인서로 첨부서류에 대한 정보를 확인할 수 있는 경우에는 그 확인으로 첨부서류를 갈음한다)
+5.  재산의 수익조서(수익용 기본재산을 갖춘 경우에 한정하며, 수익을 증명할 수 있는 기관의 증명서류를 첨부하여야 한다)
+6.  아동복지시설의 평면도(층별ㆍ구조별 면적을 표시하여야 한다) 및 건물의 배치도(제2항에 따라 건축물대장으로 평면도와 배치도를 확인할 수 없는 경우에만 첨부한다)
+7.  아동복지시설에 종사할 직원의 명단과 자격증 사본(자격증이 필요한 직원만 해당하며, 자격증을 확인한 경우에는 그 사본을 첨부하지 아니한다)
+② 제1항에 따라 신고서를 받은 시장ㆍ군수ㆍ구청장은 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 법인 등기사항증명서(법인인 경우만 해당한다), 건물등기사항증명서, 토지등기사항증명서 및 건축물대장을 확인하여야 한다.
+③ 시장ㆍ군수ㆍ구청장은 제1항에 따른 설치 신고를 수리(受理)하였을 때에는 별지 제22호서식의 아동복지시설 신고증을 신고인에게 발급하여야 한다.
+④ 제3항에 따라 시장ㆍ군수ㆍ구청장이 아동복지시설의 설치 신고를 수리하였을 때에는 지체 없이 그 내용을 시ㆍ도지사에게 <mark class="d">보고하고</mark>, 시ㆍ도지사는 이를 종합하여 보건복지부장관에게 <mark class="d">보고하여야</mark> 한다.<mark class="pt" title="&lt;개정 2023.11.17&gt; 추가됨">‸</mark>
+⑤ 제1항에 따라 아동복지시설의 설치 신고를 한 자가 아동복지시설의 명칭, 아동복지시설의 장, 소재지 또는 정원(定員)을 변경하려는 경우에는 별지 제23호서식의 변경신고서에 아동복지시설 신고증과 다음 각 호의 구분에 따른 서류를 첨부하여 시장ㆍ군수ㆍ구청장에게 신고하여야 한다.
+1.  아동복지시설의 명칭을 변경하려는 경우: 사유서(법인인 경우에는 명칭의 변경을 결의한 이사회의 회의록 사본을 말한다)
+2.  아동복지시설의 장을 변경하려는 경우: 사유서(법인인 경우에는 시설의 장의 변경을 결의한 이사회의 회의록 사본을 말한다) 및 변경된 아동복지시설의 장의 이력서
+3.  소재지를 변경하려는 경우: 사유서(법인인 경우에는 소재지의 변경을 결의한 이사회의 회의록 사본을 말한다), 시설보호아동에 대한 조치계획서 및 재산활용계획서
+4.  정원을 변경하려는 경우: 사유서(법인인 경우에는 정원의 변경을 결의한 이사회의 회의록 사본을 말한다), 시설보호아동에 대한 조치계획서(정원이 증가된 경우는 제외한다) 및 재산활용계획서</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제23조(아동복지시설의 설치 신고 등)
+① 법 제50조제2항에 따라 국가 또는 지방자치단체 외의 자가 아동복지시설을 설치하려는 경우에는 별지 제21호서식의 아동복지시설 설치 신고서(전자문서로 된 신고서를 포함한다)에 다음 각 호의 서류(전자문서를 포함한다)를 첨부하여 시장ㆍ군수ㆍ구청장에게 제출하여야 한다. 이 경우 시장ㆍ군수ㆍ구청장은 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 건물등기부 등본 및 토지등기부 등본과 「부동산 <mark class="i">가격공시에</mark> 관한 법률」 <mark class="i">제10조</mark> 및 같은 법 시행규칙 별지 <mark class="i">제6호서식에</mark> 따른 개별공시지가 확인서(이하 &quot;개별공시지가 확인서&quot;라 한다)를 확인하여야 한다. &lt;개정 2015.10.19<mark class="i">, 2024.7.10</mark>&gt;
+1.  정관(법인인 경우만 해당한다)
+2.  아동복지시설 운영에 필요한 재산 목록(소유 또는 사용에 관한 권리를 증명하는 서류를 첨부하되, 시장ㆍ군수ㆍ구청장이 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 소유 또는 사용에 관한 권리를 확인할 수 있는 경우에는 그 확인으로 첨부서류를 갈음한다)
+3.  사업계획서 및 예산서
+4.  재산의 평가조서(「<mark class="i">감정평가</mark> 및 <mark class="i">감정평가사에</mark> 관한 법률」 <mark class="i">제2조제4호에</mark> 따른 <mark class="i">감정평가법인등의</mark> 감정평가서를 첨부하되, 개별공시지가 확인서로 첨부서류에 대한 정보를 확인할 수 있는 경우에는 그 확인으로 첨부서류를 갈음한다)
+5.  재산의 수익조서(수익용 기본재산을 갖춘 경우에 한정하며, 수익을 증명할 수 있는 기관의 증명서류를 첨부하여야 한다)
+6.  아동복지시설의 평면도(층별ㆍ구조별 면적을 표시하여야 한다) 및 건물의 배치도(제2항에 따라 건축물대장으로 평면도와 배치도를 확인할 수 없는 경우에만 첨부한다)
+7.  아동복지시설에 종사할 직원의 명단과 자격증 사본(자격증이 필요한 직원만 해당하며, 자격증을 확인한 경우에는 그 사본을 첨부하지 아니한다)
+② 제1항에 따라 신고서를 받은 시장ㆍ군수ㆍ구청장은 「전자정부법」 제36조제1항에 따른 행정정보의 공동이용을 통하여 법인 등기사항증명서(법인인 경우만 해당한다), 건물등기사항증명서, 토지등기사항증명서 및 건축물대장을 확인하여야 한다.
+③ 시장ㆍ군수ㆍ구청장은 제1항에 따른 설치 신고를 수리(受理)하였을 때에는 별지 제22호서식의 아동복지시설 신고증을 신고인에게 발급하여야 한다.
+④ 제3항에 따라 시장ㆍ군수ㆍ구청장이 아동복지시설의 설치 신고를 수리하였을 때에는 지체 없이 그 내용을 시ㆍ도지사에게 <mark class="i">통보하고</mark>, 시ㆍ도지사는 이를 종합하여 보건복지부장관에게 <mark class="i">통보해야</mark> 한다.<mark class="i"> &lt;개정 2023.11.17&gt;</mark>
+⑤ 제1항에 따라 아동복지시설의 설치 신고를 한 자가 아동복지시설의 명칭, 아동복지시설의 장, 소재지 또는 정원(定員)을 변경하려는 경우에는 별지 제23호서식의 변경신고서에 아동복지시설 신고증과 다음 각 호의 구분에 따른 서류를 첨부하여 시장ㆍ군수ㆍ구청장에게 신고하여야 한다.
+1.  아동복지시설의 명칭을 변경하려는 경우: 사유서(법인인 경우에는 명칭의 변경을 결의한 이사회의 회의록 사본을 말한다)
+2.  아동복지시설의 장을 변경하려는 경우: 사유서(법인인 경우에는 시설의 장의 변경을 결의한 이사회의 회의록 사본을 말한다) 및 변경된 아동복지시설의 장의 이력서
+3.  소재지를 변경하려는 경우: 사유서(법인인 경우에는 소재지의 변경을 결의한 이사회의 회의록 사본을 말한다), 시설보호아동에 대한 조치계획서 및 재산활용계획서
+4.  정원을 변경하려는 경우: 사유서(법인인 경우에는 정원의 변경을 결의한 이사회의 회의록 사본을 말한다), 시설보호아동에 대한 조치계획서(정원이 증가된 경우는 제외한다) 및 재산활용계획서</span></div></div></div></div></div><div class="ord"><h2>군포시 아동친화도시 조성에 관한 조례</h2><div class="meta">시행 2022-04-25 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="아동복지법">「아동복지법」</mark> 및 유엔의<mark class="cite-law" title="아동의 권리에 관한 협약">「아동의 권리에 관한 협약」</mark>에 따라 아동의 권리보장과 증진을 도모함으로써 아동이 행복한 삶을 누릴 수 있도록 군포시를 아동친화도시로 조성하는데 필요한 사항을 규정함을 목적으로 한다.</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
+1. “아동”이란 <mark class="cite-law" title="아동복지법제3조">「아동복지법」 제3조</mark>에 따른 18세 미만인 사람을 말한다.
+2. “아동친화도시”란 모든 아동이 행복하고 존중받으며, 유엔의<mark class="cite-law" title="아동의 권리에 관한 협약">「아동의 권리에 관한 협약」(이하 “아동권리협약” 이라 한다)</mark>의 기본정신을 실천하는 도시를 말한다.
+3. “아동의 권리”란 <mark class="cite-law" title="대한민국헌법">「대한민국헌법」</mark>및 다른 법률에서 보장하거나 아동권리협약에서 인정하는 인간으로서의 존엄과 가치 및 자유와 권리를 말하며, 그 내용은 다음과 같이 구분한다.
+가. 생존권 : 적절한 생활수준을 누릴 권리, 안전한 주거지에서 살아갈 권리, 충분한 영양을 섭취하고 기본적인 보건서비스를 받을 권리 등 기본적인 삶을 누리는 데 필요한 권리
+나. 보호권 : 모든 형태의 학대와 방임, 차별, 폭력, 고문, 징집, 부당한 형사처벌, 과도한 노동, 약물과 성폭력 등 어린이에게 유해한 것으로부터 보호받을 권리
+다. 발달권 : 잠재능력을 최대한 발휘하는데 필요한 권리, 교육받을 권리, 여가를 즐길 권리, 문화생활을 하고 정보를 얻을 권리, 생각과 양심과 종교의 자유를 누릴 수 있는 권리 등
+라. 참여권 : 자신의 생활에 영향을 주는 일에 대해 의견을 말하고 존중받을 권리, 표현의 자유, 양심과 종교의 자유, 평화로운 방법으로 모임을 자유롭게 열 수 있는 권리, 사생활을 보호받을 권리, 유익한 정보를 얻을 권리 등
+4. “아동영향평가”란 군포시(이하 “시”라 한다)에서 수행하는 아동 관련 정책이나 사업 등이 아동의 권리에 미칠 영향을 분석ㆍ평가하는 것을 말한다.</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「아동의 권리에 관한 협약」</span></div><div class="act">「아동의 권리에 관한 협약」 제명변경·폐지 여부를 확인하고 이 조례 제1조, 제2조의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2022-04-25</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><div class="ord"><h2>군포시 청소년 보호법 과징금 감경에 관한 조례</h2><div class="meta">시행 2015-03-23 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-fmt">📐 서식 정비 2</span></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(감경신청)  
+① 제2조의 규정에 의한 감경대상자료는 과징금처분대상자가 <mark class="cite-naked" title="행정절차법제27조">행정절차법 제27조 규정</mark>에 의한 의견제출 및 이의신청시에 제출하여야 한다. &lt;개정 2015.3.23&gt; 
+② 제3조제5항의 규정에 의하여 추가로 감경을 받고자 하는 경우에는 과징금 처분대상자가 그 감경자료를 제출하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「행정절차법」 제27조</span></div><div class="act">「행정절차법」 제27조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제4조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2015-03-23</b> · 당시 법령본 <b>2014-11-19</b> → 현행 조문 <b>2022-07-12</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(감경제외대상) 다음 각호의 어느 하나에 해당하는 경우에는 과징금 감경기준 적용을 배제한다. &lt;개정 2015.3.23&gt; 
+  1. 동일인이 법 위반으로 2회이상 적발된 경우 
+2. <mark class="cite-naked" title="행정절차법제27조">행정절차법 제27조 규정</mark>에 의한 의견제출 및 이의신청에 응하지 않거나 감경자료를 제출하지 않은 경우 &lt;개정 2015.3.23&gt; 
+3. 위반행위의 중대과실 또는 법에서 정한 이행사항을 태만히 한 경우</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「행정절차법」 제27조</span></div><div class="act">「행정절차법」 제27조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제5조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2015-03-23</b> · 당시 법령본 <b>2014-11-19</b> → 현행 조문 <b>2022-07-12</b></div></div></div></div><div class="ord"><h2>군포시 청소년재단 설립 및 운영 조례</h2><div class="meta">시행 2026-01-07 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-fmt">📐 서식 정비 1</span></div><div class="artsec" data-oc="제12조"><div class="arthd">조례 제12조</div><div class="ordtext"><b>제12조</b> 제12조(수익사업) 재단은 <mark class="cite-naked" title="청소년기본법제30조">청소년기본법 제30조</mark> 및 정관에서 정하는 바에 따라 청소년 육성과 관련한 수익사업을 할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「청소년기본법」 제30조</span></div><div class="act">「청소년기본법」 제30조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제12조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2026-01-07</b> · 당시 법령본 <b>2026-01-02</b> → 현행 조문 <b>2026-10-29</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

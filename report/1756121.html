@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>군포시의회 행정사무감사 및 조사에 관한 조례 — 정비 권고(분석 결과)</title><style>
+/* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
+   자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
+.page, .ord { --navy:#13325b; --navy2:#1d4e89;
+  --mech:#1d4ed8; --rev:#b45309; --chk:#52525b; --fmt:#6d28d9; --cur:#15803d;
+  --ink:#1f2937; --muted:#6b7280; --line:#d8dee6; --soft:#f6f8fb; }
+* { box-sizing: border-box; }
+/* 독립 권고서 페이지 한정(body.report·.page) — 대시보드 주입 시 충돌 방지.
+   대시보드는 자체 body/h1/.cards/.sub/.card 를 가져 prefix 없으면 덮어쓴다. */
+body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       color:var(--ink); margin:0; background:#eef1f5; line-height:1.55;
+       -webkit-text-size-adjust:100%; }
+.page { max-width:840px; margin:24px auto; padding:38px 44px 52px; background:#fff;
+        border-top:4px solid var(--navy); box-shadow:0 1px 5px rgba(15,33,66,.10); }
+/* 문서 머리 — 공문 단정형(머리표·제목·요지, 아래 굵은 밑줄) */
+.page .dochd { border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:22px; }
+.page .dochd .kicker { font-size:11.5px; letter-spacing:3px; color:var(--navy2);
+        font-weight:700; margin:0 0 6px; }
+.page h1 { font-size:22px; line-height:1.34; margin:0; color:var(--navy);
+     font-weight:700; letter-spacing:-.3px; }
+.page .sub { color:var(--muted); font-size:12.5px; margin-top:7px; }
+.page .cards { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 20px; }
+.page .card { flex:1 1 138px; border:1px solid var(--line); border-top:3px solid var(--chk);
+        border-radius:6px; padding:12px 15px; }
+.page .card .n { font-size:25px; font-weight:700; line-height:1; color:var(--ink); }
+.page .card .t { font-size:12.5px; color:var(--muted); margin-top:6px; }
+.page .g-mech { border-top-color:var(--mech);} .page .g-mech .n { color:var(--mech);}
+.page .g-rev { border-top-color:var(--rev);} .page .g-rev .n { color:var(--rev);}
+.page .g-chk { border-top-color:var(--chk);} .page .g-chk .n { color:var(--chk);}
+.page .g-fmt { border-top-color:var(--fmt);} .page .g-fmt .n { color:var(--fmt);}
+.page .g-cur { border-top-color:var(--cur);} .page .g-cur .n { color:var(--cur);}
+.ord { border:1px solid var(--line); border-radius:7px; padding:18px 20px;
+       margin:0 0 16px; page-break-inside:avoid; }
+.ord h2 { font-size:16.5px; margin:0 0 3px; color:var(--navy); font-weight:700;
+          padding-left:10px; border-left:4px solid var(--navy); }
+.ord .meta { color:var(--muted); font-size:12px; margin:0 0 12px; padding-left:14px; }
+.badges { margin:0 0 12px; }
+.badge { display:inline-block; font-size:11.5px; padding:2px 10px; border-radius:4px;
+         margin-right:6px; border:1px solid currentColor; background:#fff; font-weight:600; }
+.b-mech { color:var(--mech);} .b-rev { color:var(--rev);}
+.b-chk { color:var(--chk);} .b-fmt { color:var(--fmt);}
+.artsec { margin:0 0 8px; }
+.arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
+         border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
+         margin:14px 0 6px; }
+.item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
+.iline { margin-bottom:3px; }
+.item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
+             margin-right:8px; white-space:nowrap; }
+.t-mech { background:#dbeafe; color:#1e40af;} .t-rev { background:#fef3c7; color:#92400e;}
+.t-chk { background:#f3f4f6; color:#374151;}
+.t-naked { background:#ede9fe; color:#5b21b6;}
+.t-cur { background:#dcfce7; color:#166534;}
+.t-space { background:#fef9c3; color:#854d0e;}
+details.citem.cur > summary { opacity:.72; }
+details.citem.cur .law { font-weight:500; }
+/* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
+details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
+    display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+details.citem > summary::-webkit-details-marker { display:none; }
+details.citem > summary::before { content:"▸"; color:#9ca3af; font-size:11px; margin-right:2px; }
+details.citem[open] > summary::before { content:"▾"; color:var(--navy2); }
+details.citem[open] { background:#fbfcfe; }
+details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 10px; }
+details.citem > .diff { margin:6px 10px 10px; }
+details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
+.item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+.basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
+.basis b { color:#374151; font-weight:600; }
+.ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
+           border-left:3px solid var(--navy2); border-radius:0 6px 6px 0; padding:8px 11px;
+           margin:5px 0 9px; white-space:pre-wrap; line-height:1.7; }
+.ordtext b { color:var(--navy); margin-right:5px; }
+mark.cite-law { background:#eff6ff; color:#1e3a8a;
+   text-decoration:underline; text-decoration-color:#2563eb; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-naked { background:#f5f3ff; color:#5b21b6;
+   text-decoration:underline dashed; text-decoration-color:#7c3aed; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-local { background:#f1f5f9; color:#475569;
+   text-decoration:underline dotted; text-decoration-color:#94a3b8; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+.page .leg { font-size:12px; color:var(--muted); margin:0 0 18px; display:flex; gap:14px;
+        flex-wrap:wrap; align-items:center; }
+.page .leg mark { padding:0 4px; border-radius:2px; }
+.item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
+            background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
+.diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
+.drow + .drow { border-top:1px solid #f1f3f5; }
+.dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
+.dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
+.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
+         border-radius:2px; padding:0 1px; }
+mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
+mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
+          padding:0 2px; cursor:help; }
+.page footer { color:#9aa3af; font-size:11.5px; margin-top:34px; padding-top:14px;
+         border-top:1px solid var(--line); text-align:center; }
+@media print {
+  @page { size:A4; margin:16mm; }
+  body { background:#fff; }
+  .page { max-width:none; margin:0; padding:0; border-top:none; box-shadow:none; }
+  .ord, .card { border-color:#c4cbd4; }
+  .dochd { border-bottom-color:#000; }
+  mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시의회 행정사무감사 및 조사에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">3</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">10</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시의회 행정사무감사 및 조사에 관한 조례</h2><div class="meta">시행 2022-12-14 · 정비 항목 14건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span><span class="badge b-fmt">📐 서식 정비 3</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="지방자치법제49조">「지방자치법」 제49조</mark> 및 <mark class="cite-law" title="지방자치법 시행령제53조">같은 법 시행령 제53조</mark>에 따라 군포시의회가 행하는 행정사무감사와 행정사무조사에 관한 절차 및 그 밖에 필요한 사항을 규정함을 목적으로 한다. [전문개정 2022.4.25.]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제49조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2022-01-13</b> → 현행 조문 <b>2026-06-02</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법 시행령」 제53조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2022-01-13</b> → 현행 조문 <b>2026-01-02</b></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(감사 또는 조사의 대상기관)  
+① 감사 또는 조사의 대상기관은 다음 각호와 같다. &lt;개정 2007.12.7., 2018.1.5., 2022.4.25. 
+1. 군포시 
+2. <mark class="cite-law" title="지방자치법제126조,제127조,제128조,제129조">「지방자치법」(이하 “법”이라 한다) 제126조부터 제129조까지의 규정</mark>에 의한 군포시의 소속행정기관과 <mark class="cite-law" title="지방자치법제131조">법 제131조의 규정</mark>에 의한 하부행정기관 
+3. 군포시가 설치한 <mark class="cite-law" title="지방자치법제163조">법 제163조의 규정</mark>에 의한 지방공기업 
+4. <mark class="cite-law" title="지방자치법제117조">법 제117조제2항 또는 제3항</mark>의 규정에 의하여 위임 또는 위탁된 사무(지방자치단체에 위임 또는 위탁된 사무를 제외한다)를 처리하는 단체 또는 기관. 다만, 본회의가 특히 필요하다고 의결하는 경우에 한한다. 
+5. <mark class="cite-law" title="지방자치단체 출자ㆍ출연 기관의 운영에 관한 법률제2조">「지방자치단체 출자ㆍ출연 기관의 운영에 관한 법률」제2조</mark>1항에 따른 출자ㆍ출연기관 중 군포시가 4분의 1 이상 출자하거나 출연한 법인. 다만, 본회의가 특히 필요하다고 의결하는 경우에는 군포시의 출자 또는 출연에 관련된 업무·회계·재산에 한하여 실시한다. 
+② 의회는 제1항의 규정에 의한 감사 또는 조사의 대상기관의 사무가 다른 지방자치단체의 사무에도 해당하는 경우에는 이를 감사 또는 조사함에 있어서 그 지방자치단체의 의회와 상호 협의하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제126조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2022-01-13</b> → 현행 조문 <b>2026-06-02</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제127조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2022-01-13</b> → 현행 조문 <b>2026-06-02</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제128조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2022-01-13</b> → 현행 조문 <b>2026-06-02</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제129조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2022-01-13</b> → 현행 조문 <b>2026-06-02</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「지방자치단체 출자ㆍ출연 기관의 운영에 관한 법률」 제2조</span></div><div class="act">「지방자치단체 출자ㆍ출연 기관의 운영에 관한 법률」 제2조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(적용 대상 등)
+① 이 법은 지방자치단체가 설립하고 제5조에 따라 지정ㆍ고시된 출자기관 또는 출연기관(이하 &quot;출자ㆍ출연 기관&quot;이라 한다)에 대하여 적용한다. 이 경우 출자기관은 지방자치단체의 지분(대통령령으로 정하는 방법과 산정 기준에 따라 계산한 것을 말한다. 이하 같다)이 100분의 10 이상인 경우를 말한다.
+② 이 법은 다음 각 호의 어느 하나에 해당하는 기관에 대해서는 적용하지 아니한다. &lt;개정 2019.12.3<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
+1.  「지방공기업법」 제2조, 같은 법 제3장 및 제4장에 따른 다음 각 목의 지방공기업(이하 &quot;지방공기업&quot;이라 한다)
+가.  지방직영기업
+나.  지방공사
+다.  지방공단
+2.  「공공기관의 운영에 관한 법률」 제6조에 따라 <mark class="d">기획재정부장관이</mark> 지정한 공공기관
+3.  지방자치단체 또는 지방자치단체의 공무원을 회원으로 하면서 지방자치단체 간 발전 또는 지방자치단체 공무원의 복리증진 등을 목적으로 설립한 기관
+4.  「민법」에 따른 사단법인
+③ 지방자치단체의 지분이 100분의 50 미만인 출자기관에 대해서는 제9조, 제10조의3, 제11조, 제12조, 제14조, 제15조, 제15조의2, 제15조의3, 제16조, 제17조, 제17조의2, 제17조의3, 제18조제3항ㆍ제4항, 제19조 및 제22조제1항을 적용하지 아니한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 예외로 한다. &lt;개정 2016.5.29, 2019.12.3, 2020.6.9&gt;
+1.  지방자치단체가 최대지분을 보유하고 지분의 분산도(分散度)로 보아 주주권 등의 행사에 따른 기관 지배가 가능한 경우
+2.  지방자치단체가 법령, 조례 또는 정관에 따라 해당 기관의 기관장 또는 이사회 구성원의 과반수의 임명(승인ㆍ제청 등을 포함한다)에 관여하는 경우
+3.  지방자치단체가 법령, 조례 또는 정관에 따라 해당 기관의 예산 또는 사업계획을 승인하는 경우
+④ 제3항 본문에도 불구하고 지방자치단체의 지분이 100분의 25 이상인 출자기관에 대해서는 제9조, 제12조, 제15조의2 및 제15조의3을 적용한다. &lt;신설 2019.12.3&gt;
+⑤ 출자ㆍ출연 기관에 대하여 다른 법률에 특별한 규정이 있는 경우를 제외하고는 이 법에서 정하는 바에 따른다. &lt;개정 2019.12.3&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제2조(적용 대상 등)
+① 이 법은 지방자치단체가 설립하고 제5조에 따라 지정ㆍ고시된 출자기관 또는 출연기관(이하 &quot;출자ㆍ출연 기관&quot;이라 한다)에 대하여 적용한다. 이 경우 출자기관은 지방자치단체의 지분(대통령령으로 정하는 방법과 산정 기준에 따라 계산한 것을 말한다. 이하 같다)이 100분의 10 이상인 경우를 말한다.
+② 이 법은 다음 각 호의 어느 하나에 해당하는 기관에 대해서는 적용하지 아니한다. &lt;개정 2019.12.3<mark class="i">, 2025.10.1</mark>&gt;
+1.  「지방공기업법」 제2조, 같은 법 제3장 및 제4장에 따른 다음 각 목의 지방공기업(이하 &quot;지방공기업&quot;이라 한다)
+가.  지방직영기업
+나.  지방공사
+다.  지방공단
+2.  「공공기관의 운영에 관한 법률」 제6조에 따라 <mark class="i">재정경제부장관이</mark> 지정한 공공기관
+3.  지방자치단체 또는 지방자치단체의 공무원을 회원으로 하면서 지방자치단체 간 발전 또는 지방자치단체 공무원의 복리증진 등을 목적으로 설립한 기관
+4.  「민법」에 따른 사단법인
+③ 지방자치단체의 지분이 100분의 50 미만인 출자기관에 대해서는 제9조, 제10조의3, 제11조, 제12조, 제14조, 제15조, 제15조의2, 제15조의3, 제16조, 제17조, 제17조의2, 제17조의3, 제18조제3항ㆍ제4항, 제19조 및 제22조제1항을 적용하지 아니한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 예외로 한다. &lt;개정 2016.5.29, 2019.12.3, 2020.6.9&gt;
+1.  지방자치단체가 최대지분을 보유하고 지분의 분산도(分散度)로 보아 주주권 등의 행사에 따른 기관 지배가 가능한 경우
+2.  지방자치단체가 법령, 조례 또는 정관에 따라 해당 기관의 기관장 또는 이사회 구성원의 과반수의 임명(승인ㆍ제청 등을 포함한다)에 관여하는 경우
+3.  지방자치단체가 법령, 조례 또는 정관에 따라 해당 기관의 예산 또는 사업계획을 승인하는 경우
+④ 제3항 본문에도 불구하고 지방자치단체의 지분이 100분의 25 이상인 출자기관에 대해서는 제9조, 제12조, 제15조의2 및 제15조의3을 적용한다. &lt;신설 2019.12.3&gt;
+⑤ 출자ㆍ출연 기관에 대하여 다른 법률에 특별한 규정이 있는 경우를 제외하고는 이 법에서 정하는 바에 따른다. &lt;개정 2019.12.3&gt;</span></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제131조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2022-01-13</b> → 현행 조문 <b>2026-06-02</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제163조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2022-01-13</b> → 현행 조문 <b>2026-06-02</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제117조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2022-01-13</b> → 현행 조문 <b>2026-06-02</b></div></div></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(감사 또는 조사의 대상사무)  
+① 감사 또는 조사의 대상사무는 다음 각호와 같다. 
+1. <mark class="cite-law" title="지방자치법제9조">법 제9조</mark>에 규정된 지방자치단체의 사무범위내의 사무 
+2. 군포시 및 군포시장이 위임받아 처리하는 국가사무와 경기도사무 중 국회 또는 경기도의회가 직접 감사하기로 한 사무를 제외한 사무 
+② 제1항의 사무는 의회구성일 이후 처리하는 사무에 한한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제9조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2022-01-13</b> → 현행 조문 <b>2026-06-02</b></div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(증언 등의 거부)  
+① 증인은 <mark class="cite-naked" title="형사소송법제148조,제149조">형사소송법 제148조 또는 제149조의 규정</mark>에 해당하는 경우에는 선서·증언 또는 서류제출을 거부할 수 있다. 
+② 제1항의 거부이유는 소명하여야 한다. 
+③ 16세 미만의 자와 선서의 취지를 이해하지 못하는 자는 선서를 하지 아니한다.</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「형사소송법」 제148조</span></div><div class="act">「형사소송법」 제148조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제11조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2022-09-10</b> → 현행 조문 <b>2026-06-24</b></div></div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「형사소송법」 제149조</span></div><div class="act">「형사소송법」 제149조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제11조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>1997-12-13</b> → 현행 조문 <b>1997-12-13</b></div></div></div><div class="artsec" data-oc="제13조"><div class="arthd">조례 제13조</div><div class="ordtext"><b>제13조</b> 제13조(증인선서)  
+① 의장 또는 위원장은 증인에게 증언을 요구한 때에는 선서하게 하여야 한다. 
+② 선서하기 전에 증언을 요구한 의장 또는 위원장은 선서의 취지와 위증의 경우 고발될 수 있으며 정당한 이유 없이 증언을 거부한 때에는 과태료를 부과할 수 있음을 알려야 한다. 
+③ 증인선서의 방식에 관하여는 <mark class="cite-naked" title="형사소송법제157조">형사소송법 제157조의 규정</mark>을 준용한다.</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「형사소송법」 제157조</span></div><div class="act">「형사소송법」 제157조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제13조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2022-12-14</b> · 당시 법령본 <b>2022-09-10</b> → 현행 조문 <b>2026-06-24</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

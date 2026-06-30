@@ -1,0 +1,429 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>노인장애인과 자치법규 정비 권고</title><style>
+/* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
+   자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
+.page, .ord { --navy:#13325b; --navy2:#1d4e89;
+  --mech:#1d4ed8; --rev:#b45309; --chk:#52525b; --fmt:#6d28d9; --cur:#15803d;
+  --ink:#1f2937; --muted:#6b7280; --line:#d8dee6; --soft:#f6f8fb; }
+* { box-sizing: border-box; }
+/* 독립 권고서 페이지 한정(body.report·.page) — 대시보드 주입 시 충돌 방지.
+   대시보드는 자체 body/h1/.cards/.sub/.card 를 가져 prefix 없으면 덮어쓴다. */
+body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       color:var(--ink); margin:0; background:#eef1f5; line-height:1.55;
+       -webkit-text-size-adjust:100%; }
+.page { max-width:840px; margin:24px auto; padding:38px 44px 52px; background:#fff;
+        border-top:4px solid var(--navy); box-shadow:0 1px 5px rgba(15,33,66,.10); }
+/* 문서 머리 — 공문 단정형(머리표·제목·요지, 아래 굵은 밑줄) */
+.page .dochd { border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:22px; }
+.page .dochd .kicker { font-size:11.5px; letter-spacing:3px; color:var(--navy2);
+        font-weight:700; margin:0 0 6px; }
+.page h1 { font-size:22px; line-height:1.34; margin:0; color:var(--navy);
+     font-weight:700; letter-spacing:-.3px; }
+.page .sub { color:var(--muted); font-size:12.5px; margin-top:7px; }
+.page .cards { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 20px; }
+.page .card { flex:1 1 138px; border:1px solid var(--line); border-top:3px solid var(--chk);
+        border-radius:6px; padding:12px 15px; }
+.page .card .n { font-size:25px; font-weight:700; line-height:1; color:var(--ink); }
+.page .card .t { font-size:12.5px; color:var(--muted); margin-top:6px; }
+.page .g-mech { border-top-color:var(--mech);} .page .g-mech .n { color:var(--mech);}
+.page .g-rev { border-top-color:var(--rev);} .page .g-rev .n { color:var(--rev);}
+.page .g-chk { border-top-color:var(--chk);} .page .g-chk .n { color:var(--chk);}
+.page .g-fmt { border-top-color:var(--fmt);} .page .g-fmt .n { color:var(--fmt);}
+.page .g-cur { border-top-color:var(--cur);} .page .g-cur .n { color:var(--cur);}
+.ord { border:1px solid var(--line); border-radius:7px; padding:18px 20px;
+       margin:0 0 16px; page-break-inside:avoid; }
+.ord h2 { font-size:16.5px; margin:0 0 3px; color:var(--navy); font-weight:700;
+          padding-left:10px; border-left:4px solid var(--navy); }
+.ord .meta { color:var(--muted); font-size:12px; margin:0 0 12px; padding-left:14px; }
+.badges { margin:0 0 12px; }
+.badge { display:inline-block; font-size:11.5px; padding:2px 10px; border-radius:4px;
+         margin-right:6px; border:1px solid currentColor; background:#fff; font-weight:600; }
+.b-mech { color:var(--mech);} .b-rev { color:var(--rev);}
+.b-chk { color:var(--chk);} .b-fmt { color:var(--fmt);}
+.artsec { margin:0 0 8px; }
+.arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
+         border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
+         margin:14px 0 6px; }
+.item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
+.iline { margin-bottom:3px; }
+.item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
+             margin-right:8px; white-space:nowrap; }
+.t-mech { background:#dbeafe; color:#1e40af;} .t-rev { background:#fef3c7; color:#92400e;}
+.t-chk { background:#f3f4f6; color:#374151;}
+.t-naked { background:#ede9fe; color:#5b21b6;}
+.t-cur { background:#dcfce7; color:#166534;}
+.t-space { background:#fef9c3; color:#854d0e;}
+details.citem.cur > summary { opacity:.72; }
+details.citem.cur .law { font-weight:500; }
+/* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
+details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
+    display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+details.citem > summary::-webkit-details-marker { display:none; }
+details.citem > summary::before { content:"▸"; color:#9ca3af; font-size:11px; margin-right:2px; }
+details.citem[open] > summary::before { content:"▾"; color:var(--navy2); }
+details.citem[open] { background:#fbfcfe; }
+details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 10px; }
+details.citem > .diff { margin:6px 10px 10px; }
+details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
+.item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+.basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
+.basis b { color:#374151; font-weight:600; }
+.ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
+           border-left:3px solid var(--navy2); border-radius:0 6px 6px 0; padding:8px 11px;
+           margin:5px 0 9px; white-space:pre-wrap; line-height:1.7; }
+.ordtext b { color:var(--navy); margin-right:5px; }
+mark.cite-law { background:#eff6ff; color:#1e3a8a;
+   text-decoration:underline; text-decoration-color:#2563eb; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-naked { background:#f5f3ff; color:#5b21b6;
+   text-decoration:underline dashed; text-decoration-color:#7c3aed; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-local { background:#f1f5f9; color:#475569;
+   text-decoration:underline dotted; text-decoration-color:#94a3b8; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+.page .leg { font-size:12px; color:var(--muted); margin:0 0 18px; display:flex; gap:14px;
+        flex-wrap:wrap; align-items:center; }
+.page .leg mark { padding:0 4px; border-radius:2px; }
+.item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
+            background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
+.diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
+.drow + .drow { border-top:1px solid #f1f3f5; }
+.dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
+.dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
+.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
+         border-radius:2px; padding:0 1px; }
+mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
+mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
+          padding:0 2px; cursor:help; }
+.page footer { color:#9aa3af; font-size:11.5px; margin-top:34px; padding-top:14px;
+         border-top:1px solid var(--line); text-align:center; }
+@media print {
+  @page { size:A4; margin:16mm; }
+  body { background:#fff; }
+  .page { max-width:none; margin:0; padding:0; border-top:none; box-shadow:none; }
+  .ord, .card { border-color:#c4cbd4; }
+  .dochd { border-bottom-color:#000; }
+  mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>노인장애인과 자치법규 정비 권고</h1><div class="sub">전체 22개 조례 중 정비 대상 10개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">25</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">1</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">66</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시립노인요양센터 설치 및 운영 조례</h2><div class="meta">시행 2017-07-11 · 정비 항목 12건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 12</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
+1. “군포시립노인요양센터”(이하 “요양센터”라 한다)란 <mark class="cite-law" title="노인복지법제34조">「노인복지법」 제34조제1항제1호</mark>에 따른 노인요양시설과 <mark class="cite-law" title="노인복지법제38조">같은 법 제38조제1항제2호</mark>에 따른 주간보호시설을 말한다.
+2. “장기요양급여수급자”란 <mark class="cite-law" title="노인장기요양보험법제15조">「노인장기요양보험법」(이하 “요양보험법”이라 한다) 제15조</mark>에 따라 등급판정을 받고,<mark class="cite-law" title="노인장기요양보험법제23조">같은 법 제23조</mark>에 규정된 장기요양급여를 받을 수 있는 사람을 말한다.
+3. “입소자”란 노인요양시설에 입소한 장기요양급여수급자를 말한 다.
+4. “이용자”란 주간보호시설을 이용하는 장기요양급여수급자를 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「노인장기요양보험법」 제15조</span></div><div class="act">「노인장기요양보험법」 제15조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>2016-05-29</b> → 현행 조문 <b>2020-03-31</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제15조(등급판정 등)
+①공단은 제14조에 따른 조사가 완료된 때 조사결과서, 신청서, 의사소견서,  그 밖에 심의에 필요한 자료를 등급판정위원회에 제출하여야 한다. &lt;개정 2016.5.29&gt;
+②등급판정위원회는 신청인이 제12조의 신청자격요건을 충족하고 6개월 이상 동안 혼자서 일상생활을 수행하기 어렵다고 인정하는 경우 심신상태 및 장기요양이 필요한 정도 등 대통령령으로 정하는 등급판정기준에 따라 수급자로 판정한다. &lt;개정 2016.5.29&gt;
+③등급판정위원회는 제2항에 따라 심의ㆍ판정을 하는 때 신청인과 그 가족, 의사소견서를 발급한 의사 등 관계인의 의견을 들을 수 있다.<mark class="pt" title="④ 공단은 장기요양급여를 받고 있거나 받을 수 있는 자가 다음 각 호의  추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제15조(등급판정 등)
+①공단은 제14조에 따른 조사가 완료된 때 조사결과서, 신청서, 의사소견서,  그 밖에 심의에 필요한 자료를 등급판정위원회에 제출하여야 한다. &lt;개정 2016.5.29&gt;
+②등급판정위원회는 신청인이 제12조의 신청자격요건을 충족하고 6개월 이상 동안 혼자서 일상생활을 수행하기 어렵다고 인정하는 경우 심신상태 및 장기요양이 필요한 정도 등 대통령령으로 정하는 등급판정기준에 따라 수급자로 판정한다. &lt;개정 2016.5.29&gt;
+③등급판정위원회는 제2항에 따라 심의ㆍ판정을 하는 때 신청인과 그 가족, 의사소견서를 발급한 의사 등 관계인의 의견을 들을 수 있다.<mark class="i">
+④ 공단은 장기요양급여를 받고 있거나 받을 수 있는 자가 다음 각 호의 어느 하나에 해당하는 것으로 의심되는 경우에는 제14조제1항 각 호의 사항을 조사하여 그 결과를 등급판정위원회에 제출하여야 한다. &lt;신설 2018.12.11&gt;
+1.  거짓이나 그 밖의 부정한 방법으로 장기요양인정을 받은 경우
+2.  고의로 사고를 발생하도록 하거나 본인의 위법행위에 기인하여 장기요양인정을 받은 경우
+⑤ 등급판정위원회는 제4항에 따라 제출된 조사 결과를 토대로 제2항에 따라 다시 수급자 등급을 조정하고 수급자 여부를 판정할 수 있다. &lt;신설 2018.12.11, 2020.3.31&gt;</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「노인장기요양보험법」 제23조</span></div><div class="act">「노인장기요양보험법」 제23조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>2015-12-29</b> → 현행 조문 <b>2024-12-20</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제23조(장기요양급여의 종류)
+①이 법에 따른 장기요양급여의 종류는 다음 각 호와 같다. &lt;개정 2011.6.7, 2015.12.29<mark class="pt" title=", 2018.12.11, 2024.12.20 추가됨">‸</mark>&gt;
+1.  재가급여
+가.  방문요양 : 장기요양요원이 수급자의 가정 등을 방문하여 신체활동 및 가사활동 등을 지원하는 장기요양급여
+나.  방문목욕 : 장기요양요원이 목욕설비를 갖춘 장비를 이용하여 수급자의 가정 등을 방문하여 목욕을 제공하는 장기요양급여
+다.  방문간호 : 장기요양요원인 간호사 등이 의사, 한의사 또는 치과의사의 지시서(이하 &quot;방문간호지시서&quot;라 한다)에 따라 수급자의 가정 등을 방문하여 간호, 진료의 보조, 요양에 관한 상담 또는 구강위생 등을 제공하는 장기요양급여
+라.  주ㆍ야간보호 : 수급자를 하루 중 일정한 시간 동안 장기요양기관에 보호하여 신체활동 지원 및 심신기능의 유지ㆍ향상을 위한 교육ㆍ훈련 등을 제공하는 장기요양급여
+마.  단기보호 : 수급자를 보건복지부령으로 정하는 범위 안에서 일정 기간 동안 장기요양기관에 보호하여 신체활동 지원 및 심신기능의 유지ㆍ향상을 위한 교육ㆍ훈련 등을 제공하는 장기요양급여
+바.  기타재가급여 : 수급자의 일상생활ㆍ신체활동 지원 및 인지기능의 유지ㆍ향상에 필요한 <mark class="d">용구를</mark> 제공하거나 가정을 방문하여 재활에 관한 지원 등을 제공하는 장기요양급여로서 대통령령으로 정하는 것
+2.  시설급여 : <mark class="d">장기요양기관이 운영하는 「노인복지법」 제34조에 따른 노인의료복지시설 등에</mark> 장기간 <mark class="d">동안</mark> <mark class="d">입소하여</mark> 신체활동 지원 및 심신기능의 유지ㆍ향상을 위한 교육ㆍ훈련 등을 제공하는 장기요양급여
+3.  특별현금급여
+가.  가족요양비 : 제24조에 따라 지급하는 가족장기요양급여
+나.  특례요양비 : 제25조에 따라 지급하는 특례장기요양급여
+다.  요양병원간병비 : 제26조에 따라 지급하는 요양병원장기요양급여
+②제1항제1호 및 제2호에 따라 장기요양급여를 제공할 수 있는 장기요양기관의 종류 및 기준과 장기요양급여 종류별 장기요양요원의 범위ㆍ업무ㆍ보수교육 등에 관하여 필요한 사항은 대통령령으로 정한다.
+<mark class="d">③장기요양급여의</mark> 제공 기준ㆍ절차ㆍ방법ㆍ범위, 그 밖에 필요한 사항은 보건복지부령으로 정한다.<mark class="pt" title="&lt;개정 2024.1.2&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제23조(장기요양급여의 종류)
+①이 법에 따른 장기요양급여의 종류는 다음 각 호와 같다. &lt;개정 2011.6.7, 2015.12.29<mark class="i">, 2018.12.11, 2024.12.20</mark>&gt;
+1.  재가급여
+가.  방문요양 : 장기요양요원이 수급자의 가정 등을 방문하여 신체활동 및 가사활동 등을 지원하는 장기요양급여
+나.  방문목욕 : 장기요양요원이 목욕설비를 갖춘 장비를 이용하여 수급자의 가정 등을 방문하여 목욕을 제공하는 장기요양급여
+다.  방문간호 : 장기요양요원인 간호사 등이 의사, 한의사 또는 치과의사의 지시서(이하 &quot;방문간호지시서&quot;라 한다)에 따라 수급자의 가정 등을 방문하여 간호, 진료의 보조, 요양에 관한 상담 또는 구강위생 등을 제공하는 장기요양급여
+라.  주ㆍ야간보호 : 수급자를 하루 중 일정한 시간 동안 장기요양기관에 보호하여 신체활동 지원 및 심신기능의 유지ㆍ향상을 위한 교육ㆍ훈련 등을 제공하는 장기요양급여
+마.  단기보호 : 수급자를 보건복지부령으로 정하는 범위 안에서 일정 기간 동안 장기요양기관에 보호하여 신체활동 지원 및 심신기능의 유지ㆍ향상을 위한 교육ㆍ훈련 등을 제공하는 장기요양급여
+바.  기타재가급여 : 수급자의 일상생활ㆍ신체활동 지원 및 인지기능의 유지ㆍ향상에 필요한 <mark class="i">용구(소프트웨어를 포함한다)를</mark> 제공하거나 가정을 방문하여 재활에 관한 지원 등을 제공하는 장기요양급여로서 대통령령으로 정하는 것
+2.  시설급여 : <mark class="i">장기요양기관에</mark> 장기간 <mark class="i">입소한</mark> <mark class="i">수급자에게</mark> 신체활동 지원 및 심신기능의 유지ㆍ향상을 위한 교육ㆍ훈련 등을 제공하는 장기요양급여
+3.  특별현금급여
+가.  가족요양비 : 제24조에 따라 지급하는 가족장기요양급여
+나.  특례요양비 : 제25조에 따라 지급하는 특례장기요양급여
+다.  요양병원간병비 : 제26조에 따라 지급하는 요양병원장기요양급여
+②제1항제1호 및 제2호에 따라 장기요양급여를 제공할 수 있는 장기요양기관의 종류 및 기준과 장기요양급여 종류별 장기요양요원의 범위ㆍ업무ㆍ보수교육 등에 관하여 필요한 사항은 대통령령으로 정한다.
+<mark class="i">③ 장기요양기관은 제1항제1호가목에서 마목까지의 재가급여 전부 또는 일부를 통합하여 제공하는 서비스(이하 이 조에서 &quot;통합재가서비스&quot;라 한다)를 제공할 수 있다. &lt;신설 2024.1.2&gt;
+④ 제3항에 따라 통합재가서비스를 제공하는 장기요양기관은 보건복지부령으로 정하는 인력, 시설, 운영 등의 기준을 준수하여야 한다. &lt;신설 2024.1.2&gt;
+⑤장기요양급여의</mark> 제공 기준ㆍ절차ㆍ방법ㆍ범위, 그 밖에 필요한 사항은 보건복지부령으로 정한다.<mark class="i"> &lt;개정 2024.1.2&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(기능) 요양센터의 기능은 다음 각 호와 같다.
+1. <mark class="cite-law" title="요양보험법제23조,제23조">「요양보험법」제23조제1항제1호 및 제2호</mark>에 따른 장기요양급여 서비스 제공
+2. 그 밖에 입소자 및 이용자의 일상생활에 필요한 편의 제공</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「요양보험법」</span></div><div class="act">인용한 「요양보험법」이(가) 현행 「노인장기요양보험법」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(이용대상 및 절차) 
+① 요양센터 입소 및 이용 대상자는 <mark class="cite-law" title="요양보험법제15조">「요양보험법」 제15조</mark>에 따른 장기요양급여수급자로 한다.
+② 요양센터 입소 및 이용은 부양의무자 등과의 계약에 의한다. 이때 부양의무자 등은 <mark class="cite-law" title="국민기초생활보장법제2조">「국민기초생활보장법」 제2조제5호</mark>의 부양의무자 및 보호자를 말하며 입소자 및 이용자의 신원인수인이 된다.&lt;개정 2017.07.11.&gt;
+③ 제2항의 신원인수인은 계약에 따른 모든 책임을 지며, 신원인수인을 변경하고자 할 때에는 신원인수인 변경신고서(별지 제1호 서식)를 작성하여 시설의 장에게 서면으로 신고하여야 한다.
+④ 제2항에 따라 요양센터에 입소 및 이용하고자 하는 사람은 입소신청서(별지 제2호 서식) 및 이용신청서(별지 제3호 서식)를 작성하여 시설의 장에게 제출하여야 한다.
+⑤ 제4항에 따라 신청을 받은 시설의 장은 접수 대장에 등재 후 입소 순번을 결정하여 입소 신청자에게 통보하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「요양보험법」</span></div><div class="act">인용한 「요양보험법」이(가) 현행 「노인장기요양보험법」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(비용) 
+① 요양센터 입소자 및 이용자는 <mark class="cite-law" title="요양보험법제40조">「요양보험법」 제40조</mark>에 따른 본인 일부부담금과 <mark class="cite-law" title="요양보험법 시행규칙제14조">같은 법 시행규칙 제14조</mark>에 따른 비급여비용을 부담한다.&lt;개정 2017.07.11.&gt;
+② 비급여비용 산정은 물가상승률을 감안하여 제20조의 규정에 의한 운영위원회에서 정한 금액으로 한다.
+③ 제1항에 따른 비용은 당월 분을 산정하여 다음 달의 10일까지 신원인수인에게 청구하는 것을 원칙으로 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「요양보험법」</span></div><div class="act">인용한 「요양보험법」이(가) 현행 「노인장기요양보험법」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「요양보험법 시행규칙」</span></div><div class="act">인용한 「요양보험법 시행규칙」이(가) 현행 「노인장기요양보험법 시행규칙」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(퇴소) 입소자 및 이용자가 다음 각 호의 어느 하나에 해당하는 경우 시장은 퇴소 및 이용 중단을 명할 수 있다.
+1. 본인 또는 부양의무자가 희망하는 경우
+2. <mark class="cite-law" title="요양보험법제19조">「요양보험법」 제19조</mark>와 제20조에 따른 장기요양인정의 유효기간이 만료되었으나 갱신을 하지 않은 경우
+3. 입소 또는 이용서류의 허위사실이나 부정한 방법으로 입소 또는 이용한 사실이 발견되는 경우
+4. 감염병 또는 그 밖의 질환으로 격리가 필요하거나, 다른 시설로 이동이 필요하다고 인정되는 경우
+5. 제6조에 따른 비용을 3개월 이상 체납한 경우
+6. 의료기관 등에 2개월 이상 입원하는 경우
+7. 과잉행동으로 본인이나 타인을 해하는 경우
+8. 그 밖에 공동생활의 질서유지가 어렵다고 판단되는 경우</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「요양보험법」</span></div><div class="act">인용한 「요양보험법」이(가) 현행 「노인장기요양보험법」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div><div class="artsec" data-oc="제8조"><div class="arthd">조례 제8조</div><div class="ordtext"><b>제8조</b> 제8조(운영의 위탁) 
+① 시장은 <mark class="cite-law" title="사회복지사업법제34조">「사회복지사업법」 제34조제4항</mark> 및 <mark class="cite-law" title="사회복지사업법 시행규칙제21조">같은 법 시행규칙 제21조</mark>에 따라 요양센터의 운영 및 관리를 사회복지법인 또는 비영리법인에 위탁할 수 있다.
+② 제1항에 따른 위탁운영을 신청하려는 자는 신청서(별지 제4호 서식)를 작성하여 시장에게 제출하여야 하며, 시장은 수탁자가 결정되면 위탁운영 결정서(별지 제5호 서식)를 통지하여야 한다.
+③ 제1항에 따른 위탁기간은 5년으로 한다. 다만 수탁자가 기간연장을 신청하는 경우 요양센터의 운영실적 및 계획 등을 검토하여 한 번만 위탁기간을 연장할 수 있다.&lt;개정 2017.07.11.&gt;
+④ 수탁자 선정 및 관리감독에 관한 사항은 <mark class="cite-local" title="군포시 사무의 민간 위탁에 관한 조례">「군포시 사무의 민간 위탁에 관한 조례」</mark>에 따른다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「사회복지사업법」 제34조제4항</span></div><div class="act">「사회복지사업법」 제34조 개정 내용을 반영하여 이 조례 제8조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>2016-02-03</b> → 현행 조문 <b>2019-01-15</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">④ <mark class="d">제1항에</mark> 따라 <mark class="d">국가나</mark> <mark class="d">지방자치단체가</mark> <mark class="d">설치한</mark> <mark class="d">시설은 필요한 경우 사회복지법인이나 비영리법인에 위탁하여 운영하게 할 수 있다</mark>. &lt;<mark class="d">개정</mark> 2011.8.4, <mark class="d">2012</mark>.1.<mark class="d">26</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">④ <mark class="i">시설을 설치ㆍ운영하는 자는 보건복지부령으로 정하는 재무ㆍ회계에 관한 기준에</mark> 따라 <mark class="i">시설을</mark> <mark class="i">투명하게</mark> <mark class="i">운영하여야</mark> <mark class="i">한다</mark>. &lt;<mark class="i">신설</mark> 2011.8.4, <mark class="i">2019</mark>.1.<mark class="i">15</mark>&gt;</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「사회복지사업법 시행규칙」 제21조</span></div><div class="act">「사회복지사업법 시행규칙」 제21조 개정 내용을 반영하여 이 조례 제8조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>2012-08-03</b> → 현행 조문 <b>2020-01-03</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제21조(시설의 위탁기준 및 방법)
+①법 <mark class="d">제34조제4항에</mark> 따라 국가 또는 지방자치단체가 설치한 시설을 위탁하여 <mark class="d">운영하고자 하는</mark> 경우에는 공개모집에 <mark class="d">의하여</mark> <mark class="d">수탁자를</mark> <mark class="d">선정하되</mark>, <mark class="d">수탁자의</mark> <mark class="d">재정적</mark> <mark class="d">능력,</mark> <mark class="d">공신력,</mark> <mark class="d">사업수행능력,</mark> <mark class="d">지역간</mark> <mark class="d">균형분포</mark> <mark class="d">및</mark> <mark class="d">제27조의2에</mark> <mark class="d">따른</mark> <mark class="d">평가결과(평가를</mark> <mark class="d">한</mark> <mark class="d">경우에</mark> <mark class="d">한한다)</mark> <mark class="d">등을</mark> <mark class="d">종합적으로</mark> <mark class="d">고려하여</mark> <mark class="d">선정하여야</mark> <mark class="d">한다</mark>. &lt;개정 2008.11.5, 2012.8.3<mark class="pt" title=", 2019.6.12, 2020.1.3 추가됨">‸</mark>&gt;
+②제1항에 따른 시설의 수탁자 선정을 위하여 <mark class="d">당해</mark> 시설을 설치한 국가 또는 지방자치단체(이하 &quot;위탁기관&quot;이라 한다)에 수탁자선정심의위원회(이하 &quot;선정위원회&quot;라 한다)를 둔다. &lt;개정 2008.11.5<mark class="pt" title=", 2020.1.3 추가됨">‸</mark>&gt;
+③국가 또는 지방자치단체는 제1항에 따라 수탁자를 <mark class="d">선정하고자 하는</mark> 경우에는<mark class="pt" title="수탁자의 재정적 능력, 공신력, 사업수행능력, 지역간 균형분포 및 제27 추가됨">‸</mark> 제2항에 따른 선정위원회의 심의를 거쳐야 한다. &lt;개정 2008.11.5<mark class="pt" title=", 2020.1.3 추가됨">‸</mark>&gt;
+④선정위원회는 위원장 1명을 포함한 9명 이내의 위원으로 구성하고, 위원은 다음 각 호의 어느 하나에 해당하는 <mark class="d">자중에서</mark> 위탁기관의 장이 임명 또는 위촉하며, 위원장은 <mark class="d">위원중에서</mark> 위탁기관의 장이 지명한다. &lt;개정 2007.3.7, 2008.11.5<mark class="pt" title=", 2020.1.3 추가됨">‸</mark>&gt;
+1.  사회복지업무를 담당하는 공무원
+2.  사회복지에 관한 학식과 경험이 풍부한 <mark class="d">자</mark>
+3.  공익단체에서 추천한 <mark class="d">자</mark>
+4.  그 밖에 법률전문가 등 선정위원회 참여가 필요하다고 위탁기관의 장이 인정하는 <mark class="d">자</mark>
+⑤선정위원회는 재적위원 과반수의 출석으로 개의하고 출석위원 과반수의 찬성으로 의결한다.
+<mark class="d">⑥이</mark> <mark class="d">규칙에</mark> <mark class="d">정한</mark> <mark class="d">것외에</mark> 선정위원회의 운영에 관하여 필요한 사항은 위탁기관의 장이 정한다.<mark class="pt" title="&lt;개정 2020.1.3&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제21조(시설의 위탁기준 및 방법)
+①법 <mark class="i">제34조제5항에</mark> 따라 국가 또는 지방자치단체가 설치한 시설을 위탁하여 <mark class="i">운영하려는</mark> 경우에는 공개모집에 <mark class="i">따라</mark> <mark class="i">수탁하는</mark> <mark class="i">법인(이하 &quot;수탁자&quot;라 한다)을 선정해야 한다. 다만</mark>, <mark class="i">국가</mark> <mark class="i">또는</mark> <mark class="i">지방자치단체가</mark> <mark class="i">사회복지사업을</mark> <mark class="i">할</mark> <mark class="i">목적으로</mark> <mark class="i">설립한</mark> <mark class="i">비영리법인에</mark> <mark class="i">위탁하여</mark> <mark class="i">운영하려는</mark> <mark class="i">경우로서</mark> <mark class="i">보건복지부장관이</mark> <mark class="i">정하는</mark> <mark class="i">경우에는</mark> <mark class="i">공개모집을</mark> <mark class="i">하지</mark> <mark class="i">않을</mark> <mark class="i">수</mark> <mark class="i">있다</mark>. &lt;개정 2008.11.5, 2012.8.3<mark class="i">, 2019.6.12, 2020.1.3</mark>&gt;
+②제1항에 따른 시설의 수탁자 선정을 위하여 <mark class="i">해당</mark> 시설을 설치한 국가 또는 지방자치단체(이하 &quot;위탁기관&quot;이라 한다)에 수탁자선정심의위원회(이하 &quot;선정위원회&quot;라 한다)를 둔다. &lt;개정 2008.11.5<mark class="i">, 2020.1.3</mark>&gt;
+③국가 또는 지방자치단체는 제1항에 따라 수탁자를 <mark class="i">선정하려는</mark> 경우에는<mark class="i"> 수탁자의 재정적 능력, 공신력, 사업수행능력, 지역간 균형분포 및 제27조의2에 따른 평가결과(평가를 한 경우에만 해당한다) 등을 종합적으로 고려해야 하며,</mark> 제2항에 따른 선정위원회의 심의를 거쳐야 한다. &lt;개정 2008.11.5<mark class="i">, 2020.1.3</mark>&gt;
+④선정위원회는 위원장 1명을 포함한 9명 이내의 위원으로 구성하고, 위원은 다음 각 호의 어느 하나에 해당하는 <mark class="i">사람 중에서</mark> 위탁기관의 장이 임명 또는 위촉하며, 위원장은 <mark class="i">위원 중에서</mark> 위탁기관의 장이 지명한다. &lt;개정 2007.3.7, 2008.11.5<mark class="i">, 2020.1.3</mark>&gt;
+1.  사회복지업무를 담당하는 공무원
+2.  사회복지에 관한 학식과 경험이 풍부한 <mark class="i">사람</mark>
+3.  공익단체에서 추천한 <mark class="i">사람</mark>
+4.  그 밖에 법률전문가 등 선정위원회 참여가 필요하다고 위탁기관의 장이 인정하는 <mark class="i">사람</mark>
+⑤선정위원회는 재적위원 과반수의 출석으로 개의하고 출석위원 과반수의 찬성으로 의결한다.
+<mark class="i">⑥제4항</mark> <mark class="i">및</mark> <mark class="i">제5항에서</mark> <mark class="i">규정한 사항 외에</mark> 선정위원회의 운영에 관하여 필요한 사항은 위탁기관의 장이 정한다.<mark class="i"> &lt;개정 2020.1.3&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(위ㆍ수탁 협약) 제8조에 따른 위·수탁 협약 시에는 <mark class="cite-local" title="군포시 사무의 민간위탁에 관한 조례제10조">「군포시 사무의 민간위탁에 관한 조례」제10조</mark> 및 <mark class="cite-law" title="사회복지사업법 시행규칙제21조의2">「사회복지사업법 시행규칙」 제21조의2</mark>에서 규정한 내용이 포함되어야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「사회복지사업법 시행규칙」 제21조의2</span></div><div class="act">「사회복지사업법 시행규칙」 제21조의2 개정 내용을 반영하여 이 조례 제9조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>2016-08-03</b> → 현행 조문 <b>2019-06-12</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제21조의2(시설의 위탁)
+①국가나 지방자치단체는 법 <mark class="d">제34조제4항에</mark> 따라 시설을 위탁하여 운영하고자 하는 때에는 다음 <mark class="d">각호의</mark> 내용이 포함된 계약을 <mark class="d">체결하여야</mark> 한다. &lt;개정 2004.9.6, 2012.8.3<mark class="pt" title=", 2019.6.12 추가됨">‸</mark>&gt;
+1.  수탁자의 <mark class="d">성명</mark> 및 <mark class="d">주소</mark>
+2.  위탁계약기간
+3.  위탁대상시설 및 업무내용
+4.  수탁자의 의무 및 준수 사항
+5.  시설의 안전관리에 관한 사항
+5의2.  시설종사자의 고용승계에 관한 사항
+6.  계약의 해지에 관한 사항
+7.  기타 시설의 운영에 필요하다고 인정되는 사항
+②제1항제2호의 규정에 의한 위탁계약기간은 5년으로 한다. 다만, 위탁자가 필요하다고 인정하는 때에는 제21조제2항에 따른 선정위원회의 심의를 거쳐 그 계약기간을 갱신할 수 있다. &lt;개정 2004.9.6, 2012.8.3, 2016.8.3&gt;
+③ 제2항의 규정에도 불구하고 위탁자는 수탁자가 다음 각 호의 어느 하나에 해당하는 경우에는 그 계약을 해지할 수 있다. &lt;신설 2016.8.3&gt;
+1.  제1항에 따른 계약 체결 내용과 달리 운영하는 경우
+2.  위탁받은 사회복지법인이나 비영리법인의 설립허가가 취소된 경우</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제21조의2(시설의 위탁)
+①국가나 지방자치단체는 법 <mark class="i">제34조제5항에</mark> 따라 시설을 위탁하여 운영하고자 하는 때에는 다음 <mark class="i">각 호의</mark> 내용이 포함된 계약을 <mark class="i">체결해야</mark> 한다. &lt;개정 2004.9.6, 2012.8.3<mark class="i">, 2019.6.12</mark>&gt;
+1.  수탁자의 <mark class="i">명칭, 주소</mark> 및 <mark class="i">대표자의 이름</mark>
+2.  위탁계약기간
+3.  위탁대상시설 및 업무내용
+4.  수탁자의 의무 및 준수 사항
+5.  시설의 안전관리에 관한 사항
+5의2.  시설종사자의 고용승계에 관한 사항
+6.  계약의 해지에 관한 사항
+7.  기타 시설의 운영에 필요하다고 인정되는 사항
+②제1항제2호의 규정에 의한 위탁계약기간은 5년으로 한다. 다만, 위탁자가 필요하다고 인정하는 때에는 제21조제2항에 따른 선정위원회의 심의를 거쳐 그 계약기간을 갱신할 수 있다. &lt;개정 2004.9.6, 2012.8.3, 2016.8.3&gt;
+③ 제2항의 규정에도 불구하고 위탁자는 수탁자가 다음 각 호의 어느 하나에 해당하는 경우에는 그 계약을 해지할 수 있다. &lt;신설 2016.8.3&gt;
+1.  제1항에 따른 계약 체결 내용과 달리 운영하는 경우
+2.  위탁받은 사회복지법인이나 비영리법인의 설립허가가 취소된 경우</span></div></div></div></div><div class="artsec" data-oc="제14조"><div class="arthd">조례 제14조</div><div class="ordtext"><b>제14조</b> 제14조(보조금 지원) 
+① 수탁자는 <mark class="cite-law" title="보조금의 예산 및 관리에 관한 법률">「보조금의 예산 및 관리에 관한 법률」</mark>등에 근거하여 보조금을 지원받아 운영할 수 있다.
+② 제1항에 의하여 보조금을 받은 자가 다음 각 호의 어느 하나에 해당할 때에는 시장은 이미 교부한 보조금의 전부 또는 일부의 반환을 명할 수 있다.
+1. 거짓, 기타 부정한 방법으로 보조금의 교부를 받은 때
+2. 사업목적 외의 용도에 보조금을 사용한 때
+3. <mark class="cite-law" title="노인복지법">「노인복지법」</mark>등 관계법령에 의한 명령에 위반 한 때</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「보조금의 예산 및 관리에 관한 법률」</span></div><div class="act">인용한 「보조금의 예산 및 관리에 관한 법률」이(가) 현행 「보조금 관리에 관한 법률」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div><div class="artsec" data-oc="제15조"><div class="arthd">조례 제15조</div><div class="ordtext"><b>제15조</b> 제15조(운영비) 
+① 수탁자는 요양센터 위탁운영에 필요한 경비를 <mark class="cite-law" title="요양보험법제38조">「요양보험법」제38조</mark>에 따른 장기요양급여 비용으로 운영한다.
+② 수탁자는 제14조에 따라 운영에 필요한 보조금을 지원받을 수 있다.
+③ 제1항 및 제2항에도 불구하고 부족한 경비에 대해서는 수탁자가 법인자체부담 등을 통하여 충당하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「요양보험법」</span></div><div class="act">인용한 「요양보험법」이(가) 현행 「노인장기요양보험법」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><div class="ord"><h2>군포시 발달장애인 지원에 관한 조례</h2><div class="meta">시행 2018-03-13 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 3</span></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(종합복지서비스의 제공) 시장은 발달장애인에 대한 복지사업을 수행함에 있어 <mark class="cite-law" title="발달장애인 권리보장 및 지원에 관한 법률제18조">법 제18조</mark> 및 <mark class="cite-law" title="장애인복지법제35조">「장애인복지법」 제35조</mark>에 따라 장애인의 유형ㆍ연령ㆍ장애 정도별로 종합적이고 전문적인 복지서비스를 제공하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「장애인복지법」 제35조</span></div><div class="act">「장애인복지법」 제35조 개정 내용을 반영하여 이 조례 제7조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-03-13</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2019-12-03</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제35조(장애 유형ㆍ장애 정도별 재활 및 자립지원 서비스 제공 등)<mark class="pt" title="① 추가됨">‸</mark> 국가와 지방자치단체는 장애인의 일상생활을 편리하게 하고 사회활동 참여를 높이기 위하여 장애 유형ㆍ장애 정도별로 재활 및 자립지원 서비스를 제공하는 등 필요한 정책을 강구하여야 하며, 예산의 범위 안에서 지원할 수 있다.<mark class="pt" title="&lt;개정 2019.12.3&gt;
+② 국가와 지방자치단체는 시청각장애인을 대상으 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제35조(장애 유형ㆍ장애 정도별 재활 및 자립지원 서비스 제공 등)<mark class="i">
+①</mark> 국가와 지방자치단체는 장애인의 일상생활을 편리하게 하고 사회활동 참여를 높이기 위하여 장애 유형ㆍ장애 정도별로 재활 및 자립지원 서비스를 제공하는 등 필요한 정책을 강구하여야 하며, 예산의 범위 안에서 지원할 수 있다.<mark class="i"> &lt;개정 2019.12.3&gt;
+② 국가와 지방자치단체는 시청각장애인을 대상으로 직업재활ㆍ의사소통ㆍ보행ㆍ이동 훈련, 심리상담, 문화ㆍ여가 활동 참여 및 가족ㆍ자조 모임 등을 지원하기 위하여 전담기관을 설치ㆍ운영하는 등 필요한 시책을 강구하여야 한다. &lt;신설 2019.12.3&gt;</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「발달장애인 권리보장 및 지원에 관한 법률」 제18조</span></div><div class="act">「발달장애인 권리보장 및 지원에 관한 법률」 제18조 개정 내용을 반영하여 이 조례 제7조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-03-13</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2022-06-10</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제18조(복지서비스의 신청)
+① 발달장애인은 다음 각 호의 복지지원 및 서비스(이하 &quot;복지서비스&quot;라 한다), 「사회보장기본법」 제3조에 따른 사회보험, 공공부조 및 사회서비스를 스스로 신청하여야 한다.<mark class="pt" title="&lt;개정 2021.6.8, 2022.6.10&gt; 추가됨">‸</mark>
+1.  「장애인복지법」 제55조 및 「장애인활동 지원에 관한 법률」에 따른 활동지원급여
+2.  「장애아동 복지지원법」 제21조에 따른 발달재활서비스지원, 같은 법 제23조에 따른 가족지원, 같은 법 제24조에 따른 돌봄 및 일시적 휴식지원 서비스지원, 같은 법 제25조에 따른 지역사회 전환 서비스지원 및 같은 법 제26조에 따른 문화ㆍ예술 등 복지지원
+3.  제24조에 따른 재활 및 발달 지원, 제27조에 따른 문화ㆍ예술ㆍ여가ㆍ체육 활동 등 지원, <mark class="pt" title="제29조의2에 따른 주간활동ㆍ방과 후 활동 지원, 제29조의3에 따른 최 추가됨">‸</mark>제31조에 따른 보호자에 대한 상담지원 및 제32조에 따른 휴식지원 등
+4.  그 밖에 보건복지부장관이 정하는 서비스
+② 발달장애인이 의사를 결정할 능력이 충분하지 아니하다고 판단할 만한 상당한 이유가 있는 경우에는 보호자가 제1항에 따른 신청을 할 수 있다. 이 경우 보호자의 신청은 발달장애인의 신청으로 본다.
+③ 제2항에도 불구하고 보호자가 제1항에 따른 신청을 하지 아니하는 경우 「<mark class="d">사회복지사업법</mark>」 <mark class="d">제14조에</mark> 따른 <mark class="d">사회복지</mark> <mark class="d">전담공무원은</mark> 발달장애인에 대한 복지지원이 누락되지 아니하도록 하기 위하여 발달장애인의 동의를 받아 관할 지역에 거주하는 발달장애인에 대한 복지서비스를 직권으로 신청할 수 있다. <mark class="d">이</mark> 경우 <mark class="d">사회복지</mark> <mark class="d">전담공무원의</mark> 신청은 발달장애인의 신청으로 본다.<mark class="pt" title="&lt;신설 2021.6.8&gt; 추가됨">‸</mark>
+<mark class="d">④</mark> 제1항부터 제3항까지에 따른 신청을 하는 경우 신청자는 해당 발달장애인 개인의 특성을 고려한 복지서비스를 제공받을 수 있도록 개인별 복지서비스에 관한 제공계획(이하 &quot;개인별지원계획&quot;이라 한다)을 수립하여 줄 것을 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장에게 신청할 수 있다.<mark class="pt" title="&lt;개정 2021.6.8&gt; 추가됨">‸</mark>
+<mark class="d">⑤</mark> 제1항부터 <mark class="d">제4항까지에</mark> 따른 복지서비스의 대상, 복지서비스 및 개인별지원계획의 신청 방법 및 절차 등에 필요한 사항은 보건복지부령으로 정한다.<mark class="pt" title="&lt;개정 2021.6.8&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제18조(복지서비스의 신청)
+① 발달장애인은 다음 각 호의 복지지원 및 서비스(이하 &quot;복지서비스&quot;라 한다), 「사회보장기본법」 제3조에 따른 사회보험, 공공부조 및 사회서비스를 스스로 신청하여야 한다.<mark class="i"> &lt;개정 2021.6.8, 2022.6.10&gt;</mark>
+1.  「장애인복지법」 제55조 및 「장애인활동 지원에 관한 법률」에 따른 활동지원급여
+2.  「장애아동 복지지원법」 제21조에 따른 발달재활서비스지원, 같은 법 제23조에 따른 가족지원, 같은 법 제24조에 따른 돌봄 및 일시적 휴식지원 서비스지원, 같은 법 제25조에 따른 지역사회 전환 서비스지원 및 같은 법 제26조에 따른 문화ㆍ예술 등 복지지원
+3.  제24조에 따른 재활 및 발달 지원, 제27조에 따른 문화ㆍ예술ㆍ여가ㆍ체육 활동 등 지원, <mark class="i">제29조의2에 따른 주간활동ㆍ방과 후 활동 지원, 제29조의3에 따른 최중증 발달장애인 통합돌봄 지원, </mark>제31조에 따른 보호자에 대한 상담지원 및 제32조에 따른 휴식지원 등
+4.  그 밖에 보건복지부장관이 정하는 서비스
+② 발달장애인이 의사를 결정할 능력이 충분하지 아니하다고 판단할 만한 상당한 이유가 있는 경우에는 보호자가 제1항에 따른 신청을 할 수 있다. 이 경우 보호자의 신청은 발달장애인의 신청으로 본다.
+③ 제2항에도 불구하고 보호자가 제1항에 따른 신청을 하지 아니하는 경우 「<mark class="i">사회보장급여의 이용ㆍ제공 및 수급권자 발굴에 관한 법률</mark>」 <mark class="i">제43조에</mark> 따른 <mark class="i">사회복지전담공무원(이하</mark> <mark class="i">&quot;사회복지전담공무원&quot;이라 한다)은</mark> 발달장애인에 대한 복지지원이 누락되지 아니하도록 하기 위하여 발달장애인의 동의를 받아 관할 지역에 거주하는 발달장애인에 대한 복지서비스를 직권으로 신청할 수 있다. <mark class="i">다만, 발달장애인이 심신미약 또는 심신상실인</mark> 경우 <mark class="i">등</mark> <mark class="i">대통령령으로 정하는 경우에는 발달장애인의 동의를 생략할 수 있다. &lt;개정 2021.6.8&gt;
+④ 사회복지전담공무원은 제3항 단서에 따라 발달장애인의 동의 없이 복지서비스를 직권으로 신청한 경우 그 사실을 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장에게 지체 없이 보고하여야 한다. &lt;신설 2021.6.8&gt;
+⑤ 제3항에 따른 사회복지전담공무원의</mark> 신청은 발달장애인의 신청으로 본다.<mark class="i"> &lt;신설 2021.6.8&gt;</mark>
+<mark class="i">⑥</mark> 제1항부터 제3항까지에 따른 신청을 하는 경우 신청자는 해당 발달장애인 개인의 특성을 고려한 복지서비스를 제공받을 수 있도록 개인별 복지서비스에 관한 제공계획(이하 &quot;개인별지원계획&quot;이라 한다)을 수립하여 줄 것을 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장에게 신청할 수 있다.<mark class="i"> &lt;개정 2021.6.8&gt;</mark>
+<mark class="i">⑦</mark> 제1항부터 <mark class="i">제6항까지에</mark> 따른 복지서비스의 대상, 복지서비스 및 개인별지원계획의 신청 방법 및 절차 등에 필요한 사항은 보건복지부령으로 정한다.<mark class="i"> &lt;개정 2021.6.8&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제19조"><div class="arthd">조례 제19조</div><div class="ordtext"><b>제19조</b> 제19조(협력체계 구축)  
+① 시장은 발달장애인의 인권보호와 자립지원을 위하여 복지단체ㆍ교육기관ㆍ복지시설ㆍ의료기관 및 사법기관 등 관련 기관과 항상 협력체계를 구축하여야 한다. 
+② 시장은 발달장애인의 권리가 보장될 수 있도록 <mark class="cite-law" title="장애인복지법제58조">「장애인복지법」 제58조</mark>에 따른 장애인복지시설의 설립, 확대 및 지원에 노력하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「장애인복지법」 제58조</span></div><div class="act">「장애인복지법」 제58조 개정 내용을 반영하여 이 조례 제19조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-03-13</b> · 당시 법령본 <b>2011-03-30</b> → 현행 조문 <b>2024-01-02</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제58조(장애인복지시설)
+①장애인복지시설의 종류는 다음 각 호와 같다. &lt;개정 2011.3.30<mark class="pt" title=", 2020.12.29, 2024.1.2 추가됨">‸</mark>&gt;
+1.  장애인 거주시설: 거주공간을 활용하여 일반가정에서 생활하기 어려운 장애인에게 일정 기간 동안 거주ㆍ요양ㆍ지원 등의 서비스를 제공하는 동시에 지역사회생활을 지원하는 시설
+2.  장애인 지역사회재활시설 : 장애인을 전문적으로 상담ㆍ치료ㆍ훈련하거나 장애인의 일상생활, 여가활동 및 사회참여활동 등을 지원하는 시설
+<mark class="pt" title="2의2.  장애인 자립생활지원시설: 장애인의 자립생활 역량을 강화하기 위 추가됨">‸</mark>3.  장애인 직업재활시설 : 일반 작업환경에서는 일하기 어려운 장애인이 특별히 준비된 작업환경에서 직업훈련을 받거나 직업 생활을 할 수 있도록 하는 시설<mark class="pt" title="(직업훈련 및 직업 생활을 위하여 필요한 제조ㆍ가공 시설, 공장 및 영업 추가됨">‸</mark>
+4.  장애인 의료재활시설: 장애인을 입원 또는 통원하게 하여 상담, 진단ㆍ판정, 치료 등 의료재활서비스를 제공하는 시설
+5.  그 밖에 대통령령으로 정하는 시설
+②제1항 각 호에 따른 장애인복지시설의 구체적인 종류와 사업 등에 관한 사항은 보건복지부령으로 정한다. &lt;개정 2008.2.29, 2010.1.18&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제58조(장애인복지시설)
+①장애인복지시설의 종류는 다음 각 호와 같다. &lt;개정 2011.3.30<mark class="i">, 2020.12.29, 2024.1.2</mark>&gt;
+1.  장애인 거주시설: 거주공간을 활용하여 일반가정에서 생활하기 어려운 장애인에게 일정 기간 동안 거주ㆍ요양ㆍ지원 등의 서비스를 제공하는 동시에 지역사회생활을 지원하는 시설
+2.  장애인 지역사회재활시설 : 장애인을 전문적으로 상담ㆍ치료ㆍ훈련하거나 장애인의 일상생활, 여가활동 및 사회참여활동 등을 지원하는 시설
+<mark class="i">2의2.  장애인 자립생활지원시설: 장애인의 자립생활 역량을 강화하기 위하여 동료상담, 지역사회의 물리적ㆍ사회적 환경개선 사업, 장애인의 권익 옹호ㆍ증진, 장애인 적합 서비스 등을 제공하는 시설
+</mark>3.  장애인 직업재활시설 : 일반 작업환경에서는 일하기 어려운 장애인이 특별히 준비된 작업환경에서 직업훈련을 받거나 직업 생활을 할 수 있도록 하는 시설<mark class="i">(직업훈련 및 직업 생활을 위하여 필요한 제조ㆍ가공 시설, 공장 및 영업장 등 부속용도의 시설로서 보건복지부령으로 정하는 시설을 포함한다)</mark>
+4.  장애인 의료재활시설: 장애인을 입원 또는 통원하게 하여 상담, 진단ㆍ판정, 치료 등 의료재활서비스를 제공하는 시설
+5.  그 밖에 대통령령으로 정하는 시설
+②제1항 각 호에 따른 장애인복지시설의 구체적인 종류와 사업 등에 관한 사항은 보건복지부령으로 정한다. &lt;개정 2008.2.29, 2010.1.18&gt;</span></div></div></div></div></div><div class="ord"><h2>군포시 중증장애인 자립생활 지원 조례</h2><div class="meta">시행 2018-01-05 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 3</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
+1. “중증장애인”(이하 “장애인”이라 한다)이란 <mark class="cite-law" title="장애인고용촉진 및 직업재활법제2조">「장애인고용촉진 및 직업재활법」제2조제2호</mark>에 따른 장애인을 말한다.
+2. “자립생활”이란 장애인이 지역사회에서 독립적으로 자신의 삶을 스스로 선택ㆍ결정하고 일상생활 및 사회생활을 영위해 나가는 것을 말한다.
+3. “활동보조서비스”란 <mark class="cite-law" title="장애인복지법제55조">「장애인복지법」(이하 “법”이라 한다) 제55조</mark>에 따라 제공되는 서비스를 말한다.
+4. “활동보조인”이란 <mark class="cite-law" title="장애인복지법제55조">법 제55조</mark>에 따라 활동보조서비스를 제공하는 사람을 말한다.
+5. “중증장애인자립생활지원센터”(이하 “센터”라 한다)란 <mark class="cite-law" title="장애인복지법제54조">법 제54조</mark>에 따라 장애인의 자립생활을 실현하기 위하여 필요한 각종 지원서비스 제공 및 권익옹호활동을 하는 비영리 기관을 말한다.
+6. “동료상담”이란 <mark class="cite-law" title="장애인복지법제56조">법 제56조</mark>에 따라 장애동료 간 상담을 실시하는 것으로써 당사자 간 상담을 통해 자립생활을 하며 발생하는 문제들을 해결함은 물론 지지를 통해 역량을 강화하고 역할 모델을 제공하는 것을 말한다.
+7. “공동생활가정”이란 장애인의 자립생활에 필요한 경험의 축적을 목적으로 하는 단기 거주시설로 기술훈련 등 실제 자립생활에 필요한 프로그램을 제공하며 자립생활의 지원 역할을 수행한다.
+8. “주거서비스”란 공동주택 및 임대주택 분양ㆍ입주 지원, 공동생활가정의 제공 및 지원, 주택 개조사업(편의시설) 지원 등을 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「장애인고용촉진 및 직업재활법」 제2조제2호</span></div><div class="act">「장애인고용촉진 및 직업재활법」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-01-05</b> · 당시 법령본 <b>2010-06-04</b> → 현행 조문 <b>2021-08-17</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">2.  &quot;중증장애인&quot;이란 장애인 중 근로 능력이 현저하게 상실된 <mark class="d">자로서</mark> 대통령령으로 정하는 기준에 해당하는 <mark class="d">자를</mark> 말한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">2.  &quot;중증장애인&quot;이란 장애인 중 근로 능력이 현저하게 상실된 <mark class="i">사람으로서</mark> 대통령령으로 정하는 기준에 해당하는 <mark class="i">사람을</mark> 말한다.</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「장애인복지법」 제55조</span></div><div class="act">「장애인복지법」 제55조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-01-05</b> · 당시 법령본 <b>2017-12-19</b> → 현행 조문 <b>2021-12-21</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제55조(활동지원급여의 지원)
+①국가와 지방자치단체는 <mark class="d">중증장애인이</mark> 일상생활 또는 사회생활을 원활히 할 수 있도록 활동지원급여를 지원할 수 있다. &lt;개정 2011.1.4<mark class="pt" title=", 2017.12.19 추가됨">‸</mark>&gt;
+②국가 및 지방자치단체는 임신 등으로 인하여 이동이 불편한 여성장애인에게 임신 및 출산과 관련한 진료 등을 위하여 경제적 부담능력 등을 <mark class="d">감안하여</mark> <mark class="d">활동보조인의</mark> 파견 등 활동보조서비스를 지원할 수 있다.<mark class="pt" title="&lt;개정 2018.12.11, 2021.12.21&gt; 추가됨">‸</mark>
+③ 삭제 &lt;2011.1.4&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제55조(활동지원급여의 지원)
+①국가와 지방자치단체는 <mark class="i">장애인이</mark> 일상생활 또는 사회생활을 원활히 할 수 있도록 활동지원급여를 지원할 수 있다. &lt;개정 2011.1.4<mark class="i">, 2017.12.19</mark>&gt;
+②국가 및 지방자치단체는 임신 등으로 인하여 이동이 불편한 여성장애인에게 임신 및 출산과 관련한 진료 등을 위하여 경제적 부담능력 등을 <mark class="i">고려하여</mark> <mark class="i">활동지원사의</mark> 파견 등 활동보조서비스를 지원할 수 있다.<mark class="i"> &lt;개정 2018.12.11, 2021.12.21&gt;</mark>
+③ 삭제 &lt;2011.1.4&gt;</span></div></div></div></div><div class="artsec" data-oc="제17조"><div class="arthd">조례 제17조</div><div class="ordtext"><b>제17조</b> 제17조(활동보조서비스 추가 지원) 시장은 <mark class="cite-law" title="장애인복지법제55조">법 제55조</mark>에 따른 장애 인 및 그 밖의 사유로 일상생활을 영위하기 어려운 장애인에게 예산의 범위 안에서 활동보조서비스를 추가 제공할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「장애인복지법」 제55조</span></div><div class="act">「장애인복지법」 제55조 개정 내용을 반영하여 이 조례 제17조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-01-05</b> · 당시 법령본 <b>2017-12-19</b> → 현행 조문 <b>2021-12-21</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제55조(활동지원급여의 지원)
+①국가와 지방자치단체는 <mark class="d">중증장애인이</mark> 일상생활 또는 사회생활을 원활히 할 수 있도록 활동지원급여를 지원할 수 있다. &lt;개정 2011.1.4<mark class="pt" title=", 2017.12.19 추가됨">‸</mark>&gt;
+②국가 및 지방자치단체는 임신 등으로 인하여 이동이 불편한 여성장애인에게 임신 및 출산과 관련한 진료 등을 위하여 경제적 부담능력 등을 <mark class="d">감안하여</mark> <mark class="d">활동보조인의</mark> 파견 등 활동보조서비스를 지원할 수 있다.<mark class="pt" title="&lt;개정 2018.12.11, 2021.12.21&gt; 추가됨">‸</mark>
+③ 삭제 &lt;2011.1.4&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제55조(활동지원급여의 지원)
+①국가와 지방자치단체는 <mark class="i">장애인이</mark> 일상생활 또는 사회생활을 원활히 할 수 있도록 활동지원급여를 지원할 수 있다. &lt;개정 2011.1.4<mark class="i">, 2017.12.19</mark>&gt;
+②국가 및 지방자치단체는 임신 등으로 인하여 이동이 불편한 여성장애인에게 임신 및 출산과 관련한 진료 등을 위하여 경제적 부담능력 등을 <mark class="i">고려하여</mark> <mark class="i">활동지원사의</mark> 파견 등 활동보조서비스를 지원할 수 있다.<mark class="i"> &lt;개정 2018.12.11, 2021.12.21&gt;</mark>
+③ 삭제 &lt;2011.1.4&gt;</span></div></div></div></div></div><div class="ord"><h2>군포시 장애인복지시설 운영 조례</h2><div class="meta">시행 2017-07-11 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는  <mark class="cite-law" title="사회복지사업법제34조">「사회복지사업법」제34조</mark> 및 <mark class="cite-law" title="장애인복지법제59조">「장애인복지법」제59조의 규정</mark>에 의한 장애인복지증진과 재활사업추진을 위하여 군포시장애인복지시설(이하 “복지시설”이라 한다) 설치와 운영에 필요한 사항을 규정함을 목적으로 한다.〈개정 2003. 10. 14, 2005. 09. 26, 2017. 07. 11〉</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「사회복지사업법」 제34조</span></div><div class="act">「사회복지사업법」 제34조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>2016-02-03</b> → 현행 조문 <b>2019-01-15</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제34조(사회복지시설의 설치)
+① 국가나 지방자치단체는 사회복지시설(이하 &quot;시설&quot;이라 한다)을 설치ㆍ운영할 수 있다. &lt;개정 2011.8.4&gt;
+② 국가 또는 지방자치단체 외의 자가 시설을 설치ㆍ운영하려는 경우에는 보건복지부령으로 정하는 바에 따라 시장ㆍ군수ㆍ구청장에게 신고하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 자는 시설의 설치ㆍ운영 신고를 할 수 없다. &lt;개정 2011.8.4, 2012.1.26, 2016.2.3<mark class="pt" title=", 2017.10.24 추가됨">‸</mark>&gt;
+1.  제40조에 따라 폐쇄명령을 받고 3년이 지나지 아니한 자
+2.  <mark class="d">제7조제3항</mark> <mark class="d">각</mark> <mark class="d">호에</mark> 해당하는 개인 또는 그 개인이 임원인 법인
+③<mark class="pt" title="시장ㆍ군수ㆍ구청장은 제2항에 따른 신고를 받은 경우 그 내용을 검토하여  추가됨">‸</mark> 시설을 설치ㆍ운영하는 자는 보건복지부령으로 정하는 재무ㆍ회계에 관한 기준에 따라 시설을 투명하게 운영하여야 한다. &lt;신설 2011.8.4<mark class="pt" title=", 2019.1.15 추가됨">‸</mark>&gt;
+<mark class="d">④</mark> 제1항에 따라 국가나 지방자치단체가 설치한 시설은 필요한 경우 사회복지법인이나 비영리법인에 위탁하여 운영하게 할 수 있다. &lt;개정 2011.8.4, 2012.1.26<mark class="pt" title=", 2019.1.15 추가됨">‸</mark>&gt;
+<mark class="d">⑤</mark> <mark class="d">제4항에</mark> 따른 위탁운영의 기준ㆍ기간 및 방법 등에 관하여 필요한 사항은 보건복지부령으로 정한다. &lt;개정 2011.8.4, 2012.1.26<mark class="pt" title=", 2019.1.15 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제34조(사회복지시설의 설치)
+① 국가나 지방자치단체는 사회복지시설(이하 &quot;시설&quot;이라 한다)을 설치ㆍ운영할 수 있다. &lt;개정 2011.8.4&gt;
+② 국가 또는 지방자치단체 외의 자가 시설을 설치ㆍ운영하려는 경우에는 보건복지부령으로 정하는 바에 따라 시장ㆍ군수ㆍ구청장에게 신고하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 자는 시설의 설치ㆍ운영 신고를 할 수 없다. &lt;개정 2011.8.4, 2012.1.26, 2016.2.3<mark class="i">, 2017.10.24</mark>&gt;
+1.  제40조에 따라 폐쇄명령을 받고 3년이 지나지 아니한 자
+2.  <mark class="i">제19조제1항제1호</mark> <mark class="i">및</mark> <mark class="i">제1호의2부터 제1호의8까지의 어느 하나에</mark> 해당하는 개인 또는 그 개인이 임원인 법인
+③<mark class="i"> 시장ㆍ군수ㆍ구청장은 제2항에 따른 신고를 받은 경우 그 내용을 검토하여 이 법에 적합하면 신고를 수리하여야 한다. &lt;신설 2019.1.15&gt;
+④</mark> 시설을 설치ㆍ운영하는 자는 보건복지부령으로 정하는 재무ㆍ회계에 관한 기준에 따라 시설을 투명하게 운영하여야 한다. &lt;신설 2011.8.4<mark class="i">, 2019.1.15</mark>&gt;
+<mark class="i">⑤</mark> 제1항에 따라 국가나 지방자치단체가 설치한 시설은 필요한 경우 사회복지법인이나 비영리법인에 위탁하여 운영하게 할 수 있다. &lt;개정 2011.8.4, 2012.1.26<mark class="i">, 2019.1.15</mark>&gt;
+<mark class="i">⑥</mark> <mark class="i">제5항에</mark> 따른 위탁운영의 기준ㆍ기간 및 방법 등에 관하여 필요한 사항은 보건복지부령으로 정한다. &lt;개정 2011.8.4, 2012.1.26<mark class="i">, 2019.1.15</mark>&gt;</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「장애인복지법」 제59조</span></div><div class="act">「장애인복지법」 제59조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2017-07-11</b> · 당시 법령본 <b>2011-03-30</b> → 현행 조문 <b>2019-01-15</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제59조(장애인복지시설 설치)
+①국가와 지방자치단체는 장애인복지시설을 설치할 수 있다.
+②제1항에 규정된 자 외의 자가 장애인복지시설을 설치ㆍ운영하려면 해당 시설 소재지 관할 시장ㆍ군수ㆍ구청장에게 신고하여야 하며, 신고한 사항 중 보건복지부령으로 정하는 중요한 사항을 변경할 때에도 신고하여야 한다. 다만, 제62조에 따른 폐쇄 명령을 받고 1년이 지나지 아니한 자는 시설의 설치ㆍ운영 신고를 할 수 없다. &lt;개정 2008.2.29, 2010.1.18&gt;
+③ <mark class="pt" title="시장ㆍ군수ㆍ구청장은 제2항에 따른 신고 또는 변경신고를 받은 경우 그 내 추가됨">‸</mark>제58조제1항제1호에 따른 장애인 거주시설의 정원은 30명을 초과할 수 없다. 다만, 특수한 서비스를 위하여 일정 규모 이상이 필요한 시설 등 대통령령으로 정하는 경우에는 그러하지 아니하다. &lt;신설 2011.3.30<mark class="pt" title=", 2019.1.15 추가됨">‸</mark>&gt;
+<mark class="d">④제58조제1항제4호에</mark> 따른 의료재활시설의 설치는 「의료법」에 따른다. &lt;개정 2011.3.30<mark class="pt" title=", 2019.1.15 추가됨">‸</mark>&gt;
+<mark class="d">⑤제2항에</mark> 따른 장애인복지시설의 시설기준ㆍ신고ㆍ변경신고 및 이용 등에 관하여 필요한 사항은 보건복지부령으로 정한다. &lt;개정 2008.2.29, 2010.1.18, 2011.3.30<mark class="pt" title=", 2019.1.15 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제59조(장애인복지시설 설치)
+①국가와 지방자치단체는 장애인복지시설을 설치할 수 있다.
+②제1항에 규정된 자 외의 자가 장애인복지시설을 설치ㆍ운영하려면 해당 시설 소재지 관할 시장ㆍ군수ㆍ구청장에게 신고하여야 하며, 신고한 사항 중 보건복지부령으로 정하는 중요한 사항을 변경할 때에도 신고하여야 한다. 다만, 제62조에 따른 폐쇄 명령을 받고 1년이 지나지 아니한 자는 시설의 설치ㆍ운영 신고를 할 수 없다. &lt;개정 2008.2.29, 2010.1.18&gt;
+③ <mark class="i">시장ㆍ군수ㆍ구청장은 제2항에 따른 신고 또는 변경신고를 받은 경우 그 내용을 검토하여 이 법에 적합하면 신고 또는 변경신고를 수리하여야 한다. &lt;신설 2019.1.15&gt;
+④ </mark>제58조제1항제1호에 따른 장애인 거주시설의 정원은 30명을 초과할 수 없다. 다만, 특수한 서비스를 위하여 일정 규모 이상이 필요한 시설 등 대통령령으로 정하는 경우에는 그러하지 아니하다. &lt;신설 2011.3.30<mark class="i">, 2019.1.15</mark>&gt;
+<mark class="i">⑤제58조제1항제4호에</mark> 따른 의료재활시설의 설치는 「의료법」에 따른다. &lt;개정 2011.3.30<mark class="i">, 2019.1.15</mark>&gt;
+<mark class="i">⑥제2항에</mark> 따른 장애인복지시설의 시설기준ㆍ신고ㆍ변경신고 및 이용 등에 관하여 필요한 사항은 보건복지부령으로 정한다. &lt;개정 2008.2.29, 2010.1.18, 2011.3.30<mark class="i">, 2019.1.15</mark>&gt;</span></div></div></div></div></div><div class="ord"><h2>군포시 공공시설 내 최적의 장애인관람석 지정설치ㆍ운영조례</h2><div class="meta">시행 2005-06-03 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 정의는 다음과 같다.
+1. “장애인”이라 함은 <mark class="cite-law" title="장애인복지법제2조">「장애인복지법」 제2조의 규정</mark>에 의한 장애인을 말한다.
+2. “공연장 등” 이라 함은 <mark class="cite-law" title="장애인·노인·임산부 등의 편의증진 보장에 관한 법률 시행령제3조">「장애인·노인·임산부 등의 편의증진 보장에 관한 법률 시행령」 제3조의 규정</mark>에 의한 공연장, 집회장, 관람장, 체육관, 운동장 중 시가 관리·운영(위탁운영을 포함한다)하는 시설을 말한다.
+3. “최적관람석”이라 함은 각 관람시설의 객석 내에서 관람하기 가장 좋은 위치에 설치된 관람석을 말한다.
+4. “장애인보호자”라 함은 장애인을 보조하기 위하여 장애인과 함께 관람석에 입장한 자를 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「장애인복지법」 제2조</span></div><div class="act">「장애인복지법」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2005-06-03</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2020-12-29</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조 (장애인의 정의<mark class="pt" title="등 추가됨">‸</mark>)
+<mark class="d">①장애인은</mark> 신체적ㆍ정신적 장애로 <mark class="d">인하여</mark> <mark class="d">장기간에</mark> <mark class="d">걸쳐 일상생활 또는 사회생활에</mark> 상당한 제약을 받는 자를 말한다.
+②이 <mark class="d">법의</mark> <mark class="d">적용을 받는</mark> 장애인은 <mark class="d">제1항의</mark> <mark class="d">규정에</mark> <mark class="d">의한</mark> <mark class="d">장애인중</mark> 다음 <mark class="d">각호의</mark> <mark class="d">1에</mark> 해당하는 <mark class="d">장애를</mark> <mark class="d">가진</mark> 자로서 <mark class="d">대통령령이</mark> 정하는 장애의 종류 및 기준에 해당하는 자를 말한다.
+1.  <mark class="pt" title="&quot; 추가됨">‸</mark>신체적 <mark class="d">장애라 함은</mark> 주요 <mark class="d">외부신체기능의</mark> 장애, 내부기관의 <mark class="d">장애등을</mark> 말한다.
+2.  <mark class="pt" title="&quot; 추가됨">‸</mark>정신적 <mark class="d">장애라</mark> <mark class="d">함은 정신지체</mark> 또는 <mark class="d">정신적</mark> 질환으로 발생하는 장애를 말한다.<mark class="pt" title="③ &quot;장애인학대&quot;란 장애인에 대하여 신체적ㆍ정신적ㆍ정서적ㆍ언어적ㆍ성적 폭 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제2조(장애인의 정의<mark class="i"> 등</mark>)
+<mark class="i">①&quot;장애인&quot;이란</mark> 신체적ㆍ정신적 장애로 <mark class="i">오랫동안</mark> <mark class="i">일상생활이나</mark> <mark class="i">사회생활에서</mark> 상당한 제약을 받는 자를 말한다.
+②이 <mark class="i">법을</mark> <mark class="i">적용받는</mark> 장애인은 <mark class="i">제1항에</mark> <mark class="i">따른</mark> <mark class="i">장애인</mark> <mark class="i">중</mark> 다음 <mark class="i">각</mark> <mark class="i">호의 어느 하나에</mark> 해당하는 <mark class="i">장애가</mark> <mark class="i">있는</mark> 자로서 <mark class="i">대통령령으로</mark> 정하는 장애의 종류 및 기준에 해당하는 자를 말한다.
+1.  <mark class="i">&quot;</mark>신체적 <mark class="i">장애&quot;란</mark> 주요 <mark class="i">외부 신체 기능의</mark> 장애, 내부기관의 <mark class="i">장애 등을</mark> 말한다.
+2.  <mark class="i">&quot;</mark>정신적 <mark class="i">장애&quot;란</mark> <mark class="i">발달장애</mark> 또는 <mark class="i">정신</mark> 질환으로 발생하는 장애를 말한다.<mark class="i">
+③ &quot;장애인학대&quot;란 장애인에 대하여 신체적ㆍ정신적ㆍ정서적ㆍ언어적ㆍ성적 폭력이나 가혹행위, 경제적 착취, 유기 또는 방임을 하는 것을 말한다. &lt;신설 2012.10.22, 2015.6.22&gt;
+④ &quot;장애인학대관련범죄&quot;란 장애인학대로서 다음 각 호의 어느 하나에 해당하는 죄를 말한다. &lt;신설 2020.12.29&gt;
+1.  「형법」 제2편제24장 살인의 죄 중 제250조(살인, 존속살해), 제252조(촉탁, 승낙에 의한 살인 등), 제253조(위계 등에 의한 촉탁살인 등) 및 제254조(미수범)의 죄
+2.  「형법」 제2편제25장 상해와 폭행의 죄 중 제257조(상해, 존속상해), 제258조(중상해, 존속중상해), 제258조의2(특수상해), 제259조(상해치사), 제260조(폭행, 존속폭행)제1항ㆍ제2항, 제261조(특수폭행) 및 262조(폭행치사상)의 죄
+3.  「형법」 제2편제28장 유기와 학대의 죄 중 제271조(유기, 존속유기)제1항ㆍ제2항, 제272조(영아유기), 제273조(학대, 존속학대), 제274조(아동혹사) 및 제275조(유기등 치사상)의 죄
+4.  「형법」 제2편제29장 체포와 감금의 죄 중 제276조(체포, 감금, 존속체포, 존속감금), 제277조(중체포, 중감금, 존속중체포, 존속중감금), 제278조(특수체포, 특수감금), 제280조(미수범) 및 제281조(체포ㆍ감금등의 치사상)의 죄
+5.  「형법」 제2편제30장 협박의 죄 중 제283조(협박, 존속협박)제1항ㆍ제2항, 제284조(특수협박) 및 제286조(미수범)의 죄
+6.  「형법」 제2편제31장 약취, 유인 및 인신매매의 죄 중 제287조(미성년자의 약취, 유인), 제288조(추행 등 목적 약취, 유인 등), 제289조(인신매매) 및 제290조(약취, 유인, 매매, 이송 등 상해ㆍ치상), 제291조(약취, 유인, 매매, 이송 등 살인ㆍ치사) 및 제292조(약취, 유인, 매매, 이송된 사람의 수수ㆍ은닉 등) 및 제294조(미수범)의 죄
+7.  「형법」 제2편제32장 강간과 추행의 죄 중 제297조(강간), 제297조의2(유사강간), 제298조(강제추행), 제299조(준강간, 준강제추행), 제300조(미수범), 제301조(강간 등 상해ㆍ치상), 제301조의2(강간등 살인ㆍ치사), 제302조(미성년자 등에 대한 간음), 제303조(업무상위력 등에 의한 간음) 및 제305조(미성년자에 대한 간음, 추행)의 죄
+8.  「형법」 제2편제33장 명예에 관한 죄 중 제307조(명예훼손), 제309조(출판물 등에 의한 명예훼손) 및 제311조(모욕)의 죄
+9.  「형법」 제2편제36장 주거침입의 죄 중 제321조(주거ㆍ신체 수색)의 죄
+10.  「형법」 제2편제37장 권리행사를 방해하는 죄 중 제324조(강요) 및 제324조의5(미수범)(제324조의 죄에만 해당한다)의 죄
+11.  「형법」 제2편제39장 사기와 공갈의 죄 중 제347조(사기), 제347조의2(컴퓨터등 사용사기), 제348조(준사기), 제350조(공갈), 제350조의2(특수공갈) 및 제352조(미수범)의 죄
+12.  「형법」 제2편제40장 횡령과 배임의 죄 중 제355조(횡령, 배임), 제356조(업무상의 횡령과 배임) 및 제357조(배임수증재)의 죄
+13.  「형법」 제2편제42장 손괴의 죄 중 제366조(재물손괴등)의 죄
+14.  제86조제1항ㆍ제2항, 같은 조 제3항제3호, 같은 조 제4항제2호 및 같은 조 제5항의 죄
+15.  「성매매알선 등 행위의 처벌에 관한 법률」 제18조 및 제23조(제18조의 죄에만 해당한다)의 죄
+16.  「장애인차별금지 및 권리구제 등에 관한 법률」 제49조제1항의 죄
+17.  「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제70조제1항 및 제2항의 죄
+18.  「정신건강증진 및 정신질환자 복지서비스 지원에 관한 법률」 제84조제1호 및 제11호의 죄
+19.  제1호부터 제18호까지의 죄로서 다른 법률에 따라 가중처벌되는 죄</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 노인복지문화 지원 조례</h2><div class="meta">시행 2025-10-10 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제29조"><div class="arthd">조례 제29조</div><div class="ordtext"><b>제29조</b> 제29조(사용료 등) 
+① 복지시설을 이용하고자 하는 자는 법 시행규칙 제24조제3항에 따라 노인여가복지시설별 운영 규정에 따른 사용료, 이용료, 수수료 등(이하 “사용료 등”이라 한다)을 납부하여야 한다.&lt;개정 2016. 12. 12.&gt;
+② 시장은 제1항에 따른 사용료 등을 다음 각 호에 해당하는 사람 또는 사업의 경우에는 일부 또는 전부를 감면할 수 있다. &lt;개정 2023.12.12.&gt;
+1. 60세 이상의 사람으로서<mark class="cite-law" title="국민기초생활 보장법제2조">「국민기초생활 보장법」제2조제2호</mark>에 따른 생계급여 수급자 &lt;개정 2015. 10. 12.&gt;
+2.<mark class="cite-law" title="국가유공자 등 예우 및 지원에 관한 법률">「국가유공자 등 예우 및 지원에 관한 법률」</mark>에 따른 국가유공자
+3.<mark class="cite-law" title="5·18 민주유공자예우에 관한 법률">「5·18 민주유공자예우에 관한 법률」</mark>에 따른 5ㆍ18 민주유공자
+4.<mark class="cite-law" title="의ㆍ사상자 등 예우 및 지원에 관한 법률">「의ㆍ사상자 등 예우 및 지원에 관한 법률」</mark>에 따른 의ㆍ사상자 및 그 유족
+5. 노인복지문화 증진을 위한 사업의 경우
+6. 그 밖에 시장이 공익상 필요하다고 인정한 경우
+③ 제26조제2항에 따라 복지시설 운영을 위탁하는 경우에는 수탁자는 사용료 등의 규정을 정하여 시장에게 승인을 받아야 한다. &lt;개정 2016. 12. 12.&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「5·18 민주유공자예우에 관한 법률」</span></div><div class="act">인용한 「5·18 민주유공자예우에 관한 법률」이(가) 현행 「5ㆍ18민주유공자예우 및 단체설립에 관한 법률」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><div class="ord"><h2>군포시 장애인ㆍ노인등 전동보조기기 보험 가입 및 지원 조례</h2><div class="meta">시행 2023-12-12 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2023.12.12.&gt;
+1. “장애인”이란 <mark class="cite-law" title="장애인복지법제2조">「장애인복지법」 제2조</mark>에 따른 사람으로서 <mark class="cite-law" title="장애인복지법제32조">같은 법 제32조</mark>에 따라 등록한 장애인을 말한다.
+2. “노인등”이란 <mark class="cite-law" title="노인장기요양보험법제2조">「노인장기요양보험법」 제2조제1호</mark>에 따른 노인등을 말한다.
+3. “전동보조기기”란 장애인·노인등이 이동을 위하여 사용하는 전동휠체어와 전동스쿠터를 말한다.
+4. “전동보조기기 보험”(이하 “보험”이라 한다)이란 장애인·노인등을 대상으로 전동보조기기 사용에 관하여 군포시와 보험기관이 체결한 보험을 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「장애인복지법」 제32조</span></div><div class="act">「장애인복지법」 제32조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>2017-12-19</b> → 현행 조문 <b>2025-04-22</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제32조(장애인 등록)
+①장애인, 그 법정대리인 또는 대통령령으로 정하는 보호자(이하 &quot;법정대리인등&quot;이라 한다)는 장애 상태와 그 밖에 보건복지부령이 정하는 사항을 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수 또는 구청장(자치구의 구청장을 말한다. 이하 같다)에게 등록하여야 하며, 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장은 등록을 신청한 장애인이 제2조에 따른 기준에 맞으면 장애인등록증(이하 &quot;등록증&quot;이라 한다)을 내주어야 한다. &lt;개정 2008.2.29, 2010.1.18, 2010.5.27, 2015.6.22, 2017.2.8&gt;
+② <mark class="d">삭제</mark> &lt;<mark class="d">2017</mark>.<mark class="d">2</mark>.<mark class="d">8</mark>&gt;
+③ 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따라 등록증을 받은 장애인의 장애 상태의 변화에 따른 장애 정도 조정을 위하여 장애 진단을 받게 하는 등 장애인이나 법정대리인등에게 필요한 조치를 할 수 있다. &lt;개정 2017.2.8, 2017.12.19&gt;
+<mark class="d">④장애인의</mark> <mark class="d">장애</mark> <mark class="d">인정과 장애 정도 사정(査定)에 관한 업무를 담당하게 하기 위하여 보건복지부에 장애판정위원회를 둘 수 있다</mark>. <mark class="d">&lt;개정</mark> <mark class="d">2008.2.29, 2010.1.18, 2017.12.19&gt;
+⑤등록증은</mark> 양도하거나 대여하지 못하며, 등록증과 <mark class="d">비슷한</mark> 명칭이나 표시를 사용하여서는 아니 된다.<mark class="pt" title="&lt;개정 2025.4.22&gt;
+⑤ 누구든지 다른 사람의 등록증 또는 그 복사 추가됨">‸</mark>
+⑥ 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따른 장애인 등록 및 제3항에 따른 장애 상태의 변화에 따른 장애 정도를 조정함에 있어 장애인의 장애 인정과 장애 정도 사정이 적정한지를 확인하기 위하여 필요한 경우 대통령령으로 정하는 「공공기관의 운영에 관한 법률」 제4조에 따른 공공기관에 장애 정도에 관한 정밀심사를 의뢰할 수 있다. &lt;신설 2010.5.27, 2015.6.22, 2015.12.29, 2017.12.19&gt;
+⑦ 삭제 &lt;2021.7.27&gt;
+<mark class="d">⑧제1항</mark> 및 <mark class="d">제3항부터 제6항까지에서</mark> 규정한 사항 외에 장애인의 등록, 등록증의 발급, 장애 진단 및 장애 정도에 관한 정밀심사, <mark class="d">장애판정위원회</mark> 등에 관하여 필요한 사항은 보건복지부령으로 정한다. &lt;개정 <mark class="d">2008</mark>.2.<mark class="d">29</mark>, <mark class="d">2010</mark>.<mark class="d">1</mark>.<mark class="d">18, 2010.5.27, 2015.12.29, 2017.2.8, 2021.7.27</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제32조(장애인 등록)
+①장애인, 그 법정대리인 또는 대통령령으로 정하는 보호자(이하 &quot;법정대리인등&quot;이라 한다)는 장애 상태와 그 밖에 보건복지부령이 정하는 사항을 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수 또는 구청장(자치구의 구청장을 말한다. 이하 같다)에게 등록하여야 하며, 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장은 등록을 신청한 장애인이 제2조에 따른 기준에 맞으면 장애인등록증(이하 &quot;등록증&quot;이라 한다)을 내주어야 한다. &lt;개정 2008.2.29, 2010.1.18, 2010.5.27, 2015.6.22, 2017.2.8&gt;
+② <mark class="i">특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따라 등록증을 발급받은 장애인이 등록증과 효력이 동일한 모바일 등록증(「전기통신사업법」 제2조제20호에 따른 이동통신단말장치에 암호화된 형태로 설치된 등록증을 말한다. 이하 같다)의 발급을 신청하는 경우에는 이를 추가로 발급할 수 있다.</mark> &lt;<mark class="i">신설 2025</mark>.<mark class="i">4</mark>.<mark class="i">22</mark>&gt;
+③ 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따라 등록증을 받은 장애인의 장애 상태의 변화에 따른 장애 정도 조정을 위하여 장애 진단을 받게 하는 등 장애인이나 법정대리인등에게 필요한 조치를 할 수 있다. &lt;개정 2017.2.8, 2017.12.19&gt;
+<mark class="i">④등록증(모바일</mark> <mark class="i">등록증을</mark> <mark class="i">포함한다</mark>. <mark class="i">이하</mark> <mark class="i">같다)은</mark> 양도하거나 대여하지 못하며, 등록증과 <mark class="i">유사한</mark> 명칭이나 표시를 사용하여서는 아니 된다.<mark class="i"> &lt;개정 2025.4.22&gt;
+⑤ 누구든지 다른 사람의 등록증 또는 그 복사본이나 이미지파일(이하 &quot;복사본등&quot;이라 한다)을 부정하게 사용하여서는 아니 된다. &lt;신설 2025.4.22&gt;</mark>
+⑥ 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따른 장애인 등록 및 제3항에 따른 장애 상태의 변화에 따른 장애 정도를 조정함에 있어 장애인의 장애 인정과 장애 정도 사정이 적정한지를 확인하기 위하여 필요한 경우 대통령령으로 정하는 「공공기관의 운영에 관한 법률」 제4조에 따른 공공기관에 장애 정도에 관한 정밀심사를 의뢰할 수 있다. &lt;신설 2010.5.27, 2015.6.22, 2015.12.29, 2017.12.19&gt;
+⑦ 삭제 &lt;2021.7.27&gt;
+<mark class="i">⑧ 보건복지부장관 또는 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장은 「사회보장기본법」 제37조에 따른 사회보장정보시스템을 이용하여 등록증의 진위 또는 유효 여부 확인이 필요한 경우에 이를 확인하여 줄 수 있다. &lt;개정 2024.2.13&gt;
+⑨ 제1항부터 제6항까지</mark> 및 <mark class="i">제8항에서</mark> 규정한 사항 외에 장애인의 등록, 등록증의 발급, 장애 진단 및 장애 정도에 관한 정밀심사, <mark class="i">등록증의 진위 또는 유효 여부 확인</mark> 등에 관하여 필요한 사항은 보건복지부령으로 정한다. &lt;개정 <mark class="i">2024</mark>.2.<mark class="i">13</mark>, <mark class="i">2025</mark>.<mark class="i">4</mark>.<mark class="i">22</mark>&gt;</span></div></div></div></div></div><div class="ord"><h2>군포시 장애인가족 지원 조례</h2><div class="meta">시행 2021-12-06 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(장애인가족 지원센터의 설치) 
+① 시장은 장애인가족 지원사업의 원활한 시행을 위하여 “군포시 장애인가족 지원센터”(이하 “센터”라 한다)를 설치·운영할 수 있으며, 센터는 <mark class="cite-law" title="장애아동 복지지원법제9조">「장애아동 복지지원법」 제9조</mark>에 따른 지역장애아동지원센터의 기능을 포함한다.
+② 시장은 제1항에 따라 설치된 센터의 관리·운영을 장애인의 복지 및 지원을 위하여 설립된 비영리법인이나 단체 등에 위탁할 수 있으며, 센터를 민간 위탁할 경우에는 <mark class="cite-local" title="군포시 사무의 민간위탁에 관한 조례">「군포시 사무의 민간위탁에 관한 조례」</mark>에 따른다.
+③ 시장은 센터 운영에 필요한 경비의 전부 또는 일부를 예산의 범위에서 지원할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「장애아동 복지지원법」 제9조</span></div><div class="act">「장애아동 복지지원법」 제9조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-12-06</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2024-12-20</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제9조(지역장애아동지원센터)
+①<mark class="pt" title="다음 각 호의 업무를 수행하기 위하여 추가됨">‸</mark> 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사ㆍ특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다)<mark class="pt" title="는 추가됨">‸</mark> <mark class="d">및</mark> 시장ㆍ군수ㆍ구청장(자치구의 구청장을 말한다. 이하 같다)은 <mark class="d">다음 각 호의 업무를 수행하기 위하여 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도 및 </mark>시ㆍ군ㆍ구(자치구를 말한다. 이하 같다)에 <mark class="d">지역장애아동지원센터(이하 &quot;지역센터&quot;라 한다)를</mark> 설치ㆍ운영할 수 있다. &lt;개정 2020.12.29<mark class="pt" title=", 2023.6.13, 2024.12.20 추가됨">‸</mark>&gt;
+1.  장애의 조기발견을 위한 홍보<mark class="pt" title="및 보호자 교육
+1의2.  제12조제5항에 따른 영유아와 그 가족을 위한 추가됨">‸</mark>
+2.  장애아동의 복지지원 사업에 관한 정보 및 자료 제공
+3.  장애아동과 그 가족에 대한 복지지원 제공기관의 연계
+4.  장애아동의 사례관리
+5.  장애아동 및 그 가족을 지원하기 위한 가족상담 및 교육의 실시
+6.  그 밖에 시ㆍ도지사 및 시장ㆍ군수ㆍ구청장이 위탁하거나 필요하다고 인정하는 업무
+② <mark class="d">시ㆍ도지사 및 </mark>시장ㆍ군수ㆍ구청장은 지역의 규모 및 장애아동의 수를 고려하여 인근지역과 통합하여 지역센터를 설치ㆍ운영할 수 있다. &lt;개정 2020.12.29<mark class="pt" title=", 2024.12.20 추가됨">‸</mark>&gt;
+③ <mark class="d">시ㆍ도지사</mark> <mark class="d">및 시장ㆍ군수ㆍ구청장은</mark> 지역센터의 원활한 업무 수행을 위하여 필요한 경우 지역센터의 운영비용을 지원할 수 있다. &lt;개정 2020.12.29<mark class="pt" title=", 2024.12.20 추가됨">‸</mark>&gt;
+④ 시ㆍ도지사는 「공공기관의 운영에 관한 법률」 제4조에 따른 공공기관 중 대통령령으로 정하는 기관에, 시장ㆍ군수ㆍ구청장은 「공공기관의 운영에 관한 법률」 제4조에 따른 공공기관에 지역센터의 운영을 각각 위탁할 수 있다. &lt;개정 2020.12.29&gt;
+⑤ <mark class="d">그 밖에 </mark>지역센터의 <mark class="d">설치ㆍ운영</mark> 등에 필요한 사항은 보건복지부령으로 정한다.<mark class="pt" title="&lt;개정 2024.12.20&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제9조(지역장애아동지원센터)
+①<mark class="i"> 다음 각 호의 업무를 수행하기 위하여</mark> 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사ㆍ특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다)<mark class="i">는</mark> <mark class="i">특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도에 지역장애아동지원센터(이하 &quot;지역센터&quot;라 한다)를 설치ㆍ운영하여야 하고,</mark> 시장ㆍ군수ㆍ구청장(자치구의 구청장을 말한다. 이하 같다)은 <mark class="pt" title="다음 각 호의 업무를 수행하기 위하여 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자 삭제됨">‸</mark>시ㆍ군ㆍ구(자치구를 말한다. 이하 같다)에 <mark class="i">지역센터를</mark> 설치ㆍ운영할 수 있다. &lt;개정 2020.12.29<mark class="i">, 2023.6.13, 2024.12.20</mark>&gt;
+1.  장애의 조기발견을 위한 홍보<mark class="i"> 및 보호자 교육
+1의2.  제12조제5항에 따른 영유아와 그 가족을 위한 지원 정보의 제공, 연계 및 상담 지원 등</mark>
+2.  장애아동의 복지지원 사업에 관한 정보 및 자료 제공
+3.  장애아동과 그 가족에 대한 복지지원 제공기관의 연계
+4.  장애아동의 사례관리
+5.  장애아동 및 그 가족을 지원하기 위한 가족상담 및 교육의 실시
+6.  그 밖에 시ㆍ도지사 및 시장ㆍ군수ㆍ구청장이 위탁하거나 필요하다고 인정하는 업무
+② <mark class="pt" title="시ㆍ도지사 및 삭제됨">‸</mark>시장ㆍ군수ㆍ구청장은 지역의 규모 및 장애아동의 수를 고려하여 인근지역과 통합하여 지역센터를 설치ㆍ운영할 수 있다. &lt;개정 2020.12.29<mark class="i">, 2024.12.20</mark>&gt;
+③ <mark class="i">국가와</mark> <mark class="i">지방자치단체는</mark> 지역센터의 원활한 업무 수행을 위하여 필요한 경우 지역센터의 운영비용을 지원할 수 있다. &lt;개정 2020.12.29<mark class="i">, 2024.12.20</mark>&gt;
+④ 시ㆍ도지사는 「공공기관의 운영에 관한 법률」 제4조에 따른 공공기관 중 대통령령으로 정하는 기관에, 시장ㆍ군수ㆍ구청장은 「공공기관의 운영에 관한 법률」 제4조에 따른 공공기관에 지역센터의 운영을 각각 위탁할 수 있다. &lt;개정 2020.12.29&gt;
+⑤ <mark class="pt" title="그 밖에 삭제됨">‸</mark>지역센터의 <mark class="i">설치기준과 운영, 직원의 자격과 배치기준 및 절차</mark> 등에 필요한 사항은 보건복지부령으로 정한다.<mark class="i"> &lt;개정 2024.12.20&gt;</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 장애인전용주차구역 관리에 관한 조례</h2><div class="meta">시행 2017-04-01 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(적용범위)  
+① 이 조례는<mark class="cite-law" title="장애인·노인·임산부등의 편의증진 보장에 관한 법률제17조">「장애인·노인·임산부등의 편의증진 보장에 관한 법률」제17조</mark>에 따라 설치되는 장애인전용주차구역에 적용한다. 
+② 장애인전용주차구역 설치 및 운영에 관련하여 관계 법령 또는 다른 조례에 규정이 있는 경우를 제외하고는 이 조례에서 정하는 바에 따른다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「장애인·노인·임산부등의 편의증진 보장에 관한 법률」 제17조</span></div><div class="act">「장애인·노인·임산부등의 편의증진 보장에 관한 법률」 제17조 개정 내용을 반영하여 이 조례 제3조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2017-04-01</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2023-03-04</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제17조(장애인전용주차구역 등)
+① 시설주등은 주차장 관계 법령과 제8조에 따른 편의시설의 설치기준에 따라 해당 대상시설에 장애인전용주차구역을 설치하여야 한다.
+② <mark class="d">국가보훈처장과</mark> 특별자치시장ㆍ특별자치도지사, 시장ㆍ군수ㆍ구청장은 보행에 장애가 있는 사람이 신청하는 경우 장애인전용주차구역에 주차할 수 있음을 표시하는 장애인전용주차구역 주차표지를 발급하여야 한다.<mark class="pt" title="&lt;개정 2023.3.4&gt; 추가됨">‸</mark>
+③ <mark class="d">국가보훈처장과</mark> 특별자치시장ㆍ특별자치도지사, 시장ㆍ군수ㆍ구청장은 제2항에 따라 장애인전용주차구역 주차표지를 발급받은 자가 그 표지를 양도ㆍ대여하는 등 부당한 목적으로 사용한 경우에는 그 표지를 회수하거나 재발급을 제한할 수 있다.<mark class="pt" title="&lt;개정 2023.3.4&gt; 추가됨">‸</mark>
+④ 누구든지 제2항에 따른 장애인전용주차구역 주차표지가 붙어 있지 아니한 자동차를 장애인전용주차구역에 주차하여서는 아니 된다. 장애인전용주차구역 주차표지가 붙어 있는 자동차에 보행에 장애가 있는 사람이 타지 아니한 경우에도 같다.
+⑤ 누구든지 장애인전용주차구역에 물건을 쌓거나 그 통행로를 가로막는 등 주차를 방해하는 행위를 하여서는 아니 된다.
+⑥ 시설주관기관은 복지 또는 교통 관련 공무원 등 소속 공무원에게 제4항을 위반하여 장애인전용주차구역에 주차하고 있는 자동차를 단속하게 할 수 있다.
+⑦ 제2항에 따른 장애인전용주차구역 주차표지의 발급 대상ㆍ절차, 제3항에 따른 회수 및 재발급 제한의 기준ㆍ절차, 제5항에 따른 주차 방해 행위의 기준 등은 대통령령으로 정한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제17조(장애인전용주차구역 등)
+① 시설주등은 주차장 관계 법령과 제8조에 따른 편의시설의 설치기준에 따라 해당 대상시설에 장애인전용주차구역을 설치하여야 한다.
+② <mark class="i">국가보훈부장관과</mark> 특별자치시장ㆍ특별자치도지사, 시장ㆍ군수ㆍ구청장은 보행에 장애가 있는 사람이 신청하는 경우 장애인전용주차구역에 주차할 수 있음을 표시하는 장애인전용주차구역 주차표지를 발급하여야 한다.<mark class="i"> &lt;개정 2023.3.4&gt;</mark>
+③ <mark class="i">국가보훈부장관과</mark> 특별자치시장ㆍ특별자치도지사, 시장ㆍ군수ㆍ구청장은 제2항에 따라 장애인전용주차구역 주차표지를 발급받은 자가 그 표지를 양도ㆍ대여하는 등 부당한 목적으로 사용한 경우에는 그 표지를 회수하거나 재발급을 제한할 수 있다.<mark class="i"> &lt;개정 2023.3.4&gt;</mark>
+④ 누구든지 제2항에 따른 장애인전용주차구역 주차표지가 붙어 있지 아니한 자동차를 장애인전용주차구역에 주차하여서는 아니 된다. 장애인전용주차구역 주차표지가 붙어 있는 자동차에 보행에 장애가 있는 사람이 타지 아니한 경우에도 같다.
+⑤ 누구든지 장애인전용주차구역에 물건을 쌓거나 그 통행로를 가로막는 등 주차를 방해하는 행위를 하여서는 아니 된다.
+⑥ 시설주관기관은 복지 또는 교통 관련 공무원 등 소속 공무원에게 제4항을 위반하여 장애인전용주차구역에 주차하고 있는 자동차를 단속하게 할 수 있다.
+⑦ 제2항에 따른 장애인전용주차구역 주차표지의 발급 대상ㆍ절차, 제3항에 따른 회수 및 재발급 제한의 기준ㆍ절차, 제5항에 따른 주차 방해 행위의 기준 등은 대통령령으로 정한다.</span></div></div></div></div></div><div class="ord"><h2>군포시 장애인 등의 편의시설 사전 점검에 관한 조례</h2><div class="meta">시행 2016-12-12 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 
+① 이 조례에서 사용하는 “사전점검”이란 <mark class="cite-law" title="장애인ㆍ노인ㆍ임산부 등의 편의증진 보장에 관한 법률 (이하 “법”이라 한다)">「장애인ㆍ노인ㆍ임산부 등의 편의증진 보장에 관한 법률 (이하 “법”이라 한다)」</mark>에서 정하는 편의시설의 설치가 완공되기 전에 사전점검요원이 해당 시설물을 점검하여  적절하지 않은 사항의 수정 및 보완을 요구하는 것을 말한다.
+② 이 조례에서 사용하는 다른 용어의 정의는 법 제2조와 같다.</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「장애인ㆍ노인ㆍ임산부 등의 편의증진 보장에 관한 법률 (이하 “법”이라 한다)」</span></div><div class="act">「장애인ㆍ노인ㆍ임산부 등의 편의증진 보장에 관한 법률 (이하 “법”이라 한다)」 제명변경·폐지 여부를 확인하고 이 조례 제2조의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2016-12-12</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

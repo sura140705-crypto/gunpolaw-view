@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>군포시 재난현장 통합지원본부 설치 및 운영 조례 — 정비 권고(분석 결과)</title><style>
+/* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
+   자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
+.page, .ord { --navy:#13325b; --navy2:#1d4e89;
+  --mech:#1d4ed8; --rev:#b45309; --chk:#52525b; --fmt:#6d28d9; --cur:#15803d;
+  --ink:#1f2937; --muted:#6b7280; --line:#d8dee6; --soft:#f6f8fb; }
+* { box-sizing: border-box; }
+/* 독립 권고서 페이지 한정(body.report·.page) — 대시보드 주입 시 충돌 방지.
+   대시보드는 자체 body/h1/.cards/.sub/.card 를 가져 prefix 없으면 덮어쓴다. */
+body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       color:var(--ink); margin:0; background:#eef1f5; line-height:1.55;
+       -webkit-text-size-adjust:100%; }
+.page { max-width:840px; margin:24px auto; padding:38px 44px 52px; background:#fff;
+        border-top:4px solid var(--navy); box-shadow:0 1px 5px rgba(15,33,66,.10); }
+/* 문서 머리 — 공문 단정형(머리표·제목·요지, 아래 굵은 밑줄) */
+.page .dochd { border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:22px; }
+.page .dochd .kicker { font-size:11.5px; letter-spacing:3px; color:var(--navy2);
+        font-weight:700; margin:0 0 6px; }
+.page h1 { font-size:22px; line-height:1.34; margin:0; color:var(--navy);
+     font-weight:700; letter-spacing:-.3px; }
+.page .sub { color:var(--muted); font-size:12.5px; margin-top:7px; }
+.page .cards { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 20px; }
+.page .card { flex:1 1 138px; border:1px solid var(--line); border-top:3px solid var(--chk);
+        border-radius:6px; padding:12px 15px; }
+.page .card .n { font-size:25px; font-weight:700; line-height:1; color:var(--ink); }
+.page .card .t { font-size:12.5px; color:var(--muted); margin-top:6px; }
+.page .g-mech { border-top-color:var(--mech);} .page .g-mech .n { color:var(--mech);}
+.page .g-rev { border-top-color:var(--rev);} .page .g-rev .n { color:var(--rev);}
+.page .g-chk { border-top-color:var(--chk);} .page .g-chk .n { color:var(--chk);}
+.page .g-fmt { border-top-color:var(--fmt);} .page .g-fmt .n { color:var(--fmt);}
+.page .g-cur { border-top-color:var(--cur);} .page .g-cur .n { color:var(--cur);}
+.ord { border:1px solid var(--line); border-radius:7px; padding:18px 20px;
+       margin:0 0 16px; page-break-inside:avoid; }
+.ord h2 { font-size:16.5px; margin:0 0 3px; color:var(--navy); font-weight:700;
+          padding-left:10px; border-left:4px solid var(--navy); }
+.ord .meta { color:var(--muted); font-size:12px; margin:0 0 12px; padding-left:14px; }
+.badges { margin:0 0 12px; }
+.badge { display:inline-block; font-size:11.5px; padding:2px 10px; border-radius:4px;
+         margin-right:6px; border:1px solid currentColor; background:#fff; font-weight:600; }
+.b-mech { color:var(--mech);} .b-rev { color:var(--rev);}
+.b-chk { color:var(--chk);} .b-fmt { color:var(--fmt);}
+.artsec { margin:0 0 8px; }
+.arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
+         border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
+         margin:14px 0 6px; }
+.item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
+.iline { margin-bottom:3px; }
+.item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
+             margin-right:8px; white-space:nowrap; }
+.t-mech { background:#dbeafe; color:#1e40af;} .t-rev { background:#fef3c7; color:#92400e;}
+.t-chk { background:#f3f4f6; color:#374151;}
+.t-naked { background:#ede9fe; color:#5b21b6;}
+.t-cur { background:#dcfce7; color:#166534;}
+.t-space { background:#fef9c3; color:#854d0e;}
+details.citem.cur > summary { opacity:.72; }
+details.citem.cur .law { font-weight:500; }
+/* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
+details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
+    display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+details.citem > summary::-webkit-details-marker { display:none; }
+details.citem > summary::before { content:"▸"; color:#9ca3af; font-size:11px; margin-right:2px; }
+details.citem[open] > summary::before { content:"▾"; color:var(--navy2); }
+details.citem[open] { background:#fbfcfe; }
+details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 10px; }
+details.citem > .diff { margin:6px 10px 10px; }
+details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
+.item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+.basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
+.basis b { color:#374151; font-weight:600; }
+.ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
+           border-left:3px solid var(--navy2); border-radius:0 6px 6px 0; padding:8px 11px;
+           margin:5px 0 9px; white-space:pre-wrap; line-height:1.7; }
+.ordtext b { color:var(--navy); margin-right:5px; }
+mark.cite-law { background:#eff6ff; color:#1e3a8a;
+   text-decoration:underline; text-decoration-color:#2563eb; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-naked { background:#f5f3ff; color:#5b21b6;
+   text-decoration:underline dashed; text-decoration-color:#7c3aed; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-local { background:#f1f5f9; color:#475569;
+   text-decoration:underline dotted; text-decoration-color:#94a3b8; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+.page .leg { font-size:12px; color:var(--muted); margin:0 0 18px; display:flex; gap:14px;
+        flex-wrap:wrap; align-items:center; }
+.page .leg mark { padding:0 4px; border-radius:2px; }
+.item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
+            background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
+.diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
+.drow + .drow { border-top:1px solid #f1f3f5; }
+.dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
+.dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
+.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
+         border-radius:2px; padding:0 1px; }
+mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
+mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
+          padding:0 2px; cursor:help; }
+.page footer { color:#9aa3af; font-size:11.5px; margin-top:34px; padding-top:14px;
+         border-top:1px solid var(--line); text-align:center; }
+@media print {
+  @page { size:A4; margin:16mm; }
+  body { background:#fff; }
+  .page { max-width:none; margin:0; padding:0; border-top:none; box-shadow:none; }
+  .ord, .card { border-color:#c4cbd4; }
+  .dochd { border-bottom-color:#000; }
+  mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 재난현장 통합지원본부 설치 및 운영 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">7</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">9</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 재난현장 통합지원본부 설치 및 운영 조례</h2><div class="meta">시행 2019-04-18 · 정비 항목 16건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 7</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 군포시 재난안전대책본부장이 재난현장의 총괄ㆍ조정 및 지원을 위하여 설치ㆍ운영하는 재난현장 통합지원본부에 관하여 <mark class="cite-law" title="재난 및 안전관리 기본법제16조">「재난 및 안전관리 기본법」 제16조제5항</mark>에서 위임된 사항과 그 시행에 필요한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「재난 및 안전관리 기본법」 제16조제5항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2014-12-30</b> → 현행 조문 <b>2014-12-30</b></div></div></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
+  1. “재난현장 통합대응”이란 재난관리책임기관이 수행하는 재난현장 대응업무를 총괄ㆍ조정 및 지원하기 위한 모든 활동을 말한다. 
+2. “재난현장 대응업무”란 군포시 재난안전대책본부(이하 “대책본부”라 한다)의 장이 해당 재난지역의 피해를 최소화하기 위하여 재난상황 전파에서부터 긴급구조 지원, 응급복구까지의 일련의 재난현장 활동을 말한다. 
+3. “재난현장 수습ㆍ복구”란 재난현장에서 긴급구조가 완료된 후 <mark class="cite-law" title="재난 및 안전관리 기본법제16조">「재난 및 안전관리 기본법」(이하 “법”이라 한다) 제16조제3항</mark>에 따른 통합지원본부(이하 “통합지원본부”라 한다)의 통제 아래 이뤄지는 사고현장의 수습, 자원 지원, 환경 정비, 의료 지원, 시설 복구, 자원봉사단체 관리 등 일련의 재난현장 활동을 말한다. 
+4. “재난관리책임기관”이란 <mark class="cite-law" title="재난 및 안전관리 기본법제3조">법 제3조제5호나목</mark>에 따른 재난관리책임기관 중 군포시 전부 또는 일부를 관할구역으로 하는 재난관리책임기관을 말한다. 
+5. “긴급구조”란 재난이 발생할 우려가 현저하거나 재난이 발생하였을 때에 주민의 생명ㆍ신체 및 재산을 보호하기 위하여 긴급구조기관이 하는 인명구조, 응급처치, 그 밖에 필요한 모든 긴급한 조치를 말한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「재난 및 안전관리 기본법」 제16조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2014-12-30</b> → 현행 조문 <b>2014-12-30</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「재난 및 안전관리 기본법」 제3조제5호나목</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2019-03-26</b> → 현행 조문 <b>2025-01-07</b></div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(통합지원본부 설치ㆍ운영)  
+① 대책본부장은 <mark class="cite-law" title="재난 및 안전관리 기본법제3조">법 제3조제1호</mark>에 해당되는 재난 발생 시 <mark class="cite-local" title="군포시 재난안전대책본부 구성 및 운영 등에 관한 조례제9조">「군포시 재난안전대책본부 구성 및 운영 등에 관한 조례」 제9조</mark>에 따른 상황판단회의 등을 통하여 재난현장 통합대응이 필요하다고 판단될 경우 재난현장의 총괄ㆍ조정 및 지원을 위하여 <mark class="cite-law" title="재난 및 안전관리 기본법제16조">법 제16조제3항</mark>에 따라 통합지원본부를 설치ㆍ운영할 수 있다. 
+② 통합지원본부의 장(이하 “통합지원본부장”이라 한다)은 군포시 부단체장이 되며, 통합지원본부의 업무를 총괄한다. 
+③ 통합지원본부장의 명을 받아 제9조에 따른 현장대응반장 또는 현장책임관이 재난현장 대응 활동을 하는 경우 통합지원본부가 운영되는 것으로 본다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「재난 및 안전관리 기본법」 제3조제1호</span></div><div class="act">「재난 및 안전관리 기본법」 제3조 개정 내용을 반영하여 이 조례 제4조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2019-03-26</b> → 현행 조문 <b>2025-01-07</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">1.  &quot;재난&quot;이란 국민의 생명ㆍ신체ㆍ재산과 국가에 피해를 주거나 줄 수 있는 것으로서 다음 각 목의 것을 말한다.
+가.  자연재난: 태풍, 홍수, 호우(豪雨), 강풍, 풍랑, 해일(海溢), 대설, 한파, 낙뢰, 가뭄, 폭염, 지진, 황사(黃砂), 조류(藻類) 대발생, 조수(潮水), 화산활동, <mark class="d">소행성ㆍ유성체</mark> <mark class="d">등</mark> 자연우주물체의 추락ㆍ충돌, 그 밖에 이에 준하는 자연현상으로 인하여 발생하는 재해
+나.  사회재난: 화재ㆍ붕괴ㆍ폭발ㆍ교통사고(항공사고 및 해상사고를 포함한다)<mark class="d">ㆍ화생방사고ㆍ환경오염사고</mark> 등으로 인하여 발생하는 대통령령으로 정하는 규모 이상의 피해와 <mark class="d">에너지ㆍ통신ㆍ교통ㆍ금융ㆍ의료ㆍ수도 등 국가기반체계(이하 &quot;국가기반체계&quot;라 한다)의</mark> 마비, 「감염병의 예방 및 관리에 관한 법률」에 따른 감염병 또는 「가축전염병예방법」에 따른 가축전염병의 확산, 「미세먼지 저감 및 관리에 관한 특별법」에 따른 미세먼지<mark class="pt" title=", 「우주개발 진흥법」에 따른 인공우주물체의 추락ㆍ충돌 추가됨">‸</mark> 등으로 인한 피해
+다.  삭제 &lt;2013.8.6&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">1.  &quot;재난&quot;이란 국민의 생명ㆍ신체ㆍ재산과 국가에 피해를 주거나 줄 수 있는 것으로서 다음 각 목의 것을 말한다.
+가.  자연재난: 태풍, 홍수, 호우(豪雨), 강풍, 풍랑, 해일(海溢), 대설, 한파, 낙뢰, 가뭄, 폭염, 지진, 황사(黃砂), 조류(藻類) 대발생, 조수(潮水), 화산활동, <mark class="i">「우주개발</mark> <mark class="i">진흥법」에 따른</mark> 자연우주물체의 추락ㆍ충돌, 그 밖에 이에 준하는 자연현상으로 인하여 발생하는 재해
+나.  사회재난: 화재ㆍ붕괴ㆍ폭발ㆍ교통사고(항공사고 및 해상사고를 포함한다)<mark class="i">ㆍ화생방사고ㆍ환경오염사고ㆍ다중운집인파사고</mark> 등으로 인하여 발생하는 대통령령으로 정하는 규모 이상의 피해와 <mark class="i">국가핵심기반의</mark> 마비, 「감염병의 예방 및 관리에 관한 법률」에 따른 감염병 또는 「가축전염병예방법」에 따른 가축전염병의 확산, 「미세먼지 저감 및 관리에 관한 특별법」에 따른 미세먼지<mark class="i">, 「우주개발 진흥법」에 따른 인공우주물체의 추락ㆍ충돌</mark> 등으로 인한 피해
+다.  삭제 &lt;2013.8.6&gt;</span></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「재난 및 안전관리 기본법」 제16조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2014-12-30</b> → 현행 조문 <b>2014-12-30</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(통합지원본부의 위치) 대책본부장은 재난현장에서 <mark class="cite-law" title="재난 및 안전관리 기본법제52조">법 제52조제7항</mark>에 따른 긴급구조 지원 협력이 용이하며, 긴급 출동한 재난관리책임기관의 직원이 쉽게 접근할 수 있는 안전한 위치에 통합지원본부를 설치하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「재난 및 안전관리 기본법」 제52조제7항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2015-07-24</b> → 현행 조문 <b>2025-04-01</b></div></div></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(통합지원본부 실무반의 편성 및 업무)  
+① 통합지원본부장은 재난현장에 출동한 재난관리책임기관의 재난현장 대응업무를 총괄ㆍ조정 및 지원하기 위하여 <mark class="cite-law" title="재난 및 안전관리 기본법제16조">법 제16조제4항</mark>에 따라 통합지원본부에 실무반을 편성ㆍ운영할 수 있다. 
+② 제1항에 따른 실무반은 공보관, 연락관, 상황총괄, 현장대응, 자원지원, 대민지원 등 <mark class="cite-local" title="군포시 재난안전대책본부 구성 및 운영 등에 관한 조례">「군포시 재난안전대책본부 구성 및 운영 등에 관한 조례」</mark> 별표 1 및 별표 2의 표준편제와 주요임무 등을 참고하여 재난 유형 및 현장특성에 따라 편성하며, 그에 따른 반별 임무를 수행한다. 
+③ 통합지원본부장은 제1항에 따른 편성 시 <mark class="cite-local" title="군포시 재난안전대책본부 구성 및 운영 등에 관한 조례">「군포시 재난안전대책본부 구성 및 운영 등에 관한 조례」</mark> 별표 3의 재난 유형과 사고 규모를 판단하여 현장 실무반의 규모를 유동적으로 결정하고 근무자를 상근하도록 할 수 있다. 다만, 실무반의 구성과 운영은 장애인, 노인, 어린이, 임산부, 한국어를 모국어로 사용하지 않는 다문화가족 및 외국인의 안전을 고려해야 한다. 
+④ 실무반 등 통합지원본부는 재난현장 통합대응을 위하여 다음 각 호와 같은 업무를 수행한다. 
+1. 재난현장 상황 파악 및 대책본부 보고에 관한 사항 
+2. 재난현장에 신속하게 대처할 수 있는 통합대응체계 구축 
+3. <mark class="cite-law" title="재난 및 안전관리 기본법제52조">법 제52조제7항</mark>에 따른 긴급구조 시 긴급구조통제단장의 자원지원 요청에 협조 
+4. 재난현장 재난관리책임기관 간의 역할분담 및 조정 
+5. 재난현장 인력ㆍ장비 등의 자원 동원, 배분 및 조정 
+6. 재난현장에서의 언론대응 
+7. 그 밖에 수방, 방역, 구난, 피난처 및 구호품 확보ㆍ보급, 위험구역 설정 및 출입제한 등의 조치, 사회질서유지 요청 등 재난현장 통합대응에 필요한 사항 
+⑤ 각 실무반은 대책본부의 유관 실무반과 긴밀히 협조하여 재난현장에서의 업무를 수행해야 하며, 중요 조치사항은 현장상황반을 통하여 즉시 대책본부에 보고하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「재난 및 안전관리 기본법」 제16조제4항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2014-12-30</b> → 현행 조문 <b>2014-12-30</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「재난 및 안전관리 기본법」 제52조제7항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2015-07-24</b> → 현행 조문 <b>2025-04-01</b></div></div></div><div class="artsec" data-oc="제10조"><div class="arthd">조례 제10조</div><div class="ordtext"><b>제10조</b> 제10조(재난현장 상황전파)  
+① 통합지원본부장은 재난현장 통신망 등을 이용하여 재난관리책임기관에 신속하게 상황을 전파하여야 한다. 
+② 재난관리책임기관의 장은 제1항에 따라 전파받은 재난상황에 대하여 <mark class="cite-law" title="재난 및 안전관리 기본법제34조의5">법 제34조의5</mark>의 재난유형별 위기관리 매뉴얼에 따라 신속하게 대응하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「재난 및 안전관리 기본법」 제34조의5</span></div><div class="act">「재난 및 안전관리 기본법」 제34조의5 개정 내용을 반영하여 이 조례 제10조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2023-12-26</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제34조의5(재난분야 위기관리 매뉴얼 작성ㆍ운용)
+① 재난관리책임기관의 장은 재난을 효율적으로 관리하기 위하여 재난유형에 따라 다음 각 호의 위기관리 매뉴얼을 <mark class="d">작성ㆍ운용하여야</mark> 한다. 이 경우 재난대응활동계획과 위기관리 매뉴얼이 서로 연계되도록 하여야 한다. &lt;개정 2014.12.30, 2016.1.7, 2017.7<mark class="pt" title=".26, 2019.12.3, 2023.12 추가됨">‸</mark>.26&gt;
+1.  위기관리 표준매뉴얼: 국가적 차원에서 관리가 필요한 재난에 대하여 재난관리 체계와 관계 기관의 임무와 역할을 규정한 문서로 위기대응 실무매뉴얼의 작성 기준이 되며, 재난관리주관기관의 장이 작성한다. 다만, 다수의 재난관리주관기관이 관련되는 재난에 대해서는 관계 재난관리주관기관의 장과 협의하여 행정안전부장관이 위기관리 표준매뉴얼을 작성할 수 있다.
+2.  위기대응 실무매뉴얼: 위기관리 표준매뉴얼에서 규정하는 기능과 역할에 따라 실제 재난대응에 필요한 조치사항 및 절차를 규정한 문서로 재난관리주관기관의 장과 관계 기관의 장이 작성한다. 이 경우 재난관리주관기관의 장은 위기대응 실무매뉴얼과 제1호에 따른 위기관리 표준매뉴얼을 통합하여 작성할 수 있다.
+3.  현장조치 행동매뉴얼: 재난현장에서 임무를 직접 수행하는 기관의 행동조치 절차를 구체적으로 수록한 문서로 위기대응 실무매뉴얼을 작성한 기관의 장이 지정한 기관의 장이 <mark class="d">작성한다. 다만</mark>, 시장ㆍ군수ㆍ구청장은 <mark class="d">재난 유형별</mark> 현장조치 행동매뉴얼을 통합하여 작성할 수 있다<mark class="pt" title=". 다만, 현장조치 행동매뉴얼 작성 기관의 장이 다른 법령에 따라 작성한 추가됨">‸</mark>.
+② 행정안전부장관은 재난유형별 위기관리 매뉴얼의 작성 및 운용기준을 정하여<mark class="d"> 관계 중앙행정기관의 장 및</mark> 재난관리책임기관의 장에게 통보할 수 있다. &lt;개정 2014.11.19, 2017.7.26<mark class="pt" title=", 2019.12.3 추가됨">‸</mark>&gt;
+③ 재난관리주관기관의 장이 작성한 위기관리 표준매뉴얼은 행정안전부장관의 승인을 받아 이를 확정하고, 위기대응 실무매뉴얼과 연계하여 운용하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+④ 재난관리주관기관의 장은 위기관리 표준매뉴얼 및 위기대응 실무매뉴얼을 정기적으로 <mark class="d">점검하여야</mark> 한다<mark class="pt" title=". 이 경우 매뉴얼의 점검을 위하여 필요한 때에는 관계 전문가의 의견을  추가됨">‸</mark>. &lt;신설 2014.12.30<mark class="pt" title=", 2023.12.26 추가됨">‸</mark>&gt;
+⑤ 행정안전부장관은 재난유형별 위기관리 매뉴얼의 표준화 및 실효성 제고를 위하여 대통령령으로 정하는 위기관리 매뉴얼협의회를 구성ㆍ운영할 수 있다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑥ 재난관리주관기관의 장은 소관 분야 재난유형의 위기대응 실무매뉴얼 및 현장조치 행동매뉴얼을 조정ㆍ승인하고 지도ㆍ관리를 하여야 하며, 소관분야 위기관리 매뉴얼을 새로이 작성하거나 변경한 때에는 이를 행정안전부장관에게 통보하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑦ 시장ㆍ군수ㆍ구청장이 작성한 현장조치 행동매뉴얼에 대하여는 시ㆍ도지사의 승인을 받아야 한다. 시ㆍ도지사는 현장조치 행동매뉴얼을 승인하는 때에는 재난관리주관기관의 장이 작성한 위기대응 실무매뉴얼과 연계되도록 하여야 하며, 승인 결과를 재난관리주관기관의 장 및 행정안전부장관에게 보고하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑧ 행정안전부장관은 위기관리 매뉴얼의 체계적인 운용을 위하여 관리시스템을 구축ㆍ운영할 수 있으며, 제3항부터 제7항까지의 규정에 따른 위기관리 매뉴얼의 작성ㆍ운용 등 필요한 사항은 대통령령으로 정한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑨ 행정안전부장관은 재난관리업무를 효율적으로 하기 위하여 대통령령으로 정하는 바에 따라 위기관리에 필요한 매뉴얼 표준안을 연구ㆍ개발하여 보급할 수 있다. 이 경우 다음 각 호의 사항을 고려하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.1.17, 2017.7.26&gt;
+1.  재난유형에 따른 국민행동요령의 표준화
+2.  재난유형에 따른 예방ㆍ대비ㆍ대응ㆍ복구 단계별 조치사항에 관한 연구 및 표준화
+3.  재난현장에서의 대응과 상호협력 절차에 관한 연구 및 표준화
+4.  안전취약계층의 특성을 반영한 연구ㆍ개발
+5.  그 밖에 위기관리에 관한 매뉴얼의 개선ㆍ보완에 필요한 사항<mark class="pt" title="⑩ 행정안전부장관은 위기관리 매뉴얼의 작성ㆍ운용 실태를 반기별로 점검하여 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제34조의5(재난분야 위기관리 매뉴얼 작성ㆍ운용)
+① 재난관리책임기관의 장은 재난을 효율적으로 관리하기 위하여 재난유형에 따라 다음 각 호의 위기관리 매뉴얼을 <mark class="i">작성ㆍ운용하고, 이를 준수하도록 노력하여야</mark> 한다. 이 경우 재난대응활동계획과 위기관리 매뉴얼이 서로 연계되도록 하여야 한다. &lt;개정 2014.12.30, 2016.1.7, 2017.7<mark class="i">.26, 2019.12.3, 2023.12</mark>.26&gt;
+1.  위기관리 표준매뉴얼: 국가적 차원에서 관리가 필요한 재난에 대하여 재난관리 체계와 관계 기관의 임무와 역할을 규정한 문서로 위기대응 실무매뉴얼의 작성 기준이 되며, 재난관리주관기관의 장이 작성한다. 다만, 다수의 재난관리주관기관이 관련되는 재난에 대해서는 관계 재난관리주관기관의 장과 협의하여 행정안전부장관이 위기관리 표준매뉴얼을 작성할 수 있다.
+2.  위기대응 실무매뉴얼: 위기관리 표준매뉴얼에서 규정하는 기능과 역할에 따라 실제 재난대응에 필요한 조치사항 및 절차를 규정한 문서로 재난관리주관기관의 장과 관계 기관의 장이 작성한다. 이 경우 재난관리주관기관의 장은 위기대응 실무매뉴얼과 제1호에 따른 위기관리 표준매뉴얼을 통합하여 작성할 수 있다.
+3.  현장조치 행동매뉴얼: 재난현장에서 임무를 직접 수행하는 기관의 행동조치 절차를 구체적으로 수록한 문서로 위기대응 실무매뉴얼을 작성한 기관의 장이 지정한 기관의 장이 <mark class="i">작성하되</mark>, 시장ㆍ군수ㆍ구청장은 <mark class="i">재난유형별</mark> 현장조치 행동매뉴얼을 통합하여 작성할 수 있다<mark class="i">. 다만, 현장조치 행동매뉴얼 작성 기관의 장이 다른 법령에 따라 작성한 계획ㆍ매뉴얼 등에 재난유형별 현장조치 행동매뉴얼에 포함될 사항이 모두 포함되어 있는 경우 해당 재난유형에 대해서는 현장조치 행동매뉴얼이 작성된 것으로 본다</mark>.
+② 행정안전부장관은 재난유형별 위기관리 매뉴얼의 작성 및 운용기준을 정하여<mark class="pt" title="관계 중앙행정기관의 장 및 삭제됨">‸</mark> 재난관리책임기관의 장에게 통보할 수 있다. &lt;개정 2014.11.19, 2017.7.26<mark class="i">, 2019.12.3</mark>&gt;
+③ 재난관리주관기관의 장이 작성한 위기관리 표준매뉴얼은 행정안전부장관의 승인을 받아 이를 확정하고, 위기대응 실무매뉴얼과 연계하여 운용하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+④ 재난관리주관기관의 장은 위기관리 표준매뉴얼 및 위기대응 실무매뉴얼을 정기적으로 <mark class="i">점검하고 그 결과를 행정안전부장관에게 통보하여야</mark> 한다<mark class="i">. 이 경우 매뉴얼의 점검을 위하여 필요한 때에는 관계 전문가의 의견을 들을 수 있다</mark>. &lt;신설 2014.12.30<mark class="i">, 2023.12.26</mark>&gt;
+⑤ 행정안전부장관은 재난유형별 위기관리 매뉴얼의 표준화 및 실효성 제고를 위하여 대통령령으로 정하는 위기관리 매뉴얼협의회를 구성ㆍ운영할 수 있다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑥ 재난관리주관기관의 장은 소관 분야 재난유형의 위기대응 실무매뉴얼 및 현장조치 행동매뉴얼을 조정ㆍ승인하고 지도ㆍ관리를 하여야 하며, 소관분야 위기관리 매뉴얼을 새로이 작성하거나 변경한 때에는 이를 행정안전부장관에게 통보하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑦ 시장ㆍ군수ㆍ구청장이 작성한 현장조치 행동매뉴얼에 대하여는 시ㆍ도지사의 승인을 받아야 한다. 시ㆍ도지사는 현장조치 행동매뉴얼을 승인하는 때에는 재난관리주관기관의 장이 작성한 위기대응 실무매뉴얼과 연계되도록 하여야 하며, 승인 결과를 재난관리주관기관의 장 및 행정안전부장관에게 보고하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑧ 행정안전부장관은 위기관리 매뉴얼의 체계적인 운용을 위하여 관리시스템을 구축ㆍ운영할 수 있으며, 제3항부터 제7항까지의 규정에 따른 위기관리 매뉴얼의 작성ㆍ운용 등 필요한 사항은 대통령령으로 정한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑨ 행정안전부장관은 재난관리업무를 효율적으로 하기 위하여 대통령령으로 정하는 바에 따라 위기관리에 필요한 매뉴얼 표준안을 연구ㆍ개발하여 보급할 수 있다. 이 경우 다음 각 호의 사항을 고려하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.1.17, 2017.7.26&gt;
+1.  재난유형에 따른 국민행동요령의 표준화
+2.  재난유형에 따른 예방ㆍ대비ㆍ대응ㆍ복구 단계별 조치사항에 관한 연구 및 표준화
+3.  재난현장에서의 대응과 상호협력 절차에 관한 연구 및 표준화
+4.  안전취약계층의 특성을 반영한 연구ㆍ개발
+5.  그 밖에 위기관리에 관한 매뉴얼의 개선ㆍ보완에 필요한 사항<mark class="i">
+⑩ 행정안전부장관은 위기관리 매뉴얼의 작성ㆍ운용 실태를 반기별로 점검하여야 하며, 필요한 경우 수시로 점검할 수 있고, 그 결과에 따라 이를 시정 또는 보완하기 위하여 위기관리 매뉴얼을 작성ㆍ운용하는 기관의 장에게 필요한 조치를 하도록 권고할 수 있다. 이 경우 권고를 받은 기관의 장은 특별한 사유가 없으면 이에 따라야 한다. &lt;신설 2019.12.3, 2023.12.26&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(재난지역 주민대피)  
+① 통합지원본부장은 재난상황에 따라 주민대피 등이 필요하다고 판단하는 경우 대책본부장에게 다음 각 호의 사항 등 필요한 조치를 취하도록 요청할 수 있다. 
+1. <mark class="cite-law" title="방송통신발전 기본법제40조">「방송통신발전 기본법」 제40조제1항</mark> 각 호의 사업자에게 재난방송 실시 
+2. <mark class="cite-law" title="민방위기본법제33조">「민방위기본법」 제33조</mark>에 따른 민방위 경보 발령 
+② 제1항에 따른 방송 또는 경보를 통하여 대피명령을 받은 자는 즉시 따라야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「방송통신발전 기본법」 제40조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2025-10-01</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「민방위기본법」 제33조</span></div><div class="act">「민방위기본법」 제33조 개정 내용을 반영하여 이 조례 제11조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2020-12-22</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제33조(민방위 경보)
+<mark class="d">①국민안전처장관</mark>, 시ㆍ도지사, 시장ㆍ군수ㆍ구청장, 「접경지역 지원 특별법」에 따른 접경지역의 읍장ㆍ면장ㆍ동장 또는 대통령령으로 정하는 자는 민방위사태가 발생하거나 발생할 우려가 있는 때 또는 민방위 훈련을 실시하는 때에는 대통령령으로 정하는 바에 따라 민방위 경보를 <mark class="d">발할</mark> 수 있다. &lt;개정 2012.2.22, 2014.11.19<mark class="pt" title=", 2017.7.26, 2020.12.22 추가됨">‸</mark>&gt;
+② <mark class="d">국민안전처장관</mark> 및 시ㆍ도지사는 신속한 민방위 경보 발령과 전파를 위하여 민방위 경보 통제소를 설치ㆍ운영하여야 한다. &lt;신설 2012.2.22, 2014.11.19<mark class="pt" title=", 2017.7.26 추가됨">‸</mark>&gt;
+③ 제1항에 따라 민방위 경보가 발령되면 「건축법」 제2조제2항제8호에 따른 운수시설, 「유통산업발전법」 제2조제3호에 따른 대규모점포 및 「영화 및 비디오물의 진흥에 관한 법률」 제2조제10호에 따른 영화상영관의 관리주체는 신속하게 민방위 경보를 건물 내에 전파하여야 한다. &lt;신설 2016.1.27&gt;
+④ 제3항에 따른 <mark class="pt" title="민방위 경보 대상 건물의 관리주체는 민방위 경보 전파를 위하여 제33조의 추가됨">‸</mark>운수시설, 대규모점포 및 영화상영관 중 민방위 경보 대상과 그 밖에 필요한 사항은 대통령령으로 정한다. &lt;신설 2016.1.27<mark class="pt" title=", 2020.12.22 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제33조(민방위 경보)
+<mark class="i">①행정안전부장관</mark>, 시ㆍ도지사, 시장ㆍ군수ㆍ구청장, 「접경지역 지원 특별법」에 따른 접경지역의 읍장ㆍ면장ㆍ동장 또는 대통령령으로 정하는 자는 민방위사태가 발생하거나 발생할 우려가 있는 때 또는 민방위 훈련을 실시하는 때에는 대통령령으로 정하는 바에 따라 민방위 경보를 <mark class="i">발령할</mark> 수 있다. &lt;개정 2012.2.22, 2014.11.19<mark class="i">, 2017.7.26, 2020.12.22</mark>&gt;
+② <mark class="i">행정안전부장관</mark> 및 시ㆍ도지사는 신속한 민방위 경보 발령과 전파를 위하여 민방위 경보 통제소를 설치ㆍ운영하여야 한다. &lt;신설 2012.2.22, 2014.11.19<mark class="i">, 2017.7.26</mark>&gt;
+③ 제1항에 따라 민방위 경보가 발령되면 「건축법」 제2조제2항제8호에 따른 운수시설, 「유통산업발전법」 제2조제3호에 따른 대규모점포 및 「영화 및 비디오물의 진흥에 관한 법률」 제2조제10호에 따른 영화상영관의 관리주체는 신속하게 민방위 경보를 건물 내에 전파하여야 한다. &lt;신설 2016.1.27&gt;
+④ 제3항에 따른 <mark class="i">민방위 경보 대상 건물의 관리주체는 민방위 경보 전파를 위하여 제33조의2에 따른 민방위 경보단말장비를 설치하여야 한다. &lt;신설 2020.12.22&gt;
+⑤ 제3항에 따른 </mark>운수시설, 대규모점포 및 영화상영관 중 민방위 경보 대상과 그 밖에 필요한 사항은 대통령령으로 정한다. &lt;신설 2016.1.27<mark class="i">, 2020.12.22</mark>&gt;</span></div></div></div></div><div class="artsec" data-oc="제12조"><div class="arthd">조례 제12조</div><div class="ordtext"><b>제12조</b> 제12조(재난현장 자원 동원 요청)  
+① 대책본부장은 <mark class="cite-law" title="재난 및 안전관리 기본법제39조">법 제39조</mark>에 따라 재난관리책임기관의 장에게 재난현장의 대응ㆍ수습에 필요하다고 판단되는 장비와 인력의 동원을 요청할 수 있다. 
+② 제1항에 따라 동원을 요청받은 재난관리책임기관의 장은 특별한 사유가 없으면 요청에 따라야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「재난 및 안전관리 기본법」 제39조</span></div><div class="act">「재난 및 안전관리 기본법」 제39조 개정 내용을 반영하여 이 조례 제12조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2013-08-06</b> → 현행 조문 <b>2023-01-17</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제39조(동원명령 등)
+① 중앙대책본부장과 시장ㆍ군수ㆍ구청장(시ㆍ군ㆍ구대책본부가 운영되는 경우에는 해당 본부장을 말한다. 이하 제40조부터 제45조까지에서 같다)은 재난이 발생하거나 발생할 우려가 있다고 인정하면 다음 각 호의 조치를 할 수 있다. &lt;개정 2013.8.6<mark class="pt" title=", 2019.12.3, 2023.1.17 추가됨">‸</mark>&gt;
+1.  「민방위기본법」 제26조에 따른 민방위대의 동원
+2.  응급조치를 위하여 재난관리책임기관의 장에 대한 관계 직원의 출동 또는 <mark class="d">재난관리자원 및 제34조제2항에 따라 지정된 장비ㆍ인력의</mark> 동원 등 필요한 조치의 요청
+3.  동원 가능한 <mark class="d">장비와 인력</mark> 등이 부족한 경우에는 국방부장관에 대한 군부대의 지원 요청
+② 제1항에 따라 필요한 조치의 요청을 받은 기관의 장은 특별한 사유가 없으면 요청에 따라야 한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제39조(동원명령 등)
+① 중앙대책본부장과 시장ㆍ군수ㆍ구청장(시ㆍ군ㆍ구대책본부가 운영되는 경우에는 해당 본부장을 말한다. 이하 제40조부터 제45조까지에서 같다)은 재난이 발생하거나 발생할 우려가 있다고 인정하면 다음 각 호의 조치를 할 수 있다. &lt;개정 2013.8.6<mark class="i">, 2019.12.3, 2023.1.17</mark>&gt;
+1.  「민방위기본법」 제26조에 따른 민방위대의 동원
+2.  응급조치를 위하여 재난관리책임기관의 장에 대한 관계 직원의 출동 또는 <mark class="i">재난관리자원의</mark> 동원 등 필요한 조치의 요청
+3.  동원 가능한 <mark class="i">재난관리자원</mark> 등이 부족한 경우에는 국방부장관에 대한 군부대의 지원 요청
+② 제1항에 따라 필요한 조치의 요청을 받은 기관의 장은 특별한 사유가 없으면 요청에 따라야 한다.</span></div></div></div></div><div class="artsec" data-oc="제15조"><div class="arthd">조례 제15조</div><div class="ordtext"><b>제15조</b> 제15조(긴급구조 지원) 통합지원본부장은 <mark class="cite-law" title="재난 및 안전관리 기본법제52조">법 제52조제7항</mark>에 따라 긴급구조통제단장으로부터 긴급구조에 필요한 인력이나 물자 등의 지원을 요청받은 경우 최대한 협조하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「재난 및 안전관리 기본법」 제52조제7항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2015-07-24</b> → 현행 조문 <b>2025-04-01</b></div></div></div><div class="artsec" data-oc="제16조"><div class="arthd">조례 제16조</div><div class="ordtext"><b>제16조</b> 제16조(현장응급의료소 지원)  
+① 대책본부장은 <mark class="cite-local" title="긴급구조대응활동 및 현장지휘에 관한 규칙제20조">「긴급구조대응활동 및 현장지휘에 관한 규칙」 제20조제3항</mark>에 따라 긴급구조통제단장으로부터 현장응급의료소(이하 “의료소”라 한다) 설치를 위하여 인력, 장비 등의 지원을 요청받은 경우 협조하여야 한다. 
+② 제1항에 따른 의료소의 장은 부상자 이송 등 응급의료 활동에 관하여 대책본부장에게 보고하여야 한다. 
+③ 대책본부장은 의료소의 장으로부터 응급의료 인력 및 장비 지원 요청이 있을 경우 <mark class="cite-law" title="응급의료에 관한 법률제18조">「응급의료에 관한 법률」 제18조</mark>에 따라 응급의료기관 등에 지원을 요청할 수 있다. 이 경우 지원을 요청받은 응급의료기관 등은 특별한 사유가 없으면 요청에 따라야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「응급의료에 관한 법률」 제18조</span></div><div class="act">「응급의료에 관한 법률」 제18조 개정 내용을 반영하여 이 조례 제16조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2023-08-08</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제18조(환자가 여러 명 발생한 경우의 조치)
+① 보건복지부장관, 시ㆍ도지사 또는 <mark class="d">시장ㆍ군수ㆍ구청장(자치구의 구청장을 말한다. 이하 같다)은</mark> 재해 등으로 환자가 여러 명 발생한 경우에는 응급의료종사자에게 응급의료 업무에 종사할 것을 명하거나, 의료기관의 장 또는 구급차등을 운용하는 자에게 의료시설을 제공하거나 응급환자 이송 등의 업무에 종사할 것을 명할 수 있으며, 중앙행정기관의 장 또는 관계 기관의 장에게 협조를 요청할 수 있다.<mark class="pt" title="&lt;개정 2023.8.8&gt; 추가됨">‸</mark>
+② 응급의료종사자, 의료기관의 장 및 구급차등을 운용하는 자는 정당한 사유가 없으면 제1항에 따른 명령을 거부할 수 없다.
+③ 환자가 여러 명 발생하였을 때 인명구조 및 응급처치 등에 필요한 사항은 대통령령으로 정한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제18조(환자가 여러 명 발생한 경우의 조치)
+① 보건복지부장관, 시ㆍ도지사 또는 <mark class="i">시장ㆍ군수ㆍ구청장은</mark> 재해 등으로 환자가 여러 명 발생한 경우에는 응급의료종사자에게 응급의료 업무에 종사할 것을 명하거나, 의료기관의 장 또는 구급차등을 운용하는 자에게 의료시설을 제공하거나 응급환자 이송 등의 업무에 종사할 것을 명할 수 있으며, 중앙행정기관의 장 또는 관계 기관의 장에게 협조를 요청할 수 있다.<mark class="i"> &lt;개정 2023.8.8&gt;</mark>
+② 응급의료종사자, 의료기관의 장 및 구급차등을 운용하는 자는 정당한 사유가 없으면 제1항에 따른 명령을 거부할 수 없다.
+③ 환자가 여러 명 발생하였을 때 인명구조 및 응급처치 등에 필요한 사항은 대통령령으로 정한다.</span></div></div></div></div><div class="artsec" data-oc="제18조"><div class="arthd">조례 제18조</div><div class="ordtext"><b>제18조</b> 제18조(재난현장 상황 파악 및 통보)  
+① 재난현장에 동원된 재난관리책임기관의 현장책임자는 <mark class="cite-law" title="재난 및 안전관리 기본법제34조의5">법 제34조의5</mark>의 재난유형별 위기관리 매뉴얼에 따라 재난현장 대응업무를 수행하고, 그 결과를 통합지원본부장에게 수시로 통보하여야 한다. 
+② 통합지원본부장은 제1항에 따라 파악한 재난현장 상황을 대책본부장에게 수시로 통보하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「재난 및 안전관리 기본법」 제34조의5</span></div><div class="act">「재난 및 안전관리 기본법」 제34조의5 개정 내용을 반영하여 이 조례 제18조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2023-12-26</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제34조의5(재난분야 위기관리 매뉴얼 작성ㆍ운용)
+① 재난관리책임기관의 장은 재난을 효율적으로 관리하기 위하여 재난유형에 따라 다음 각 호의 위기관리 매뉴얼을 <mark class="d">작성ㆍ운용하여야</mark> 한다. 이 경우 재난대응활동계획과 위기관리 매뉴얼이 서로 연계되도록 하여야 한다. &lt;개정 2014.12.30, 2016.1.7, 2017.7<mark class="pt" title=".26, 2019.12.3, 2023.12 추가됨">‸</mark>.26&gt;
+1.  위기관리 표준매뉴얼: 국가적 차원에서 관리가 필요한 재난에 대하여 재난관리 체계와 관계 기관의 임무와 역할을 규정한 문서로 위기대응 실무매뉴얼의 작성 기준이 되며, 재난관리주관기관의 장이 작성한다. 다만, 다수의 재난관리주관기관이 관련되는 재난에 대해서는 관계 재난관리주관기관의 장과 협의하여 행정안전부장관이 위기관리 표준매뉴얼을 작성할 수 있다.
+2.  위기대응 실무매뉴얼: 위기관리 표준매뉴얼에서 규정하는 기능과 역할에 따라 실제 재난대응에 필요한 조치사항 및 절차를 규정한 문서로 재난관리주관기관의 장과 관계 기관의 장이 작성한다. 이 경우 재난관리주관기관의 장은 위기대응 실무매뉴얼과 제1호에 따른 위기관리 표준매뉴얼을 통합하여 작성할 수 있다.
+3.  현장조치 행동매뉴얼: 재난현장에서 임무를 직접 수행하는 기관의 행동조치 절차를 구체적으로 수록한 문서로 위기대응 실무매뉴얼을 작성한 기관의 장이 지정한 기관의 장이 <mark class="d">작성한다. 다만</mark>, 시장ㆍ군수ㆍ구청장은 <mark class="d">재난 유형별</mark> 현장조치 행동매뉴얼을 통합하여 작성할 수 있다<mark class="pt" title=". 다만, 현장조치 행동매뉴얼 작성 기관의 장이 다른 법령에 따라 작성한 추가됨">‸</mark>.
+② 행정안전부장관은 재난유형별 위기관리 매뉴얼의 작성 및 운용기준을 정하여<mark class="d"> 관계 중앙행정기관의 장 및</mark> 재난관리책임기관의 장에게 통보할 수 있다. &lt;개정 2014.11.19, 2017.7.26<mark class="pt" title=", 2019.12.3 추가됨">‸</mark>&gt;
+③ 재난관리주관기관의 장이 작성한 위기관리 표준매뉴얼은 행정안전부장관의 승인을 받아 이를 확정하고, 위기대응 실무매뉴얼과 연계하여 운용하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+④ 재난관리주관기관의 장은 위기관리 표준매뉴얼 및 위기대응 실무매뉴얼을 정기적으로 <mark class="d">점검하여야</mark> 한다<mark class="pt" title=". 이 경우 매뉴얼의 점검을 위하여 필요한 때에는 관계 전문가의 의견을  추가됨">‸</mark>. &lt;신설 2014.12.30<mark class="pt" title=", 2023.12.26 추가됨">‸</mark>&gt;
+⑤ 행정안전부장관은 재난유형별 위기관리 매뉴얼의 표준화 및 실효성 제고를 위하여 대통령령으로 정하는 위기관리 매뉴얼협의회를 구성ㆍ운영할 수 있다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑥ 재난관리주관기관의 장은 소관 분야 재난유형의 위기대응 실무매뉴얼 및 현장조치 행동매뉴얼을 조정ㆍ승인하고 지도ㆍ관리를 하여야 하며, 소관분야 위기관리 매뉴얼을 새로이 작성하거나 변경한 때에는 이를 행정안전부장관에게 통보하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑦ 시장ㆍ군수ㆍ구청장이 작성한 현장조치 행동매뉴얼에 대하여는 시ㆍ도지사의 승인을 받아야 한다. 시ㆍ도지사는 현장조치 행동매뉴얼을 승인하는 때에는 재난관리주관기관의 장이 작성한 위기대응 실무매뉴얼과 연계되도록 하여야 하며, 승인 결과를 재난관리주관기관의 장 및 행정안전부장관에게 보고하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑧ 행정안전부장관은 위기관리 매뉴얼의 체계적인 운용을 위하여 관리시스템을 구축ㆍ운영할 수 있으며, 제3항부터 제7항까지의 규정에 따른 위기관리 매뉴얼의 작성ㆍ운용 등 필요한 사항은 대통령령으로 정한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑨ 행정안전부장관은 재난관리업무를 효율적으로 하기 위하여 대통령령으로 정하는 바에 따라 위기관리에 필요한 매뉴얼 표준안을 연구ㆍ개발하여 보급할 수 있다. 이 경우 다음 각 호의 사항을 고려하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.1.17, 2017.7.26&gt;
+1.  재난유형에 따른 국민행동요령의 표준화
+2.  재난유형에 따른 예방ㆍ대비ㆍ대응ㆍ복구 단계별 조치사항에 관한 연구 및 표준화
+3.  재난현장에서의 대응과 상호협력 절차에 관한 연구 및 표준화
+4.  안전취약계층의 특성을 반영한 연구ㆍ개발
+5.  그 밖에 위기관리에 관한 매뉴얼의 개선ㆍ보완에 필요한 사항<mark class="pt" title="⑩ 행정안전부장관은 위기관리 매뉴얼의 작성ㆍ운용 실태를 반기별로 점검하여 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제34조의5(재난분야 위기관리 매뉴얼 작성ㆍ운용)
+① 재난관리책임기관의 장은 재난을 효율적으로 관리하기 위하여 재난유형에 따라 다음 각 호의 위기관리 매뉴얼을 <mark class="i">작성ㆍ운용하고, 이를 준수하도록 노력하여야</mark> 한다. 이 경우 재난대응활동계획과 위기관리 매뉴얼이 서로 연계되도록 하여야 한다. &lt;개정 2014.12.30, 2016.1.7, 2017.7<mark class="i">.26, 2019.12.3, 2023.12</mark>.26&gt;
+1.  위기관리 표준매뉴얼: 국가적 차원에서 관리가 필요한 재난에 대하여 재난관리 체계와 관계 기관의 임무와 역할을 규정한 문서로 위기대응 실무매뉴얼의 작성 기준이 되며, 재난관리주관기관의 장이 작성한다. 다만, 다수의 재난관리주관기관이 관련되는 재난에 대해서는 관계 재난관리주관기관의 장과 협의하여 행정안전부장관이 위기관리 표준매뉴얼을 작성할 수 있다.
+2.  위기대응 실무매뉴얼: 위기관리 표준매뉴얼에서 규정하는 기능과 역할에 따라 실제 재난대응에 필요한 조치사항 및 절차를 규정한 문서로 재난관리주관기관의 장과 관계 기관의 장이 작성한다. 이 경우 재난관리주관기관의 장은 위기대응 실무매뉴얼과 제1호에 따른 위기관리 표준매뉴얼을 통합하여 작성할 수 있다.
+3.  현장조치 행동매뉴얼: 재난현장에서 임무를 직접 수행하는 기관의 행동조치 절차를 구체적으로 수록한 문서로 위기대응 실무매뉴얼을 작성한 기관의 장이 지정한 기관의 장이 <mark class="i">작성하되</mark>, 시장ㆍ군수ㆍ구청장은 <mark class="i">재난유형별</mark> 현장조치 행동매뉴얼을 통합하여 작성할 수 있다<mark class="i">. 다만, 현장조치 행동매뉴얼 작성 기관의 장이 다른 법령에 따라 작성한 계획ㆍ매뉴얼 등에 재난유형별 현장조치 행동매뉴얼에 포함될 사항이 모두 포함되어 있는 경우 해당 재난유형에 대해서는 현장조치 행동매뉴얼이 작성된 것으로 본다</mark>.
+② 행정안전부장관은 재난유형별 위기관리 매뉴얼의 작성 및 운용기준을 정하여<mark class="pt" title="관계 중앙행정기관의 장 및 삭제됨">‸</mark> 재난관리책임기관의 장에게 통보할 수 있다. &lt;개정 2014.11.19, 2017.7.26<mark class="i">, 2019.12.3</mark>&gt;
+③ 재난관리주관기관의 장이 작성한 위기관리 표준매뉴얼은 행정안전부장관의 승인을 받아 이를 확정하고, 위기대응 실무매뉴얼과 연계하여 운용하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+④ 재난관리주관기관의 장은 위기관리 표준매뉴얼 및 위기대응 실무매뉴얼을 정기적으로 <mark class="i">점검하고 그 결과를 행정안전부장관에게 통보하여야</mark> 한다<mark class="i">. 이 경우 매뉴얼의 점검을 위하여 필요한 때에는 관계 전문가의 의견을 들을 수 있다</mark>. &lt;신설 2014.12.30<mark class="i">, 2023.12.26</mark>&gt;
+⑤ 행정안전부장관은 재난유형별 위기관리 매뉴얼의 표준화 및 실효성 제고를 위하여 대통령령으로 정하는 위기관리 매뉴얼협의회를 구성ㆍ운영할 수 있다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑥ 재난관리주관기관의 장은 소관 분야 재난유형의 위기대응 실무매뉴얼 및 현장조치 행동매뉴얼을 조정ㆍ승인하고 지도ㆍ관리를 하여야 하며, 소관분야 위기관리 매뉴얼을 새로이 작성하거나 변경한 때에는 이를 행정안전부장관에게 통보하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑦ 시장ㆍ군수ㆍ구청장이 작성한 현장조치 행동매뉴얼에 대하여는 시ㆍ도지사의 승인을 받아야 한다. 시ㆍ도지사는 현장조치 행동매뉴얼을 승인하는 때에는 재난관리주관기관의 장이 작성한 위기대응 실무매뉴얼과 연계되도록 하여야 하며, 승인 결과를 재난관리주관기관의 장 및 행정안전부장관에게 보고하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑧ 행정안전부장관은 위기관리 매뉴얼의 체계적인 운용을 위하여 관리시스템을 구축ㆍ운영할 수 있으며, 제3항부터 제7항까지의 규정에 따른 위기관리 매뉴얼의 작성ㆍ운용 등 필요한 사항은 대통령령으로 정한다. &lt;개정 2014.11.19, 2014.12.30, 2017.7.26&gt;
+⑨ 행정안전부장관은 재난관리업무를 효율적으로 하기 위하여 대통령령으로 정하는 바에 따라 위기관리에 필요한 매뉴얼 표준안을 연구ㆍ개발하여 보급할 수 있다. 이 경우 다음 각 호의 사항을 고려하여야 한다. &lt;개정 2014.11.19, 2014.12.30, 2017.1.17, 2017.7.26&gt;
+1.  재난유형에 따른 국민행동요령의 표준화
+2.  재난유형에 따른 예방ㆍ대비ㆍ대응ㆍ복구 단계별 조치사항에 관한 연구 및 표준화
+3.  재난현장에서의 대응과 상호협력 절차에 관한 연구 및 표준화
+4.  안전취약계층의 특성을 반영한 연구ㆍ개발
+5.  그 밖에 위기관리에 관한 매뉴얼의 개선ㆍ보완에 필요한 사항<mark class="i">
+⑩ 행정안전부장관은 위기관리 매뉴얼의 작성ㆍ운용 실태를 반기별로 점검하여야 하며, 필요한 경우 수시로 점검할 수 있고, 그 결과에 따라 이를 시정 또는 보완하기 위하여 위기관리 매뉴얼을 작성ㆍ운용하는 기관의 장에게 필요한 조치를 하도록 권고할 수 있다. 이 경우 권고를 받은 기관의 장은 특별한 사유가 없으면 이에 따라야 한다. &lt;신설 2019.12.3, 2023.12.26&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제20조"><div class="arthd">조례 제20조</div><div class="ordtext"><b>제20조</b> 제20조(재난현장 통신망 확보)  
+① 대책본부장은 기지국 파괴 등으로 인하여 재난현장 통신망이 제 기능을 못하는 경우 <mark class="cite-law" title="재난 및 안전관리 기본법제37조">법 제37조</mark>에 따라 재난관리책임기관의 장에게 현장지휘통신체계의 확보 등 필요한 조치를 요청하여야 한다. 
+② 제1항에 따라 조치를 요청받은 재난관리책임기관의 장은 특별한 사유가 없으면 현장에 기술인력 파견 등 필요한 조치를 하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「재난 및 안전관리 기본법」 제37조</span></div><div class="act">「재난 및 안전관리 기본법」 제37조 개정 내용을 반영하여 이 조례 제20조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2019-04-18</b> · 당시 법령본 <b>2017-01-17</b> → 현행 조문 <b>2023-01-17</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제37조(응급조치)
+① 제50조제2항에 따른 시ㆍ도긴급구조통제단 및 시ㆍ군ㆍ구긴급구조통제단의 단장(이하 &quot;지역통제단장&quot;이라 한다)과 시장ㆍ군수ㆍ구청장은 재난이 발생할 우려가 있거나 재난이 발생하였을 때에는 즉시 관계 법령이나 재난대응활동계획 및 위기관리 매뉴얼에서 정하는 바에 따라 수방(水防)ㆍ진화ㆍ구조 및 구난(救難), 그 밖에 재난 발생을 예방하거나 피해를 줄이기 위하여 필요한 다음 각 호의 응급조치를 하여야 한다. 다만, 지역통제단장의 경우에는 제2호 중 진화에 관한 응급조치와 제4호 및 제6호의 응급조치만 하여야 한다. &lt;개정 2013.8.6, 2014.12.30, 2017.1.17<mark class="pt" title=", 2023.1.17 추가됨">‸</mark>&gt;
+1.  경보의 발령 또는 전달이나 피난의 권고 또는 지시
+1의2.  제31조에 따른 안전조치
+2.  진화ㆍ수방ㆍ지진방재, 그 밖의 응급조치와 구호
+3.  피해시설의 응급복구 및 방역과 방범, 그 밖의 질서 유지
+4.  긴급수송 및 구조 수단의 확보
+5.  급수 수단의 확보, 긴급피난처 및 <mark class="d">구호품의</mark> 확보
+6.  현장지휘통신체계의 확보
+7.  그 밖에 재난 발생을 예방하거나 줄이기 위하여 필요한 사항으로서 대통령령으로 정하는 사항
+② 시ㆍ군ㆍ구의 관할 구역에 소재하는 재난관리책임기관의 장은 시장ㆍ군수ㆍ구청장이나 지역통제단장이 요청하면 관계 법령이나 시ㆍ군ㆍ구안전관리계획에서 정하는 바에 따라 시장ㆍ군수ㆍ구청장이나 지역통제단장의 지휘 또는 조정하에 그 소관 업무에 관계되는 응급조치를 실시하거나 시장ㆍ군수ㆍ구청장이나 지역통제단장이 실시하는 응급조치에 협력하여야 한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제37조(응급조치)
+① 제50조제2항에 따른 시ㆍ도긴급구조통제단 및 시ㆍ군ㆍ구긴급구조통제단의 단장(이하 &quot;지역통제단장&quot;이라 한다)과 시장ㆍ군수ㆍ구청장은 재난이 발생할 우려가 있거나 재난이 발생하였을 때에는 즉시 관계 법령이나 재난대응활동계획 및 위기관리 매뉴얼에서 정하는 바에 따라 수방(水防)ㆍ진화ㆍ구조 및 구난(救難), 그 밖에 재난 발생을 예방하거나 피해를 줄이기 위하여 필요한 다음 각 호의 응급조치를 하여야 한다. 다만, 지역통제단장의 경우에는 제2호 중 진화에 관한 응급조치와 제4호 및 제6호의 응급조치만 하여야 한다. &lt;개정 2013.8.6, 2014.12.30, 2017.1.17<mark class="i">, 2023.1.17</mark>&gt;
+1.  경보의 발령 또는 전달이나 피난의 권고 또는 지시
+1의2.  제31조에 따른 안전조치
+2.  진화ㆍ수방ㆍ지진방재, 그 밖의 응급조치와 구호
+3.  피해시설의 응급복구 및 방역과 방범, 그 밖의 질서 유지
+4.  긴급수송 및 구조 수단의 확보
+5.  급수 수단의 확보, 긴급피난처 및 <mark class="i">구호품 등 재난관리자원의</mark> 확보
+6.  현장지휘통신체계의 확보
+7.  그 밖에 재난 발생을 예방하거나 줄이기 위하여 필요한 사항으로서 대통령령으로 정하는 사항
+② 시ㆍ군ㆍ구의 관할 구역에 소재하는 재난관리책임기관의 장은 시장ㆍ군수ㆍ구청장이나 지역통제단장이 요청하면 관계 법령이나 시ㆍ군ㆍ구안전관리계획에서 정하는 바에 따라 시장ㆍ군수ㆍ구청장이나 지역통제단장의 지휘 또는 조정하에 그 소관 업무에 관계되는 응급조치를 실시하거나 시장ㆍ군수ㆍ구청장이나 지역통제단장이 실시하는 응급조치에 협력하여야 한다.</span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

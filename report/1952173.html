@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>군포시 건전한 음주문화 환경조성 및 지원에 관한 조례 — 정비 권고(분석 결과)</title><style>
+/* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
+   자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
+.page, .ord { --navy:#13325b; --navy2:#1d4e89;
+  --mech:#1d4ed8; --rev:#b45309; --chk:#52525b; --fmt:#6d28d9; --cur:#15803d;
+  --ink:#1f2937; --muted:#6b7280; --line:#d8dee6; --soft:#f6f8fb; }
+* { box-sizing: border-box; }
+/* 독립 권고서 페이지 한정(body.report·.page) — 대시보드 주입 시 충돌 방지.
+   대시보드는 자체 body/h1/.cards/.sub/.card 를 가져 prefix 없으면 덮어쓴다. */
+body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       color:var(--ink); margin:0; background:#eef1f5; line-height:1.55;
+       -webkit-text-size-adjust:100%; }
+.page { max-width:840px; margin:24px auto; padding:38px 44px 52px; background:#fff;
+        border-top:4px solid var(--navy); box-shadow:0 1px 5px rgba(15,33,66,.10); }
+/* 문서 머리 — 공문 단정형(머리표·제목·요지, 아래 굵은 밑줄) */
+.page .dochd { border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:22px; }
+.page .dochd .kicker { font-size:11.5px; letter-spacing:3px; color:var(--navy2);
+        font-weight:700; margin:0 0 6px; }
+.page h1 { font-size:22px; line-height:1.34; margin:0; color:var(--navy);
+     font-weight:700; letter-spacing:-.3px; }
+.page .sub { color:var(--muted); font-size:12.5px; margin-top:7px; }
+.page .cards { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 20px; }
+.page .card { flex:1 1 138px; border:1px solid var(--line); border-top:3px solid var(--chk);
+        border-radius:6px; padding:12px 15px; }
+.page .card .n { font-size:25px; font-weight:700; line-height:1; color:var(--ink); }
+.page .card .t { font-size:12.5px; color:var(--muted); margin-top:6px; }
+.page .g-mech { border-top-color:var(--mech);} .page .g-mech .n { color:var(--mech);}
+.page .g-rev { border-top-color:var(--rev);} .page .g-rev .n { color:var(--rev);}
+.page .g-chk { border-top-color:var(--chk);} .page .g-chk .n { color:var(--chk);}
+.page .g-fmt { border-top-color:var(--fmt);} .page .g-fmt .n { color:var(--fmt);}
+.page .g-cur { border-top-color:var(--cur);} .page .g-cur .n { color:var(--cur);}
+.ord { border:1px solid var(--line); border-radius:7px; padding:18px 20px;
+       margin:0 0 16px; page-break-inside:avoid; }
+.ord h2 { font-size:16.5px; margin:0 0 3px; color:var(--navy); font-weight:700;
+          padding-left:10px; border-left:4px solid var(--navy); }
+.ord .meta { color:var(--muted); font-size:12px; margin:0 0 12px; padding-left:14px; }
+.badges { margin:0 0 12px; }
+.badge { display:inline-block; font-size:11.5px; padding:2px 10px; border-radius:4px;
+         margin-right:6px; border:1px solid currentColor; background:#fff; font-weight:600; }
+.b-mech { color:var(--mech);} .b-rev { color:var(--rev);}
+.b-chk { color:var(--chk);} .b-fmt { color:var(--fmt);}
+.artsec { margin:0 0 8px; }
+.arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
+         border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
+         margin:14px 0 6px; }
+.item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
+.iline { margin-bottom:3px; }
+.item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
+             margin-right:8px; white-space:nowrap; }
+.t-mech { background:#dbeafe; color:#1e40af;} .t-rev { background:#fef3c7; color:#92400e;}
+.t-chk { background:#f3f4f6; color:#374151;}
+.t-naked { background:#ede9fe; color:#5b21b6;}
+.t-cur { background:#dcfce7; color:#166534;}
+.t-space { background:#fef9c3; color:#854d0e;}
+details.citem.cur > summary { opacity:.72; }
+details.citem.cur .law { font-weight:500; }
+/* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
+details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
+    display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+details.citem > summary::-webkit-details-marker { display:none; }
+details.citem > summary::before { content:"▸"; color:#9ca3af; font-size:11px; margin-right:2px; }
+details.citem[open] > summary::before { content:"▾"; color:var(--navy2); }
+details.citem[open] { background:#fbfcfe; }
+details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 10px; }
+details.citem > .diff { margin:6px 10px 10px; }
+details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
+.item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+.basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
+.basis b { color:#374151; font-weight:600; }
+.ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
+           border-left:3px solid var(--navy2); border-radius:0 6px 6px 0; padding:8px 11px;
+           margin:5px 0 9px; white-space:pre-wrap; line-height:1.7; }
+.ordtext b { color:var(--navy); margin-right:5px; }
+mark.cite-law { background:#eff6ff; color:#1e3a8a;
+   text-decoration:underline; text-decoration-color:#2563eb; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-naked { background:#f5f3ff; color:#5b21b6;
+   text-decoration:underline dashed; text-decoration-color:#7c3aed; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-local { background:#f1f5f9; color:#475569;
+   text-decoration:underline dotted; text-decoration-color:#94a3b8; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+.page .leg { font-size:12px; color:var(--muted); margin:0 0 18px; display:flex; gap:14px;
+        flex-wrap:wrap; align-items:center; }
+.page .leg mark { padding:0 4px; border-radius:2px; }
+.item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
+            background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
+.diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
+.drow + .drow { border-top:1px solid #f1f3f5; }
+.dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
+.dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
+.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
+         border-radius:2px; padding:0 1px; }
+mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
+mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
+          padding:0 2px; cursor:help; }
+.page footer { color:#9aa3af; font-size:11.5px; margin-top:34px; padding-top:14px;
+         border-top:1px solid var(--line); text-align:center; }
+@media print {
+  @page { size:A4; margin:16mm; }
+  body { background:#fff; }
+  .page { max-width:none; margin:0; padding:0; border-top:none; box-shadow:none; }
+  .ord, .card { border-color:#c4cbd4; }
+  .dochd { border-bottom-color:#000; }
+  mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 건전한 음주문화 환경조성 및 지원에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">2</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">2</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 건전한 음주문화 환경조성 및 지원에 관한 조례</h2><div class="meta">시행 2024-07-09 · 정비 항목 4건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="국민건강증진법제3조,제8조">「국민건강증진법」제3조 및 제8조</mark>에 따라 과도한 음주로 인한 건강침해에 대한 교육, 홍보 등을 통하여 건전한 음주문화 환경을 조성함으로써 시민이 보다 건강한 삶을 영위하는데 기여함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「국민건강증진법」 제3조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-07-09</b> · 당시 법령본 <b>2024-02-20</b> → 현행 조문 <b>2026-04-30</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「국민건강증진법」 제8조</span></div><div class="act">「국민건강증진법」 제8조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2024-07-09</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2025-03-18</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제8조(금연 및 절주운동등)
+①국가 및 지방자치단체는 국민에게 담배의 직접흡연 또는 간접흡연과 과다한 음주가 국민건강에 해롭다는 것을 교육ㆍ홍보하여야 한다. &lt;개정 2006.9.27&gt;
+②국가 및 지방자치단체는 금연 및 절주에 관한 조사ㆍ연구를 하는 법인 또는 단체를 지원할 수 있다.
+③ 삭제 &lt;2011.6.7&gt;
+④「주류 면허 등에 관한 법률」에 의하여 주류제조의 면허를 받은 자 또는 주류를 수입하여 판매하는 자는 대통령령이 정하는 주류의 판매용 용기에 과다한 음주는 건강에 해롭다는 <mark class="pt" title="내용, 음주운전은 자신과 다른 사람의 생명을 위태롭게 할 수 있다는 추가됨">‸</mark>내용과 임신 중 음주는 태아의 건강을 해칠 수 있다는 내용의 <mark class="d">경고문구를</mark> 표기하여야 한다. &lt;개정 2016.3.2, 2020.12.29<mark class="pt" title=", 2025.3.18 추가됨">‸</mark>&gt;
+⑤ 삭제 &lt;2002.1.19&gt;
+⑥제4항에 따른 <mark class="d">경고문구의</mark> 표시내용, 방법 등에 관하여 필요한 사항은 보건복지부령으로 정한다. &lt;개정 2002.1.19, 2007.12.14, 2008.2.29, 2010.1.18, 2011.6.7<mark class="pt" title=", 2025.3.18 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제8조(금연 및 절주운동등)
+①국가 및 지방자치단체는 국민에게 담배의 직접흡연 또는 간접흡연과 과다한 음주가 국민건강에 해롭다는 것을 교육ㆍ홍보하여야 한다. &lt;개정 2006.9.27&gt;
+②국가 및 지방자치단체는 금연 및 절주에 관한 조사ㆍ연구를 하는 법인 또는 단체를 지원할 수 있다.
+③ 삭제 &lt;2011.6.7&gt;
+④「주류 면허 등에 관한 법률」에 의하여 주류제조의 면허를 받은 자 또는 주류를 수입하여 판매하는 자는 대통령령이 정하는 주류의 판매용 용기에 과다한 음주는 건강에 해롭다는 <mark class="i">내용, 음주운전은 자신과 다른 사람의 생명을 위태롭게 할 수 있다는 </mark>내용과 임신 중 음주는 태아의 건강을 해칠 수 있다는 내용의 <mark class="i">경고문구 또는 경고그림을</mark> 표기하여야 한다. &lt;개정 2016.3.2, 2020.12.29<mark class="i">, 2025.3.18</mark>&gt;
+⑤ 삭제 &lt;2002.1.19&gt;
+⑥제4항에 따른 <mark class="i">경고문구 또는 경고그림의</mark> 표시내용, 방법 등에 관하여 필요한 사항은 보건복지부령으로 정한다. &lt;개정 2002.1.19, 2007.12.14, 2008.2.29, 2010.1.18, 2011.6.7<mark class="i">, 2025.3.18</mark>&gt;</span></div></div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(금주구역의 지정 등)  
+① 시장은 음주폐해를 예방하여 쾌적하고 안전한 사회 환경 조성을 위하여 다음 각 호에 해당하는 장소의 전부 또는 일부를 금주구역으로 지정할 수 있다. &lt;개정 2024.7.9.&gt; 
+1. <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제2조">「도시공원 및 녹지 등에 관한 법률」제2조제3호</mark>에 따른 도시공원 
+2. <mark class="cite-law" title="교육환경 보호에 관한 법률">「교육환경 보호에 관한 법률」</mark>에 제2조제2호에 따른 학교의 교사(校舍) 및 제8조제1항제1호의 절대 보호구역 
+3. <mark class="cite-law" title="어린이놀이시설 안전관리법제2조">「어린이놀이시설 안전관리법」제2조제2호</mark>에 따른 어린이놀이시설 
+4. 시내버스 정류소, 택시 승강장 등 공공장소 
+5. 그 밖에 시장이 필요하다고 인정하는 장소 
+② 시장은 제1항에 따른 금주구역을 지정하는 경우에는 관련 단체와 시민들의 의견을 수렴할 수 있다. &lt;개정 2024.7.9.&gt; 
+③ 시장은 금주구역을 지정하는 경우 이를 알리는 표지판을 지정장소의 입구 등에 설치 또는 부착하여야 한다. &lt;신설 2024.7.9.&gt; 
+④ 시장은 제1항에 따라 금주구역을 지정하는 경우에는 그 취지 및 장소와 범위에 대하여 시보 및 인터넷 홈페이지 등에 고시하여야 한다. &lt;개정 2024.7.9.&gt; 
+⑤ 시장은 제1항에 따라 지정된 금주구역에서 음주를 하지 않도록 권고하여야 한다. &lt;개정 2024.7.9.&gt; 
+⑥ 시장은 제1항에 따라 지정된 금주구역에서 지역축제 및 행사 등 음주의 일시적인 허용이 필요하다고 판단되는 경우 음주가능 시간 및 장소를 정하여 이를 허용할 수 있다. &lt;신설 2024.7.9.&gt; 
+⑦ 시장은 제1항에 따라 지정된 금주구역의 관리를 효과적으로 추진하기 위하여 계획을 수립하고 이에 대한 교육 및 홍보활동을 할 수 있다. &lt;개정 2024.7.9.&gt; [제목개정 2024.7.9.]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제2조제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-07-09</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2020-06-09</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「어린이놀이시설 안전관리법」 제2조제2호</span></div><div class="act">「어린이놀이시설 안전관리법」 제2조 개정 내용을 반영하여 이 조례 제4조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2024-07-09</b> · 당시 법령본 <b>2020-12-22</b> → 현행 조문 <b>2026-02-27</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">2.  &quot;어린이놀이시설&quot;이라 함은 어린이놀이기구가 설치된 실내 또는 실외의 <mark class="d">놀이터로서</mark> 대통령령으로 정하는 것을 말한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">2.  &quot;어린이놀이시설&quot;이라 함은 어린이놀이기구가 설치된 실내 또는 실외의 <mark class="i">놀이터 또는 어린이놀이기구가 설치되지 아니하였으나 어린이에게 놀이활동을 제공하는 장소로서</mark> 대통령령으로 정하는 것을 말한다.</span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

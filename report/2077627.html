@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>군포시 교통약자의 이동편의 증진에 관한 조례 — 정비 권고(분석 결과)</title><style>
+/* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
+   자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
+.page, .ord { --navy:#13325b; --navy2:#1d4e89;
+  --mech:#1d4ed8; --rev:#b45309; --chk:#52525b; --fmt:#6d28d9; --cur:#15803d;
+  --ink:#1f2937; --muted:#6b7280; --line:#d8dee6; --soft:#f6f8fb; }
+* { box-sizing: border-box; }
+/* 독립 권고서 페이지 한정(body.report·.page) — 대시보드 주입 시 충돌 방지.
+   대시보드는 자체 body/h1/.cards/.sub/.card 를 가져 prefix 없으면 덮어쓴다. */
+body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       color:var(--ink); margin:0; background:#eef1f5; line-height:1.55;
+       -webkit-text-size-adjust:100%; }
+.page { max-width:840px; margin:24px auto; padding:38px 44px 52px; background:#fff;
+        border-top:4px solid var(--navy); box-shadow:0 1px 5px rgba(15,33,66,.10); }
+/* 문서 머리 — 공문 단정형(머리표·제목·요지, 아래 굵은 밑줄) */
+.page .dochd { border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:22px; }
+.page .dochd .kicker { font-size:11.5px; letter-spacing:3px; color:var(--navy2);
+        font-weight:700; margin:0 0 6px; }
+.page h1 { font-size:22px; line-height:1.34; margin:0; color:var(--navy);
+     font-weight:700; letter-spacing:-.3px; }
+.page .sub { color:var(--muted); font-size:12.5px; margin-top:7px; }
+.page .cards { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 20px; }
+.page .card { flex:1 1 138px; border:1px solid var(--line); border-top:3px solid var(--chk);
+        border-radius:6px; padding:12px 15px; }
+.page .card .n { font-size:25px; font-weight:700; line-height:1; color:var(--ink); }
+.page .card .t { font-size:12.5px; color:var(--muted); margin-top:6px; }
+.page .g-mech { border-top-color:var(--mech);} .page .g-mech .n { color:var(--mech);}
+.page .g-rev { border-top-color:var(--rev);} .page .g-rev .n { color:var(--rev);}
+.page .g-chk { border-top-color:var(--chk);} .page .g-chk .n { color:var(--chk);}
+.page .g-fmt { border-top-color:var(--fmt);} .page .g-fmt .n { color:var(--fmt);}
+.page .g-cur { border-top-color:var(--cur);} .page .g-cur .n { color:var(--cur);}
+.ord { border:1px solid var(--line); border-radius:7px; padding:18px 20px;
+       margin:0 0 16px; page-break-inside:avoid; }
+.ord h2 { font-size:16.5px; margin:0 0 3px; color:var(--navy); font-weight:700;
+          padding-left:10px; border-left:4px solid var(--navy); }
+.ord .meta { color:var(--muted); font-size:12px; margin:0 0 12px; padding-left:14px; }
+.badges { margin:0 0 12px; }
+.badge { display:inline-block; font-size:11.5px; padding:2px 10px; border-radius:4px;
+         margin-right:6px; border:1px solid currentColor; background:#fff; font-weight:600; }
+.b-mech { color:var(--mech);} .b-rev { color:var(--rev);}
+.b-chk { color:var(--chk);} .b-fmt { color:var(--fmt);}
+.artsec { margin:0 0 8px; }
+.arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
+         border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
+         margin:14px 0 6px; }
+.item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
+.iline { margin-bottom:3px; }
+.item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
+             margin-right:8px; white-space:nowrap; }
+.t-mech { background:#dbeafe; color:#1e40af;} .t-rev { background:#fef3c7; color:#92400e;}
+.t-chk { background:#f3f4f6; color:#374151;}
+.t-naked { background:#ede9fe; color:#5b21b6;}
+.t-cur { background:#dcfce7; color:#166534;}
+.t-space { background:#fef9c3; color:#854d0e;}
+details.citem.cur > summary { opacity:.72; }
+details.citem.cur .law { font-weight:500; }
+/* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
+details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
+    display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+details.citem > summary::-webkit-details-marker { display:none; }
+details.citem > summary::before { content:"▸"; color:#9ca3af; font-size:11px; margin-right:2px; }
+details.citem[open] > summary::before { content:"▾"; color:var(--navy2); }
+details.citem[open] { background:#fbfcfe; }
+details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 10px; }
+details.citem > .diff { margin:6px 10px 10px; }
+details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
+.item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+.basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
+.basis b { color:#374151; font-weight:600; }
+.ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
+           border-left:3px solid var(--navy2); border-radius:0 6px 6px 0; padding:8px 11px;
+           margin:5px 0 9px; white-space:pre-wrap; line-height:1.7; }
+.ordtext b { color:var(--navy); margin-right:5px; }
+mark.cite-law { background:#eff6ff; color:#1e3a8a;
+   text-decoration:underline; text-decoration-color:#2563eb; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-naked { background:#f5f3ff; color:#5b21b6;
+   text-decoration:underline dashed; text-decoration-color:#7c3aed; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-local { background:#f1f5f9; color:#475569;
+   text-decoration:underline dotted; text-decoration-color:#94a3b8; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+.page .leg { font-size:12px; color:var(--muted); margin:0 0 18px; display:flex; gap:14px;
+        flex-wrap:wrap; align-items:center; }
+.page .leg mark { padding:0 4px; border-radius:2px; }
+.item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
+            background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
+.diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
+.drow + .drow { border-top:1px solid #f1f3f5; }
+.dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
+.dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
+.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
+         border-radius:2px; padding:0 1px; }
+mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
+mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
+          padding:0 2px; cursor:help; }
+.page footer { color:#9aa3af; font-size:11.5px; margin-top:34px; padding-top:14px;
+         border-top:1px solid var(--line); text-align:center; }
+@media print {
+  @page { size:A4; margin:16mm; }
+  body { background:#fff; }
+  .page { max-width:none; margin:0; padding:0; border-top:none; box-shadow:none; }
+  .ord, .card { border-color:#c4cbd4; }
+  .dochd { border-bottom-color:#000; }
+  mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 교통약자의 이동편의 증진에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">18</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 교통약자의 이동편의 증진에 관한 조례</h2><div class="meta">시행 2025-10-10 · 정비 항목 18건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는<mark class="cite-law" title="교통약자의 이동편의 증진법제16조,제16조의2">「교통약자의 이동편의 증진법」 제16조 및 제16조의2</mark>에서 위임된 사항과 그 시행에 필요한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법」 제16조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2023-05-16</b> → 현행 조문 <b>2023-05-16</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법」 제16조의2</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2022-01-18</b> → 현행 조문 <b>2022-01-18</b></div></div></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은<mark class="cite-law" title="교통약자의 이동편의 증진법제2조">「교통약자의 이동편의 증진법」(이하 “법”이라 한다) 제2조제1호</mark>부터 제8호까지를 따른다.
+
+[본조신설 2024.10.2.]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법」 제2조제1호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2023-09-14</b> → 현행 조문 <b>2023-09-14</b></div></div></div><div class="artsec" data-oc="제8조"><div class="arthd">조례 제8조</div><div class="ordtext"><b>제8조</b> 제8조(저상버스 도입과 운영) 
+① 시장은 <mark class="cite-law" title="교통약자의 이동편의 증진법제14조">법 제14조제4항</mark>에 따라 노선버스 운송사업자가 저상버스를 도입할 경우 필요한 재정의 일부를 예산의 범위에서 지원할 수 있다.
+② 시장은 저상버스 도입과 원활한 운행을 위하여 다음 각 호의 사항을 우선적으로 수행해야 한다.
+1. 저상버스 도입을 위한 예산 확보
+2. 저상버스 운행을 위한 도로, 버스정류장과 보도의 정비
+3. 그 밖에 시장이 필요하다고 인정되는 사항
+③ 시장은 저상버스를 운영하는 노선버스 운송사업자에 대한 교육을 실시해야 한다.
+④ 교통행정기관인 시장은 저상버스의 효율적 운영과 교통약자의 이동편의 증진을 위해 운송사업자가 저상버스 운전자에게 실시하는 교육이 성실하고 공정하게 시행되는지 연 1회 이상 지도 및 점검을 할 수 있다.
+
+[본조신설 2024.10.2.]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법」 제14조제4항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2022-01-18</b> → 현행 조문 <b>2022-01-18</b></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(특별교통수단의 도입) 시장은 이용자의 이용 실태를 고려하여 <mark class="cite-law" title="교통약자의 이동편의 증진법 시행규칙제5조">「교통약자의 이동편의 증진법 시행규칙」(이하 “시행규칙”이라 한다) 제5조</mark>에 따른 최소한의 특별교통수단 운행대수 이상을 확보하고, 특별교통수단의 운영이 원활히 이루어지도록 하여야 한다.
+
+[제6조에서 이동 &lt;2024.10.2.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법 시행규칙」 제5조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2023-07-20</b> → 현행 조문 <b>2023-07-20</b></div></div></div><div class="artsec" data-oc="제10조"><div class="arthd">조례 제10조</div><div class="ordtext"><b>제10조</b> 제10조(특별교통수단의 운행차량) 
+① <mark class="cite-law" title="교통약자의 이동편의 증진법제2조">법 제2조제8호</mark> 및 <mark class="cite-law" title="교통약자의 이동편의 증진법 시행규칙제6조">시행규칙 제6조제3항</mark>에 따른 특별교통수단 차량의 종류는 다음 각 호와 같다. &lt;개정 2023.12.12.&gt;
+1. 휠체어 탑승설비 등을 장착한 차량으로 목적지까지 이동을 지원하는 차량
+2. 휠체어 탑승설비 등을 장착한 차량으로 정기적으로 지정된 노선을 순회 이동하는 차량
+② 시장은 특별교통수단을 효율적으로 활용하기 위하여 이용시간, 이용목적 등을 고려하여 탄력적으로 운영할 수 있다.
+
+[제7조에서 이동 &lt;2024.10.2.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법」 제2조제8호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2023-09-14</b> → 현행 조문 <b>2023-09-14</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법 시행규칙」 제6조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-12-26</b> → 현행 조문 <b>2024-12-26</b></div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(특별교통수단 외의 운행차량 등) 
+① 시장은 휠체어를 이용하지 않는 교통약자의 이동편의를 증진하기 위하여 휠체어 탑승설비 등을 장착하지 않은 차량을 운행하거나 <mark class="cite-law" title="택시운송사업의 발전에 관한 법률제2조">「택시운송사업의 발전에 관한 법률」 제2조제1호</mark>에 따른 택시운송사업에 사용되는 자동차를 운행할 수 있다.
+② 시장은 제1항에 따른 특별교통수단 외의 차량을 제10조에 따른 특별교통수단과 함께 운영하는 경우에는 특별교통수단을 휠체어 이용자가 우선적으로 이용하게 할 수 있다. &lt;개정 2023.12.12., 2024.10.2.&gt;
+
+[제8조에서 이동 &lt;2024.10.2.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「택시운송사업의 발전에 관한 법률」 제2조제1호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2018-08-14</b> → 현행 조문 <b>2018-08-14</b></div></div></div><div class="artsec" data-oc="제12조"><div class="arthd">조례 제12조</div><div class="ordtext"><b>제12조</b> 제12조(특별교통수단 등의 이용대상자) 
+① 특별교통수단 및 특별교통수단 외의 차량 등(이하 “특별교통수단 등”이라 한다)의 이용대상자는 <mark class="cite-law" title="교통약자의 이동편의 증진법 시행규칙제6조">시행규칙 제6조제1항</mark>에 따른다.
+② <mark class="cite-law" title="교통약자의 이동편의 증진법 시행규칙제6조">시행규칙 제6조제1항제3호</mark>에 따라 조례로 정하는 사람이란 다음 각 호의 사람을 말하며, 특별교통수단 등의 이용범위에 관한 세부사항은 시장이 따로 정한다. &lt;개정 2023.12.12.&gt;
+1. 임산부 및 일시적 장애 등으로 대중교통 이용이 어려운 사람
+2. 그 밖에 특별교통수단 등이 필요하다고 시장이 인정하는 사람
+
+[제9조에서 이동 &lt;2024.10.2.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법 시행규칙」 제6조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-12-26</b> → 현행 조문 <b>2024-12-26</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법 시행규칙」 제6조제1항제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-12-26</b> → 현행 조문 <b>2024-12-26</b></div></div></div><div class="artsec" data-oc="제14조"><div class="arthd">조례 제14조</div><div class="ordtext"><b>제14조</b> 제14조(이동지원센터의 설치 및 운영) 
+① 시장은 <mark class="cite-law" title="교통약자의 이동편의 증진법제16조">법 제16조제2항</mark>에 따라 이동지원센터를 설치·운영하여야 하며 그 기능은 다음 각 호와 같다. &lt;개정 2023.12.12.&gt;
+1. 이용대상자 등록 신청 접수
+2. 이용대상자에 대한 자격심사 및 확인
+3. 특별교통수단 등 운행 및 운영 관리
+4. 교통약자의 이동지원에 관한 정보의 수집 및 제공
+5. 운전자 및 관련자에 대한 안내ㆍ상담 및 교육
+6. 특별교통수단 외 차량(임차택시 등) 확보 및 접수·배정
+7. 광역이동지원센터 협력 및 지원
+8. 그 밖에 교통약자의 이동 지원에 필요한 사항
+② 시장은 이동지원센터의 효율적인 관리 및 운영을 위하여 위원회의 심의를 거쳐 다음 각 호의 기관 또는 단체에 위탁하여 운영할 수 있다. &lt;개정 2023.12.12., 2024.10.2.&gt;
+1. 공공기관
+2. <mark class="cite-law" title="여객자동차 운수사업법">「여객자동차 운수사업법」</mark>에 따른 여객자동차운송사업자
+3. <mark class="cite-law" title="여객자동차 운수사업법">「여객자동차 운수사업법」</mark>에 따른 여객자동차운수사업자단체
+4. 비영리민간단체
+③ 시장은 수탁자에게 이동지원센터의 관리 및 운영에 필요한 경비를 지원할 수 있다. &lt;개정 2024.10.2.&gt;
+④ 시장은 제2항에 따라 이동지원센터의 관리 및 운영을 위탁한 경우 매년 수탁자에게 해당 사무에 대한 서비스 평가를 실시할 수 있고, 평가결과에 따라 위탁사무에 대한 시정을 요구할 수 있으며, 시정요구 등에 대해 응하지 않을 경우에는 위탁을 철회할 수 있다. &lt;개정 2023.12.12., 2024.10.2.&gt;
+⑤ 제4항에 따른 서비스 평가는 외부의 전문 평가기관이 대행하게 할 수 있다. &lt;개정 2024.10.2.&gt;
+⑥ 그 밖에 위탁에 관하여 필요한 사항은 <mark class="cite-local" title="군포시 사무의 민간위탁에 관한 조례">「군포시 사무의 민간위탁에 관한 조례」</mark>에 따른다. &lt;개정 2024.10.2.&gt;
+
+[제11조에서 이동 &lt;2024.10.2.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법」 제16조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2023-05-16</b> → 현행 조문 <b>2023-05-16</b></div></div></div><div class="artsec" data-oc="제15조"><div class="arthd">조례 제15조</div><div class="ordtext"><b>제15조</b> 제15조(교육) 
+① 시장은 <mark class="cite-law" title="교통약자의 이동편의 증진법제13조">법 제13조</mark>에 따라 교통사업자, 특별교통수단 등을 운행하는 운전자 및 이동지원센터 근무자, <mark class="cite-law" title="택시운송사업의 발전에 관한 법률제2조">「택시운송사업의 발전에 관한 법률」 제2조제4호</mark>에 따른 택시운수종사자를 대상으로 교통약자의 이동편의 증진을 위한 교육을 실시해야 한다.
+② <mark class="cite-law" title="교통약자의 이동편의 증진법제13조">법 제13조제1항</mark>에 따른 교통사업자에 대한 교육의 횟수, 교육 시간 및 내용은 다음 각 호와 같다. 이 경우 교통사업자는 면허·허가·인가·위탁 등을 받거나 등록·신고 등을 한 날부터 1년 이내에 교육을 받아야 한다.
+1. 교육의 횟수 및 교육 시간: 1회, 4시간 이상
+2. 교육내용: 다음 각 목의 사항
+가. 교통약자 이동편의 증진과 관련된 법령과 제도
+나. 이동편의시설의 설치 및 관리 등과 관련된 기술
+다. 그 밖에 교통약자의 이동편의 증진을 위하여 시장이 필요하다고 인정하는 사항
+③ <mark class="cite-law" title="교통약자의 이동편의 증진법제13조">법 제13조제2항제1호</mark>에 따른 교통약자서비스에 관한 교육의 횟수, 교육 시간 및 내용은 다음 각 호와 같다.
+1. 교육대상: 특별교통수단을 운행하는 운전자 및 택시운수종사자(다만, 택시운수종사자가 <mark class="cite-law" title="여객자동차 운수사업법제25조">「여객자동차 운수사업법」 제25조제1항</mark>에 따른 운수종사자 교육을 통하여 교통약자서비스에 관한 교육을 이수한 경우에는 제외한다)
+2. 교육의 횟수 및 교육 시간: 연 1회, 2시간 이상
+3. 교육내용: 다음 각 목의 사항
+가. 교통약자의 정의 및 교통약자 유형에 대한 이해
+나. 교통약자 이동편의 증진과 관련된 법령과 제도
+다. 교통약자에 대한 응대 및 서비스 요령
+라. 비상상황 발생 시 대처 방법
+④ <mark class="cite-law" title="교통약자의 이동편의 증진법제13조">법 제13조제2항제2호</mark>에 따른 성폭력 예방교육에 관한 교육의 횟수, 교육 시간 및 내용은 다음 각 호와 같다.
+1. 교육대상: 특별교통수단을 운행하는 운전자
+2. 교육의 횟수 및 교육 시간: 연 1회, 1시간 이상
+3. 교육내용: <mark class="cite-law" title="성폭력방지 및 피해자보호 등에 관한 법률 시행령제2조">「성폭력방지 및 피해자보호 등에 관한 법률 시행령」제2조제3항</mark> 각 호의 사항
+⑤ 시장은 제2항부터 제4항까지에 따른 교육을 다음 각 호의 어느 하나에 해당하는 방법으로 실시할 수 있다.
+1. 직원연수·조회·회의 등의 집합교육
+2. 인터넷 등 정보통신망을 이용한 원격교육
+3. 체험교육
+⑥ 시장은 제1항부터 제5항까지에 따른 교육을 전문 교육 기관 등에 의뢰하여 실시할 수 있다.
+⑦ 시장은 제1항부터 제5항에 따른 교육을 실시할 경우 예산의 범위에서 필요한 경비를 지급할 수 있다.
+
+[전문개정 2025.7.11.]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「택시운송사업의 발전에 관한 법률」 제2조제4호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2018-08-14</b> → 현행 조문 <b>2018-08-14</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「여객자동차 운수사업법」 제25조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2019-11-26</b> → 현행 조문 <b>2019-11-26</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「성폭력방지 및 피해자보호 등에 관한 법률 시행령」 제2조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2021-07-13</b> → 현행 조문 <b>2021-07-13</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법」 제13조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-01-16</b> → 현행 조문 <b>2024-01-16</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법」 제13조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-01-16</b> → 현행 조문 <b>2024-01-16</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법」 제13조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-01-16</b> → 현행 조문 <b>2024-01-16</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법」 제13조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-10-10</b> · 당시 법령본 <b>2024-01-16</b> → 현행 조문 <b>2024-01-16</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

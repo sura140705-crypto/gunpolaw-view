@@ -1,0 +1,213 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>군포시 공동주택 리모델링 지원에 관한 조례 — 정비 권고(분석 결과)</title><style>
+/* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
+   자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
+.page, .ord { --navy:#13325b; --navy2:#1d4e89;
+  --mech:#1d4ed8; --rev:#b45309; --chk:#52525b; --fmt:#6d28d9; --cur:#15803d;
+  --ink:#1f2937; --muted:#6b7280; --line:#d8dee6; --soft:#f6f8fb; }
+* { box-sizing: border-box; }
+/* 독립 권고서 페이지 한정(body.report·.page) — 대시보드 주입 시 충돌 방지.
+   대시보드는 자체 body/h1/.cards/.sub/.card 를 가져 prefix 없으면 덮어쓴다. */
+body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+       color:var(--ink); margin:0; background:#eef1f5; line-height:1.55;
+       -webkit-text-size-adjust:100%; }
+.page { max-width:840px; margin:24px auto; padding:38px 44px 52px; background:#fff;
+        border-top:4px solid var(--navy); box-shadow:0 1px 5px rgba(15,33,66,.10); }
+/* 문서 머리 — 공문 단정형(머리표·제목·요지, 아래 굵은 밑줄) */
+.page .dochd { border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:22px; }
+.page .dochd .kicker { font-size:11.5px; letter-spacing:3px; color:var(--navy2);
+        font-weight:700; margin:0 0 6px; }
+.page h1 { font-size:22px; line-height:1.34; margin:0; color:var(--navy);
+     font-weight:700; letter-spacing:-.3px; }
+.page .sub { color:var(--muted); font-size:12.5px; margin-top:7px; }
+.page .cards { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 20px; }
+.page .card { flex:1 1 138px; border:1px solid var(--line); border-top:3px solid var(--chk);
+        border-radius:6px; padding:12px 15px; }
+.page .card .n { font-size:25px; font-weight:700; line-height:1; color:var(--ink); }
+.page .card .t { font-size:12.5px; color:var(--muted); margin-top:6px; }
+.page .g-mech { border-top-color:var(--mech);} .page .g-mech .n { color:var(--mech);}
+.page .g-rev { border-top-color:var(--rev);} .page .g-rev .n { color:var(--rev);}
+.page .g-chk { border-top-color:var(--chk);} .page .g-chk .n { color:var(--chk);}
+.page .g-fmt { border-top-color:var(--fmt);} .page .g-fmt .n { color:var(--fmt);}
+.page .g-cur { border-top-color:var(--cur);} .page .g-cur .n { color:var(--cur);}
+.ord { border:1px solid var(--line); border-radius:7px; padding:18px 20px;
+       margin:0 0 16px; page-break-inside:avoid; }
+.ord h2 { font-size:16.5px; margin:0 0 3px; color:var(--navy); font-weight:700;
+          padding-left:10px; border-left:4px solid var(--navy); }
+.ord .meta { color:var(--muted); font-size:12px; margin:0 0 12px; padding-left:14px; }
+.badges { margin:0 0 12px; }
+.badge { display:inline-block; font-size:11.5px; padding:2px 10px; border-radius:4px;
+         margin-right:6px; border:1px solid currentColor; background:#fff; font-weight:600; }
+.b-mech { color:var(--mech);} .b-rev { color:var(--rev);}
+.b-chk { color:var(--chk);} .b-fmt { color:var(--fmt);}
+.artsec { margin:0 0 8px; }
+.arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
+         border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
+         margin:14px 0 6px; }
+.item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
+.iline { margin-bottom:3px; }
+.item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
+             margin-right:8px; white-space:nowrap; }
+.t-mech { background:#dbeafe; color:#1e40af;} .t-rev { background:#fef3c7; color:#92400e;}
+.t-chk { background:#f3f4f6; color:#374151;}
+.t-naked { background:#ede9fe; color:#5b21b6;}
+.t-cur { background:#dcfce7; color:#166534;}
+.t-space { background:#fef9c3; color:#854d0e;}
+details.citem.cur > summary { opacity:.72; }
+details.citem.cur .law { font-weight:500; }
+/* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
+details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
+    display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
+details.citem > summary::-webkit-details-marker { display:none; }
+details.citem > summary::before { content:"▸"; color:#9ca3af; font-size:11px; margin-right:2px; }
+details.citem[open] > summary::before { content:"▾"; color:var(--navy2); }
+details.citem[open] { background:#fbfcfe; }
+details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 10px; }
+details.citem > .diff { margin:6px 10px 10px; }
+details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
+.item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+.basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
+.basis b { color:#374151; font-weight:600; }
+.ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
+           border-left:3px solid var(--navy2); border-radius:0 6px 6px 0; padding:8px 11px;
+           margin:5px 0 9px; white-space:pre-wrap; line-height:1.7; }
+.ordtext b { color:var(--navy); margin-right:5px; }
+mark.cite-law { background:#eff6ff; color:#1e3a8a;
+   text-decoration:underline; text-decoration-color:#2563eb; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-naked { background:#f5f3ff; color:#5b21b6;
+   text-decoration:underline dashed; text-decoration-color:#7c3aed; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+mark.cite-local { background:#f1f5f9; color:#475569;
+   text-decoration:underline dotted; text-decoration-color:#94a3b8; text-underline-offset:2px;
+   border-radius:2px; padding:0 1px; }
+.page .leg { font-size:12px; color:var(--muted); margin:0 0 18px; display:flex; gap:14px;
+        flex-wrap:wrap; align-items:center; }
+.page .leg mark { padding:0 4px; border-radius:2px; }
+.item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
+            background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
+.diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
+.drow + .drow { border-top:1px solid #f1f3f5; }
+.dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
+.dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
+.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
+         border-radius:2px; padding:0 1px; }
+mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
+mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
+          padding:0 2px; cursor:help; }
+.page footer { color:#9aa3af; font-size:11.5px; margin-top:34px; padding-top:14px;
+         border-top:1px solid var(--line); text-align:center; }
+@media print {
+  @page { size:A4; margin:16mm; }
+  body { background:#fff; }
+  .page { max-width:none; margin:0; padding:0; border-top:none; box-shadow:none; }
+  .ord, .card { border-color:#c4cbd4; }
+  .dochd { border-bottom-color:#000; }
+  mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 공동주택 리모델링 지원에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">4</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">2</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">4</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 공동주택 리모델링 지원에 관한 조례</h2><div class="meta">시행 2023-01-09 · 정비 항목 10건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 4</span><span class="badge b-chk">📋 확인 2</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
+1. “노후공동주택”이란 <mark class="cite-law" title="주택법제49조">「주택법」(이하 “법”이라 한다) 제49조</mark>에 따른 사용검사일(주택단지 안의 공동주택 전부에 대하여 임시사용승인을 받은 경우에는 그 임시사용 승인일을 말한다) 또는 <mark class="cite-law" title="건축법제22조">「건축법」 제22조</mark>에 따른 사용승인일부터 15년이 지난 공동주택을 말한다.
+2. “리모델링”이란 <mark class="cite-law" title="주택법제2조">법 제2조제25호</mark>의 공동주택 리모델링을 말한다.
+3. “공공지원”이란 군포시장(이하 “시장”이라 한다)이 리모델링 사업의 투명성 및 효율성을 높이기 위하여 사업시행 과정의 업무를 행정정ㆍ재정적으로 지원하는 제도를 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">실질 검토</span><span class="law">「주택법」 제49조</span></div><div class="act">「주택법」 제49조 변경 사항을 검토하여 이 조례 제2조 정비</div><div class="basis">기준일 — 조례 시행 <b>2023-01-09</b> · 당시 법령본 <b>2020-01-23</b> → 현행 조문 <b>2026-02-03</b></div><div class="ev">제49조(사용검사 등)
+① 사업주체는 제15조에 따른 사업계획승인을 받아 시행하는 주택건설사업 또는 대지조성사업을 완료한 경우에는 주택 또는 대지에 대하여 국토교통부령으로 정하는 바에 따라 시장ㆍ군수ㆍ구청장(국가 또는 한국토지주택공사가 사업주체인 경우와 대통령령으로 정하는 경우에는 국토교통부장관을 말한다. 이하 이 조에서 같다)의 사용검사를 받아야 한다. </div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「건축법」 제22조</span></div><div class="act">「건축법」 제22조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-01-09</b> · 당시 법령본 <b>2020-03-31</b> → 현행 조문 <b>2025-08-26</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제22조(건축물의 사용승인)
+① 건축주가 제11조ㆍ제14조 또는 제20조제1항에 따라 허가를 받았거나 신고를 한 건축물의 건축공사를 완료[하나의 대지에 둘 이상의 건축물을 건축하는 경우 동(棟)별 공사를 완료한 경우를 포함한다]한 후 그 건축물을 사용하려면 제25조제6항에 따라 공사감리자가 작성한 감리완료보고서(같은 조 제1항에 따른 공사감리자를 지정한 경우만 해당된다)와 <mark class="pt" title="공사완료도서 등 추가됨">‸</mark>국토교통부령으로 정하는 <mark class="d">공사완료도서를</mark> 첨부하여 허가권자에게 사용승인을 신청하여야 한다. &lt;개정 2013.3.23, 2016.2.3<mark class="pt" title=", 2025.8.26 추가됨">‸</mark>&gt;
+② 허가권자는 제1항에 따른 사용승인신청을 받은 경우 국토교통부령으로 정하는 기간에 다음 각 호의 사항에 대한 검사를 실시하고, 검사에 합격된 건축물에 대하여는 사용승인서를 내주어야 한다. 다만, 해당 지방자치단체의 조례로 정하는 <mark class="d">건축물은</mark> 사용승인을 위한 검사를 실시하지 아니하고 사용승인서를 내줄 수 있다. &lt;개정 2013.3.23<mark class="pt" title=", 2025.8.26 추가됨">‸</mark>&gt;
+1.  사용승인을 신청한 건축물이 이 법에 따라 허가 또는 신고한 설계도서대로 시공되었는지의 여부
+2.  감리완료보고서, 공사완료도서 등의 서류 및 도서가 적합하게 작성되었는지의 여부<mark class="pt" title="3.  「건축물의 분양에 관한 법률」 제6조제4항에 따른 분양계약이 「공 추가됨">‸</mark>
+③ 건축주는 제2항에 따라 사용승인을 받은 후가 아니면 건축물을 사용하거나 사용하게 할 수 없다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 그러하지 아니하다. &lt;개정 2013.3.23&gt;
+1.  허가권자가 제2항에 따른 기간 내에 사용승인서를 교부하지 아니한 경우
+2.  사용승인서를 교부받기 전에 공사가 완료된 부분이 건폐율, 용적률, 설비, 피난ㆍ방화 등 국토교통부령으로 정하는 기준에 적합한 경우로서 기간을 정하여 대통령령으로 정하는 바에 따라 임시로 사용의 승인을 한 경우
+④ 건축주가 제2항에 따른 사용승인을 받은 경우에는 다음 각 호에 따른 사용승인ㆍ준공검사 또는 등록신청 등을 받거나 한 것으로 보며, 공장건축물의 경우에는 「산업집적활성화 및 공장설립에 관한 법률」 제14조의2에 따라 관련 법률의 검사 등을 받은 것으로 본다. &lt;개정 2009.1.30, 2009.6.9, 2011.4.14, 2011.5.30, 2014.1.14, 2014.6.3, 2017.1.17, 2018.3.27, 2020.3.31<mark class="pt" title=", 2024.1.16 추가됨">‸</mark>&gt;
+1.  「하수도법」 제27조에 따른 배수설비(排水設備)의 준공검사 및 같은 법 제37조에 따른 개인하수처리시설의 준공검사
+2.  「공간정보의 구축 및 관리 등에 관한 법률」 제64조에 따른 지적공부(地籍公簿)의 변동사항 등록신청
+3.  「승강기 안전관리법」 제28조에 따른 승강기 설치검사
+4.  「에너지이용 합리화법」 제39조에 따른 보일러 설치검사
+5.  「전기안전관리법」 제9조에 따른 전기설비의 사용전검사
+6.  「정보통신공사업법」 제36조에 따른 정보통신공사의 사용전검사<mark class="pt" title="6의2.  「기계설비법」 제15조에 따른 기계설비의 사용 전 검사 추가됨">‸</mark>
+7.  「도로법」 제62조제2항에 따른 도로점용 공사의 준공확인
+8.  「국토의 계획 및 이용에 관한 법률」 제62조에 따른 개발 행위의 준공검사
+9.  「국토의 계획 및 이용에 관한 법률」 제98조에 따른 도시ㆍ군계획시설사업의 준공검사
+10.  「물환경보전법」 제37조에 따른 수질오염물질 배출시설의 가동개시의 신고
+11.  「대기환경보전법」 제30조에 따른 대기오염물질 배출시설의 가동개시의 신고
+12.  삭제 &lt;2009.6.9&gt;
+⑤ 허가권자는 제2항에 따른 사용승인을 하는 경우 제4항 각 호의 어느 하나에 해당하는 내용이 포함되어 있으면 관계 행정기관의 장과 미리 협의하여야 한다.
+⑥ 특별시장 또는 광역시장은 제2항에 따라 사용승인을 한 경우 지체 없이 그 사실을 군수 또는 구청장에게 알려서 건축물대장에 적게 하여야 한다. 이 경우 건축물대장에는 설계자, 대통령령으로 정하는 주요 공사의 시공자, 공사감리자를 적어야 한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제22조(건축물의 사용승인)
+① 건축주가 제11조ㆍ제14조 또는 제20조제1항에 따라 허가를 받았거나 신고를 한 건축물의 건축공사를 완료[하나의 대지에 둘 이상의 건축물을 건축하는 경우 동(棟)별 공사를 완료한 경우를 포함한다]한 후 그 건축물을 사용하려면 제25조제6항에 따라 공사감리자가 작성한 감리완료보고서(같은 조 제1항에 따른 공사감리자를 지정한 경우만 해당된다)와 <mark class="i">공사완료도서 등 </mark>국토교통부령으로 정하는 <mark class="i">서류를</mark> 첨부하여 허가권자에게 사용승인을 신청하여야 한다. &lt;개정 2013.3.23, 2016.2.3<mark class="i">, 2025.8.26</mark>&gt;
+② 허가권자는 제1항에 따른 사용승인신청을 받은 경우 국토교통부령으로 정하는 기간에 다음 각 호의 사항에 대한 검사를 실시하고, 검사에 합격된 건축물에 대하여는 사용승인서를 내주어야 한다. 다만, 해당 지방자치단체의 조례로 정하는 <mark class="i">건축물(국토교통부령으로 정하는 숙박시설은 제외한다)은</mark> 사용승인을 위한 검사를 실시하지 아니하고 사용승인서를 내줄 수 있다. &lt;개정 2013.3.23<mark class="i">, 2025.8.26</mark>&gt;
+1.  사용승인을 신청한 건축물이 이 법에 따라 허가 또는 신고한 설계도서대로 시공되었는지의 여부
+2.  감리완료보고서, 공사완료도서 등의 서류 및 도서가 적합하게 작성되었는지의 여부<mark class="i">
+3.  「건축물의 분양에 관한 법률」 제6조제4항에 따른 분양계약이 「공중위생관리법」 제3조제1항에 따른 숙박업 신고의 시설 및 설비기준에 적합한 내용으로 체결되었는지의 여부(국토교통부령으로 정하는 숙박시설에 한정한다)</mark>
+③ 건축주는 제2항에 따라 사용승인을 받은 후가 아니면 건축물을 사용하거나 사용하게 할 수 없다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 그러하지 아니하다. &lt;개정 2013.3.23&gt;
+1.  허가권자가 제2항에 따른 기간 내에 사용승인서를 교부하지 아니한 경우
+2.  사용승인서를 교부받기 전에 공사가 완료된 부분이 건폐율, 용적률, 설비, 피난ㆍ방화 등 국토교통부령으로 정하는 기준에 적합한 경우로서 기간을 정하여 대통령령으로 정하는 바에 따라 임시로 사용의 승인을 한 경우
+④ 건축주가 제2항에 따른 사용승인을 받은 경우에는 다음 각 호에 따른 사용승인ㆍ준공검사 또는 등록신청 등을 받거나 한 것으로 보며, 공장건축물의 경우에는 「산업집적활성화 및 공장설립에 관한 법률」 제14조의2에 따라 관련 법률의 검사 등을 받은 것으로 본다. &lt;개정 2009.1.30, 2009.6.9, 2011.4.14, 2011.5.30, 2014.1.14, 2014.6.3, 2017.1.17, 2018.3.27, 2020.3.31<mark class="i">, 2024.1.16</mark>&gt;
+1.  「하수도법」 제27조에 따른 배수설비(排水設備)의 준공검사 및 같은 법 제37조에 따른 개인하수처리시설의 준공검사
+2.  「공간정보의 구축 및 관리 등에 관한 법률」 제64조에 따른 지적공부(地籍公簿)의 변동사항 등록신청
+3.  「승강기 안전관리법」 제28조에 따른 승강기 설치검사
+4.  「에너지이용 합리화법」 제39조에 따른 보일러 설치검사
+5.  「전기안전관리법」 제9조에 따른 전기설비의 사용전검사
+6.  「정보통신공사업법」 제36조에 따른 정보통신공사의 사용전검사<mark class="i">
+6의2.  「기계설비법」 제15조에 따른 기계설비의 사용 전 검사</mark>
+7.  「도로법」 제62조제2항에 따른 도로점용 공사의 준공확인
+8.  「국토의 계획 및 이용에 관한 법률」 제62조에 따른 개발 행위의 준공검사
+9.  「국토의 계획 및 이용에 관한 법률」 제98조에 따른 도시ㆍ군계획시설사업의 준공검사
+10.  「물환경보전법」 제37조에 따른 수질오염물질 배출시설의 가동개시의 신고
+11.  「대기환경보전법」 제30조에 따른 대기오염물질 배출시설의 가동개시의 신고
+12.  삭제 &lt;2009.6.9&gt;
+⑤ 허가권자는 제2항에 따른 사용승인을 하는 경우 제4항 각 호의 어느 하나에 해당하는 내용이 포함되어 있으면 관계 행정기관의 장과 미리 협의하여야 한다.
+⑥ 특별시장 또는 광역시장은 제2항에 따라 사용승인을 한 경우 지체 없이 그 사실을 군수 또는 구청장에게 알려서 건축물대장에 적게 하여야 한다. 이 경우 건축물대장에는 설계자, 대통령령으로 정하는 주요 공사의 시공자, 공사감리자를 적어야 한다.</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">실질 검토</span><span class="law">「주택법」 제2조</span></div><div class="act">「주택법」 제2조 변경 사항을 검토하여 이 조례 제2조 정비</div><div class="basis">기준일 — 조례 시행 <b>2023-01-09</b> · 당시 법령본 <b>2021-12-21</b> → 현행 조문 <b>2023-12-26</b></div><div class="ev">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2017.12.26, 2018.1.16, 2018.8.14, 2020.6.9, 2020.8.18, 2021.12.21, 2023.6.7, 2023.12.26&gt;
+1.  &quot;주택&quot;이란 세대(世帶)의 구성원이 장기간 독립된 주거생활을 할 수 있는 구조로 된 건축물의 전부 또는 일부 및 그 부속토지</div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(자문위원회의 구성) 
+① 자문위원회는 위원장과 부위원장 각 1명을 포함한 15명 이내의 자문위원으로 구성하되, 위원장은 공동주택 리모델링 업무담당 국장으로 하고 부위원장은 위원 중에서 호선한다.
+② 자문위원은 다음 각 호의 사람 중에서 시장이 임명 또는 위촉한다.
+1. 공동주택 리모델링(건축, 구조, 설비, 주거환경, 도시계획 등) 분야에 학식과 경험을 갖춘 다음 각 목의 어느 하나에 해당하는 사람
+가. 해당 분야의 대학이나 연구기관에서 조교수 이상 또는 이에 상당하는 직에 재직한 사람
+나. 해당 분야의 박사학위 취득 후 5년 이상 그 분야에 관한 연구 또는 실무경험이 있는 사람
+다. 해당 분야의 <mark class="cite-law" title="국가기술자격법">「국가기술자격법」</mark>에 따른 기술사, <mark class="cite-law" title="건축사법">「건축사법」</mark>에 따른 건축사 및 <mark class="cite-law" title="부동산 가격공시 및 감정평가에 관한 법률">「부동산 가격공시 및 감정평가에 관한 법률」</mark>에 따른 감정평가사 자격을 취득한 후 그 분야에 5년 이상 실무경험이 있는 사람
+라. 리모델링 사업 관련 경험이 있는 사람으로서 시장이 인정하는 사람
+2. 군포시의회(이하 “시의회”라 한다)에서 추천한 시의원 : 2명 이내
+3. 군포시(이하 “시”라 한다) 과장급 이상 공무원
+③ 제2항에 따라 자문위원을 위촉하는 경우 특정 성별이 10분의 6을 넘지 않도록 노력하여야 한다.
+④ 자문위원의 임기는 2년으로 하고 한 번만 연임할 수 있으며, 보궐자문위원의 임기는 전임자의 남은 기간으로 한다.
+⑤ 시장은 자문위원회의 원활한 운영을 위하여 관련 부서 공무원이 회의에 출석하여 지원업무를 수행하도록 할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「부동산 가격공시 및 감정평가에 관한 법률」</span></div><div class="act">인용한 「부동산 가격공시 및 감정평가에 관한 법률」이(가) 현행 「부동산 가격공시에 관한 법률」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2023-01-09</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div><div class="artsec" data-oc="제10조"><div class="arthd">조례 제10조</div><div class="ordtext"><b>제10조</b> 제10조(리모델링 지원센터 설치 및 업무) 
+① 시장은 <mark class="cite-law" title="주택법제75조">법 제75조</mark>에 따라 리모델링 관련 정책수립 및 사업지원을 위하여 군포시 공동주택 리모델링 지원센터(이하 “지원센터”라 한다)를 설치하여 운영할 수 있다.
+② 지원센터는 공동주택 리모델링 업무담당 부서에 둘 수 있으며 공동주택 리모델링 업무담당 과장이 지도ㆍ감독한다.
+③ 지원센터는 <mark class="cite-local" title="군포시 주거 정비 지원센터 설립 및 운영 조례">「군포시 주거 정비 지원센터 설립 및 운영 조례」</mark>에 따른 군포시 주거 정비 지원센터와 통합하여 운영할 수 있다. &lt;신설 2023.1.9.&gt;</div><div class="item"><div class="iline"><span class="tag t-chk">확인</span><span class="law">「주택법」 제75조</span></div><div class="act">「주택법」 제75조 소재를 확인(삭제·이동·오기 여부) — 이 조례 제10조</div><div class="basis">기준일 — 조례 시행 <b>2023-01-09</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>2026-08-04</b></div><div class="ev">제75조(리모델링 지원센터의 설치ㆍ운영)
+① 시장ㆍ군수ㆍ구청장은 리모델링의 원활한 추진을 지원하기 위하여 리모델링 지원센터를 설치하여 운영할 수 있다.
+② 리모델링 지원센터는 다음 각 호의 업무를 수행할 수 있다.
+1.  리모델링주택조합 설립을 위한 업무 지원
+2.  설계자 및 시공자 선정 등에 대한 지원
+3.  권리변동계획 수립에 관한 지원
+4.  그 밖</div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(지원센터의 업무) 지원센터는 다음 각 호의 업무를 수행한다.
+1. <mark class="cite-law" title="주택법제75조">법 제75조제2항제1호</mark>부터 제3호까지에 대한 업무지원
+2. 공동주택 리모델링 제도개선 방안의 연구ㆍ개발
+3. 공동주택 리모델링 사업지원제도 및 정책의 연구ㆍ개발
+4. 단지 특성별 맞춤형 리모델링 시행방안 연구ㆍ개발
+5. 공동주택 리모델링 자문위원회 구성 및 운영
+6. 그 밖에 리모델링 사업을 통하여 주민의 주거수준의 질 향상 등에 기여할 수 있는 업무</div><div class="item"><div class="iline"><span class="tag t-chk">확인</span><span class="law">「주택법」 제75조</span></div><div class="act">「주택법」 제75조 소재를 확인(삭제·이동·오기 여부) — 이 조례 제11조</div><div class="basis">기준일 — 조례 시행 <b>2023-01-09</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>2026-08-04</b></div><div class="ev">제75조(리모델링 지원센터의 설치ㆍ운영)
+① 시장ㆍ군수ㆍ구청장은 리모델링의 원활한 추진을 지원하기 위하여 리모델링 지원센터를 설치하여 운영할 수 있다.
+② 리모델링 지원센터는 다음 각 호의 업무를 수행할 수 있다.
+1.  리모델링주택조합 설립을 위한 업무 지원
+2.  설계자 및 시공자 선정 등에 대한 지원
+3.  권리변동계획 수립에 관한 지원
+4.  그 밖</div></div></div><div class="artsec" data-oc="제15조"><div class="arthd">조례 제15조</div><div class="ordtext"><b>제15조</b> 제15조(리모델링 기금의 설치) 
+① 시장은 리모델링 사업의 효율적인 지원을 위하여 <mark class="cite-law" title="지방자치법제159조">「지방자치법」 제159조</mark>에 따라 군포시 공동주택 리모델링 기금(이하 “기금”이라 한다)을 설치할 수 있다. &lt;개정 2022.1.7.&gt;
+② 기금은 다음 각 호의 재원으로 조성한다.
+1. 다른 회계로부터의 전입금
+2. 그 밖에 기금운용에 따른 수입금
+③ 제2항제1호에 따른 다른 회계로부터의 전입금은 리모델링 사업의 효율적인 지원을 위하여 매년 일반회계 세출예산에서 출연하여 조성한다.
+④ 제2항에 따라 재원이 발생한 경우 해당부서의 부과ㆍ징수책임자는 지체없이 이를 기금관리부서에 통보하고 발생한 수입금을 납입하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제159조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-01-09</b> · 당시 법령본 <b>2022-01-13</b> → 현행 조문 <b>2026-06-02</b></div></div></div><div class="artsec" data-oc="제16조"><div class="arthd">조례 제16조</div><div class="ordtext"><b>제16조</b> 제16조(기금의 용도) 
+① 기금은 다음 각 호의 용도에 사용한다.
+1. 공공지원에 드는 비용
+2. <mark class="cite-law" title="주택법제68조">법 제68조제1항 및 제4항</mark>에 따른 안전진단에 소요되는 비용
+3. <mark class="cite-law" title="주택법제69조">법 제69조제1항 및 제2항</mark>에 따른 안전성 검토에 소요되는 비용
+4. 지원센터 업무 추진에 필요한 경비
+5. 리모델링 기본계획 수립에 드는 비용
+6. 리모델링 사업을 위한 연구, 조사 등의 경비
+7. 그 밖에 리모델링 사업의 효율적인 지원을 위하여 군포시 공동주택 리모델링 기금운용심의위원회의 의결을 통하여 필요하다고 결정한 사항</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「주택법」 제68조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-01-09</b> · 당시 법령본 <b>2017-02-08</b> → 현행 조문 <b>2017-02-08</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「주택법」 제69조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-01-09</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2020-06-09</b></div></div></div><div class="artsec" data-oc="제17조"><div class="arthd">조례 제17조</div><div class="ordtext"><b>제17조</b> 제17조(기금의 운용관리) 
+① 기금은 기금운용관리계획에 따라 운용한다.
+② 시장은 기금의 수입과 지출을 명확하게 하기 위하여 기금계좌를 따로 설치하여 관리하되 <mark class="cite-law" title="지방재정법제34조">「지방재정법」 제34조제3항</mark>에 따라 세입ㆍ세출예산으로 처리한다.
+③ 기금은 수익성과 안정성을 고려하여 지정된 금고에 예치하여 관리하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방재정법」 제34조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-01-09</b> · 당시 법령본 <b>2017-10-24</b> → 현행 조문 <b>2017-10-24</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
