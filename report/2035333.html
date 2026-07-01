@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -109,7 +117,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 도로상 맨홀 등 작업구의 정비 지원에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">1</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">1</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 도로상 맨홀 등 작업구의 정비 지원에 관한 조례</h2><div class="meta">시행 2025-05-08 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 도로상 맨홀 등 작업구의 정비 지원에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">1</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 도로상 맨홀 등 작업구의 정비 지원에 관한 조례</h2><div class="meta">시행 2025-05-08 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
   1. “도로”란 <mark class="cite-law" title="도로법제2조,제108조">「도로법」제2조 및 제108조</mark>에 따른 도로를 말한다. 
 2. “작업구”란 도로 하부에 상수도, 하수도, 전기, 통신, 도시가스, 공동구, 전력구 등을 설치·관리하기 위하여 만든 출입구로서 맨홀, 핸드홀, 점검구를 포함한다. 
 3. “작업구 관리자”란 작업구를 설치하고 관리하는 자를 말한다. 다만, 작업구의 관리· 운영을 위탁하는 경우에는 수탁기관의 장을 포함한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「도로법」 제2조</span></div><div class="act">「도로법」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-12-02</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다.<mark class="pt" title="&lt;개정 2025.12.2&gt; 추가됨">‸</mark>
@@ -146,6 +154,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 6.  &quot;도로구역&quot;이란 도로를 구성하는 일단의 토지로서 제25조에 따라 결정된 구역을 말한다.
 7.  &quot;도로공사&quot;란 도로의 신설, 확장, 개량 및 보수(補修) 등을 하는 공사를 말한다.
 8.  &quot;도로의 유지ㆍ관리&quot;란 도로의 기능을 유지하기 위하여 필요한 일반적인 도로관리(경미한 도로의 보수 공사 등을 포함한다) 활동을 말한다.
-9.  &quot;타공작물&quot;이란 도로와 그 효용을 함께 발휘하는 둑, 호안(護岸), 철도 또는 궤도용의 교량, 횡단도로, 가로수, 그 밖에 대통령령으로 정하는 공작물을 말한다.</span></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도로법」 제108조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2024-02-13</b> → 현행 조문 <b>2024-02-13</b></div></div></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(작업구의 정비)  
-① 제6조의 점검 결과에 따라 시장 등 작업구 관리자는 정비·보수가 필요한 작업구를 정비하여야 한다. 
-② 그 밖에 작업구의 정비 및 관리 등에 관한 사항은 <mark class="cite-law" title="도로상 작업구 설치 및 관리지침">「도로상 작업구 설치 및 관리지침」</mark>에 따른다.</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「도로상 작업구 설치 및 관리지침」</span></div><div class="act">「도로상 작업구 설치 및 관리지침」 제명변경·폐지 여부를 확인하고 이 조례 제7조의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+9.  &quot;타공작물&quot;이란 도로와 그 효용을 함께 발휘하는 둑, 호안(護岸), 철도 또는 궤도용의 교량, 횡단도로, 가로수, 그 밖에 대통령령으로 정하는 공작물을 말한다.</span></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도로법」 제108조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2024-02-13</b> → 현행 조문 <b>2024-02-13</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

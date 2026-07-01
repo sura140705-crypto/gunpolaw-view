@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -128,4 +136,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 2.  제29조에 따라 등록이 <mark class="i">취소(제1호에 해당하여 등록이 </mark>취소된<mark class="i"> 경우는 제외한다)된</mark> 날부터 2년이 지나지 아니한 자
 3.  이 법을 위반하여 징역 이상의 실형(實刑)을 선고받고 그 집행이 끝나거나(끝난 것으로 보는 경우를 포함한다) 집행이 면제된 날부터 2년이 지나지 아니한 자
 4.  법인의 대표자가 제1호에 해당하는 법인
-5.  임원 중 제2호 또는 제3호에 해당하는 사람이 있는 법인</span></div></div></div></div><div class="artsec" data-oc="제12조"><div class="arthd">조례 제12조</div><div class="ordtext"><b>제12조</b> 제12조(위반자에 대한 조치) 시장은 시행자가 제11조에 따른 시정명령을 이행하지 아니한 경우에는 <mark class="cite-law" title="도로법제117조">법 제117조제2항제7호</mark>의 규정에 따라 과태료를 부과한다. &lt;개정 2015.3.23&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「도로법」 제117조제2항제7호</span></div><div class="act">「도로법」 제117조 개정 내용을 반영하여 이 조례 제12조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2015-03-23</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2024-02-13</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">7.  <mark class="d">제96조나 제97조에</mark> 따른 <mark class="d">도로관리청의</mark> <mark class="d">명령을</mark> 위반한 자</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">7.  <mark class="i">제76조제6항에</mark> 따른 <mark class="i">긴급</mark> <mark class="i">통행제한을</mark> 위반한 자</span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+5.  임원 중 제2호 또는 제3호에 해당하는 사람이 있는 법인</span></div></div></div></div><div class="artsec" data-oc="제12조"><div class="arthd">조례 제12조</div><div class="ordtext"><b>제12조</b> 제12조(위반자에 대한 조치) 시장은 시행자가 제11조에 따른 시정명령을 이행하지 아니한 경우에는 <mark class="cite-law" title="도로법제117조">법 제117조제2항제7호의 규정</mark>에 따라 과태료를 부과한다. &lt;개정 2015.3.23&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「도로법」 제117조제2항제7호</span></div><div class="act">「도로법」 제117조 개정 내용을 반영하여 이 조례 제12조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2015-03-23</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2024-02-13</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">7.  <mark class="d">제96조나 제97조에</mark> 따른 <mark class="d">도로관리청의</mark> <mark class="d">명령을</mark> 위반한 자</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">7.  <mark class="i">제76조제6항에</mark> 따른 <mark class="i">긴급</mark> <mark class="i">통행제한을</mark> 위반한 자</span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

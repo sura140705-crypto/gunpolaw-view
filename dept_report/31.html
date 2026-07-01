@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -222,4 +230,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 2. 먹거리계획의 시행 및 평가에 관한 사항 
 3. 그 밖에 시장이 건강한 식문화 정착과 먹거리 기본권 보장을 위하여 필요하다고 인정하는 사항</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「농업·농촌 및 식품산업 기본법」 제23조의3제2항</span></div><div class="act">「농업·농촌 및 식품산업 기본법」 제23조의3 개정 내용을 반영하여 이 조례 제8조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>2022-07-05</b> → 현행 조문 <b>2026-01-23</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">②<mark class="pt" title="농림축산식품부장관과 추가됨">‸</mark> 지방자치단체의 장은 <mark class="d">제1항에</mark> <mark class="d">따른</mark> <mark class="d">지역먹거리계획의</mark> <mark class="d">수립ㆍ추진에</mark> 관한 <mark class="d">중요한</mark> <mark class="d">사항을 심의하기</mark> 위하여 <mark class="d">지역먹거리위원회를</mark> <mark class="d">둘</mark> 수 있다.<mark class="pt" title="이 경우 요청을 받은 관계 중앙행정기관의 장 및 지방자치단체의 장은 특별 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">②<mark class="i"> 농림축산식품부장관과</mark> 지방자치단체의 장은 <mark class="i">농식품이용권의</mark> <mark class="i">수급자</mark> <mark class="i">선정,</mark> <mark class="i">수급금액 결정 및 수급자격 유지에</mark> 관한 <mark class="i">적정성을</mark> <mark class="i">확인하기</mark> 위하여 <mark class="i">가족관계증명ㆍ국세</mark> <mark class="i">및 지방세 등에 관한 자료 등 대통령령으로 정하는 자료를 당사자의 동의를 받아 관계 중앙행정기관의 장 및 지방자치단체의 장에게 요청할</mark> 수 있다.<mark class="i"> 이 경우 요청을 받은 관계 중앙행정기관의 장 및 지방자치단체의 장은 특별한 사유가 없으면 그 요청에 따라야 한다.</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 농촌용수구역 관리에 관한 조례</h2><div class="meta">시행 2023-07-04 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-fmt">📐 서식 정비 1</span></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(농촌용수의 오염방지)  
 ① 시장은 농촌용수의 오염방지를 위한 환경영향조사, 정기적 수질검사, 오염관측망 설치운영, 오염유발시설의 개선·폐쇄 및 철거 등 제반 필요대책을 수립 시행하여야 한다. 
-② 시장은 제1항의 규정에 의한 오염방지 대책을 수립하거나 시행할 경우에 <mark class="cite-naked" title="지하수법제27조">지하수법 제27조제1항</mark>의 규정에 의한 전문기관에 의뢰하여 조사 및 시행할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「지하수법」 제27조제1항</span></div><div class="act">「지하수법」 제27조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제6조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2023-07-04</b> · 당시 법령본 <b>2023-07-04</b> → 현행 조문 <b>2025-10-01</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+② 시장은 제1항의 규정에 의한 오염방지 대책을 수립하거나 시행할 경우에 <mark class="cite-naked" title="지하수법제27조">지하수법 제27조제1항의 규정</mark>에 의한 전문기관에 의뢰하여 조사 및 시행할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「지하수법」 제27조제1항</span></div><div class="act">「지하수법」 제27조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제6조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2023-07-04</b> · 당시 법령본 <b>2023-07-04</b> → 현행 조문 <b>2025-10-01</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

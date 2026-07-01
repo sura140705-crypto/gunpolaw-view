@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>환경과 자치법규 정비 권고</title><style>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>복지정책과 자치법규 정비 권고</title><style>
 /* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
    자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
 .page, .ord { --navy:#13325b; --navy2:#1d4e89;
@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -109,647 +117,208 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>환경과 자치법규 정비 권고</h1><div class="sub">전체 13개 조례 중 정비 대상 8개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">33</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">1</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">49</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 화학물질 안전관리에 관한 조례</h2><div class="meta">시행 2022-04-25 · 정비 항목 10건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 10</span></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(화학물질 안전관리 계획) 
-① 시장은 화학물질을 효과적으로 관리하기 위하여 <mark class="cite-law" title="화학물질관리법제6조">「화학물질관리법」(이하 “법”이라 한다) 제6조</mark>의 화학물질의 관리에 관한 기본계획에 따라 군포시 화학물질 안전관리 시행계획(이하 “화학안전시행계획”이라 한다)을 5년마다 수립하여 시행하여야 한다. 이 경우 화학안전시행계획은 <mark class="cite-local" title="경기도 화학물질관리 조례제4조">「경기도 화학물질관리 조례」 제4조</mark>에 따른 경기도 화학물질 안전관리 계획과의 연계성을 고려하여야 한다. &lt;개정 2022.4.25.&gt;
-② 화학안전시행계획에는 다음 각 호의 사항이 포함되어야 한다.
-1. 화학사고 대비ㆍ대응역량 목표와 이를 달성하기 위한 세부계획
-2. 화학물질로 인한 사고예방대책 및 비상대응계획의 수립과 이행
-3. 화학물질 관련 정보의 제공
-4. 지역 내 배출저감 시책의 수립ㆍ이행 및 사업장의 배출저감 지원방안
-5. 화학물질 안전관리에 필요한 행정 및 재정 지원방안
-6. 그 밖에 화학물질 안전관리를 위하여 필요한 사항
-③ 시장은 화학안전시행계획을 수립하거나 변경하려는 경우에는 제5조에 따른 군포시 화학안전관리위원회의 심의를 거쳐야 한다. 다만, 규칙으로 정하는 경미한 사항의 경우에는 심의를 거치지 않을 수 있다. &lt;개정 2022.4.25.&gt;
-④ 시장은 화학안전시행계획을 수립하면 지체없이 경기도지사 및 관할 지역의 지방환경관서의 장, 소방서장, 경찰서장 등 관계기관(이하 “관계기관”이라 한다)의 장에게 통보하여야 한다. &lt;개정 2022.4.25.&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「화학물질관리법」 제6조</span></div><div class="act">「화학물질관리법」 제6조 개정 내용을 반영하여 이 조례 제4조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-04-25</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제6조(화학물질의 관리에 관한 기본계획)
-① <mark class="d">환경부장관은</mark> 유해성ㆍ위해성이 있는 화학물질을 효율적으로 관리하기 위하여 5년마다 화학물질의 관리에 관한 기본계획(이하 &quot;기본계획&quot;이라 한다)을 수립하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-② <mark class="d">환경부장관은</mark> 기본계획을 수립하는 경우 미리 관계 중앙행정기관의 장과 협의한 후 제7조에 따른 화학물질관리위원회의 심의를 거쳐야 한다. 기본계획을 변경하려는 경우에도 또한 같다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-③ 기본계획에는 다음 각 호의 사항이 포함되어야 한다.
-1.  화학물질 관리정책의 목표와 이를 달성하기 위한 전략
-2.  화학물질 관리를 위한 주요 추진시책과 추진계획
-3.  화학물질의 관리현황과 향후 전망
-4.  화학물질 관리를 위한 각종 사업의 시행에 드는 재원조달 방안
-5.  화학물질 관리와 관련한 기관 및 국제기구 등과의 협력계획
-6.  화학사고에 대비한 훈련ㆍ교육
-7.  화학사고 대응 및 사후조치에 관한 기관별 역할 및 공조체계
-8.  화학사고 대응 및 사후조치에 필요한 자원 및 인력ㆍ장비 등의 동원 방법
-9.  그 밖에 화학물질 관리 및 화학사고 대응을 위하여 필요한 사항
-④ <mark class="d">환경부장관은</mark> 기본계획을 수립하면 지체 없이 그 내용을 관계 중앙행정기관의 장 및 지방자치단체의 장에게 통보하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-⑤ 관계 중앙행정기관의 장 및 지방자치단체의 장은 기본계획에 따라 소관 사항에 속하는 시책을 수립ㆍ시행하여야 한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제6조(화학물질의 관리에 관한 기본계획)
-① <mark class="i">기후에너지환경부장관은</mark> 유해성ㆍ위해성이 있는 화학물질을 효율적으로 관리하기 위하여 5년마다 화학물질의 관리에 관한 기본계획(이하 &quot;기본계획&quot;이라 한다)을 수립하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-② <mark class="i">기후에너지환경부장관은</mark> 기본계획을 수립하는 경우 미리 관계 중앙행정기관의 장과 협의한 후 제7조에 따른 화학물질관리위원회의 심의를 거쳐야 한다. 기본계획을 변경하려는 경우에도 또한 같다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-③ 기본계획에는 다음 각 호의 사항이 포함되어야 한다.
-1.  화학물질 관리정책의 목표와 이를 달성하기 위한 전략
-2.  화학물질 관리를 위한 주요 추진시책과 추진계획
-3.  화학물질의 관리현황과 향후 전망
-4.  화학물질 관리를 위한 각종 사업의 시행에 드는 재원조달 방안
-5.  화학물질 관리와 관련한 기관 및 국제기구 등과의 협력계획
-6.  화학사고에 대비한 훈련ㆍ교육
-7.  화학사고 대응 및 사후조치에 관한 기관별 역할 및 공조체계
-8.  화학사고 대응 및 사후조치에 필요한 자원 및 인력ㆍ장비 등의 동원 방법
-9.  그 밖에 화학물질 관리 및 화학사고 대응을 위하여 필요한 사항
-④ <mark class="i">기후에너지환경부장관은</mark> 기본계획을 수립하면 지체 없이 그 내용을 관계 중앙행정기관의 장 및 지방자치단체의 장에게 통보하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-⑤ 관계 중앙행정기관의 장 및 지방자치단체의 장은 기본계획에 따라 소관 사항에 속하는 시책을 수립ㆍ시행하여야 한다.</span></div></div></div></div><div class="artsec" data-oc="제16조"><div class="arthd">조례 제16조</div><div class="ordtext"><b>제16조</b> 제16조(화학물질 관련 정보의 제공 및 활용) 
-① 시장은 화학안전시행계획의 주요 내용과 추진상황 등을 주민에게 알리기 위하여 군포시 화학안전관리 보고서를 매년 작성하여 공개하여야 한다.
-② 시장은 <mark class="cite-law" title="화학물질관리법제12조">법 제12조제1항</mark>에 따라 환경부장관이 공개한 화학물질 통계조사와 화학물질 배출량조사의 결과(이하 “화학물질 조사결과”라 한다) 중 군포시에서 취급되는 화학물질에 대한 정보를 주민이 알기 쉽게 정리하여 제공할 수 있다. &lt;개정 2022.4.25.&gt;
-③ 시장은 다음 각 호의 사항을 알게 된 경우에는 환경부장관 또는 지방환경관서의 장에게 그 사실을 알리고 필요한 조치를 요청할 수 있다. &lt;개정 2022.4.25.&gt;
-1. 화학물질 조사결과의 내용이 사실과 다른 경우
-2. <mark class="cite-law" title="화학물질관리법제23조의3">법 제23조의3</mark>에 따라 사고대비물질을 취급하는 자가 고지한 화학사고 위험 및 응급 대응정보 요약서의 내용이 사실과 다른 경우
-3. 화학물질 취급사실이 명백하면서 <mark class="cite-law" title="화학물질관리법제12조">법 제12조제1항제1호</mark>에 해당하지 않는 사업장이 화학물질 조사결과에 포함되지 않은 경우. 다만, <mark class="cite-law" title="화학물질관리법제10조">법 제10조</mark>에 따른 화학물질 통계조사 또는 <mark class="cite-law" title="화학물질관리법제11조">법 제11조</mark>에 따른 화학물질 배출량조사의 대상이 아닌 경우는 제외한다.
-4. <mark class="cite-law" title="화학물질관리법 시행규칙제30조">「화학물질관리법 시행규칙」 제30조</mark>에 따라 지방환경관서의 장이 제공한 유해화학물질 영업자의 취급시설의 설치현황 자료가 사실과 다른 경우</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「화학물질관리법 시행규칙」 제30조</span></div><div class="act">「화학물질관리법 시행규칙」 제30조 개정 내용을 반영하여 이 조례 제16조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-04-25</b> · 당시 법령본 <b>2020-09-29</b> → 현행 조문 <b>2025-08-07</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제30조(유해화학물질 영업허가<mark class="pt" title="등 추가됨">‸</mark> 정보제공)
-① 지방환경관서의 장은 법 <mark class="d">제28조제7항에</mark> 따라 같은 조 제3항ㆍ제5항에 따른 허가일ㆍ변경허가일 또는 같은 조 <mark class="d">제6항에</mark> 따른 <mark class="d">신고</mark> 수리일부터 30일 이내에 <mark class="d">허가증 사본 또는 신고증</mark> 사본을 유해화학물질 취급시설의 소재지를 관할하는 소방관서의 장에게 통지해야 한다. &lt;개정 2020.9.29<mark class="pt" title=", 2025.8.7 추가됨">‸</mark>&gt;
-② 지방환경관서의 장은 법 <mark class="d">제28조제8항에</mark> 따라 유해화학물질 취급시설의 설치현황 자료를 1월 31일을 기준으로 2년마다 관할 소방관서와 지방자치단체 등 화학사고 대응 기관에 제공해야 한다. &lt;개정 2020.9.29<mark class="pt" title=", 2025.8.7 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제30조(유해화학물질 영업허가<mark class="i"> 등</mark> 정보제공)
-① 지방환경관서의 장은 법 <mark class="i">제28조제8항에</mark> 따라 같은 조 제3항ㆍ제5항에 따른 허가일ㆍ변경허가일 또는 같은 조 <mark class="i">제7항에</mark> 따른 <mark class="i">신고ㆍ변경신고</mark> 수리일부터 30일 이내에 <mark class="i">허가증등</mark> 사본을 유해화학물질 취급시설의 소재지를 관할하는 소방관서의 장에게 통지해야 한다. &lt;개정 2020.9.29<mark class="i">, 2025.8.7</mark>&gt;
-② 지방환경관서의 장은 법 <mark class="i">제28조제9항에</mark> 따라 유해화학물질 취급시설의 설치현황 자료를 1월 31일을 기준으로 2년마다 관할 소방관서와 지방자치단체 등 화학사고 대응 기관에 제공해야 한다. &lt;개정 2020.9.29<mark class="i">, 2025.8.7</mark>&gt;</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「화학물질관리법」 제12조제1항</span></div><div class="act">「화학물질관리법」 제12조 개정 내용을 반영하여 이 조례 제16조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-04-25</b> · 당시 법령본 <b>2017-11-28</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① <mark class="d">환경부장관은</mark> 화학물질 통계조사와 화학물질 배출량조사를 완료한 때에는 사업장별로 그 결과를 지체 없이 공개하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 그러하지 아니한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-1.  공개할 경우 국가안전보장ㆍ질서유지 또는 공공복리에 현저한 지장을 초래할 것으로 인정되는 경우
-2.  조사 결과의 신뢰성이 낮아 그 이용에 혼란이 초래될 것으로 인정되는 경우
-3.  기업의 영업비밀과 관련되어 일부 조사 결과를 공개하지 아니할 필요가 있다고 인정되는 경우</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">① <mark class="i">기후에너지환경부장관은</mark> 화학물질 통계조사와 화학물질 배출량조사를 완료한 때에는 사업장별로 그 결과를 지체 없이 공개하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 그러하지 아니한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-1.  공개할 경우 국가안전보장ㆍ질서유지 또는 공공복리에 현저한 지장을 초래할 것으로 인정되는 경우
-2.  조사 결과의 신뢰성이 낮아 그 이용에 혼란이 초래될 것으로 인정되는 경우
-3.  기업의 영업비밀과 관련되어 일부 조사 결과를 공개하지 아니할 필요가 있다고 인정되는 경우</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「화학물질관리법」 제23조의3</span></div><div class="act">「화학물질관리법」 제23조의3 개정 내용을 반영하여 이 조례 제16조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-04-25</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제23조의3(화학사고예방관리계획서의 지역사회 고지)
-① 주요취급시설을 설치ㆍ운영하려는 자로서 제23조제5항에 따라 적합통보를 받은 자는 취급사업장 인근 지역주민에게 다음 각 호의 정보를 알기 쉽게 명시하여 고지하여야 한다. 이 경우 고지는 제2항에 따른 방법으로 매년 1회 이상 실시하여야 하며, 고지된 사항이 변경된 때에는 그 사유가 발생한 날부터 1개월 이내에 변경사항에 대하여 고지하여야 한다.
-1.  취급하는 유해화학물질의 유해성정보 및 화학사고 위험성
-2.  화학사고 발생 시 대기ㆍ수질ㆍ지하수ㆍ토양ㆍ자연환경 등의 영향 범위
-3.  화학사고 발생 시 조기경보 전달방법, 주민 대피 등 행동요령
-② 제1항에 따른 고지는 같은 항 각 호의 정보를 제48조제1항에 따른 화학물질 종합정보시스템에 등록하는 방법으로 하여야 한다. 이 경우 서면통지, 개별설명 또는 집합전달 등의 방법 중 하나 이상의 방법을 함께 사용하여야 한다.
-③ 지방자치단체의 장은 제1항에 따른 고지가 원활히 이행될 수 있도록 필요한 지원을 할 수 있다.
-④ 제1항에 따라 지역주민에게 고지하여야 하는 자는 제2항의 방법에 따른 고지 외에도 지역주민의 요청이 있을 경우 제1항 각 호의 정보를 지역주민에게 개별적으로 통지하여야 한다.
-⑤ 제1항부터 제4항까지에 따른 화학사고예방관리계획서의 지역사회 고지에 필요한 사항은 <mark class="d">환경부령으로</mark> 정한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제23조의3(화학사고예방관리계획서의 지역사회 고지)
-① 주요취급시설을 설치ㆍ운영하려는 자로서 제23조제5항에 따라 적합통보를 받은 자는 취급사업장 인근 지역주민에게 다음 각 호의 정보를 알기 쉽게 명시하여 고지하여야 한다. 이 경우 고지는 제2항에 따른 방법으로 매년 1회 이상 실시하여야 하며, 고지된 사항이 변경된 때에는 그 사유가 발생한 날부터 1개월 이내에 변경사항에 대하여 고지하여야 한다.
-1.  취급하는 유해화학물질의 유해성정보 및 화학사고 위험성
-2.  화학사고 발생 시 대기ㆍ수질ㆍ지하수ㆍ토양ㆍ자연환경 등의 영향 범위
-3.  화학사고 발생 시 조기경보 전달방법, 주민 대피 등 행동요령
-② 제1항에 따른 고지는 같은 항 각 호의 정보를 제48조제1항에 따른 화학물질 종합정보시스템에 등록하는 방법으로 하여야 한다. 이 경우 서면통지, 개별설명 또는 집합전달 등의 방법 중 하나 이상의 방법을 함께 사용하여야 한다.
-③ 지방자치단체의 장은 제1항에 따른 고지가 원활히 이행될 수 있도록 필요한 지원을 할 수 있다.
-④ 제1항에 따라 지역주민에게 고지하여야 하는 자는 제2항의 방법에 따른 고지 외에도 지역주민의 요청이 있을 경우 제1항 각 호의 정보를 지역주민에게 개별적으로 통지하여야 한다.
-⑤ 제1항부터 제4항까지에 따른 화학사고예방관리계획서의 지역사회 고지에 필요한 사항은 <mark class="i">기후에너지환경부령으로</mark> 정한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「화학물질관리법」 제10조</span></div><div class="act">「화학물질관리법」 제10조 개정 내용을 반영하여 이 조례 제16조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-04-25</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제10조(화학물질 통계조사 및 정보체계 구축ㆍ운영)
-① <mark class="d">환경부장관은</mark> 2년마다 화학물질의 취급과 관련된 취급현황, 취급시설 등에 관한 통계조사(이하 &quot;화학물질 통계조사&quot;라 한다)를 실시하여야 한다. 이 경우 통계의 조사ㆍ작성에 관하여는 「통계법」의 관계 규정을 준용한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-② <mark class="d">환경부장관은</mark> 화학물질 통계조사의 효율적 수립ㆍ시행을 위하여 서면조사 또는 현장조사를 실시하거나 정보체계를 구축ㆍ운영하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-③ <mark class="d">환경부장관은</mark> 화학물질 통계조사 및 제2항에 따른 정보체계의 구축ㆍ운영을 위하여 필요한 경우에는 관계 중앙행정기관의 장, 지방자치단체의 장, 공공기관(「공공기관의 운영에 관한 법률」 제4조에 따른 공공기관을 말한다)의 장, 관계 기관 및 단체의 장 등에게 필요한 자료 및 정보의 제공을 요청할 수 있다. 이 경우 자료 및 정보의 제공을 요구받은 자는 정당한 사유가 없으면 이에 따라야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-④ <mark class="d">환경부장관은</mark> 화학물질을 취급하는 자에게 화학물질 통계조사에 필요한 자료를 제출하도록 명하거나 관계 공무원으로 하여금 해당 사업장 등에 출입하여 화학물질과 관련된 현황을 조사하게 할 수 있다. 이 경우 출입ㆍ조사를 하는 공무원은 그 권한을 표시하는 증표를 지니고 이를 관계인에게 내보여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-⑤ 화학물질 통계조사의 대상, 내용, 방법 및 절차 등에 관하여 필요한 사항은 <mark class="d">환경부령으로</mark> 정한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제10조(화학물질 통계조사 및 정보체계 구축ㆍ운영)
-① <mark class="i">기후에너지환경부장관은</mark> 2년마다 화학물질의 취급과 관련된 취급현황, 취급시설 등에 관한 통계조사(이하 &quot;화학물질 통계조사&quot;라 한다)를 실시하여야 한다. 이 경우 통계의 조사ㆍ작성에 관하여는 「통계법」의 관계 규정을 준용한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-② <mark class="i">기후에너지환경부장관은</mark> 화학물질 통계조사의 효율적 수립ㆍ시행을 위하여 서면조사 또는 현장조사를 실시하거나 정보체계를 구축ㆍ운영하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-③ <mark class="i">기후에너지환경부장관은</mark> 화학물질 통계조사 및 제2항에 따른 정보체계의 구축ㆍ운영을 위하여 필요한 경우에는 관계 중앙행정기관의 장, 지방자치단체의 장, 공공기관(「공공기관의 운영에 관한 법률」 제4조에 따른 공공기관을 말한다)의 장, 관계 기관 및 단체의 장 등에게 필요한 자료 및 정보의 제공을 요청할 수 있다. 이 경우 자료 및 정보의 제공을 요구받은 자는 정당한 사유가 없으면 이에 따라야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-④ <mark class="i">기후에너지환경부장관은</mark> 화학물질을 취급하는 자에게 화학물질 통계조사에 필요한 자료를 제출하도록 명하거나 관계 공무원으로 하여금 해당 사업장 등에 출입하여 화학물질과 관련된 현황을 조사하게 할 수 있다. 이 경우 출입ㆍ조사를 하는 공무원은 그 권한을 표시하는 증표를 지니고 이를 관계인에게 내보여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-⑤ 화학물질 통계조사의 대상, 내용, 방법 및 절차 등에 관하여 필요한 사항은 <mark class="i">기후에너지환경부령으로</mark> 정한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「화학물질관리법」 제11조</span></div><div class="act">「화학물질관리법」 제11조 개정 내용을 반영하여 이 조례 제16조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-04-25</b> · 당시 법령본 <b>2020-05-26</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제11조(화학물질 배출량조사)
-① <mark class="d">환경부장관은</mark> 화학물질 배출로부터 국민의 건강 및 환경을 보호하고 사업장으로 하여금 자발적인 화학물질 배출의 저감을 유도하기 위하여 매년 대통령령으로 정하는 화학물질을 취급하는 사업장에 대하여 해당 화학물질을 취급하는 과정에서 배출되는 화학물질 현황 등의 조사(이하 &quot;화학물질 배출량조사&quot;라 한다)를 실시하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-② <mark class="d">환경부장관은</mark> 화학물질 배출량조사를 하는 경우 <mark class="d">환경부령으로</mark> 정하는 바에 따라 화학물질을 취급하는 자에게 필요한 자료를 제출하도록 명하거나 관계 공무원으로 하여금 해당 사업장에 출입하여 해당 화학물질 배출량조사를 하게 할 수 있다. &lt;개정 2020.5.26<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-③ <mark class="d">환경부장관은</mark> 화학물질 배출량조사를 하려는 때에는 관계 중앙행정기관의 장, 지방자치단체의 장, 공공기관(「공공기관의 운영에 관한 법률」 제4조에 따른 공공기관을 말한다)의 장, 관계 기관 및 단체의 장 등에게 기관별 조사 결과와 필요한 자료를 제출하도록 요청할 수 있다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-④ 제2항에 따라 출입ㆍ조사를 하는 공무원은 그 권한을 표시하는 증표를 지니고 이를 관계인에게 내보여야 한다.
-⑤ 화학물질 배출량조사의 대상, 내용, 방법 및 절차 등에 관하여 필요한 사항은 <mark class="d">환경부령으로</mark> 정한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제11조(화학물질 배출량조사)
-① <mark class="i">기후에너지환경부장관은</mark> 화학물질 배출로부터 국민의 건강 및 환경을 보호하고 사업장으로 하여금 자발적인 화학물질 배출의 저감을 유도하기 위하여 매년 대통령령으로 정하는 화학물질을 취급하는 사업장에 대하여 해당 화학물질을 취급하는 과정에서 배출되는 화학물질 현황 등의 조사(이하 &quot;화학물질 배출량조사&quot;라 한다)를 실시하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-② <mark class="i">기후에너지환경부장관은</mark> 화학물질 배출량조사를 하는 경우 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 화학물질을 취급하는 자에게 필요한 자료를 제출하도록 명하거나 관계 공무원으로 하여금 해당 사업장에 출입하여 해당 화학물질 배출량조사를 하게 할 수 있다. &lt;개정 2020.5.26<mark class="i">, 2025.10.1</mark>&gt;
-③ <mark class="i">기후에너지환경부장관은</mark> 화학물질 배출량조사를 하려는 때에는 관계 중앙행정기관의 장, 지방자치단체의 장, 공공기관(「공공기관의 운영에 관한 법률」 제4조에 따른 공공기관을 말한다)의 장, 관계 기관 및 단체의 장 등에게 기관별 조사 결과와 필요한 자료를 제출하도록 요청할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-④ 제2항에 따라 출입ㆍ조사를 하는 공무원은 그 권한을 표시하는 증표를 지니고 이를 관계인에게 내보여야 한다.
-⑤ 화학물질 배출량조사의 대상, 내용, 방법 및 절차 등에 관하여 필요한 사항은 <mark class="i">기후에너지환경부령으로</mark> 정한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제17조"><div class="arthd">조례 제17조</div><div class="ordtext"><b>제17조</b> 제17조(지역화학사고대응계획) 
-① 시장은 화학사고에 신속하고 효과적으로 대응하기 위해 <mark class="cite-law" title="화학물질관리법제23조의4">법 제23조의4</mark>에 따른 지역화학사고대응계획(이하 “사고대응계획”이라 한다)을 위원회의 심의를 걸쳐 수립하고 해마다 한차례 이상 검토하여 필요시 수정하여야 하며, 화학사고에 대비하여 화학사고 대응 담당자를 지정해야 한다. &lt;개정 2022.4.25.&gt;
-② 사고대응계획에는 다음 각 호의 사항이 포함되어야 한다. &lt;개정 2022.4.25.&gt;
-1. 화학사고에 대비한 교육ㆍ훈련 방법 및 시기
-2. 화학사고 유형과 규모에 따른 정보전달 방법 및 주민 행동요령
-3. 화학사고 대응 및 사후조치에 관한 기관별 역할 및 공조체계
-4. 화학사고 대응 및 사후조치에 필요한 자원 및 인력ㆍ장비 등의 동원 방법
-5. 화학사고 시 주민의 대피방법, 대피장소 및 사고지역으로의 출입통제 방법
-6. 화학사고 시 피해최소화를 위한 조치ㆍ복구 계획과 긴급구호물자 지급 및 응급의료지원 계획
-7. 그 밖에 화학사고 대응을 위하여 필요한 내용으로서 시장이 정한 사항
-③ 시장은 사고대응계획을 수립한 경우 이를 지체없이 관계 기관의 장에게 통지하여야 한다. &lt;개정 2022.4.25.&gt;
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>복지정책과 자치법규 정비 권고</h1><div class="sub">전체 19개 조례 중 정비 대상 7개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">6</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">1</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">4</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">64</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 의사상자 예우 및 지원에 관한 조례</h2><div class="meta">시행 2024-05-15 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span><span class="badge b-fmt">📐 서식 정비 1</span></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(적용범위) 
+① 이 조례는 군포시(이하 “시”라 한다)내에 주소를 둔 <mark class="cite-naked" title="시민으로법제3조">시민으로법 제3조</mark>에 따른 의로운 행위로 의사상자가 된 경우 적용한다.
+② 시에 주소를 두지 아니하는 사람이 시 관할구역 <mark class="cite-naked" title="내에서법제3조">내에서법 제3조</mark>에 따른 의로운 행위를 하다가 의사상자가 된 경우에는 특별위로금 지급에 한한다.</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「내에서법」</span></div><div class="act">인용한 「내에서법」이(가) 현행 「공군 20전투비행단 이예람 중사 사망 사건 관련 군 내 성폭력 및 2차 피해 등의 진상규명을 위한 특별검사 임명 등에 관한 법률」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2024-05-15</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(지원사업 등) 
+① 군포시장(이하 “시장”라 한다)은법 제15조에 따라 국가 보상금의 지급 및 보호를 성실히 이행하여야 한다.
+② 시장은 의사자의 유족 또는 의상자 및 그 가족에게 예산의 범위 안에서 다음 각 호의 지원사업을 할 수 있다. &lt;개정 2024.5.15.&gt;
+1. 의사자의 <mark class="cite-naked" title="유족에게법제8조,제9조">유족에게법 제8조 및 제9조</mark>에 따른 국가보상금 이외에 2천만원 이하의 특별위로금 지급
+2. 의상자에게는<mark class="cite-law" title="의사상자 등 예우 및 지원에 관한 법률제8조,제9조">법 제8조 및 제9조</mark>에 따른 국가보상금 이외에 영 제2조에 규정한 부상의 정도에 따라 특별위로금 지급
+가. 1급, 2급: 5백만원 이하
+나. 3급, 4급: 3백만원 이하
+다. 5급 ～ 9급: 2백만원 이하
+3. 시가 설치·관리하는 국가유산 관람료, 체육시설 사용료, 공영주차장의 주차요금 감면
+4. 그 밖에 의사상자의 숭고한 희생정신을 기리고 그 가족의 보호를 위하여 시장이 필요하다고 인정하는 사업
+③ 시장은 의상자 또는 의사자의 유족으로서 <mark class="cite-local" title="군포시 국가보훈대상자 등 예우 및 지원에 관한 조례제7조">「군포시 국가보훈대상자 등 예우 및 지원에 관한 조례」 제7조</mark>를 준용하여 매월 수당을 지원할 수 있다. 다만, <mark class="cite-law" title="의사상자 등 예우 및 지원에 관한 법률 시행령제16조">시행령 제16조</mark>에 따른 경미한 신체상의 부상을 입은 의상자는 제외한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="tag t-space">띄어쓰기</span><span class="law">「의사상자 등 예우 및 지원에 관한 법률」 제8조</span></div><div class="act">「의사상자 등 예우 및 지원에 관한 법률」 제8조 개정 내용을 반영하여 이 조례 제4조을(를) 검토·정비 (덧붙여 약칭 앞 띄어쓰기 정정)</div><div class="basis">기준일 — 조례 시행 <b>2024-05-15</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제8조(보상금)
+① 국가는 의상자 및 의사자유족에게 보상금을 지급한다. 다만, 다른 법률에 따라 국가 또는 지방자치단체로부터 보상금을 지급받은 때에는 그 금액에 상당한 보상금을 지급하지 아니한다.
+② 보상금의 지급수준은 「통계법」 제3조제2호에 따라 <mark class="d">통계청장이</mark> 지정하여 고시하는 통계 중 가계조사통계의 전국가구 가계소비지출액 등을 고려하여 의사상자의 의로운 행위에 대한 희생과 부상의 정도에 상응하게 결정하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
+③ 보상금은 일시금으로 지급하되, 지급액ㆍ지급방법이나 그 밖에 지급에 관하여 필요한 사항은 대통령령으로 정한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제8조(보상금)
+① 국가는 의상자 및 의사자유족에게 보상금을 지급한다. 다만, 다른 법률에 따라 국가 또는 지방자치단체로부터 보상금을 지급받은 때에는 그 금액에 상당한 보상금을 지급하지 아니한다.
+② 보상금의 지급수준은 「통계법」 제3조제2호에 따라 <mark class="i">국가데이터처장이</mark> 지정하여 고시하는 통계 중 가계조사통계의 전국가구 가계소비지출액 등을 고려하여 의사상자의 의로운 행위에 대한 희생과 부상의 정도에 상응하게 결정하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+③ 보상금은 일시금으로 지급하되, 지급액ㆍ지급방법이나 그 밖에 지급에 관하여 필요한 사항은 대통령령으로 정한다.</span></div></div></div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「의사상자 등 예우 및 지원에 관한 법률」 제9조</span></div><div class="act">「의사상자 등 예우 및 지원에 관한 법률」 약칭을 앞말과 띄어 써 정정 (이 조례 제4조) — 내용 변경은 없음, 띄어쓰기만 정비</div><div class="basis">기준일 — 조례 시행 <b>2024-05-15</b> · 당시 법령본 <b>2019-03-12</b> → 현행 조문 <b>2025-10-01</b></div></div></div></div><div class="ord"><h2>군포시 3ㆍ31독립만세운동 기념에 관한 조례</h2><div class="meta">시행 2021-09-30 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="국가보훈 기본법제23조">「국가보훈 기본법」 제23조</mark>에 따라 일제강점기하에서 조국의 자주독립을 위해 공헌한 독립운동가를 기리고 그 역사적 의미와 정신을 계승·발전시키기 위한 3·31독립만세운동 기념사업을 지원하는데 필요한 사항을 정하는 것을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「국가보훈 기본법」 제23조</span></div><div class="act">「국가보훈 기본법」 제23조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-09-30</b> · 당시 법령본 <b>2013-05-22</b> → 현행 조문 <b>2023-03-04</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제23조(공훈선양사업의 추진)
+① 국가와 지방자치단체는 희생ㆍ공헌자의 공훈과 나라사랑정신을 선양하기 위하여 다음 각 호의 사업을 추진하여야 한다. &lt;개정 2013.5.22&gt;
+1.  추모사업 및 기념사업
+2.  희생ㆍ공헌자의 공훈과 나라사랑정신을 선양하기 위한 시설(이하 &quot;공훈선양시설&quot;이라 한다)의 설치ㆍ관리
+3.  국민의 나라사랑정신 함양교육
+3의2.  희생ㆍ공헌자의 발굴
+4.  국가보훈대상자에 대한 위로 및 격려
+5.  그 밖에 희생ㆍ공헌자의 공훈과 나라사랑정신을 기리는 사업
+② 국가와 지방자치단체는 제1항에 따른 사업을 공공기관ㆍ민간단체 등과 공동으로 추진하거나 위탁하여 시행할 수 있다. 이 경우 공공기관ㆍ민간단체 등에 대하여 재정적ㆍ행정적인 지원을 할 수 있다.
+③ <mark class="d">국가보훈처장은</mark> 관계기관의 장에게 제1항제3호에 따른 교육의 실시를 요청할 수 있다. 이 경우 요청을 받은 관계기관의 장은 적극적으로 협조하여야 한다.<mark class="pt" title="&lt;개정 2023.3.4&gt; 추가됨">‸</mark>
+④ <mark class="d">국가보훈처장은</mark> 관계 기관의 장에게 제1항제3호의2에 따른 희생ㆍ공헌자의 발굴에 필요한 자료의 제출을 요청할 수 있다. 이 경우 요청을 받은 관계 기관의 장은 정당한 사유가 없으면 이에 따라야 한다. &lt;신설 2013.5.22<mark class="pt" title=", 2023.3.4 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제23조(공훈선양사업의 추진)
+① 국가와 지방자치단체는 희생ㆍ공헌자의 공훈과 나라사랑정신을 선양하기 위하여 다음 각 호의 사업을 추진하여야 한다. &lt;개정 2013.5.22&gt;
+1.  추모사업 및 기념사업
+2.  희생ㆍ공헌자의 공훈과 나라사랑정신을 선양하기 위한 시설(이하 &quot;공훈선양시설&quot;이라 한다)의 설치ㆍ관리
+3.  국민의 나라사랑정신 함양교육
+3의2.  희생ㆍ공헌자의 발굴
+4.  국가보훈대상자에 대한 위로 및 격려
+5.  그 밖에 희생ㆍ공헌자의 공훈과 나라사랑정신을 기리는 사업
+② 국가와 지방자치단체는 제1항에 따른 사업을 공공기관ㆍ민간단체 등과 공동으로 추진하거나 위탁하여 시행할 수 있다. 이 경우 공공기관ㆍ민간단체 등에 대하여 재정적ㆍ행정적인 지원을 할 수 있다.
+③ <mark class="i">국가보훈부장관은</mark> 관계기관의 장에게 제1항제3호에 따른 교육의 실시를 요청할 수 있다. 이 경우 요청을 받은 관계기관의 장은 적극적으로 협조하여야 한다.<mark class="i"> &lt;개정 2023.3.4&gt;</mark>
+④ <mark class="i">국가보훈부장관은</mark> 관계 기관의 장에게 제1항제3호의2에 따른 희생ㆍ공헌자의 발굴에 필요한 자료의 제출을 요청할 수 있다. 이 경우 요청을 받은 관계 기관의 장은 정당한 사유가 없으면 이에 따라야 한다. &lt;신설 2013.5.22<mark class="i">, 2023.3.4</mark>&gt;</span></div></div></div></div></div><div class="ord"><h2>군포시 국가보훈대상자 등 예우 및 지원에 관한 조례</h2><div class="meta">시행 2024-10-02 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span><span class="badge b-fmt">📐 서식 정비 2</span></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(지원대상) 이 조례에 따른 지원대상은 다음 각 호의 어느 하나에 해당되는 자로 한다. &lt;개정 2021.12.31.&gt;
+1. <mark class="cite-law" title="국가유공자 등 예우 및 지원에 관한 법률">「국가유공자 등 예우 및 지원에 관한 법률」</mark>의 적용을 받는 사람
+2. <mark class="cite-law" title="국가유공자 등 단체 설립에 관한 법률">「국가유공자 등 단체 설립에 관한 법률」</mark>의 적용을 받는 사람 또는 단체
+3. <mark class="cite-law" title="참전유공자예우 및 단체설립에 관한 법률">「참전유공자예우 및 단체설립에 관한 법률」</mark>의 적용을 받는 사람(사망한 경우 그 배우자) 또는 단체
+4. <mark class="cite-law" title="고엽제후유의증 등 환자지원 및 단체설립에 관한 법률">「고엽제후유의증 등 환자지원 및 단체설립에 관한 법률」</mark>의 적용을 받는 사람 또는 단체
+5. <mark class="cite-law" title="특수임무유공자 예우 및 단체설립에 관한 법률">「특수임무유공자 예우 및 단체설립에 관한 법률」</mark>의 적용을 받는 사람 또는 단체
+6. <mark class="cite-law" title="5·18민주유공자예우에 관한 법률">「5·18민주유공자예우에 관한 법률」</mark>의 적용을 받는 사람
+7. <mark class="cite-law" title="보훈보상대상자 지원에 관한 법률">「보훈보상대상자 지원에 관한 법률」</mark>의 적용을 받는 사람&lt;신설 2015.3.23&gt;
 
-[제목개정 2022.4.25.]</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「화학물질관리법」 제23조의4</span></div><div class="act">「화학물질관리법」 제23조의4 개정 내용을 반영하여 이 조례 제17조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-04-25</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제23조의4(지역화학사고대응계획의 수립 등)
-① 지방자치단체의 장은 관할 지역에서 화학사고가 발생하는 경우에 대비하기 위하여 다음 각 호의 사항이 포함된 계획(이하 &quot;지역화학사고대응계획&quot;이라 한다)을 수립하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-1.  화학사고 발생 시 주민 대피에 관한 사항
-2.  긴급구호물자 지급 및 응급의료지원 등 화학사고와 관련된 복구 및 지원에 관한 사항
-3.  그 밖에 적정한 계획 수립을 위하여 <mark class="d">환경부령으로</mark> 정하는 사항
-② <mark class="d">환경부장관은</mark> 지방자치단체의 장이 관할 지역의 지역화학사고대응계획을 수립하거나 관할 소방관서의 장 등 화학사고 대응 관계 기관의 장이 화학사고에 대비ㆍ대응하기 위한 경우 필요한 범위에서 관련 자료를 지방자치단체의 장 등에게 제공할 수 있다. 이 경우 자료를 제공받은 지방자치단체의 장 등은 「공공기관의 정보공개에 관한 법률」 및 그 밖의 다른 법률에 따른 정보공개절차에 의하지 아니하고 이를 공개하여서는 아니 된다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-③ 지역화학사고대응계획의 수립 및 제2항에 따른 자료 제공의 범위 및 절차 등에 관하여 필요한 사항은 <mark class="d">환경부령으로</mark> 정한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제23조의4(지역화학사고대응계획의 수립 등)
-① 지방자치단체의 장은 관할 지역에서 화학사고가 발생하는 경우에 대비하기 위하여 다음 각 호의 사항이 포함된 계획(이하 &quot;지역화학사고대응계획&quot;이라 한다)을 수립하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-1.  화학사고 발생 시 주민 대피에 관한 사항
-2.  긴급구호물자 지급 및 응급의료지원 등 화학사고와 관련된 복구 및 지원에 관한 사항
-3.  그 밖에 적정한 계획 수립을 위하여 <mark class="i">기후에너지환경부령으로</mark> 정하는 사항
-② <mark class="i">기후에너지환경부장관은</mark> 지방자치단체의 장이 관할 지역의 지역화학사고대응계획을 수립하거나 관할 소방관서의 장 등 화학사고 대응 관계 기관의 장이 화학사고에 대비ㆍ대응하기 위한 경우 필요한 범위에서 관련 자료를 지방자치단체의 장 등에게 제공할 수 있다. 이 경우 자료를 제공받은 지방자치단체의 장 등은 「공공기관의 정보공개에 관한 법률」 및 그 밖의 다른 법률에 따른 정보공개절차에 의하지 아니하고 이를 공개하여서는 아니 된다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-③ 지역화학사고대응계획의 수립 및 제2항에 따른 자료 제공의 범위 및 절차 등에 관하여 필요한 사항은 <mark class="i">기후에너지환경부령으로</mark> 정한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제21조"><div class="arthd">조례 제21조</div><div class="ordtext"><b>제21조</b> 제21조(화학사고예방관리계획서의 검토 등) 
-① 시장이 <mark class="cite-law" title="화학물질관리법제23조">법 제23조제3항제3호</mark>에 따라 주민소산계획의 보완이 필요하다고 요청할 수 있는 경우는 다음 각 호와 같다. 이 경우 <mark class="cite-law" title="화학물질관리법 시행규칙제19조의4">「화학물질관리법 시행규칙」 제19조의4제5항</mark>에 따라 화학물질안전원장이 정하여 고시하는 사항이 요청서에 포함되어야 한다.
-1. 화학사고 시의 주요 대피장소가 변경된 경우
-2. 화학사고 시 안전한 장소로 대피하기 위하여 임시로 모이는 장소가 변경된 경우
-3. 사고대응계획 중 주민 경보전달 방법 및 절차, 유관기관과의 협의 체계가 변경된 경우
-4. 그 밖에 시장이 주민의 안전을 위하여 주민소산계획의 보완이 필요하다고 인정하는 경우
-② 시장은 <mark class="cite-law" title="화학물질관리법제23조">법 제23조제8항</mark>에 따라 화학사고예방관리계획서의 검토를 요청받은 경우 요청을 받은 날부터 15일 이내에 검토 결과를 제출하여야 한다.
-③ 제1항에 따른 주민소산계획 보완 요청 및 제2항에 따른 화학사고예방관리계획서의 검토에 대한 구체적인 방법과 절차 등은 화학물질안전원장이 정하여 고시한 바에 따른다.
+[제목개정 2021.12.31.]</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「5·18민주유공자예우에 관한 법률」</span></div><div class="act">인용한 「5·18민주유공자예우에 관한 법률」이(가) 현행 「5ㆍ18민주유공자예우 및 단체설립에 관한 법률」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(수당 등) 시장은 예산의 범위에서 보훈 명예수당, 보훈 생계지원수당, 사망위로금(이하 “수당 등”이라 한다)을 지급할 수 있다. 다만, 제1호와 제2호의 수당은 중복 지급하지 아니한다. &lt;개정 2024.10.2.&gt;
+1. 보훈 명예수당(이하 “명예수당”이라 한다): 제4조 각 호의 어느 하나에 해당하는 사람에게 1인당 월 15만원
+2. 보훈 생계지원수당(이하 “지원수당”이라 한다): 제4조 각 호의 어느 하나에 해당하는 사람 중 저소득층(<mark class="cite-naked" title="국민기초생활보장법제2조">국민기초생활보장법 제2조</mark> 및 <mark class="cite-law" title="국민기초생활보장법 시행령제3조">같은 법 시행령 제3조</mark>에 따른 차상위계층 이하)에게 1인당 월 15만원
+3. 사망위로금: 1인당 20만원
 
-[본조신설 2022.4.25.]
-
-[종전 제21조는 제23조로 이동 &lt;2022.4.25.&gt;]</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「화학물질관리법」 제23조제3항제3호</span></div><div class="act">「화학물질관리법」 제23조 개정 내용을 반영하여 이 조례 제21조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-04-25</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">3.  사업장 소재지를 관할하는 지방자치단체의 장이 제2항제9호에 따른 주민의 소산계획의 보완이 필요하다고 요청한 경우로서 <mark class="d">환경부장관이</mark> 그 필요성을 인정하여 제출자에게 변경제출을 통지한 경우</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">3.  사업장 소재지를 관할하는 지방자치단체의 장이 제2항제9호에 따른 주민의 소산계획의 보완이 필요하다고 요청한 경우로서 <mark class="i">기후에너지환경부장관이</mark> 그 필요성을 인정하여 제출자에게 변경제출을 통지한 경우</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「화학물질관리법」 제23조제8항</span></div><div class="act">「화학물질관리법」 제23조 개정 내용을 반영하여 이 조례 제21조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-04-25</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">⑧ <mark class="d">환경부장관은</mark> 제5항에 따른 검토를 위하여 필요하다고 인정하는 경우에는 해당 지방자치단체의 장에게 협의를 요청할 수 있다. 이 경우 협의를 요청받은 지방자치단체의 장은 화학사고예방관리계획서를 검토한 후 그 검토의견을 <mark class="d">환경부장관에게</mark> 통보하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">⑧ <mark class="i">기후에너지환경부장관은</mark> 제5항에 따른 검토를 위하여 필요하다고 인정하는 경우에는 해당 지방자치단체의 장에게 협의를 요청할 수 있다. 이 경우 협의를 요청받은 지방자치단체의 장은 화학사고예방관리계획서를 검토한 후 그 검토의견을 <mark class="i">기후에너지환경부장관에게</mark> 통보하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제22조"><div class="arthd">조례 제22조</div><div class="ordtext"><b>제22조</b> 제22조(화학물질 배출저감계획 점검) 
-① 시장은 <mark class="cite-law" title="화학물질관리법제11조의2">법 제11조의2제6항</mark>에 따라 화학물질 배출저감계획서의 검토 및 이행 점검을 위하여 필요한 자료를 제출하도록 명하거나, 사업장을 출입하여 조사할 수 있다.
-② 시장은 화학물질 배출저감계획서의 검토 및 이행 점검을 위하여 사업장을 출입할 때 전문적인 지원을 받기 위하여 위원회의 위원이나 전문가를 입회시킬 수 있다.
-
-[본조신설 2022.4.25.]</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「화학물질관리법」 제11조의2제6항</span></div><div class="act">「화학물질관리법」 제11조의2 개정 내용을 반영하여 이 조례 제22조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-04-25</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">⑥ <mark class="d">환경부장관</mark> 또는 지방자치단체의 장은 배출저감계획서를 작성ㆍ제출한 자에게 필요한 자료를 제출하도록 명하거나 관계 공무원으로 하여금 해당 사업장에 출입하여 배출저감과 관련된 현황을 조사하게 할 수 있다. 이 경우 출입ㆍ조사를 하는 공무원은 그 권한을 표시하는 증표를 지니고 이를 관계인에게 내보여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">⑥ <mark class="i">기후에너지환경부장관</mark> 또는 지방자치단체의 장은 배출저감계획서를 작성ㆍ제출한 자에게 필요한 자료를 제출하도록 명하거나 관계 공무원으로 하여금 해당 사업장에 출입하여 배출저감과 관련된 현황을 조사하게 할 수 있다. 이 경우 출입ㆍ조사를 하는 공무원은 그 권한을 표시하는 증표를 지니고 이를 관계인에게 내보여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 경유자동차 및 건설기계 저공해 촉진 및 지원 조례</h2><div class="meta">시행 2021-04-26 · 정비 항목 9건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 9</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="대기환경보전법제58조">「대기환경보전법」제58조</mark> 및 <mark class="cite-law" title="대기관리권역의 대기환경개선에 관한 특별법제26조">「대기관리권역의 대기환경개선에 관한 특별법」제26조</mark>에 따라 경유를 연료로 사용하는 자동차 및 건설기계에 대하여 저공해 촉진과 재정적 지원을 하는데 필요한 사항을 규정함을 목적으로 한다. &lt;개정 2021. 4. 26.&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「대기환경보전법」 제58조</span></div><div class="act">「대기환경보전법」 제58조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-04-26</b> · 당시 법령본 <b>2021-04-13</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제58조(저공해자동차의 운행 등)
-①시ㆍ도지사 또는 시장ㆍ군수는 관할 지역의 대기질 개선 또는 기후ㆍ생태계 변화유발물질 배출감소를 위하여 필요하다고 인정하면 그 지역에서 운행하는 자동차 및 건설기계<mark class="d">(제2조제13호의2가목에 따른 건설기계를 말한다. 이하 이 조에서 같다)</mark> 중 차령과 대기오염물질 또는 기후ㆍ생태계 변화유발물질 배출정도 등에 관하여 <mark class="d">환경부령으로</mark> 정하는 요건을 충족하는 자동차 및 건설기계의 소유자에게 그 시ㆍ도 또는 시ㆍ군의 조례에 따라 그 자동차 및 건설기계에 대하여 다음 각 호의 어느 하나에 해당하는 조치를 하도록 명령하거나 조기에 폐차할 것을 권고할 수 있다. &lt;개정 2012.2.1, 2012.5.23, 2017.11.28, 2019.4.2<mark class="pt" title=", 2022.12.27, 2025.10.1 추가됨">‸</mark>&gt;
-1.  <mark class="d">저공해자동차로의</mark> 전환 또는 개조
-2.  배출가스저감장치의 부착 또는 교체 및 배출가스 관련 부품의 교체
-3.  저공해엔진(혼소엔진을 포함한다)으로의 개조 또는 교체
-② 배출가스보증기간이 지난 자동차의 소유자는 해당 자동차에서 배출되는 배출가스가 제57조에 따른 운행차배출허용기준에 적합하게 유지되도록 <mark class="d">환경부령으로</mark> 정하는 바에 따라 배출가스저감장치를 부착 또는 교체하거나 저공해엔진으로 개조 또는 교체할 수 있다. &lt;신설 2012.2.1, 2020.5.26<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-③국가나 지방자치단체는 <mark class="d">저공해자동차의</mark> 보급, 배출가스저감장치의 부착 또는 교체와 저공해엔진으로의 개조 또는 교체를 촉진하기 위하여 다음 각 호의 어느 하나에 해당하는 자에 대하여 예산의 범위에서 필요한 자금을 보조하거나 융자할 수 있다. &lt;개정 2009.5.21, 2012.2.1, 2012.5.23, 2016.1.27, 2019.4.2<mark class="pt" title=", 2021.4.13, 2022.12.27, 2025.10.1 추가됨">‸</mark>&gt;
-1.  <mark class="d">저공해자동차를</mark> <mark class="d">구입하거나</mark> <mark class="d">저공해자동차로</mark> 개조하는 자
-2.  <mark class="d">저공해자동차에</mark> 연료를 공급하기 위한 시설 중 다음 각 목의 시설을 설치하는 자
-가.  천연가스를 연료로 사용하는 <mark class="d">자동차에</mark> 천연가스를 공급하기 위한 시설로서 <mark class="d">환경부장관이</mark> 정하는 시설
-나.  전기를 연료로 사용하는 자동차<mark class="pt" title="또는 건설기계 추가됨">‸</mark>(이하 &quot;<mark class="d">전기자동차</mark>&quot;<mark class="d">라</mark> 한다)에 전기를 충전하기 위한 시설로서 <mark class="d">환경부장관이</mark> 정하는 시설
-다.  <mark class="pt" title="수소가스를 연료로 사용하는 자동차(이하 &quot;수소전기자동차&quot;라 한다) 또는  추가됨">‸</mark>그 밖에 태양광<mark class="d">, 수소연료</mark> 등 <mark class="d">환경부장관이</mark> 정하는 저공해자동차<mark class="pt" title="및 저공해건설기계 추가됨">‸</mark> 연료공급시설
-3.  제1항 또는 제2항에 따라 자동차 및 건설기계에 배출가스저감장치를 부착 또는 교체하거나 자동차 및 건설기계의 엔진을 저공해엔진으로 개조 또는 교체하는 자
-4.  제1항에 따라 자동차 및 건설기계의 배출가스 관련 부품을 교체하는 자
-5.  제1항에 따른 권고에 따라 <mark class="d">자동차를</mark> 조기에 폐차하는 자
-6.  그 밖에 배출가스가 매우 적게 배출되는 것으로서 <mark class="d">환경부장관이</mark> 정하여 고시하는 <mark class="d">자동차를</mark> 구입하는 자
-④ <mark class="d">환경부장관은</mark> <mark class="d">제3항제1호ㆍ제3호ㆍ제4호</mark> 및 제6호에 따라 경비를 지원받은 <mark class="d">자동차의</mark> <mark class="d">소유자 및 제3항제3호 및 제4호의 경비를 지원받은</mark> 건설기계의 소유자(해당 소유자로부터 소유권을 이전받은 자를 포함한다. 이하 이 조에서 &quot;소유자&quot;라 한다)에게 <mark class="d">환경부령으로</mark> 정하는 기간의 범위에서 해당 자동차 및 건설기계의 의무운행 기간을 설정할 수 있다. &lt;신설 2008.3.21, 2012.2.1, 2013.4.5, 2019.4.2, 2020.5.26<mark class="pt" title=", 2021.4.13, 2022.12.27, 2025.10.1 추가됨">‸</mark>&gt;
-⑤ 소유자는 해당 자동차 및 건설기계의 폐차 또는 수출 등을 위하여 자동차 및 건설기계의 등록을 말소하고자 하는 경우(건설기계 엔진을 전기모터로 교체하는 경우는 제외한다) <mark class="d">환경부령으로</mark> 정하는 바에 따라 다음 각 호의 장치 및 부품 등을 해당 지방자치단체의 장에게 반납하여야 한다. 이 경우 국가나 지방자치단체는 장치 및 부품 등의 반납에 드는 비용의 일부를 예산의 범위에서 지원할 수 있다. &lt;신설 2008.3.21, 2012.2.1, 2013.4.5, 2016.1.27, 2017.11.28, 2019.4.2, 2020.12.29<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-1.  부착 또는 교체된 배출가스저감장치
-2.  개조 또는 교체된 저공해엔진
-3.  삭제 &lt;2020.12.29&gt;
-⑥ 제5항에도 불구하고 소유자는 같은 항 제1호 및 제2호의 장치 및 부품 등의 경우에는 <mark class="d">환경부령으로</mark> 정하는 바에 따라 해당 장치 또는 부품의 잔존가치에 해당하는 금액을 금전으로 납부할 수 있다. &lt;신설 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑦ <mark class="d">환경부장관</mark> 또는 지방자치단체의 장은 제5항에 따라 반납받은 배출가스저감장치 등을 재사용 또는 재활용하여야 한다. &lt;신설 2013.4.5, 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑧ <mark class="d">환경부장관</mark> 또는 지방자치단체의 장은 제5항에 따라 반납받은 배출가스저감장치 등이 재사용ㆍ재활용이 불가능하다고 <mark class="d">환경부령으로</mark> 정한 사유에 해당하는 경우에는 매각하여야 한다. &lt;신설 2013.4.5, 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑨ 제6항에 따라 징수한 금액과 제8항에 따른 매각대금은 「환경정책기본법」에 따른 환경개선특별회계의 세입으로 하고, 제3항에 따른 지원 및 저공해자동차의 개발ㆍ연구 사업에 필요한 경비 등 <mark class="d">환경부령으로</mark> 정하는 경비에 충당할 수 있다. &lt;신설 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑩ <mark class="d">환경부장관</mark> 및 지방자치단체의 장은 소유자가 제4항에 따른 의무운행 기간을 충족하지 못한 경우 <mark class="d">환경부령으로</mark> 정하는 바에 따라 제3항에 따라 지원된 경비의 일부를 회수할 수 있다. &lt;신설 <mark class="d">2012.</mark>2<mark class="d">.1, 2013.4.5, 2016.12.27&gt;
-⑪ 저공해자동차 또는 제1항에 따라 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 자동차 및 건설기계(이하 이 조에서 &quot;저공해자동차등&quot;이라 한다)의 소유자는 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수에게 저공해자동차등에 해당함을 인증하는 표지의 발급을 신청할 수 있다. &lt;신설 2012.5.23, 2013.4.5, 2016.12.27, 2019.4.2&gt;
-⑫ 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수는 제11항에 따른 인증 신청이 있는 경우 해당 자동차 및 건설기계가 저공해자동차등에 해당하는지 여부를 검토하여 표지를 발급할 수 있고, 저공해자동차등의 소유자는 발급받은 표지를 저공해자동차등에 붙일 수 있다. &lt;신설 2019.4.2, 2020.5.26&gt;
-⑬ 환경부장관이나 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수는 제12항에 따라 발급받은 표지를 붙인 자동차에 대하여 주차료 감</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제58조(저공해자동차의 운행 등)
-①시ㆍ도지사 또는 시장ㆍ군수는 관할 지역의 대기질 개선 또는 기후ㆍ생태계 변화유발물질 배출감소를 위하여 필요하다고 인정하면 그 지역에서 운행하는 자동차 및 건설기계<mark class="pt" title="(제2조제13호의2가목에 따른 건설기계를 말한다. 이하 이 조에서 같다) 삭제됨">‸</mark> 중 차령과 대기오염물질 또는 기후ㆍ생태계 변화유발물질 배출정도 등에 관하여 <mark class="i">기후에너지환경부령으로</mark> 정하는 요건을 충족하는 자동차 및 건설기계의 소유자에게 그 시ㆍ도 또는 시ㆍ군의 조례에 따라 그 자동차 및 건설기계에 대하여 다음 각 호의 어느 하나에 해당하는 조치를 하도록 명령하거나 조기에 폐차할 것을 권고할 수 있다. &lt;개정 2012.2.1, 2012.5.23, 2017.11.28, 2019.4.2<mark class="i">, 2022.12.27, 2025.10.1</mark>&gt;
-1.  <mark class="i">저공해자동차 또는 저공해건설기계로의</mark> 전환 또는 개조
-2.  배출가스저감장치의 부착 또는 교체 및 배출가스 관련 부품의 교체
-3.  저공해엔진(혼소엔진을 포함한다)으로의 개조 또는 교체
-② 배출가스보증기간이 지난 자동차의 소유자는 해당 자동차에서 배출되는 배출가스가 제57조에 따른 운행차배출허용기준에 적합하게 유지되도록 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 배출가스저감장치를 부착 또는 교체하거나 저공해엔진으로 개조 또는 교체할 수 있다. &lt;신설 2012.2.1, 2020.5.26<mark class="i">, 2025.10.1</mark>&gt;
-③국가나 지방자치단체는 <mark class="i">저공해자동차 및 저공해건설기계의</mark> 보급, 배출가스저감장치의 부착 또는 교체와 저공해엔진으로의 개조 또는 교체를 촉진하기 위하여 다음 각 호의 어느 하나에 해당하는 자에 대하여 예산의 범위에서 필요한 자금을 보조하거나 융자할 수 있다. &lt;개정 2009.5.21, 2012.2.1, 2012.5.23, 2016.1.27, 2019.4.2<mark class="i">, 2021.4.13, 2022.12.27, 2025.10.1</mark>&gt;
-1.  <mark class="i">저공해자동차</mark> <mark class="i">또는</mark> <mark class="i">저공해건설기계를 구입하는 자. 이 경우 제58조의2제1항에 따른 자동차판매자로부터의 구매 여부, 저공해자동차 또는 저공해건설기계 판매가격 등 기후에너지환경부령으로 정하는 기준에 따라 자금의 보조 및 융자를 차등적으로 할 수 있다.
-1의2.  저공해자동차 또는 저공해건설기계로</mark> 개조하는 자
-2.  <mark class="i">저공해자동차 또는 저공해건설기계에</mark> 연료를 공급하기 위한 시설 중 다음 각 목의 시설을 설치하는 자
-가.  천연가스를 연료로 사용하는 <mark class="i">자동차 또는 건설기계에</mark> 천연가스를 공급하기 위한 시설로서 <mark class="i">기후에너지환경부장관이</mark> 정하는 시설
-나.  전기를 연료로 사용하는 자동차<mark class="i"> 또는 건설기계</mark>(이하 &quot;<mark class="i">전기자동차등</mark>&quot;<mark class="i">이라</mark> 한다)에 전기를 충전하기 위한 시설로서 <mark class="i">기후에너지환경부장관이</mark> 정하는 시설
-다.  <mark class="i">수소가스를 연료로 사용하는 자동차(이하 &quot;수소전기자동차&quot;라 한다) 또는 건설기계에 수소가스를 충전하기 위한 시설로서 기후에너지환경부장관이 정하는 시설(이하 &quot;수소연료공급시설&quot;이라 한다)
-라.  </mark>그 밖에 태양광<mark class="pt" title=", 수소연료 삭제됨">‸</mark> 등 <mark class="i">기후에너지환경부장관이</mark> 정하는 저공해자동차<mark class="i"> 및 저공해건설기계</mark> 연료공급시설
-3.  제1항 또는 제2항에 따라 자동차 및 건설기계에 배출가스저감장치를 부착 또는 교체하거나 자동차 및 건설기계의 엔진을 저공해엔진으로 개조 또는 교체하는 자
-4.  제1항에 따라 자동차 및 건설기계의 배출가스 관련 부품을 교체하는 자
-5.  제1항에 따른 권고에 따라 <mark class="i">자동차 또는 건설기계를</mark> 조기에 폐차하는 자
-6.  그 밖에 배출가스가 매우 적게 배출되는 것으로서 <mark class="i">기후에너지환경부장관이</mark> 정하여 고시하는 <mark class="i">자동차 또는 건설기계를</mark> 구입하는 자
-④ <mark class="i">기후에너지환경부장관은</mark> <mark class="i">제3항제1호ㆍ제1호의2ㆍ제3호ㆍ제4호</mark> 및 제6호에 따라 경비를 지원받은 <mark class="i">자동차</mark> <mark class="i">또는</mark> 건설기계의 소유자(해당 소유자로부터 소유권을 이전받은 자를 포함한다. 이하 이 조에서 &quot;소유자&quot;라 한다)에게 <mark class="i">기후에너지환경부령으로</mark> 정하는 기간의 범위에서 해당 자동차 및 건설기계의 의무운행 기간을 설정할 수 있다. &lt;신설 2008.3.21, 2012.2.1, 2013.4.5, 2019.4.2, 2020.5.26<mark class="i">, 2021.4.13, 2022.12.27, 2025.10.1</mark>&gt;
-⑤ 소유자는 해당 자동차 및 건설기계의 폐차 또는 수출 등을 위하여 자동차 및 건설기계의 등록을 말소하고자 하는 경우(건설기계 엔진을 전기모터로 교체하는 경우는 제외한다) <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 다음 각 호의 장치 및 부품 등을 해당 지방자치단체의 장에게 반납하여야 한다. 이 경우 국가나 지방자치단체는 장치 및 부품 등의 반납에 드는 비용의 일부를 예산의 범위에서 지원할 수 있다. &lt;신설 2008.3.21, 2012.2.1, 2013.4.5, 2016.1.27, 2017.11.28, 2019.4.2, 2020.12.29<mark class="i">, 2025.10.1</mark>&gt;
-1.  부착 또는 교체된 배출가스저감장치
-2.  개조 또는 교체된 저공해엔진
-3.  삭제 &lt;2020.12.29&gt;
-⑥ 제5항에도 불구하고 소유자는 같은 항 제1호 및 제2호의 장치 및 부품 등의 경우에는 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 해당 장치 또는 부품의 잔존가치에 해당하는 금액을 금전으로 납부할 수 있다. &lt;신설 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑦ <mark class="i">기후에너지환경부장관</mark> 또는 지방자치단체의 장은 제5항에 따라 반납받은 배출가스저감장치 등을 재사용 또는 재활용하여야 한다. &lt;신설 2013.4.5, 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑧ <mark class="i">기후에너지환경부장관</mark> 또는 지방자치단체의 장은 제5항에 따라 반납받은 배출가스저감장치 등이 재사용ㆍ재활용이 불가능하다고 <mark class="i">기후에너지환경부령으로</mark> 정한 사유에 해당하는 경우에는 매각하여야 한다. &lt;신설 2013.4.5, 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑨ 제6항에 따라 징수한 금액과 제8항에 따른 매각대금은 「환경정책기본법」에 따른 환경개선특별회계의 세입으로 하고, 제3항에 따른 지원 및 저공해자동차의 개발ㆍ연구 사업에 필요한 경비 등 <mark class="i">기후에너지환경부령으로</mark> 정하는 경비에 충당할 수 있다. &lt;신설 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑩ <mark class="i">기후에너지환경부장관</mark> 및 지방자치단체의 장은 소유자가 제4항에 따른 의무운행 기간을 충족하지 못한 경우 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 제3항에 따라 지원된 경비의 일부를 회수할 수 있다. &lt;신설 <mark class="pt" title="2012. 삭제됨">‸</mark>2<mark class="pt" title=".1, 2013.4.5, 2016.12.27&gt;
-⑪ 저공해자동차 또는 제1 삭제됨">‸</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「대기관리권역의 대기환경개선에 관한 특별법」 제26조</span></div><div class="act">「대기관리권역의 대기환경개선에 관한 특별법」 제26조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-04-26</b> · 당시 법령본 <b>2020-05-26</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제26조(특정경유자동차의 관리)
-① <mark class="d">환경부장관은</mark> 제9조제2항제1호에 따른 대기환경개선목표를 달성하기 위하여 필요하다고 인정하면 특정경유자동차에 대하여 「대기환경보전법」 제57조에 따른 운행차배출허용기준보다 강화된 배출허용기준을 <mark class="d">환경부령으로</mark> 정할 수 있다. 이 경우 <mark class="d">환경부장관은</mark> 관계 중앙행정기관의 장과 협의하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-② 특정경유자동차의 소유자는 그 자동차에서 배출되는 배출가스가 제1항에 따른 특정경유자동차의 배출허용기준에 맞는지에 대하여 「자동차관리법」 제43조의2에 따라 검사를 받아야 한다.
-③ 특정경유자동차의 소유자는 해당 자동차에서 배출되는 배출가스가 제1항에 따른 특정경유자동차의 배출허용기준에 맞게 유지되도록 「대기환경보전법」 제58조에 따른 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체하여야 한다. 다만, 「대기환경보전법」 제58조제1항에 따라 시ㆍ도 또는 시ㆍ군의 조례로 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체하도록 명령을 받은 특정경유자동차의 소유자는 배출허용기준 적합 여부와 관계없이 이를 이행하여야 한다. &lt;개정 2020.5.26&gt;
-④ 제3항에 따라 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 특정경유자동차에 대하여는 「대기환경보전법」 제58조에 따른 배출가스저감장치 또는 저공해엔진에 대하여 <mark class="d">환경부령으로</mark> 정하는 기간(이하 &quot;보증기간&quot;이라 한다) 동안 <mark class="d">환경부령으로</mark> 정하는 바에 따라 제2항에 따른 검사를 면제할 수 있다. 다만, 배출가스저감장치에 부착한 측정기기 및 「대기환경보전법」 제54조에 따른 자동차 배출가스 종합전산체계를 통하여 배출가스 저감장치의 성능이 유지되는지를 확인할 수 있는 경우에는 제2항의 검사를 면제한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-⑤ <mark class="d">환경부장관이나</mark> 시ㆍ도지사 및 시장ㆍ군수는 다음 각 호의 어느 하나에 해당하는 자가 제3항에 따른 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체하면 그 경비를 지원할 수 있다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-1.  특정경유자동차의 소유자
-2.  대기관리권역 외의 지역을 관할하는 지방자치단체에 등록된 사업용 경유자동차 중 특정경유자동차의 종류에 해당하는 자동차로서 대기관리권역에서 대통령령으로 정하는 기간 이상 운행하는 자동차의 소유자
-⑥ 제2항에 따른 검사방법ㆍ절차 등에 관하여 필요한 사항은 <mark class="d">환경부령으로</mark> 정한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-⑦ 제3항에 따라 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 특정경유자동차의 소유자는 그 장치 또는 엔진이 「대기환경보전법」 제60조에 따른 저감효율에 맞게 유지되도록 배출가스저감장치 등의 성능 유지를 위하여 <mark class="d">환경부령으로</mark> 정하는 사항을 지켜야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-⑧ 시ㆍ도지사 및 시장ㆍ군수는 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 특정경유자동차의 소유자가 제7항을 지키지 아니할 경우에는 배출가스저감장치나 저공해엔진의 성능을 유지하도록 시정을 명할 수 있다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제26조(특정경유자동차의 관리)
-① <mark class="i">기후에너지환경부장관은</mark> 제9조제2항제1호에 따른 대기환경개선목표를 달성하기 위하여 필요하다고 인정하면 특정경유자동차에 대하여 「대기환경보전법」 제57조에 따른 운행차배출허용기준보다 강화된 배출허용기준을 <mark class="i">기후에너지환경부령으로</mark> 정할 수 있다. 이 경우 <mark class="i">기후에너지환경부장관은</mark> 관계 중앙행정기관의 장과 협의하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-② 특정경유자동차의 소유자는 그 자동차에서 배출되는 배출가스가 제1항에 따른 특정경유자동차의 배출허용기준에 맞는지에 대하여 「자동차관리법」 제43조의2에 따라 검사를 받아야 한다.
-③ 특정경유자동차의 소유자는 해당 자동차에서 배출되는 배출가스가 제1항에 따른 특정경유자동차의 배출허용기준에 맞게 유지되도록 「대기환경보전법」 제58조에 따른 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체하여야 한다. 다만, 「대기환경보전법」 제58조제1항에 따라 시ㆍ도 또는 시ㆍ군의 조례로 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체하도록 명령을 받은 특정경유자동차의 소유자는 배출허용기준 적합 여부와 관계없이 이를 이행하여야 한다. &lt;개정 2020.5.26&gt;
-④ 제3항에 따라 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 특정경유자동차에 대하여는 「대기환경보전법」 제58조에 따른 배출가스저감장치 또는 저공해엔진에 대하여 <mark class="i">기후에너지환경부령으로</mark> 정하는 기간(이하 &quot;보증기간&quot;이라 한다) 동안 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 제2항에 따른 검사를 면제할 수 있다. 다만, 배출가스저감장치에 부착한 측정기기 및 「대기환경보전법」 제54조에 따른 자동차 배출가스 종합전산체계를 통하여 배출가스 저감장치의 성능이 유지되는지를 확인할 수 있는 경우에는 제2항의 검사를 면제한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-⑤ <mark class="i">기후에너지환경부장관이나</mark> 시ㆍ도지사 및 시장ㆍ군수는 다음 각 호의 어느 하나에 해당하는 자가 제3항에 따른 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체하면 그 경비를 지원할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-1.  특정경유자동차의 소유자
-2.  대기관리권역 외의 지역을 관할하는 지방자치단체에 등록된 사업용 경유자동차 중 특정경유자동차의 종류에 해당하는 자동차로서 대기관리권역에서 대통령령으로 정하는 기간 이상 운행하는 자동차의 소유자
-⑥ 제2항에 따른 검사방법ㆍ절차 등에 관하여 필요한 사항은 <mark class="i">기후에너지환경부령으로</mark> 정한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-⑦ 제3항에 따라 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 특정경유자동차의 소유자는 그 장치 또는 엔진이 「대기환경보전법」 제60조에 따른 저감효율에 맞게 유지되도록 배출가스저감장치 등의 성능 유지를 위하여 <mark class="i">기후에너지환경부령으로</mark> 정하는 사항을 지켜야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-⑧ 시ㆍ도지사 및 시장ㆍ군수는 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 특정경유자동차의 소유자가 제7항을 지키지 아니할 경우에는 배출가스저감장치나 저공해엔진의 성능을 유지하도록 시정을 명할 수 있다.</span></div></div></div></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 정의는 다음과 같다. &lt;개정 2019.10.18., 2021.4.26.&gt; 
-  1. 삭제 &lt;2021.4.26.&gt; 
-2. “특정경유자동차”라 함은 <mark class="cite-law" title="대기관리권역의 대기환경개선에 관한 특별법제2조">「대기관리권역의 대기환경개선에 관한 특별법」(이하 “특별법”이라 한다) 제2조제5호</mark>에 따른 자동차를 말한다. 
-3. “저공해 조치”라 함은 배출가스저감장치의 부착, 저공해엔진으로의 개조, 교체 또는 조기에 폐차하는 것을 말한다. 
-4. “배출가스저감장치”라 함은 자동차에서 배출되는 대기오염물질을  줄이기 위하여 자동차에 부착하는 장치로서 <mark class="cite-law" title="대기환경보전법제60조">「대기환경보전법」(이하&quot;법&quot;이라 한다) 제60조의 규정</mark>에 따라 인증 받은 장치를 말한다. 
-5. “저공해엔진”이라 함은 자동차에서 배출되는 대기오염물질을 줄이기 위한 엔진(엔진 개조에 사용하는 부품을 포함한다)으로서 <mark class="cite-law" title="대기환경보전법제48조,제60조">법 제48조 및 제60조</mark>에 따라 인증 받은 장치를 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「대기관리권역의 대기환경개선에 관한 특별법」 제2조제5호</span></div><div class="act">「대기관리권역의 대기환경개선에 관한 특별법」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-04-26</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">5.  &quot;특정경유자동차&quot;란 「대기환경보전법」 제2조제13호에 따른 자동차 중 같은 법 제46조제3항에 따른 배출가스보증기간이 지난 자동차로서 대기관리권역에 등록된 경유자동차를 말한다. 다만, 엔진배기량 등이 <mark class="d">환경부령으로</mark> 정하는 기준에 해당하는 경유자동차는 제외한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">5.  &quot;특정경유자동차&quot;란 「대기환경보전법」 제2조제13호에 따른 자동차 중 같은 법 제46조제3항에 따른 배출가스보증기간이 지난 자동차로서 대기관리권역에 등록된 경유자동차를 말한다. 다만, 엔진배기량 등이 <mark class="i">기후에너지환경부령으로</mark> 정하는 기준에 해당하는 경유자동차는 제외한다.</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「대기환경보전법」 제60조</span></div><div class="act">「대기환경보전법」 제60조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-04-26</b> · 당시 법령본 <b>2019-04-02</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제60조(배출가스저감장치 및 공회전제한장치의 인증 등)
-①배출가스저감장치, 저공해엔진 또는 공회전제한장치를 <mark class="d">제조ㆍ공급</mark> 또는 <mark class="d">판매하려는</mark> 자는 <mark class="d">환경부장관으로부터</mark> 그 장치나 엔진이 보증기간 동안 <mark class="d">환경부령으로</mark> 정하는 저감효율 또는 기준에 맞게 유지될 수 있다는 인증을 받아야 한다. 다만, 제작단계에서 배출가스저감장치, 저공해엔진 또는 공회전제한장치를 부착하여 제작차 인증을 받은 경우에는 인증을 받지 아니할 수 있다. &lt;개정 2012.5.23<mark class="pt" title=", 2023.8.16, 2025.10.1 추가됨">‸</mark>&gt;
-②제1항에 따라 인증을 받은 자가 인증받은 내용을 변경하려면 변경인증을 받아야 한다.
-③ 삭제 &lt;2019.4.2&gt;
-<mark class="d">④환경부장관은</mark> 제1호에 해당하면 인증을 취소하여야 한다. 다만, 제2호와 제3호에 해당하는 경우에는 인증을 취소할 수 있다. &lt;개정 2012.5.23, 2019.4.2<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-1.  거짓이나 그 밖의 부정한 방법으로 인증을 받은 경우
-2.  배출가스저감장치, 저공해엔진 또는 공회전제한장치에 결함이 생겨 이를 개선하여도 제1항에 따른 저감효율 또는 기준을 유지할 수 없는 경우
-3.  제60조의4에 따른 검사 결과 인증의 기준을 유지하지 못하는 경우
-⑤제1항과 제2항에 따른 인증 또는 변경인증을 받으려는 자는 <mark class="d">환경부령으로</mark> 정하는 바에 따라 수수료를 내야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-<mark class="d">⑥제1항에</mark> 따른 인증의 신청ㆍ시험ㆍ기준 및 방법 등에 필요한 사항은 <mark class="d">환경부령으로</mark> 정한다.<mark class="pt" title="&lt;개정 2023.8.16, 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제60조(배출가스저감장치 및 공회전제한장치의 인증 등)
-①배출가스저감장치, 저공해엔진 또는 공회전제한장치를 <mark class="i">제조</mark> 또는 <mark class="i">수입하려는</mark> 자는 <mark class="i">기후에너지환경부장관으로부터</mark> 그 장치나 엔진이 보증기간 동안 <mark class="i">기후에너지환경부령으로</mark> 정하는 저감효율 또는 기준에 맞게 유지될 수 있다는 인증을 받아야 한다. 다만, 제작단계에서 배출가스저감장치, 저공해엔진 또는 공회전제한장치를 부착하여 제작차 인증을 받은 경우에는 인증을 받지 아니할 수 있다. &lt;개정 2012.5.23<mark class="i">, 2023.8.16, 2025.10.1</mark>&gt;
-②제1항에 따라 인증을 받은 자가 인증받은 내용을 변경하려면 변경인증을 받아야 한다.
-③ 삭제 &lt;2019.4.2&gt;
-<mark class="i">④기후에너지환경부장관은</mark> 제1호에 해당하면 인증을 취소하여야 한다. 다만, 제2호와 제3호에 해당하는 경우에는 인증을 취소할 수 있다. &lt;개정 2012.5.23, 2019.4.2<mark class="i">, 2025.10.1</mark>&gt;
-1.  거짓이나 그 밖의 부정한 방법으로 인증을 받은 경우
-2.  배출가스저감장치, 저공해엔진 또는 공회전제한장치에 결함이 생겨 이를 개선하여도 제1항에 따른 저감효율 또는 기준을 유지할 수 없는 경우
-3.  제60조의4에 따른 검사 결과 인증의 기준을 유지하지 못하는 경우
-⑤제1항과 제2항에 따른 인증 또는 변경인증을 받으려는 자는 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 수수료를 내야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-<mark class="i">⑥ 누구든지 제1항에 따른 인증을 받지 아니한 배출가스저감장치, 저공해엔진 또는 공회전제한장치를 공급ㆍ판매하거나 공급ㆍ판매의 목적으로 진열ㆍ보관 또는 저장하여서는 아니 된다. &lt;신설 2023.8.16&gt;
-⑦ 기후에너지환경부장관은 제1항에 따른 인증을 받지 아니한 배출가스저감장치, 저공해엔진 또는 공회전제한장치를 제조, 수입, 공급 또는 판매하려는 자에게 기후에너지환경부령으로 정하는 바에 따라 일정한 기간을 정하여 제품의 회수, 폐기 등의 필요한 조치를 명할 수 있다. &lt;신설 2023.8.16, 2025.10.1&gt;
-⑧ 배출가스저감장치, 저공해엔진 또는 공회전제한장치의 판매를 중개하거나 구매를 대행하는 자는 제1항에 따른 인증을 받지 아니한 제품의 판매를 중개(「전자상거래 등에서의 소비자보호에 관한 법률」에 따른 통신판매중개자가 자신이 운영하는 사이버몰에서 해당 제품을 발견하는 즉시 삭제하고, 소비자가 이러한 정보를 확인할 수 있도록 기술적 조치를 한 경우는 제외한다. 이하 같다)하거나 구매를 대행하여서는 아니 된다. &lt;신설 2023.8.16&gt;
-⑨ 누구든지 제1항에 따른 인증을 받지 아니한 배출가스저감장치, 저공해엔진 또는 공회전제한장치를 사용하여서는 아니 된다. &lt;신설 2023.8.16&gt;
-⑩제1항에</mark> 따른 인증의 신청ㆍ시험ㆍ기준 및 방법 등에 필요한 사항은 <mark class="i">기후에너지환경부령으로</mark> 정한다.<mark class="i"> &lt;개정 2023.8.16, 2025.10.1&gt;</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「대기환경보전법」 제48조</span></div><div class="act">「대기환경보전법」 제48조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-04-26</b> · 당시 법령본 <b>2019-04-02</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제48조(제작차에 대한 인증)
-①자동차제작자가 자동차를 제작하려면 미리 <mark class="d">환경부장관으로부터</mark> 그 자동차의 배출가스가 배출가스보증기간에 제작차배출허용기준(<mark class="d">저공해자동차배출허용기준을</mark> 포함한다. 이하 같다)에 맞게 유지될 수 있다는 인증을 받아야 한다. 다만, <mark class="d">환경부장관은</mark> 대통령령으로 정하는 자동차에는 인증을 면제하거나 생략할 수 있다. &lt;개정 2019.4.2<mark class="pt" title=", 2022.12.27, 2025.10.1 추가됨">‸</mark>&gt;
-②자동차제작자가 제1항에 따라 인증을 받은 자동차의 인증내용 중 <mark class="d">환경부령으로</mark> 정하는 중요한 <mark class="d">사항을</mark> 변경하려면 변경인증을 받아야 한다. <mark class="pt" title="다만, 중요사항을 변경하여도 배출가스의 양이 증가하지 아니하는 경우로서  추가됨">‸</mark>&lt;개정 2008.12.31<mark class="pt" title=", 2024.1.23, 2025.10.1 추가됨">‸</mark>&gt;
-③ <mark class="d">제1항</mark> <mark class="d">또는</mark> <mark class="d">제2항에</mark> 따라 인증ㆍ변경인증을 <mark class="d">받은</mark> 자동차제작자는 <mark class="d">환경부령으로</mark> 정하는 바에 따라 인증ㆍ변경인증을 <mark class="d">받은</mark> 자동차에 <mark class="d">인증ㆍ변경인증의</mark> 표시를 하여야 한다. &lt;신설 2017.11.28<mark class="pt" title=", 2024.1.23, 2025.10.1 추가됨">‸</mark>&gt;
-<mark class="d">④제1항부터</mark> <mark class="d">제3항까지의</mark> 규정에 따른 인증신청, 인증에 필요한 시험의 방법ㆍ절차, 시험수수료, 인증방법, <mark class="pt" title="변경보고, 추가됨">‸</mark>인증의 면제ㆍ생략 및 인증 표시방법에 관하여 필요한 사항은 <mark class="d">환경부령으로</mark> 정한다. &lt;개정 2008.12.31, 2017.11.28<mark class="pt" title=", 2024.1.23, 2025.10.1 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제48조(제작차에 대한 인증)
-①자동차제작자가 자동차를 제작하려면 미리 <mark class="i">기후에너지환경부장관으로부터</mark> 그 자동차의 배출가스가 배출가스보증기간에 제작차배출허용기준(<mark class="i">저공해자동차등의배출허용기준을</mark> 포함한다. 이하 같다)에 맞게 유지될 수 있다는 인증을 받아야 한다. 다만, <mark class="i">기후에너지환경부장관은</mark> 대통령령으로 정하는 자동차에는 인증을 면제하거나 생략할 수 있다. &lt;개정 2019.4.2<mark class="i">, 2022.12.27, 2025.10.1</mark>&gt;
-②자동차제작자가 제1항에 따라 인증을 받은 자동차의 인증내용 중 <mark class="i">기후에너지환경부령으로</mark> 정하는 중요한 <mark class="i">사항(이하 &quot;중요사항&quot;이라 한다)을</mark> 변경하려면 변경인증을 받아야 한다. <mark class="i">다만, 중요사항을 변경하여도 배출가스의 양이 증가하지 아니하는 경우로서 기후에너지환경부령으로 정하는 바에 따라 관계 서류를 제출한 경우 변경인증을 받은 것으로 본다. </mark>&lt;개정 2008.12.31<mark class="i">, 2024.1.23, 2025.10.1</mark>&gt;
-③ <mark class="i">자동차제작자는</mark> <mark class="i">중요사항</mark> <mark class="i">외의 사항을 변경하려는 경우 기후에너지환경부령으로 정하는 바에 따라 해당 변경내용을 기후에너지환경부장관에게 보고(이하 &quot;변경보고&quot;라 한다)하여야 한다. &lt;신설 2024.1.23, 2025.10.1&gt;
-④ 기후에너지환경부장관은 제2항 단서에 따라 제출받은 서류를 수정ㆍ보완할 필요가 있는 경우에는 기후에너지환경부령으로 정하는 바에 따라 그 자동차제작자에게 해당 서류의 수정ㆍ보완을 요청할 수 있다. &lt;신설 2024.1.23, 2025.10.1&gt;
-⑤ 제1항부터 제3항까지에</mark> 따라 인증ㆍ변경인증을 <mark class="i">받거나 변경보고를 한</mark> 자동차제작자는 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 인증ㆍ변경인증을 <mark class="i">받거나 변경보고를 한</mark> 자동차에 <mark class="i">인증ㆍ변경인증ㆍ변경보고의</mark> 표시를 하여야 한다. &lt;신설 2017.11.28<mark class="i">, 2024.1.23, 2025.10.1</mark>&gt;
-<mark class="i">⑥제1항부터</mark> <mark class="i">제5항까지의</mark> 규정에 따른 인증신청, 인증에 필요한 시험의 방법ㆍ절차, 시험수수료, 인증방법, <mark class="i">변경보고, </mark>인증의 면제ㆍ생략 및 인증 표시방법에 관하여 필요한 사항은 <mark class="i">기후에너지환경부령으로</mark> 정한다. &lt;개정 2008.12.31, 2017.11.28<mark class="i">, 2024.1.23, 2025.10.1</mark>&gt;</span></div></div></div></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(저공해 조치 의무대상 자동차)  
-① 저공해 조치 의무대상 자동차는 <mark class="cite-law" title="대기환경보전법제58조">법 제58조</mark>에 따라 환경부령으로 정하는 요건을 충족하는 자동차 및 건설기계로 한다. &lt;개정 2021.4.26.&gt; 
-② 제1항에도 불구하고 다음 각 호의 어느 하나에 해당하는 경우에는 저공해 조치 의무대상에서 제외한다. &lt;개정 2019.10.18., 2021.4.26.&gt; 
-1. 배출가스저감장치(저공해 엔진개조 및 교체를 포함한다)가 인증·보급되지 않은 자동차 및 건설기계 
-2. 출고 당시 <mark class="cite-law" title="대기환경보전법제2조,제2조">법 제2조제16호 및 제17호</mark>에 해당하는 저공해자동차 또는 배출가스저감장치가 부착된 의무대상 자동차 및 건설기계. 다만, 출고 당시 보다 향상된 저감장치가 인증·보급된 경우에는 그러하지 아니하다. 
-3. 삭제 &lt;2021.4.26.&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「대기환경보전법」 제58조</span></div><div class="act">「대기환경보전법」 제58조 개정 내용을 반영하여 이 조례 제3조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-04-26</b> · 당시 법령본 <b>2021-04-13</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제58조(저공해자동차의 운행 등)
-①시ㆍ도지사 또는 시장ㆍ군수는 관할 지역의 대기질 개선 또는 기후ㆍ생태계 변화유발물질 배출감소를 위하여 필요하다고 인정하면 그 지역에서 운행하는 자동차 및 건설기계<mark class="d">(제2조제13호의2가목에 따른 건설기계를 말한다. 이하 이 조에서 같다)</mark> 중 차령과 대기오염물질 또는 기후ㆍ생태계 변화유발물질 배출정도 등에 관하여 <mark class="d">환경부령으로</mark> 정하는 요건을 충족하는 자동차 및 건설기계의 소유자에게 그 시ㆍ도 또는 시ㆍ군의 조례에 따라 그 자동차 및 건설기계에 대하여 다음 각 호의 어느 하나에 해당하는 조치를 하도록 명령하거나 조기에 폐차할 것을 권고할 수 있다. &lt;개정 2012.2.1, 2012.5.23, 2017.11.28, 2019.4.2<mark class="pt" title=", 2022.12.27, 2025.10.1 추가됨">‸</mark>&gt;
-1.  <mark class="d">저공해자동차로의</mark> 전환 또는 개조
-2.  배출가스저감장치의 부착 또는 교체 및 배출가스 관련 부품의 교체
-3.  저공해엔진(혼소엔진을 포함한다)으로의 개조 또는 교체
-② 배출가스보증기간이 지난 자동차의 소유자는 해당 자동차에서 배출되는 배출가스가 제57조에 따른 운행차배출허용기준에 적합하게 유지되도록 <mark class="d">환경부령으로</mark> 정하는 바에 따라 배출가스저감장치를 부착 또는 교체하거나 저공해엔진으로 개조 또는 교체할 수 있다. &lt;신설 2012.2.1, 2020.5.26<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-③국가나 지방자치단체는 <mark class="d">저공해자동차의</mark> 보급, 배출가스저감장치의 부착 또는 교체와 저공해엔진으로의 개조 또는 교체를 촉진하기 위하여 다음 각 호의 어느 하나에 해당하는 자에 대하여 예산의 범위에서 필요한 자금을 보조하거나 융자할 수 있다. &lt;개정 2009.5.21, 2012.2.1, 2012.5.23, 2016.1.27, 2019.4.2<mark class="pt" title=", 2021.4.13, 2022.12.27, 2025.10.1 추가됨">‸</mark>&gt;
-1.  <mark class="d">저공해자동차를</mark> <mark class="d">구입하거나</mark> <mark class="d">저공해자동차로</mark> 개조하는 자
-2.  <mark class="d">저공해자동차에</mark> 연료를 공급하기 위한 시설 중 다음 각 목의 시설을 설치하는 자
-가.  천연가스를 연료로 사용하는 <mark class="d">자동차에</mark> 천연가스를 공급하기 위한 시설로서 <mark class="d">환경부장관이</mark> 정하는 시설
-나.  전기를 연료로 사용하는 자동차<mark class="pt" title="또는 건설기계 추가됨">‸</mark>(이하 &quot;<mark class="d">전기자동차</mark>&quot;<mark class="d">라</mark> 한다)에 전기를 충전하기 위한 시설로서 <mark class="d">환경부장관이</mark> 정하는 시설
-다.  <mark class="pt" title="수소가스를 연료로 사용하는 자동차(이하 &quot;수소전기자동차&quot;라 한다) 또는  추가됨">‸</mark>그 밖에 태양광<mark class="d">, 수소연료</mark> 등 <mark class="d">환경부장관이</mark> 정하는 저공해자동차<mark class="pt" title="및 저공해건설기계 추가됨">‸</mark> 연료공급시설
-3.  제1항 또는 제2항에 따라 자동차 및 건설기계에 배출가스저감장치를 부착 또는 교체하거나 자동차 및 건설기계의 엔진을 저공해엔진으로 개조 또는 교체하는 자
-4.  제1항에 따라 자동차 및 건설기계의 배출가스 관련 부품을 교체하는 자
-5.  제1항에 따른 권고에 따라 <mark class="d">자동차를</mark> 조기에 폐차하는 자
-6.  그 밖에 배출가스가 매우 적게 배출되는 것으로서 <mark class="d">환경부장관이</mark> 정하여 고시하는 <mark class="d">자동차를</mark> 구입하는 자
-④ <mark class="d">환경부장관은</mark> <mark class="d">제3항제1호ㆍ제3호ㆍ제4호</mark> 및 제6호에 따라 경비를 지원받은 <mark class="d">자동차의</mark> <mark class="d">소유자 및 제3항제3호 및 제4호의 경비를 지원받은</mark> 건설기계의 소유자(해당 소유자로부터 소유권을 이전받은 자를 포함한다. 이하 이 조에서 &quot;소유자&quot;라 한다)에게 <mark class="d">환경부령으로</mark> 정하는 기간의 범위에서 해당 자동차 및 건설기계의 의무운행 기간을 설정할 수 있다. &lt;신설 2008.3.21, 2012.2.1, 2013.4.5, 2019.4.2, 2020.5.26<mark class="pt" title=", 2021.4.13, 2022.12.27, 2025.10.1 추가됨">‸</mark>&gt;
-⑤ 소유자는 해당 자동차 및 건설기계의 폐차 또는 수출 등을 위하여 자동차 및 건설기계의 등록을 말소하고자 하는 경우(건설기계 엔진을 전기모터로 교체하는 경우는 제외한다) <mark class="d">환경부령으로</mark> 정하는 바에 따라 다음 각 호의 장치 및 부품 등을 해당 지방자치단체의 장에게 반납하여야 한다. 이 경우 국가나 지방자치단체는 장치 및 부품 등의 반납에 드는 비용의 일부를 예산의 범위에서 지원할 수 있다. &lt;신설 2008.3.21, 2012.2.1, 2013.4.5, 2016.1.27, 2017.11.28, 2019.4.2, 2020.12.29<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-1.  부착 또는 교체된 배출가스저감장치
-2.  개조 또는 교체된 저공해엔진
-3.  삭제 &lt;2020.12.29&gt;
-⑥ 제5항에도 불구하고 소유자는 같은 항 제1호 및 제2호의 장치 및 부품 등의 경우에는 <mark class="d">환경부령으로</mark> 정하는 바에 따라 해당 장치 또는 부품의 잔존가치에 해당하는 금액을 금전으로 납부할 수 있다. &lt;신설 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑦ <mark class="d">환경부장관</mark> 또는 지방자치단체의 장은 제5항에 따라 반납받은 배출가스저감장치 등을 재사용 또는 재활용하여야 한다. &lt;신설 2013.4.5, 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑧ <mark class="d">환경부장관</mark> 또는 지방자치단체의 장은 제5항에 따라 반납받은 배출가스저감장치 등이 재사용ㆍ재활용이 불가능하다고 <mark class="d">환경부령으로</mark> 정한 사유에 해당하는 경우에는 매각하여야 한다. &lt;신설 2013.4.5, 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑨ 제6항에 따라 징수한 금액과 제8항에 따른 매각대금은 「환경정책기본법」에 따른 환경개선특별회계의 세입으로 하고, 제3항에 따른 지원 및 저공해자동차의 개발ㆍ연구 사업에 필요한 경비 등 <mark class="d">환경부령으로</mark> 정하는 경비에 충당할 수 있다. &lt;신설 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑩ <mark class="d">환경부장관</mark> 및 지방자치단체의 장은 소유자가 제4항에 따른 의무운행 기간을 충족하지 못한 경우 <mark class="d">환경부령으로</mark> 정하는 바에 따라 제3항에 따라 지원된 경비의 일부를 회수할 수 있다. &lt;신설 <mark class="d">2012.</mark>2<mark class="d">.1, 2013.4.5, 2016.12.27&gt;
-⑪ 저공해자동차 또는 제1항에 따라 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 자동차 및 건설기계(이하 이 조에서 &quot;저공해자동차등&quot;이라 한다)의 소유자는 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수에게 저공해자동차등에 해당함을 인증하는 표지의 발급을 신청할 수 있다. &lt;신설 2012.5.23, 2013.4.5, 2016.12.27, 2019.4.2&gt;
-⑫ 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수는 제11항에 따른 인증 신청이 있는 경우 해당 자동차 및 건설기계가 저공해자동차등에 해당하는지 여부를 검토하여 표지를 발급할 수 있고, 저공해자동차등의 소유자는 발급받은 표지를 저공해자동차등에 붙일 수 있다. &lt;신설 2019.4.2, 2020.5.26&gt;
-⑬ 환경부장관이나 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수는 제12항에 따라 발급받은 표지를 붙인 자동차에 대하여 주차료 감</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제58조(저공해자동차의 운행 등)
-①시ㆍ도지사 또는 시장ㆍ군수는 관할 지역의 대기질 개선 또는 기후ㆍ생태계 변화유발물질 배출감소를 위하여 필요하다고 인정하면 그 지역에서 운행하는 자동차 및 건설기계<mark class="pt" title="(제2조제13호의2가목에 따른 건설기계를 말한다. 이하 이 조에서 같다) 삭제됨">‸</mark> 중 차령과 대기오염물질 또는 기후ㆍ생태계 변화유발물질 배출정도 등에 관하여 <mark class="i">기후에너지환경부령으로</mark> 정하는 요건을 충족하는 자동차 및 건설기계의 소유자에게 그 시ㆍ도 또는 시ㆍ군의 조례에 따라 그 자동차 및 건설기계에 대하여 다음 각 호의 어느 하나에 해당하는 조치를 하도록 명령하거나 조기에 폐차할 것을 권고할 수 있다. &lt;개정 2012.2.1, 2012.5.23, 2017.11.28, 2019.4.2<mark class="i">, 2022.12.27, 2025.10.1</mark>&gt;
-1.  <mark class="i">저공해자동차 또는 저공해건설기계로의</mark> 전환 또는 개조
-2.  배출가스저감장치의 부착 또는 교체 및 배출가스 관련 부품의 교체
-3.  저공해엔진(혼소엔진을 포함한다)으로의 개조 또는 교체
-② 배출가스보증기간이 지난 자동차의 소유자는 해당 자동차에서 배출되는 배출가스가 제57조에 따른 운행차배출허용기준에 적합하게 유지되도록 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 배출가스저감장치를 부착 또는 교체하거나 저공해엔진으로 개조 또는 교체할 수 있다. &lt;신설 2012.2.1, 2020.5.26<mark class="i">, 2025.10.1</mark>&gt;
-③국가나 지방자치단체는 <mark class="i">저공해자동차 및 저공해건설기계의</mark> 보급, 배출가스저감장치의 부착 또는 교체와 저공해엔진으로의 개조 또는 교체를 촉진하기 위하여 다음 각 호의 어느 하나에 해당하는 자에 대하여 예산의 범위에서 필요한 자금을 보조하거나 융자할 수 있다. &lt;개정 2009.5.21, 2012.2.1, 2012.5.23, 2016.1.27, 2019.4.2<mark class="i">, 2021.4.13, 2022.12.27, 2025.10.1</mark>&gt;
-1.  <mark class="i">저공해자동차</mark> <mark class="i">또는</mark> <mark class="i">저공해건설기계를 구입하는 자. 이 경우 제58조의2제1항에 따른 자동차판매자로부터의 구매 여부, 저공해자동차 또는 저공해건설기계 판매가격 등 기후에너지환경부령으로 정하는 기준에 따라 자금의 보조 및 융자를 차등적으로 할 수 있다.
-1의2.  저공해자동차 또는 저공해건설기계로</mark> 개조하는 자
-2.  <mark class="i">저공해자동차 또는 저공해건설기계에</mark> 연료를 공급하기 위한 시설 중 다음 각 목의 시설을 설치하는 자
-가.  천연가스를 연료로 사용하는 <mark class="i">자동차 또는 건설기계에</mark> 천연가스를 공급하기 위한 시설로서 <mark class="i">기후에너지환경부장관이</mark> 정하는 시설
-나.  전기를 연료로 사용하는 자동차<mark class="i"> 또는 건설기계</mark>(이하 &quot;<mark class="i">전기자동차등</mark>&quot;<mark class="i">이라</mark> 한다)에 전기를 충전하기 위한 시설로서 <mark class="i">기후에너지환경부장관이</mark> 정하는 시설
-다.  <mark class="i">수소가스를 연료로 사용하는 자동차(이하 &quot;수소전기자동차&quot;라 한다) 또는 건설기계에 수소가스를 충전하기 위한 시설로서 기후에너지환경부장관이 정하는 시설(이하 &quot;수소연료공급시설&quot;이라 한다)
-라.  </mark>그 밖에 태양광<mark class="pt" title=", 수소연료 삭제됨">‸</mark> 등 <mark class="i">기후에너지환경부장관이</mark> 정하는 저공해자동차<mark class="i"> 및 저공해건설기계</mark> 연료공급시설
-3.  제1항 또는 제2항에 따라 자동차 및 건설기계에 배출가스저감장치를 부착 또는 교체하거나 자동차 및 건설기계의 엔진을 저공해엔진으로 개조 또는 교체하는 자
-4.  제1항에 따라 자동차 및 건설기계의 배출가스 관련 부품을 교체하는 자
-5.  제1항에 따른 권고에 따라 <mark class="i">자동차 또는 건설기계를</mark> 조기에 폐차하는 자
-6.  그 밖에 배출가스가 매우 적게 배출되는 것으로서 <mark class="i">기후에너지환경부장관이</mark> 정하여 고시하는 <mark class="i">자동차 또는 건설기계를</mark> 구입하는 자
-④ <mark class="i">기후에너지환경부장관은</mark> <mark class="i">제3항제1호ㆍ제1호의2ㆍ제3호ㆍ제4호</mark> 및 제6호에 따라 경비를 지원받은 <mark class="i">자동차</mark> <mark class="i">또는</mark> 건설기계의 소유자(해당 소유자로부터 소유권을 이전받은 자를 포함한다. 이하 이 조에서 &quot;소유자&quot;라 한다)에게 <mark class="i">기후에너지환경부령으로</mark> 정하는 기간의 범위에서 해당 자동차 및 건설기계의 의무운행 기간을 설정할 수 있다. &lt;신설 2008.3.21, 2012.2.1, 2013.4.5, 2019.4.2, 2020.5.26<mark class="i">, 2021.4.13, 2022.12.27, 2025.10.1</mark>&gt;
-⑤ 소유자는 해당 자동차 및 건설기계의 폐차 또는 수출 등을 위하여 자동차 및 건설기계의 등록을 말소하고자 하는 경우(건설기계 엔진을 전기모터로 교체하는 경우는 제외한다) <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 다음 각 호의 장치 및 부품 등을 해당 지방자치단체의 장에게 반납하여야 한다. 이 경우 국가나 지방자치단체는 장치 및 부품 등의 반납에 드는 비용의 일부를 예산의 범위에서 지원할 수 있다. &lt;신설 2008.3.21, 2012.2.1, 2013.4.5, 2016.1.27, 2017.11.28, 2019.4.2, 2020.12.29<mark class="i">, 2025.10.1</mark>&gt;
-1.  부착 또는 교체된 배출가스저감장치
-2.  개조 또는 교체된 저공해엔진
-3.  삭제 &lt;2020.12.29&gt;
-⑥ 제5항에도 불구하고 소유자는 같은 항 제1호 및 제2호의 장치 및 부품 등의 경우에는 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 해당 장치 또는 부품의 잔존가치에 해당하는 금액을 금전으로 납부할 수 있다. &lt;신설 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑦ <mark class="i">기후에너지환경부장관</mark> 또는 지방자치단체의 장은 제5항에 따라 반납받은 배출가스저감장치 등을 재사용 또는 재활용하여야 한다. &lt;신설 2013.4.5, 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑧ <mark class="i">기후에너지환경부장관</mark> 또는 지방자치단체의 장은 제5항에 따라 반납받은 배출가스저감장치 등이 재사용ㆍ재활용이 불가능하다고 <mark class="i">기후에너지환경부령으로</mark> 정한 사유에 해당하는 경우에는 매각하여야 한다. &lt;신설 2013.4.5, 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑨ 제6항에 따라 징수한 금액과 제8항에 따른 매각대금은 「환경정책기본법」에 따른 환경개선특별회계의 세입으로 하고, 제3항에 따른 지원 및 저공해자동차의 개발ㆍ연구 사업에 필요한 경비 등 <mark class="i">기후에너지환경부령으로</mark> 정하는 경비에 충당할 수 있다. &lt;신설 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑩ <mark class="i">기후에너지환경부장관</mark> 및 지방자치단체의 장은 소유자가 제4항에 따른 의무운행 기간을 충족하지 못한 경우 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 제3항에 따라 지원된 경비의 일부를 회수할 수 있다. &lt;신설 <mark class="pt" title="2012. 삭제됨">‸</mark>2<mark class="pt" title=".1, 2013.4.5, 2016.12.27&gt;
-⑪ 저공해자동차 또는 제1 삭제됨">‸</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「대기환경보전법」 제2조제17호</span></div><div class="act">「대기환경보전법」 제2조 개정 내용을 반영하여 이 조례 제3조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-04-26</b> · 당시 법령본 <b>2019-04-02</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">17.  &quot;배출가스저감장치&quot;란 <mark class="d">자동차에서</mark> 배출되는 대기오염물질을 줄이기 위하여 <mark class="d">자동차에</mark> 부착 또는 교체하는 장치로서 <mark class="d">환경부령으로</mark> 정하는 저감효율에 적합한 장치를 말한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">17.  &quot;배출가스저감장치&quot;란 <mark class="i">자동차 또는 건설기계에서</mark> 배출되는 대기오염물질을 줄이기 위하여 <mark class="i">자동차 또는 건설기계에</mark> 부착 또는 교체하는 장치로서 <mark class="i">기후에너지환경부령으로</mark> 정하는 저감효율에 적합한 장치를 말한다.</span></div></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(저공해 조치 기간)  
-① 제4조제1항에 따른 저공해 조치 의무대상 자동차 및 건설기계의 소유자는 저공해 조치 명령을 받은 날부터 6개월 이내에 저공해 조치를 이행하여야 한다. &lt;개정 2021.4.26.&gt; 
-② 제4조제1항·제2항 및 제1항의 규정에도 불구하고 <mark class="cite-law" title="대기관리권역의 대기환경개선에 관한 특별법제26조">특별법 제26조</mark>에 의한 특정경유자동차의 정밀검사결과 매연농도가 10퍼센트 이하이거나 저공해 조치 의무대상 자동차의 소유자가 저공해 조치가 불가능하다고 인정되는 객관적인 자료를 제출하는 경우에는 1년(매연농도가 10퍼센트 이하인 차량은 특정경유자동차 검사유효기간)의 범위 이내에서 저공해 조치 이행 기간을 유예할 수 있다. &lt;개정 2021.4.26.&gt; 
-③ 제2항에 따른 저공해 조치 의무대상 자동차의 소유자가 유예기간 이내에 동일한 사유로 저공해 조치 이행기간 재연장을 신청하는 경우에는 1년(매연농도가 10퍼센트 이하인 자동차는 차기 특정경유자동차 검사유효기간)의 범위 이내에서 저공해 조치 이행 기간을 재연장할 수 있다. &lt;개정 2021.4.26.&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「대기관리권역의 대기환경개선에 관한 특별법」 제26조</span></div><div class="act">「대기관리권역의 대기환경개선에 관한 특별법」 제26조 개정 내용을 반영하여 이 조례 제5조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-04-26</b> · 당시 법령본 <b>2020-05-26</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제26조(특정경유자동차의 관리)
-① <mark class="d">환경부장관은</mark> 제9조제2항제1호에 따른 대기환경개선목표를 달성하기 위하여 필요하다고 인정하면 특정경유자동차에 대하여 「대기환경보전법」 제57조에 따른 운행차배출허용기준보다 강화된 배출허용기준을 <mark class="d">환경부령으로</mark> 정할 수 있다. 이 경우 <mark class="d">환경부장관은</mark> 관계 중앙행정기관의 장과 협의하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-② 특정경유자동차의 소유자는 그 자동차에서 배출되는 배출가스가 제1항에 따른 특정경유자동차의 배출허용기준에 맞는지에 대하여 「자동차관리법」 제43조의2에 따라 검사를 받아야 한다.
-③ 특정경유자동차의 소유자는 해당 자동차에서 배출되는 배출가스가 제1항에 따른 특정경유자동차의 배출허용기준에 맞게 유지되도록 「대기환경보전법」 제58조에 따른 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체하여야 한다. 다만, 「대기환경보전법」 제58조제1항에 따라 시ㆍ도 또는 시ㆍ군의 조례로 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체하도록 명령을 받은 특정경유자동차의 소유자는 배출허용기준 적합 여부와 관계없이 이를 이행하여야 한다. &lt;개정 2020.5.26&gt;
-④ 제3항에 따라 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 특정경유자동차에 대하여는 「대기환경보전법」 제58조에 따른 배출가스저감장치 또는 저공해엔진에 대하여 <mark class="d">환경부령으로</mark> 정하는 기간(이하 &quot;보증기간&quot;이라 한다) 동안 <mark class="d">환경부령으로</mark> 정하는 바에 따라 제2항에 따른 검사를 면제할 수 있다. 다만, 배출가스저감장치에 부착한 측정기기 및 「대기환경보전법」 제54조에 따른 자동차 배출가스 종합전산체계를 통하여 배출가스 저감장치의 성능이 유지되는지를 확인할 수 있는 경우에는 제2항의 검사를 면제한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-⑤ <mark class="d">환경부장관이나</mark> 시ㆍ도지사 및 시장ㆍ군수는 다음 각 호의 어느 하나에 해당하는 자가 제3항에 따른 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체하면 그 경비를 지원할 수 있다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-1.  특정경유자동차의 소유자
-2.  대기관리권역 외의 지역을 관할하는 지방자치단체에 등록된 사업용 경유자동차 중 특정경유자동차의 종류에 해당하는 자동차로서 대기관리권역에서 대통령령으로 정하는 기간 이상 운행하는 자동차의 소유자
-⑥ 제2항에 따른 검사방법ㆍ절차 등에 관하여 필요한 사항은 <mark class="d">환경부령으로</mark> 정한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-⑦ 제3항에 따라 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 특정경유자동차의 소유자는 그 장치 또는 엔진이 「대기환경보전법」 제60조에 따른 저감효율에 맞게 유지되도록 배출가스저감장치 등의 성능 유지를 위하여 <mark class="d">환경부령으로</mark> 정하는 사항을 지켜야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-⑧ 시ㆍ도지사 및 시장ㆍ군수는 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 특정경유자동차의 소유자가 제7항을 지키지 아니할 경우에는 배출가스저감장치나 저공해엔진의 성능을 유지하도록 시정을 명할 수 있다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제26조(특정경유자동차의 관리)
-① <mark class="i">기후에너지환경부장관은</mark> 제9조제2항제1호에 따른 대기환경개선목표를 달성하기 위하여 필요하다고 인정하면 특정경유자동차에 대하여 「대기환경보전법」 제57조에 따른 운행차배출허용기준보다 강화된 배출허용기준을 <mark class="i">기후에너지환경부령으로</mark> 정할 수 있다. 이 경우 <mark class="i">기후에너지환경부장관은</mark> 관계 중앙행정기관의 장과 협의하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-② 특정경유자동차의 소유자는 그 자동차에서 배출되는 배출가스가 제1항에 따른 특정경유자동차의 배출허용기준에 맞는지에 대하여 「자동차관리법」 제43조의2에 따라 검사를 받아야 한다.
-③ 특정경유자동차의 소유자는 해당 자동차에서 배출되는 배출가스가 제1항에 따른 특정경유자동차의 배출허용기준에 맞게 유지되도록 「대기환경보전법」 제58조에 따른 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체하여야 한다. 다만, 「대기환경보전법」 제58조제1항에 따라 시ㆍ도 또는 시ㆍ군의 조례로 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체하도록 명령을 받은 특정경유자동차의 소유자는 배출허용기준 적합 여부와 관계없이 이를 이행하여야 한다. &lt;개정 2020.5.26&gt;
-④ 제3항에 따라 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 특정경유자동차에 대하여는 「대기환경보전법」 제58조에 따른 배출가스저감장치 또는 저공해엔진에 대하여 <mark class="i">기후에너지환경부령으로</mark> 정하는 기간(이하 &quot;보증기간&quot;이라 한다) 동안 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 제2항에 따른 검사를 면제할 수 있다. 다만, 배출가스저감장치에 부착한 측정기기 및 「대기환경보전법」 제54조에 따른 자동차 배출가스 종합전산체계를 통하여 배출가스 저감장치의 성능이 유지되는지를 확인할 수 있는 경우에는 제2항의 검사를 면제한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-⑤ <mark class="i">기후에너지환경부장관이나</mark> 시ㆍ도지사 및 시장ㆍ군수는 다음 각 호의 어느 하나에 해당하는 자가 제3항에 따른 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체하면 그 경비를 지원할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-1.  특정경유자동차의 소유자
-2.  대기관리권역 외의 지역을 관할하는 지방자치단체에 등록된 사업용 경유자동차 중 특정경유자동차의 종류에 해당하는 자동차로서 대기관리권역에서 대통령령으로 정하는 기간 이상 운행하는 자동차의 소유자
-⑥ 제2항에 따른 검사방법ㆍ절차 등에 관하여 필요한 사항은 <mark class="i">기후에너지환경부령으로</mark> 정한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-⑦ 제3항에 따라 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 특정경유자동차의 소유자는 그 장치 또는 엔진이 「대기환경보전법」 제60조에 따른 저감효율에 맞게 유지되도록 배출가스저감장치 등의 성능 유지를 위하여 <mark class="i">기후에너지환경부령으로</mark> 정하는 사항을 지켜야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-⑧ 시ㆍ도지사 및 시장ㆍ군수는 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 특정경유자동차의 소유자가 제7항을 지키지 아니할 경우에는 배출가스저감장치나 저공해엔진의 성능을 유지하도록 시정을 명할 수 있다.</span></div></div></div></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(재정지원) 시장은 <mark class="cite-law" title="대기환경보전법제58조">법 제58조</mark>에 따라 저공해 조치를 이행한 자동차 및 건설기계에 대하여 예산의 범위에서 필요한 경비를 지원할 수 있다.&lt;전문개정 2021.4.26.&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「대기환경보전법」 제58조</span></div><div class="act">「대기환경보전법」 제58조 개정 내용을 반영하여 이 조례 제7조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-04-26</b> · 당시 법령본 <b>2021-04-13</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제58조(저공해자동차의 운행 등)
-①시ㆍ도지사 또는 시장ㆍ군수는 관할 지역의 대기질 개선 또는 기후ㆍ생태계 변화유발물질 배출감소를 위하여 필요하다고 인정하면 그 지역에서 운행하는 자동차 및 건설기계<mark class="d">(제2조제13호의2가목에 따른 건설기계를 말한다. 이하 이 조에서 같다)</mark> 중 차령과 대기오염물질 또는 기후ㆍ생태계 변화유발물질 배출정도 등에 관하여 <mark class="d">환경부령으로</mark> 정하는 요건을 충족하는 자동차 및 건설기계의 소유자에게 그 시ㆍ도 또는 시ㆍ군의 조례에 따라 그 자동차 및 건설기계에 대하여 다음 각 호의 어느 하나에 해당하는 조치를 하도록 명령하거나 조기에 폐차할 것을 권고할 수 있다. &lt;개정 2012.2.1, 2012.5.23, 2017.11.28, 2019.4.2<mark class="pt" title=", 2022.12.27, 2025.10.1 추가됨">‸</mark>&gt;
-1.  <mark class="d">저공해자동차로의</mark> 전환 또는 개조
-2.  배출가스저감장치의 부착 또는 교체 및 배출가스 관련 부품의 교체
-3.  저공해엔진(혼소엔진을 포함한다)으로의 개조 또는 교체
-② 배출가스보증기간이 지난 자동차의 소유자는 해당 자동차에서 배출되는 배출가스가 제57조에 따른 운행차배출허용기준에 적합하게 유지되도록 <mark class="d">환경부령으로</mark> 정하는 바에 따라 배출가스저감장치를 부착 또는 교체하거나 저공해엔진으로 개조 또는 교체할 수 있다. &lt;신설 2012.2.1, 2020.5.26<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-③국가나 지방자치단체는 <mark class="d">저공해자동차의</mark> 보급, 배출가스저감장치의 부착 또는 교체와 저공해엔진으로의 개조 또는 교체를 촉진하기 위하여 다음 각 호의 어느 하나에 해당하는 자에 대하여 예산의 범위에서 필요한 자금을 보조하거나 융자할 수 있다. &lt;개정 2009.5.21, 2012.2.1, 2012.5.23, 2016.1.27, 2019.4.2<mark class="pt" title=", 2021.4.13, 2022.12.27, 2025.10.1 추가됨">‸</mark>&gt;
-1.  <mark class="d">저공해자동차를</mark> <mark class="d">구입하거나</mark> <mark class="d">저공해자동차로</mark> 개조하는 자
-2.  <mark class="d">저공해자동차에</mark> 연료를 공급하기 위한 시설 중 다음 각 목의 시설을 설치하는 자
-가.  천연가스를 연료로 사용하는 <mark class="d">자동차에</mark> 천연가스를 공급하기 위한 시설로서 <mark class="d">환경부장관이</mark> 정하는 시설
-나.  전기를 연료로 사용하는 자동차<mark class="pt" title="또는 건설기계 추가됨">‸</mark>(이하 &quot;<mark class="d">전기자동차</mark>&quot;<mark class="d">라</mark> 한다)에 전기를 충전하기 위한 시설로서 <mark class="d">환경부장관이</mark> 정하는 시설
-다.  <mark class="pt" title="수소가스를 연료로 사용하는 자동차(이하 &quot;수소전기자동차&quot;라 한다) 또는  추가됨">‸</mark>그 밖에 태양광<mark class="d">, 수소연료</mark> 등 <mark class="d">환경부장관이</mark> 정하는 저공해자동차<mark class="pt" title="및 저공해건설기계 추가됨">‸</mark> 연료공급시설
-3.  제1항 또는 제2항에 따라 자동차 및 건설기계에 배출가스저감장치를 부착 또는 교체하거나 자동차 및 건설기계의 엔진을 저공해엔진으로 개조 또는 교체하는 자
-4.  제1항에 따라 자동차 및 건설기계의 배출가스 관련 부품을 교체하는 자
-5.  제1항에 따른 권고에 따라 <mark class="d">자동차를</mark> 조기에 폐차하는 자
-6.  그 밖에 배출가스가 매우 적게 배출되는 것으로서 <mark class="d">환경부장관이</mark> 정하여 고시하는 <mark class="d">자동차를</mark> 구입하는 자
-④ <mark class="d">환경부장관은</mark> <mark class="d">제3항제1호ㆍ제3호ㆍ제4호</mark> 및 제6호에 따라 경비를 지원받은 <mark class="d">자동차의</mark> <mark class="d">소유자 및 제3항제3호 및 제4호의 경비를 지원받은</mark> 건설기계의 소유자(해당 소유자로부터 소유권을 이전받은 자를 포함한다. 이하 이 조에서 &quot;소유자&quot;라 한다)에게 <mark class="d">환경부령으로</mark> 정하는 기간의 범위에서 해당 자동차 및 건설기계의 의무운행 기간을 설정할 수 있다. &lt;신설 2008.3.21, 2012.2.1, 2013.4.5, 2019.4.2, 2020.5.26<mark class="pt" title=", 2021.4.13, 2022.12.27, 2025.10.1 추가됨">‸</mark>&gt;
-⑤ 소유자는 해당 자동차 및 건설기계의 폐차 또는 수출 등을 위하여 자동차 및 건설기계의 등록을 말소하고자 하는 경우(건설기계 엔진을 전기모터로 교체하는 경우는 제외한다) <mark class="d">환경부령으로</mark> 정하는 바에 따라 다음 각 호의 장치 및 부품 등을 해당 지방자치단체의 장에게 반납하여야 한다. 이 경우 국가나 지방자치단체는 장치 및 부품 등의 반납에 드는 비용의 일부를 예산의 범위에서 지원할 수 있다. &lt;신설 2008.3.21, 2012.2.1, 2013.4.5, 2016.1.27, 2017.11.28, 2019.4.2, 2020.12.29<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-1.  부착 또는 교체된 배출가스저감장치
-2.  개조 또는 교체된 저공해엔진
-3.  삭제 &lt;2020.12.29&gt;
-⑥ 제5항에도 불구하고 소유자는 같은 항 제1호 및 제2호의 장치 및 부품 등의 경우에는 <mark class="d">환경부령으로</mark> 정하는 바에 따라 해당 장치 또는 부품의 잔존가치에 해당하는 금액을 금전으로 납부할 수 있다. &lt;신설 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑦ <mark class="d">환경부장관</mark> 또는 지방자치단체의 장은 제5항에 따라 반납받은 배출가스저감장치 등을 재사용 또는 재활용하여야 한다. &lt;신설 2013.4.5, 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑧ <mark class="d">환경부장관</mark> 또는 지방자치단체의 장은 제5항에 따라 반납받은 배출가스저감장치 등이 재사용ㆍ재활용이 불가능하다고 <mark class="d">환경부령으로</mark> 정한 사유에 해당하는 경우에는 매각하여야 한다. &lt;신설 2013.4.5, 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑨ 제6항에 따라 징수한 금액과 제8항에 따른 매각대금은 「환경정책기본법」에 따른 환경개선특별회계의 세입으로 하고, 제3항에 따른 지원 및 저공해자동차의 개발ㆍ연구 사업에 필요한 경비 등 <mark class="d">환경부령으로</mark> 정하는 경비에 충당할 수 있다. &lt;신설 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑩ <mark class="d">환경부장관</mark> 및 지방자치단체의 장은 소유자가 제4항에 따른 의무운행 기간을 충족하지 못한 경우 <mark class="d">환경부령으로</mark> 정하는 바에 따라 제3항에 따라 지원된 경비의 일부를 회수할 수 있다. &lt;신설 <mark class="d">2012.</mark>2<mark class="d">.1, 2013.4.5, 2016.12.27&gt;
-⑪ 저공해자동차 또는 제1항에 따라 배출가스저감장치를 부착하거나 저공해엔진으로 개조 또는 교체한 자동차 및 건설기계(이하 이 조에서 &quot;저공해자동차등&quot;이라 한다)의 소유자는 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수에게 저공해자동차등에 해당함을 인증하는 표지의 발급을 신청할 수 있다. &lt;신설 2012.5.23, 2013.4.5, 2016.12.27, 2019.4.2&gt;
-⑫ 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수는 제11항에 따른 인증 신청이 있는 경우 해당 자동차 및 건설기계가 저공해자동차등에 해당하는지 여부를 검토하여 표지를 발급할 수 있고, 저공해자동차등의 소유자는 발급받은 표지를 저공해자동차등에 붙일 수 있다. &lt;신설 2019.4.2, 2020.5.26&gt;
-⑬ 환경부장관이나 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수는 제12항에 따라 발급받은 표지를 붙인 자동차에 대하여 주차료 감</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제58조(저공해자동차의 운행 등)
-①시ㆍ도지사 또는 시장ㆍ군수는 관할 지역의 대기질 개선 또는 기후ㆍ생태계 변화유발물질 배출감소를 위하여 필요하다고 인정하면 그 지역에서 운행하는 자동차 및 건설기계<mark class="pt" title="(제2조제13호의2가목에 따른 건설기계를 말한다. 이하 이 조에서 같다) 삭제됨">‸</mark> 중 차령과 대기오염물질 또는 기후ㆍ생태계 변화유발물질 배출정도 등에 관하여 <mark class="i">기후에너지환경부령으로</mark> 정하는 요건을 충족하는 자동차 및 건설기계의 소유자에게 그 시ㆍ도 또는 시ㆍ군의 조례에 따라 그 자동차 및 건설기계에 대하여 다음 각 호의 어느 하나에 해당하는 조치를 하도록 명령하거나 조기에 폐차할 것을 권고할 수 있다. &lt;개정 2012.2.1, 2012.5.23, 2017.11.28, 2019.4.2<mark class="i">, 2022.12.27, 2025.10.1</mark>&gt;
-1.  <mark class="i">저공해자동차 또는 저공해건설기계로의</mark> 전환 또는 개조
-2.  배출가스저감장치의 부착 또는 교체 및 배출가스 관련 부품의 교체
-3.  저공해엔진(혼소엔진을 포함한다)으로의 개조 또는 교체
-② 배출가스보증기간이 지난 자동차의 소유자는 해당 자동차에서 배출되는 배출가스가 제57조에 따른 운행차배출허용기준에 적합하게 유지되도록 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 배출가스저감장치를 부착 또는 교체하거나 저공해엔진으로 개조 또는 교체할 수 있다. &lt;신설 2012.2.1, 2020.5.26<mark class="i">, 2025.10.1</mark>&gt;
-③국가나 지방자치단체는 <mark class="i">저공해자동차 및 저공해건설기계의</mark> 보급, 배출가스저감장치의 부착 또는 교체와 저공해엔진으로의 개조 또는 교체를 촉진하기 위하여 다음 각 호의 어느 하나에 해당하는 자에 대하여 예산의 범위에서 필요한 자금을 보조하거나 융자할 수 있다. &lt;개정 2009.5.21, 2012.2.1, 2012.5.23, 2016.1.27, 2019.4.2<mark class="i">, 2021.4.13, 2022.12.27, 2025.10.1</mark>&gt;
-1.  <mark class="i">저공해자동차</mark> <mark class="i">또는</mark> <mark class="i">저공해건설기계를 구입하는 자. 이 경우 제58조의2제1항에 따른 자동차판매자로부터의 구매 여부, 저공해자동차 또는 저공해건설기계 판매가격 등 기후에너지환경부령으로 정하는 기준에 따라 자금의 보조 및 융자를 차등적으로 할 수 있다.
-1의2.  저공해자동차 또는 저공해건설기계로</mark> 개조하는 자
-2.  <mark class="i">저공해자동차 또는 저공해건설기계에</mark> 연료를 공급하기 위한 시설 중 다음 각 목의 시설을 설치하는 자
-가.  천연가스를 연료로 사용하는 <mark class="i">자동차 또는 건설기계에</mark> 천연가스를 공급하기 위한 시설로서 <mark class="i">기후에너지환경부장관이</mark> 정하는 시설
-나.  전기를 연료로 사용하는 자동차<mark class="i"> 또는 건설기계</mark>(이하 &quot;<mark class="i">전기자동차등</mark>&quot;<mark class="i">이라</mark> 한다)에 전기를 충전하기 위한 시설로서 <mark class="i">기후에너지환경부장관이</mark> 정하는 시설
-다.  <mark class="i">수소가스를 연료로 사용하는 자동차(이하 &quot;수소전기자동차&quot;라 한다) 또는 건설기계에 수소가스를 충전하기 위한 시설로서 기후에너지환경부장관이 정하는 시설(이하 &quot;수소연료공급시설&quot;이라 한다)
-라.  </mark>그 밖에 태양광<mark class="pt" title=", 수소연료 삭제됨">‸</mark> 등 <mark class="i">기후에너지환경부장관이</mark> 정하는 저공해자동차<mark class="i"> 및 저공해건설기계</mark> 연료공급시설
-3.  제1항 또는 제2항에 따라 자동차 및 건설기계에 배출가스저감장치를 부착 또는 교체하거나 자동차 및 건설기계의 엔진을 저공해엔진으로 개조 또는 교체하는 자
-4.  제1항에 따라 자동차 및 건설기계의 배출가스 관련 부품을 교체하는 자
-5.  제1항에 따른 권고에 따라 <mark class="i">자동차 또는 건설기계를</mark> 조기에 폐차하는 자
-6.  그 밖에 배출가스가 매우 적게 배출되는 것으로서 <mark class="i">기후에너지환경부장관이</mark> 정하여 고시하는 <mark class="i">자동차 또는 건설기계를</mark> 구입하는 자
-④ <mark class="i">기후에너지환경부장관은</mark> <mark class="i">제3항제1호ㆍ제1호의2ㆍ제3호ㆍ제4호</mark> 및 제6호에 따라 경비를 지원받은 <mark class="i">자동차</mark> <mark class="i">또는</mark> 건설기계의 소유자(해당 소유자로부터 소유권을 이전받은 자를 포함한다. 이하 이 조에서 &quot;소유자&quot;라 한다)에게 <mark class="i">기후에너지환경부령으로</mark> 정하는 기간의 범위에서 해당 자동차 및 건설기계의 의무운행 기간을 설정할 수 있다. &lt;신설 2008.3.21, 2012.2.1, 2013.4.5, 2019.4.2, 2020.5.26<mark class="i">, 2021.4.13, 2022.12.27, 2025.10.1</mark>&gt;
-⑤ 소유자는 해당 자동차 및 건설기계의 폐차 또는 수출 등을 위하여 자동차 및 건설기계의 등록을 말소하고자 하는 경우(건설기계 엔진을 전기모터로 교체하는 경우는 제외한다) <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 다음 각 호의 장치 및 부품 등을 해당 지방자치단체의 장에게 반납하여야 한다. 이 경우 국가나 지방자치단체는 장치 및 부품 등의 반납에 드는 비용의 일부를 예산의 범위에서 지원할 수 있다. &lt;신설 2008.3.21, 2012.2.1, 2013.4.5, 2016.1.27, 2017.11.28, 2019.4.2, 2020.12.29<mark class="i">, 2025.10.1</mark>&gt;
-1.  부착 또는 교체된 배출가스저감장치
-2.  개조 또는 교체된 저공해엔진
-3.  삭제 &lt;2020.12.29&gt;
-⑥ 제5항에도 불구하고 소유자는 같은 항 제1호 및 제2호의 장치 및 부품 등의 경우에는 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 해당 장치 또는 부품의 잔존가치에 해당하는 금액을 금전으로 납부할 수 있다. &lt;신설 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑦ <mark class="i">기후에너지환경부장관</mark> 또는 지방자치단체의 장은 제5항에 따라 반납받은 배출가스저감장치 등을 재사용 또는 재활용하여야 한다. &lt;신설 2013.4.5, 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑧ <mark class="i">기후에너지환경부장관</mark> 또는 지방자치단체의 장은 제5항에 따라 반납받은 배출가스저감장치 등이 재사용ㆍ재활용이 불가능하다고 <mark class="i">기후에너지환경부령으로</mark> 정한 사유에 해당하는 경우에는 매각하여야 한다. &lt;신설 2013.4.5, 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑨ 제6항에 따라 징수한 금액과 제8항에 따른 매각대금은 「환경정책기본법」에 따른 환경개선특별회계의 세입으로 하고, 제3항에 따른 지원 및 저공해자동차의 개발ㆍ연구 사업에 필요한 경비 등 <mark class="i">기후에너지환경부령으로</mark> 정하는 경비에 충당할 수 있다. &lt;신설 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑩ <mark class="i">기후에너지환경부장관</mark> 및 지방자치단체의 장은 소유자가 제4항에 따른 의무운행 기간을 충족하지 못한 경우 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 제3항에 따라 지원된 경비의 일부를 회수할 수 있다. &lt;신설 <mark class="pt" title="2012. 삭제됨">‸</mark>2<mark class="pt" title=".1, 2013.4.5, 2016.12.27&gt;
-⑪ 저공해자동차 또는 제1 삭제됨">‸</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 멸종위기 맹꽁이 등 야생생물 보호 및 생물다양성 증진을 위한 조례</h2><div class="meta">시행 2020-03-16 · 정비 항목 5건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 5</span></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(지역생물다양성전략 수립) 
-① 시장은 <mark class="cite-law" title="생물다양성 보전 및 이용에 관한 법률제7조">「생물다양성 보전 및 이용에 관한 법률」 제7조</mark>에 부합하도록 군포시 지역생물다양성전략(이하“지역생물다양성전략”이라 한다)을 5년마다 수립할 수 있다.
-② 지역생물다양성전략에는 다음 각 호의 사항이 포함되어야 한다.
-1. 생물다양성의 현황, 목표 및 기본방향
-2. 생물다양성 및 구성요소의 보호 및 관리
-3. 생물다양성 구성요소의 지속가능한 이용
-4. 생물다양성 관련 연구ㆍ기술개발ㆍ 교육홍보
-5. 사업 시행 시 소요되는 비용 산정 및 재원조달 방안
-6. 그 밖에 생물다양성의 보전 및 이용에 필요한 사항
-③ 시장은 지역생물다양성전략을 수립하기 전에 공청회, 세미나 등을 개최하여 전문가, 시민의 의견을 수렴하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「생물다양성 보전 및 이용에 관한 법률」 제7조</span></div><div class="act">「생물다양성 보전 및 이용에 관한 법률」 제7조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2019-12-10</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제7조(국가생물다양성전략의 수립)
-① 정부는 국가의 생물다양성 보전과 그 구성요소의 지속가능한 이용을 위한 전략(이하 &quot;국가생물다양성전략&quot;이라 한다)을 5년마다 수립하여야 한다.
-② 국가생물다양성전략에는 다음 각 호의 사항이 포함되어야 한다. &lt;개정 2018.10.16<mark class="pt" title=", 2019.12.10 추가됨">‸</mark>&gt;
-1.  생물다양성의 현황ㆍ목표 및 기본방향
-2.  생물다양성 및 그 구성요소의 보호 및 관리
-3.  생물다양성 구성요소의 지속가능한 이용
-4.  생물다양성에 대한 위협의 대처
-5.  생물다양성에 영향을 주는 유입주의 생물 및 외래생물의 관리
-6.  생물다양성 <mark class="pt" title="및 생태계서비스 추가됨">‸</mark>관련 연구ㆍ기술개발, 교육ㆍ홍보 및 국제협력
-7<mark class="pt" title=".  생태계서비스의 체계적인 제공 및 증진
-8 추가됨">‸</mark>.  그 밖에 생물다양성의 보전 및 이용에 필요한 사항
-③ 관계 중앙행정기관의 장은 국가생물다양성전략의 원활한 수립을 위하여 제2항 각 호의 사항에 대하여 소관 분야별로 추진전략을 수립하여 <mark class="d">환경부장관에게</mark> 통보하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-④ 국가생물다양성전략은 <mark class="d">환경부장관이</mark> 제3항에 따른 소관별 추진전략을 총괄하여 작성하고, 국무회의의 심의를 거쳐 확정된다. 이 경우 <mark class="d">환경부장관은</mark> 국가생물다양성전략의 원활한 수립을 위하여 필요하다고 인정하면 국무회의 심의 전에 관계 전문가의 의견 청취 및 관계 중앙행정기관의 장과의 협의를 할 수 있다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-⑤ <mark class="d">환경부장관은</mark> 제4항에 따라 확정된 국가생물다양성전략을 공고하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-⑥ 국가생물다양성전략을 변경하려는 경우에는 제3항부터 제5항까지의 규정을 준용한다. 다만, 대통령령으로 정하는 경미한 사항을 변경하는 경우에는 그러하지 아니하다.
-⑦ 그 밖에 국가생물다양성전략의 수립 등에 필요한 사항은 대통령령으로 정한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제7조(국가생물다양성전략의 수립)
-① 정부는 국가의 생물다양성 보전과 그 구성요소의 지속가능한 이용을 위한 전략(이하 &quot;국가생물다양성전략&quot;이라 한다)을 5년마다 수립하여야 한다.
-② 국가생물다양성전략에는 다음 각 호의 사항이 포함되어야 한다. &lt;개정 2018.10.16<mark class="i">, 2019.12.10</mark>&gt;
-1.  생물다양성의 현황ㆍ목표 및 기본방향
-2.  생물다양성 및 그 구성요소의 보호 및 관리
-3.  생물다양성 구성요소의 지속가능한 이용
-4.  생물다양성에 대한 위협의 대처
-5.  생물다양성에 영향을 주는 유입주의 생물 및 외래생물의 관리
-6.  생물다양성 <mark class="i">및 생태계서비스 </mark>관련 연구ㆍ기술개발, 교육ㆍ홍보 및 국제협력
-7<mark class="i">.  생태계서비스의 체계적인 제공 및 증진
-8</mark>.  그 밖에 생물다양성의 보전 및 이용에 필요한 사항
-③ 관계 중앙행정기관의 장은 국가생물다양성전략의 원활한 수립을 위하여 제2항 각 호의 사항에 대하여 소관 분야별로 추진전략을 수립하여 <mark class="i">기후에너지환경부장관에게</mark> 통보하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-④ 국가생물다양성전략은 <mark class="i">기후에너지환경부장관이</mark> 제3항에 따른 소관별 추진전략을 총괄하여 작성하고, 국무회의의 심의를 거쳐 확정된다. 이 경우 <mark class="i">기후에너지환경부장관은</mark> 국가생물다양성전략의 원활한 수립을 위하여 필요하다고 인정하면 국무회의 심의 전에 관계 전문가의 의견 청취 및 관계 중앙행정기관의 장과의 협의를 할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-⑤ <mark class="i">기후에너지환경부장관은</mark> 제4항에 따라 확정된 국가생물다양성전략을 공고하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-⑥ 국가생물다양성전략을 변경하려는 경우에는 제3항부터 제5항까지의 규정을 준용한다. 다만, 대통령령으로 정하는 경미한 사항을 변경하는 경우에는 그러하지 아니하다.
-⑦ 그 밖에 국가생물다양성전략의 수립 등에 필요한 사항은 대통령령으로 정한다.</span></div></div></div></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(자연환경조사) 
-① 시장은 <mark class="cite-law" title="자연환경보전법제30조">「자연환경보전법」 제30조제3항</mark>에 따라 자연환경 및 생물다양성 보전에 필요하다고 인정하는 경우에는 자연환경을 조사할 수 있다.
-② 자연환경조사의 대상은 다음 각 호와 같다.
-1. 야생동식물의 다양성 및 분포상황
-2. 식생 현황
-3. 맹꽁이 등 멸종위기 및 보호 야생생물, 국내 고유 생물종의 서식 현황
-4. 그 밖에 자연환경의 보전을 위하여 특히 조사할 필요가 있다고 시장이 인정하는 사항</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「자연환경보전법」 제30조제3항</span></div><div class="act">「자연환경보전법」 제30조 개정 내용을 반영하여 이 조례 제7조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2013-03-22</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">③지방자치단체의 장은 <mark class="d">당해</mark> 지방자치단체의 <mark class="d">조례가</mark> 정하는 바에 <mark class="d">의하여</mark> 관할구역의 자연환경을 조사할 수 있다.<mark class="pt" title="&lt;개정 2020.5.26&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">③지방자치단체의 장은 <mark class="i">해당</mark> 지방자치단체의 <mark class="i">조례로</mark> 정하는 바에 <mark class="i">따라</mark> 관할구역의 자연환경을 조사할 수 있다.<mark class="i"> &lt;개정 2020.5.26&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(야생생물보호구역 지정 등) 
-① 시장은 <mark class="cite-law" title="야생생물 보호 및 관리에 관한 법률제33조">「야생생물 보호 및 관리에 관한 법률」(이하 “법”이라 한다) 제33조제1항</mark>에 따라 야생생물의 보호에 필요한 지역을 야생생물보호구역으로 지정할 수 있으며, 지정 및 해제에 관한 구체적인 사항은 <mark class="cite-law" title="야생생물 보호 및 관리에 관한 법률제33조">법 제33조</mark>, 같은 법 시행령(이하 “영”이라 한다) 제23조, 같은 법 시행규칙(이하 “시행규칙”이라 한다) 제43조의 기준 및 절차를 따른다.
-② 시장은 제1항에 따라 보호구역을 지정ㆍ변경 또는 해제하는 때에는 다음 각 호의 사항을 고시해야 한다.
-1. 보호구역의 위치ㆍ면적
-2. 지정ㆍ변경ㆍ해제 일시
-3. 지정ㆍ변경ㆍ해제의 근거 법규
-4. 지정ㆍ변경ㆍ해제의 사유
-5. 보호구역에서의 행위 제한에 관한 사항
-6. 지정ㆍ변경 시 <mark class="cite-law" title="토지이용규제기본법">「토지이용규제기본법」</mark>에서 규정한 고시사항
-7. 그 밖에 시장이 필요하다고 인정하여 고시하는 사항
-③ 시장이 지정하여 고시하는 야생동물의 번식기에 보호구역에 들어가고자 하는 사람은 출입예정 장소, 출입목적과 이유, 출입 인원, 출입기간 등을 기재한 별지 제1호 서식의 신청서를 시장에게 제출하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 그러하지 아니하다.
-1. 시행규칙 제44조제2항 각 호의 어느 하나에 해당하는 경우
-2. 산불의 진화 및 <mark class="cite-law" title="자연재해대책법">「자연재해대책법」</mark>에 따른 재해의 예방ㆍ복구 등을 위한 경우
-3. 시의 업무수행을 위한 경우
-4. 시장이 지정하는 기관 또는 단체가 학술연구 또는 조사를 하는 경우
-5. <mark class="cite-law" title="야생생물 보호 및 관리에 관한 법률제6조">법 제6조</mark>에 따른 야생생물의 서식실태를 조사하는 경우
-6. 그 밖에 시장이 필요하다고 인정하여 고시하는 경우
-④ 시장은 제3항에 따른 출입허가 신청을 받은 때에는 신청서를 검토하여 야생생물보호구역의 보호에 지장이 없다고 인정하는 경우 해당출입을 허가할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「야생생물 보호 및 관리에 관한 법률」 제33조</span></div><div class="act">「야생생물 보호 및 관리에 관한 법률」 제33조 개정 내용을 반영하여 이 조례 제9조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2019-11-26</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제33조(야생생물 보호구역의 지정 등)
-① 시ㆍ도지사나 시장ㆍ군수ㆍ구청장은 멸종위기 야생생물 등을 보호하기 위하여 특별보호구역에 준하여 보호할 필요가 있는 지역을 야생생물 보호구역(이하 &quot;보호구역&quot;이라 한다)으로 지정할 수 있다.
-② 시ㆍ도지사나 시장ㆍ군수ㆍ구청장은 보호구역을 지정ㆍ변경 또는 해제할 때에는 「토지이용규제 기본법」 제8조에 따라 미리 주민의 의견을 들어야 하며, 관계 행정기관의 장과 협의하여야 한다.
-③ 시ㆍ도지사나 시장ㆍ군수ㆍ구청장은 보호구역을 지정ㆍ변경 또는 해제할 때에는 <mark class="d">환경부령으로</mark> 정하는 바에 따라 보호구역의 위치, 면적, 지정일시, 그 밖에 해당 지방자치단체의 조례로 정하는 사항을 고시하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-④ 시ㆍ도지사나 시장ㆍ군수ㆍ구청장은 제28조부터 제32조까지의 규정에 준하여 해당 지방자치단체의 조례로 정하는 바에 따라 출입 제한 등 보호구역의 보전에 필요한 조치를 할 수 있다.
-⑤ <mark class="d">환경부장관이</mark> 정하여 고시하는 야생동물의 번식기에 보호구역에 들어가려는 자는 <mark class="d">환경부령으로</mark> 정하는 바에 따라 시ㆍ도지사나 시장ㆍ군수ㆍ구청장에게 신고하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 그러하지 아니하다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-1.  산불의 진화(鎭火) 및 「자연재해대책법」에 따른 재해의 예방ㆍ복구 등을 위한 경우
-2.  군의 업무수행을 위한 경우
-3.  그 밖에 자연환경조사 등 <mark class="d">환경부령으로</mark> 정하는 경우<mark class="pt" title="⑥ 시ㆍ도지사나 시장ㆍ군수ㆍ구청장은 제5항 본문에 따른 신고를 받은 경우 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제33조(야생생물 보호구역의 지정 등)
-① 시ㆍ도지사나 시장ㆍ군수ㆍ구청장은 멸종위기 야생생물 등을 보호하기 위하여 특별보호구역에 준하여 보호할 필요가 있는 지역을 야생생물 보호구역(이하 &quot;보호구역&quot;이라 한다)으로 지정할 수 있다.
-② 시ㆍ도지사나 시장ㆍ군수ㆍ구청장은 보호구역을 지정ㆍ변경 또는 해제할 때에는 「토지이용규제 기본법」 제8조에 따라 미리 주민의 의견을 들어야 하며, 관계 행정기관의 장과 협의하여야 한다.
-③ 시ㆍ도지사나 시장ㆍ군수ㆍ구청장은 보호구역을 지정ㆍ변경 또는 해제할 때에는 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 보호구역의 위치, 면적, 지정일시, 그 밖에 해당 지방자치단체의 조례로 정하는 사항을 고시하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-④ 시ㆍ도지사나 시장ㆍ군수ㆍ구청장은 제28조부터 제32조까지의 규정에 준하여 해당 지방자치단체의 조례로 정하는 바에 따라 출입 제한 등 보호구역의 보전에 필요한 조치를 할 수 있다.
-⑤ <mark class="i">기후에너지환경부장관이</mark> 정하여 고시하는 야생동물의 번식기에 보호구역에 들어가려는 자는 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 시ㆍ도지사나 시장ㆍ군수ㆍ구청장에게 신고하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 그러하지 아니하다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-1.  산불의 진화(鎭火) 및 「자연재해대책법」에 따른 재해의 예방ㆍ복구 등을 위한 경우
-2.  군의 업무수행을 위한 경우
-3.  그 밖에 자연환경조사 등 <mark class="i">기후에너지환경부령으로</mark> 정하는 경우<mark class="i">
-⑥ 시ㆍ도지사나 시장ㆍ군수ㆍ구청장은 제5항 본문에 따른 신고를 받은 경우 그 내용을 검토하여 이 법에 적합하면 신고를 수리하여야 한다. &lt;신설 2019.11.26&gt;</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「야생생물 보호 및 관리에 관한 법률」 제6조</span></div><div class="act">「야생생물 보호 및 관리에 관한 법률」 제6조 개정 내용을 반영하여 이 조례 제9조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2014-03-24</b> → 현행 조문 <b>2025-11-11</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제6조(야생생물 등의 서식실태 조사<mark class="pt" title="등 추가됨">‸</mark>)
-① <mark class="d">환경부장관은</mark> 멸종위기 야생생물, 「생물다양성 보전 및 이용에 관한 법률」 제2조제8호에 따른 생태계교란 생물 등 특별히 보호하거나 관리할 필요가 있는 야생생물의 서식실태를 정밀하게 조사하여야 한다. <mark class="pt" title="이 경우 멸종위기 야생생물에 대해서는 해당 종의 서식 환경, 개체군 변동 추가됨">‸</mark>&lt;개정 2012.2.1<mark class="pt" title=", 2025.10.1, 2025.11.11 추가됨">‸</mark>&gt;
-② <mark class="d">환경부장관은</mark> 보호하거나 관리할 필요가 있는 야생생물 및 그 서식지 등이 자연적 또는 인위적 요인으로 인하여 훼손될 우려가 있는 경우에는 수시로 실태조사를 하거나 관찰종을 지정하여 조사할 수 있다. &lt;신설 2014.3.24<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-③ 제1항과 제2항에 따른 <mark class="d">조사의</mark> 내용ㆍ방법 등 필요한 사항은 <mark class="d">환경부령으로</mark> 정한다. &lt;개정 2014.3.24<mark class="pt" title=", 2025.10.1, 2025.11.11 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제6조(야생생물 등의 서식실태 조사<mark class="i"> 등</mark>)
-① <mark class="i">기후에너지환경부장관은</mark> 멸종위기 야생생물, 「생물다양성 보전 및 이용에 관한 법률」 제2조제8호에 따른 생태계교란 생물 등 특별히 보호하거나 관리할 필요가 있는 야생생물의 서식실태를 정밀하게 조사하여야 한다. <mark class="i">이 경우 멸종위기 야생생물에 대해서는 해당 종의 서식 환경, 개체군 변동 추이 및 증감 원인 등의 조사 결과를 공개하여야 한다. </mark>&lt;개정 2012.2.1<mark class="i">, 2025.10.1, 2025.11.11</mark>&gt;
-② <mark class="i">기후에너지환경부장관은</mark> 보호하거나 관리할 필요가 있는 야생생물 및 그 서식지 등이 자연적 또는 인위적 요인으로 인하여 훼손될 우려가 있는 경우에는 수시로 실태조사를 하거나 관찰종을 지정하여 조사할 수 있다. &lt;신설 2014.3.24<mark class="i">, 2025.10.1</mark>&gt;
-③ 제1항과 제2항에 따른 <mark class="i">조사 및 그 결과 공개의</mark> 내용ㆍ방법 등 필요한 사항은 <mark class="i">기후에너지환경부령으로</mark> 정한다. &lt;개정 2014.3.24<mark class="i">, 2025.10.1, 2025.11.11</mark>&gt;</span></div></div></div></div><div class="artsec" data-oc="제15조"><div class="arthd">조례 제15조</div><div class="ordtext"><b>제15조</b> 제15조(운영요원) 
-① 시장은 습지시설의 원활한 운영을 위하여 전문지도사 등 운영요원을 둘 수 있다.
-② 시장은 세미나, 교육 강좌 등을 위하여 강사를 초빙할 수 있다.
-③ 시장은 운영요원이 다음 각 호의 어느 하나에 해당하는 경우 해촉할 수 있다.
-1.<mark class="cite-law" title="지방공무원법제31조">「지방공무원법」제31조</mark>의 결격사유에 해당하는 사람
-2. 정당한 사유 없이 업무상 지시를 위반한 사람
-3. 운영요원으로서 품위를 심히 손상하게 한 사람
-4. 강의를 거부하거나 고의로 회피하는 사람</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「지방공무원법」 제31조</span></div><div class="act">「지방공무원법」 제31조 개정 내용을 반영하여 이 조례 제15조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2018-10-16</b> → 현행 조문 <b>2026-04-21</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제31조(결격사유) 다음 각 호의 어느 하나에 해당하는 사람은 공무원이 될 수 없다. &lt;개정 2010.3.22, 2013.8.6, 2015.12.29, 2018.10.16<mark class="pt" title=", 2021.1.12, 2022.12.27, 2024.3.19, 2024 추가됨">‸</mark>&gt;
-1.  피성년후견인<mark class="d"> 또는 피한정후견인</mark>
-2.  파산선고를 받고 복권되지 아니한 사람
-3.  금고 이상의 <mark class="d">형을</mark> 선고받고 그 집행이 끝나거나<mark class="pt" title="(집행이 추가됨">‸</mark> <mark class="d">집행을</mark> <mark class="d">받지</mark> <mark class="d">아니하기로</mark> <mark class="d">확정된</mark> <mark class="d">후</mark> 5년이 지나지 아니한 사람
-4.  금고 이상의 <mark class="d">형을</mark> 선고받고 그 집행유예기간이 끝난 날부터 2년이 지나지 아니한 사람
-5.  금고 이상의 형의 선고유예를 선고받고 그 선고유예기간 중에 있는 사람
-6.  법원의 판결 또는 다른 법률에 따라 자격이 상실되거나 정지된 사람
-6의2.  공무원으로 재직기간 중 직무와 관련하여 「형법」 제355조및 제356조에 규정된 죄를 범한 사람으로서 300만원 이상의 벌금형을 선고받고 그 형이 확정된 후 2년이 지나지 아니한 사람
-6의3.  <mark class="d">「성폭력범죄의</mark> <mark class="d">처벌</mark> <mark class="d">등에</mark> <mark class="d">관한</mark> <mark class="d">특례법」</mark> <mark class="d">제2조에 규정된</mark> 죄를 범한 사람으로서 100만원 이상의 벌금형을 선고받고 그 형이 확정된 후 3년이 지나지 아니한 사람
-<mark class="d">6의4.  미성년자에 대한 다음 각 목의 어느 하나에 해당하는 죄를 저질러 파면ㆍ해임되거나 형 또는 치료감호를 선고받아 그 형 또는 치료감호가 확정된 사람(집행유예를 선고받은 후 그 집행유예기간이 경과한 사람을 포함한다)
-</mark>가.  「성폭력범죄의 처벌 등에 관한 특례법」 제2조에 따른 성폭력범죄
-나.  「<mark class="pt" title="정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제74조제1항제2호 및 추가됨">‸</mark>아동ㆍ청소년의 성보호에 관한 법률」 제2조제2호에 따른 아동ㆍ청소년대상 성범죄<mark class="pt" title=", 「마약류 관리에 관한 법률」 제58조제1항제7호 또는 같은 법 제58 추가됨">‸</mark>
-7.  징계로 파면처분을 받은 날부터 5년이 지나지 아니한 사람
-8.  징계로 해임처분을 받은 날부터 3년이 지나지 아니한 사람</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제31조(결격사유) 다음 각 호의 어느 하나에 해당하는 사람은 공무원이 될 수 없다. &lt;개정 2010.3.22, 2013.8.6, 2015.12.29, 2018.10.16<mark class="i">, 2021.1.12, 2022.12.27, 2024.3.19, 2024.12.31, 2026.4.21</mark>&gt;
-1.  피성년후견인<mark class="pt" title="또는 피한정후견인 삭제됨">‸</mark>
-2.  파산선고를 받고 복권되지 아니한 사람
-3.  금고 이상의 <mark class="i">실형을</mark> 선고받고 그 집행이 끝나거나<mark class="i">(집행이</mark> <mark class="i">끝난</mark> <mark class="i">것으로</mark> <mark class="i">보는</mark> <mark class="i">경우를</mark> <mark class="i">포함한다) 집행이 면제된 날부터</mark> 5년이 지나지 아니한 사람
-4.  금고 이상의 <mark class="i">형의 집행유예를</mark> 선고받고 그 집행유예기간이 끝난 날부터 2년이 지나지 아니한 사람
-5.  금고 이상의 형의 선고유예를 선고받고 그 선고유예기간 중에 있는 사람
-6.  법원의 판결 또는 다른 법률에 따라 자격이 상실되거나 정지된 사람
-6의2.  공무원으로 재직기간 중 직무와 관련하여 「형법」 제355조및 제356조에 규정된 죄를 범한 사람으로서 300만원 이상의 벌금형을 선고받고 그 형이 확정된 후 2년이 지나지 아니한 사람
-6의3.  <mark class="i">다음</mark> <mark class="i">각</mark> <mark class="i">목의</mark> <mark class="i">어느</mark> <mark class="i">하나에</mark> <mark class="i">해당하는</mark> 죄를 범한 사람으로서 100만원 이상의 벌금형을 선고받고 그 형이 확정된 후 3년이 지나지 아니한 사람
-<mark class="pt" title="6의4.  미성년자에 대한 다음 각 목의 어느 하나에 해당하는 죄를 저질 삭제됨">‸</mark>가.  「성폭력범죄의 처벌 등에 관한 특례법」 제2조에 따른 성폭력범죄
-나.  「<mark class="i">정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제74조제1항제2호 및 제3호에 규정된 죄
-다.  「스토킹범죄의 처벌 등에 관한 법률」 제2조제2호에 따른 스토킹범죄
-라.  「마약류 관리에 관한 법률」에 따른 죄
-6의4.  미성년자에 대하여 「성폭력범죄의 처벌 등에 관한 특례법」 제2조에 따른 성폭력범죄, 「</mark>아동ㆍ청소년의 성보호에 관한 법률」 제2조제2호에 따른 아동ㆍ청소년대상 성범죄<mark class="i">, 「마약류 관리에 관한 법률」 제58조제1항제7호 또는 같은 법 제58조의2제1항에 규정된 죄를 범한 사람으로서 다음 각 목의 어느 하나에 해당하는 날부터 20년이 지나지 아니한 사람
-가.  금고 이상의 실형을 선고받고 그 집행이 끝나거나(집행이 끝난 것으로 보는 경우를 포함한다) 집행이 면제된 날
-나.  금고 이상의 형의 집행유예를 선고받고 그 집행유예가 확정된 날
-다.  벌금 이하의 형을 선고받고 그 형이 확정된 날
-라.  치료감호를 선고받고 그 집행이 끝나거나 집행이 면제된 날
-마.  징계로 파면처분 또는 해임처분을 받은 날</mark>
-7.  징계로 파면처분을 받은 날부터 5년이 지나지 아니한 사람
-8.  징계로 해임처분을 받은 날부터 3년이 지나지 아니한 사람</span></div></div></div></div></div><div class="ord"><h2>군포시 실내공기질 관리에 관한 조례</h2><div class="meta">시행 2018-01-05 · 정비 항목 4건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 4</span></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(실내공기질의 측정)  
-① 다중이용시설의 소유자등은 실내공기질을 스스로 측정하거나 <mark class="cite-law" title="실내공기질 관리법제12조">「실내공기질 관리법」 제12조</mark>에서 정하는 자로 하여금 측정하도록 하고 그 결과를 기록ㆍ보존하여야 한다. 
-② 제1항에 따른 실내공기질의 측정대상 오염물질, 측정횟수 그 밖에 실내공기질의 측정에 필요한 사항은 <mark class="cite-law" title="실내공기질 관리법제12조">「실내공기질 관리법」 제12조</mark>에 따른다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「실내공기질 관리법」 제12조</span></div><div class="act">「실내공기질 관리법」 제12조 개정 내용을 반영하여 이 조례 제7조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-01-05</b> · 당시 법령본 <b>2015-12-22</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제12조(실내공기질의 측정)
-①다중이용시설의 소유자등은 실내공기질을 스스로 측정하거나 <mark class="d">환경부령으로</mark> 정하는 자로 하여금 측정하도록 하고 그 결과를<mark class="pt" title="10년 동안 추가됨">‸</mark> 기록ㆍ보존하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 자는 그러하지 아니하다. &lt;개정 2015.12.22<mark class="pt" title=", 2018.4.17, 2019.4.2, 2025.10.1 추가됨">‸</mark>&gt;
-1.  제4조의6에 따른 측정망이 설치되어 실내공기질을 상시 측정할 수 있는 다중이용시설의 소유자등
-2.  제4조의7에 따라 측정기기를 부착하고 이를 운영ㆍ관리하고 있는 다중이용시설의 소유자등
-3.  그 밖에 대통령령으로 정하는 자
-<mark class="d">②제1항의</mark> <mark class="d">규정에</mark> <mark class="d">의한</mark> 실내공기질의 측정대상오염물질, 측정횟수<mark class="pt" title=", 측정시기, 추가됨">‸</mark> 그 밖에 실내공기질의 측정에 관하여 필요한 사항은 <mark class="d">환경부령으로</mark> 정한다.<mark class="pt" title="&lt;개정 2018.4.17, 2020.5.26, 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제12조(실내공기질의 측정)
-①다중이용시설의 소유자등은 실내공기질을 스스로 측정하거나 <mark class="i">기후에너지환경부령으로</mark> 정하는 자로 하여금 측정하도록 하고 그 결과를<mark class="i"> 10년 동안</mark> 기록ㆍ보존하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 자는 그러하지 아니하다. &lt;개정 2015.12.22<mark class="i">, 2018.4.17, 2019.4.2, 2025.10.1</mark>&gt;
-1.  제4조의6에 따른 측정망이 설치되어 실내공기질을 상시 측정할 수 있는 다중이용시설의 소유자등
-2.  제4조의7에 따라 측정기기를 부착하고 이를 운영ㆍ관리하고 있는 다중이용시설의 소유자등
-3.  그 밖에 대통령령으로 정하는 자
-<mark class="i">②</mark> <mark class="i">제1항에</mark> <mark class="i">따라 측정을 의뢰하려는 자는 측정대행업자에게 측정값을 조작하게 하는 등 측정ㆍ분석 결과에 영향을 미칠 수 있는 지시를 하여서는 아니 된다. &lt;신설 2018.4.17&gt;
-③제1항에 따른</mark> 실내공기질의 측정대상오염물질, 측정횟수<mark class="i">, 측정시기,</mark> 그 밖에 실내공기질의 측정에 관하여 필요한 사항은 <mark class="i">기후에너지환경부령으로</mark> 정한다.<mark class="i"> &lt;개정 2018.4.17, 2020.5.26, 2025.10.1&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제8조"><div class="arthd">조례 제8조</div><div class="ordtext"><b>제8조</b> 제8조(신축 공동주택의 실내공기질 관리)  
-① 신축되는 공동주택의 시공자는 시공이 완료된 공동주택의 실내공기질을 측정하여 그 측정결과를 시장에게 제출하고, 입주 개시전에 입주민들이 잘 볼 수 있는 장소에 공고하여야 한다. 
-② 제1항에 따라 실내공기질의 측정항목, 측정방법, 측정결과의 제출ㆍ공고시기ㆍ장소 등에 관하여 필요한 사항은 <mark class="cite-law" title="실내공기질 관리법제9조">「실내공기질 관리법」 제9조</mark>에 따른다. 
-③ 신축 공동주택의 쾌적한 공기질 유지를 위한 실내공기질 권고기준은 <mark class="cite-law" title="실내공기질 관리법제9조">「실내공기질 관리법」 제9조</mark>에 따른다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「실내공기질 관리법」 제9조</span></div><div class="act">「실내공기질 관리법」 제9조 개정 내용을 반영하여 이 조례 제8조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-01-05</b> · 당시 법령본 <b>2016-12-27</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제9조(신축 공동주택의 실내공기질 관리)
-①신축되는 공동주택의 시공자는 <mark class="pt" title="기후에너지환경부령으로 정하는 바에 따라 선정된 입주예정자의 입회하에 추가됨">‸</mark>시공이 완료된 공동주택의 실내공기질을 <mark class="d">측정하여</mark> 그 측정결과를 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장에게 제출하고, 입주 개시전에 입주민들이 잘 볼 수 있는 장소에 공고 하여야 한다. &lt;개정 2010.5.25, 2015.12.22<mark class="pt" title=", 2023.8.16, 2025.10.1 추가됨">‸</mark>&gt;
-② 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따라 제출된 측정결과를 <mark class="d">환경부장관에게</mark> 보고하여야 하며 공보 또는 인터넷 홈페이지 등을 통하여 공개할 수 있다. &lt;신설 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-<mark class="d">③제1항의</mark> <mark class="d">규정에 의한</mark> 실내공기질의 측정항목ㆍ방법, 측정결과의 제출ㆍ공고시기ㆍ장소 등에 관하여 필요한 사항은 <mark class="d">환경부령으로</mark> 정한다. &lt;개정 2016.12.27<mark class="pt" title=", 2020.5.26, 2025.10.1 추가됨">‸</mark>&gt;
-④신축 공동주택의 쾌적한 공기질 유지를 위한 실내공기질 권고기준은 <mark class="d">환경부령으로</mark> 정한다. &lt;신설 2005.5.31, 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑤ <mark class="d">환경부장관은</mark> 신축 공동주택의 소유자등이 실내공기질을 알맞게 유지ㆍ관리함으로써 쾌적한 실내환경에서 생활할 수 있도록 하기 위하여 공동주택의 실내공기질 관리지침을 개발하여 보급할 수 있다. &lt;신설 2015.12.22, 2016.12.27<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제9조(신축 공동주택의 실내공기질 관리)
-①신축되는 공동주택의 시공자는 <mark class="i">기후에너지환경부령으로 정하는 바에 따라 선정된 입주예정자의 입회하에 </mark>시공이 완료된 공동주택의 실내공기질을 <mark class="i">스스로 측정하거나 기후에너지환경부령으로 정하는 자로 하여금 측정하도록 하여</mark> 그 측정결과를 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장에게 제출하고, 입주 개시전에 입주민들이 잘 볼 수 있는 장소에 공고 하여야 한다. &lt;개정 2010.5.25, 2015.12.22<mark class="i">, 2023.8.16, 2025.10.1</mark>&gt;
-② 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장은 제1항에 따라 제출된 측정결과를 <mark class="i">기후에너지환경부장관에게</mark> 보고하여야 하며 공보 또는 인터넷 홈페이지 등을 통하여 공개할 수 있다. &lt;신설 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-<mark class="i">③제1항에</mark> <mark class="i">따른</mark> 실내공기질의 측정항목ㆍ방법, 측정결과의 제출ㆍ공고시기ㆍ장소 등에 관하여 필요한 사항은 <mark class="i">기후에너지환경부령으로</mark> 정한다. &lt;개정 2016.12.27<mark class="i">, 2020.5.26, 2025.10.1</mark>&gt;
-④신축 공동주택의 쾌적한 공기질 유지를 위한 실내공기질 권고기준은 <mark class="i">기후에너지환경부령으로</mark> 정한다. &lt;신설 2005.5.31, 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;
-⑤ <mark class="i">기후에너지환경부장관은</mark> 신축 공동주택의 소유자등이 실내공기질을 알맞게 유지ㆍ관리함으로써 쾌적한 실내환경에서 생활할 수 있도록 하기 위하여 공동주택의 실내공기질 관리지침을 개발하여 보급할 수 있다. &lt;신설 2015.12.22, 2016.12.27<mark class="i">, 2025.10.1</mark>&gt;</span></div></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(대중교통차량의 실내공기질 관리)  
-① 시장은 <mark class="cite-law" title="실내공기질 관리법제9조의2">「실내공기질 관리법」 제9조의2</mark>에 따라 대중교통운송사업자에게 관리지침에 맞게 대중교통차량을 운행할 수 있도록 권고할 수 있다. 
-② 시장은 대중교통차량의 운송사업자에게 관리지침에 따른 차량 실내공기질 유지ㆍ관리에 필요한 기술적ㆍ재정적 지원을 할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「실내공기질 관리법」 제9조의2</span></div><div class="act">「실내공기질 관리법」 제9조의2 개정 내용을 반영하여 이 조례 제9조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-01-05</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제9조의2(대중교통차량의 실내공기질 <mark class="d">관리</mark>)
-① <mark class="d">환경부장관은</mark> 대중교통차량의 실내공기질을 <mark class="d">쾌적하게</mark> <mark class="d">유지하고</mark> <mark class="d">관리하기</mark> <mark class="d">위하여</mark> 대중교통차량의 <mark class="d">제작</mark> <mark class="d">또는</mark> <mark class="d">운행</mark> <mark class="d">등에</mark> <mark class="d">관한</mark> <mark class="d">관리지침(이하</mark> <mark class="d">&quot;관리지침&quot;이라</mark> 한다<mark class="d">)을 정하여 고시할 수 있다.
-② 환경부장관은 대중교통차량의 제작자에게 관리지침에 맞게 대중교통차량을 제작하도록 권고할 수 있다</mark>.
-③ <mark class="d">시ㆍ도지사는</mark> <mark class="d">대중교통차량의</mark> <mark class="d">운송사업자에게 관리지침에 맞게 대중교통차량을 운행하도록 권고할 수 있다.
-④ 국가와 지방자치단체는 대중교통차량의 제작자 또는 운송사업자에게 관리지침에</mark> 따른 <mark class="d">대중교통차량의</mark> <mark class="d">실내공기질</mark> <mark class="d">유지ㆍ관리에</mark> 필요한 <mark class="d">기술적ㆍ재정적</mark> <mark class="d">지원을</mark> <mark class="d">할</mark> <mark class="d">수</mark> <mark class="d">있다</mark>.<mark class="pt" title="10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제9조의2(대중교통차량의 실내공기질 <mark class="i">측정</mark>)
-① <mark class="i">대중교통차량의 운송사업자는</mark> 대중교통차량의 실내공기질을 <mark class="i">스스로</mark> <mark class="i">측정하거나</mark> <mark class="i">기후에너지환경부령으로</mark> <mark class="i">정하는 자로 하여금 측정하도록 하고, 그 결과를 기록ㆍ보존하여야 한다. 다만, 대중교통차량 내부에 실내공기질을 측정할 수 있는 측정기기를 설치한 경우에는 그러하지 아니하다. &lt;개정 2025.10.1&gt;
-②</mark> 대중교통차량의 <mark class="i">운송사업자는</mark> <mark class="i">제1항에</mark> <mark class="i">따라</mark> <mark class="i">측정한</mark> <mark class="i">결과를</mark> <mark class="i">특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장에게</mark> <mark class="i">제출하여야</mark> 한다<mark class="pt" title=")을 정하여 고시할 수 있다.
-② 환경부장관은 대중교통차량의 제작자에게  삭제됨">‸</mark>.
-③ <mark class="i">제1항</mark> <mark class="i">및</mark> <mark class="i">제2항에</mark> 따른 <mark class="i">실내공기질의</mark> <mark class="i">측정대상오염물질,</mark> <mark class="i">측정대상차량, 측정횟수, 측정결과의 보존기간 및 제출 등에</mark> 필요한 <mark class="i">사항은</mark> <mark class="i">기후에너지환경부령으로</mark> <mark class="i">정한다.</mark> <mark class="i">&lt;개정</mark> <mark class="i">2025</mark>.<mark class="i">10.1&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(개선명령) 시장은 다중이용시설이 <mark class="cite-law" title="실내공기질 관리법">「실내공기질 관리법」</mark> 및 <mark class="cite-local" title="경기도 다중이용시설 등의 실내공기질 유지기준에 관한 조례">「경기도 다중이용시설 등의 실내공기질 유지기준에 관한 조례」</mark>에서 정하는 공기질 유지기준에 맞지 않게 관리되는 경우에는 <mark class="cite-law" title="실내공기질 관리법제10조">「실내공기질 관리법」 제10조</mark>에 따라 기간을 정하여 그 다중이용시설의 소유자등에게 공기정화설비 또는 환기설비 등의 개선이나 대체 그 밖의 필요한 조치(이하 “개선명령”이라 한다)를 명령할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「실내공기질 관리법」 제10조</span></div><div class="act">「실내공기질 관리법」 제10조 개정 내용을 반영하여 이 조례 제11조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-01-05</b> · 당시 법령본 <b>2015-12-22</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제10조(개선명령) 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장은 다중이용시설이 제5조제1항에 따른 공기질 유지기준에 맞지 아니하게 관리되는 경우에는 <mark class="d">환경부령으로</mark> 정하는 바에 따라 기간을 정하여 그 다중이용시설의 소유자 등에게 공기정화설비 또는 환기설비 등의 개선이나 대체 그 밖의 필요한 조치(이하 &quot;개선명령&quot;이라 한다)를 할 것을 명령할 수 있다. &lt;개정 2015.12.22<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제10조(개선명령) 특별자치시장ㆍ특별자치도지사ㆍ시장ㆍ군수ㆍ구청장은 다중이용시설이 제5조제1항에 따른 공기질 유지기준에 맞지 아니하게 관리되는 경우에는 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 기간을 정하여 그 다중이용시설의 소유자 등에게 공기정화설비 또는 환기설비 등의 개선이나 대체 그 밖의 필요한 조치(이하 &quot;개선명령&quot;이라 한다)를 할 것을 명령할 수 있다. &lt;개정 2015.12.22<mark class="i">, 2025.10.1</mark>&gt;</span></div></div></div></div></div><div class="ord"><h2>군포시 대기 및 수질환경 관련법규 위반사업장 공개에 관한 조례</h2><div class="meta">시행 2023-05-01 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(공개대상 등)  
-① 군포시장(이하 “시장”이라 한다)은 다음 각 호의 어느 하나에 해당하는 사업장이 <mark class="cite-law" title="대기환경보전법">「대기환경보전법」</mark> 또는 <mark class="cite-law" title="물환경보전법">「물환경보전법」</mark>을 위반하여 제2항에 따른 행정처분 등을 받은 때에는 그 위반사업장의 명칭과 위반사항 등을 공개할 수 있다. &lt;개정 2023.5.1.&gt; 
-1. <mark class="cite-law" title="대기환경보전법제23조">「대기환경보전법」 제23조</mark> 및 <mark class="cite-law" title="대기환경보전법 시행규칙제5조">같은 법 시행규칙 제5조</mark> 별표 3에서 정한 대기오염물질배출시설을 설치한 사업장 
-2. <mark class="cite-law" title="물환경보전법제33조">「물환경보전법」 제33조</mark> 및 <mark class="cite-law" title="물환경보전법 시행규칙제6조">같은 법 시행규칙 제6조</mark> 별표 4에서 정한 폐수배출시설을 설치한 사업장 &lt;개정 2023.5.1.&gt; 
-3. 허가 또는 신고하지 아니한 대기오염물질배출시설 및 폐수 배출시설 설치 사업장 
-4. 그 밖에 환경오염사고를 발생시킨 사업장 
-② 제1항에 따라 공개할 수 있는 행정처분 등은 다음과 같다. 
-1. 허가취소 또는 폐쇄명령 
-2. 조업정지 
-3. 사용중지 명령 
-4. 개선명령 
-5. 고발 등의 사법조치</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「대기환경보전법」 제23조</span></div><div class="act">「대기환경보전법」 제23조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2021-04-13</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제23조(배출시설의 설치 허가 및 신고)
-①배출시설을 설치하려는 자는 대통령령으로 정하는 바에 따라 시ㆍ도지사의 허가를 받거나 시ㆍ도지사에게 신고하여야 한다. 다만, 시ㆍ도가 설치하는 배출시설, 관할 시ㆍ도가 다른 둘 이상의 시ㆍ군ㆍ구가 공동으로 설치하는 배출시설에 대해서는 <mark class="d">환경부장관의</mark> 허가를 받거나 <mark class="d">환경부장관에게</mark> 신고하여야 한다. &lt;개정 2012.5.23, 2019.1.15<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-②제1항에 따라 허가를 받은 자가 허가받은 사항 중 대통령령으로 정하는 중요한 사항을 변경하려면 변경허가를 받아야 하고, 그 밖의 사항을 변경하려면 변경신고를 하여야 한다.
-③제1항에 따라 신고를 한 자가 신고한 사항을 변경하려면 <mark class="d">환경부령으로</mark> 정하는 바에 따라 변경신고를 하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-④제1항부터 제3항까지의 규정에 따라 허가ㆍ변경허가를 받거나 신고ㆍ변경신고를 하려는 자가 제26조제1항 단서, 제28조 단서, 제41조제3항 단서, 제42조 단서에 해당하는 경우와 제29조에 따른 공동 방지시설을 설치하거나 변경하려는 경우에는 <mark class="d">환경부령으로</mark> 정하는 서류를 제출하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-⑤ <mark class="d">환경부장관</mark> 또는 시ㆍ도지사는 제1항부터 제3항까지의 규정에 따른 신고 또는 변경신고를 받은 날부터 <mark class="d">환경부령으로</mark> 정하는 기간 내에 신고 또는 변경신고 수리 여부를 신고인에게 통지하여야 한다. &lt;신설 2019.1.15<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑥ <mark class="d">환경부장관</mark> 또는 시ㆍ도지사가 제5항에서 정한 기간 내에 신고수리 여부 또는 민원 처리 관련 법령에 따른 처리기간의 연장 여부를 신고인에게 통지하지 아니하면 그 기간(민원 처리 관련 법령에 따라 처리기간이 연장 또는 재연장된 경우에는 해당 처리기간을 말한다)이 끝난 날의 다음 날에 신고를 수리한 것으로 본다. &lt;신설 2019.1.15<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑦제1항과 제2항에 따른 허가 또는 변경허가의 기준은 다음 각 호와 같다. &lt;개정 2019.1.15&gt;
-1.  배출시설에서 배출되는 오염물질을 제16조나 제29조제3항에 따른 배출허용기준 이하로 처리할 수 있을 것
-2.  다른 법률에 따른 배출시설 설치제한에 관한 규정을 위반하지 아니할 것
-<mark class="d">⑧환경부장관</mark> 또는 시ㆍ도지사는 배출시설로부터 나오는 특정대기유해물질이나 특별대책지역의 배출시설로부터 나오는 대기오염물질로 인하여 환경기준의 유지가 곤란하거나 주민의 건강ㆍ재산, 동식물의 생육에 심각한 위해를 끼칠 우려가 있다고 인정되면 대통령령으로 정하는 바에 따라 특정대기유해물질을 배출하는 배출시설의 설치 또는 특별대책지역에서의 배출시설 설치를 제한할 수 있다. &lt;개정 2012.5.23, 2019.1.15<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑨ <mark class="d">환경부장관</mark> 또는 시ㆍ도지사는 제1항 및 제2항에 따른 허가 또는 변경허가를 하는 경우에는 대통령령으로 정하는 바에 따라 주민 건강이나 주변환경의 보호 및 배출시설의 적정관리 등을 위하여 필요한 조건(이하 &quot;허가조건&quot;이라 한다)을 붙일 수 있다. 이 경우 허가조건은 허가 또는 변경허가의 시행에 필요한 최소한도의 것이어야 하며, 허가 또는 변경허가를 받는 자에게 부당한 의무를 부과하는 것이어서는 아니 된다. &lt;신설 2021.4.13<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제23조(배출시설의 설치 허가 및 신고)
-①배출시설을 설치하려는 자는 대통령령으로 정하는 바에 따라 시ㆍ도지사의 허가를 받거나 시ㆍ도지사에게 신고하여야 한다. 다만, 시ㆍ도가 설치하는 배출시설, 관할 시ㆍ도가 다른 둘 이상의 시ㆍ군ㆍ구가 공동으로 설치하는 배출시설에 대해서는 <mark class="i">기후에너지환경부장관의</mark> 허가를 받거나 <mark class="i">기후에너지환경부장관에게</mark> 신고하여야 한다. &lt;개정 2012.5.23, 2019.1.15<mark class="i">, 2025.10.1</mark>&gt;
-②제1항에 따라 허가를 받은 자가 허가받은 사항 중 대통령령으로 정하는 중요한 사항을 변경하려면 변경허가를 받아야 하고, 그 밖의 사항을 변경하려면 변경신고를 하여야 한다.
-③제1항에 따라 신고를 한 자가 신고한 사항을 변경하려면 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 변경신고를 하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-④제1항부터 제3항까지의 규정에 따라 허가ㆍ변경허가를 받거나 신고ㆍ변경신고를 하려는 자가 제26조제1항 단서, 제28조 단서, 제41조제3항 단서, 제42조 단서에 해당하는 경우와 제29조에 따른 공동 방지시설을 설치하거나 변경하려는 경우에는 <mark class="i">기후에너지환경부령으로</mark> 정하는 서류를 제출하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-⑤ <mark class="i">기후에너지환경부장관</mark> 또는 시ㆍ도지사는 제1항부터 제3항까지의 규정에 따른 신고 또는 변경신고를 받은 날부터 <mark class="i">기후에너지환경부령으로</mark> 정하는 기간 내에 신고 또는 변경신고 수리 여부를 신고인에게 통지하여야 한다. &lt;신설 2019.1.15<mark class="i">, 2025.10.1</mark>&gt;
-⑥ <mark class="i">기후에너지환경부장관</mark> 또는 시ㆍ도지사가 제5항에서 정한 기간 내에 신고수리 여부 또는 민원 처리 관련 법령에 따른 처리기간의 연장 여부를 신고인에게 통지하지 아니하면 그 기간(민원 처리 관련 법령에 따라 처리기간이 연장 또는 재연장된 경우에는 해당 처리기간을 말한다)이 끝난 날의 다음 날에 신고를 수리한 것으로 본다. &lt;신설 2019.1.15<mark class="i">, 2025.10.1</mark>&gt;
-⑦제1항과 제2항에 따른 허가 또는 변경허가의 기준은 다음 각 호와 같다. &lt;개정 2019.1.15&gt;
-1.  배출시설에서 배출되는 오염물질을 제16조나 제29조제3항에 따른 배출허용기준 이하로 처리할 수 있을 것
-2.  다른 법률에 따른 배출시설 설치제한에 관한 규정을 위반하지 아니할 것
-<mark class="i">⑧기후에너지환경부장관</mark> 또는 시ㆍ도지사는 배출시설로부터 나오는 특정대기유해물질이나 특별대책지역의 배출시설로부터 나오는 대기오염물질로 인하여 환경기준의 유지가 곤란하거나 주민의 건강ㆍ재산, 동식물의 생육에 심각한 위해를 끼칠 우려가 있다고 인정되면 대통령령으로 정하는 바에 따라 특정대기유해물질을 배출하는 배출시설의 설치 또는 특별대책지역에서의 배출시설 설치를 제한할 수 있다. &lt;개정 2012.5.23, 2019.1.15<mark class="i">, 2025.10.1</mark>&gt;
-⑨ <mark class="i">기후에너지환경부장관</mark> 또는 시ㆍ도지사는 제1항 및 제2항에 따른 허가 또는 변경허가를 하는 경우에는 대통령령으로 정하는 바에 따라 주민 건강이나 주변환경의 보호 및 배출시설의 적정관리 등을 위하여 필요한 조건(이하 &quot;허가조건&quot;이라 한다)을 붙일 수 있다. 이 경우 허가조건은 허가 또는 변경허가의 시행에 필요한 최소한도의 것이어야 하며, 허가 또는 변경허가를 받는 자에게 부당한 의무를 부과하는 것이어서는 아니 된다. &lt;신설 2021.4.13<mark class="i">, 2025.10.1</mark>&gt;</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「물환경보전법」 제33조</span></div><div class="act">「물환경보전법」 제33조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2018-10-16</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제33조(배출시설의 설치 허가 및 신고)
-① 배출시설을 설치하려는 자는 대통령령으로 정하는 바에 따라 <mark class="d">환경부장관의</mark> 허가를 받거나 <mark class="d">환경부장관에게</mark> 신고하여야 한다. 다만, 제9항에 따라 폐수무방류배출시설을 설치하려는 자는 <mark class="d">환경부장관의</mark> 허가를 받아야 한다. &lt;개정 2018.10.16<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-② 제1항에 따라 허가를 받은 자가 허가받은 사항 중 대통령령으로 정하는 중요한 사항을 변경하려는 경우에는 변경허가를 받아야 한다. 다만, 그 밖의 사항 중 <mark class="d">환경부령으로</mark> 정하는 사항을 변경하려는 경우 또는 <mark class="d">환경부령으로</mark> 정하는 사항을 변경한 경우에는 변경신고를 하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-③ 제1항에 따라 신고를 한 자가 신고한 사항 중 <mark class="d">환경부령으로</mark> 정하는 사항을 변경하려는 경우 또는 <mark class="d">환경부령으로</mark> 정하는 사항을 변경한 경우에는 <mark class="d">환경부령으로</mark> 정하는 바에 따라 변경신고를 하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
-④ <mark class="d">환경부장관은</mark> 제1항부터 제3항까지의 규정에 따른 신고 또는 변경신고를 받은 날부터 <mark class="d">환경부령으로</mark> 정하는 기간 내에 신고수리 여부를 신고인에게 통지하여야 한다. &lt;신설 2018.10.16<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑤ <mark class="d">환경부장관이</mark> 제4항에서 정한 기간 내에 신고수리 여부 또는 민원 처리 관련 법령에 따른 처리기간의 연장을 신고인에게 통지하지 아니하면 그 기간(민원 처리 관련 법령에 따라 처리기간이 연장 또는 재연장된 경우에는 해당 처리기간을 말한다)이 끝난 날의 다음 날에 신고를 수리한 것으로 본다. &lt;신설 2018.10.16<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑥ 제1항부터 제3항까지의 규정에 따라 허가ㆍ변경허가를 받으려 하거나 신고ㆍ변경신고를 하려는 자가 제35조제1항 단서에 해당하는 경우와 같은 조 제4항에 따른 공동방지시설을 설치 또는 변경하려는 경우에는 <mark class="d">환경부령으로</mark> 정하는 서류를 제출하여야 한다. &lt;개정 2018.10.16<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑦ <mark class="d">환경부장관은</mark> 상수원보호구역의 상류지역, 특별대책지역 및 그 상류지역, 취수시설이 있는 지역 및 그 상류지역의 배출시설로부터 배출되는 수질오염물질로 인하여 환경기준을 유지하기 곤란하거나 주민의 건강ㆍ재산이나 동식물의 생육에 중대한 위해를 가져올 우려가 있다고 인정되는 경우에는 관할 시ㆍ도지사의 의견을 듣고 관계 중앙행정기관의 장과 협의하여 배출시설의 설치(변경을 포함한다)를 제한할 수 있다. &lt;개정 2018.10.16<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑧ 제7항에 따라 배출시설의 설치를 제한할 수 있는 지역의 범위는 대통령령으로 정하고, <mark class="d">환경부장관은</mark> 지역별 제한대상 시설을 고시하여야 한다. &lt;개정 2018.10.16<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑨ 제7항 및 제8항에도 불구하고 <mark class="d">환경부령으로</mark> 정하는 특정수질유해물질을 배출하는 배출시설의 경우 배출시설의 설치제한지역에서 폐수무방류배출시설로 하여 이를 설치할 수 있다. &lt;개정 2018.10.16<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑩ 제9항에 따라 배출시설의 설치제한지역에서 폐수무방류배출시설을 설치할 수 있는 지역 및 시설은 <mark class="d">환경부장관이</mark> 정하여 고시한다. &lt;개정 2018.10.16<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
-⑪ 제1항 및 제2항에 따른 허가 또는 변경허가의 기준은 다음 각 호와 같다. &lt;개정 2018.10.16&gt;
-1.  배출시설에서 배출되는 오염물질을 제32조에 따른 배출허용기준 이하로 처리할 수 있을 것
-2.  다른 법령에 따른 배출시설의 설치제한에 관한 규정에 위반되지 아니할 것
-3.  폐수무방류배출시설을 설치하는 경우에는 폐수가 공공수역으로 유출ㆍ누출되지 아니하도록 대통령령으로 정하는 시설 전부를 대통령령으로 정하는 기준에 따라 설치할 것</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제33조(배출시설의 설치 허가 및 신고)
-① 배출시설을 설치하려는 자는 대통령령으로 정하는 바에 따라 <mark class="i">기후에너지환경부장관의</mark> 허가를 받거나 <mark class="i">기후에너지환경부장관에게</mark> 신고하여야 한다. 다만, 제9항에 따라 폐수무방류배출시설을 설치하려는 자는 <mark class="i">기후에너지환경부장관의</mark> 허가를 받아야 한다. &lt;개정 2018.10.16<mark class="i">, 2025.10.1</mark>&gt;
-② 제1항에 따라 허가를 받은 자가 허가받은 사항 중 대통령령으로 정하는 중요한 사항을 변경하려는 경우에는 변경허가를 받아야 한다. 다만, 그 밖의 사항 중 <mark class="i">기후에너지환경부령으로</mark> 정하는 사항을 변경하려는 경우 또는 <mark class="i">기후에너지환경부령으로</mark> 정하는 사항을 변경한 경우에는 변경신고를 하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-③ 제1항에 따라 신고를 한 자가 신고한 사항 중 <mark class="i">기후에너지환경부령으로</mark> 정하는 사항을 변경하려는 경우 또는 <mark class="i">기후에너지환경부령으로</mark> 정하는 사항을 변경한 경우에는 <mark class="i">기후에너지환경부령으로</mark> 정하는 바에 따라 변경신고를 하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-④ <mark class="i">기후에너지환경부장관은</mark> 제1항부터 제3항까지의 규정에 따른 신고 또는 변경신고를 받은 날부터 <mark class="i">기후에너지환경부령으로</mark> 정하는 기간 내에 신고수리 여부를 신고인에게 통지하여야 한다. &lt;신설 2018.10.16<mark class="i">, 2025.10.1</mark>&gt;
-⑤ <mark class="i">기후에너지환경부장관이</mark> 제4항에서 정한 기간 내에 신고수리 여부 또는 민원 처리 관련 법령에 따른 처리기간의 연장을 신고인에게 통지하지 아니하면 그 기간(민원 처리 관련 법령에 따라 처리기간이 연장 또는 재연장된 경우에는 해당 처리기간을 말한다)이 끝난 날의 다음 날에 신고를 수리한 것으로 본다. &lt;신설 2018.10.16<mark class="i">, 2025.10.1</mark>&gt;
-⑥ 제1항부터 제3항까지의 규정에 따라 허가ㆍ변경허가를 받으려 하거나 신고ㆍ변경신고를 하려는 자가 제35조제1항 단서에 해당하는 경우와 같은 조 제4항에 따른 공동방지시설을 설치 또는 변경하려는 경우에는 <mark class="i">기후에너지환경부령으로</mark> 정하는 서류를 제출하여야 한다. &lt;개정 2018.10.16<mark class="i">, 2025.10.1</mark>&gt;
-⑦ <mark class="i">기후에너지환경부장관은</mark> 상수원보호구역의 상류지역, 특별대책지역 및 그 상류지역, 취수시설이 있는 지역 및 그 상류지역의 배출시설로부터 배출되는 수질오염물질로 인하여 환경기준을 유지하기 곤란하거나 주민의 건강ㆍ재산이나 동식물의 생육에 중대한 위해를 가져올 우려가 있다고 인정되는 경우에는 관할 시ㆍ도지사의 의견을 듣고 관계 중앙행정기관의 장과 협의하여 배출시설의 설치(변경을 포함한다)를 제한할 수 있다. &lt;개정 2018.10.16<mark class="i">, 2025.10.1</mark>&gt;
-⑧ 제7항에 따라 배출시설의 설치를 제한할 수 있는 지역의 범위는 대통령령으로 정하고, <mark class="i">기후에너지환경부장관은</mark> 지역별 제한대상 시설을 고시하여야 한다. &lt;개정 2018.10.16<mark class="i">, 2025.10.1</mark>&gt;
-⑨ 제7항 및 제8항에도 불구하고 <mark class="i">기후에너지환경부령으로</mark> 정하는 특정수질유해물질을 배출하는 배출시설의 경우 배출시설의 설치제한지역에서 폐수무방류배출시설로 하여 이를 설치할 수 있다. &lt;개정 2018.10.16<mark class="i">, 2025.10.1</mark>&gt;
-⑩ 제9항에 따라 배출시설의 설치제한지역에서 폐수무방류배출시설을 설치할 수 있는 지역 및 시설은 <mark class="i">기후에너지환경부장관이</mark> 정하여 고시한다. &lt;개정 2018.10.16<mark class="i">, 2025.10.1</mark>&gt;
-⑪ 제1항 및 제2항에 따른 허가 또는 변경허가의 기준은 다음 각 호와 같다. &lt;개정 2018.10.16&gt;
-1.  배출시설에서 배출되는 오염물질을 제32조에 따른 배출허용기준 이하로 처리할 수 있을 것
-2.  다른 법령에 따른 배출시설의 설치제한에 관한 규정에 위반되지 아니할 것
-3.  폐수무방류배출시설을 설치하는 경우에는 폐수가 공공수역으로 유출ㆍ누출되지 아니하도록 대통령령으로 정하는 시설 전부를 대통령령으로 정하는 기준에 따라 설치할 것</span></div></div></div></div></div><div class="ord"><h2>군포시 환경친화적 자동차의 보급 및 이용 활성화를 위한 조례</h2><div class="meta">시행 2022-08-12 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2021.9.30.&gt; 
-  1. “환경친화적 자동차”란 <mark class="cite-law" title="환경친화적 자동차의 개발 및 보급 촉진에 관한 법률제2조">「환경친화적 자동차의 개발 및 보급 촉진에 관한 법률」(이하 “법”이라 한다) 제2조제2호</mark>에 따른 자동차를 말한다. 
-2. “전기자동차 충전시설”이란 전기자동차에 전기에너지를 충전하는 시설을 말한다. 
-3. “수소연료공급시설”이란 수소전기자동차에 수소를 공급하는 시설을 말한다. 
-4. “환경친화적 자동차 충전시설”이란 전기자동차 충전시설과 수소연료공급시설 등을 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「환경친화적 자동차의 개발 및 보급 촉진에 관한 법률」 제2조제2호</span></div><div class="act">「환경친화적 자동차의 개발 및 보급 촉진에 관한 법률」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2021-07-27</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">2.  &quot;환경친화적 자동차&quot;란 제3호부터 제8호까지의 규정에 따른 전기자동차, 태양광자동차, 하이브리드자동차, 수소전기자동차 또는 「대기환경보전법」 제46조제1항에 따른 배출가스 허용기준이 적용되는 자동차 중 <mark class="d">산업통상자원부령으로</mark> 정하는 환경기준에 부합하는 자동차로서 다음 각 목의 요건을 갖춘 자동차 중 <mark class="d">산업통상자원부장관이</mark> <mark class="d">환경부장관과</mark> 협의하여 고시한 자동차를 말한다.
-가.  에너지소비효율이 <mark class="d">산업통상자원부령으로</mark> 정하는 기준에 적합할 것
-나.  「대기환경보전법」 제2조제16호에 따라 <mark class="d">환경부령으로</mark> 정하는 저공해자동차의 기준에 적합할 것
-다.  자동차의 성능 등 기술적 세부 사항에 대하여 <mark class="d">산업통상자원부령으로</mark> 정하는 기준에 적합할 것</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">2.  &quot;환경친화적 자동차&quot;란 제3호부터 제8호까지의 규정에 따른 전기자동차, 태양광자동차, 하이브리드자동차, 수소전기자동차 또는 「대기환경보전법」 제46조제1항에 따른 배출가스 허용기준이 적용되는 자동차 중 <mark class="i">산업통상부령으로</mark> 정하는 환경기준에 부합하는 자동차로서 다음 각 목의 요건을 갖춘 자동차 중 <mark class="i">산업통상부장관이</mark> <mark class="i">기후에너지환경부장관과</mark> 협의하여 고시한 자동차를 말한다.
-가.  에너지소비효율이 <mark class="i">산업통상부령으로</mark> 정하는 기준에 적합할 것
-나.  「대기환경보전법」 제2조제16호에 따라 <mark class="i">기후에너지환경부령으로</mark> 정하는 저공해자동차의 기준에 적합할 것
-다.  자동차의 성능 등 기술적 세부 사항에 대하여 <mark class="i">산업통상부령으로</mark> 정하는 기준에 적합할 것</span></div></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(운행에 대한 지원) 시장은 환경친화적 자동차 및 <mark class="cite-law" title="환경친화적 자동차의 개발 및 보급 촉진에 관한 법률제11조">법 제11조</mark>에 따른 표지를 부착한 자동차의 운행에 대하여 다음 각 호의 지원을 할 수 있다. &lt;개정 2021.9.30.&gt; 
-  1. 시장이 운영하는 공영주차장 및 공공기관 주차장의 주차요금 감면 
-2. 삭 제 &lt;2021.9.30.&gt; 
-3. 그 밖에 시장이 필요하다고 인정하는 사항</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「환경친화적 자동차의 개발 및 보급 촉진에 관한 법률」 제11조</span></div><div class="act">「환경친화적 자동차의 개발 및 보급 촉진에 관한 법률」 제11조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2013-03-23</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제11조(환경친화적 자동차의 운행에 대한 지원)
-① 시ㆍ도지사는 환경친화적 자동차의 소유자로 하여금 그 자동차의 외부에서 환경친화적 자동차라는 것을 알아볼 수 있도록 표지(標識)를 부착하게 할 수 있다.
-② 국가나 지방자치단체는 제1항에 따른 표지를 부착한 자동차에 대하여 필요한 지원시책을 마련하여야 한다.
-③ 제1항에 따른 표지의 규격 등에 관하여 필요한 사항은 <mark class="d">산업통상자원부령으로</mark> 정한다. &lt;개정 2013.3.23<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제11조(환경친화적 자동차의 운행에 대한 지원)
-① 시ㆍ도지사는 환경친화적 자동차의 소유자로 하여금 그 자동차의 외부에서 환경친화적 자동차라는 것을 알아볼 수 있도록 표지(標識)를 부착하게 할 수 있다.
-② 국가나 지방자치단체는 제1항에 따른 표지를 부착한 자동차에 대하여 필요한 지원시책을 마련하여야 한다.
-③ 제1항에 따른 표지의 규격 등에 관하여 필요한 사항은 <mark class="i">산업통상부령으로</mark> 정한다. &lt;개정 2013.3.23<mark class="i">, 2025.10.1</mark>&gt;</span></div></div></div></div></div><div class="ord"><h2>군포시 녹색제품 구매촉진 조례</h2><div class="meta">시행 2015-10-12 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는<mark class="cite-law" title="녹색제품 구매촉진에 관한 법률제11조">「녹색제품 구매촉진에 관한 법률」제11조</mark>에 따라 군포시가 녹색제품의 구매를 촉진하는데 필요한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「녹색제품 구매촉진에 관한 법률」 제11조</span></div><div class="act">「녹색제품 구매촉진에 관한 법률」 제11조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2015-10-12</b> · 당시 법령본 <b>2012-02-01</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제11조(지방자치단체의 녹색제품 구매촉진 등)
-①특별시ㆍ광역시ㆍ도ㆍ특별자치도(이하 &quot;시ㆍ도&quot;라 한다) 또는 시ㆍ군ㆍ구는 녹색제품의 구매를 촉진하기 위하여 필요하다고 인정되는 때에는 다음 각호의 내용을 조례로 정하여 시행할 수 있다. &lt;개정 2011.4.5, 2012.2.1&gt;
-1.  제6조의 규정에 의한 녹색제품 의무구매를 이행하기 위하여 필요한 사항
-2.  녹색제품 대상품목외의 품목에 대한 녹색제품 판단기준의 설정ㆍ운영
-3.  그 밖에 녹색제품의 구매촉진을 위하여 필요한 사항
-②시ㆍ도 또는 시ㆍ군ㆍ구는 제1항의 규정에 의한 조례를 제정 또는 개정한 때에는 지체없이 이를 <mark class="d">환경부장관에게</mark> 제출하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제11조(지방자치단체의 녹색제품 구매촉진 등)
-①특별시ㆍ광역시ㆍ도ㆍ특별자치도(이하 &quot;시ㆍ도&quot;라 한다) 또는 시ㆍ군ㆍ구는 녹색제품의 구매를 촉진하기 위하여 필요하다고 인정되는 때에는 다음 각호의 내용을 조례로 정하여 시행할 수 있다. &lt;개정 2011.4.5, 2012.2.1&gt;
-1.  제6조의 규정에 의한 녹색제품 의무구매를 이행하기 위하여 필요한 사항
-2.  녹색제품 대상품목외의 품목에 대한 녹색제품 판단기준의 설정ㆍ운영
-3.  그 밖에 녹색제품의 구매촉진을 위하여 필요한 사항
-②시ㆍ도 또는 시ㆍ군ㆍ구는 제1항의 규정에 의한 조례를 제정 또는 개정한 때에는 지체없이 이를 <mark class="i">기후에너지환경부장관에게</mark> 제출하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 시민참여형 에너지전환 지원 조례</h2><div class="meta">시행 2025-05-08 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
-  1. &quot;시민참여형 에너지전환”이란 기후위기에 대응하기 위해 시민들이 주도적으로 에너지와 자원 효율을 높이고 신재생에너지 기반의 생산체계를 구축하기 위해 기여하는 것을 말한다. 
-2. &quot;마을공동체”란 시민의 자발적 참여를 통해 지역 내 관계망을 활성화하고 사람 중심의 사회적경제를 실현하는 공간·조직·관계가 통합된 집단으로서 <mark class="cite-local" title="군포시 마을공동체 만들기 지원조례제2조">「군포시 마을공동체 만들기 지원조례」 제2조</mark>에 따른 마을을 말한다. 
-3. &quot;공공기관”이란 <mark class="cite-local" title="군포시 출자·출연 기관의 운영에 관한 조례제2조">「군포시 출자·출연 기관의 운영에 관한 조례」 제2조</mark>에 따른 출자·출연기관 및 군포시(이하 &quot;시”라 한다)가 설립한 지방공기업을 말한다. 
-4. &quot;에너지전환시설”이란 에너지전환을 목적으로 설치되어 에너지 생산·수송·저장·전환 및 활동 등에 이용되는 시설물을 말한다. 
-5. “생활 실험실사업(living lab)”이란 마을에 적합한 시민참여형 에너지전환과 관련하여 주민과 이해당사자가 협력하여 함께 실험하면서 기술을 개발하고 대안을 찾는 것을 말한다. 
-6. &quot;에너지 참여형 소비자”란 자가발전설비에서 생산한 전력 중 사용하고 남은 전력 또는 자가용 전기설비에서 전력부하를 감축하여 절감한 전력을 판매하는 자를 말한다. 
-7. &quot;에너지 참여형 소비자 중개사업”이란 에너지 참여형 소비자가 생산한 전력을<mark class="cite-law" title="전기사업법">「전기사업법」</mark> 및 <mark class="cite-law" title="소규모 신·재생에너지 발전전력 등의 거래에 관한 지침">「소규모 신·재생에너지 발전전력 등의 거래에 관한 지침」</mark> 등에 따라 전력시장을 통하여 거래하거나 다른 소비자에게 직접 판매할 수 있도록 중개를 주된 목적으로 하는 사업을 말한다. 
-8. &quot;에너지공동체”란 기후변화와 에너지 위기에 대한 문제인식을 바탕으로 마을단위 주민주도로 에너지절약·효율향상으로 에너지 소비는 줄이고, 신재생에너지 생산을 늘려 에너지 자립도를 높여가는 마을공동체를 말한다. 
-9. “중간지원조직”이란 공공(행정)과 시민 및 지역사회의 다양한 주체들 사이에서 촉진자 또는 공익활동 활성화의 역할을 수행하는 조직을 말한다.</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「소규모 신·재생에너지 발전전력 등의 거래에 관한 지침」</span></div><div class="act">「소규모 신·재생에너지 발전전력 등의 거래에 관한 지침」 제명변경·폐지 여부를 확인하고 이 조례 제2조의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+[전문개정 2023.9.27.]</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「국민기초생활보장법」 제2조</span></div><div class="act">「국민기초생활보장법」 제2조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제7조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2014-12-30</b> → 현행 조문 <b>2014-12-30</b></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(수당 등의 신청) 
+① 명예수당 또는 지원수당을 신청하고자 하는 사람은 별지 제1호서식의 명예수당 지급신청서 또는 별지 제3호서식의 지원수당 지급신청서를 주민등록지 관할 동장에게 제출하여야 한다. &lt;개정 2023.9.27.&gt;
+② 제1항과 제6항에 따라 신청서를 제출받은 시장은 <mark class="cite-naked" title="전자정부법제36조">전자정부법 제36조 제1항</mark>에 따른 행정정보의 공동이용을 통하여 다음 각 호의 서류를 확인하여 적격 여부를 신청인에게 통보하여야 한다. 다만 신청인이 행정정보의 공동이용을 통한 확인에 동의하지 아니하는 경우에는 서류를 제출하여야 한다.&lt;신설 219.4.18.&gt;
+1. 국가유공자(유족)확인원
+2. 주민등록등(초)본
+3. 입금계좌확인정보(통장사본)
+③ 명예수당 또는 지원수당 지급신청서를 접수한 주민등록지 관할 동장은 거주기간 등을 확인한 후 신청서 접수일로부터 7일 이내에 신청서류를 시장에게 제출하여야 한다. &lt;개정 2019.4.18., 2023.9.27.&gt;
+④ 본인이 부득이한 사유로 명예수당 또는 지원수당을 신청할 수 없을 경우에는 배우자, 부양의무자 등이 신청할 수 있다. &lt;개정 2023.9.27.&gt;
+⑤ 사망위로금 신청자는 사망위로금 지급대상자의 유가족으로 한다. 다만, 유가족이 없는 국가보훈대상자의 경우에는 장제를 직접 행한 자로 한다.
+⑥ 사망위로금을 신청하고자 하는 사람은 사망위로금 지급대상자의 사망일로부터 1년 이내에 별지 제2호서식의 사망위로금 지급신청서를 시장에게 제출하여야 하며, 지급 순위는 <mark class="cite-law" title="국가유공자 등 예우 및 지원에 관한 법률제5조">「국가유공자 등 예우 및 지원에 관한 법률」제5조</mark>를 준용한다.&lt;개정 2019.4.18.&gt;</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「전자정부법」 제36조제1항</span></div><div class="act">「전자정부법」 제36조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제9조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2017-07-26</b></div></div></div></div><div class="ord"><h2>군포시 보훈회관 설치ㆍ운영 조례</h2><div class="meta">시행 2020-05-11 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
+1. 국가유공자란 국가를 위하여 희생하거나 공헌한 사람으로 <mark class="cite-law" title="국가유공자 등 예우 및 지원에 관한 법률제4조">「국가유공자 등 예우 및 지원에 관한 법률」(이하 “법률”이라 한다) 제4조</mark>에서 규정한 사람을 말한다.
+2. 보훈단체란 “국가유공자 등 단체 설립에 관한 법률”, “참전유공자 예우 및 단체설립에 관한 법률”, “고엽제후유의증 등 환자지원 및 단체설립에 관한 법률”, “특수임무유공자 예우 및 단체설립에 관한 법률”, “대한민국재향군인회법”에 따라 등록한 단체를 말한다.
+3. 보훈회원이란 국가유공자 등이 보훈단체에 가입신청서 등을 제출하고 각 단체의 정관 등에 정한 사항을 성실히 따른 사람을 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「국가유공자 등 예우 및 지원에 관한 법률」 제4조</span></div><div class="act">「국가유공자 등 예우 및 지원에 관한 법률」 제4조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-05-11</b> · 당시 법령본 <b>2020-03-24</b> → 현행 조문 <b>2023-03-04</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제4조(적용 대상 국가유공자)
+① 다음 각 호의 어느 하나에 해당하는 국가유공자, 그 유족 또는 가족(다른 법률에서 이 법에 규정된 예우 등을 받도록 규정된 사람을 포함한다)은 이 법에 따른 예우를 받는다. &lt;개정 2015.12.22<mark class="pt" title=", 2020.3.24, 2023.3.4 추가됨">‸</mark>&gt;
+1.  순국선열: 「독립유공자예우에 관한 법률」 제4조제1호에 따른 순국선열
+2.  애국지사: 「독립유공자예우에 관한 법률」 제4조제2호에 따른 애국지사
+3.  전몰군경(戰歿軍警): 군인이나 경찰공무원으로서 전투 또는 이에 준하는 직무수행 중 사망한 사람(군무원으로서 1959년 12월 31일 이전에 전투 또는 이에 준하는 직무수행 중 사망한 사람을 포함한다)
+4.  전상군경(戰傷軍警): 군인이나 경찰공무원으로서 전투 또는 이에 준하는 직무수행 중 상이를 입고 전역(퇴역ㆍ면역 또는 상근예비역 소집해제를 포함한다. 이하 같다)하거나 퇴직(면직을 포함한다. 이하 같다)한 사람(군무원으로서 1959년 12월 31일 이전에 전투 또는 이에 준하는 직무수행 중 상이를 입고 퇴직한 사람을 포함한다)<mark class="d">으로서</mark> 그 상이정도가 <mark class="d">국가보훈처장이</mark> 실시하는 신체검사에서 제6조의4에 따른 상이등급(이하 &quot;상이등급&quot;이라 한다)으로 판정된 사람
+5.  순직군경(殉職軍警): 군인이나 경찰ㆍ소방 공무원으로서 국가의 수호ㆍ안전보장 또는 국민의 생명ㆍ재산 보호와 직접적인 관련이 있는 직무수행이나 교육훈련 중 사망한 사람(질병으로 사망한 사람을 포함한다)
+6.  공상군경(公傷軍警): 군인이나 경찰ㆍ소방 공무원으로서 국가의 수호ㆍ안전보장 또는 국민의 생명ㆍ재산 보호와 직접적인 관련이 있는 직무수행이나 교육훈련 중 상이(질병을 포함한다)를 입고 전역하거나 퇴직한 <mark class="pt" title="사람 또는 6개월 이내에 전역이나 퇴직하는 추가됨">‸</mark>사람으로서 그 상이정도가 <mark class="d">국가보훈처장이</mark> 실시하는 신체검사에서 상이등급으로 판정된 사람
+7.  무공수훈자(武功受勳者): 무공훈장(武功勳章)을 받은 사람. 다만, 「국가공무원법」 제2조 및 「지방공무원법」 제2조에 따른 공무원과 국가나 지방자치단체에서 일상적으로 공무에 종사하는 대통령령으로 정하는 직원이 무공훈장을 받은 경우에는 전역하거나 퇴직한 사람만 해당한다.
+8.  보국수훈자(保國受勳者): 다음 각 목의 어느 하나에 해당하는 사람
+가.  군인으로서 보국훈장을 받고 전역한 사람
+나.  군인 외의 사람으로서 간첩체포, 무기개발 및 그 밖에 대통령령으로 정하는 사유(이하 &quot;간첩체포등의 사유&quot;라 한다)로 보국훈장을 받은 사람. 다만, 「국가공무원법」 제2조 및 「지방공무원법」 제2조에 따른 공무원(군인은 제외한다)과 국가나 지방자치단체에서 일상적으로 공무에 종사하는 대통령령으로 정하는 직원이 간첩체포등의 사유로 보국훈장을 받은 경우에는 퇴직한 사람만 해당한다.
+9.  6ㆍ25참전 재일학도의용군인(在日學徒義勇軍人)(이하 &quot;재일학도의용군인&quot;이라 한다): 대한민국 국민으로서 일본에 거주하던 사람으로서 1950년 6월 25일부터 1953년 7월 27일까지의 사이에 국군이나 유엔군에 지원 입대하여 6ㆍ25전쟁에 참전하고 제대한 사람(파면된 사람이나 형을 선고받고 제대된 사람은 제외한다)
+10.  참전유공자: 「참전유공자 예우 및 단체설립에 관한 법률」 제2조제2호에 해당하는 사람 중 다음 각 목의 어느 하나에 해당하는 사람
+가.  「참전유공자 예우 및 단체설립에 관한 법률」 제5조에 따라 등록된 사람
+나.  「고엽제후유의증 등 환자지원 및 단체설립에 관한 법률」 제4조 또는 제7조에 따라 등록된 사람
+11.  4ㆍ19혁명사망자: 1960년 4월 19일을 전후한 혁명에 참가하여 사망한 사람
+12.  4ㆍ19혁명부상자: 1960년 4월 19일을 전후한 혁명에 참가하여 상이를 입은 사람으로서 그 상이정도가 <mark class="d">국가보훈처장이</mark> 실시하는 신체검사에서 상이등급으로 판정된 사람
+13.  4ㆍ19혁명공로자: 1960년 4월 19일을 전후한 혁명에 참가한 사람 중 제11호와 제12호에 해당하지 아니하는 사람으로서 건국포장(建國褒章)을 받은 사람
+14.  순직공무원: 「국가공무원법」 제2조 및 「지방공무원법」 제2조에 따른 공무원(군인과 <mark class="d">경찰공무원은</mark> 제외한다)과 국가나 지방자치단체에서 일상적으로 공무에 종사하는 대통령령으로 정하는 직원으로서 국민의 생명ㆍ재산 보호와 직접적인 관련이 있는 직무수행이나 교육훈련 중 사망한 사람(질병으로 사망한 사람을 포함한다)
+15.  공상공무원: 「국가공무원법」 제2조 및 「지방공무원법」 제2조에 따른 공무원(군인과 <mark class="d">경찰공무원은</mark> 제외한다)과 국가나 지방자치단체에서 일상적으로 공무에 종사하는 대통령령으로 정하는 직원으로서 국민의 생명ㆍ재산 보호와 직접적인 관련이 있는 직무수행이나 교육훈련 중 상이(질병을 포함한다)를 입고 <mark class="d">퇴직한</mark> 사람으로서 그 상이정도가 <mark class="d">국가보훈처장이</mark> 실시하는 신체검사에서 상이등급으로 판정된 사람
+16.  국가사회발전 특별공로순직자(이하 &quot;특별공로순직자&quot;라 한다): 국가사회발전에 현저한 공이 있는 사람 중 그 공로와 관련되어 순직한 사람으로서 국무회의에서 이 법의 적용 대상자로 의결된 사람
+17.  국가사회발전 특별공로상이자(이하 &quot;특별공로상이자&quot;라 한다): 국가사회발전에 현저한 공이 있는 사람 중 그 공로와 관련되어 상이를 입은 사람으로서 그 상이정도가 <mark class="d">국가보훈처장이</mark> 실시하는 신체검사에서 상이등급으로 판정되어 국무회의에서 이 법의 적용 대상자로 의결된 사람
+18.  국가사회발전 특별공로자(이하 &quot;특별공로자&quot;라 한다): 국가사회발전에 현저한 공이 있는 사람 중 제16호와 제17호에 해당하지 아니하는 사람으로서 국무회의에서 이 법의 적용 대상자로 의결된 사람
+② 제1항제3호부터 제6호까지, 제14호 및 제15호에 따른 국가유공자의 요건에 해당되는지에 대한 구체적인 기준과 범위는 다음 각 호의 사항 등을 종합적으로 고려하여 대통령령으로 정한다.
+1.  전투 또는 이에 준하는 직무수행의 범위
+2.  직무수행이나 교육훈련과 국가의 수호ㆍ안전보장 또는 국민의 생명ㆍ재산 보호와의 관련 정도
+3.  사망하거나 상이(질병을 포함한다)를 입게 된 경위 및 본인<mark class="d"> 과실의 유무와 정도
+③ 제1항에도 불구하고 제1항제1호 및 제2호에 따른 순국선열ㆍ애국지사의 예우에 관하여는 「독립유공자예우에 관한 법률」에서 정한다.
+④ 제1항에도 불구하고</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제4조(적용 대상 국가유공자)
+① 다음 각 호의 어느 하나에 해당하는 국가유공자, 그 유족 또는 가족(다른 법률에서 이 법에 규정된 예우 등을 받도록 규정된 사람을 포함한다)은 이 법에 따른 예우를 받는다. &lt;개정 2015.12.22<mark class="i">, 2020.3.24, 2023.3.4</mark>&gt;
+1.  순국선열: 「독립유공자예우에 관한 법률」 제4조제1호에 따른 순국선열
+2.  애국지사: 「독립유공자예우에 관한 법률」 제4조제2호에 따른 애국지사
+3.  전몰군경(戰歿軍警): 군인이나 경찰공무원으로서 전투 또는 이에 준하는 직무수행 중 사망한 사람(군무원으로서 1959년 12월 31일 이전에 전투 또는 이에 준하는 직무수행 중 사망한 사람을 포함한다)
+4.  전상군경(戰傷軍警): 군인이나 경찰공무원으로서 전투 또는 이에 준하는 직무수행 중 상이를 입고 전역(퇴역ㆍ면역 또는 상근예비역 소집해제를 포함한다. 이하 같다)하거나 퇴직(면직을 포함한다. 이하 같다)한 사람(군무원으로서 1959년 12월 31일 이전에 전투 또는 이에 준하는 직무수행 중 상이를 입고 퇴직한 사람을 포함한다)<mark class="i"> 또는 6개월 이내에 전역이나 퇴직하는 사람으로서</mark> 그 상이정도가 <mark class="i">국가보훈부장관이</mark> 실시하는 신체검사에서 제6조의4에 따른 상이등급(이하 &quot;상이등급&quot;이라 한다)으로 판정된 사람
+5.  순직군경(殉職軍警): 군인이나 경찰ㆍ소방 공무원으로서 국가의 수호ㆍ안전보장 또는 국민의 생명ㆍ재산 보호와 직접적인 관련이 있는 직무수행이나 교육훈련 중 사망한 사람(질병으로 사망한 사람을 포함한다)
+6.  공상군경(公傷軍警): 군인이나 경찰ㆍ소방 공무원으로서 국가의 수호ㆍ안전보장 또는 국민의 생명ㆍ재산 보호와 직접적인 관련이 있는 직무수행이나 교육훈련 중 상이(질병을 포함한다)를 입고 전역하거나 퇴직한 <mark class="i">사람 또는 6개월 이내에 전역이나 퇴직하는 </mark>사람으로서 그 상이정도가 <mark class="i">국가보훈부장관이</mark> 실시하는 신체검사에서 상이등급으로 판정된 사람
+7.  무공수훈자(武功受勳者): 무공훈장(武功勳章)을 받은 사람. 다만, 「국가공무원법」 제2조 및 「지방공무원법」 제2조에 따른 공무원과 국가나 지방자치단체에서 일상적으로 공무에 종사하는 대통령령으로 정하는 직원이 무공훈장을 받은 경우에는 전역하거나 퇴직한 사람만 해당한다.
+8.  보국수훈자(保國受勳者): 다음 각 목의 어느 하나에 해당하는 사람
+가.  군인으로서 보국훈장을 받고 전역한 사람
+나.  군인 외의 사람으로서 간첩체포, 무기개발 및 그 밖에 대통령령으로 정하는 사유(이하 &quot;간첩체포등의 사유&quot;라 한다)로 보국훈장을 받은 사람. 다만, 「국가공무원법」 제2조 및 「지방공무원법」 제2조에 따른 공무원(군인은 제외한다)과 국가나 지방자치단체에서 일상적으로 공무에 종사하는 대통령령으로 정하는 직원이 간첩체포등의 사유로 보국훈장을 받은 경우에는 퇴직한 사람만 해당한다.
+9.  6ㆍ25참전 재일학도의용군인(在日學徒義勇軍人)(이하 &quot;재일학도의용군인&quot;이라 한다): 대한민국 국민으로서 일본에 거주하던 사람으로서 1950년 6월 25일부터 1953년 7월 27일까지의 사이에 국군이나 유엔군에 지원 입대하여 6ㆍ25전쟁에 참전하고 제대한 사람(파면된 사람이나 형을 선고받고 제대된 사람은 제외한다)
+10.  참전유공자: 「참전유공자 예우 및 단체설립에 관한 법률」 제2조제2호에 해당하는 사람 중 다음 각 목의 어느 하나에 해당하는 사람
+가.  「참전유공자 예우 및 단체설립에 관한 법률」 제5조에 따라 등록된 사람
+나.  「고엽제후유의증 등 환자지원 및 단체설립에 관한 법률」 제4조 또는 제7조에 따라 등록된 사람
+11.  4ㆍ19혁명사망자: 1960년 4월 19일을 전후한 혁명에 참가하여 사망한 사람
+12.  4ㆍ19혁명부상자: 1960년 4월 19일을 전후한 혁명에 참가하여 상이를 입은 사람으로서 그 상이정도가 <mark class="i">국가보훈부장관이</mark> 실시하는 신체검사에서 상이등급으로 판정된 사람
+13.  4ㆍ19혁명공로자: 1960년 4월 19일을 전후한 혁명에 참가한 사람 중 제11호와 제12호에 해당하지 아니하는 사람으로서 건국포장(建國褒章)을 받은 사람
+14.  순직공무원: 「국가공무원법」 제2조 및 「지방공무원법」 제2조에 따른 공무원(군인과 <mark class="i">경찰ㆍ소방 공무원은</mark> 제외한다)과 국가나 지방자치단체에서 일상적으로 공무에 종사하는 대통령령으로 정하는 직원으로서 국민의 생명ㆍ재산 보호와 직접적인 관련이 있는 직무수행이나 교육훈련 중 사망한 사람(질병으로 사망한 사람을 포함한다)
+15.  공상공무원: 「국가공무원법」 제2조 및 「지방공무원법」 제2조에 따른 공무원(군인과 <mark class="i">경찰ㆍ소방 공무원은</mark> 제외한다)과 국가나 지방자치단체에서 일상적으로 공무에 종사하는 대통령령으로 정하는 직원으로서 국민의 생명ㆍ재산 보호와 직접적인 관련이 있는 직무수행이나 교육훈련 중 상이(질병을 포함한다)를 입고 <mark class="i">퇴직하거나 6개월 이내에 퇴직하는</mark> 사람으로서 그 상이정도가 <mark class="i">국가보훈부장관이</mark> 실시하는 신체검사에서 상이등급으로 판정된 사람
+16.  국가사회발전 특별공로순직자(이하 &quot;특별공로순직자&quot;라 한다): 국가사회발전에 현저한 공이 있는 사람 중 그 공로와 관련되어 순직한 사람으로서 국무회의에서 이 법의 적용 대상자로 의결된 사람
+17.  국가사회발전 특별공로상이자(이하 &quot;특별공로상이자&quot;라 한다): 국가사회발전에 현저한 공이 있는 사람 중 그 공로와 관련되어 상이를 입은 사람으로서 그 상이정도가 <mark class="i">국가보훈부장관이</mark> 실시하는 신체검사에서 상이등급으로 판정되어 국무회의에서 이 법의 적용 대상자로 의결된 사람
+18.  국가사회발전 특별공로자(이하 &quot;특별공로자&quot;라 한다): 국가사회발전에 현저한 공이 있는 사람 중 제16호와 제17호에 해당하지 아니하는 사람으로서 국무회의에서 이 법의 적용 대상자로 의결된 사람
+② 제1항제3호부터 제6호까지, 제14호 및 제15호에 따른 국가유공자의 요건에 해당되는지에 대한 구체적인 기준과 범위는 다음 각 호의 사항 등을 종합적으로 고려하여 대통령령으로 정한다.
+1.  전투 또는 이에 준하는 직무수행의 범위
+2.  직무수행이나 교육훈련과 국가의 수호ㆍ안전보장 또는 국민의 생명ㆍ재산 보호와의 관련 정도
+3.  사망하거나 상이(질병을 포함한다)를 입게 된 경위 및 본인<mark class="pt" title="과실의 유무와 정도
+③ 제1항에도 불구하고 제1항제1호 및 제2호에 따른 삭제됨">‸</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 사회복지사 등의 처우 및 지위 향상에 관한 조례</h2><div class="meta">시행 2023-01-09 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
+  1. “사회복지사업”이란 <mark class="cite-law" title="사회복지사업법제2조">「사회복지사업법」제2조</mark>에 따라 각종 복지사업과 이와 관련된 자원봉사활동 및 복지시설의 운영 또는 지원을 목적으로 하는 사업을 말한다. 
+2. “사회복지법인”이란 사회복지사업을 할 목적으로 설립된 법인을 말한다. 
+3. “사회복지시설”이란 사회복지사업을 할 목적으로 설치된 시설을 말한다. 
+4. “사회복지서비스”란 국가·지방자치단체 및 민간부문의 도움을 필요로 하는 주민에게 상담, 재활, 직업 소개 및 지도, 사회복지시설의 이용 등을 제공하여 정상적인 사회생활이 가능하도록 제도적으로 지원하는 것을 말한다. 
+5. “사회복지사 등”이란 <mark class="cite-law" title="사회복지사 등의 처우 및 지위 향상을 위한 법률제2조">「사회복지사 등의 처우 및 지위 향상을 위한 법률」(이하 “법”이라 한다) 제2조</mark>에 따라 사회복지사업에 종사하는 사람을 말한다. &lt;개정 2023.1.9.&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「사회복지사업법」 제2조</span></div><div class="act">「사회복지사업법」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-01-09</b> · 당시 법령본 <b>2017-10-24</b> → 현행 조문 <b>2025-04-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2011.8.4, 2012.1.26, 2014.5.20, 2016.2.3, 2016.5.29, 2017.10.24<mark class="pt" title=", 2023.7.18, 2025.4.1 추가됨">‸</mark>&gt;
+1.  &quot;사회복지사업&quot;이란 다음 각 목의 법률에 따른 보호ㆍ선도(善導) 또는 복지에 관한 사업과 사회복지상담, 직업지원, 무료 숙박, 지역사회복지, 의료복지, 재가복지(在家福祉), 사회복지관 운영, 정신질환자 및 한센병력자의 사회복귀에 관한 사업 등 각종 복지사업과 이와 관련된 자원봉사활동 및 복지시설의 운영 또는 지원을 목적으로 하는 사업을 말한다.
+가.  「국민기초생활 보장법」
+나.  「아동복지법」
+다.  「노인복지법」
+라.  「장애인복지법」
+마.  「한부모가족지원법」
+바.  「영유아보육법」
+사.  「성매매방지 및 피해자보호 등에 관한 법률」
+아.  「정신건강증진 및 정신질환자 복지서비스 지원에 관한 법률」
+자.  「성폭력방지 및 피해자보호 등에 관한 법률」
+차.  「<mark class="d">입양특례법</mark>」
+카.  「일제하 일본군위안부 피해자에 대한 생활안정지원 및 기념사업 등에 관한 법률」
+타.  「사회복지공동모금회법」
+파.  「장애인ㆍ노인ㆍ임산부 등의 편의증진 보장에 관한 법률」
+하.  「가정폭력방지 및 피해자보호 등에 관한 법률」
+거.  「농어촌주민의 보건복지증진을 위한 특별법」
+너.  「식품등 기부 활성화에 관한 법률」
+더.  「의료급여법」
+러.  「기초연금법」
+머.  「긴급복지지원법」
+버.  「다문화가족지원법」
+서.  「장애인연금법」
+어.  「장애인활동 지원에 관한 법률」
+저.  「노숙인 등의 복지 및 자립지원에 관한 법률」
+처.  「보호관찰 등에 관한 법률」
+커.  「장애아동 복지지원법」
+터.  「발달장애인 권리보장 및 지원에 관한 법률」
+퍼.  「청소년복지 지원법」
+허<mark class="pt" title=".  「스토킹방지 및 피해자보호 등에 관한 법률」
+고 추가됨">‸</mark>.  그 밖에 대통령령으로 정하는 법률
+2.  &quot;지역사회복지&quot;란 주민의 복지증진과 삶의 질 향상을 위하여 지역사회 차원에서 전개하는 사회복지를 말한다.
+3.  &quot;사회복지법인&quot;이란 사회복지사업을 할 목적으로 설립된 법인을 말한다.
+4.  &quot;사회복지시설&quot;이란 사회복지사업을 할 목적으로 설치된 시설을 말한다.
+5.  &quot;사회복지관&quot; 이란 지역사회를 기반으로 일정한 시설과 전문인력을 갖추고 지역주민의 참여와 협력을 통하여 지역사회의 복지문제를 예방하고 해결하기 위하여 종합적인 복지서비스를 제공하는 시설을 말한다.
+6.  &quot;사회복지서비스&quot;란 국가ㆍ지방자치단체 및 민간부문의 도움을 필요로 하는 모든 국민에게 「사회보장기본법」 제3조제4호에 따른 사회서비스 중 사회복지사업을 통한 서비스를 제공하여 삶의 질이 향상되도록 제도적으로 지원하는 것을 말한다.
+7.  &quot;보건의료서비스&quot;란 국민의 건강을 보호ㆍ증진하기 위하여 보건의료인이 하는 모든 활동을 말한다.</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2011.8.4, 2012.1.26, 2014.5.20, 2016.2.3, 2016.5.29, 2017.10.24<mark class="i">, 2023.7.18, 2025.4.1</mark>&gt;
+1.  &quot;사회복지사업&quot;이란 다음 각 목의 법률에 따른 보호ㆍ선도(善導) 또는 복지에 관한 사업과 사회복지상담, 직업지원, 무료 숙박, 지역사회복지, 의료복지, 재가복지(在家福祉), 사회복지관 운영, 정신질환자 및 한센병력자의 사회복귀에 관한 사업 등 각종 복지사업과 이와 관련된 자원봉사활동 및 복지시설의 운영 또는 지원을 목적으로 하는 사업을 말한다.
+가.  「국민기초생활 보장법」
+나.  「아동복지법」
+다.  「노인복지법」
+라.  「장애인복지법」
+마.  「한부모가족지원법」
+바.  「영유아보육법」
+사.  「성매매방지 및 피해자보호 등에 관한 법률」
+아.  「정신건강증진 및 정신질환자 복지서비스 지원에 관한 법률」
+자.  「성폭력방지 및 피해자보호 등에 관한 법률」
+차.  「<mark class="i">국내입양에 관한 특별법」 및 「국제입양에 관한 법률</mark>」
+카.  「일제하 일본군위안부 피해자에 대한 생활안정지원 및 기념사업 등에 관한 법률」
+타.  「사회복지공동모금회법」
+파.  「장애인ㆍ노인ㆍ임산부 등의 편의증진 보장에 관한 법률」
+하.  「가정폭력방지 및 피해자보호 등에 관한 법률」
+거.  「농어촌주민의 보건복지증진을 위한 특별법」
+너.  「식품등 기부 활성화에 관한 법률」
+더.  「의료급여법」
+러.  「기초연금법」
+머.  「긴급복지지원법」
+버.  「다문화가족지원법」
+서.  「장애인연금법」
+어.  「장애인활동 지원에 관한 법률」
+저.  「노숙인 등의 복지 및 자립지원에 관한 법률」
+처.  「보호관찰 등에 관한 법률」
+커.  「장애아동 복지지원법」
+터.  「발달장애인 권리보장 및 지원에 관한 법률」
+퍼.  「청소년복지 지원법」
+허<mark class="i">.  「스토킹방지 및 피해자보호 등에 관한 법률」
+고</mark>.  그 밖에 대통령령으로 정하는 법률
+2.  &quot;지역사회복지&quot;란 주민의 복지증진과 삶의 질 향상을 위하여 지역사회 차원에서 전개하는 사회복지를 말한다.
+3.  &quot;사회복지법인&quot;이란 사회복지사업을 할 목적으로 설립된 법인을 말한다.
+4.  &quot;사회복지시설&quot;이란 사회복지사업을 할 목적으로 설치된 시설을 말한다.
+5.  &quot;사회복지관&quot; 이란 지역사회를 기반으로 일정한 시설과 전문인력을 갖추고 지역주민의 참여와 협력을 통하여 지역사회의 복지문제를 예방하고 해결하기 위하여 종합적인 복지서비스를 제공하는 시설을 말한다.
+6.  &quot;사회복지서비스&quot;란 국가ㆍ지방자치단체 및 민간부문의 도움을 필요로 하는 모든 국민에게 「사회보장기본법」 제3조제4호에 따른 사회서비스 중 사회복지사업을 통한 서비스를 제공하여 삶의 질이 향상되도록 제도적으로 지원하는 것을 말한다.
+7.  &quot;보건의료서비스&quot;란 국민의 건강을 보호ㆍ증진하기 위하여 보건의료인이 하는 모든 활동을 말한다.</span></div></div></div></div></div><div class="ord"><h2>군포시 자활기금 설치 및 운용 조례</h2><div class="meta">시행 2024-07-09 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="(위치 미상)"><div class="arthd">조례 (위치 미상)</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「국민기초생활 보장법 시행령 시행규칙」</span></div><div class="act">「국민기초생활 보장법 시행령 시행규칙」 제명변경·폐지 여부를 확인하고 이 조례의 해당 조문의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2024-07-09</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><div class="ord"><h2>군포시 가두판매대 설치 및 운영 관리조례</h2><div class="meta">시행 2025-07-11 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-fmt">📐 서식 정비 1</span></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(가두판매대 설치장소 등)  
+① 가두판매대는 다음 각 호의 기준에 의하여 적합한 장소에 설치하여야 한다.) &lt;개정 2019.7.9.&gt; 
+1. <mark class="cite-naked" title="도로법제61조">도로법 제61조</mark> 및 동법 시행령 제55조에 의해 도로점용허가를 득한 후 설치하여야 한다. 
+2. 버스이용객의 승·하차에 대한 불편이 없고 차량 진출입 등 교통소통에 장애가 되지 않도록 설치하여야 한다. 
+3. 버스정류장 1개소 당 1개소만 설치할 수 있다. 
+4. 도시미관을 저해하는 시설을 설치하거나 시민 보행에 지장을 주는 좁은 장소에는 설치할 수 없다. 
+② 지역 및 교통여건의 변경에 따라 버스정류장을 이전 또는 폐쇄할 경우 공용, 공공용, 공익사업으로 인하여 영업을 하지 못하는 경우 대체장소를 제공해 줄 수 있다. &lt;개정 2005. 10. 28&gt;</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「도로법」 제61조</span></div><div class="act">「도로법」 제61조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제3조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2023-04-18</b> → 현행 조문 <b>2023-04-18</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

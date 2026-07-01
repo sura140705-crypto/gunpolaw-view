@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -137,4 +145,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 ⑨ <mark class="i">시ㆍ도 및 시ㆍ군ㆍ자치구는</mark> 관할구역의 교육ㆍ학예 진흥을 위하여 제2항 <mark class="i">및</mark> <mark class="i">제8항</mark> 외에 별도 경비를 교육비특별회계로 전출할 수 있다. &lt;개정 2019.12.31<mark class="i">, 2021.12.28</mark>&gt;
 ⑩ 시ㆍ도지사는 제2항부터 제5항까지에 따른 교육비특별회계로의 회계연도별ㆍ월별 전출 결과를 매년 2월 28일까지 교육부장관에게 제출하고, 교육부장관은 매년 3월 31일까지 국회 소관 상임위원회에 보고하여야 한다.</span></div></div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(보조의 신청등)  
 ① 각급학교의 장은 다음년도의 보조사업을 신청하고자 할 때에는 미리 교육장과 협의하여 매 회계년도전 7월말까지 교육장을 경유 제출하여야 한다. 
-② 제1항의 규정에 의하여 교육장으로부터 제출받은 보조신청서는 심의회의 의결을 거쳐 보조사업 및 지원액을 시장이 결정하고 <mark class="cite-naked" title="지방교육재정교부금법제11조">지방교육재정교부금법 제11조 제5항</mark>의 규정에 의한 도지사의 승인을 얻어 지원한다.</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「지방교육재정교부금법」 제11조제5항</span></div><div class="act">「지방교육재정교부금법」 제11조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제4조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2021-04-26</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2021-12-28</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+② 제1항의 규정에 의하여 교육장으로부터 제출받은 보조신청서는 심의회의 의결을 거쳐 보조사업 및 지원액을 시장이 결정하고 <mark class="cite-naked" title="지방교육재정교부금법제11조">지방교육재정교부금법 제11조 제5항의 규정</mark>에 의한 도지사의 승인을 얻어 지원한다.</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「지방교육재정교부금법」 제11조제5항</span></div><div class="act">「지방교육재정교부금법」 제11조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제4조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2021-04-26</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2021-12-28</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

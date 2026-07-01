@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>군포시 시민참여형 에너지전환 지원 조례 — 정비 권고(분석 결과)</title><style>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>2035349 — 정비 권고(분석 결과)</title><style>
 /* 변수는 .page(독립 권고서)·.ord(대시보드 주입 블록)에만 — :root 로 두면 대시보드의
    자체 변수를 덮어써 색이 바뀐다. 두 루트에 한정해 주입 시 오염을 막는다. */
 .page, .ord { --navy:#13325b; --navy2:#1d4e89;
@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -109,13 +117,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 시민참여형 에너지전환 지원 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">1</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">0</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 시민참여형 에너지전환 지원 조례</h2><div class="meta">시행 2025-05-08 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
-  1. &quot;시민참여형 에너지전환”이란 기후위기에 대응하기 위해 시민들이 주도적으로 에너지와 자원 효율을 높이고 신재생에너지 기반의 생산체계를 구축하기 위해 기여하는 것을 말한다. 
-2. &quot;마을공동체”란 시민의 자발적 참여를 통해 지역 내 관계망을 활성화하고 사람 중심의 사회적경제를 실현하는 공간·조직·관계가 통합된 집단으로서 <mark class="cite-local" title="군포시 마을공동체 만들기 지원조례제2조">「군포시 마을공동체 만들기 지원조례」 제2조</mark>에 따른 마을을 말한다. 
-3. &quot;공공기관”이란 <mark class="cite-local" title="군포시 출자·출연 기관의 운영에 관한 조례제2조">「군포시 출자·출연 기관의 운영에 관한 조례」 제2조</mark>에 따른 출자·출연기관 및 군포시(이하 &quot;시”라 한다)가 설립한 지방공기업을 말한다. 
-4. &quot;에너지전환시설”이란 에너지전환을 목적으로 설치되어 에너지 생산·수송·저장·전환 및 활동 등에 이용되는 시설물을 말한다. 
-5. “생활 실험실사업(living lab)”이란 마을에 적합한 시민참여형 에너지전환과 관련하여 주민과 이해당사자가 협력하여 함께 실험하면서 기술을 개발하고 대안을 찾는 것을 말한다. 
-6. &quot;에너지 참여형 소비자”란 자가발전설비에서 생산한 전력 중 사용하고 남은 전력 또는 자가용 전기설비에서 전력부하를 감축하여 절감한 전력을 판매하는 자를 말한다. 
-7. &quot;에너지 참여형 소비자 중개사업”이란 에너지 참여형 소비자가 생산한 전력을<mark class="cite-law" title="전기사업법">「전기사업법」</mark> 및 <mark class="cite-law" title="소규모 신·재생에너지 발전전력 등의 거래에 관한 지침">「소규모 신·재생에너지 발전전력 등의 거래에 관한 지침」</mark> 등에 따라 전력시장을 통하여 거래하거나 다른 소비자에게 직접 판매할 수 있도록 중개를 주된 목적으로 하는 사업을 말한다. 
-8. &quot;에너지공동체”란 기후변화와 에너지 위기에 대한 문제인식을 바탕으로 마을단위 주민주도로 에너지절약·효율향상으로 에너지 소비는 줄이고, 신재생에너지 생산을 늘려 에너지 자립도를 높여가는 마을공동체를 말한다. 
-9. “중간지원조직”이란 공공(행정)과 시민 및 지역사회의 다양한 주체들 사이에서 촉진자 또는 공익활동 활성화의 역할을 수행하는 조직을 말한다.</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「소규모 신·재생에너지 발전전력 등의 거래에 관한 지침」</span></div><div class="act">「소규모 신·재생에너지 발전전력 등의 거래에 관한 지침」 제명변경·폐지 여부를 확인하고 이 조례 제2조의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>2035349 — 정비 권고(분석 결과)</h1><div class="sub">전체 0개 조례 중 정비 대상 0개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">0</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

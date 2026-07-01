@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -109,15 +117,15 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 교통약자의 이동편의 증진에 관한 조례 시행규칙 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">6</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 교통약자의 이동편의 증진에 관한 조례 시행규칙</h2><div class="meta">시행 2026-04-22 · 정비 항목 6건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(특별교통수단 등의 이용대상자 등록·심사) &lt;개정 2023.12.12.&gt;
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 교통약자의 이동편의 증진에 관한 조례 시행규칙 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">1</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">6</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 교통약자의 이동편의 증진에 관한 조례 시행규칙</h2><div class="meta">시행 2026-04-22 · 정비 항목 7건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(특별교통수단 등의 이용대상자 등록·심사) &lt;개정 2023.12.12.&gt;
 ① <mark class="cite-local" title="군포시 교통약자의 이동편의 증진에 관한 조례제12조">「군포시 교통약자의 이동편의 증진에 관한 조례」(이하 “조례”라 한다) 제12조</mark>에 따른 이용대상자가 특별교통수단 등을 이용하고자 하는 경우에는 별지 제1호 서식의 등록 신청서를 시장에게 미리 제출하여야 한다.&lt;개정 2026.4.22.&gt;
 ② 제1항에 따라 등록 신청을 하려는 사람은 별지 제1호서식의 등록 신청서에 다음 각 호의 서류를 첨부하여야 한다.&lt;개정 2026.4.22.&gt;
 1. 본인 확인 서류
 가.<mark class="cite-law" title="교통약자의 이동편의 증진법 시행규칙제6조">「교통약자의 이동편의 증진법 시행규칙」(이하 “시행규칙”이라 한다) 제6조제1항제1호</mark>에 해당하는 사람: <mark class="cite-law" title="장애인복지법제32조">「장애인복지법」제32조제1항</mark>에 따른 장애인등록증 사본
 나. <mark class="cite-law" title="교통약자의 이동편의 증진법 시행규칙제6조">시행규칙 제6조제1항제3호</mark>에 해당하는 사람: 주민등록증 등 공공기관이 발행한 본인 확인이 가능한 신분증 사본
 2. 이용자격을 증명하는 서류
-가. 특별교통수단 이용대상자:<mark class="cite-local" title="경기도 특별교통수단 광역이동서비스 표준지침">「경기도 특별교통수단 광역이동서비스 표준지침」</mark>에 따른 서류
-나. 일시적 장애로 대중교통 이용이 어려운 사람:<mark class="cite-local" title="경기도 특별교통수단 광역이동서비스 표준지침">「경기도 특별교통수단 광역이동서비스 표준지침」</mark>대체수단 중 교통약자전용차량 이용대상자 서류
+가. 특별교통수단 이용대상자:<mark class="cite-law" title="경기도 특별교통수단 광역이동서비스 표준지침">「경기도 특별교통수단 광역이동서비스 표준지침」</mark>에 따른 서류
+나. 일시적 장애로 대중교통 이용이 어려운 사람:<mark class="cite-law" title="경기도 특별교통수단 광역이동서비스 표준지침">「경기도 특별교통수단 광역이동서비스 표준지침」</mark>대체수단 중 교통약자전용차량 이용대상자 서류
 다. 임신 중이거나 분만 후 12개월 미만 여성: 임신확인서 또는 출생 증빙 서류
 라. 노인장기요양등급 1, 2급 비휠체어 이용자 : 장기요양인정서
 3. 그 밖에 시장이 이용자격의 확인에 필요하다고 인정하는 서류
@@ -126,7 +134,11 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 ⑤ 시장은 심사 결과에 불복하는 사람이 이의신청을 하거나 이용대상자 심사에서 승인결정을 받은 사람이 추후 이동환경이 개선되었거나 장애가 완화된 경우에는 재심사할 수 있다.
 ⑥ 특별교통수단 이용대상자로 등록 신청한 사람이 이전 주소지에서 이용대상자로 등록되어있는 경우 자치단체 간 정보 공유를 통해 등록 서류 등을 확인할 수 있으면 등록 서류 등의 제출을 생략할 수 있다.
 ⑦ 시장은 특별교통수단 등 이용대상자의 동반가족 및 보호자의 자격이나 인원수 등을 심사하여 이용 자격을 확인하는 서류 등을 발급할 수 있다.
-⑧ 시장은 제1항부터 제7항까지 등록 서류 제출이나 발급, 이용자격 심사 등의 업무를 <mark class="cite-law" title="교통약자의 이동편의 증진법제16조">「교통약자의 이동편의 증진법」 제16조제2항</mark>에 따른 이동지원센터의 장에게 위탁할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법 시행규칙」 제6조제1항제1호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2024-12-26</b> → 현행 조문 <b>2024-12-26</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「장애인복지법」 제32조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2025-04-22</b> → 현행 조문 <b>2025-04-22</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법」 제16조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2023-05-16</b> → 현행 조문 <b>2023-05-16</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법 시행규칙」 제6조제1항제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2024-12-26</b> → 현행 조문 <b>2024-12-26</b></div></div></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(특별교통수단 등의 이용 기간) 제2조제4항에 따라 특별교통수단 등의 이용대상자로 통보받은 사람은 통보받은 날부터 다음 각 호의 구분에 따른 기간 동안 특별교통수단 등을 이용할 수 있다. &lt;개정 2023.12.12., 2026.4.22.&gt;
+⑧ 시장은 제1항부터 제7항까지 등록 서류 제출이나 발급, 이용자격 심사 등의 업무를 <mark class="cite-law" title="교통약자의 이동편의 증진법제16조">「교통약자의 이동편의 증진법」 제16조제2항</mark>에 따른 이동지원센터의 장에게 위탁할 수 있다.</div><div class="ordtext"><b>제5조</b> 제5조(특별교통수단 등의 이용요금) &lt;개정 2023.12.12.&gt;
+① 특별교통수단 등의 이용요금은 목적지까지의 편도요금으로 한다.
+② 특별교통수단의 이용요금은 <mark class="cite-law" title="경기도 특별교통수단 광역이동서비스 표준지침">「경기도 특별교통수단 광역이동서비스 표준지침」</mark>을 따른다. &lt;개정 2026.4.22.&gt;
+③ 특별교통수단 외의 차량 이용요금은 위원회의 심의를 거쳐 정하되, 세부기준은 시장이 별도로 정한다. &lt;신설 2026.4.22.&gt;
+④ 시장은 특별교통수단 등의 이용요금을 결정하거나 변경하고자 하는 경우에는 공보 및 인터넷 홈페이지에 게시하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법 시행규칙」 제6조제1항제1호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2024-12-26</b> → 현행 조문 <b>2024-12-26</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「장애인복지법」 제32조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2025-04-22</b> → 현행 조문 <b>2025-04-22</b></div></div><div class="item"><div class="iline"><span class="tag t-chk">지자체행정규칙</span><span class="law">「경기도 특별교통수단 광역이동서비스 표준지침」</span></div><div class="act">「경기도 특별교통수단 광역이동서비스 표준지침」는 지자체 자체 행정규칙 — 국가법령정보에 없어 자동 대조 불가. 이 조례 제2조, 제5조 인용을 최신 원문과 수기 대조</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법」 제16조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2023-05-16</b> → 현행 조문 <b>2023-05-16</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「교통약자의 이동편의 증진법 시행규칙」 제6조제1항제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2024-12-26</b> → 현행 조문 <b>2024-12-26</b></div></div></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(특별교통수단 등의 이용 기간) 제2조제4항에 따라 특별교통수단 등의 이용대상자로 통보받은 사람은 통보받은 날부터 다음 각 호의 구분에 따른 기간 동안 특별교통수단 등을 이용할 수 있다. &lt;개정 2023.12.12., 2026.4.22.&gt;
 1. <mark class="cite-law" title="교통약자의 이동편의 증진법 시행규칙제6조">시행규칙 제6조제1항제1호</mark>에 해당하는 사람: 5년
 2. <mark class="cite-law" title="교통약자의 이동편의 증진법 시행규칙제6조">시행규칙 제6조제1항제3호</mark>에 해당하는 사람
 가. 임산부: 임신기간부터 출산 후 12개월

@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -109,10 +117,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 초막골생태공원 운영 및 관리 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">3</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">1</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">5</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 초막골생태공원 운영 및 관리 조례</h2><div class="meta">시행 2023-12-12 · 정비 항목 9건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 3</span><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 &quot;초막골생태공원&quot;(이하&quot;생태공원&quot;이라 한다)이란<mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제2조">「도시공원 및 녹지 등에 관한 법률」제2조제3호</mark>의 도시공원으로 다양한 생물들의 서식처를 조성하여 시민들이 자연 속에서 살아가는 생물들을 관찰ㆍ체험하고, 자연ㆍ생태 교육의 장으로 활용되는 공간을 말한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제2조제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2020-06-09</b></div></div></div><div class="artsec" data-oc="제16조"><div class="arthd">조례 제16조</div><div class="ordtext"><b>제16조</b> 제16조(사용료 등의 징수)  
-① 생태공원의 입장은 무료로 하고, 공원 내 캠핑장 및 주차장 등의 시설사용료는 별표와 같다. &lt;개정 2018.3.13&gt; 
-② 캠핑장 시설사용료는 온라인을 통한 예약과 결제의 방법으로 징수하며 선납을 원칙으로 한다. 
-③ 예약자가 납부한 사용료는 <mark class="cite-law" title="소비자분쟁해결기준">「소비자분쟁해결기준」</mark>별표 2의 숙박업의 기준에 따라 반환할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「소비자분쟁해결기준」</span></div><div class="act">「소비자분쟁해결기준」 제명변경·폐지 여부를 확인하고 이 조례 제16조의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div><div class="artsec" data-oc="제17조"><div class="arthd">조례 제17조</div><div class="ordtext"><b>제17조</b> 제17조(사용료의 감경)  
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 초막골생태공원 운영 및 관리 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">3</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">5</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 초막골생태공원 운영 및 관리 조례</h2><div class="meta">시행 2023-12-12 · 정비 항목 8건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 3</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 &quot;초막골생태공원&quot;(이하&quot;생태공원&quot;이라 한다)이란<mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률제2조">「도시공원 및 녹지 등에 관한 법률」제2조제3호</mark>의 도시공원으로 다양한 생물들의 서식처를 조성하여 시민들이 자연 속에서 살아가는 생물들을 관찰ㆍ체험하고, 자연ㆍ생태 교육의 장으로 활용되는 공간을 말한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시공원 및 녹지 등에 관한 법률」 제2조제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2020-06-09</b></div></div></div><div class="artsec" data-oc="제17조"><div class="arthd">조례 제17조</div><div class="ordtext"><b>제17조</b> 제17조(사용료의 감경)  
 ① 시장은 다음 각 호의 기준에 따라 캠핑장 사용료를 감경할 수 있다. &lt;개정 2019.7.9., 2023.12.12.&gt; 
 1. 다음 각 목의 어느 하나에 해당하는 경우에는 100분의 50을 감경한다. &lt;개정 2019.7.9&gt; 
 가. <mark class="cite-law" title="국민기초생활 보장법제2조">「국민기초생활 보장법」제2조</mark>에 따른 수급자 

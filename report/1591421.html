@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -109,7 +117,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 담배소매인 지정기준에 관한 규칙 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">4</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 담배소매인 지정기준에 관한 규칙</h2><div class="meta">시행 2022-01-01 · 정비 항목 4건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 규칙은 <mark class="cite-law" title="담배사업법 시행규칙제7조의2">「담배사업법 시행규칙」 제7조의2제2항</mark> 및 제7조의3제4항에 따라 위임된 담배소매인 지정신청 등에 관한 사항을 규정함을 목적으로 한다. &lt;개정 2019.12.13.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「담배사업법 시행규칙」 제7조의2제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-01-01</b> · 당시 법령본 <b>2014-01-29</b> → 현행 조문 <b>2014-01-29</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(공고방법)  
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 담배소매인 지정기준에 관한 규칙 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">5</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 담배소매인 지정기준에 관한 규칙</h2><div class="meta">시행 2022-01-01 · 정비 항목 5건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 규칙은 <mark class="cite-law" title="담배사업법 시행규칙제7조의2,제7조의3">「담배사업법 시행규칙」 제7조의2제2항 및 제7조의3제4항</mark>에 따라 위임된 담배소매인 지정신청 등에 관한 사항을 규정함을 목적으로 한다. &lt;개정 2019.12.13.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「담배사업법 시행규칙」 제7조의2제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-01-01</b> · 당시 법령본 <b>2014-01-29</b> → 현행 조문 <b>2014-01-29</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「담배사업법 시행규칙」 제7조의3제4항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-01-01</b> · 당시 법령본 <b>2020-06-24</b> → 현행 조문 <b>2026-01-02</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(공고방법)  
 ① 제3조에 따른 소매인 지정신청에 관한 공고 등의 공고기간은 7일 이상으로 하되, 공고기간은<mark class="cite-law" title="민원처리에 관한 법률제19조">「민원처리에 관한 법률」 제19조</mark>를 준용한다. &lt;개정 2019.12.13.&gt; 
 ② 제1항에 따른 공고내용에는 다음 각 호의 사항을 포함하여 군포시 홈페이지에 게시한다. &lt;개정 2019.12.13.&gt; 
 1. 공고기간 

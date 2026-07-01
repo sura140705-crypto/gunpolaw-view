@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -117,7 +125,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 ⑤이 조례에서 정하지 않은 수수료 및 진료비는 관계법규에 의하여 징수한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「국민건강보험법」 제42조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-11-23</b> · 당시 법령본 <b>2018-03-27</b> → 현행 조문 <b>2018-03-27</b></div></div></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(수수료 및 진료비의 면제) 
 ①제2조제1항 내지 제3항의 규정에 의한 수수료 및 진료비의 납부대상자중 다음 각호의 1에 해당하는 자에 대하여 수수료 및 진료비를 면제한다. 〈개정 2005. 09. 26, 2023.12.12.〉
 1. 65세이상 노인
-2. <mark class="cite-law" title="국민기초생활보장법제2조">「국민기초생활보장법」제2조제2호</mark>규정에 의한 수급자
+2. <mark class="cite-law" title="국민기초생활보장법제2조">「국민기초생활보장법」제2조제2호규정</mark>에 의한 수급자
 3. 국가유공자와 그 유가족, 독립유공자와 그 유가족, 5.18민주유공자와 그 유가족, 고엽제후유의증환자 및 고엽제후유증 2세환자, 참전유공자, 20년 이상 장기복무제대군인, 병역명문가 예우대상자 및 그 가족&lt;개정 2020.5.11.&gt;
 4. <mark class="cite-law" title="장애인복지법">「장애인복지법」</mark>에 의하여 등록된 장애의 정도가 심한 장애인&lt;개정 2019.7.9&gt;
 5. 통, 반장

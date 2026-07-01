@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -109,7 +117,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 지역건설산업 활성화 촉진 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">1</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">5</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 지역건설산업 활성화 촉진 조례</h2><div class="meta">시행 2025-05-08 · 정비 항목 6건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 정의는 다음과 같다. &lt;개정 2024.3.19.&gt;
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 지역건설산업 활성화 촉진 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">5</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 지역건설산업 활성화 촉진 조례</h2><div class="meta">시행 2025-05-08 · 정비 항목 5건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 정의는 다음과 같다. &lt;개정 2024.3.19.&gt;
 1. “지역건설산업” 이란 군포시(이하 “시”라 한다) 관할구역 안에서 경영하는 <mark class="cite-law" title="건설산업기본법">「건설산업기본법」(이하 “법”이라 한다)</mark>에 따른 건설업, 건설용역업과 다른 법령에 따라 등록한 공사업과 건설자재의 제조·유통업을 말한다.
 2. “지역건설산업체” 란 법인의 경우에는 법인등기부등본에, 개인의 경우에는 사업자등록증에 본사 및 주된 영업소 소재지를 군포시에 3개월 이상 두고 건설산업을 영위하는 공사, 용역, 자재생산, 자재유통 업체를 말한다.
 3. “지역중소건설업체” 란 <mark class="cite-law" title="중소기업기본법 시행령제3조">「중소기업기본법 시행령」제3조제1항</mark>에 따른 기준을 갖춘 지역건설업체를 말한다.
@@ -125,11 +133,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 ③ 시장은<mark class="cite-law" title="지방자치단체를 당사자로 하는 계약에 관한 법률 시행규칙제47조">「지방자치단체를 당사자로 하는 계약에 관한 법률 시행규칙」제47조제2항</mark>에 따라 계약체결 시 지역건설산업 활성화를 위해 필요한 특약사항을 명시하도록 권장하여야 한다.
 ④ 시장은 지역의 민간건설사업 인·허가 시 지역건설업체의 참여와 지역에 거주하는 인부의 고용을 권장하고 지역 업체에서 생산한 건설자재를 구매·사용하도록 권장하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치단체를 당사자로 하는 계약에 관한 법률 시행규칙」 제47조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2014-02-07</b> → 현행 조문 <b>2014-02-07</b></div></div></div><div class="artsec" data-oc="제8조"><div class="arthd">조례 제8조</div><div class="ordtext"><b>제8조</b> 제8조(지역 내 생산자재 및 장비의 우선사용) 
 ① 시장은 지역자재구매와 사용을 위하여 홍보책자, 전시회 등을 활용하여 적극 홍보하여야 한다.
-② 시장은 지역건설산업체의 자재 및 장비사용이 활성화되도록 지역 내 생산자재를 관급자재로 공급하거나 건설사업자가 우선 사용하도록 권장하여야 한다. 다만, <mark class="cite-law" title="건설산업기본법 시행령제8조">「건설산업기본법 시행령」제8조</mark>의 경미한 공사를 제외한 공사용 자재는 시공(설치)을 포함하여 공급해서는 아니 된다. &lt;개정 2024.3.19.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「건설산업기본법 시행령」 제8조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2020-12-29</b></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(분할발주 등) 시장은<mark class="cite-law" title="지방자치단체를 당사자로 하는 계약에 관한 법률 시행령제77조">「지방자치단체를 당사자로 하는 계약에 관한 법률 시행령」제77조제1항</mark>의 각 호에 해당하는 공사에 대하여 예산편성과 기본설계 등 계획단계부터 공사 또는 공구 분할 가능 여부 등에 대하여 적극적으로 검토하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치단체를 당사자로 하는 계약에 관한 법률 시행령」 제77조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2017-07-26</b></div></div></div><div class="artsec" data-oc="제10조"><div class="arthd">조례 제10조</div><div class="ordtext"><b>제10조</b> 제10조 (공동수급체 등 참여 권장) 
-① 시장은<mark class="cite-law" title="지방자치단체 입찰 및 계약 집행 기준">「지방자치단체 입찰 및 계약 집행 기준」(이하“계약집행기준”이라 한다)</mark>에 따라 해당공사의 시공품질 저하 또는 원활한 공동수급체 구성을 방해하지 아니하는 범위안에서 지역건설산업체의 공동수급 비율과 하도급 비율이 극대화될 수 있도록 권장할 수 있다.
-② 시장은 다음 각 호의 사항에 대하여 권장할 수 있다. &lt;개정 2024.3.19., 2025.5.8.&gt;
-1. 지역건설산업에 참여하는 대표사의 경우 지역중소건설업체와의 공동도급비율을 49퍼센트 이상
-2. 지역건설산업에 참여하는 건설사업자는 지역건설산업체의 하도급 비율을 60퍼센트 이상
-3. 민간이 개발하는 지역건설산업에 대한 지역건설산업체의 공동참여 및 직접 시공비율의 확대
-4. 민간·공공 건설사업자 및 조합에서 시행하는 재개발·재건축 정비사업의 시설공사에 지역건설업체의 참여를 권장
-5. 지역건설 산업에 참여하는 지역건설기술용역업자(건축사법에 의한 설계용역 포함)들의 공동참여 확대</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「지방자치단체 입찰 및 계약 집행 기준」</span></div><div class="act">「지방자치단체 입찰 및 계약 집행 기준」 제명변경·폐지 여부를 확인하고 이 조례 제10조의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+② 시장은 지역건설산업체의 자재 및 장비사용이 활성화되도록 지역 내 생산자재를 관급자재로 공급하거나 건설사업자가 우선 사용하도록 권장하여야 한다. 다만, <mark class="cite-law" title="건설산업기본법 시행령제8조">「건설산업기본법 시행령」제8조</mark>의 경미한 공사를 제외한 공사용 자재는 시공(설치)을 포함하여 공급해서는 아니 된다. &lt;개정 2024.3.19.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「건설산업기본법 시행령」 제8조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2020-12-29</b></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(분할발주 등) 시장은<mark class="cite-law" title="지방자치단체를 당사자로 하는 계약에 관한 법률 시행령제77조">「지방자치단체를 당사자로 하는 계약에 관한 법률 시행령」제77조제1항</mark>의 각 호에 해당하는 공사에 대하여 예산편성과 기본설계 등 계획단계부터 공사 또는 공구 분할 가능 여부 등에 대하여 적극적으로 검토하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치단체를 당사자로 하는 계약에 관한 법률 시행령」 제77조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2017-07-26</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

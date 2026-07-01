@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -246,7 +254,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 1. <mark class="cite-law" title="국토의 계획 및 이용에 관한 법률 시행령제2조">「국토의 계획 및 이용에 관한 법률 시행령」 제2조제1항</mark>에 따른 기반시설
 2. <mark class="cite-law" title="도시 및 주거환경정비법 시행령제4조">「도시 및 주거환경정비법 시행령」 제4조</mark>에 따른 공동이용시설
 3. <mark class="cite-law" title="스마트도시 조성 및 산업진흥 등에 관한 법률제2조">「스마트도시 조성 및 산업진흥 등에 관한 법률」 제2조제3호</mark>의 나목부터 라목까지에 따른 스마트도시기반시설
-4. 그 밖에 주민이 공동으로 사용·관리하는 시설로서 시장이 필요하다고 인정하는 시설</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「국토의 계획 및 이용에 관한 법률 시행령」 제2조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2023-07-18</b> → 현행 조문 <b>2023-07-18</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시 및 주거환경정비법 시행령」 제4조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2024-07-31</b> → 현행 조문 <b>2026-03-24</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「스마트도시 조성 및 산업진흥 등에 관한 법률」 제2조제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2021-03-16</b> → 현행 조문 <b>2021-03-16</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「노후계획도시 정비 및 지원에 관한 특별법 시행령」 제34조제1항제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2024-04-27</b> → 현행 조문 <b>2026-04-21</b></div></div></div><div class="artsec" data-oc="제24조"><div class="arthd">조례 제24조</div><div class="ordtext"><b>제24조</b> 제24조(지방노후계획도시정비지원기구의 구성 및 운영 등) 
+4. 그 밖에 주민이 공동으로 사용·관리하는 시설로서 시장이 필요하다고 인정하는 시설</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「국토의 계획 및 이용에 관한 법률 시행령」 제2조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2023-07-18</b> → 현행 조문 <b>2023-07-18</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도시 및 주거환경정비법 시행령」 제4조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2024-07-31</b> → 현행 조문 <b>2026-06-30</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「스마트도시 조성 및 산업진흥 등에 관한 법률」 제2조제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2021-03-16</b> → 현행 조문 <b>2021-03-16</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「노후계획도시 정비 및 지원에 관한 특별법 시행령」 제34조제1항제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>2024-04-27</b> → 현행 조문 <b>2026-04-21</b></div></div></div><div class="artsec" data-oc="제24조"><div class="arthd">조례 제24조</div><div class="ordtext"><b>제24조</b> 제24조(지방노후계획도시정비지원기구의 구성 및 운영 등) 
 ① <mark class="cite-law" title="노후계획도시 정비 및 지원에 관한 특별법 시행령제36조">영 제36조제1항제6호</mark>에서 “<mark class="cite-law" title="노후계획도시 정비 및 지원에 관한 특별법제35조">법 제35조제1항</mark> 각 호에 따른 업무를 수행할 수 있는 인력·기술 등을 갖추었다고 인정하는 기관”이란 다음 각 호의 기관을 말한다.
 1. 대학 및 대학의 부속 연구기관
 2. 정부나 지방자치단체가 출자·출연한 연구기관

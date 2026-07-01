@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -117,7 +125,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 ② 세무부서장은 세무조사 연기신청 결과 통보서를 받은 날부터 2일 이내에 별지 제19호서식에 따른 처리결과통보서를 납세자보호관에게 통보하여야 한다.
 ③ 납세자보호관은 최종 처리결과를 납세자(<mark class="cite-naked" title="지방세기본법제139조">지방세기본법 제139조</mark>에 따른 납세자관리인이 정해져 있는 경우에는 납세자관리인을 포함한다.)에게 <mark class="cite-law" title="지방세기본법 시행규칙">「지방세기본법 시행규칙」</mark>별지 제42호서식에 따라 통보하여야한다.</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「지방세기본법」 제139조</span></div><div class="act">「지방세기본법」 제139조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제14조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2025-12-10</b> · 당시 법령본 <b>2025-11-11</b> → 현행 조문 <b>2026-02-05</b></div></div></div><div class="artsec" data-oc="제23조"><div class="arthd">조례 제23조</div><div class="ordtext"><b>제23조</b> 제23조(징수유예 등) 
 ① <mark class="cite-local" title="군포시 납세자보호에 관한 사무처리 조례제33조">조례 제33조</mark>에 따라 징수유예 또는 체납처분유예 신청을 접수한 납세자보호관은 지체 없이 세무부서장에게 별지 제41호서식에 따라 징수유예 신청 접수사실을 통보하여야 한다.
-② 납세자보호관으로부터 징수유예 또는 체납처분 유예 신청 접수사실을 통보 받은 세무부서장은 통보 받은 날부터 2일 이내에 별지 제42호서식에 따라 납세자보호관에게 의견을 통보하여야 한다. 다만, 세무부서장은 <mark class="cite-law" title="지방세징수법제27조">「지방세징수법」 제27조</mark> 및 <mark class="cite-law" title="지방세징수법제105조">같은 법 제105조제3항</mark> 규정에 따른 납세담보의 제공이 필요하다고 판단되는 경우에는 납세담보 제공 여부 등에 대한 의견을 통보한다.
+② 납세자보호관으로부터 징수유예 또는 체납처분 유예 신청 접수사실을 통보 받은 세무부서장은 통보 받은 날부터 2일 이내에 별지 제42호서식에 따라 납세자보호관에게 의견을 통보하여야 한다. 다만, 세무부서장은 <mark class="cite-law" title="지방세징수법제27조">「지방세징수법」 제27조</mark> 및 <mark class="cite-law" title="지방세징수법제105조">같은 법 제105조제3항 규정</mark>에 따른 납세담보의 제공이 필요하다고 판단되는 경우에는 납세담보 제공 여부 등에 대한 의견을 통보한다.
 ③ 납세자보호관은 <mark class="cite-local" title="군포시 납세자보호에 관한 사무처리 조례제34조">조례 제34조</mark>에 따라 징수유예 또는 체납처분 승인 여부를 결정하였을 때에는 지체 없이 세무부서장에게 별지 제43호서식에 따라 통보하여야 한다.
 ④ 제3항에 따라 납세자보호관으로부터 징수유예 또는 체납처분 승인 결정을 통보받은 세무부서장은 납세담보를 요구 등 필요한 조치를 한 후 그 결과를 납세자보호관에게 별지 제44호서식에 따라 통보하여야 한다.
 ⑤ 납세자보호관은 <mark class="cite-local" title="군포시 납세자보호에 관한 사무처리 조례제34조">조례 제34조</mark>에 따른 징수유예 또는 체납처분 유예 여부를 신청일로부터 7일 이내에 <mark class="cite-law" title="지방세징수법 시행규칙">「지방세징수법 시행규칙」</mark> 별지 제27호서식에 따라 신청인에게 통지하여야 한다. 다만, 납세담보의 제공을 위하여 기한 내 통지할 수 없는 경우에는 납세담보를 제공 받은 후 지체 없이 통보한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방세징수법」 제27조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-12-10</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2020-12-29</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방세징수법」 제105조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-12-10</b> · 당시 법령본 <b>2025-01-01</b> → 현행 조문 <b>2026-02-05</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

@@ -55,7 +55,15 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 details.citem.cur > summary { opacity:.72; }
 details.citem.cur .law { font-weight:500; }
 /* 접이식 인용 항목(대시보드 우측) — 기본 접힘, 좌측 인용 클릭 시 펼침 */
-details.citem { border-top:1px solid #f3f4f6; padding:0; }
+details.citem { border-top:1px solid #f3f4f6; padding:0; border-left:4px solid transparent; }
+/* 심각도 좌측 색바(4px) — .focus 는 box-shadow 라 색바와 공존 */
+details.citem[data-sev="mechanical"] { border-left-color:var(--mech); }
+details.citem[data-sev="review"] { border-left-color:var(--rev); }
+details.citem[data-sev="check"] { border-left-color:var(--chk); }
+details.citem[data-sev="format"] { border-left-color:var(--fmt); }
+details.citem[data-sev="current"] { border-left-color:#d1d5db; }
+/* 변경없음 숨기기(우측 헤더 체크) — .drec 는 serve.py 컨테이너 */
+.drec.hide-cur details.citem.cur { display:none; }
 details.citem > summary { list-style:none; cursor:pointer; padding:9px 10px 9px 8px;
     display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
 details.citem > summary::-webkit-details-marker { display:none; }
@@ -92,7 +100,7 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
 .dlabel.was { color:#b91c1c; } .dlabel.now { color:#15803d; }
-.dtext { flex:1; white-space:pre-wrap; word-break:break-all; color:#374151; line-height:1.5; }
+.dtext { flex:1; white-space:pre-wrap; word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.5; }
 mark.d { background:#fee2e2; color:#991b1b; text-decoration:line-through;
          border-radius:2px; padding:0 1px; }
 mark.i { background:#dcfce7; color:#166534; border-radius:2px; padding:0 1px; }
@@ -109,7 +117,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 침수방지시설 설치 지원에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">1</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 침수방지시설 설치 지원에 관한 조례</h2><div class="meta">시행 2023-07-04 · 정비 항목 5건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 침수방지시설 설치 지원에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">4</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 침수방지시설 설치 지원에 관한 조례</h2><div class="meta">시행 2023-07-04 · 정비 항목 5건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
   1. “풍수해”란 <mark class="cite-law" title="자연재해대책법제2조">「자연재해대책법」 제2조제3호</mark>에 따른 자연현상으로 인하여 발생하는 재해를 말한다. 
 2. “침수방지시설”이란 수해로부터 바닥이 지표면 아래인 건축물 등의 침수 피해를 방지하기 위하여 차수판식, 물막이판식 장치 등을 설치하여 빗물 등이 건물로 유입되지 못하도록 차단하는 시설을 말한다. 
 3. “주택”이란 <mark class="cite-law" title="주택법제2조">「주택법」 제2조제1호</mark>에 따른 단독주택 또는 공동주택을 말한다. 
@@ -122,4 +130,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 3. <mark class="cite-law" title="공동주택관리법제2조">「공동주택관리법」 제2조제2호</mark>에 따른 의무관리대상 공동주택에 해당하지 않는 소규모 공동주택. 이 경우 공공임대주택을 최우선으로 지원한다. 
 4. 하천 인접 또는 하천의 최고수위보다 낮은 지역의 주택 및 소상공인 건축물 
 5. 저수지 인근 저지대 지역의 주택 및 소상공인 건축물 
-6. <mark class="cite-law" title="자연재해대책법 시행령제18조">「자연재해대책법 시행령」 제18조</mark>에 따른 침수흔적도 및 침수예상도에 침수 흔적이나 침수 범위를 표시한 지역의 주택 및 소상공인 건축물</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「공동주택관리법」 제2조제2호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-07-04</b> · 당시 법령본 <b>2019-04-23</b> → 현행 조문 <b>2019-04-23</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「자연재해대책법 시행령」 제18조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-07-04</b> · 당시 법령본 <b>2021-01-05</b> → 현행 조문 <b>2021-01-05</b></div></div></div><div class="artsec" data-oc="(위치 미상)"><div class="arthd">조례 (위치 미상)</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「지하공간 침수 방지를 위한 수방기준」</span></div><div class="act">「지하공간 침수 방지를 위한 수방기준」 제명변경·폐지 여부를 확인하고 이 조례의 해당 조문의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2023-07-04</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+6. <mark class="cite-law" title="자연재해대책법 시행령제18조">「자연재해대책법 시행령」 제18조</mark>에 따른 침수흔적도 및 침수예상도에 침수 흔적이나 침수 범위를 표시한 지역의 주택 및 소상공인 건축물</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지하공간 침수 방지를 위한 수방기준」 제2조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-07-04</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「공동주택관리법」 제2조제2호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-07-04</b> · 당시 법령본 <b>2019-04-23</b> → 현행 조문 <b>2019-04-23</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「자연재해대책법 시행령」 제18조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-07-04</b> · 당시 법령본 <b>2021-01-05</b> → 현행 조문 <b>2021-01-05</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
