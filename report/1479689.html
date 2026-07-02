@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,7 +124,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 인터넷시스템 설치 및 운영 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">6</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">2</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 인터넷시스템 설치 및 운영 조례</h2><div class="meta">시행 2020-03-16 · 정비 항목 11건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 6</span><span class="badge b-chk">📋 확인 2</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에 사용되는 용어의 정의는 다음 각호와 같다.
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 인터넷시스템 설치 및 운영 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">6</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">2</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 인터넷시스템 설치 및 운영 조례</h2><div class="meta">시행 2020-03-16 · 정비 항목 11건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 6</span><span class="badge b-chk">📋 확인 필요 2</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에 사용되는 용어의 정의는 다음 각호와 같다.
 1. “인터넷”이라 함은 전 세계적으로 상호 접속되어 이용자간에 다양한 정보를 주고 받을 수 있는 정보통신망을 말한다.
 2. “인터넷시스템”이라 함은 인터넷의 운영을 위하여 구축한 하드웨어, 소프트웨어, 데이터베이스, 네트워크 및 보안시스템등을 총칭한다.
 3. “군포시인터넷시스템”(이하 “인터넷시스템”이라 한다)이라 함은 군포시가 인터넷을 통하여 주민정보, 생활정보 및 산업정보를 제공하기 위하여 운영하는 정보시스템을 말한다. 〈개정 2006. 09. 29〉
@@ -126,7 +133,45 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 6. “전자민원창구”란 인터넷 민원을 처리하기 위하여 홈페이지에 설치ㆍ운영하는 민원창구를 말한다.〈개정 2006. 09. 29, 2010. 08. 10〉
 7. “개인정보”라 함은 <mark class="cite-law" title="개인정보 보호법제2조">「개인정보 보호법」 제2조제1호</mark>에 따른 정보를 말한다. 〈개정 2006. 09. 29, 2020.3.16.&gt;
 8. “ID”란 인터넷시스템에서 이용자의 이름을 대신하여 사용할 수 있는 고유의 문자나 부호를 말한다. 〈신설 2010. 08. 10〉
-9. “비밀번호”라 함은 홈페이지 이용자 및 자료관리담당자등이 인터넷시스템에 접속권한 인증여부를 검사하기 위하여 사용하는 문자열을 말한다.〈개정 2010. 08. 10〉</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「민원 처리에 관한 법률」 제2조</span></div><div class="act">「민원 처리에 관한 법률」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2022-07-12</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다.
+9. “비밀번호”라 함은 홈페이지 이용자 및 자료관리담당자등이 인터넷시스템에 접속권한 인증여부를 검사하기 위하여 사용하는 문자열을 말한다.〈개정 2010. 08. 10〉</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「민원 처리에 관한 법률」 제2조</span></div><div class="act">「민원 처리에 관한 법률」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2022-07-12</b></div><div class="diff"><div class="diff-uni">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다.
+1.  &quot;민원&quot;이란 민원인이 행정기관에 대하여 처분 등 특정한 행위를 요구하는 것을 말하며, 그 종류는 다음 각 목과 같다.
+가.  일반민원						
+
+						    1) 법정민원: 법령ㆍ훈령ㆍ예규ㆍ고시ㆍ자치법규 등(이하 &quot;관계법령등&quot;이라 한다)에서 정한 일정 요건에 따라 인가ㆍ허가ㆍ승인ㆍ특허ㆍ면허 등을 신청하거나 장부ㆍ대장 등에 등록ㆍ등재를 신청 또는 신고하거나 특정한 사실 또는 법률관계에 관한 확인 또는 증명을 신청하는 민원
+						
+
+						    2) 질의민원: 법령ㆍ제도ㆍ절차 등 행정업무에 관하여 행정기관의 설명이나 해석을 요구하는 민원
+						
+
+						    3) 건의민원: 행정제도 및 운영의 개선을 요구하는 민원
+						
+
+						    4) 기타민원: 법정민원, 질의민원, 건의민원 및 고충민원 외에 행정기관에 단순한 행정절차 또는 형식요건 등에 대한 상담ㆍ설명을 요구하거나 일상생활에서 발생하는 불편사항에 대하여 알리는 등 행정기관에 특정한 행위를 요구하는 민원
+나.  고충민원: 「부패방지 및 국민권익위원회의 설치와 운영에 관한 법률」 제2조제5호에 따른 고충민원
+2.  &quot;민원인&quot;이란 행정기관에 민원을 제기하는 개인ㆍ법인 또는 단체를 말한다. 다만, 행정기관(사경제의 주체로서 제기하는 경우는 제외한다), 행정기관과 사법(私法)상 계약관계(민원과 직접 관련된 계약관계만 해당한다)에 있는 자, 성명ㆍ주소 등이 불명확한 자 등 대통령령으로 정하는 자는 제외한다.
+3.  &quot;행정기관&quot;이란 다음 각 목의 자를 말한다.
+가.  국회ㆍ법원ㆍ헌법재판소ㆍ중앙선거관리위원회의 행정사무를 처리하는 기관, 중앙행정기관(대통령 소속 기관과 국무총리 소속 기관을 포함한다. 이하 같다)과 그 소속 기관, 지방자치단체와 그 소속 기관
+나.  공공기관						
+
+						    1) 「공공기관의 운영에 관한 법률」 제4조에 따른 법인ㆍ단체 또는 기관
+						
+
+						    2) 「지방공기업법」에 따른 지방공사 및 지방공단
+						
+
+						    3) 특별법에 따라 설립된 특수법인
+						
+
+						    4) 「초ㆍ중등교육법」ㆍ「고등교육법」 및 그 밖의 다른 법률에 따라 설치된 각급 학교
+						
+
+						    5) 그 밖에 대통령령으로 정하는 법인ㆍ단체 또는 기관
+다.  법령 또는 자치법규에 따라 행정권한이 있거나 행정권한을 위임 또는 위탁받은 법인ㆍ단체 또는 그 기관이나 개인
+4.  &quot;처분&quot;이란 「행정절차법」 제2조제2호의 처분을 말한다.
+5.  &quot;복합민원&quot;이란 하나의 민원 목적을 실현하기 위하여 관계법령등에 따라 여러 관계 기관(민원과 관련된 단체ㆍ협회 등을 포함한다. 이하 같다) 또는 관계 부서의 인가ㆍ허가ㆍ승인ㆍ추천ㆍ협의 또는 확인 등을 거쳐 처리되는 법정민원을 말한다.
+6.  &quot;다수인관련민원&quot;이란 5세대(世帶) 이상의 공동이해와 관련되어 5명 이상이 연명으로 제출하는 민원을 말한다.
+7.  <mark class="d">&quot;전자민원창구&quot;란</mark><mark class="i">삭제</mark> <mark class="d">「전자정부법」 제9조에 따라 설치된 전자민원창구를 말한다</mark><mark class="i">&lt;2022</mark>.<mark class="i">1.11&gt;</mark>
+8.  &quot;무인민원발급창구&quot;란 행정기관의 장이 행정기관 또는 공공장소 등에 설치하여 민원인이 직접 민원문서를 발급받을 수 있도록 하는 전자장비를 말한다.</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다.
 1.  &quot;민원&quot;이란 민원인이 행정기관에 대하여 처분 등 특정한 행위를 요구하는 것을 말하며, 그 종류는 다음 각 목과 같다.
 가.  일반민원						
 
@@ -202,11 +247,14 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 5.  &quot;복합민원&quot;이란 하나의 민원 목적을 실현하기 위하여 관계법령등에 따라 여러 관계 기관(민원과 관련된 단체ㆍ협회 등을 포함한다. 이하 같다) 또는 관계 부서의 인가ㆍ허가ㆍ승인ㆍ추천ㆍ협의 또는 확인 등을 거쳐 처리되는 법정민원을 말한다.
 6.  &quot;다수인관련민원&quot;이란 5세대(世帶) 이상의 공동이해와 관련되어 5명 이상이 연명으로 제출하는 민원을 말한다.
 7.  <mark class="i">삭제</mark> <mark class="i">&lt;2022</mark>.<mark class="i">1.11&gt;</mark>
-8.  &quot;무인민원발급창구&quot;란 행정기관의 장이 행정기관 또는 공공장소 등에 설치하여 민원인이 직접 민원문서를 발급받을 수 있도록 하는 전자장비를 말한다.</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「개인정보 보호법」 제2조제1호</span></div><div class="act">「개인정보 보호법」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2020-02-04</b> → 현행 조문 <b>2023-03-14</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">1.  &quot;개인정보&quot;란 살아 있는 개인에 관한 정보로서 <mark class="pt" title="다음 각 목의 어느 하나에 해당하는 정보를 말한다.
+8.  &quot;무인민원발급창구&quot;란 행정기관의 장이 행정기관 또는 공공장소 등에 설치하여 민원인이 직접 민원문서를 발급받을 수 있도록 하는 전자장비를 말한다.</span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「개인정보 보호법」 제2조제1호</span></div><div class="act">「개인정보 보호법」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2020-02-04</b> → 현행 조문 <b>2023-03-14</b></div><div class="diff"><div class="diff-uni">1.  &quot;개인정보&quot;란 살아 있는 개인에 관한 정보로서 <mark class="i">다음 각 목의 어느 하나에 해당하는 정보를 말한다.
+가.  </mark>성명, 주민등록번호 및 영상 등을 통하여 개인을 알아볼 수 있는 정보<mark class="d">(</mark><mark class="i">
+나.  </mark>해당 정보만으로는 특정 개인을 알아볼 수 없더라도 다른 정보와 쉽게 결합하여 알아볼 수 있는 <mark class="d">것을</mark><mark class="i">정보.</mark> <mark class="d">포함한다</mark><mark class="i">이 경우 쉽게 결합할 수 있는지 여부는 다른 정보의 입수 가능성 등 개인을 알아보는 데 소요되는 시간, 비용, 기술 등을 합리적으로 고려하여야 한다.
+다.  가목 또는 나목을 제1호의2에 따라 가명처리함으로써 원래의 상태로 복원하기 위한 추가 정보의 사용ㆍ결합 없이는 특정 개인을 알아볼 수 없는 정보(이하 &quot;가명정보&quot;라 한다</mark>)<mark class="d">를 말한다.</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">1.  &quot;개인정보&quot;란 살아 있는 개인에 관한 정보로서 <mark class="pt" title="다음 각 목의 어느 하나에 해당하는 정보를 말한다.
 가. 추가됨">‸</mark>성명, 주민등록번호 및 영상 등을 통하여 개인을 알아볼 수 있는 정보<mark class="d">(</mark>해당 정보만으로는 특정 개인을 알아볼 수 없더라도 다른 정보와 쉽게 결합하여 알아볼 수 있는 <mark class="d">것을</mark> <mark class="d">포함한다</mark>)<mark class="d">를 말한다.</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">1.  &quot;개인정보&quot;란 살아 있는 개인에 관한 정보로서 <mark class="i">다음 각 목의 어느 하나에 해당하는 정보를 말한다.
 가.  </mark>성명, 주민등록번호 및 영상 등을 통하여 개인을 알아볼 수 있는 정보<mark class="i">
 나.  </mark>해당 정보만으로는 특정 개인을 알아볼 수 없더라도 다른 정보와 쉽게 결합하여 알아볼 수 있는 <mark class="i">정보.</mark> <mark class="i">이 경우 쉽게 결합할 수 있는지 여부는 다른 정보의 입수 가능성 등 개인을 알아보는 데 소요되는 시간, 비용, 기술 등을 합리적으로 고려하여야 한다.
-다.  가목 또는 나목을 제1호의2에 따라 가명처리함으로써 원래의 상태로 복원하기 위한 추가 정보의 사용ㆍ결합 없이는 특정 개인을 알아볼 수 없는 정보(이하 &quot;가명정보&quot;라 한다</mark>)<mark class="pt" title="를 말한다. 삭제됨">‸</mark></span></div></div></div></div><div class="artsec" data-oc="제8조"><div class="arthd">조례 제8조</div><div class="ordtext"><b>제8조</b> 제8조(홈페이지의 자료제공) 
+다.  가목 또는 나목을 제1호의2에 따라 가명처리함으로써 원래의 상태로 복원하기 위한 추가 정보의 사용ㆍ결합 없이는 특정 개인을 알아볼 수 없는 정보(이하 &quot;가명정보&quot;라 한다</mark>)<mark class="pt" title="를 말한다. 삭제됨">‸</mark></span></div></div></div></div></div><div class="artsec" data-oc="제8조"><div class="arthd">조례 제8조</div><div class="ordtext"><b>제8조</b> 제8조(홈페이지의 자료제공) 
 ①시장은 <mark class="cite-law" title="전자정부법 시행령제14조">「전자정부법 시행령」제14조제1항</mark>에 따라 홈페이지에 게시할 수 있는 정보는 다음 각 호로 한다. &lt;신설 2006. 09. 29, 개정 2010. 08. 10&gt;
 1. 보.차도의 통행제한, 단전.단수 가스공급 중단 등 국민생활에 불편을 주는 정보
 2. 도로개통시기, 상하수도 통수시기, 기상정보 등 국민생활의 예측 가능성의 제고를 위한 정보
@@ -214,7 +262,12 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 4. 민원처리.입찰 등의 진행과정, 불법행위의 단속기준 및 행정처분의 기준과 절차 등 국민의 생업과 관련되는 정보
 5. 당해 행정기관의 주요 사업 추진목표 및 실적 등에 관한 정보
 ②시장은 홈페이지에 수록한 정보에 대하여 이용자가 정보제공을 요청할 경우 <mark class="cite-law" title="공공기관의 정보공개에 관한 법률">「공공기관의 정보공개에 관한 법률」</mark>에 따라 관련정보를 제공할 수 있다. 다만, 개인정보가 포함된 자료는 공개하지 아니한다. 〈개정 2006. 09. 29, 2020.3.16.〉
-③정보이용에 따른 신청방법이나 이용 수수료는 <mark class="cite-law" title="공공기관의 정보공개에 관한 법률시행령제6조,제17조">「공공기관의 정보공개에 관한 법률시행령」제6조 및 제17조</mark>에 따른다. &lt;신설 2006. 09. 29&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「전자정부법 시행령」 제14조제1항</span></div><div class="act">「전자정부법 시행령」 제14조 개정 내용을 반영하여 이 조례 제8조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2014-07-28</b> → 현행 조문 <b>2022-07-11</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 법 제12조제1항에서 &quot;대통령령으로 정하는 행정정보&quot;란 다음 각 호의 정보를 말한다. &lt;개정 2014.7.28<mark class="pt" title=", 2021.1.5, 2022.7.11 추가됨">‸</mark>&gt;
+③정보이용에 따른 신청방법이나 이용 수수료는 <mark class="cite-law" title="공공기관의 정보공개에 관한 법률시행령제6조,제17조">「공공기관의 정보공개에 관한 법률시행령」제6조 및 제17조</mark>에 따른다. &lt;신설 2006. 09. 29&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「전자정부법 시행령」 제14조제1항</span></div><div class="act">「전자정부법 시행령」 제14조 개정 내용을 반영하여 이 조례 제8조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2014-07-28</b> → 현행 조문 <b>2022-07-11</b></div><div class="diff"><div class="diff-uni">① 법 제12조제1항에서 &quot;대통령령으로 정하는 행정정보&quot;란 다음 각 호의 정보를 말한다. &lt;개정 2014.7.28<mark class="i">, 2021.1.5, 2022.7.11</mark>&gt;
+1.  보도ㆍ차도의 통행 제한, 단전, 단수, 가스공급 중단 등 국민생활의 불편과 관련되는 정보
+2.  도로의 개통 시기, 상하수도의 <mark class="d">통수(通水)</mark><mark class="i">개방</mark> 시기, 기상정보 등 국민생활의 예측가능성을 높이기 위한 정보
+3.  먹는 물 등의 수질, 대기ㆍ해양ㆍ토양 등의 오염 등 국민의 보건과 관련되는 정보
+4.  <mark class="d">민원처리ㆍ입찰</mark><mark class="i">민원 등 전자정부서비스의 처리, 입찰</mark> 등의 진행절차, 불법행위의 단속기준 및 행정처분의 기준과 절차 등 국민의 생업과 관련되는 정보
+5.  해당 중앙행정기관등의 주요 사업추진 계획 및 실적 등에 관한 정보</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 법 제12조제1항에서 &quot;대통령령으로 정하는 행정정보&quot;란 다음 각 호의 정보를 말한다. &lt;개정 2014.7.28<mark class="pt" title=", 2021.1.5, 2022.7.11 추가됨">‸</mark>&gt;
 1.  보도ㆍ차도의 통행 제한, 단전, 단수, 가스공급 중단 등 국민생활의 불편과 관련되는 정보
 2.  도로의 개통 시기, 상하수도의 <mark class="d">통수(通水)</mark> 시기, 기상정보 등 국민생활의 예측가능성을 높이기 위한 정보
 3.  먹는 물 등의 수질, 대기ㆍ해양ㆍ토양 등의 오염 등 국민의 보건과 관련되는 정보
@@ -224,7 +277,20 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 2.  도로의 개통 시기, 상하수도의 <mark class="i">개방</mark> 시기, 기상정보 등 국민생활의 예측가능성을 높이기 위한 정보
 3.  먹는 물 등의 수질, 대기ㆍ해양ㆍ토양 등의 오염 등 국민의 보건과 관련되는 정보
 4.  <mark class="i">민원 등 전자정부서비스의 처리, 입찰</mark> 등의 진행절차, 불법행위의 단속기준 및 행정처분의 기준과 절차 등 국민의 생업과 관련되는 정보
-5.  해당 중앙행정기관등의 주요 사업추진 계획 및 실적 등에 관한 정보</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「공공기관의 정보공개에 관한 법률시행령」 제6조</span></div><div class="act">「공공기관의 정보공개에 관한 법률시행령」 제6조 개정 내용을 반영하여 이 조례 제8조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2016-12-13</b> → 현행 조문 <b>2021-06-22</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제6조(정보공개의 청구방법 등)
+5.  해당 중앙행정기관등의 주요 사업추진 계획 및 실적 등에 관한 정보</span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공공기관의 정보공개에 관한 법률시행령」 제6조</span></div><div class="act">「공공기관의 정보공개에 관한 법률시행령」 제6조 개정 내용을 반영하여 이 조례 제8조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2016-12-13</b> → 현행 조문 <b>2021-06-22</b></div><div class="diff"><div class="diff-uni">제6조(정보공개의 청구방법 등)
+① 법 제10조제1항에 따른 정보공개 청구서는 공공기관에 직접 출석하여 제출하거나 우편ㆍ팩스 또는 정보통신망을 이용하여 제출한다.
+② 공공기관은 정보공개 청구서를 접수하면 정보공개 처리대장에 기록하고 청구인에게 접수증을 발급하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 청구인이 요청할 때를 제외하고는 접수증을 발급하지 아니할 수 있다.
+1.  즉시 또는 말로써 처리가 가능한 정보의 정보공개 청구서를 접수한 경우
+2.  우편ㆍ팩스 또는 정보통신망을 통하여 정보공개 청구서를 접수한 경우
+③ <mark class="d">제2항에도 불구하고 다음 각 호의 어느 하나에 해당하는 경우로서 「민원 처리에 관한 법률」에 따른 민원으로 처리할 수 있는 경우에는 민원으로 처리할 수 있다.</mark><mark class="i">삭제</mark> &lt;<mark class="d">개정 2016</mark><mark class="i">2021</mark>.<mark class="d">2</mark><mark class="i">6</mark>.<mark class="d">12</mark><mark class="i">22</mark>&gt;<mark class="d">
+1.  공개 청구된 정보가 공공기관이 보유ㆍ관리하지 아니하는 정보인 경우
+2.  진정(陳情)ㆍ질의 등 공개 청구의 내용이 법 및 이 영에 따른 정보공개 청구로 볼 수 없는 경우</mark>
+④ 공공기관은 정보공개 청구서가 <mark class="d">제3항에</mark><mark class="i">법 제11조제5항에</mark> 해당하는 경우에는 다음 각 호의 사항을 구체적으로 적어 청구인에게 <mark class="d">통지하여야</mark><mark class="i">통지해야</mark> 한다. &lt;개정 2016.12.13<mark class="i">, 2021.6.22</mark>&gt;
+1.  정보공개 청구에 따를 수 없는 <mark class="d">제3항</mark><mark class="i">법 제11조제5항</mark> 각 호의 사유
+2.  민원으로 처리함에 따른 처리결과
+⑤ <mark class="d">공공기관은</mark><mark class="i">삭제</mark> <mark class="d">다음 각 호의 어느 하나에 해당하는 청구에 대해서는 종결 처리할 수 있다</mark><mark class="i">&lt;2021</mark>.<mark class="d">
+1</mark><mark class="i">6</mark>.<mark class="d">  제1항에 따라 정보공개를 청구하여 정보공개 여부에 대한 결정의 통지를 받은 자가 정당한 사유 없이 해당 정보의 공개를 다시 청구한 경우
+2.  제3항에 따른 청구를 한 자가 제4항에 따른 통지를 받은 후에 다시 같은 청구를 한 경우</mark><mark class="i">22&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제6조(정보공개의 청구방법 등)
 ① 법 제10조제1항에 따른 정보공개 청구서는 공공기관에 직접 출석하여 제출하거나 우편ㆍ팩스 또는 정보통신망을 이용하여 제출한다.
 ② 공공기관은 정보공개 청구서를 접수하면 정보공개 처리대장에 기록하고 청구인에게 접수증을 발급하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 청구인이 요청할 때를 제외하고는 접수증을 발급하지 아니할 수 있다.
 1.  즉시 또는 말로써 처리가 가능한 정보의 정보공개 청구서를 접수한 경우
@@ -246,26 +312,43 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 ④ 공공기관은 정보공개 청구서가 <mark class="i">법 제11조제5항에</mark> 해당하는 경우에는 다음 각 호의 사항을 구체적으로 적어 청구인에게 <mark class="i">통지해야</mark> 한다. &lt;개정 2016.12.13<mark class="i">, 2021.6.22</mark>&gt;
 1.  정보공개 청구에 따를 수 없는 <mark class="i">법 제11조제5항</mark> 각 호의 사유
 2.  민원으로 처리함에 따른 처리결과
-⑤ <mark class="i">삭제</mark> <mark class="i">&lt;2021</mark>.<mark class="i">6</mark>.<mark class="i">22&gt;</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「공공기관의 정보공개에 관한 법률시행령」 제17조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2017-07-26</b></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(전자민원창구의 설치·운영) 
+⑤ <mark class="i">삭제</mark> <mark class="i">&lt;2021</mark>.<mark class="i">6</mark>.<mark class="i">22&gt;</mark></span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공공기관의 정보공개에 관한 법률시행령」 제17조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2017-07-26</b></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(전자민원창구의 설치·운영) 
 ①시장은 인터넷민원을 처리할 수 있도록 <mark class="cite-law" title="전자정부법제9조">「전자정부법」 제9조제2항의 규정</mark>에 따라 전자민원창구를 설치하여야 하며, 전자민원창구에 접수된 인터넷민원은 <mark class="cite-law" title="민원 처리에 관한 법률">「민원 처리에 관한 법률」</mark>에 따라 처리하여야 한다. 〈개정 2006. 09. 29, 2010. 08. 10, 2020.3.16.〉
 ②전자민원창구는 인터넷 민원처리, 민원처리 공개 및 민원상담 기능을 제공하여야 하고, <mark class="cite-law" title="민원 처리에 관한 법률제22조">「민원 처리에 관한 법률」 제22조</mark>에 따라 설치된 민원담당부서에서 총괄관리 하되, 민원처리 공개는 감사담당부서에서 관리할 수 있다. 〈개정 2006. 09. 29, 2010. 08. 10, 2020.3.16.〉
-③민원담당부서의 장은 시장이 처리할 수 있는 민원사무에 대한 민원사무처리기준표를 홈페이지를 통하여 게재할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「전자정부법」 제9조</span></div><div class="act">「전자정부법」 제9조 개정 내용을 반영하여 이 조례 제9조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2017-10-24</b> → 현행 조문 <b>2025-07-08</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제9조<mark class="d">(방문에</mark> <mark class="d">의하지</mark> <mark class="d">아니하는 민원처리)
+③민원담당부서의 장은 시장이 처리할 수 있는 민원사무에 대한 민원사무처리기준표를 홈페이지를 통하여 게재할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「전자정부법」 제9조</span></div><div class="act">「전자정부법」 제9조 개정 내용을 반영하여 이 조례 제9조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2017-10-24</b> → 현행 조문 <b>2025-07-08</b></div><div class="diff"><div class="diff-uni">제9조<mark class="d">(방문에</mark> <mark class="d">의하지</mark><mark class="i">삭제</mark> <mark class="d">아니하는 민원처리)
+① 행정기관등의 장은 민원인이 해당 기관을 직접 방문하지 아니하고도 민원사항 등을 처리할 수 있도록 관계 법령의 개선, 필요한 시설 및 시스템의 구축 등 제반 여건을 마련하여야 한다</mark><mark class="i">&lt;2022</mark>.<mark class="d">
+② 행정기관등의 장은 제1항에 따른 민원처리제도를 시행하기 위하여 인터넷에 전자민원창구를 설치ㆍ운영할 수 있다</mark><mark class="i">1</mark>.<mark class="d"> 다만, 전자민원창구를 설치하지 아니하였을 때에는 제3항의 통합전자민원창구에서 민원사항 등을 처리하게 할 수 있다.
+③ 중앙사무관장기관의 장은 행정기관등의 전자민원창구의 설치ㆍ운영을 지원하고 이를 연계하여 통합전자민원창구를 설치ㆍ운영 할 수 있다.
+④ 민원인이 제2항 및 제3항의 전자민원창구를 통하여 신청등을 하였을 때에는 관계 법령에서 정한 그 민원의 소관 기관에 직접 민원을 신청한 것으로 본다.
+⑤ 행정기관등의 장은 제2항 및 제3항의 전자민원창구를 통하여 신청된 민원사항 등에 대하여 관계 법령에서 정한 수수료를 제14조에 따른 방법으로 납부할 필요가 있을 때에는 해당 수수료 외에 별도의 업무처리비용을 함께 청구할 수 있다.
+⑥ 행정기관등의 장은 제2항 및 제3항에 따른 전자민원창구를 통하여 민원사항 등을 처리하는 경우에는 다른 법령에도 불구하고 수수료를 감면할 수 있다.
+⑦ 제1항부터 제4항까지의 규정에 따른 전자민원창구의 설치ㆍ운영, 제5항에 따른 업무처리비용, 제6항에 따라 수수료를 감면할 수 있는 민원사항 등의 범위와 감면 비율 등에 관하여 필요한 사항은 국회규칙, 대법원규칙, 헌법재판소규칙, 중앙선거관리위원회규칙 및 대통령령으로 정한다.</mark><mark class="i">11&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제9조<mark class="d">(방문에</mark> <mark class="d">의하지</mark> <mark class="d">아니하는 민원처리)
 ① 행정기관등의 장은 민원인이 해당 기관을 직접 방문하지 아니하고도 민원사항 등을 처리할 수 있도록 관계 법령의 개선, 필요한 시설 및 시스템의 구축 등 제반 여건을 마련하여야 한다</mark>.<mark class="d">
 ② 행정기관등의 장은 제1항에 따른 민원처리제도를 시행하기 위하여 인터넷에 전자민원창구를 설치ㆍ운영할 수 있다</mark>.<mark class="d"> 다만, 전자민원창구를 설치하지 아니하였을 때에는 제3항의 통합전자민원창구에서 민원사항 등을 처리하게 할 수 있다.
 ③ 중앙사무관장기관의 장은 행정기관등의 전자민원창구의 설치ㆍ운영을 지원하고 이를 연계하여 통합전자민원창구를 설치ㆍ운영 할 수 있다.
 ④ 민원인이 제2항 및 제3항의 전자민원창구를 통하여 신청등을 하였을 때에는 관계 법령에서 정한 그 민원의 소관 기관에 직접 민원을 신청한 것으로 본다.
 ⑤ 행정기관등의 장은 제2항 및 제3항의 전자민원창구를 통하여 신청된 민원사항 등에 대하여 관계 법령에서 정한 수수료를 제14조에 따른 방법으로 납부할 필요가 있을 때에는 해당 수수료 외에 별도의 업무처리비용을 함께 청구할 수 있다.
 ⑥ 행정기관등의 장은 제2항 및 제3항에 따른 전자민원창구를 통하여 민원사항 등을 처리하는 경우에는 다른 법령에도 불구하고 수수료를 감면할 수 있다.
-⑦ 제1항부터 제4항까지의 규정에 따른 전자민원창구의 설치ㆍ운영, 제5항에 따른 업무처리비용, 제6항에 따라 수수료를 감면할 수 있는 민원사항 등의 범위와 감면 비율 등에 관하여 필요한 사항은 국회규칙, 대법원규칙, 헌법재판소규칙, 중앙선거관리위원회규칙 및 대통령령으로 정한다.</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제9조<mark class="pt" title="(방문에 삭제됨">‸</mark> <mark class="i">삭제</mark> <mark class="i">&lt;2022</mark>.<mark class="i">1</mark>.<mark class="i">11&gt;</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「민원 처리에 관한 법률」 제22조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2022-07-12</b></div></div></div><div class="artsec" data-oc="제13조"><div class="arthd">조례 제13조</div><div class="ordtext"><b>제13조</b> 제13조(군포시에 바란다 운영) 
+⑦ 제1항부터 제4항까지의 규정에 따른 전자민원창구의 설치ㆍ운영, 제5항에 따른 업무처리비용, 제6항에 따라 수수료를 감면할 수 있는 민원사항 등의 범위와 감면 비율 등에 관하여 필요한 사항은 국회규칙, 대법원규칙, 헌법재판소규칙, 중앙선거관리위원회규칙 및 대통령령으로 정한다.</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제9조<mark class="pt" title="(방문에 삭제됨">‸</mark> <mark class="i">삭제</mark> <mark class="i">&lt;2022</mark>.<mark class="i">1</mark>.<mark class="i">11&gt;</mark></span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「민원 처리에 관한 법률」 제22조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2022-07-12</b></div></div></div><div class="artsec" data-oc="제13조"><div class="arthd">조례 제13조</div><div class="ordtext"><b>제13조</b> 제13조(군포시에 바란다 운영) 
 ①시장은 홈페이지를 통해 이용자의 참여등 열린행정을 구현하기 위하여 군포시에 바란다를 운영하고, 대화방의 관리자를 별도 지정하여 운영할 수 있다. 〈개정 2006. 09. 29〉
 ②군포시에 바란다는 공개 또는 비공개로 운영할 수 있으며, 게시된 의견에 대하여 답변이 필요하다고 판단될 경우에는 <mark class="cite-law" title="민원처리에 관한 법률">「민원처리에 관한 법률」</mark>에 의한 민원사무에 준하여 접수.처리하여야 한다. 〈개정 2006. 09. 29, 2020.3.16.〉
-③<mark class="cite-law" title="민원처리에 관한 법률시행령제2조">「민원처리에 관한 법률시행령」 제2조제1항</mark> 각호에 해당하는 의견은 처리하지 아니하는 것을 원칙으로 한다. 〈개정 2006. 09. 29, 2020.3.16.〉</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「민원처리에 관한 법률시행령」 제2조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2019-12-31</b> → 현행 조문 <b>2026-05-06</b></div></div></div><div class="artsec" data-oc="제18조"><div class="arthd">조례 제18조</div><div class="ordtext"><b>제18조</b> 제18조(개인정보보호) 
+③<mark class="cite-law" title="민원처리에 관한 법률시행령제2조">「민원처리에 관한 법률시행령」 제2조제1항</mark> 각호에 해당하는 의견은 처리하지 아니하는 것을 원칙으로 한다. 〈개정 2006. 09. 29, 2020.3.16.〉</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「민원처리에 관한 법률시행령」 제2조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2019-12-31</b> → 현행 조문 <b>2026-05-06</b></div></div></div><div class="artsec" data-oc="제18조"><div class="arthd">조례 제18조</div><div class="ordtext"><b>제18조</b> 제18조(개인정보보호) 
 ①시장은 인터넷시스템을 통해 개인정보가 타인에게 노출되지 않도록 하는 등 <mark class="cite-law" title="개인정보 보호법">「개인정보 보호법」</mark>에 따라 개인정보 보호를 위한 안전대책을 마련하여야 한다. &lt;개정 2020.3.16.&gt;
 ②시장은 인터넷 홈페이지 서비스 제공과 관련하여 취득한 개인정보를 본인의 승낙없이 제3자에게 누설 또는 배포할 수 없으며 타용도로 사용할 수 없다. 다만 <mark class="cite-law" title="개인정보 보호법제18조">「개인정보 보호법」제18조제2항</mark> 각 호의 어느 하나에 해당하는 경우에는 예외로 한다. &lt;신설 2006. 09. 29&gt; &lt;개정 2020.3.16.&gt;
 1. &lt;삭제 2020.3.16.&gt;
 2. &lt;삭제 2020.3.16.&gt;
 3. &lt;삭제 2020.3.16.&gt;
-③ 시장은 “개인정보처리방침”을 정하여 홈페이지에 게시하여야 한다. &lt;신설 2010. 08. 10&gt; &lt;개정 2020.3.16.&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「개인정보 보호법」 제18조제2항</span></div><div class="act">「개인정보 보호법」 제18조 개정 내용을 반영하여 이 조례 제18조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2020-02-04</b> → 현행 조문 <b>2023-03-14</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">② 제1항에도 불구하고 개인정보처리자는 다음 각 호의 어느 하나에 해당하는 경우에는 정보주체 또는 제3자의 이익을 부당하게 침해할 우려가 있을 때를 제외하고는 개인정보를 목적 외의 용도로 이용하거나 이를 제3자에게 제공할 수 있다. 다만, 제5호부터 <mark class="d">제9호까지의</mark> 경우는 공공기관의 경우로 한정한다.<mark class="pt" title="&lt;개정 2020.2.4, 2023.3.14&gt; 추가됨">‸</mark>
+③ 시장은 “개인정보처리방침”을 정하여 홈페이지에 게시하여야 한다. &lt;신설 2010. 08. 10&gt; &lt;개정 2020.3.16.&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「개인정보 보호법」 제18조제2항</span></div><div class="act">「개인정보 보호법」 제18조 개정 내용을 반영하여 이 조례 제18조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>2020-02-04</b> → 현행 조문 <b>2023-03-14</b></div><div class="diff"><div class="diff-uni">② 제1항에도 불구하고 개인정보처리자는 다음 각 호의 어느 하나에 해당하는 경우에는 정보주체 또는 제3자의 이익을 부당하게 침해할 우려가 있을 때를 제외하고는 개인정보를 목적 외의 용도로 이용하거나 이를 제3자에게 제공할 수 있다. 다만, 제5호부터 <mark class="d">제9호까지의</mark><mark class="i">제9호까지에 따른</mark> 경우는 공공기관의 경우로 한정한다.<mark class="i"> &lt;개정 2020.2.4, 2023.3.14&gt;</mark>
+1.  정보주체로부터 별도의 동의를 받은 경우
+2.  다른 법률에 특별한 규정이 있는 경우
+3.  <mark class="d">정보주체 또는 그 법정대리인이 의사표시를 할 수 없는 상태에 있거나 주소불명 등으로 사전 동의를 받을 수 없는 경우로서 </mark>명백히 정보주체 또는 제3자의 급박한 생명, 신체, 재산의 이익을 위하여 필요하다고 인정되는 경우
+4.  <mark class="d">통계작성</mark><mark class="i">삭제</mark> <mark class="d">및 학술연구 등의 목적을 위하여 필요한 경우로서 특정 개인을 알아볼 수 없는 형태로 개인정보를 제공하는 경우</mark><mark class="i">&lt;2020.2.4&gt;</mark>
+5.  개인정보를 목적 외의 용도로 이용하거나 이를 제3자에게 제공하지 아니하면 다른 법률에서 정하는 소관 업무를 수행할 수 없는 경우로서 보호위원회의 심의ㆍ의결을 거친 경우
+6.  조약, 그 밖의 국제협정의 이행을 위하여 외국정부 또는 국제기구에 제공하기 위하여 필요한 경우
+7.  범죄의 수사와 공소의 제기 및 유지를 위하여 필요한 경우
+8.  법원의 재판업무 수행을 위하여 필요한 경우
+9.  형(刑) 및 감호, 보호처분의 집행을 위하여 필요한 경우<mark class="i">
+10.  공중위생 등 공공의 안전과 안녕을 위하여 긴급히 필요한 경우</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">② 제1항에도 불구하고 개인정보처리자는 다음 각 호의 어느 하나에 해당하는 경우에는 정보주체 또는 제3자의 이익을 부당하게 침해할 우려가 있을 때를 제외하고는 개인정보를 목적 외의 용도로 이용하거나 이를 제3자에게 제공할 수 있다. 다만, 제5호부터 <mark class="d">제9호까지의</mark> 경우는 공공기관의 경우로 한정한다.<mark class="pt" title="&lt;개정 2020.2.4, 2023.3.14&gt; 추가됨">‸</mark>
 1.  정보주체로부터 별도의 동의를 받은 경우
 2.  다른 법률에 특별한 규정이 있는 경우
 3.  <mark class="d">정보주체 또는 그 법정대리인이 의사표시를 할 수 없는 상태에 있거나 주소불명 등으로 사전 동의를 받을 수 없는 경우로서 </mark>명백히 정보주체 또는 제3자의 급박한 생명, 신체, 재산의 이익을 위하여 필요하다고 인정되는 경우
@@ -284,4 +367,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 7.  범죄의 수사와 공소의 제기 및 유지를 위하여 필요한 경우
 8.  법원의 재판업무 수행을 위하여 필요한 경우
 9.  형(刑) 및 감호, 보호처분의 집행을 위하여 필요한 경우<mark class="i">
-10.  공중위생 등 공공의 안전과 안녕을 위하여 긴급히 필요한 경우</mark></span></div></div></div></div><div class="artsec" data-oc="제20조"><div class="arthd">조례 제20조</div><div class="ordtext"><b>제20조</b> 제20조(비밀번호 관리) 홈페이지 관리부서의 장은 운영담당자의 비밀번호를 <mark class="cite-law" title="국가 정보보안 기본지침">「국가 정보보안 기본지침」</mark>또는 <mark class="cite-law" title="군포시 정보보안 기본지침">「군포시 정보보안 기본지침」</mark>에 의하여 관리하여야 한다. 〈개정 2006. 09. 29, 2020.3.16.〉</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「국가 정보보안 기본지침」</span></div><div class="act">「국가 정보보안 기본지침」 제명변경·폐지 여부를 확인하고 이 조례 제20조의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-chk">지자체행정규칙</span><span class="law">「군포시 정보보안 기본지침」</span></div><div class="act">「군포시 정보보안 기본지침」는 지자체 자체 행정규칙 — 국가법령정보에 없어 자동 대조 불가. 이 조례 제20조 인용을 최신 원문과 수기 대조</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+10.  공중위생 등 공공의 안전과 안녕을 위하여 긴급히 필요한 경우</mark></span></div></div></div></div></div><div class="artsec" data-oc="제20조"><div class="arthd">조례 제20조</div><div class="ordtext"><b>제20조</b> 제20조(비밀번호 관리) 홈페이지 관리부서의 장은 운영담당자의 비밀번호를 <mark class="cite-law" title="국가 정보보안 기본지침">「국가 정보보안 기본지침」</mark>또는 <mark class="cite-law" title="군포시 정보보안 기본지침">「군포시 정보보안 기본지침」</mark>에 의하여 관리하여야 한다. 〈개정 2006. 09. 29, 2020.3.16.〉</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「국가 정보보안 기본지침」</span></div><div class="act">「국가 정보보안 기본지침」 제명변경·폐지 여부를 확인하고 이 조례 제20조의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-chk">지자체행정규칙</span><span class="law"><span class="ki" title="행정규칙">📕</span> 「군포시 정보보안 기본지침」</span></div><div class="act">「군포시 정보보안 기본지침」는 지자체 자체 행정규칙 — 국가법령정보에 없어 자동 대조 불가. 이 조례 제20조 인용을 최신 원문과 수기 대조</div><div class="basis">기준일 — 조례 시행 <b>2020-03-16</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

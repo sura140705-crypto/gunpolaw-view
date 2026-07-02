@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,7 +124,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 공공시설의 개방 및 사용에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">2</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 공공시설의 개방 및 사용에 관한 조례</h2><div class="meta">시행 2024-05-15 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 공공시설의 개방 및 사용에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">2</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 공공시설의 개방 및 사용에 관한 조례</h2><div class="meta">시행 2024-05-15 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
 1. “공공시설”이란 군포시에서 소유하고 관리하는 <mark class="cite-law" title="공유재산 및 물품 관리법제5조">「공유재산 및 물품 관리법」 제5조제2항</mark>에 따른 공용재산 및 공공용재산을 말한다.
 2. “개방 공간”이란 공공시설의 공간 중 특정 사항에 업무를 위해 사용되지 않아 시민 등에게 개방이 가능한 유휴공간을 말한다.
 3. “시민 등”이란 공공시설을 사용하고자 하는 다음 각 목의 어느 하나에 해당하는 자를 말한다.
@@ -127,11 +134,11 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 라. 그 밖에 군포시장(이하 “시장”이라 한다)이 공공시설 사용이 필요하다고 인정하는 자
 4. “사용”이란 사용 허가를 받은 공공시설에서 이루어지는 회의, 교육, 강연회, 세미나, 토론회, 공연, 그 밖의 행사 등의 활동을 말한다.
 5. “사용자”란 제7조에 따라 사용 허가를 받은 자를 말한다.
-6. “사용료”란 제7조에 따라 사용 허가를 받은 자가 그 사용을 위하여 납부하는 요금을 말한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「공유재산 및 물품 관리법」 제5조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-05-15</b> · 당시 법령본 <b>2021-04-20</b> → 현행 조문 <b>2021-04-20</b></div></div></div><div class="artsec" data-oc="제12조"><div class="arthd">조례 제12조</div><div class="ordtext"><b>제12조</b> 제12조(사용료 면제) 
+6. “사용료”란 제7조에 따라 사용 허가를 받은 자가 그 사용을 위하여 납부하는 요금을 말한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공유재산 및 물품 관리법」 제5조제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-05-15</b> · 당시 법령본 <b>2021-04-20</b> → 현행 조문 <b>2021-04-20</b></div></div></div><div class="artsec" data-oc="제12조"><div class="arthd">조례 제12조</div><div class="ordtext"><b>제12조</b> 제12조(사용료 면제) 
 ① 시장은 다음 각 호의 경우에는 사용료를 전액 면제할 수 있다.
 1. <mark class="cite-local" title="군포시 출자ㆍ출연 기관의 운영에 관한 기본조례">「군포시 출자ㆍ출연 기관의 운영에 관한 기본조례」</mark>에 따른 기관이 주최하는 교육 또는 행사 목적으로 직접 사용하는 경우
 2. <mark class="cite-law" title="공유재산 및 물품 관리법 시행령제75조">「공유재산 및 물품 관리법 시행령」제75조</mark>에서 정한 취약계층으로 구성된 단체가 주관하는 행사
 3. 그 밖에 시장이 사용료 면제가 필요하다고 인정하는 경우
 ② 사용료를 감면받으려는 때에는 제7조제1항에 따른 사용신청을 할 때 다음 서류를 함께 제출해야 한다.
 1. 허가증, 등록증, 공문 등 감면 대상임을 증명할 수 있는 서류
-2. 해당 기관이 주최 또는 주관 기관임을 확인할 수 있는 사업계획서 등의 서류</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「공유재산 및 물품 관리법 시행령」 제75조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-05-15</b> · 당시 법령본 <b>2023-08-22</b> → 현행 조문 <b>2023-08-22</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+2. 해당 기관이 주최 또는 주관 기관임을 확인할 수 있는 사업계획서 등의 서류</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공유재산 및 물품 관리법 시행령」 제75조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2024-05-15</b> · 당시 법령본 <b>2023-08-22</b> → 현행 조문 <b>2023-08-22</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

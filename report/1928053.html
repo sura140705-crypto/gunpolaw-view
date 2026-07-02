@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,9 +124,21 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 공모사업 관리 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">0</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 공모사업 관리 조례</h2><div class="meta">시행 2024-05-15 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 공모사업 관리 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">0</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 공모사업 관리 조례</h2><div class="meta">시행 2024-05-15 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
   1. “공모사업”이란 국가, 지방자치단체, 공공기관(<mark class="cite-law" title="공공기관의 운영에 관한 법률제4조">「공공기관의 운영에 관한 법률」 제4조</mark>에 따른 공공기관을 말한다) 등에서 특정 사업의 수행 또는 참여 기관을 공개 모집하여 선정하고 사업비의 전부 또는 일부를 보조해 주는 사업을 말한다. 
-2. “담당부서”란 공모사업을 추진하는 주관부서를 말한다</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「공공기관의 운영에 관한 법률」 제4조</span></div><div class="act">「공공기관의 운영에 관한 법률」 제4조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2024-05-15</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제4조(공공기관)
+2. “담당부서”란 공모사업을 추진하는 주관부서를 말한다</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공공기관의 운영에 관한 법률」 제4조</span></div><div class="act">「공공기관의 운영에 관한 법률」 제4조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2024-05-15</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="diff-uni">제4조(공공기관)
+<mark class="d">①기획재정부장관은</mark><mark class="i">①재정경제부장관은</mark> 국가ㆍ지방자치단체가 아닌 법인ㆍ단체 또는 기관(이하 &quot;기관&quot;이라 한다)으로서 다음 각 호의 어느 하나에 해당하는 기관을 공공기관으로 지정할 수 있다. &lt;개정 2008.2.29, 2020.3.31, 2020.6.9<mark class="i">, 2025.10.1</mark>&gt;
+1.  다른 법률에 따라 직접 설립되고 정부가 출연한 기관
+2.  정부지원액(법령에 따라 직접 정부의 업무를 위탁받거나 독점적 사업권을 부여받은 기관의 경우에는 그 위탁업무나 독점적 사업으로 인한 수입액을 포함한다. 이하 같다)이 총수입액의 2분의 1을 초과하는 기관
+3.  정부가 100분의 50 이상의 지분을 가지고 있거나 100분의 30 이상의 지분을 가지고 임원 임명권한 행사 등을 통하여 해당 기관의 정책 결정에 사실상 지배력을 확보하고 있는 기관
+4.  정부와 제1호부터 제3호까지의 어느 하나에 해당하는 기관이 합하여 100분의 50 이상의 지분을 가지고 있거나 100분의 30 이상의 지분을 가지고 임원 임명권한 행사 등을 통하여 해당 기관의 정책 결정에 사실상 지배력을 확보하고 있는 기관
+5.  제1호부터 제4호까지의 어느 하나에 해당하는 기관이 단독으로 또는 두개 이상의 기관이 합하여 100분의 50 이상의 지분을 가지고 있거나 100분의 30 이상의 지분을 가지고 임원 임명권한 행사 등을 통하여 해당 기관의 정책 결정에 사실상 지배력을 확보하고 있는 기관
+6.  제1호부터 제4호까지의 어느 하나에 해당하는 기관이 설립하고, 정부 또는 설립 기관이 출연한 기관
+②제1항에도 불구하고 <mark class="d">기획재정부장관은</mark><mark class="i">재정경제부장관은</mark> 다음 각 호의 어느 하나에 해당하는 기관을 공공기관으로 지정할 수 없다. &lt;개정 2007.12.14, 2008.2.29, 2020.6.9<mark class="i">, 2025.10.1</mark>&gt;
+1.  구성원 상호 간의 상호부조ㆍ복리증진ㆍ권익향상 또는 영업질서 유지 등을 목적으로 설립된 기관
+2.  지방자치단체가 설립하고, 그 운영에 관여하는 기관
+3.  「방송법」에 따른 한국방송공사와 「한국교육방송공사법」에 따른 한국교육방송공사
+③제1항제2호의 규정에 따른 정부지원액과 총수입액의 산정 기준ㆍ방법 및 같은 항 제3호부터 제5호까지의 규정에 따른 사실상 지배력 확보의 기준에 관하여 필요한 사항은 대통령령으로 정한다. &lt;개정 2020.6.9&gt;</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제4조(공공기관)
 <mark class="d">①기획재정부장관은</mark> 국가ㆍ지방자치단체가 아닌 법인ㆍ단체 또는 기관(이하 &quot;기관&quot;이라 한다)으로서 다음 각 호의 어느 하나에 해당하는 기관을 공공기관으로 지정할 수 있다. &lt;개정 2008.2.29, 2020.3.31, 2020.6.9<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
 1.  다른 법률에 따라 직접 설립되고 정부가 출연한 기관
 2.  정부지원액(법령에 따라 직접 정부의 업무를 위탁받거나 독점적 사업권을 부여받은 기관의 경우에는 그 위탁업무나 독점적 사업으로 인한 수입액을 포함한다. 이하 같다)이 총수입액의 2분의 1을 초과하는 기관
@@ -143,4 +162,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 1.  구성원 상호 간의 상호부조ㆍ복리증진ㆍ권익향상 또는 영업질서 유지 등을 목적으로 설립된 기관
 2.  지방자치단체가 설립하고, 그 운영에 관여하는 기관
 3.  「방송법」에 따른 한국방송공사와 「한국교육방송공사법」에 따른 한국교육방송공사
-③제1항제2호의 규정에 따른 정부지원액과 총수입액의 산정 기준ㆍ방법 및 같은 항 제3호부터 제5호까지의 규정에 따른 사실상 지배력 확보의 기준에 관하여 필요한 사항은 대통령령으로 정한다. &lt;개정 2020.6.9&gt;</span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+③제1항제2호의 규정에 따른 정부지원액과 총수입액의 산정 기준ㆍ방법 및 같은 항 제3호부터 제5호까지의 규정에 따른 사실상 지배력 확보의 기준에 관하여 필요한 사항은 대통령령으로 정한다. &lt;개정 2020.6.9&gt;</span></div></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

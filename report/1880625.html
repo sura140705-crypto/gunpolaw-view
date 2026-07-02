@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,9 +124,19 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 경력보유여성등의 경력 유지 및 경제활동 촉진에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">5</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">0</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 경력보유여성등의 경력 유지 및 경제활동 촉진에 관한 조례</h2><div class="meta">시행 2023-12-12 · 정비 항목 5건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 5</span></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(연도별 시행계획 등) 
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 경력보유여성등의 경력 유지 및 경제활동 촉진에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">5</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">0</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 경력보유여성등의 경력 유지 및 경제활동 촉진에 관한 조례</h2><div class="meta">시행 2023-12-12 · 정비 항목 5건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 5</span></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(연도별 시행계획 등) 
 ① 시장은 <mark class="cite-law" title="여성의 경제활동 촉진과 경력단절 예방법제5조">「여성의 경제활동 촉진과 경력단절 예방법」(이하 “법”이라 한다) 제5조</mark>에 따른 기본계획과 경기도 연도별 시행계획에 따라 관내 경력보유여성등의 경력 유지 및 경제활동 촉진에 관한 연도별 시행계획(이하 “시행계획”이라 한다)을 시 특성에 맞게 수립하고 추진할 수 있다.  ② 시장은 제1항에 따른 시행계획 수립 및 추진을 위하여 필요한 경우에 공공기관, 관련기관 및 법인이나 단체에 자료 제출 등의 협조를 요청할 수 있다.
-③ 제2항에 따라 협조 요청을 받은 기관, 법인, 단체는 특별한 사유가 있는 경우를 제외하고 이에 협조해야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「여성의 경제활동 촉진과 경력단절 예방법」 제5조</span></div><div class="act">「여성의 경제활동 촉진과 경력단절 예방법」 제5조 개정 내용을 반영하여 이 조례 제9조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제5조(여성의 경제활동 촉진과 경력단절 예방 기본계획의 수립)
+③ 제2항에 따라 협조 요청을 받은 기관, 법인, 단체는 특별한 사유가 있는 경우를 제외하고 이에 협조해야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「여성의 경제활동 촉진과 경력단절 예방법」 제5조</span></div><div class="act">「여성의 경제활동 촉진과 경력단절 예방법」 제5조 개정 내용을 반영하여 이 조례 제9조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="diff-uni">제5조(여성의 경제활동 촉진과 경력단절 예방 기본계획의 수립)
+① <mark class="d">여성가족부장관과</mark><mark class="i">성평등가족부장관과</mark> 고용노동부장관은 공동으로 관계 중앙행정기관의 장과 협의하여 5년마다 여성의 경제활동 촉진과 경력단절 예방에 관한 기본계획(이하 &quot;기본계획&quot;이라 한다)을 세워야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+② 기본계획에는 다음 각 호의 사항이 포함되어야 한다.<mark class="i"> &lt;개정 2024.3.26&gt;</mark>
+1.  정책의 기본 목표와 추진방향
+2.  여성의 경제활동 참여 및 경력단절 현황과 전망
+3.  여성의 경제활동 촉진과 경력단절 예방에 관한 주요 시책
+<mark class="i">3의2.  여성의 경제활동 촉진과 경력단절 예방 사업을 위한 지원의 확대 및 재원조달 방안
+</mark>4<mark class="i">.  여성의 경제활동 촉진과 경력단절 예방에 필요한 교육 및 홍보
+5</mark>.  그 밖에 여성의 경제활동 촉진과 경력단절 예방 등에 필요한 사항으로서 대통령령으로 정하는 사항
+③ <mark class="d">여성가족부장관과</mark><mark class="i">성평등가족부장관과</mark> 고용노동부장관은 기본계획을 수립ㆍ변경하는 때에는 「양성평등기본법」 제11조에 따른 양성평등위원회의 심의를 거쳐야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+④ <mark class="d">여성가족부장관과</mark><mark class="i">성평등가족부장관과</mark> 고용노동부장관은 기본계획을 수립한 때에는 지체 없이 이를 국회 소관 상임위원회에 보고하여야 한다. 기본계획을 변경하는 경우에도 또한 같다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제5조(여성의 경제활동 촉진과 경력단절 예방 기본계획의 수립)
 ① <mark class="d">여성가족부장관과</mark> 고용노동부장관은 공동으로 관계 중앙행정기관의 장과 협의하여 5년마다 여성의 경제활동 촉진과 경력단절 예방에 관한 기본계획(이하 &quot;기본계획&quot;이라 한다)을 세워야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
 ② 기본계획에는 다음 각 호의 사항이 포함되어야 한다.<mark class="pt" title="&lt;개정 2024.3.26&gt; 추가됨">‸</mark>
 1.  정책의 기본 목표와 추진방향
@@ -138,7 +155,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 </mark>4<mark class="i">.  여성의 경제활동 촉진과 경력단절 예방에 필요한 교육 및 홍보
 5</mark>.  그 밖에 여성의 경제활동 촉진과 경력단절 예방 등에 필요한 사항으로서 대통령령으로 정하는 사항
 ③ <mark class="i">성평등가족부장관과</mark> 고용노동부장관은 기본계획을 수립ㆍ변경하는 때에는 「양성평등기본법」 제11조에 따른 양성평등위원회의 심의를 거쳐야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-④ <mark class="i">성평등가족부장관과</mark> 고용노동부장관은 기본계획을 수립한 때에는 지체 없이 이를 국회 소관 상임위원회에 보고하여야 한다. 기본계획을 변경하는 경우에도 또한 같다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(지원 사업 등) 
+④ <mark class="i">성평등가족부장관과</mark> 고용노동부장관은 기본계획을 수립한 때에는 지체 없이 이를 국회 소관 상임위원회에 보고하여야 한다. 기본계획을 변경하는 경우에도 또한 같다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(지원 사업 등) 
 ① 시장은 경력보유여성등의 경제활동 촉진을 위해 다음 각 호의 사업을 지원 및 추진할 수 있다.
 1. <mark class="cite-law" title="여성의 경제활동 촉진과 경력단절 예방법제10조">법 제10조</mark>에 따른 창업 및 일자리 창출 지원사업
 2. <mark class="cite-law" title="여성의 경제활동 촉진과 경력단절 예방법제13조">법 제13조제2항</mark>에 따른 직업교육훈련 지원사업
@@ -149,17 +166,28 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 다. 성차별 없는 직장 환경 조성
 5. 여성 고용업종 기업에 경력보유여성등의 취업 및 일·가정 양립을 위한 행정적·재정적 지원사업
 6. 경력보유여성등에 대한 상담 및 창업 지원에 관한 사업
-7. 그 밖에 경력보유여성등의 경력 유지 및 경제활동 촉진에 필요하다고 인정하는 사업</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「여성의 경제활동 촉진과 경력단절 예방법」 제10조</span></div><div class="act">「여성의 경제활동 촉진과 경력단절 예방법」 제10조 개정 내용을 반영하여 이 조례 제11조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제10조(일자리창출 지원 등)
+7. 그 밖에 경력보유여성등의 경력 유지 및 경제활동 촉진에 필요하다고 인정하는 사업</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「여성의 경제활동 촉진과 경력단절 예방법」 제10조</span></div><div class="act">「여성의 경제활동 촉진과 경력단절 예방법」 제10조 개정 내용을 반영하여 이 조례 제11조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="diff-uni">제10조(일자리창출 지원 등)
+① 정부는 경력단절여성등의 연령, 경력, 학력 등에 적합한 취업과 창업 등 일자리를 창출하기 위하여 노력하여야 한다.
+② <mark class="d">여성가족부장관과</mark><mark class="i">성평등가족부장관과</mark> 고용노동부장관은 여성의 일자리 질을 제고하기 위하여 성별임금 격차 축소 등 근로환경 개선을 위한 시책을 수립ㆍ시행하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제10조(일자리창출 지원 등)
 ① 정부는 경력단절여성등의 연령, 경력, 학력 등에 적합한 취업과 창업 등 일자리를 창출하기 위하여 노력하여야 한다.
 ② <mark class="d">여성가족부장관과</mark> 고용노동부장관은 여성의 일자리 질을 제고하기 위하여 성별임금 격차 축소 등 근로환경 개선을 위한 시책을 수립ㆍ시행하여야 한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제10조(일자리창출 지원 등)
 ① 정부는 경력단절여성등의 연령, 경력, 학력 등에 적합한 취업과 창업 등 일자리를 창출하기 위하여 노력하여야 한다.
-② <mark class="i">성평등가족부장관과</mark> 고용노동부장관은 여성의 일자리 질을 제고하기 위하여 성별임금 격차 축소 등 근로환경 개선을 위한 시책을 수립ㆍ시행하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「여성의 경제활동 촉진과 경력단절 예방법」 제13조제2항</span></div><div class="act">「여성의 경제활동 촉진과 경력단절 예방법」 제13조 개정 내용을 반영하여 이 조례 제11조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">② 지방자치단체의 장은 여성의 경제활동 촉진과 경력단절 예방을 위하여 <mark class="d">지역의</mark> 특성에 맞는 직업교육훈련을 실시할 수 있다.<mark class="pt" title="&lt;개정 2024.3.26&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">② 지방자치단체의 장은 여성의 경제활동 촉진과 경력단절 예방을 위하여 <mark class="i">지역ㆍ연령의</mark> 특성에 맞는 직업교육훈련을 실시할 수 있다.<mark class="i"> &lt;개정 2024.3.26&gt;</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「여성의 경제활동 촉진과 경력단절 예방법」 제14조</span></div><div class="act">「여성의 경제활동 촉진과 경력단절 예방법」 제14조 개정 내용을 반영하여 이 조례 제11조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제14조(일경험 지원)
+② <mark class="i">성평등가족부장관과</mark> 고용노동부장관은 여성의 일자리 질을 제고하기 위하여 성별임금 격차 축소 등 근로환경 개선을 위한 시책을 수립ㆍ시행하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「여성의 경제활동 촉진과 경력단절 예방법」 제13조제2항</span></div><div class="act">「여성의 경제활동 촉진과 경력단절 예방법」 제13조 개정 내용을 반영하여 이 조례 제11조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="diff-uni">② 지방자치단체의 장은 여성의 경제활동 촉진과 경력단절 예방을 위하여 <mark class="d">지역의</mark><mark class="i">지역ㆍ연령의</mark> 특성에 맞는 직업교육훈련을 실시할 수 있다.<mark class="i"> &lt;개정 2024.3.26&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">② 지방자치단체의 장은 여성의 경제활동 촉진과 경력단절 예방을 위하여 <mark class="d">지역의</mark> 특성에 맞는 직업교육훈련을 실시할 수 있다.<mark class="pt" title="&lt;개정 2024.3.26&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">② 지방자치단체의 장은 여성의 경제활동 촉진과 경력단절 예방을 위하여 <mark class="i">지역ㆍ연령의</mark> 특성에 맞는 직업교육훈련을 실시할 수 있다.<mark class="i"> &lt;개정 2024.3.26&gt;</mark></span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「여성의 경제활동 촉진과 경력단절 예방법」 제14조</span></div><div class="act">「여성의 경제활동 촉진과 경력단절 예방법」 제14조 개정 내용을 반영하여 이 조례 제11조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="diff-uni">제14조(일경험 지원)
+① <mark class="d">여성가족부장관은</mark><mark class="i">성평등가족부장관은</mark> 경력단절여성등의 직업적응을 위하여 기업 등을 대상으로 인턴취업지원사업 등 일경험 지원 사업을 실시할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+② <mark class="d">여성가족부장관은</mark><mark class="i">성평등가족부장관은</mark> 지방자치단체가 실시하는 일경험 지원 사업에 대하여 필요한 지원을 할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+③ <mark class="d">여성가족부장관은</mark><mark class="i">성평등가족부장관은</mark> 일경험 지원과 취업연계를 위한 시책을 마련하고 지원할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제14조(일경험 지원)
 ① <mark class="d">여성가족부장관은</mark> 경력단절여성등의 직업적응을 위하여 기업 등을 대상으로 인턴취업지원사업 등 일경험 지원 사업을 실시할 수 있다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
 ② <mark class="d">여성가족부장관은</mark> 지방자치단체가 실시하는 일경험 지원 사업에 대하여 필요한 지원을 할 수 있다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
 ③ <mark class="d">여성가족부장관은</mark> 일경험 지원과 취업연계를 위한 시책을 마련하고 지원할 수 있다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제14조(일경험 지원)
 ① <mark class="i">성평등가족부장관은</mark> 경력단절여성등의 직업적응을 위하여 기업 등을 대상으로 인턴취업지원사업 등 일경험 지원 사업을 실시할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
 ② <mark class="i">성평등가족부장관은</mark> 지방자치단체가 실시하는 일경험 지원 사업에 대하여 필요한 지원을 할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
-③ <mark class="i">성평등가족부장관은</mark> 일경험 지원과 취업연계를 위한 시책을 마련하고 지원할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「여성의 경제활동 촉진과 경력단절 예방법」 제15조</span></div><div class="act">「여성의 경제활동 촉진과 경력단절 예방법」 제15조 개정 내용을 반영하여 이 조례 제11조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제15조(경력단절 예방 사업 등)
+③ <mark class="i">성평등가족부장관은</mark> 일경험 지원과 취업연계를 위한 시책을 마련하고 지원할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「여성의 경제활동 촉진과 경력단절 예방법」 제15조</span></div><div class="act">「여성의 경제활동 촉진과 경력단절 예방법」 제15조 개정 내용을 반영하여 이 조례 제11조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-12-12</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="diff-uni">제15조(경력단절 예방 사업 등)
+① <mark class="d">여성가족부장관과</mark><mark class="i">성평등가족부장관과</mark> 고용노동부장관은 여성의 경력단절 예방을 위하여 다음 각 호의 사업을 실시한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark>
+1.  여성의 경력유지 및 개발을 위한 지원 사업
+2.  여성의 경력단절 예방을 위한 사회적ㆍ문화적 인식 개선 사업
+3.  성차별 없는 직장 환경 조성 사업
+4.  그 밖에 경력단절 예방을 위하여 <mark class="d">여성가족부장관과</mark><mark class="i">성평등가족부장관과</mark> 고용노동부장관이 필요하다고 인정하는 사업
+② <mark class="d">여성가족부장관과</mark><mark class="i">성평등가족부장관과</mark> 고용노동부장관은 여성인력개발기관 등 공동부령으로 정하는 기관이 제1항에 따른 경력단절 예방 사업을 실시하도록 지원할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제15조(경력단절 예방 사업 등)
 ① <mark class="d">여성가족부장관과</mark> 고용노동부장관은 여성의 경력단절 예방을 위하여 다음 각 호의 사업을 실시한다.<mark class="pt" title="&lt;개정 2025.10.1&gt; 추가됨">‸</mark>
 1.  여성의 경력유지 및 개발을 위한 지원 사업
 2.  여성의 경력단절 예방을 위한 사회적ㆍ문화적 인식 개선 사업
@@ -171,4 +199,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 2.  여성의 경력단절 예방을 위한 사회적ㆍ문화적 인식 개선 사업
 3.  성차별 없는 직장 환경 조성 사업
 4.  그 밖에 경력단절 예방을 위하여 <mark class="i">성평등가족부장관과</mark> 고용노동부장관이 필요하다고 인정하는 사업
-② <mark class="i">성평등가족부장관과</mark> 고용노동부장관은 여성인력개발기관 등 공동부령으로 정하는 기관이 제1항에 따른 경력단절 예방 사업을 실시하도록 지원할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+② <mark class="i">성평등가족부장관과</mark> 고용노동부장관은 여성인력개발기관 등 공동부령으로 정하는 기관이 제1항에 따른 경력단절 예방 사업을 실시하도록 지원할 수 있다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

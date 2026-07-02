@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,10 +124,39 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 보훈회관 설치ㆍ운영 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">2</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 보훈회관 설치ㆍ운영 조례</h2><div class="meta">시행 2020-05-11 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는<mark class="cite-law" title="국가보훈 기본법제5조">「국가보훈 기본법」제5조</mark> 및<mark class="cite-law" title="국가유공자 등 예우 및 지원에 관한 법률제3조">「국가유공자 등 예우 및 지원에 관한 법률」제3조</mark>에 따라 국가유공자의 애국정신을 기리고 계승·발전시키며, 보훈단체 활동의 활성화와 그 유족 또는 가족의 복리증진을 위하여 군포시 보훈회관을 설치·운영하는데 필요한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「국가보훈 기본법」 제5조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-05-11</b> · 당시 법령본 <b>2017-06-21</b> → 현행 조문 <b>2024-02-13</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「국가유공자 등 예우 및 지원에 관한 법률」 제3조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-05-11</b> · 당시 법령본 <b>2020-01-01</b> → 현행 조문 <b>2025-10-01</b></div></div></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 보훈회관 설치ㆍ운영 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">2</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 보훈회관 설치ㆍ운영 조례</h2><div class="meta">시행 2020-05-11 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는<mark class="cite-law" title="국가보훈 기본법제5조">「국가보훈 기본법」제5조</mark> 및<mark class="cite-law" title="국가유공자 등 예우 및 지원에 관한 법률제3조">「국가유공자 등 예우 및 지원에 관한 법률」제3조</mark>에 따라 국가유공자의 애국정신을 기리고 계승·발전시키며, 보훈단체 활동의 활성화와 그 유족 또는 가족의 복리증진을 위하여 군포시 보훈회관을 설치·운영하는데 필요한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「국가보훈 기본법」 제5조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-05-11</b> · 당시 법령본 <b>2017-06-21</b> → 현행 조문 <b>2024-02-13</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「국가유공자 등 예우 및 지원에 관한 법률」 제3조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2020-05-11</b> · 당시 법령본 <b>2020-01-01</b> → 현행 조문 <b>2025-10-01</b></div></div></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
 1. 국가유공자란 국가를 위하여 희생하거나 공헌한 사람으로 <mark class="cite-law" title="국가유공자 등 예우 및 지원에 관한 법률제4조">「국가유공자 등 예우 및 지원에 관한 법률」(이하 “법률”이라 한다) 제4조</mark>에서 규정한 사람을 말한다.
 2. 보훈단체란 “국가유공자 등 단체 설립에 관한 법률”, “참전유공자 예우 및 단체설립에 관한 법률”, “고엽제후유의증 등 환자지원 및 단체설립에 관한 법률”, “특수임무유공자 예우 및 단체설립에 관한 법률”, “대한민국재향군인회법”에 따라 등록한 단체를 말한다.
-3. 보훈회원이란 국가유공자 등이 보훈단체에 가입신청서 등을 제출하고 각 단체의 정관 등에 정한 사항을 성실히 따른 사람을 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「국가유공자 등 예우 및 지원에 관한 법률」 제4조</span></div><div class="act">「국가유공자 등 예우 및 지원에 관한 법률」 제4조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-05-11</b> · 당시 법령본 <b>2020-03-24</b> → 현행 조문 <b>2023-03-04</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제4조(적용 대상 국가유공자)
+3. 보훈회원이란 국가유공자 등이 보훈단체에 가입신청서 등을 제출하고 각 단체의 정관 등에 정한 사항을 성실히 따른 사람을 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「국가유공자 등 예우 및 지원에 관한 법률」 제4조</span></div><div class="act">「국가유공자 등 예우 및 지원에 관한 법률」 제4조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-05-11</b> · 당시 법령본 <b>2020-03-24</b> → 현행 조문 <b>2023-03-04</b></div><div class="diff"><div class="diff-uni">제4조(적용 대상 국가유공자)
+① 다음 각 호의 어느 하나에 해당하는 국가유공자, 그 유족 또는 가족(다른 법률에서 이 법에 규정된 예우 등을 받도록 규정된 사람을 포함한다)은 이 법에 따른 예우를 받는다. &lt;개정 2015.12.22<mark class="i">, 2020.3.24, 2023.3.4</mark>&gt;
+1.  순국선열: 「독립유공자예우에 관한 법률」 제4조제1호에 따른 순국선열
+2.  애국지사: 「독립유공자예우에 관한 법률」 제4조제2호에 따른 애국지사
+3.  전몰군경(戰歿軍警): 군인이나 경찰공무원으로서 전투 또는 이에 준하는 직무수행 중 사망한 사람(군무원으로서 1959년 12월 31일 이전에 전투 또는 이에 준하는 직무수행 중 사망한 사람을 포함한다)
+4.  전상군경(戰傷軍警): 군인이나 경찰공무원으로서 전투 또는 이에 준하는 직무수행 중 상이를 입고 전역(퇴역ㆍ면역 또는 상근예비역 소집해제를 포함한다. 이하 같다)하거나 퇴직(면직을 포함한다. 이하 같다)한 사람(군무원으로서 1959년 12월 31일 이전에 전투 또는 이에 준하는 직무수행 중 상이를 입고 퇴직한 사람을 포함한다)<mark class="d">으로서</mark><mark class="i"> 또는 6개월 이내에 전역이나 퇴직하는 사람으로서</mark> 그 상이정도가 <mark class="d">국가보훈처장이</mark><mark class="i">국가보훈부장관이</mark> 실시하는 신체검사에서 제6조의4에 따른 상이등급(이하 &quot;상이등급&quot;이라 한다)으로 판정된 사람
+5.  순직군경(殉職軍警): 군인이나 경찰ㆍ소방 공무원으로서 국가의 수호ㆍ안전보장 또는 국민의 생명ㆍ재산 보호와 직접적인 관련이 있는 직무수행이나 교육훈련 중 사망한 사람(질병으로 사망한 사람을 포함한다)
+6.  공상군경(公傷軍警): 군인이나 경찰ㆍ소방 공무원으로서 국가의 수호ㆍ안전보장 또는 국민의 생명ㆍ재산 보호와 직접적인 관련이 있는 직무수행이나 교육훈련 중 상이(질병을 포함한다)를 입고 전역하거나 퇴직한 <mark class="i">사람 또는 6개월 이내에 전역이나 퇴직하는 </mark>사람으로서 그 상이정도가 <mark class="d">국가보훈처장이</mark><mark class="i">국가보훈부장관이</mark> 실시하는 신체검사에서 상이등급으로 판정된 사람
+7.  무공수훈자(武功受勳者): 무공훈장(武功勳章)을 받은 사람. 다만, 「국가공무원법」 제2조 및 「지방공무원법」 제2조에 따른 공무원과 국가나 지방자치단체에서 일상적으로 공무에 종사하는 대통령령으로 정하는 직원이 무공훈장을 받은 경우에는 전역하거나 퇴직한 사람만 해당한다.
+8.  보국수훈자(保國受勳者): 다음 각 목의 어느 하나에 해당하는 사람
+가.  군인으로서 보국훈장을 받고 전역한 사람
+나.  군인 외의 사람으로서 간첩체포, 무기개발 및 그 밖에 대통령령으로 정하는 사유(이하 &quot;간첩체포등의 사유&quot;라 한다)로 보국훈장을 받은 사람. 다만, 「국가공무원법」 제2조 및 「지방공무원법」 제2조에 따른 공무원(군인은 제외한다)과 국가나 지방자치단체에서 일상적으로 공무에 종사하는 대통령령으로 정하는 직원이 간첩체포등의 사유로 보국훈장을 받은 경우에는 퇴직한 사람만 해당한다.
+9.  6ㆍ25참전 재일학도의용군인(在日學徒義勇軍人)(이하 &quot;재일학도의용군인&quot;이라 한다): 대한민국 국민으로서 일본에 거주하던 사람으로서 1950년 6월 25일부터 1953년 7월 27일까지의 사이에 국군이나 유엔군에 지원 입대하여 6ㆍ25전쟁에 참전하고 제대한 사람(파면된 사람이나 형을 선고받고 제대된 사람은 제외한다)
+10.  참전유공자: 「참전유공자 예우 및 단체설립에 관한 법률」 제2조제2호에 해당하는 사람 중 다음 각 목의 어느 하나에 해당하는 사람
+가.  「참전유공자 예우 및 단체설립에 관한 법률」 제5조에 따라 등록된 사람
+나.  「고엽제후유의증 등 환자지원 및 단체설립에 관한 법률」 제4조 또는 제7조에 따라 등록된 사람
+11.  4ㆍ19혁명사망자: 1960년 4월 19일을 전후한 혁명에 참가하여 사망한 사람
+12.  4ㆍ19혁명부상자: 1960년 4월 19일을 전후한 혁명에 참가하여 상이를 입은 사람으로서 그 상이정도가 <mark class="d">국가보훈처장이</mark><mark class="i">국가보훈부장관이</mark> 실시하는 신체검사에서 상이등급으로 판정된 사람
+13.  4ㆍ19혁명공로자: 1960년 4월 19일을 전후한 혁명에 참가한 사람 중 제11호와 제12호에 해당하지 아니하는 사람으로서 건국포장(建國褒章)을 받은 사람
+14.  순직공무원: 「국가공무원법」 제2조 및 「지방공무원법」 제2조에 따른 공무원(군인과 <mark class="d">경찰공무원은</mark><mark class="i">경찰ㆍ소방 공무원은</mark> 제외한다)과 국가나 지방자치단체에서 일상적으로 공무에 종사하는 대통령령으로 정하는 직원으로서 국민의 생명ㆍ재산 보호와 직접적인 관련이 있는 직무수행이나 교육훈련 중 사망한 사람(질병으로 사망한 사람을 포함한다)
+15.  공상공무원: 「국가공무원법」 제2조 및 「지방공무원법」 제2조에 따른 공무원(군인과 <mark class="d">경찰공무원은</mark><mark class="i">경찰ㆍ소방 공무원은</mark> 제외한다)과 국가나 지방자치단체에서 일상적으로 공무에 종사하는 대통령령으로 정하는 직원으로서 국민의 생명ㆍ재산 보호와 직접적인 관련이 있는 직무수행이나 교육훈련 중 상이(질병을 포함한다)를 입고 <mark class="d">퇴직한</mark><mark class="i">퇴직하거나 6개월 이내에 퇴직하는</mark> 사람으로서 그 상이정도가 <mark class="d">국가보훈처장이</mark><mark class="i">국가보훈부장관이</mark> 실시하는 신체검사에서 상이등급으로 판정된 사람
+16.  국가사회발전 특별공로순직자(이하 &quot;특별공로순직자&quot;라 한다): 국가사회발전에 현저한 공이 있는 사람 중 그 공로와 관련되어 순직한 사람으로서 국무회의에서 이 법의 적용 대상자로 의결된 사람
+17.  국가사회발전 특별공로상이자(이하 &quot;특별공로상이자&quot;라 한다): 국가사회발전에 현저한 공이 있는 사람 중 그 공로와 관련되어 상이를 입은 사람으로서 그 상이정도가 <mark class="d">국가보훈처장이</mark><mark class="i">국가보훈부장관이</mark> 실시하는 신체검사에서 상이등급으로 판정되어 국무회의에서 이 법의 적용 대상자로 의결된 사람
+18.  국가사회발전 특별공로자(이하 &quot;특별공로자&quot;라 한다): 국가사회발전에 현저한 공이 있는 사람 중 제16호와 제17호에 해당하지 아니하는 사람으로서 국무회의에서 이 법의 적용 대상자로 의결된 사람
+② 제1항제3호부터 제6호까지, 제14호 및 제15호에 따른 국가유공자의 요건에 해당되는지에 대한 구체적인 기준과 범위는 다음 각 호의 사항 등을 종합적으로 고려하여 대통령령으로 정한다.
+1.  전투 또는 이에 준하는 직무수행의 범위
+2.  직무수행이나 교육훈련과 국가의 수호ㆍ안전보장 또는 국민의 생명ㆍ재산 보호와의 관련 정도
+3.  사망하거나 상이(질병을 포함한다)를 입게 된 경위 및 본인<mark class="d"> 과실의 유무와 정도
+③ 제1항에도 불구하고 제1항제1호 및 제2호에 따른 순국선열ㆍ애국지사의 예우에 관하여는 「독립유공자예우에 관한 법률」에서 정한다.
+④ 제1항에도 불구하고</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제4조(적용 대상 국가유공자)
 ① 다음 각 호의 어느 하나에 해당하는 국가유공자, 그 유족 또는 가족(다른 법률에서 이 법에 규정된 예우 등을 받도록 규정된 사람을 포함한다)은 이 법에 따른 예우를 받는다. &lt;개정 2015.12.22<mark class="pt" title=", 2020.3.24, 2023.3.4 추가됨">‸</mark>&gt;
 1.  순국선열: 「독립유공자예우에 관한 법률」 제4조제1호에 따른 순국선열
 2.  애국지사: 「독립유공자예우에 관한 법률」 제4조제2호에 따른 애국지사
@@ -177,4 +213,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 1.  전투 또는 이에 준하는 직무수행의 범위
 2.  직무수행이나 교육훈련과 국가의 수호ㆍ안전보장 또는 국민의 생명ㆍ재산 보호와의 관련 정도
 3.  사망하거나 상이(질병을 포함한다)를 입게 된 경위 및 본인<mark class="pt" title="과실의 유무와 정도
-③ 제1항에도 불구하고 제1항제1호 및 제2호에 따른 삭제됨">‸</mark></span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+③ 제1항에도 불구하고 제1항제1호 및 제2호에 따른 삭제됨">‸</mark></span></div></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

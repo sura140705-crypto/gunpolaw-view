@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,7 +124,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시의회 의원 윤리강령 및 윤리실천규범에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">4</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시의회 의원 윤리강령 및 윤리실천규범에 관한 조례</h2><div class="meta">시행 2025-01-07 · 정비 항목 4건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="지방자치법제46조">「지방자치법」 제46조</mark>에 따라 군포시의회 의원이 준수해야 할 윤리강령 및 윤리실천규범을 규정함으로써 의원이 윤리의식을 높이고 바람직한 의회상 정립을 목적으로 한다. &lt;개정 2023.3.16.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제46조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-01-07</b> · 당시 법령본 <b>2023-09-14</b> → 현행 조문 <b>2023-09-14</b></div></div></div><div class="artsec" data-oc="제10조"><div class="arthd">조례 제10조</div><div class="ordtext"><b>제10조</b> 제10조(겸직 금지) 
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시의회 의원 윤리강령 및 윤리실천규범에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">4</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시의회 의원 윤리강령 및 윤리실천규범에 관한 조례</h2><div class="meta">시행 2025-01-07 · 정비 항목 4건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="지방자치법제46조">「지방자치법」 제46조</mark>에 따라 군포시의회 의원이 준수해야 할 윤리강령 및 윤리실천규범을 규정함으로써 의원이 윤리의식을 높이고 바람직한 의회상 정립을 목적으로 한다. &lt;개정 2023.3.16.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「지방자치법」 제46조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-01-07</b> · 당시 법령본 <b>2023-09-14</b> → 현행 조문 <b>2023-09-14</b></div></div></div><div class="artsec" data-oc="제10조"><div class="arthd">조례 제10조</div><div class="ordtext"><b>제10조</b> 제10조(겸직 금지) 
 ① 의원은 <mark class="cite-law" title="지방자치법제43조">「지방자치법」 제43조제1항</mark>이 규정하는 직을 겸할 수 없다.
 ② 의원은 다음 각 호의 기관ㆍ단체 및 그 기관ㆍ단체가 설립ㆍ운영하는 시설의 대표, 임원, 상근직원 또는 그 소속 위원회(자문위원회는 제외한다)의 위원이 된 경우에는 그 겸한 직을 사임하여야 한다.
 1. 군포시가 출자ㆍ출연(재출자ㆍ재출연을 포함한다)한 기관ㆍ단체
@@ -128,7 +135,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 1. 제2항에 해당함에도 불구하고 겸한 직을 사임하지 아니할 때
 2. 다른 직을 겸하는 것이 제4조 및 제5조에 위반된다고 인정될 때
 [본조 신설 2023.3.16.] 
-[종전 제10조는 제11조로 이동 &lt;2023.3.16.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제43조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-01-07</b> · 당시 법령본 <b>2024-05-17</b> → 현행 조문 <b>2026-06-02</b></div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(겸직 금지 및 신고) 
+[종전 제10조는 제11조로 이동 &lt;2023.3.16.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「지방자치법」 제43조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-01-07</b> · 당시 법령본 <b>2024-05-17</b> → 현행 조문 <b>2026-06-02</b></div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(겸직 금지 및 신고) 
 ① 의원은 당선 전부터 <mark class="cite-law" title="지방자치법제43조">「지방자치법」 제43조제1항</mark> 각 호의 직을 제외한 다른 직을 가진 경우에는 임기개시 후 1개월 이내에, 임기 중 그 다른 직에 취임한 경우에는 취임 후 15일 이내에 의장에게 서면으로 신고하여야 한다. &lt;개정 2023.3.16.&gt;
 ② 의원이 제1항에 따라 의장에게 겸직사항을 신고하는 경우에는 별지 제1호서식에 따르며, 겸직사항이 없는 경우에는 별지 제2호서식에 따라 확인서를 제출하여야 한다. &lt;개정 2023.3.16.&gt;
 ③ 의원은 제2항의 신고사항에 변경이 있을 경우에는 지체없이 별지 제1호 서식에 따라 신고하여야 한다. &lt;개정 2023.3.16.&gt;
@@ -136,8 +143,8 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 ⑤ 의장은 겸직신고 사항의 확인 등을 위하여 필요한 경우 겸직기관· 단체의 정관 등의 제출을 요구할 수 있다.
 ⑥ 삭  제 &lt;2023.3.16.&gt;
 
-[제10조에서 제11조로 이동 &lt;2023.3.16.&gt;] [종전 제11조는 제12조로 이동 &lt;2023.3.16.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치법」 제43조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-01-07</b> · 당시 법령본 <b>2024-05-17</b> → 현행 조문 <b>2026-06-02</b></div></div></div><div class="artsec" data-oc="제13조"><div class="arthd">조례 제13조</div><div class="ordtext"><b>제13조</b> 제13조(수의계약체결 제한자 신고) 
+[제10조에서 제11조로 이동 &lt;2023.3.16.&gt;] [종전 제11조는 제12조로 이동 &lt;2023.3.16.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「지방자치법」 제43조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-01-07</b> · 당시 법령본 <b>2024-05-17</b> → 현행 조문 <b>2026-06-02</b></div></div></div><div class="artsec" data-oc="제13조"><div class="arthd">조례 제13조</div><div class="ordtext"><b>제13조</b> 제13조(수의계약체결 제한자 신고) 
 ① 의원은 <mark class="cite-law" title="지방자치단체를 당사자로 하는 계약에 관한 법률제33조의2">「지방자치단체를 당사자로 하는 계약에 관한 법률」 제33조의2</mark>에 따라 군포시장이 수의계약을 체결할 수 있는 자의 여부를 확인하기 위하여 자료의 제출을 요구한 때에는 성실하게 별지 제3호서식에 따라 수의계약체결 제한사항을 신고하여야 한다. &lt;개정 2023.3.16.&gt;
 ② 의원은 제1항에 따른 신고사항에 변경이 있는 경우 지체 없이 서면으로 변경신고를 하여야 한다. &lt;개정 2023.3.16.&gt;
 
-[제12조에서 제13조로 이동 &lt;2023.3.16.&gt;] [종전 제13조는 삭제 &lt;2023.3.16.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방자치단체를 당사자로 하는 계약에 관한 법률」 제33조의2</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-01-07</b> · 당시 법령본 <b>2018-12-24</b> → 현행 조문 <b>2018-12-24</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+[제12조에서 제13조로 이동 &lt;2023.3.16.&gt;] [종전 제13조는 삭제 &lt;2023.3.16.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「지방자치단체를 당사자로 하는 계약에 관한 법률」 제33조의2</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-01-07</b> · 당시 법령본 <b>2018-12-24</b> → 현행 조문 <b>2018-12-24</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

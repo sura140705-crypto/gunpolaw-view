@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,15 +124,47 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 어르신 교통비 지원 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 어르신 교통비 지원 조례</h2><div class="meta">시행 2025-05-08 · 정비 항목 4건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 어르신 교통비 지원 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 어르신 교통비 지원 조례</h2><div class="meta">시행 2025-05-08 · 정비 항목 4건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
   1. “어르신”이란 주민등록상 군포시(이하 “시”라 한다)에 거주하는 70세 이상의 주민을 말한다. 
 2. “대중교통”이란 <mark class="cite-law" title="여객자동차 운수사업법 시행규칙제7조">「여객자동차 운수사업법 시행규칙」제7조</mark> 및 별표1제1호, 제3호, 제4호 및 제7호에 따른 시내버스운송사업, 택시운송사업, 마을버스운송사업, 수요응답형 여객자동차운송사업에 사용되는 자동차를 말한다. 
 3. “교통비 지원”이란 어르신이 대중교통 이용에 따라 발생하는 교통비 중 일정 금액을 지원하는 것을 말한다. 
-4. “교통카드”란 어르신이 교통비를 지원 받을 수 있도록 시와 사업 제휴, 협약 또는 위탁 계약을 한 은행에서 발급한 카드를 말한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「여객자동차 운수사업법 시행규칙」 제7조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2016-04-01</b> → 현행 조문 <b>2016-04-01</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(지원체계 구축)  
+4. “교통카드”란 어르신이 교통비를 지원 받을 수 있도록 시와 사업 제휴, 협약 또는 위탁 계약을 한 은행에서 발급한 카드를 말한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「여객자동차 운수사업법 시행규칙」 제7조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2016-04-01</b> → 현행 조문 <b>2016-04-01</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(지원체계 구축)  
 ① 시장은 이 조례에 따른 사업이 원활히 추진될 수 있도록 교통비 지원 시스템을 구축ㆍ운영할 수 있다. 
 ② 시장은 교통비 지원 사업의 원할한 추진을 위하여 <mark class="cite-law" title="대중교통의 육성 및 이용촉진에 관한 법률제10조의8">「대중교통의 육성 및 이용촉진에 관한 법률」제10조의8제2항</mark>에 해당하는 자 (이하 “교통카드정산사업자등”라 한다) 및 <mark class="cite-law" title="은행법제2조">「은행법」제2조</mark>에 따른 은행, <mark class="cite-law" title="여신전문금융업법제2조">「여신전문금융업법」제2조</mark>에 따른 신용카드업 등과 교통비 지원 사업에 관한 업무 제휴, 협약 또는 위탁 계약 등을 체결할 수 있다. 
 ③ 제2항에 따른 위탁 계약에 대하여는 <mark class="cite-local" title="군포시 사무의 민간위탁에 관한 조례">「군포시 사무의 민간위탁에 관한 조례」</mark>를 준용한다. 
-④ 시장은 교통카드정산사업자등이 제1항에 따른 시스템 구축ㆍ운영 및 그 밖에 필요한 시설ㆍ장비를 확충 또는 개선하는 경우 그 필요한 경비의 전부 또는 일부를 보조할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「대중교통의 육성 및 이용촉진에 관한 법률」 제10조의8제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2024-07-10</b> → 현행 조문 <b>2025-08-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「은행법」 제2조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2021-04-20</b> → 현행 조문 <b>2021-04-20</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「여신전문금융업법」 제2조</span></div><div class="act">「여신전문금융업법」 제2조 개정 내용을 반영하여 이 조례 제5조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2018-02-21</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2010.3.12, 2012.3.21, 2015.1.20, 2015.7.31, 2016.3.29, 2018.2.21<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
+④ 시장은 교통카드정산사업자등이 제1항에 따른 시스템 구축ㆍ운영 및 그 밖에 필요한 시설ㆍ장비를 확충 또는 개선하는 경우 그 필요한 경비의 전부 또는 일부를 보조할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「대중교통의 육성 및 이용촉진에 관한 법률」 제10조의8제2항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2024-07-10</b> → 현행 조문 <b>2025-08-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「은행법」 제2조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2021-04-20</b> → 현행 조문 <b>2021-04-20</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「여신전문금융업법」 제2조</span></div><div class="act">「여신전문금융업법」 제2조 개정 내용을 반영하여 이 조례 제5조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2018-02-21</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="diff-uni">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2010.3.12, 2012.3.21, 2015.1.20, 2015.7.31, 2016.3.29, 2018.2.21<mark class="i">, 2025.10.1</mark>&gt;
+1.  &quot;여신전문금융업(與信專門金融業)&quot;이란 신용카드업, 시설대여업, 할부금융업 또는 신기술사업금융업을 말한다.
+2.  &quot;신용카드업&quot;이란 다음 각 목의 업무 중 나목의 업무를 포함한 둘 이상의 업무를 업(業)으로 하는 것을 말한다.
+가.  신용카드의 발행 및 관리
+나.  신용카드 이용과 관련된 대금(代金)의 결제
+다.  신용카드가맹점의 모집 및 관리
+2의2.  &quot;신용카드업자&quot;란 제3조제1항에 따라 신용카드업의 허가를 받거나 등록을 한 자를 말한다. 다만, 제3조제3항제1호의 요건에 해당하는 자가 제13조제1항제2호 및 제3호의 업무를 하는 경우에는 그 업무에 관하여만 신용카드업자로 본다.
+3.  &quot;신용카드&quot;란 이를 제시함으로써 반복하여 신용카드가맹점에서 다음 각 목을 제외한 사항을 결제할 수 있는 증표(證票)로서 신용카드업자(외국에서 신용카드업에 상당하는 영업을 영위하는 자를 포함한다)가 발행한 것을 말한다.
+가.  금전채무의 상환
+나.  「자본시장과 금융투자업에 관한 법률」 제3조제1항에 따른 금융투자상품 등 대통령령으로 정하는 금융상품
+다.  「게임산업진흥에 관한 법률」 제2조제1호의2에 따른 사행성게임물의 이용 대가 및 이용에 따른 금전의 지급. 다만, 외국인(「해외이주법」 제2조에 따른 해외이주자를 포함한다)이 「관광진흥법」에 따라 허가받은 카지노영업소에서 외국에서 신용카드업에 상당하는 영업을 영위하는 자가 발행한 신용카드로 결제하는 것은 제외한다.
+라.  그 밖에 사행행위 등 건전한 국민생활을 저해하고 선량한 풍속을 해치는 행위로 대통령령으로 정하는 사항의 이용 대가 및 이용에 따른 금전의 지급
+4.  &quot;신용카드회원&quot;이란 신용카드업자와의 계약에 따라 그로부터 신용카드를 발급받은 자를 말한다.
+5.  &quot;신용카드가맹점&quot;이란 다음 각 목의 자를 말한다.
+가.  신용카드업자와의 계약에 따라 신용카드회원ㆍ직불카드회원 또는 선불카드소지자(이하 &quot;신용카드회원등&quot;이라 한다)에게 신용카드ㆍ직불(直拂)카드 또는 선불(先拂)카드(이하 &quot;신용카드등&quot;이라 한다)를 사용한 거래에 의하여 물품의 판매 또는 용역의 제공 등을 하는 자
+나.  신용카드업자와의 계약에 따라 신용카드회원등에게 물품의 판매 또는 용역의 제공 등을 하는 자를 위하여 신용카드등에 의한 거래를 대행(代行)하는 자(이하 &quot;결제대행업체&quot;라 한다)
+5의2.  &quot;수납대행가맹점&quot;이란 신용카드업자와의 별도의 계약에 따라 다른 신용카드가맹점을 위하여 신용카드등에 의한 거래에 필요한 행위로서 대통령령으로 정하는 사항을 대행하는 신용카드가맹점을 말한다.
+5의3.  &quot;가맹점모집인&quot;이란 신용카드업자를 위하여 가맹점계약의 체결을 중개 또는 대리하고 부가통신업자를 위하여 신용카드 단말기를 설치하는 자로서 제16조의3에 따라 금융위원회에 등록을 한 자를 말한다.
+5의4.  &quot;신용카드포인트&quot;란 신용카드업자가 신용카드의 이용금액 등에 따라 신용카드회원에게 적립하여 재화를 구매하거나 서비스를 이용할 수 있도록 하는 경제상의 이익을 말한다.
+6.  &quot;직불카드&quot;란 직불카드회원과 신용카드가맹점 간에 전자적(電子的) 또는 자기적(磁氣的) 방법으로 금융거래계좌에 이체(移替)하는 등의 방법으로 결제가 이루어질 수 있도록 신용카드업자가 발행한 증표{자금(資金)을 융통받을 수 있는 증표는 제외한다}를 말한다.
+7.  &quot;직불카드회원&quot;이란 신용카드업자와의 계약에 따라 그로부터 직불카드를 발급받은 자를 말한다.
+8.  &quot;선불카드&quot;란 신용카드업자가 대금을 미리 받고 이에 해당하는 금액을 기록(전자적 또는 자기적 방법에 따른 기록을 말한다)하여 발행한 증표로서 선불카드소지자가 신용카드가맹점에 제시하여 그 카드에 기록된 금액의 범위에서 결제할 수 있게 한 증표를 말한다.
+8의2.  &quot;신용카드등부가통신업&quot;이란 신용카드업자 및 신용카드가맹점과의 계약에 따라 단말기 설치, 신용카드등의 조회ㆍ승인 및 매출전표 매입ㆍ자금정산 등 신용카드등의 대금결제를 승인ㆍ중계하기 위한 전기통신서비스 제공을 업으로 하는 것을 말한다.
+8의3.  &quot;부가통신업자&quot;란 신용카드등부가통신업에 대하여 제27조의2에 따라 금융위원회에 등록을 한 자를 말한다.
+9.  &quot;시설대여업&quot;이란 시설대여를 업으로 하는 것을 말한다.
+10.  &quot;시설대여&quot;란 대통령령으로 정하는 물건(이하 &quot;특정물건&quot;이라 한다)을 새로 취득하거나 대여받아 거래상대방에게 대통령령으로 정하는 일정 기간 이상 사용하게 하고, 그 사용 기간 동안 일정한 대가를 정기적으로 나누어 지급받으며, 그 사용 기간이 끝난 후의 물건의 처분에 관하여는 당사자 간의 약정(約定)으로 정하는 방식의 금융을 말한다.
+10의2.  &quot;시설대여업자&quot;란 시설대여업에 대하여 제3조제2항에 따라 금융위원회에 등록한 자를 말한다.
+11.  &quot;연불판매(延拂販賣)&quot;란 특정물건을 새로 취득하여 거래상대방에게 넘겨주고, 그 물건의 대금ㆍ이자 등을 대통령령으로 정하는 일정한 기간 이상 동안 정기적으로 나누어 지급받으며, 그 물건의 소유권 이전 시기와 그 밖의 조건에 관하여는 당사자 간의 약정으로 정하는 방식의 금융을 말한다.
+12.  &quot;할부금융업&quot;이란 할부금융을 업으로 하는 것을 말한다.
+13.  &quot;할부금융&quot;이란 재화(財貨)와 용역의 매매계약(賣買契約)에 대하여 매도인(賣渡人) 및 매수인(買受人)과 각각 약정을 체결하여 매수인에게 융자한 재화와 용역의 구매자금을 매도인에게 지급하고 매수인으로부터 그 원리금(元利金)을 나누어 상환(償還)받는 방식의 금융을 말한다.
+13의2.  &quot;할부금융업자&quot;란 할부금융업에 대하여 제3조제2항에 따라 금융위원회에 등록한 자를 말한다.
+14.  &quot;신기술사업금융업&quot;이란 제41조제1항 각 호에 따른 업무를 종합적으로 업으로서 하는 것을 말한다.
+14의2.  &quot;신기술사업자&quot;란 「기술보증기금법」 제2조제1호에 따른 신기술사업자와 기술 및 저작권ㆍ지적재산권 등과 관련된 연구ㆍ개발ㆍ개량ㆍ제품화 또는 이를 응용하여 사업화하는 사업(이하 &quot;신기술사업&quot;이라 한다)을 영위하는<mark class="d"> 「중소기업기본법」 제</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2010.3.12, 2012.3.21, 2015.1.20, 2015.7.31, 2016.3.29, 2018.2.21<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
 1.  &quot;여신전문금융업(與信專門金融業)&quot;이란 신용카드업, 시설대여업, 할부금융업 또는 신기술사업금융업을 말한다.
 2.  &quot;신용카드업&quot;이란 다음 각 목의 업무 중 나목의 업무를 포함한 둘 이상의 업무를 업(業)으로 하는 것을 말한다.
 가.  신용카드의 발행 및 관리
@@ -189,4 +228,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 13.  &quot;할부금융&quot;이란 재화(財貨)와 용역의 매매계약(賣買契約)에 대하여 매도인(賣渡人) 및 매수인(買受人)과 각각 약정을 체결하여 매수인에게 융자한 재화와 용역의 구매자금을 매도인에게 지급하고 매수인으로부터 그 원리금(元利金)을 나누어 상환(償還)받는 방식의 금융을 말한다.
 13의2.  &quot;할부금융업자&quot;란 할부금융업에 대하여 제3조제2항에 따라 금융위원회에 등록한 자를 말한다.
 14.  &quot;신기술사업금융업&quot;이란 제41조제1항 각 호에 따른 업무를 종합적으로 업으로서 하는 것을 말한다.
-14의2.  &quot;신기술사업자&quot;란 「기술보증기금법」 제2조제1호에 따른 신기술사업자와 기술 및 저작권ㆍ지적재산권 등과 관련된 연구ㆍ개발ㆍ개량ㆍ제품화 또는 이를 응용하여 사업화하는 사업(이하 &quot;신기술사업&quot;이라 한다)을 영위하는<mark class="pt" title="「중소기업기본법」 제 삭제됨">‸</mark></span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+14의2.  &quot;신기술사업자&quot;란 「기술보증기금법」 제2조제1호에 따른 신기술사업자와 기술 및 저작권ㆍ지적재산권 등과 관련된 연구ㆍ개발ㆍ개량ㆍ제품화 또는 이를 응용하여 사업화하는 사업(이하 &quot;신기술사업&quot;이라 한다)을 영위하는<mark class="pt" title="「중소기업기본법」 제 삭제됨">‸</mark></span></div></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

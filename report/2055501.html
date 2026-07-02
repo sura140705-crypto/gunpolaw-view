@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,26 +124,41 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 지역화폐 발행 및 운영 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">2</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">8</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 지역화폐 발행 및 운영 조례</h2><div class="meta">시행 2025-07-11 · 정비 항목 10건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2025.7.11.&gt;
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 지역화폐 발행 및 운영 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">2</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">8</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 지역화폐 발행 및 운영 조례</h2><div class="meta">시행 2025-07-11 · 정비 항목 10건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2025.7.11.&gt;
 1. “군포시 지역화폐”란 발행자인 군포시가 일정한 금액이나 물품 또는 용역의 수량을 기재(전자적 또는 자기적 방법에 의한 기록을 포함한다. 이하 같다)하여 발행ㆍ매출한 증표로서, 그 소지자가 군포시장(이하 “시장”이라 한다) 또는 제2호가목에 따른 개별가맹점에게 이를 교부 또는 제시하거나 그 밖의 방법으로 사용함으로써 그 증표에 기재된 내용에 따라 시장 또는 해당 개별가맹점으로부터 물품 또는 용역을 제공받을 수 있는 증표를 말한다.
 2. “가맹점”이란 제8조에 따라 등록한 자로서 다음 어느 하나에 해당하는 자를 말한다.&lt;개정 2020.9.29&gt;
 가. 군포시 지역화폐(이하 “지역화폐”라 한다)를 사용한 거래에 의하여 물품의 판매 또는 용역의 제공을 하는 자(이하 “개별가맹점”이라 한다)
 나. 지역화폐를 수취한 개별가맹점을 위하여 제22조 단서에 따라 지역화폐의 환전을 대행하는 상인조직(이하 “환전대행가맹점”이라 한다)
 3. “판매대행점”이란 제21조에 따라 협약을 체결한 자로서 지역화폐의 보관, 판매, 환전 업무 등을 대행하는 은행 또는 금융기관을 말한다.
 4. “운영대행사”란 제23조에 따라 협약을 체결한 자로서 전자지역화폐 유통에 따른 시스템 관리ㆍ운영 및 유지보수 등의 업무를 대행하는 업체를 말한다.
-5. “지역화폐 운영자금”이란 <mark class="cite-law" title="지역사랑상품권 이용 활성화에 관한 법률제4조의2">「지역사랑상품권 이용 활성화에 관한 법률」(이하 “법”이라 한다) 제4조의2</mark>에 따라 사용자가 지역화폐를 구매하기 위하여 지급한 자금, 유효기간 내에 사용되지 않고 남은 지역화폐 금액 및 운영과정에서 발생하는 이자 등 지역화폐를 발행ㆍ판매ㆍ환전하기 위한 자금을 말한다. &lt;신설 2023.3.16.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지역사랑상품권 이용 활성화에 관한 법률」 제4조의2</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2023-05-16</b> → 현행 조문 <b>2026-01-01</b></div></div></div><div class="artsec" data-oc="제4조의2"><div class="arthd">조례 제4조의2</div><div class="ordtext"><b>제4조의2</b> 제4조의2(지역화폐의 자금관리) 
+5. “지역화폐 운영자금”이란 <mark class="cite-law" title="지역사랑상품권 이용 활성화에 관한 법률제4조의2">「지역사랑상품권 이용 활성화에 관한 법률」(이하 “법”이라 한다) 제4조의2</mark>에 따라 사용자가 지역화폐를 구매하기 위하여 지급한 자금, 유효기간 내에 사용되지 않고 남은 지역화폐 금액 및 운영과정에서 발생하는 이자 등 지역화폐를 발행ㆍ판매ㆍ환전하기 위한 자금을 말한다. &lt;신설 2023.3.16.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「지역사랑상품권 이용 활성화에 관한 법률」 제4조의2</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2023-05-16</b> → 현행 조문 <b>2026-01-01</b></div></div></div><div class="artsec" data-oc="제4조의2"><div class="arthd">조례 제4조의2</div><div class="ordtext"><b>제4조의2</b> 제4조의2(지역화폐의 자금관리) 
 ① 시장은 지역화폐 운영자금을 보관ㆍ관리하기 위한 계정을 시금고에 설치ㆍ운영하여야 한다. 다만, 불가피한 사유로 지역화폐 운영자금을 시금고에 계정을 설치하여 운영할 수 없는 경우에는 <mark class="cite-law" title="지역사랑상품권 이용 활성화에 관한 법률제4조의2">법 제4조의2</mark>에 따라 신탁업자와의 신탁계약 체결 등을 통하여 안정적으로 관리하여야 한다.
 ② 유효기간 내에 사용되지 않고 남은 지역화폐 금액 및 운영과정에서 발생하는 이자는 군포시 재정으로 귀속하고 다음 연도 지역화폐 발행사업에 필요한 자금으로 활용한다.
 ③ 시장은 관계 공무원으로 하여금 주기적으로 지역화폐 운영자금의 변동 내역 및 잔고를 확인하게 하는 등 지역화폐 운영자금의 안정적인 관리를 위하여 필요한 조치를 하여야 한다.
 ④ 시장은 반기별로 지역화폐 운영자금의 보유ㆍ관리 현황을 시 홈페이지 등에 공개하여야 한다.
-[본조 신설 &lt;2023.3.16.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지역사랑상품권 이용 활성화에 관한 법률」 제4조의2</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2023-05-16</b> → 현행 조문 <b>2026-01-01</b></div></div></div><div class="artsec" data-oc="제8조"><div class="arthd">조례 제8조</div><div class="ordtext"><b>제8조</b> 제8조(가맹점의 등록) 
+[본조 신설 &lt;2023.3.16.&gt;]</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「지역사랑상품권 이용 활성화에 관한 법률」 제4조의2</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2023-05-16</b> → 현행 조문 <b>2026-01-01</b></div></div></div><div class="artsec" data-oc="제8조"><div class="arthd">조례 제8조</div><div class="ordtext"><b>제8조</b> 제8조(가맹점의 등록) 
 ① 시장은 상인조직 또는 <mark class="cite-law" title="부가가치세법제2조">「부가가치세법」 제2조제3호</mark>에 따른 사업자로서 다음 각 호의 어느 하나에 해당하는 자를 가맹점으로 등록할 수 있다. 다만, 전자지역화폐의 경우에는 운영대행사와 가맹계약을 맺은 자를 개별가맹점으로 볼 수 있다.
 1. <mark class="cite-law" title="소상공인기본법 시행령제3조">「소상공인기본법 시행령」 제3조</mark>에 따른 소상공인 &lt;개정 2023.3.16.&gt;
 2. <mark class="cite-local" title="경기도 사회적경제 육성 지원에 관한 조례제2조">「경기도 사회적경제 육성 지원에 관한 조례」 제2조제3호</mark>에서 정한 사회적경제조직의 대표자
 3. 그 밖에 시장이 인정하는 자
 ② &lt;삭제 2020.9.29&gt;
 ③ 제1항에 따라 가맹점을 하고자 하는 자는 시장에게 가맹점 등록을 신청하여야 한다. 다만, <mark class="cite-law" title="지역사랑상품권 이용 활성화에 관한 법률제7조">법 제7조</mark>1항 단서에 따라 시장이 정한 전자적 방법을 통해 등록에 동의한 경우 가맹점 등록을 신청한 것으로 볼 수 있다. &lt;신설 2023.3.16.&gt;
-④ 가맹점의 등록 요건 및 절차 등에 관하여 필요한 사항은 시장이 정한다. &lt;개정 2023.3.16.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「부가가치세법」 제2조제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2020-12-22</b> → 현행 조문 <b>2020-12-22</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「소상공인기본법 시행령」 제3조</span></div><div class="act">「소상공인기본법 시행령」 제3조 개정 내용을 반영하여 이 조례 제8조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2026-01-27</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제3조(소상공인의 범위 등)
+④ 가맹점의 등록 요건 및 절차 등에 관하여 필요한 사항은 시장이 정한다. &lt;개정 2023.3.16.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「부가가치세법」 제2조제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2020-12-22</b> → 현행 조문 <b>2020-12-22</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「소상공인기본법 시행령」 제3조</span></div><div class="act">「소상공인기본법 시행령」 제3조 개정 내용을 반영하여 이 조례 제8조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2026-01-27</b></div><div class="diff"><div class="diff-uni">제3조(소상공인의 범위 등)
+① 「소상공인기본법」(이하 &quot;법&quot;이라 한다) 제2조제1항제2호에서 &quot;대통령령으로 정하는 기준&quot;이란 주된 사업에 종사하는 상시 근로자 수가 업종별로 다음 각 호의 어느 하나에 해당하는 것을 말한다.
+1.  광업ㆍ제조업ㆍ건설업 및 운수업: 10명 미만
+2.  제1호 외의 업종: 5명 미만
+② 제1항에 따른 주된 사업의 기준에 관하여는 「중소기업기본법 시행령」 제4조 및 제7조(제2항제2호는 제외한다. 이하 이 항에서 같다)를 준용한다. 이 경우 같은 영 제4조 및 제7조 중 &quot;평균매출액등&quot;은 &quot;매출액&quot;으로, 같은 영 제7조제2항제1호 중 &quot;직전 3개 사업연도&quot;는 &quot;직전 사업연도&quot;로, &quot;36개월&quot;은 &quot;12개월&quot;로, &quot;총 매출액을 3으로 나눈 금액&quot;은 &quot;매출액&quot;으로, 같은 항 제3호 각 목 외의 부분 중 &quot;제2호&quot;는 &quot;제1호&quot;로 본다.
+③ 제1항에 따른 상시 근로자는 「근로기준법」 제2조제1항제1호에 따른 근로자 중 다음 각 호의 어느 하나에 해당하는 사람을 제외한 사람으로 한다.<mark class="i"> &lt;개정 2026.1.27&gt;</mark>
+1.  임원 및 「소득세법 시행령」 제20조제1항에 따른 일용근로자
+2.  3개월 이내의 기간을 정하여 근로하는 사람
+3.  「<mark class="d">기초연구진흥</mark><mark class="i">기업부설연구소등의</mark> <mark class="d">및</mark><mark class="i">연구개발</mark> <mark class="d">기술개발지원에</mark><mark class="i">지원에</mark> 관한 법률」 <mark class="d">제14조의2제1항에</mark><mark class="i">제7조제1항에</mark> 따라 인정받은 기업부설연구소 <mark class="d">및</mark><mark class="i">또는</mark> 연구개발전담부서의 연구전담요원
+4.  「근로기준법」 제2조제1항제9호에 따른 단시간근로자(이하 이 조에서 &quot;단시간근로자&quot;라 한다)로서 1개월 동안의 소정근로시간이 60시간 미만인 사람
+④ 제1항에 따른 상시 근로자 수는 다음 각 호의 구분에 따른 방법에 따라 산정한다. 이 경우 단시간근로자로서 1개월 동안의 소정근로시간이 60시간 이상인 근로자는 1명을 0.5명으로 보아 산정한다.
+1.  직전 사업연도의 사업기간이 12개월인 경우(직전 사업연도에 창업하거나 합병 또는 분할한 경우로서 창업일, 합병일 또는 분할일부터 12개월 이상이 지난 경우는 제외한다): 직전 사업연도의 매월 말일 현재의 상시 근로자 수를 합하여 12로 나눈 인원
+2.  직전 또는 해당 사업연도에 창업하거나 합병 또는 분할한 경우로서 제1호에 해당하지 않는 경우: 다음 각 목의 구분에 따라 월평균 상시 근로자 수로 환산하여 산정한 인원
+가.  산정일이 창업하거나 합병 또는 분할한 달에 속하는 경우: 산정일 현재의 인원
+나.  창업하거나 합병 또는 분할한 지 12개월 미만인 경우(가목의 경우는 제외한다): 창업일, 합병일 또는 분할일이 속하는 달부터 산정일까지의 기간의 매월 말일 현재의 상시 근로자 수를 합하여 해당 개월 수로 나눈 인원
+다.  창업하거나 합병 또는 분할한 지 12개월 이상인 경우: 산정일이 속하는 달부터 거꾸로 계산하여 12개월이 되는 달까지의 기간의 매월 말일 현재의 상시 근로자 수를 합하여 12로 나눈 인원</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제3조(소상공인의 범위 등)
 ① 「소상공인기본법」(이하 &quot;법&quot;이라 한다) 제2조제1항제2호에서 &quot;대통령령으로 정하는 기준&quot;이란 주된 사업에 종사하는 상시 근로자 수가 업종별로 다음 각 호의 어느 하나에 해당하는 것을 말한다.
 1.  광업ㆍ제조업ㆍ건설업 및 운수업: 10명 미만
 2.  제1호 외의 업종: 5명 미만
@@ -166,14 +188,20 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 2.  직전 또는 해당 사업연도에 창업하거나 합병 또는 분할한 경우로서 제1호에 해당하지 않는 경우: 다음 각 목의 구분에 따라 월평균 상시 근로자 수로 환산하여 산정한 인원
 가.  산정일이 창업하거나 합병 또는 분할한 달에 속하는 경우: 산정일 현재의 인원
 나.  창업하거나 합병 또는 분할한 지 12개월 미만인 경우(가목의 경우는 제외한다): 창업일, 합병일 또는 분할일이 속하는 달부터 산정일까지의 기간의 매월 말일 현재의 상시 근로자 수를 합하여 해당 개월 수로 나눈 인원
-다.  창업하거나 합병 또는 분할한 지 12개월 이상인 경우: 산정일이 속하는 달부터 거꾸로 계산하여 12개월이 되는 달까지의 기간의 매월 말일 현재의 상시 근로자 수를 합하여 12로 나눈 인원</span></div></div></div></div><div class="artsec" data-oc="제8조의2"><div class="arthd">조례 제8조의2</div><div class="ordtext"><b>제8조의2</b> 제8조의2(가맹점의 제한) 
+다.  창업하거나 합병 또는 분할한 지 12개월 이상인 경우: 산정일이 속하는 달부터 거꾸로 계산하여 12개월이 되는 달까지의 기간의 매월 말일 현재의 상시 근로자 수를 합하여 12로 나눈 인원</span></div></div></div></div></div><div class="artsec" data-oc="제8조의2"><div class="arthd">조례 제8조의2</div><div class="ordtext"><b>제8조의2</b> 제8조의2(가맹점의 제한) 
 ① 시장은 다음 각 호의 어느 하나에 해당하는 업종이나 업소 또는 그 대표자를 가맹점으로 등록하지 아니할 수 있다.
 1. <mark class="cite-law" title="유통산업발전법제2조,제2조">「유통산업발전법」제2조제3호 및 제4호</mark>, 같은 법 별표에 따른 대규모점포 및 준대규모점포
 2.<mark class="cite-law" title="사행산업통합감독위원회법제2조">「사행산업통합감독위원회법」 제2조제1호</mark>에 따른 사행산업 및 같은 조 제3호에 따른 불법사행산업
 3. <mark class="cite-law" title="식품위생법 시행령제21조">「식품위생법 시행령」제21조제8호</mark>의 단란주점과 유흥주점
 4. 군포시에 본점을 두지 않은 법인 사업자의 직영점
 5. 그 밖에 시장이 지역화폐 사용이 적합하지 않다고 인정하는 업종이나 업소
-② 제1항에도 불구하고 사업자의 등록 요청이 있을 경우 협의회의 의결을 거쳐 시장이 결정한다.&lt;본조신설 2020.9.29&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「유통산업발전법」 제2조제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2015-02-03</b> → 현행 조문 <b>2025-10-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「유통산업발전법」 제2조제4호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2015-02-03</b> → 현행 조문 <b>2025-10-01</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「사행산업통합감독위원회법」 제2조제1호</span></div><div class="act">「사행산업통합감독위원회법」 제2조 개정 내용을 반영하여 이 조례 제8조의2을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2012-05-23</b> → 현행 조문 <b>2025-12-30</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">1.  &quot;사행산업&quot;이라 함은 다음 각 목의 규정에 따른 것을 말한다.
+② 제1항에도 불구하고 사업자의 등록 요청이 있을 경우 협의회의 의결을 거쳐 시장이 결정한다.&lt;본조신설 2020.9.29&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「유통산업발전법」 제2조제3호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2015-02-03</b> → 현행 조문 <b>2025-10-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「유통산업발전법」 제2조제4호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2015-02-03</b> → 현행 조문 <b>2025-10-01</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「사행산업통합감독위원회법」 제2조제1호</span></div><div class="act">「사행산업통합감독위원회법」 제2조 개정 내용을 반영하여 이 조례 제8조의2을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2012-05-23</b> → 현행 조문 <b>2025-12-30</b></div><div class="diff"><div class="diff-uni">1.  &quot;사행산업&quot;이라 함은 다음 각 목의 규정에 따른 것을 말한다.
+가.  카지노업 : 「관광진흥법」과 「<mark class="d">폐광지역개발</mark><mark class="i">석탄산업전환지역 개발</mark> 지원에 관한 특별법」의 규정에 따른 카지노업
+나.  경마 : 「한국마사회법」의 규정에 따른 경마
+다.  경륜ㆍ경정 : 「경륜ㆍ경정법」의 규정에 따른 경륜과 경정
+라.  복권 : 「복권 및 복권기금법」의 규정에 따른 복권
+마.  체육진흥투표권 : 「국민체육진흥법」의 규정에 따른 체육진흥투표권
+바.  소싸움경기: 「전통 소싸움경기에 관한 법률」에 따른 소싸움경기</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">1.  &quot;사행산업&quot;이라 함은 다음 각 목의 규정에 따른 것을 말한다.
 가.  카지노업 : 「관광진흥법」과 「<mark class="d">폐광지역개발</mark> 지원에 관한 특별법」의 규정에 따른 카지노업
 나.  경마 : 「한국마사회법」의 규정에 따른 경마
 다.  경륜ㆍ경정 : 「경륜ㆍ경정법」의 규정에 따른 경륜과 경정
@@ -185,15 +213,15 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 다.  경륜ㆍ경정 : 「경륜ㆍ경정법」의 규정에 따른 경륜과 경정
 라.  복권 : 「복권 및 복권기금법」의 규정에 따른 복권
 마.  체육진흥투표권 : 「국민체육진흥법」의 규정에 따른 체육진흥투표권
-바.  소싸움경기: 「전통 소싸움경기에 관한 법률」에 따른 소싸움경기</span></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「식품위생법 시행령」 제21조제8호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2024-05-14</b> → 현행 조문 <b>2024-05-14</b></div></div></div><div class="artsec" data-oc="제8조"><div class="arthd">조례 제8조</div><div class="ordtext"><b>제8조</b> 제8조(가맹점의 등록) 
+바.  소싸움경기: 「전통 소싸움경기에 관한 법률」에 따른 소싸움경기</span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「식품위생법 시행령」 제21조제8호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2024-05-14</b> → 현행 조문 <b>2024-05-14</b></div></div></div><div class="artsec" data-oc="제8조"><div class="arthd">조례 제8조</div><div class="ordtext"><b>제8조</b> 제8조(가맹점의 등록) 
 ① 시장은 상인조직 또는 <mark class="cite-law" title="부가가치세법제2조">「부가가치세법」 제2조제3호</mark>에 따른 사업자로서 다음 각 호의 어느 하나에 해당하는 자를 가맹점으로 등록할 수 있다. 다만, 전자지역화폐의 경우에는 운영대행사와 가맹계약을 맺은 자를 개별가맹점으로 볼 수 있다.
 1. <mark class="cite-law" title="소상공인기본법 시행령제3조">「소상공인기본법 시행령」 제3조</mark>에 따른 소상공인 &lt;개정 2023.3.16.&gt;
 2. <mark class="cite-local" title="경기도 사회적경제 육성 지원에 관한 조례제2조">「경기도 사회적경제 육성 지원에 관한 조례」 제2조제3호</mark>에서 정한 사회적경제조직의 대표자
 3. 그 밖에 시장이 인정하는 자
 ② &lt;삭제 2020.9.29&gt;
 ③ 제1항에 따라 가맹점을 하고자 하는 자는 시장에게 가맹점 등록을 신청하여야 한다. 다만, <mark class="cite-law" title="지역사랑상품권 이용 활성화에 관한 법률제7조">법 제7조</mark>1항 단서에 따라 시장이 정한 전자적 방법을 통해 등록에 동의한 경우 가맹점 등록을 신청한 것으로 볼 수 있다. &lt;신설 2023.3.16.&gt;
-④ 가맹점의 등록 요건 및 절차 등에 관하여 필요한 사항은 시장이 정한다. &lt;개정 2023.3.16.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지역사랑상품권 이용 활성화에 관한 법률」 제7조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2021-10-19</b> → 현행 조문 <b>2021-10-19</b></div></div></div><div class="artsec" data-oc="제21조"><div class="arthd">조례 제21조</div><div class="ordtext"><b>제21조</b> 제21조(종이지역화폐 업무의 협약) 
+④ 가맹점의 등록 요건 및 절차 등에 관하여 필요한 사항은 시장이 정한다. &lt;개정 2023.3.16.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「지역사랑상품권 이용 활성화에 관한 법률」 제7조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2021-10-19</b> → 현행 조문 <b>2021-10-19</b></div></div></div><div class="artsec" data-oc="제21조"><div class="arthd">조례 제21조</div><div class="ordtext"><b>제21조</b> 제21조(종이지역화폐 업무의 협약) 
 ① 시장은 종이지역화폐의 보관, 판매 및 환전 업무 등을 <mark class="cite-law" title="지방회계법제38조">「지방회계법」 제38조제1항</mark>에 따라 금고로 지정될 수 있는 은행 또는 금융기관과 협약을 체결할 수 있다.
 ② 판매대행점은 종이지역화폐 판매량, 환전액 및 환전 잔액 등을 매월 말 기준으로 작성하여 다음 달 10일까지 시장에게 제출하여야 한다. 다만, 관리시스템에 종이지역화폐의 입고, 판매, 회수, 폐기 등의 유통내용을 매일 처리하여 시스템으로 확인 가능한 경우에는 제출을 생략할 수 있다.
 ③ 판매대행점에 대한 지휘ㆍ감독 등에 대해서는 <mark class="cite-local" title="군포시 사무의 민간위탁에 관한 조례">「군포시 사무의 민간위탁에 관한 조례」</mark>를 준용한다.
-④ 시장은 제1항에 따라 협약한 경우에는 군포시 홈페이지 등에 그 내용을 공개하여야 한다.&lt;신설 2020.9.29&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「지방회계법」 제38조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2017-07-26</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+④ 시장은 제1항에 따라 협약한 경우에는 군포시 홈페이지 등에 그 내용을 공개하여야 한다.&lt;신설 2020.9.29&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「지방회계법」 제38조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2017-07-26</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

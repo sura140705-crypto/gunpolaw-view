@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,7 +124,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 도서관 운영 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 도서관 운영 조례</h2><div class="meta">시행 2026-04-22 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="도서관법제29조">「도서관법」 제29조</mark>에 따라 지역사회 교육 향상과 문화 발전에 기여하기 위하여 군포시 공공도서관의 설치와 운영에 관한 사항을 규정함을 목적으로 한다. &lt;개정 2023.5.1.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도서관법」 제29조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2025-11-11</b> → 현행 조문 <b>2026-05-12</b></div></div></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2025.5.8.&gt;
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 도서관 운영 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 도서관 운영 조례</h2><div class="meta">시행 2026-04-22 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="도서관법제29조">「도서관법」 제29조</mark>에 따라 지역사회 교육 향상과 문화 발전에 기여하기 위하여 군포시 공공도서관의 설치와 운영에 관한 사항을 규정함을 목적으로 한다. &lt;개정 2023.5.1.&gt;</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「도서관법」 제29조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2025-11-11</b> → 현행 조문 <b>2026-05-12</b></div></div></div><div class="artsec" data-oc="제3조"><div class="arthd">조례 제3조</div><div class="ordtext"><b>제3조</b> 제3조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2025.5.8.&gt;
 1. “도서관 자료”라 함은 <mark class="cite-law" title="도서관법제3조">「도서관법」 제3조제2호</mark>에 규정한 자료를 말한다. &lt;개정 2023.5.1.&gt;
 2. “시설물”이라 함은 도서관 건물과 부대시설을 말한다.
 3. “부대시설”이라 함은 도서관 내에 설치된 각종 시설물·장비와 비품 등 일체를 말한다.
@@ -128,7 +135,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 라. <mark class="cite-law" title="북한이탈주민의 보호 및 정착지원에 관한 법률">「북한이탈주민의 보호 및 정착지원에 관한 법률」</mark>에 따른 북한이탈주민
 마. 65세 이상의 사람
 바. 문자해독이 어려운 사람
-사. 그 밖에 시장이 필요하다고 인정하는 사람</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도서관법」 제3조제2호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2023-08-08</b> → 현행 조문 <b>2023-08-08</b></div></div></div><div class="artsec" data-oc="제10조"><div class="arthd">조례 제10조</div><div class="ordtext"><b>제10조</b> 제10조(도서관운영위원회 설치 및 기능) 
+사. 그 밖에 시장이 필요하다고 인정하는 사람</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「도서관법」 제3조제2호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2023-08-08</b> → 현행 조문 <b>2023-08-08</b></div></div></div><div class="artsec" data-oc="제10조"><div class="arthd">조례 제10조</div><div class="ordtext"><b>제10조</b> 제10조(도서관운영위원회 설치 및 기능) 
 ① <mark class="cite-law" title="도서관법제34조">「도서관법」제34조제3항</mark>에 따라 시장은 도서관의 효율적인 운영과 각종 문화시설기관의 긴밀한 협조를 위하여 도서관운영위원회(이하 “위원회”라 한다)를 둔다. &lt;개정 2023.5.1.&gt;
 ② 위원회는 다음 각 호의 사항을 자문한다. &lt;개정 2025.5.8.&gt;
 1. 도서관 운영 및 발전을 위한 기본 방침에 관한 사항
@@ -139,4 +146,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 6. 다른 도서관, 문고 및 각종 문화시설과의 업무협력에 관한 사항
 7. 도서관 후원에 관한 사항
 8. 지식정보 취약계층에 대한 도서관 서비스 증진에 관한 사항
-9. 그 밖에 도서관 운영을 위하여 시장이 필요하다고 인정하는 사항</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「도서관법」 제34조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2025-11-11</b> → 현행 조문 <b>2026-05-12</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+9. 그 밖에 도서관 운영을 위하여 시장이 필요하다고 인정하는 사항</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「도서관법」 제34조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>2025-11-11</b> → 현행 조문 <b>2026-05-12</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

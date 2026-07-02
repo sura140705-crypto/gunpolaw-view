@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,7 +124,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 공공디자인 진흥 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">2</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">4</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 공공디자인 진흥 조례</h2><div class="meta">시행 2022-08-12 · 정비 항목 6건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 정의는 다음과 같다.
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 공공디자인 진흥 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">2</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">4</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 공공디자인 진흥 조례</h2><div class="meta">시행 2022-08-12 · 정비 항목 6건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 정의는 다음과 같다.
 1. “공공기관”이란 다음 각 목의 어느 하나에 해당하는 기관을 말한다.
 가. <mark class="cite-law" title="지방공기업법">「지방공기업법」</mark>에 따라 군포시(이하 “시”라 한다)가 설립한 지방공기업
 나. <mark class="cite-law" title="지방자치단체 출자ㆍ출연 기관의 운영에 관한 법률">「지방자치단체 출자ㆍ출연 기관의 운영에 관한 법률」</mark>에 따라 시가 출자ㆍ출연한 기관
@@ -130,7 +137,19 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 가. 공공디자인에 관한 사업
 나. 범용디자인에 관한 사업
 다. 범죄예방 도시환경디자인에 관한 사업
-7. “공공시설물 등”이란 시와 공공기관이 조성ㆍ제작ㆍ설치ㆍ운영 또는 관리하는 시설물과 용품, 시각 이미지 등(기부채납 예정인 시설물과 용품, 시각 이미지 등을 포함한다)을 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「공공기관의 운영에 관한 법률」 제4조</span></div><div class="act">「공공기관의 운영에 관한 법률」 제4조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제4조(공공기관)
+7. “공공시설물 등”이란 시와 공공기관이 조성ㆍ제작ㆍ설치ㆍ운영 또는 관리하는 시설물과 용품, 시각 이미지 등(기부채납 예정인 시설물과 용품, 시각 이미지 등을 포함한다)을 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공공기관의 운영에 관한 법률」 제4조</span></div><div class="act">「공공기관의 운영에 관한 법률」 제4조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="diff-uni">제4조(공공기관)
+<mark class="d">①기획재정부장관은</mark><mark class="i">①재정경제부장관은</mark> 국가ㆍ지방자치단체가 아닌 법인ㆍ단체 또는 기관(이하 &quot;기관&quot;이라 한다)으로서 다음 각 호의 어느 하나에 해당하는 기관을 공공기관으로 지정할 수 있다. &lt;개정 2008.2.29, 2020.3.31, 2020.6.9<mark class="i">, 2025.10.1</mark>&gt;
+1.  다른 법률에 따라 직접 설립되고 정부가 출연한 기관
+2.  정부지원액(법령에 따라 직접 정부의 업무를 위탁받거나 독점적 사업권을 부여받은 기관의 경우에는 그 위탁업무나 독점적 사업으로 인한 수입액을 포함한다. 이하 같다)이 총수입액의 2분의 1을 초과하는 기관
+3.  정부가 100분의 50 이상의 지분을 가지고 있거나 100분의 30 이상의 지분을 가지고 임원 임명권한 행사 등을 통하여 해당 기관의 정책 결정에 사실상 지배력을 확보하고 있는 기관
+4.  정부와 제1호부터 제3호까지의 어느 하나에 해당하는 기관이 합하여 100분의 50 이상의 지분을 가지고 있거나 100분의 30 이상의 지분을 가지고 임원 임명권한 행사 등을 통하여 해당 기관의 정책 결정에 사실상 지배력을 확보하고 있는 기관
+5.  제1호부터 제4호까지의 어느 하나에 해당하는 기관이 단독으로 또는 두개 이상의 기관이 합하여 100분의 50 이상의 지분을 가지고 있거나 100분의 30 이상의 지분을 가지고 임원 임명권한 행사 등을 통하여 해당 기관의 정책 결정에 사실상 지배력을 확보하고 있는 기관
+6.  제1호부터 제4호까지의 어느 하나에 해당하는 기관이 설립하고, 정부 또는 설립 기관이 출연한 기관
+②제1항에도 불구하고 <mark class="d">기획재정부장관은</mark><mark class="i">재정경제부장관은</mark> 다음 각 호의 어느 하나에 해당하는 기관을 공공기관으로 지정할 수 없다. &lt;개정 2007.12.14, 2008.2.29, 2020.6.9<mark class="i">, 2025.10.1</mark>&gt;
+1.  구성원 상호 간의 상호부조ㆍ복리증진ㆍ권익향상 또는 영업질서 유지 등을 목적으로 설립된 기관
+2.  지방자치단체가 설립하고, 그 운영에 관여하는 기관
+3.  「방송법」에 따른 한국방송공사와 「한국교육방송공사법」에 따른 한국교육방송공사
+③제1항제2호의 규정에 따른 정부지원액과 총수입액의 산정 기준ㆍ방법 및 같은 항 제3호부터 제5호까지의 규정에 따른 사실상 지배력 확보의 기준에 관하여 필요한 사항은 대통령령으로 정한다. &lt;개정 2020.6.9&gt;</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제4조(공공기관)
 <mark class="d">①기획재정부장관은</mark> 국가ㆍ지방자치단체가 아닌 법인ㆍ단체 또는 기관(이하 &quot;기관&quot;이라 한다)으로서 다음 각 호의 어느 하나에 해당하는 기관을 공공기관으로 지정할 수 있다. &lt;개정 2008.2.29, 2020.3.31, 2020.6.9<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
 1.  다른 법률에 따라 직접 설립되고 정부가 출연한 기관
 2.  정부지원액(법령에 따라 직접 정부의 업무를 위탁받거나 독점적 사업권을 부여받은 기관의 경우에는 그 위탁업무나 독점적 사업으로 인한 수입액을 포함한다. 이하 같다)이 총수입액의 2분의 1을 초과하는 기관
@@ -154,7 +173,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 1.  구성원 상호 간의 상호부조ㆍ복리증진ㆍ권익향상 또는 영업질서 유지 등을 목적으로 설립된 기관
 2.  지방자치단체가 설립하고, 그 운영에 관여하는 기관
 3.  「방송법」에 따른 한국방송공사와 「한국교육방송공사법」에 따른 한국교육방송공사
-③제1항제2호의 규정에 따른 정부지원액과 총수입액의 산정 기준ㆍ방법 및 같은 항 제3호부터 제5호까지의 규정에 따른 사실상 지배력 확보의 기준에 관하여 필요한 사항은 대통령령으로 정한다. &lt;개정 2020.6.9&gt;</span></div></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(공공디자인 진흥계획의 수립) 
+③제1항제2호의 규정에 따른 정부지원액과 총수입액의 산정 기준ㆍ방법 및 같은 항 제3호부터 제5호까지의 규정에 따른 사실상 지배력 확보의 기준에 관하여 필요한 사항은 대통령령으로 정한다. &lt;개정 2020.6.9&gt;</span></div></div></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(공공디자인 진흥계획의 수립) 
 ① 시장은 <mark class="cite-law" title="공공디자인의 진흥에 관한 법률제6조">「공공디자인의 진흥에 관한 법률」(이하 “법”이라 한다) 제6조</mark>에 따라 5년마다 군포시 공공디자인 진흥계획(이하 “진흥계획”이라 한다)을 수립ㆍ시행하여야 한다.
 ② 제1항에 따른 진흥계획에는 다음 각 호의 사항이 포함되어야 한다.
 1. 공공디자인 진흥의 기본목표 및 추진방향에 관한 사항
@@ -165,7 +184,13 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 6. 공공디자인 관련 분야의 협력 및 시민의 참여에 관한 사항
 7. 그 밖에 공공디자인의 진흥을 위하여 시장이 필요하다고 인정하는 사항
 ③ 시장은 진흥계획을 수립 또는 변경하는 경우에는 제11조에 따른 군포시 공공디자인위원회의 심의를 거쳐야 한다.
-④ 시장은 진흥계획을 수립ㆍ변경할 때에는 이를 시보 및 시 홈페이지에 공고하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「공공디자인의 진흥에 관한 법률」 제6조</span></div><div class="act">「공공디자인의 진흥에 관한 법률」 제6조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2023-08-08</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제6조(<mark class="d">지역 공공디자인 진흥계획의</mark> 수립 등)
+④ 시장은 진흥계획을 수립ㆍ변경할 때에는 이를 시보 및 시 홈페이지에 공고하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공공디자인의 진흥에 관한 법률」 제6조</span></div><div class="act">「공공디자인의 진흥에 관한 법률」 제6조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2023-08-08</b></div><div class="diff"><div class="diff-uni">제6조(<mark class="d">지역 공공디자인 진흥계획의</mark><mark class="i">지역계획의</mark> 수립 등)
+① 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다)<mark class="i">는</mark> <mark class="d">또는</mark><mark class="i">종합계획에 따라 지역 여건을 고려한 광역 공공디자인 진흥계획(이하 &quot;광역계획&quot;이라 한다)을 5년마다 수립ㆍ시행하여야 한다. 이 경우 광역계획을 수립하려는 시ㆍ도지사는 미리</mark> 시장ㆍ군수ㆍ구청장(자치구의 구청장을 말한다. 이하 같다)<mark class="d">은</mark><mark class="i">의</mark> <mark class="d">종합계획에</mark><mark class="i">의견을 듣고 협의하여야 한다. &lt;개정 2023.3.21&gt;
+② 시장ㆍ군수ㆍ구청장은 종합계획 및 광역계획에</mark> 따라 지역 여건을 고려한 지역 공공디자인 진흥계획(이하 &quot;<mark class="d">지역계획</mark><mark class="i">시ㆍ군ㆍ구계획</mark>&quot;이라 한다)을 별도로 수립ㆍ시행하여야 한다.<mark class="i"> &lt;신설 2023.3.21&gt;</mark>
+<mark class="d">②</mark><mark class="i">③</mark> 시ㆍ도지사 또는 시장ㆍ군수ㆍ구청장은 <mark class="d">지역계획을</mark><mark class="i">광역계획 또는 시ㆍ군ㆍ구계획(이하 &quot;지역계획&quot;이라 한다)을</mark> 제9조에 따른 지역위원회의 심의를 거쳐 확정ㆍ변경한다.<mark class="i"> &lt;개정 2023.3.21&gt;</mark>
+<mark class="d">③</mark><mark class="i">④</mark> 시ㆍ도지사 또는 시장ㆍ군수ㆍ구청장이 지역계획을 <mark class="d">수립함에</mark><mark class="i">수립하는</mark> <mark class="d">있어</mark><mark class="i">경우</mark> 관할 지역의 해당 공공시설물을 관리하는 국가기관등의 장은 지역계획의 수립ㆍ시행에 적극 협조하여야 한다.<mark class="i"> &lt;개정 2023.3.21, 2023.8.8&gt;</mark>
+<mark class="d">④</mark><mark class="i">⑤</mark> 시ㆍ도지사 또는 시장ㆍ군수ㆍ구청장은 지역계획 수립ㆍ변경에 관한 사항을 지역 주민들에게 알려야 하며, 지역 주민 및 지역계획의 수립ㆍ변경에 따른 이해관계자는 지역계획을 수립하는 지방자치단체의 장에게 지역계획에 포함되어야 할 사항에 대하여 제안할 수 있다.<mark class="i"> &lt;개정 2023.3.21&gt;</mark>
+<mark class="d">⑤ 제1항에 따른</mark><mark class="i">⑥</mark> 지역계획의 수립ㆍ시행, <mark class="d">제4항에</mark><mark class="i">제5항에</mark> 따른 지역계획 수립에 관한 안내 및 제안의 처리 등에 필요한 사항은 해당 지방자치단체의 조례로 정한다.<mark class="i"> &lt;개정 2023.3.21&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제6조(<mark class="d">지역 공공디자인 진흥계획의</mark> 수립 등)
 ① 특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사(이하 &quot;시ㆍ도지사&quot;라 한다)<mark class="pt" title="는 추가됨">‸</mark> <mark class="d">또는</mark> 시장ㆍ군수ㆍ구청장(자치구의 구청장을 말한다. 이하 같다)<mark class="d">은</mark> <mark class="d">종합계획에</mark> 따라 지역 여건을 고려한 지역 공공디자인 진흥계획(이하 &quot;<mark class="d">지역계획</mark>&quot;이라 한다)을 별도로 수립ㆍ시행하여야 한다.<mark class="pt" title="&lt;신설 2023.3.21&gt; 추가됨">‸</mark>
 <mark class="d">②</mark> 시ㆍ도지사 또는 시장ㆍ군수ㆍ구청장은 <mark class="d">지역계획을</mark> 제9조에 따른 지역위원회의 심의를 거쳐 확정ㆍ변경한다.<mark class="pt" title="&lt;개정 2023.3.21&gt; 추가됨">‸</mark>
 <mark class="d">③</mark> 시ㆍ도지사 또는 시장ㆍ군수ㆍ구청장이 지역계획을 <mark class="d">수립함에</mark> <mark class="d">있어</mark> 관할 지역의 해당 공공시설물을 관리하는 국가기관등의 장은 지역계획의 수립ㆍ시행에 적극 협조하여야 한다.<mark class="pt" title="&lt;개정 2023.3.21, 2023.8.8&gt; 추가됨">‸</mark>
@@ -176,7 +201,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 <mark class="i">③</mark> 시ㆍ도지사 또는 시장ㆍ군수ㆍ구청장은 <mark class="i">광역계획 또는 시ㆍ군ㆍ구계획(이하 &quot;지역계획&quot;이라 한다)을</mark> 제9조에 따른 지역위원회의 심의를 거쳐 확정ㆍ변경한다.<mark class="i"> &lt;개정 2023.3.21&gt;</mark>
 <mark class="i">④</mark> 시ㆍ도지사 또는 시장ㆍ군수ㆍ구청장이 지역계획을 <mark class="i">수립하는</mark> <mark class="i">경우</mark> 관할 지역의 해당 공공시설물을 관리하는 국가기관등의 장은 지역계획의 수립ㆍ시행에 적극 협조하여야 한다.<mark class="i"> &lt;개정 2023.3.21, 2023.8.8&gt;</mark>
 <mark class="i">⑤</mark> 시ㆍ도지사 또는 시장ㆍ군수ㆍ구청장은 지역계획 수립ㆍ변경에 관한 사항을 지역 주민들에게 알려야 하며, 지역 주민 및 지역계획의 수립ㆍ변경에 따른 이해관계자는 지역계획을 수립하는 지방자치단체의 장에게 지역계획에 포함되어야 할 사항에 대하여 제안할 수 있다.<mark class="i"> &lt;개정 2023.3.21&gt;</mark>
-<mark class="i">⑥</mark> 지역계획의 수립ㆍ시행, <mark class="i">제5항에</mark> 따른 지역계획 수립에 관한 안내 및 제안의 처리 등에 필요한 사항은 해당 지방자치단체의 조례로 정한다.<mark class="i"> &lt;개정 2023.3.21&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(위원회의 설치 및 기능) 시장은 <mark class="cite-law" title="공공디자인의 진흥에 관한 법률제9조">법 제9조</mark>에 따라 다음 각 호의 사항을 심의 또는 자문하기 위한 군포시 공공디자인위원회(이하 “위원회”라 한다)를 둔다.
+<mark class="i">⑥</mark> 지역계획의 수립ㆍ시행, <mark class="i">제5항에</mark> 따른 지역계획 수립에 관한 안내 및 제안의 처리 등에 필요한 사항은 해당 지방자치단체의 조례로 정한다.<mark class="i"> &lt;개정 2023.3.21&gt;</mark></span></div></div></div></div></div><div class="artsec" data-oc="제11조"><div class="arthd">조례 제11조</div><div class="ordtext"><b>제11조</b> 제11조(위원회의 설치 및 기능) 시장은 <mark class="cite-law" title="공공디자인의 진흥에 관한 법률제9조">법 제9조</mark>에 따라 다음 각 호의 사항을 심의 또는 자문하기 위한 군포시 공공디자인위원회(이하 “위원회”라 한다)를 둔다.
 1. 위원회의 심의를 거쳐야 하는 사항
 가. 제6조에 따른 진흥계획의 수립ㆍ변경에 관한 사항
 나. 제8조에 따른 공공디자인 가이드라인 수립·변경에 관한 사항
@@ -185,6 +210,6 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 2. 위원회의 자문을 거쳐야 하는 사항
 가. <mark class="cite-law" title="공공디자인의 진흥에 관한 법률제15조">법 제15조</mark>에 따라 시가 설치한 공공디자인 사업 추진협의체에 대한 자문에 관한 사항
 나. 시 및 공공기관에서 설치하는 공공디자인위원회 자문대상: 별표
-3. 그 밖에 시장이 필요하다고 인정하여 위원회에 부치는 사항</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「공공디자인의 진흥에 관한 법률」 제9조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2021-09-16</b> → 현행 조문 <b>2025-10-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「공공디자인의 진흥에 관한 법률」 제15조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2021-09-16</b> → 현행 조문 <b>2025-10-01</b></div></div></div><div class="artsec" data-oc="제26조"><div class="arthd">조례 제26조</div><div class="ordtext"><b>제26조</b> 제26조(협력체계 구축) 
+3. 그 밖에 시장이 필요하다고 인정하여 위원회에 부치는 사항</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공공디자인의 진흥에 관한 법률」 제9조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2021-09-16</b> → 현행 조문 <b>2025-10-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공공디자인의 진흥에 관한 법률」 제15조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2021-09-16</b> → 현행 조문 <b>2025-10-01</b></div></div></div><div class="artsec" data-oc="제26조"><div class="arthd">조례 제26조</div><div class="ordtext"><b>제26조</b> 제26조(협력체계 구축) 
 ① 시장은 제9조에 따른 사업의 원활한 추진을 위하여 필요한 경우 <mark class="cite-law" title="공공디자인의 진흥에 관한 법률제15조">법 제15조</mark> 및 <mark class="cite-law" title="공공디자인의 진흥에 관한 법률 시행령제6조">「공공디자인의 진흥에 관한 법률 시행령」 제6조</mark>에 따라 공공디자인사업 추진협의체를 설치할 수 있다.
-② 시장은 범죄예방 도시환경디자인 등 관련 사업을 추진할 경우에는 관할 경찰서 및 교육청 등의 의견을 청취하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「공공디자인의 진흥에 관한 법률 시행령」 제6조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2022-03-08</b> → 현행 조문 <b>2026-01-02</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「공공디자인의 진흥에 관한 법률」 제15조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2021-09-16</b> → 현행 조문 <b>2025-10-01</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+② 시장은 범죄예방 도시환경디자인 등 관련 사업을 추진할 경우에는 관할 경찰서 및 교육청 등의 의견을 청취하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공공디자인의 진흥에 관한 법률 시행령」 제6조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2022-03-08</b> → 현행 조문 <b>2026-01-02</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공공디자인의 진흥에 관한 법률」 제15조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2021-09-16</b> → 현행 조문 <b>2025-10-01</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

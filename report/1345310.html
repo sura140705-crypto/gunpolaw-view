@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,14 +124,18 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 지진피해 시설물 위험도 평가단 구성 및 운영에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">2</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">0</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 지진피해 시설물 위험도 평가단 구성 및 운영에 관한 조례</h2><div class="meta">시행 2018-04-20 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 지진에 의하여 시설물 피해가 발생하는 경우 시설물의 추가 붕괴 등으로 생기는 2차 피해를 방지하고 시민의 안전을 확보하기 위하여 <mark class="cite-law" title="지진ㆍ화산재해대책법제21조">「지진ㆍ화산재해대책법」 제21조</mark>에 따른 지진피해 시설물 위험도 평가단 구성 및 운영에 관한 사항을 정하는 것을 목적으로 한다. &lt;개정 2018.4.20&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「지진ㆍ화산재해대책법」 제21조</span></div><div class="act">「지진ㆍ화산재해대책법」 제21조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-04-20</b> · 당시 법령본 <b>2013-08-06</b> → 현행 조문 <b>2019-12-03</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제21조(피해시설물 위험도 평가)
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 지진피해 시설물 위험도 평가단 구성 및 운영에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">2</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">0</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 지진피해 시설물 위험도 평가단 구성 및 운영에 관한 조례</h2><div class="meta">시행 2018-04-20 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 지진에 의하여 시설물 피해가 발생하는 경우 시설물의 추가 붕괴 등으로 생기는 2차 피해를 방지하고 시민의 안전을 확보하기 위하여 <mark class="cite-law" title="지진ㆍ화산재해대책법제21조">「지진ㆍ화산재해대책법」 제21조</mark>에 따른 지진피해 시설물 위험도 평가단 구성 및 운영에 관한 사항을 정하는 것을 목적으로 한다. &lt;개정 2018.4.20&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「지진ㆍ화산재해대책법」 제21조</span></div><div class="act">「지진ㆍ화산재해대책법」 제21조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-04-20</b> · 당시 법령본 <b>2013-08-06</b> → 현행 조문 <b>2019-12-03</b></div><div class="diff"><div class="diff-uni">제21조(피해시설물 위험도 평가)
+① 지역대책본부장은 지진으로 인한 피해가 발생한 경우 시설물의 사용가능 여부 등에 대한 위험도를 평가(이하 &quot;위험도 평가&quot;라 한다)하여야 한다. &lt;개정 2013.8.6&gt;
+② 제1항에 따라 신속한 위험도 평가를 하기 위하여 관할 구역에 거주하는 관련 분야 전문가들로 구성된 피해시설물 위험도 평가단을 운영하여야 한다. 다만, 관할 지역에 거주하는 관련 분야 전문가가 부족한 경우 인근 시ㆍ도 또는 시ㆍ군ㆍ구 거주자를 포함하여 구성할 수 있다.
+③ <mark class="i">위험도 평가의 절차 및 방법 등에 필요한 사항은 대통령령으로 정한다. &lt;신설 2019.12.3&gt;
+④ </mark>제2항에 따른 지역 피해시설물 위험도 평가단의 구성ㆍ운영 등에 필요한 세부적인 사항은 조례로 정한다.<mark class="i"> &lt;개정 2019.12.3&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제21조(피해시설물 위험도 평가)
 ① 지역대책본부장은 지진으로 인한 피해가 발생한 경우 시설물의 사용가능 여부 등에 대한 위험도를 평가(이하 &quot;위험도 평가&quot;라 한다)하여야 한다. &lt;개정 2013.8.6&gt;
 ② 제1항에 따라 신속한 위험도 평가를 하기 위하여 관할 구역에 거주하는 관련 분야 전문가들로 구성된 피해시설물 위험도 평가단을 운영하여야 한다. 다만, 관할 지역에 거주하는 관련 분야 전문가가 부족한 경우 인근 시ㆍ도 또는 시ㆍ군ㆍ구 거주자를 포함하여 구성할 수 있다.
 ③ <mark class="pt" title="위험도 평가의 절차 및 방법 등에 필요한 사항은 대통령령으로 정한다. &lt; 추가됨">‸</mark>제2항에 따른 지역 피해시설물 위험도 평가단의 구성ㆍ운영 등에 필요한 세부적인 사항은 조례로 정한다.<mark class="pt" title="&lt;개정 2019.12.3&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제21조(피해시설물 위험도 평가)
 ① 지역대책본부장은 지진으로 인한 피해가 발생한 경우 시설물의 사용가능 여부 등에 대한 위험도를 평가(이하 &quot;위험도 평가&quot;라 한다)하여야 한다. &lt;개정 2013.8.6&gt;
 ② 제1항에 따라 신속한 위험도 평가를 하기 위하여 관할 구역에 거주하는 관련 분야 전문가들로 구성된 피해시설물 위험도 평가단을 운영하여야 한다. 다만, 관할 지역에 거주하는 관련 분야 전문가가 부족한 경우 인근 시ㆍ도 또는 시ㆍ군ㆍ구 거주자를 포함하여 구성할 수 있다.
 ③ <mark class="i">위험도 평가의 절차 및 방법 등에 필요한 사항은 대통령령으로 정한다. &lt;신설 2019.12.3&gt;
-④ </mark>제2항에 따른 지역 피해시설물 위험도 평가단의 구성ㆍ운영 등에 필요한 세부적인 사항은 조례로 정한다.<mark class="i"> &lt;개정 2019.12.3&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(위험도 평가 및 조치)  
+④ </mark>제2항에 따른 지역 피해시설물 위험도 평가단의 구성ㆍ운영 등에 필요한 세부적인 사항은 조례로 정한다.<mark class="i"> &lt;개정 2019.12.3&gt;</mark></span></div></div></div></div></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(위험도 평가 및 조치)  
 ① 평가단장은 지진피해 시설물의 위험도 평가와 관련한 다음 각 호의 사항을 사전에 파악하여야 한다. 
 1. 위험도평가 대상지역 
 2. 시설물 피해상황 
@@ -136,7 +147,33 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 1. 별지 제3호 서식의 위험 표지 
 2. 별지 제4호 서식의 사용제한 표지 
 3. 별지 제5호 서식의 사용가능 표지 
-④ 위험도 평가의 결과가 위험 또는 사용제한 등급인 경우 피해 시설물 중 잘 보이는 위치에 별지 제6호 서식을 부착하거나 표지 부착이 곤란한 시설물에는 출입 차단시설 또는 안전선 등을 설치하고 시설물의 사용과 출입을 통제할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「실내공기질 관리법」 제3조제1항</span></div><div class="act">「실내공기질 관리법」 제3조 개정 내용을 반영하여 이 조례 제7조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-04-20</b> · 당시 법령본 <b>2016-03-29</b> → 현행 조문 <b>2021-12-07</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 이 법의 적용대상이 되는 다중이용시설은 다음 각 호의 시설 중 대통령령으로 정하는 규모의 것으로 한다. &lt;개정 2015.12.22, 2016.3.29<mark class="pt" title=", 2019.4.2, 2021.12.7 추가됨">‸</mark>&gt;
+④ 위험도 평가의 결과가 위험 또는 사용제한 등급인 경우 피해 시설물 중 잘 보이는 위치에 별지 제6호 서식을 부착하거나 표지 부착이 곤란한 시설물에는 출입 차단시설 또는 안전선 등을 설치하고 시설물의 사용과 출입을 통제할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「실내공기질 관리법」 제3조제1항</span></div><div class="act">「실내공기질 관리법」 제3조 개정 내용을 반영하여 이 조례 제7조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2018-04-20</b> · 당시 법령본 <b>2016-03-29</b> → 현행 조문 <b>2021-12-07</b></div><div class="diff"><div class="diff-uni">① 이 법의 적용대상이 되는 다중이용시설은 다음 각 호의 시설 중 대통령령으로 정하는 규모의 것으로 한다. &lt;개정 2015.12.22, 2016.3.29<mark class="i">, 2019.4.2, 2021.12.7</mark>&gt;
+1.  지하역사(출입통로ㆍ대합실ㆍ승강장 및 환승통로와 이에 딸린 시설을 포함한다)
+2.  지하도상가(지상건물에 딸린 지하층의 시설을 포함한다)
+3.  철도역사의 대합실
+4.  「여객자동차 운수사업법」 제2조제5호에 따른 여객자동차터미널의 대합실
+5.  「항만법」 제2조제5호에 따른 항만시설 중 대합실
+6.  「공항시설법」 제2조제7호에 따른 공항시설 중 여객터미널
+7.  「도서관법」 <mark class="d">제2조제1호에</mark><mark class="i">제3조제1호에</mark> 따른 도서관
+8.  「박물관 및 미술관 진흥법」 제2조제1호 및 제2호에 따른 박물관 및 미술관
+9.  「의료법」 제3조제2항에 따른 의료기관
+10.  「모자보건법」 제2조제11호에 따른 산후조리원
+11.  「노인복지법」 제34조제1항제1호에 따른 노인요양시설
+12.  「영유아보육법」 <mark class="d">제10조에</mark><mark class="i">제2조제3호에</mark> 따른 어린이집<mark class="i">
+12의2.  「어린이놀이시설 안전관리법」 제2조제2호에 따른 어린이놀이시설</mark> 중 <mark class="d">국공립어린이집,</mark><mark class="i">실내</mark> <mark class="d">법인어린이집, 직장어린이집 및 민간어린이집</mark><mark class="i">어린이놀이시설</mark>
+13.  「유통산업발전법」 제2조제3호에 따른 대규모점포
+14.  「장사 등에 관한 법률」 제29조에 따른 장례식장(지하에 위치한 시설로 한정한다)
+15.  「영화 및 비디오물의 진흥에 관한 법률」 제2조제10호에 따른 영화상영관(실내 영화상영관으로 한정한다)
+16.  「학원의 설립ㆍ운영 및 과외교습에 관한 법률」 제2조제1호에 따른 학원
+17.  「전시산업발전법」 제2조제4호에 따른 전시시설(옥내시설로 한정한다)
+18.  「게임산업진흥에 관한 법률」 제2조제7호에 따른 인터넷컴퓨터게임시설제공업의 영업시설
+19.  실내주차장
+20.  「건축법」 제2조제2항제14호에 따른 업무시설
+21.  「건축법」 제2조제2항에 따라 구분된 용도 중 둘 이상의 용도에 사용되는 건축물
+22.  「공연법」에 따른 공연장 중 실내 공연장
+23.  「체육시설의 설치ㆍ이용에 관한 법률」에 따른 체육시설 중 실내 체육시설
+24.  「공중위생관리법」 제2조제1항제3호나목에 따른 목욕장업의 영업시설
+25.  그 밖에 대통령령으로 정하는 시설</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 이 법의 적용대상이 되는 다중이용시설은 다음 각 호의 시설 중 대통령령으로 정하는 규모의 것으로 한다. &lt;개정 2015.12.22, 2016.3.29<mark class="pt" title=", 2019.4.2, 2021.12.7 추가됨">‸</mark>&gt;
 1.  지하역사(출입통로ㆍ대합실ㆍ승강장 및 환승통로와 이에 딸린 시설을 포함한다)
 2.  지하도상가(지상건물에 딸린 지하층의 시설을 포함한다)
 3.  철도역사의 대합실
@@ -187,4 +224,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 22.  「공연법」에 따른 공연장 중 실내 공연장
 23.  「체육시설의 설치ㆍ이용에 관한 법률」에 따른 체육시설 중 실내 체육시설
 24.  「공중위생관리법」 제2조제1항제3호나목에 따른 목욕장업의 영업시설
-25.  그 밖에 대통령령으로 정하는 시설</span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+25.  그 밖에 대통령령으로 정하는 시설</span></div></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

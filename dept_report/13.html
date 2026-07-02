@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,7 +124,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>교통행정과 자치법규 정비 권고</h1><div class="sub">전체 16개 조례 중 정비 대상 8개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">15</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">2</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">1</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">67</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 어린이 보호구역 및 통학로 교통안전 조례</h2><div class="meta">시행 2021-07-01 · 정비 항목 7건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 6</span><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>교통행정과 자치법규 정비 권고</h1><div class="sub">전체 16개 조례 중 정비 대상 8개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">15</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">2</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">1</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">67</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 어린이 보호구역 및 통학로 교통안전 조례</h2><div class="meta">시행 2021-07-01 · 정비 항목 7건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 6</span><span class="badge b-chk">📋 확인 필요 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다.
 1. “어린이 보호구역”이란 <mark class="cite-law" title="도로교통법제12조">「도로교통법」(이하 “법”이라 한다) 제12조</mark>에 따라 교통사고의 위험으로부터 어린이(13세 미만의 사람을 말한다. 이하 같다)를 보호하기 위하여 지정된 일정 구역을 말한다.
 2. “초등학교 등”이란 다음 각 목의 어느 하나에 해당하는 시설을 말한다.
 가. <mark class="cite-law" title="유아교육법제2조">「유아교육법」 제2조제2호</mark>에 따른 유치원
@@ -127,7 +134,22 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 마. <mark class="cite-law" title="초ㆍ중등교육법제60조의2,제60조의3">「초ㆍ중등교육법」 제60조의2 또는 제60조의3</mark>에 따른 외국인학교 또는 대안학교
 3. “어린이 통학로”란 제2호에 따른 초등학교 등 교육시설에서 교육을 받는 어린이가 자택에서 교육시설까지 일상적으로 이동하는 주요한 통로 중 <mark class="cite-law" title="도로교통법제12조">법 제12조</mark>의 “어린이 보호구역”과 그 밖에 군포시장(이하 “시장”이라 한다)이 어린이 보행안전을 위하여 필요하다고 인정하는 통로를 말한다.
 4. “옐로카펫”이란 어린이들이 횡단보도를 건너기 전 안전한 곳에서 기다리게 하고 운전자가 이를 쉽게 인지하도록 하기 위해 바닥 또는 벽면을 노랗게 표시하는 교통안전 설치물을 말한다.
-5. “보행신호 음성안내 보조장치”란 횡단보도 대기공간에서 무단횡단 방지와 녹색 횡단신호 시, 음성으로 횡단을 안내함으로써 보행자 교통사고를 방지하기 위한 시설을 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「도로교통법」 제12조</span></div><div class="act">「도로교통법」 제12조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>2020-12-22</b> → 현행 조문 <b>2024-01-30</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제12조(어린이 보호구역의 <mark class="d">지정</mark> 및 관리)
+5. “보행신호 음성안내 보조장치”란 횡단보도 대기공간에서 무단횡단 방지와 녹색 횡단신호 시, 음성으로 횡단을 안내함으로써 보행자 교통사고를 방지하기 위한 시설을 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「도로교통법」 제12조</span></div><div class="act">「도로교통법」 제12조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>2020-12-22</b> → 현행 조문 <b>2024-01-30</b></div><div class="diff"><div class="diff-uni">제12조(어린이 보호구역의 <mark class="d">지정</mark><mark class="i">지정ㆍ해제</mark> 및 관리)
+① 시장등은 교통사고의 위험으로부터 어린이를 보호하기 위하여 필요하다고 인정하는 경우에는 다음 각 호의 어느 하나에 해당하는 <mark class="d">시설의</mark><mark class="i">시설이나 장소의</mark> 주변도로 가운데 일정 구간을 어린이 보호구역으로 지정하여 자동차등과 노면전차의 통행속도를 시속 30킬로미터 이내로 제한할 수 있다. &lt;개정 2013.3.23, 2014.1.28, 2014.11.19, 2015.7.24, 2017.7.26, 2018.3.27<mark class="i">, 2021.10.19, 2023.4.18</mark>&gt;
+1.  「유아교육법」 제2조에 따른 유치원, 「초ㆍ중등교육법」 제38조 및 제55조에 따른 초등학교 또는 특수학교
+2.  「영유아보육법」 제10조에 따른 어린이집 가운데 행정안전부령으로 정하는 어린이집
+3.  「학원의 설립ㆍ운영 및 과외교습에 관한 법률」 제2조에 따른 학원 가운데 행정안전부령으로 정하는 학원
+4.  「초ㆍ중등교육법」 제60조의2 또는 제60조의3에 따른 외국인학교 또는 대안학교, 「<mark class="i">대안교육기관에 관한 법률」 제2조제2호에 따른 대안교육기관, 「</mark>제주특별자치도 설치 및 국제자유도시 조성을 위한 특별법」 제223조에 따른 국제학교 및 「경제자유구역 및 제주국제자유도시의 외국교육기관 설립ㆍ운영에 관한 특별법」 제2조제2호에 따른 외국교육기관 중 유치원ㆍ초등학교 교과과정이 있는 학교
+<mark class="i">5.  그 밖에 어린이가 자주 왕래하는 곳으로서 조례로 정하는 시설 또는 장소
+</mark>② 제1항에 따른 어린이 보호구역의 <mark class="d">지정절차</mark><mark class="i">지정ㆍ해제 절차</mark> 및 기준 등에 관하여 필요한 사항은 교육부, 행정안전부 및 국토교통부의 공동부령으로 정한다. &lt;개정 2013.3.23, 2014.11.19, 2017.7.26<mark class="i">, 2023.4.18</mark>&gt;
+③ 차마 또는 노면전차의 운전자는 어린이 보호구역에서 제1항에 따른 조치를 준수하고 어린이의 안전에 유의하면서 운행하여야 한다. &lt;개정 2018.3.27&gt;
+④ 시ㆍ도경찰청장, 경찰서장 또는 시장등은 제3항을 위반하는 행위 등의 단속을 위하여 어린이 보호구역의 도로 중에서 행정안전부령으로 정하는 곳에 우선적으로 제4조의2에 따른 무인 교통단속용 장비를 설치하여야 한다. &lt;신설 2019.12.24, 2020.12.22&gt;
+⑤ 시장등은 제1항에 따라 지정한 어린이 보호구역에 어린이의 안전을 위하여 다음 각 호에 따른 시설 또는 장비를 우선적으로 설치하거나 관할 도로관리청에 해당 시설 또는 장비의 설치를 요청하여야 한다. &lt;신설 2019.12.24<mark class="i">, 2023.4.18, 2024.1.30</mark>&gt;
+1.  어린이 보호구역으로 지정한 시설의 주 출입문과 가장 가까운 거리에 있는 간선도로상 횡단보도의 신호기
+2.  속도 제한<mark class="i">, 횡단보도, 기점(起點)</mark> 및 <mark class="d">횡단보도에</mark><mark class="i">종점(終點)에</mark> 관한 안전표지
+3.  「도로법」 제2조제2호에 따른 도로의 부속물 중 과속방지시설 및 차마의 미끄럼을 방지하기 위한 시설
+<mark class="i">3의2.  방호울타리
+</mark>4.  그 밖에 교육부, 행정안전부 및 국토교통부의 공동부령으로 정하는 시설 또는 장비</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제12조(어린이 보호구역의 <mark class="d">지정</mark> 및 관리)
 ① 시장등은 교통사고의 위험으로부터 어린이를 보호하기 위하여 필요하다고 인정하는 경우에는 다음 각 호의 어느 하나에 해당하는 <mark class="d">시설의</mark> 주변도로 가운데 일정 구간을 어린이 보호구역으로 지정하여 자동차등과 노면전차의 통행속도를 시속 30킬로미터 이내로 제한할 수 있다. &lt;개정 2013.3.23, 2014.1.28, 2014.11.19, 2015.7.24, 2017.7.26, 2018.3.27<mark class="pt" title=", 2021.10.19, 2023.4.18 추가됨">‸</mark>&gt;
 1.  「유아교육법」 제2조에 따른 유치원, 「초ㆍ중등교육법」 제38조 및 제55조에 따른 초등학교 또는 특수학교
 2.  「영유아보육법」 제10조에 따른 어린이집 가운데 행정안전부령으로 정하는 어린이집
@@ -155,7 +177,31 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 2.  속도 제한<mark class="i">, 횡단보도, 기점(起點)</mark> 및 <mark class="i">종점(終點)에</mark> 관한 안전표지
 3.  「도로법」 제2조제2호에 따른 도로의 부속물 중 과속방지시설 및 차마의 미끄럼을 방지하기 위한 시설
 <mark class="i">3의2.  방호울타리
-</mark>4.  그 밖에 교육부, 행정안전부 및 국토교통부의 공동부령으로 정하는 시설 또는 장비</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「도로교통법 시행규칙」 제14조제1항</span></div><div class="act">「도로교통법 시행규칙」 제14조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2023-06-20</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 법 제12조제1항제2호에서 &quot;<mark class="d">행정안전부령이</mark> 정하는 <mark class="d">보육시설</mark>&quot;이란 정원 100명 이상의 <mark class="d">보육시설을</mark> 말한다. 다만, 시장등이 관할 경찰서장과 협의하여 <mark class="d">보육시설이</mark> 소재한 지역의 교통여건 등을 고려하여 교통사고의 위험으로부터 어린이를 보호할 필요가 있다고 인정하는 경우에는 정원이 100명 미만의 <mark class="d">보육시설</mark> 주변도로 등에 대하여도 어린이 보호구역을 지정할 수 있다. &lt;개정 2010.12.31, 2013.3.23, 2014.11.19, 2017.7.26<mark class="pt" title=", 2023.6.20 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">① 법 제12조제1항제2호에서 &quot;<mark class="i">행정안전부령으로</mark> 정하는 <mark class="i">어린이집</mark>&quot;이란 정원 100명 이상의 <mark class="i">어린이집을</mark> 말한다. 다만, 시장등이 관할 경찰서장과 협의하여 <mark class="i">어린이집이</mark> 소재한 지역의 교통여건 등을 고려하여 교통사고의 위험으로부터 어린이를 보호할 필요가 있다고 인정하는 경우에는 정원이 100명 미만의 <mark class="i">어린이집</mark> 주변도로 등에 대하여도 어린이 보호구역을 지정할 수 있다. &lt;개정 2010.12.31, 2013.3.23, 2014.11.19, 2017.7.26<mark class="i">, 2023.6.20</mark>&gt;</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「학원의 설립ㆍ운영 및 과외교습에 관한 법률」 제2조</span></div><div class="act">「학원의 설립ㆍ운영 및 과외교습에 관한 법률」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>2021-03-23</b> → 현행 조문 <b>2023-04-18</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2008.3.28, 2011.7.25, 2016.1.19, 2021.3.23<mark class="pt" title=", 2021.8.17, 2023.4.18 추가됨">‸</mark>&gt;
+</mark>4.  그 밖에 교육부, 행정안전부 및 국토교통부의 공동부령으로 정하는 시설 또는 장비</span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「도로교통법 시행규칙」 제14조제1항</span></div><div class="act">「도로교통법 시행규칙」 제14조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2023-06-20</b></div><div class="diff"><div class="diff-uni">① 법 제12조제1항제2호에서 &quot;<mark class="d">행정안전부령이</mark><mark class="i">행정안전부령으로</mark> 정하는 <mark class="d">보육시설</mark><mark class="i">어린이집</mark>&quot;이란 정원 100명 이상의 <mark class="d">보육시설을</mark><mark class="i">어린이집을</mark> 말한다. 다만, 시장등이 관할 경찰서장과 협의하여 <mark class="d">보육시설이</mark><mark class="i">어린이집이</mark> 소재한 지역의 교통여건 등을 고려하여 교통사고의 위험으로부터 어린이를 보호할 필요가 있다고 인정하는 경우에는 정원이 100명 미만의 <mark class="d">보육시설</mark><mark class="i">어린이집</mark> 주변도로 등에 대하여도 어린이 보호구역을 지정할 수 있다. &lt;개정 2010.12.31, 2013.3.23, 2014.11.19, 2017.7.26<mark class="i">, 2023.6.20</mark>&gt;</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 법 제12조제1항제2호에서 &quot;<mark class="d">행정안전부령이</mark> 정하는 <mark class="d">보육시설</mark>&quot;이란 정원 100명 이상의 <mark class="d">보육시설을</mark> 말한다. 다만, 시장등이 관할 경찰서장과 협의하여 <mark class="d">보육시설이</mark> 소재한 지역의 교통여건 등을 고려하여 교통사고의 위험으로부터 어린이를 보호할 필요가 있다고 인정하는 경우에는 정원이 100명 미만의 <mark class="d">보육시설</mark> 주변도로 등에 대하여도 어린이 보호구역을 지정할 수 있다. &lt;개정 2010.12.31, 2013.3.23, 2014.11.19, 2017.7.26<mark class="pt" title=", 2023.6.20 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">① 법 제12조제1항제2호에서 &quot;<mark class="i">행정안전부령으로</mark> 정하는 <mark class="i">어린이집</mark>&quot;이란 정원 100명 이상의 <mark class="i">어린이집을</mark> 말한다. 다만, 시장등이 관할 경찰서장과 협의하여 <mark class="i">어린이집이</mark> 소재한 지역의 교통여건 등을 고려하여 교통사고의 위험으로부터 어린이를 보호할 필요가 있다고 인정하는 경우에는 정원이 100명 미만의 <mark class="i">어린이집</mark> 주변도로 등에 대하여도 어린이 보호구역을 지정할 수 있다. &lt;개정 2010.12.31, 2013.3.23, 2014.11.19, 2017.7.26<mark class="i">, 2023.6.20</mark>&gt;</span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「학원의 설립ㆍ운영 및 과외교습에 관한 법률」 제2조</span></div><div class="act">「학원의 설립ㆍ운영 및 과외교습에 관한 법률」 제2조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>2021-03-23</b> → 현행 조문 <b>2023-04-18</b></div><div class="diff"><div class="diff-uni">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2008.3.28, 2011.7.25, 2016.1.19, 2021.3.23<mark class="i">, 2021.8.17, 2023.4.18</mark>&gt;
+1.  &quot;학원&quot;이란 사인(私人)이 대통령령으로 정하는 수 이상의 학습자 또는 불특정다수의 학습자에게 30일 이상의 교습과정(교습과정의 반복으로 교습일수가 30일 이상이 되는 경우를 포함한다. 이하 같다)에 따라 지식ㆍ기술(기능을 포함한다. 이하 같다)ㆍ예능을 교습(상급학교 진학에 필요한 컨설팅 등 지도를 하는 경우와 정보통신기술 등을 활용하여 원격으로 교습하는 경우를 포함한다. 이하 같다)하거나 30일 이상 학습장소로 제공되는 시설을 말한다. 다만, 다음 각 목의 어느 하나에 해당하는 시설은 제외한다.
+가.  「유아교육법」, 「초ㆍ중등교육법」, 「고등교육법」, 그 밖의 법령에 따른 학교
+나.  도서관ㆍ박물관 및 과학관
+다.  사업장 등의 시설로서 소속 직원의 연수를 위한 시설
+라.  「평생교육법」에 따라 인가ㆍ등록ㆍ신고 또는 보고된 평생교육시설
+마.  「<mark class="d">근로자직업능력</mark><mark class="i">국민 평생 직업능력</mark> 개발법」에 따른 직업능력개발훈련시설이나 그 밖에 평생교육에 관한 다른 법률에 따라 설치된 시설
+바.  「도로교통법」에 따른 자동차운전학원
+사.  「주택법」 제2조제3호에 따른 공동주택에 거주하는 자가 공동으로 관리하는 시설로서 <mark class="d">같은</mark><mark class="i">「공동주택관리법」</mark> <mark class="d">법 제43조에</mark><mark class="i">제14조에</mark> 따른 입주자대표회의의 의결을 통하여 영리를 목적으로 하지 아니하고 입주민을 위한 교육을 하기 위하여 설치하거나 사용하는 시설
+2.  &quot;교습소&quot;란 제4호에 따른 과외교습을 하는 시설로서 학원 및 제1호 각 목의 시설이 아닌 시설을 말한다.
+3.  &quot;개인과외교습자&quot;란 다음 각 목의 시설에서 교습비등을 받고 과외교습을 하는 자를 말한다.
+가.  학습자의 주거지 또는 교습자의 주거지로서 「건축법」 제2조제2항에 따른 단독주택 또는 공동주택
+나.  제1호사목에 따른 시설
+4.  &quot;과외교습&quot;이란 초등학교ㆍ중학교ㆍ고등학교 또는 이에 준하는 학교의 학생이나 학교 입학 또는 학력 인정에 관한 검정을 위한 시험 준비생에게 지식ㆍ기술ㆍ예능을 교습하는 행위를 말한다. 다만, 다음 각 목의 어느 하나에 해당하는 행위는 제외한다.
+가.  제1호가목부터 바목까지의 시설에서 그 설치목적에 따라 행하는 교습행위
+나.  같은 등록기준지 내의 친족이 하는 교습행위
+다.  대통령령으로 정하는 봉사활동에 속하는 교습행위
+5.  &quot;학습자&quot;란 다음 각 목의 자를 말한다.
+가.  학원이나 교습소에서 교습을 받는 자
+나.  30일 이상 학습장소로 제공되는 시설을 이용하는 자
+다.  개인과외교습자로부터 교습을 받는 자
+6.  &quot;교습비등&quot;이란 학습자가 다음 각 목의 자에게 교습이나 학습장소 이용의 대가로 납부하는 수강료ㆍ이용료 또는 교습료 등(이하 &quot;교습비&quot;라 한다)과 그 외에 추가로 납부하는 모든 경비(이하 &quot;기타경비&quot;라 한다)를 말한다.
+가.  학원을 설립ㆍ운영하는 자(이하 &quot;학원설립ㆍ운영자&quot;라 한다)
+나.  교습소를 설립ㆍ운영하는 자(이하 &quot;교습자&quot;라 한다)
+다.  개인과외교습자</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2008.3.28, 2011.7.25, 2016.1.19, 2021.3.23<mark class="pt" title=", 2021.8.17, 2023.4.18 추가됨">‸</mark>&gt;
 1.  &quot;학원&quot;이란 사인(私人)이 대통령령으로 정하는 수 이상의 학습자 또는 불특정다수의 학습자에게 30일 이상의 교습과정(교습과정의 반복으로 교습일수가 30일 이상이 되는 경우를 포함한다. 이하 같다)에 따라 지식ㆍ기술(기능을 포함한다. 이하 같다)ㆍ예능을 교습(상급학교 진학에 필요한 컨설팅 등 지도를 하는 경우와 정보통신기술 등을 활용하여 원격으로 교습하는 경우를 포함한다. 이하 같다)하거나 30일 이상 학습장소로 제공되는 시설을 말한다. 다만, 다음 각 목의 어느 하나에 해당하는 시설은 제외한다.
 가.  「유아교육법」, 「초ㆍ중등교육법」, 「고등교육법」, 그 밖의 법령에 따른 학교
 나.  도서관ㆍ박물관 및 과학관
@@ -203,7 +249,12 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 6.  &quot;교습비등&quot;이란 학습자가 다음 각 목의 자에게 교습이나 학습장소 이용의 대가로 납부하는 수강료ㆍ이용료 또는 교습료 등(이하 &quot;교습비&quot;라 한다)과 그 외에 추가로 납부하는 모든 경비(이하 &quot;기타경비&quot;라 한다)를 말한다.
 가.  학원을 설립ㆍ운영하는 자(이하 &quot;학원설립ㆍ운영자&quot;라 한다)
 나.  교습소를 설립ㆍ운영하는 자(이하 &quot;교습자&quot;라 한다)
-다.  개인과외교습자</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「도로교통법 시행규칙」 제14조제2항</span></div><div class="act">「도로교통법 시행규칙」 제14조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2023-06-20</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">② 법 제12조제1항제3호에서 &quot;행정안전부령으로 정하는 학원&quot;이란 「학원의 설립ㆍ운영 및 과외교습에 관한 법률 시행령」 별표 <mark class="d">1의</mark> 학교교과교습학원 중 학원 수강생이 100명 이상인 학원을 말한다. 다만, 시장등이 관할 경찰서장과 협의하여 학원이 소재한 지역의 교통여건 등을 고려하여 교통사고의 위험으로부터 어린이를 보호할 필요가 있다고 인정하는 경우에는 정원이 100인명 미만의 학원 주변도로 등에 대해서도 어린이 보호구역을 지정할 수 있다. &lt;신설 2010.12.31, 2013.3.23, 2014.11.19, 2017.7.26<mark class="pt" title=", 2022.10.20 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">② 법 제12조제1항제3호에서 &quot;행정안전부령으로 정하는 학원&quot;이란 「학원의 설립ㆍ운영 및 과외교습에 관한 법률 시행령」 별표 <mark class="i">2의</mark> 학교교과교습학원 중 학원 수강생이 100명 이상인 학원을 말한다. 다만, 시장등이 관할 경찰서장과 협의하여 학원이 소재한 지역의 교통여건 등을 고려하여 교통사고의 위험으로부터 어린이를 보호할 필요가 있다고 인정하는 경우에는 정원이 100인명 미만의 학원 주변도로 등에 대해서도 어린이 보호구역을 지정할 수 있다. &lt;신설 2010.12.31, 2013.3.23, 2014.11.19, 2017.7.26<mark class="i">, 2022.10.20</mark>&gt;</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「초ㆍ중등교육법」 제60조의3</span></div><div class="act">「초ㆍ중등교육법」 제60조의3 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-11-11</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제60조의3(대안학교)
+다.  개인과외교습자</span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「도로교통법 시행규칙」 제14조제2항</span></div><div class="act">「도로교통법 시행규칙」 제14조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2023-06-20</b></div><div class="diff"><div class="diff-uni">② 법 제12조제1항제3호에서 &quot;행정안전부령으로 정하는 학원&quot;이란 「학원의 설립ㆍ운영 및 과외교습에 관한 법률 시행령」 별표 <mark class="d">1의</mark><mark class="i">2의</mark> 학교교과교습학원 중 학원 수강생이 100명 이상인 학원을 말한다. 다만, 시장등이 관할 경찰서장과 협의하여 학원이 소재한 지역의 교통여건 등을 고려하여 교통사고의 위험으로부터 어린이를 보호할 필요가 있다고 인정하는 경우에는 정원이 100인명 미만의 학원 주변도로 등에 대해서도 어린이 보호구역을 지정할 수 있다. &lt;신설 2010.12.31, 2013.3.23, 2014.11.19, 2017.7.26<mark class="i">, 2022.10.20</mark>&gt;</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">② 법 제12조제1항제3호에서 &quot;행정안전부령으로 정하는 학원&quot;이란 「학원의 설립ㆍ운영 및 과외교습에 관한 법률 시행령」 별표 <mark class="d">1의</mark> 학교교과교습학원 중 학원 수강생이 100명 이상인 학원을 말한다. 다만, 시장등이 관할 경찰서장과 협의하여 학원이 소재한 지역의 교통여건 등을 고려하여 교통사고의 위험으로부터 어린이를 보호할 필요가 있다고 인정하는 경우에는 정원이 100인명 미만의 학원 주변도로 등에 대해서도 어린이 보호구역을 지정할 수 있다. &lt;신설 2010.12.31, 2013.3.23, 2014.11.19, 2017.7.26<mark class="pt" title=", 2022.10.20 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">② 법 제12조제1항제3호에서 &quot;행정안전부령으로 정하는 학원&quot;이란 「학원의 설립ㆍ운영 및 과외교습에 관한 법률 시행령」 별표 <mark class="i">2의</mark> 학교교과교습학원 중 학원 수강생이 100명 이상인 학원을 말한다. 다만, 시장등이 관할 경찰서장과 협의하여 학원이 소재한 지역의 교통여건 등을 고려하여 교통사고의 위험으로부터 어린이를 보호할 필요가 있다고 인정하는 경우에는 정원이 100인명 미만의 학원 주변도로 등에 대해서도 어린이 보호구역을 지정할 수 있다. &lt;신설 2010.12.31, 2013.3.23, 2014.11.19, 2017.7.26<mark class="i">, 2022.10.20</mark>&gt;</span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「초ㆍ중등교육법」 제60조의3</span></div><div class="act">「초ㆍ중등교육법」 제60조의3 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-11-11</b></div><div class="diff"><div class="diff-uni">제60조의3(대안학교)
+① 학업을 중단하거나 개인적 특성에 맞는 교육을 받으려는 학생을 대상으로 현장 실습 등 체험 위주의 교육, 인성 위주의 교육 또는 개인의 소질ㆍ적성 개발 위주의 교육 등 다양한 교육을 하는 학교로서 각종학교에 해당하는 학교(이하 &quot;대안학교&quot;라 한다)에 대하여는 제21조제1항, 제23조제2항ㆍ제3항, 제24조부터 제26조까지, 제29조<mark class="i">, 제30조의4, 제30조의5</mark> 및 <mark class="d">제30조의4부터 제30조의7까지를</mark><mark class="i">제30조의7을</mark> 적용하지 아니한다.<mark class="i"> &lt;개정 2025.11.11&gt;</mark>
+②<mark class="i"> 제1항에도 불구하고 대안학교는 소관 업무의 처리에 필요한 경우 정보시스템을 이용할 수 있다. 다만, 국가 또는 지방자치단체로부터 인건비 또는 학교운영비를 지원받는 대안학교가 학교회계 또는 「사립학교법」 제29조제2항에 따른 교비회계에 속하는 예산ㆍ결산 및 회계 업무를 처리하는 경우에는 정보시스템을 이용하여야 한다. &lt;신설 2025.11.11&gt;
+③ 제1항에도 불구하고 교육부장관과 교육감은 대안학교의 교육과정 및 여건에 맞는 정보시스템을 구축ㆍ운영하거나 대안학교의 정보시스템을 이용한 업무처리에 관한 사항을 지도ㆍ감독할 수 있다. &lt;신설 2025.11.11&gt;
+④</mark> 대안학교는 초등학교ㆍ중학교ㆍ고등학교의 과정을 통합하여 운영할 수 있다.<mark class="i"> &lt;개정 2025.11.11&gt;</mark>
+<mark class="d">③</mark><mark class="i">⑤</mark> 대안학교의 설립기준, 교육과정, 수업연한, 학력인정, 그 밖에 설립ㆍ운영에 필요한 사항은 대통령령으로 정한다.<mark class="i"> &lt;개정 2025.11.11&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제60조의3(대안학교)
 ① 학업을 중단하거나 개인적 특성에 맞는 교육을 받으려는 학생을 대상으로 현장 실습 등 체험 위주의 교육, 인성 위주의 교육 또는 개인의 소질ㆍ적성 개발 위주의 교육 등 다양한 교육을 하는 학교로서 각종학교에 해당하는 학교(이하 &quot;대안학교&quot;라 한다)에 대하여는 제21조제1항, 제23조제2항ㆍ제3항, 제24조부터 제26조까지, 제29조<mark class="pt" title=", 제30조의4, 제30조의5 추가됨">‸</mark> 및 <mark class="d">제30조의4부터 제30조의7까지를</mark> 적용하지 아니한다.<mark class="pt" title="&lt;개정 2025.11.11&gt; 추가됨">‸</mark>
 ②<mark class="pt" title="제1항에도 불구하고 대안학교는 소관 업무의 처리에 필요한 경우 정보시스템 추가됨">‸</mark> 대안학교는 초등학교ㆍ중학교ㆍ고등학교의 과정을 통합하여 운영할 수 있다.<mark class="pt" title="&lt;개정 2025.11.11&gt; 추가됨">‸</mark>
 <mark class="d">③</mark> 대안학교의 설립기준, 교육과정, 수업연한, 학력인정, 그 밖에 설립ㆍ운영에 필요한 사항은 대통령령으로 정한다.<mark class="pt" title="&lt;개정 2025.11.11&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제60조의3(대안학교)
@@ -211,14 +262,31 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 ②<mark class="i"> 제1항에도 불구하고 대안학교는 소관 업무의 처리에 필요한 경우 정보시스템을 이용할 수 있다. 다만, 국가 또는 지방자치단체로부터 인건비 또는 학교운영비를 지원받는 대안학교가 학교회계 또는 「사립학교법」 제29조제2항에 따른 교비회계에 속하는 예산ㆍ결산 및 회계 업무를 처리하는 경우에는 정보시스템을 이용하여야 한다. &lt;신설 2025.11.11&gt;
 ③ 제1항에도 불구하고 교육부장관과 교육감은 대안학교의 교육과정 및 여건에 맞는 정보시스템을 구축ㆍ운영하거나 대안학교의 정보시스템을 이용한 업무처리에 관한 사항을 지도ㆍ감독할 수 있다. &lt;신설 2025.11.11&gt;
 ④</mark> 대안학교는 초등학교ㆍ중학교ㆍ고등학교의 과정을 통합하여 운영할 수 있다.<mark class="i"> &lt;개정 2025.11.11&gt;</mark>
-<mark class="i">⑤</mark> 대안학교의 설립기준, 교육과정, 수업연한, 학력인정, 그 밖에 설립ㆍ운영에 필요한 사항은 대통령령으로 정한다.<mark class="i"> &lt;개정 2025.11.11&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(어린이 통학로 지정 등) 
+<mark class="i">⑤</mark> 대안학교의 설립기준, 교육과정, 수업연한, 학력인정, 그 밖에 설립ㆍ운영에 필요한 사항은 대통령령으로 정한다.<mark class="i"> &lt;개정 2025.11.11&gt;</mark></span></div></div></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(어린이 통학로 지정 등) 
 ① 시장은 교통사고의 위험으로부터 어린이를 보호하기 위하여 필요하다고 인정하는 경우 해당 지역의 교통여건 및 효과성 등을 면밀히 검토하여 어린이 보호구역 및 교육시설의 주변 도로 가운데 일정 구간을 어린이 통학로로 지정할 수 있다.
 ② 시장은 어린이 통학로에서 어린이의 안전을 위하여 다음 각 호의사항을 시행할 수 있다.
 1. <mark class="cite-law" title="도로교통법제3조,제4조">법 제3조 및 제4조</mark>에 따른 교통안전시설의 설치·관리
 2. <mark class="cite-law" title="도로법제2조">「도로법」 제2조제2항</mark>에 따른 도로부속물의 설치·관리
 3. 옐로카펫의 설치·관리
 4. 보행신호 음성안내 보조장치의 설치·관리
-5. 그 밖에 시장이 필요하다고 인정하는 안전시설의 설치·관리</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「도로법」 제2조</span></div><div class="act">「도로법」 제2조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-12-02</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다.<mark class="pt" title="&lt;개정 2025.12.2&gt; 추가됨">‸</mark>
+5. 그 밖에 시장이 필요하다고 인정하는 안전시설의 설치·관리</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「도로법」 제2조</span></div><div class="act">「도로법」 제2조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2025-12-02</b></div><div class="diff"><div class="diff-uni">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다.<mark class="i"> &lt;개정 2025.12.2&gt;</mark>
+1.  &quot;도로&quot;란 차도, 보도(步道), 자전거도로, 측도(側道), 터널, 교량, 육교 등 대통령령으로 정하는 시설로 구성된 것으로서 제10조에 열거된 것을 말하며, 도로의 부속물을 포함한다.
+2.  &quot;도로의 부속물&quot;이란 도로관리청이 도로의 편리한 이용과 안전 및 원활한 도로교통의 확보, 그 밖에 도로의 관리를 위하여 설치하는 다음 각 목의 어느 하나에 해당하는 시설 또는 공작물을 말한다.
+가.  주차장, 버스정류시설, 휴게시설 등 도로이용 지원시설
+나.  시선유도표지, 중앙분리대, 과속방지시설<mark class="i">, 방호울타리</mark> 등 도로안전시설
+다.  통행료 징수시설, 도로관제시설, 도로관리사업소 등 도로관리시설
+라.  도로표지 및 교통량 측정시설 등 교통관리시설
+마.  낙석방지시설, 제설시설, 식수대 등 도로에서의 재해 예방 및 구조 활동, 도로환경의 개선ㆍ유지 등을 위한 도로부대시설
+바.  그 밖에 도로의 기능 유지 등을 위한 시설로서 대통령령으로 정하는 시설
+3.  &quot;국가도로망&quot;이란 제10조 각 호에 따른 고속국도와 일반국도, 지방도 등이 상호 유기적인 기능을 발휘할 수 있도록 체계적으로 구성한 도로망을 말한다.
+4.  &quot;국가간선도로망&quot;이란 전국적인 도로망의 근간이 되는 노선으로서 제10조제1호에 따른 고속국도와 같은 조 제2호에 따른 일반국도를 말한다.
+5.  &quot;도로관리청&quot;이란 도로에 관한 계획, 건설, 관리의 주체가 되는 기관으로서 도로의 구분에 따라 제23조에서 규정하는 다음 각 목의 어느 하나에 해당하는 기관을 말한다.
+가.  국토교통부장관
+나.  특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사ㆍ특별자치도지사ㆍ시장ㆍ군수 또는 자치구의 구청장(이하 &quot;행정청&quot;이라 한다)
+6.  &quot;도로구역&quot;이란 도로를 구성하는 일단의 토지로서 제25조에 따라 결정된 구역을 말한다.
+7.  &quot;도로공사&quot;란 도로의 신설, 확장, 개량 및 보수(補修) 등을 하는 공사를 말한다.
+8.  &quot;도로의 유지ㆍ관리&quot;란 도로의 기능을 유지하기 위하여 필요한 일반적인 도로관리(경미한 도로의 보수 공사 등을 포함한다) 활동을 말한다.
+9.  &quot;타공작물&quot;이란 도로와 그 효용을 함께 발휘하는 둑, 호안(護岸), 철도 또는 궤도용의 교량, 횡단도로, 가로수, 그 밖에 대통령령으로 정하는 공작물을 말한다.</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다.<mark class="pt" title="&lt;개정 2025.12.2&gt; 추가됨">‸</mark>
 1.  &quot;도로&quot;란 차도, 보도(步道), 자전거도로, 측도(側道), 터널, 교량, 육교 등 대통령령으로 정하는 시설로 구성된 것으로서 제10조에 열거된 것을 말하며, 도로의 부속물을 포함한다.
 2.  &quot;도로의 부속물&quot;이란 도로관리청이 도로의 편리한 이용과 안전 및 원활한 도로교통의 확보, 그 밖에 도로의 관리를 위하여 설치하는 다음 각 목의 어느 하나에 해당하는 시설 또는 공작물을 말한다.
 가.  주차장, 버스정류시설, 휴게시설 등 도로이용 지원시설
@@ -252,7 +320,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 6.  &quot;도로구역&quot;이란 도로를 구성하는 일단의 토지로서 제25조에 따라 결정된 구역을 말한다.
 7.  &quot;도로공사&quot;란 도로의 신설, 확장, 개량 및 보수(補修) 등을 하는 공사를 말한다.
 8.  &quot;도로의 유지ㆍ관리&quot;란 도로의 기능을 유지하기 위하여 필요한 일반적인 도로관리(경미한 도로의 보수 공사 등을 포함한다) 활동을 말한다.
-9.  &quot;타공작물&quot;이란 도로와 그 효용을 함께 발휘하는 둑, 호안(護岸), 철도 또는 궤도용의 교량, 횡단도로, 가로수, 그 밖에 대통령령으로 정하는 공작물을 말한다.</span></div></div></div></div><div class="artsec" data-oc="(위치 미상)"><div class="arthd">조례 (위치 미상)</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law">「영유아교육법」</span></div><div class="act">「영유아교육법」 제명변경·폐지 여부를 확인하고 이 조례의 해당 조문의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><div class="ord"><h2>군포시 교통유발부담금 경감 등에 관한 조례</h2><div class="meta">시행 2023-05-01 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span><span class="badge b-fmt">📐 서식 정비 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 
+9.  &quot;타공작물&quot;이란 도로와 그 효용을 함께 발휘하는 둑, 호안(護岸), 철도 또는 궤도용의 교량, 횡단도로, 가로수, 그 밖에 대통령령으로 정하는 공작물을 말한다.</span></div></div></div></div></div><div class="artsec" data-oc="(위치 미상)"><div class="arthd">조례 (위치 미상)</div><div class="item"><div class="iline"><span class="tag t-chk">법령미해결</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「영유아교육법」</span></div><div class="act">「영유아교육법」 제명변경·폐지 여부를 확인하고 이 조례의 해당 조문의 인용 법령명을 정정</div><div class="basis">기준일 — 조례 시행 <b>2021-07-01</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><div class="ord"><h2>군포시 교통유발부담금 경감 등에 관한 조례</h2><div class="meta">시행 2023-05-01 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span><span class="badge b-fmt">📐 서식 정정 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 
 ①이 조례에서 사용하는 용어의 정의는 다음과 같다.
 1. “부담금”이란 <mark class="cite-law" title="도시교통정비 촉진법제2조">「도시교통정비 촉진법」(이하 “법”이라 한다) 제2조제9호</mark>에 따른 교통유발부담금을 말한다.&lt;개정 2014.08.11, 2015.3.23&gt;
 2. “교통량”이라 함은 부담금부과대상시설물(이하 “시설물”이라 한다)안에 근무하는 자(이하 “종사자”라 한다)와 당해 시설물을 이용하는 자(이하 “이용자”라 한다)가 운행하는 승용자동차의 통행량을 말한다.
@@ -269,18 +337,21 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 9. “자전거 이용”이라 함은 종사자가 승용차 대신 자전거를 이용하여 출ㆍ퇴근하는 것을 말한다.&lt;신설 2015.3.23&gt;
 10. “셔틀버스 운행”이라 함은 종사자 및 이용자가 역, 터미털을 순회하는 셔틀버스를 이용하도록 1일 2회 이상 정기운행 하는 것을 말한다.&lt;신설 2015.3.23&gt;
 11. “경차 주차구획 운영”이라 함은 시설물의 경차 주차면수를 확보하는 것을 말한다.&lt;신설 2015.3.23&gt;
-③ “교통량감축프로그램이행”이라 함은 제2항의 규정에 의한 교통량감축 방안의 실현을 위하여 시설물의 소유자가 교통량감축계획의 수립 및 지속적인 유지·관리등을 행함을 말한다.</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law">「자동차관리법」 제3조</span></div><div class="act">「자동차관리법」 제3조 인용을 꺽쇠(「」) 서식으로 정정 (이 조례 제2조) — 내용 변경은 없음, 서식만 정비</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2020-06-09</b></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(부담금의 경감비율등) 
+③ “교통량감축프로그램이행”이라 함은 제2항의 규정에 의한 교통량감축 방안의 실현을 위하여 시설물의 소유자가 교통량감축계획의 수립 및 지속적인 유지·관리등을 행함을 말한다.</div><div class="item"><div class="iline"><span class="tag t-naked">서식</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「자동차관리법」 제3조</span></div><div class="act">(서식만 정비) &quot;자동차관리법 제3조&quot;를 &quot;「자동차관리법」 제3조&quot;로 정정 — 내용 변경은 없음 (이 조례 제2조)</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2020-06-09</b> → 현행 조문 <b>2020-06-09</b></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(부담금의 경감비율등) 
 ① 제5조의 시설물중 경감율을 적용받기 위해서는 제2조제2항의 교통량감축프로그램을 이행하여야 한다.
 ② 제5조의 규정에 의한 부담금의 경감대상시설물의 교통량감축프로그램의 이행기준 및 경감비율은 별표 2와 같다.&lt;개정 2014.08.11&gt;
 ③부담금의 부과대상시설물 안에 근무하는 종사자 또는 이용자의 교통량경감비율은 교통량감축프로그램 각각의 부담금 경감비율의 합계로 본다. 다만, 제2조제2항제1호부터 제3호에서 규정한 승용차 2·5·10부제의 경감비율은 중복하여 합산하지 아니한다.&lt;개정 2015.3.23&gt;
 ④경감비율은 월단위로 계산하되 잔여일수가 있는 경우에는 일할 계산한다. 이 경우 월단위 또는 일할 계산할 경우에는 소수점의 두자리미만은 절사한다.
-⑤ 시장은 <mark class="cite-law" title="재난 및 안전관리 기본법제3조">「재난 및 안전관리 기본법」 제3조제1호</mark>에 따른 재난 발생시 부담금 부과대상시설에 대하여 부담금을 경감할 수 있다. 재난 발생에 따른 부담금 경감 기준은 별표 3과 같다. &lt;신설 2020.7.6.&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「재난 및 안전관리 기본법」 제3조제1호</span></div><div class="act">「재난 및 안전관리 기본법」 제3조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2021-06-08</b> → 현행 조문 <b>2025-01-07</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">1.  &quot;재난&quot;이란 국민의 생명ㆍ신체ㆍ재산과 국가에 피해를 주거나 줄 수 있는 것으로서 다음 각 목의 것을 말한다.
+⑤ 시장은 <mark class="cite-law" title="재난 및 안전관리 기본법제3조">「재난 및 안전관리 기본법」 제3조제1호</mark>에 따른 재난 발생시 부담금 부과대상시설에 대하여 부담금을 경감할 수 있다. 재난 발생에 따른 부담금 경감 기준은 별표 3과 같다. &lt;신설 2020.7.6.&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「재난 및 안전관리 기본법」 제3조제1호</span></div><div class="act">「재난 및 안전관리 기본법」 제3조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2021-06-08</b> → 현행 조문 <b>2025-01-07</b></div><div class="diff"><div class="diff-uni">1.  &quot;재난&quot;이란 국민의 생명ㆍ신체ㆍ재산과 국가에 피해를 주거나 줄 수 있는 것으로서 다음 각 목의 것을 말한다.
+가.  자연재난: 태풍, 홍수, 호우(豪雨), 강풍, 풍랑, 해일(海溢), 대설, 한파, 낙뢰, 가뭄, 폭염, 지진, 황사(黃砂), 조류(藻類) 대발생, 조수(潮水), 화산활동, <mark class="d">소행성ㆍ유성체</mark><mark class="i">「우주개발</mark> <mark class="d">등</mark><mark class="i">진흥법」에 따른</mark> 자연우주물체의 추락ㆍ충돌, 그 밖에 이에 준하는 자연현상으로 인하여 발생하는 재해
+나.  사회재난: 화재ㆍ붕괴ㆍ폭발ㆍ교통사고(항공사고 및 해상사고를 포함한다)<mark class="d">ㆍ화생방사고ㆍ환경오염사고</mark><mark class="i">ㆍ화생방사고ㆍ환경오염사고ㆍ다중운집인파사고</mark> 등으로 인하여 발생하는 대통령령으로 정하는 규모 이상의 피해와 국가핵심기반의 마비, 「감염병의 예방 및 관리에 관한 법률」에 따른 감염병 또는 「가축전염병예방법」에 따른 가축전염병의 확산, 「미세먼지 저감 및 관리에 관한 특별법」에 따른 미세먼지<mark class="i">, 「우주개발 진흥법」에 따른 인공우주물체의 추락ㆍ충돌</mark> 등으로 인한 피해
+다.  삭제 &lt;2013.8.6&gt;</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">1.  &quot;재난&quot;이란 국민의 생명ㆍ신체ㆍ재산과 국가에 피해를 주거나 줄 수 있는 것으로서 다음 각 목의 것을 말한다.
 가.  자연재난: 태풍, 홍수, 호우(豪雨), 강풍, 풍랑, 해일(海溢), 대설, 한파, 낙뢰, 가뭄, 폭염, 지진, 황사(黃砂), 조류(藻類) 대발생, 조수(潮水), 화산활동, <mark class="d">소행성ㆍ유성체</mark> <mark class="d">등</mark> 자연우주물체의 추락ㆍ충돌, 그 밖에 이에 준하는 자연현상으로 인하여 발생하는 재해
 나.  사회재난: 화재ㆍ붕괴ㆍ폭발ㆍ교통사고(항공사고 및 해상사고를 포함한다)<mark class="d">ㆍ화생방사고ㆍ환경오염사고</mark> 등으로 인하여 발생하는 대통령령으로 정하는 규모 이상의 피해와 국가핵심기반의 마비, 「감염병의 예방 및 관리에 관한 법률」에 따른 감염병 또는 「가축전염병예방법」에 따른 가축전염병의 확산, 「미세먼지 저감 및 관리에 관한 특별법」에 따른 미세먼지<mark class="pt" title=", 「우주개발 진흥법」에 따른 인공우주물체의 추락ㆍ충돌 추가됨">‸</mark> 등으로 인한 피해
 다.  삭제 &lt;2013.8.6&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">1.  &quot;재난&quot;이란 국민의 생명ㆍ신체ㆍ재산과 국가에 피해를 주거나 줄 수 있는 것으로서 다음 각 목의 것을 말한다.
 가.  자연재난: 태풍, 홍수, 호우(豪雨), 강풍, 풍랑, 해일(海溢), 대설, 한파, 낙뢰, 가뭄, 폭염, 지진, 황사(黃砂), 조류(藻類) 대발생, 조수(潮水), 화산활동, <mark class="i">「우주개발</mark> <mark class="i">진흥법」에 따른</mark> 자연우주물체의 추락ㆍ충돌, 그 밖에 이에 준하는 자연현상으로 인하여 발생하는 재해
 나.  사회재난: 화재ㆍ붕괴ㆍ폭발ㆍ교통사고(항공사고 및 해상사고를 포함한다)<mark class="i">ㆍ화생방사고ㆍ환경오염사고ㆍ다중운집인파사고</mark> 등으로 인하여 발생하는 대통령령으로 정하는 규모 이상의 피해와 국가핵심기반의 마비, 「감염병의 예방 및 관리에 관한 법률」에 따른 감염병 또는 「가축전염병예방법」에 따른 가축전염병의 확산, 「미세먼지 저감 및 관리에 관한 특별법」에 따른 미세먼지<mark class="i">, 「우주개발 진흥법」에 따른 인공우주물체의 추락ㆍ충돌</mark> 등으로 인한 피해
-다.  삭제 &lt;2013.8.6&gt;</span></div></div></div></div><div class="artsec" data-oc="제8조의3"><div class="arthd">조례 제8조의3</div><div class="ordtext"><b>제8조의3</b> 제8조의3(교통량감축프로그램의 적용 예외) 다음 각 호의 어느 하나에 해당하는 경우에는 교통량감축프로그램을 적용하지 아니한다.
+다.  삭제 &lt;2013.8.6&gt;</span></div></div></div></div></div><div class="artsec" data-oc="제8조의3"><div class="arthd">조례 제8조의3</div><div class="ordtext"><b>제8조의3</b> 제8조의3(교통량감축프로그램의 적용 예외) 다음 각 호의 어느 하나에 해당하는 경우에는 교통량감축프로그램을 적용하지 아니한다.
 1. 대상 시설물의 대지를 단순 통과하는 승용차
 2. <mark class="cite-law" title="도로교통법제2조">「도로교통법」 제2조</mark>에 따른 긴급자동차용 승용차가 대상 시설물의 대지로 진·출입하게 하는 경우
 3. 승용차번호판 부착 등의 목적을 위해 대상 시설물의 대지로 승용차의 진·출입이 필요한 경우
@@ -288,7 +359,68 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 5. 31일과 오후10시부터 익일 오전7시 사이의 2ㆍ5ㆍ10제
 6.<mark class="cite-law" title="장애인복지법">「장애인복지법」</mark>에 따라 등록한 장애인 소유의 자동차로서 자동차 외부에 장애인 표지가 부착되어 식별이 가능한 승용차
 7. 의료시설의 환자 이송용으로 인정된 승용차 
-[본조신설 2016. 12. 12.]</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「도로교통법」 제2조</span></div><div class="act">「도로교통법」 제2조 개정 내용을 반영하여 이 조례 제8조의3을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2023-04-18</b> → 현행 조문 <b>2025-12-30</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2012.3.21, 2013.3.23, 2014.1.28, 2014.11.19, 2017.3.21, 2017.7.26, 2017.10.24, 2018.3.27, 2020.5.26, 2020.6.9, 2020.12.22, 2021.10.19, 2022.1.11<mark class="pt" title=", 2023.4.18, 2023.10.24, 2025.12.30 추가됨">‸</mark>&gt;
+[본조신설 2016. 12. 12.]</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「도로교통법」 제2조</span></div><div class="act">「도로교통법」 제2조 개정 내용을 반영하여 이 조례 제8조의3을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2023-04-18</b> → 현행 조문 <b>2025-12-30</b></div><div class="diff"><div class="diff-uni">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2012.3.21, 2013.3.23, 2014.1.28, 2014.11.19, 2017.3.21, 2017.7.26, 2017.10.24, 2018.3.27, 2020.5.26, 2020.6.9, 2020.12.22, 2021.10.19, 2022.1.11<mark class="i">, 2023.4.18, 2023.10.24, 2025.12.30</mark>&gt;
+1.  &quot;도로&quot;란 다음 각 목에 해당하는 곳을 말한다.
+가.  「도로법」에 따른 도로
+나.  「유료도로법」에 따른 유료도로
+다.  「농어촌도로 정비법」에 따른 농어촌도로
+라.  그 밖에 현실적으로 불특정 다수의 사람 또는 차마(車馬)가 통행할 수 있도록 공개된 장소로서 안전하고 원활한 교통을 확보할 필요가 있는 장소
+2.  &quot;자동차전용도로&quot;란 자동차만 다닐 수 있도록 설치된 도로를 말한다.
+3.  &quot;고속도로&quot;란 자동차의 고속 운행에만 사용하기 위하여 지정된 도로를 말한다.
+4.  &quot;차도&quot;(車道)란 연석선(차도와 보도를 구분하는 돌 등으로 이어진 선을 말한다. 이하 같다), 안전표지 또는 그와 비슷한 인공구조물을 이용하여 경계(境界)를 표시하여 모든 차가 통행할 수 있도록 설치된 도로의 부분을 말한다.
+5.  &quot;중앙선&quot;이란 차마의 통행 방향을 명확하게 구분하기 위하여 도로에 황색 실선(實線)이나 황색 점선 등의 안전표지로 표시한 선 또는 중앙분리대나 울타리 등으로 설치한 시설물을 말한다. 다만, 제14조제1항 후단에 따라 가변차로(可變車路)가 설치된 경우에는 신호기가 지시하는 진행방향의 가장 왼쪽에 있는 황색 점선을 말한다.
+6.  &quot;차로&quot;란 차마가 한 줄로 도로의 정하여진 부분을 통행하도록 차선(車線)으로 구분한 차도의 부분을 말한다.
+7.  &quot;차선&quot;이란 차로와 차로를 구분하기 위하여 그 경계지점을 안전표지로 표시한 선을 말한다.
+7의2.  &quot;노면전차 전용로&quot;란 도로에서 궤도를 설치하고, 안전표지 또는 인공구조물로 경계를 표시하여 설치한 「도시철도법」 제18조의2제1항 각 호에 따른 도로 또는 차로를 말한다.
+8.  &quot;자전거도로&quot;란 안전표지, 위험방지용 울타리나 그와 비슷한 인공구조물로 경계를 표시하여 자전거 및 개인형 이동장치가 통행할 수 있도록 설치된 「자전거 이용 활성화에 관한 법률」 제3조 각 호의 도로를 말한다.
+9.  &quot;자전거횡단도&quot;란 자전거 및 개인형 이동장치가 일반도로를 횡단할 수 있도록 안전표지로 표시한 도로의 부분을 말한다.
+10.  &quot;보도&quot;(步道)란 연석선, 안전표지나 그와 비슷한 인공구조물로 경계를 표시하여 보행자(유모차, 보행보조용 의자차, 노약자용 보행기 등 행정안전부령으로 정하는 기구ㆍ장치를 이용하여 통행하는 <mark class="d">사람을</mark><mark class="i">사람 및 제21호의3에 따른 실외이동로봇을</mark> 포함한다. 이하 같다)가 통행할 수 있도록 한 도로의 부분을 말한다.
+11.  &quot;길가장자리구역&quot;이란 보도와 차도가 구분되지 아니한 도로에서 보행자의 안전을 확보하기 위하여 안전표지 등으로 경계를 표시한 도로의 가장자리 부분을 말한다.
+12.  &quot;횡단보도&quot;란 보행자가 도로를 횡단할 수 있도록 안전표지로 표시한 도로의 부분을 말한다.
+13.  &quot;교차로&quot;란 ‘십’자로, ‘T’자로나 그 밖에 둘 이상의 도로(보도와 차도가 구분되어 있는 도로에서는 차도를 말한다)가 교차하는 부분을 말한다.
+13의2.  &quot;회전교차로&quot;란 교차로 중 차마가 원형의 교통섬(차마의 안전하고 원활한 교통처리나 보행자 도로횡단의 안전을 확보하기 위하여 교차로 또는 차도의 분기점 등에 설치하는 섬 모양의 시설을 말한다)을 중심으로 반시계방향으로 통행하도록 한 원형의 도로를 말한다.
+14.  &quot;안전지대&quot;란 도로를 횡단하는 보행자나 통행하는 차마의 안전을 위하여 안전표지나 이와 비슷한 인공구조물로 표시한 도로의 부분을 말한다.
+15.  &quot;신호기&quot;란 도로교통에서 문자ㆍ기호 또는 등화(燈火)를 사용하여 진행ㆍ정지ㆍ방향전환ㆍ주의 등의 신호를 표시하기 위하여 사람이나 전기의 힘으로 조작하는 장치를 말한다.
+16.  &quot;안전표지&quot;란 교통안전에 필요한 주의ㆍ규제ㆍ지시 등을 표시하는 표지판이나 도로의 바닥에 표시하는 기호ㆍ문자 또는 선 등을 말한다.
+17.  &quot;차마&quot;란 다음 각 목의 차와 우마를 말한다.
+가.  &quot;차&quot;란 다음의 어느 하나에 해당하는 것을 말한다.						
+
+						      1) 자동차
+						
+
+						      2) 건설기계
+						
+
+						      3) 원동기장치자전거
+						
+
+						      4) 자전거
+						
+
+						      5) 사람 또는 가축의 힘이나 그 밖의 동력(動力)으로 도로에서 운전되는 것. 다만, 철길이나 가설(架設)된 선을 이용하여 운전되는 것, 유모차, 보행보조용 의자차, 노약자용 보행기<mark class="i">, 제21호의3에 따른 실외이동로봇</mark> 등 행정안전부령으로 정하는 기구ㆍ장치는 제외한다.
+나.  &quot;우마&quot;란 교통이나 운수(運輸)에 사용되는 가축을 말한다.
+17의2.  &quot;노면전차&quot;란 「도시철도법」 제2조제2호에 따른 노면전차로서 도로에서 궤도를 이용하여 운행되는 차를 말한다.
+18.  &quot;자동차&quot;란 철길이나 가설된 선을 이용하지 아니하고 원동기를 사용하여 운전되는 차(견인되는 자동차도 자동차의 일부로 본다)로서 다음 각 목의 차를 말한다.
+가.  「자동차관리법」 제3조에 따른 다음의 자동차. 다만, 원동기장치자전거는 제외한다.						
+
+						      1) 승용자동차
+						
+
+						      2) 승합자동차
+						
+
+						      3) 화물자동차
+						
+
+						      4) 특수자동차
+						
+
+						      5) 이륜자동차
+나.  「건설기계관리법」 제26조제1항 단서에 따른 건설기계
+18의2.  &quot;자율주행시스템&quot;이란 「자율주행자동차 상용화 촉진 및 지원에 관한 법률」 제2조제1항제2호에 따른 자율주행시스템을 말한다. 이 경우 그 종류는 완전 자율주행시스템, 부분 자율주행시스템 등 행정안전부령으로 정하는 바에 따라 세분할 수 있다.
+18의3.  &quot;자율주행자동차&quot;란 「자동차관리법」 제2조제1호의3에 따른 자율주행자동차로서 자율주행시스템을 갖추고 있는<mark class="d"> 자동차를 말한다.
+19.  &quot;원동기장치자전거&quot;란 다음 각 목의 어느 하나에 해당하는 차를 말한다.
+가.  「자동차관리법」 제3조에 따</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2012.3.21, 2013.3.23, 2014.1.28, 2014.11.19, 2017.3.21, 2017.7.26, 2017.10.24, 2018.3.27, 2020.5.26, 2020.6.9, 2020.12.22, 2021.10.19, 2022.1.11<mark class="pt" title=", 2023.4.18, 2023.10.24, 2025.12.30 추가됨">‸</mark>&gt;
 1.  &quot;도로&quot;란 다음 각 목에 해당하는 곳을 말한다.
 가.  「도로법」에 따른 도로
 나.  「유료도로법」에 따른 유료도로
@@ -409,16 +541,22 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 나.  「건설기계관리법」 제26조제1항 단서에 따른 건설기계
 18의2.  &quot;자율주행시스템&quot;이란 「자율주행자동차 상용화 촉진 및 지원에 관한 법률」 제2조제1항제2호에 따른 자율주행시스템을 말한다. 이 경우 그 종류는 완전 자율주행시스템, 부분 자율주행시스템 등 행정안전부령으로 정하는 바에 따라 세분할 수 있다.
 18의3.  &quot;자율주행자동차&quot;란 「자동차관리법」 제2조제1호의3에 따른 자율주행자동차로서 자율주행시스템을 갖추고 있는<mark class="pt" title="자동차를 말한다.
-19.  &quot;원동기장치자전거&quot;란 다음 각 목의 어느 하나 삭제됨">‸</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 버스공영차고지 운영 및 관리 조례</h2><div class="meta">시행 2024-10-02 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(사용자의 행위 제한) 사용자는 공영차고지에서 다음 각 호의 어느 하나에 해당하는 행위를 하여서는 아니 된다. 다만, 시장의 사전 승인을 받은 경우에는 그러하지 아니하다. 
+19.  &quot;원동기장치자전거&quot;란 다음 각 목의 어느 하나 삭제됨">‸</mark></span></div></div></div></div></div></div><div class="ord"><h2>군포시 버스공영차고지 운영 및 관리 조례</h2><div class="meta">시행 2024-10-02 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제7조"><div class="arthd">조례 제7조</div><div class="ordtext"><b>제7조</b> 제7조(사용자의 행위 제한) 사용자는 공영차고지에서 다음 각 호의 어느 하나에 해당하는 행위를 하여서는 아니 된다. 다만, 시장의 사전 승인을 받은 경우에는 그러하지 아니하다. 
   1. 노선 여객자동차 이외의 차량을 주차시키는 행위 
 2. 공영차고지 및 사용시설을 제3자에게 임대하는 행위 
 3. <mark class="cite-law" title="소방기본법">「소방기본법」</mark>에서 금지한 위험물 등을 취급하는 행위 
 4. 환경 관련법(<mark class="cite-law" title="대기환경보전법">「대기환경보전법」</mark>,<mark class="cite-law" title="수질 및 수생태계 보전에 관한 법률">「수질 및 수생태계 보전에 관한 법률」</mark>,<mark class="cite-law" title="소음ㆍ진동규제법">「소음ㆍ진동규제법」</mark>,<mark class="cite-law" title="폐기물관리법">「폐기물관리법」</mark>등)에서 허용하고 있는 범위를 초과하는 악취ㆍ소음 등의 공해를 발생시키는 행위 
-5. 그 밖의 관계법령에서 공영차고지에 설치 및 보관 등이 금지된 물품을 설치하거나 보관하는 행위</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「수질 및 수생태계 보전에 관한 법률」</span></div><div class="act">인용한 「수질 및 수생태계 보전에 관한 법률」이(가) 현행 「물환경보전법」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law">「소음ㆍ진동규제법」</span></div><div class="act">인용한 「소음ㆍ진동규제법」이(가) 현행 「소음ㆍ진동관리법」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><div class="ord"><h2>군포시 택시운송사업의 구분 변경에 관한 규칙</h2><div class="meta">시행 2021-09-16 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 규칙은 <mark class="cite-law" title="여객자동차 운수사업법 시행규칙제33조">「여객자동차 운수사업법 시행규칙」제33조제1항제6호</mark>에서 위임한 사항과 그 시행에 필요한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「여객자동차 운수사업법 시행규칙」 제33조제1항제6호</span></div><div class="act">「여객자동차 운수사업법 시행규칙」 제33조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-09-16</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2023-12-21</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">6.  제9조에 따른 택시운송사업의 구분 변경<mark class="d">(다만, 같은 조 제5호에 따른 모범형 택시운송사업으로의 변경 및 지방자치단체가 조례 또는 규칙으로 정하는 구분 변경은 제외한다)</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">6.  제9조에 따른 택시운송사업의 구분 변경<mark class="pt" title="(다만, 같은 조 제5호에 따른 모범형 택시운송사업으로의 변경 및 지방자 삭제됨">‸</mark></span></div></div></div></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(택시운송사업의 구분 변경)  
+5. 그 밖의 관계법령에서 공영차고지에 설치 및 보관 등이 금지된 물품을 설치하거나 보관하는 행위</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「수질 및 수생태계 보전에 관한 법률」</span></div><div class="act">인용한 「수질 및 수생태계 보전에 관한 법률」이(가) 현행 「물환경보전법」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「소음ㆍ진동규제법」</span></div><div class="act">인용한 「소음ㆍ진동규제법」이(가) 현행 「소음ㆍ진동관리법」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2024-10-02</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><div class="ord"><h2>군포시 택시운송사업의 구분 변경에 관한 규칙</h2><div class="meta">시행 2021-09-16 · 정비 항목 2건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 2</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 규칙은 <mark class="cite-law" title="여객자동차 운수사업법 시행규칙제33조">「여객자동차 운수사업법 시행규칙」제33조제1항제6호</mark>에서 위임한 사항과 그 시행에 필요한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「여객자동차 운수사업법 시행규칙」 제33조제1항제6호</span></div><div class="act">「여객자동차 운수사업법 시행규칙」 제33조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-09-16</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2023-12-21</b></div><div class="diff"><div class="diff-uni">6.  제9조에 따른 택시운송사업의 구분 변경<mark class="d">(다만, 같은 조 제5호에 따른 모범형 택시운송사업으로의 변경 및 지방자치단체가 조례 또는 규칙으로 정하는 구분 변경은 제외한다)</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">6.  제9조에 따른 택시운송사업의 구분 변경<mark class="d">(다만, 같은 조 제5호에 따른 모범형 택시운송사업으로의 변경 및 지방자치단체가 조례 또는 규칙으로 정하는 구분 변경은 제외한다)</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">6.  제9조에 따른 택시운송사업의 구분 변경<mark class="pt" title="(다만, 같은 조 제5호에 따른 모범형 택시운송사업으로의 변경 및 지방자 삭제됨">‸</mark></span></div></div></div></div></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(택시운송사업의 구분 변경)  
 ① <mark class="cite-law" title="여객자동차 운수사업법 시행규칙제33조">「여객자동차 운수사업법 시행규칙」(이하 “시행규칙”이라 한다) 제33조제1항제6호</mark>에 따라 군포시장(이하 “시장”이라 한다)의 인가를 받아야 하는 택시운송사업의 구분 변경의 종류는 다음 각 호와 같다. 
 1. 대형 택시운송사업으로의 구분 변경 
 2. 고급형 택시운송사업으로의 구분 변경 
-② 제1항에 따른 택시운송사업의 구분 변경 인가 조건은 별표와 같다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「여객자동차 운수사업법 시행규칙」 제33조제1항제6호</span></div><div class="act">「여객자동차 운수사업법 시행규칙」 제33조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-09-16</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2023-12-21</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">6.  제9조에 따른 택시운송사업의 구분 변경<mark class="d">(다만, 같은 조 제5호에 따른 모범형 택시운송사업으로의 변경 및 지방자치단체가 조례 또는 규칙으로 정하는 구분 변경은 제외한다)</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">6.  제9조에 따른 택시운송사업의 구분 변경<mark class="pt" title="(다만, 같은 조 제5호에 따른 모범형 택시운송사업으로의 변경 및 지방자 삭제됨">‸</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 도시교통 정비지역 내의 교통영향평가 대상사업 및 시설규모 적용지역 지정에 관한 조례</h2><div class="meta">시행 2018-10-08 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-naked" title="도시교통정비촉진법제3조">도시교통정비촉진법 제3조</mark> 및 동법 시행령 제9조제1항의 규정에 의하여 군포시 도시교통정비지역내의 교통영향평가 대상사업 및 시설규모 적용지역의 지정에 관한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="tag t-naked">「」누락</span><span class="law">「도시교통정비촉진법」 제3조</span></div><div class="act">「도시교통정비촉진법」 제3조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비 (덧붙여 「도시교통정비촉진법」처럼 꺽쇠 서식으로 정정)</div><div class="basis">기준일 — 조례 시행 <b>2018-10-08</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2025-12-02</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제3조(도시교통정비지역의 지정ㆍ고시)
+② 제1항에 따른 택시운송사업의 구분 변경 인가 조건은 별표와 같다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「여객자동차 운수사업법 시행규칙」 제33조제1항제6호</span></div><div class="act">「여객자동차 운수사업법 시행규칙」 제33조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2021-09-16</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2023-12-21</b></div><div class="diff"><div class="diff-uni">6.  제9조에 따른 택시운송사업의 구분 변경<mark class="d">(다만, 같은 조 제5호에 따른 모범형 택시운송사업으로의 변경 및 지방자치단체가 조례 또는 규칙으로 정하는 구분 변경은 제외한다)</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">6.  제9조에 따른 택시운송사업의 구분 변경<mark class="d">(다만, 같은 조 제5호에 따른 모범형 택시운송사업으로의 변경 및 지방자치단체가 조례 또는 규칙으로 정하는 구분 변경은 제외한다)</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">6.  제9조에 따른 택시운송사업의 구분 변경<mark class="pt" title="(다만, 같은 조 제5호에 따른 모범형 택시운송사업으로의 변경 및 지방자 삭제됨">‸</mark></span></div></div></div></div></div></div><div class="ord"><h2>군포시 도시교통 정비지역 내의 교통영향평가 대상사업 및 시설규모 적용지역 지정에 관한 조례</h2><div class="meta">시행 2018-10-08 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-naked" title="도시교통정비촉진법제3조">도시교통정비촉진법 제3조</mark> 및 동법 시행령 제9조제1항의 규정에 의하여 군포시 도시교통정비지역내의 교통영향평가 대상사업 및 시설규모 적용지역의 지정에 관한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="tag t-naked">「」누락</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「도시교통정비촉진법」 제3조</span></div><div class="act">「도시교통정비촉진법」 제3조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비 (덧붙여 「도시교통정비촉진법」처럼 꺽쇠 서식으로 정정)</div><div class="basis">기준일 — 조례 시행 <b>2018-10-08</b> · 당시 법령본 <b>2017-07-26</b> → 현행 조문 <b>2025-12-02</b></div><div class="diff"><div class="diff-uni">제3조(도시교통정비지역의 지정ㆍ고시)
+① 국토교통부장관은 도시교통의 원활한 소통과 교통편의의 <mark class="d">증진을</mark><mark class="i">증진 및 환경친화적 보전ㆍ관리를</mark> 위하여 다음 각 호의 지역을 도시교통정비지역으로 지정ㆍ고시할 수 있다. &lt;개정 2013.3.23<mark class="i">, 2021.1.5</mark>&gt;
+1.  인구 10만명 이상의 도시(도농복합형태의 시는 읍ㆍ면지역을 제외한 지역의 인구가 10만명 이상인 경우를 말한다)
+2.  제1호 외의 지역으로서 국토교통부장관이 직접 또는 관계 시장ㆍ군수의 요청에 따라 도시교통을 개선하기 위하여 필요하다고 인정하는 지역
+② 국토교통부장관은 제1항제2호의 지역을 도시교통정비지역으로 지정하려면 행정안전부장관과 미리 협의한 후 「국가통합교통체계효율화법」 제106조에 따른 국가교통위원회(이하 &quot;위원회&quot;라 한다)의 심의를 거쳐야 한다. &lt;개정 2009.6.9, 2013.3.23, 2014.11.19, 2017.7.26&gt;<mark class="i">
+③ 도지사는 제1항에도 불구하고 같은 항 제1호 외의 지역으로서 직접 또는 관계 시장ㆍ군수의 요청에 따라 도시교통의 원활한 소통과 교통편의의 증진 및 환경친화적 보전ㆍ관리를 위하여 필요하다고 인정하는 지역을 도시교통정비지역으로 지정ㆍ고시할 수 있다. 이 경우 도지사는 국토교통부장관과 미리 협의한 후 「국가통합교통체계효율화법」 제110조에 따른 지방교통위원회(이하 &quot;지방교통위원회&quot;라 한다)의 심의를 거쳐야 한다. &lt;신설 2025.12.2&gt;
+④ 도지사는 제3항에 따라 도시교통정비지역으로 지정ㆍ고시한 경우에는 국토교통부장관에게 그 지정에 관한 사항을 통보하여야 한다. &lt;신설 2025.12.2&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제3조(도시교통정비지역의 지정ㆍ고시)
 ① 국토교통부장관은 도시교통의 원활한 소통과 교통편의의 <mark class="d">증진을</mark> 위하여 다음 각 호의 지역을 도시교통정비지역으로 지정ㆍ고시할 수 있다. &lt;개정 2013.3.23<mark class="pt" title=", 2021.1.5 추가됨">‸</mark>&gt;
 1.  인구 10만명 이상의 도시(도농복합형태의 시는 읍ㆍ면지역을 제외한 지역의 인구가 10만명 이상인 경우를 말한다)
 2.  제1호 외의 지역으로서 국토교통부장관이 직접 또는 관계 시장ㆍ군수의 요청에 따라 도시교통을 개선하기 위하여 필요하다고 인정하는 지역
@@ -428,11 +566,43 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 2.  제1호 외의 지역으로서 국토교통부장관이 직접 또는 관계 시장ㆍ군수의 요청에 따라 도시교통을 개선하기 위하여 필요하다고 인정하는 지역
 ② 국토교통부장관은 제1항제2호의 지역을 도시교통정비지역으로 지정하려면 행정안전부장관과 미리 협의한 후 「국가통합교통체계효율화법」 제106조에 따른 국가교통위원회(이하 &quot;위원회&quot;라 한다)의 심의를 거쳐야 한다. &lt;개정 2009.6.9, 2013.3.23, 2014.11.19, 2017.7.26&gt;<mark class="i">
 ③ 도지사는 제1항에도 불구하고 같은 항 제1호 외의 지역으로서 직접 또는 관계 시장ㆍ군수의 요청에 따라 도시교통의 원활한 소통과 교통편의의 증진 및 환경친화적 보전ㆍ관리를 위하여 필요하다고 인정하는 지역을 도시교통정비지역으로 지정ㆍ고시할 수 있다. 이 경우 도지사는 국토교통부장관과 미리 협의한 후 「국가통합교통체계효율화법」 제110조에 따른 지방교통위원회(이하 &quot;지방교통위원회&quot;라 한다)의 심의를 거쳐야 한다. &lt;신설 2025.12.2&gt;
-④ 도지사는 제3항에 따라 도시교통정비지역으로 지정ㆍ고시한 경우에는 국토교통부장관에게 그 지정에 관한 사항을 통보하여야 한다. &lt;신설 2025.12.2&gt;</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 사업용자동차 운송사업자 차고지 보유의무 면제 조례</h2><div class="meta">시행 2011-11-01 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="화물자동차 운수사업법 시행규칙제13조">「화물자동차 운수사업법 시행규칙」 제13조</mark>와 <mark class="cite-law" title="여객자동차 운수사업법 시행규칙제14조">「여객자동차 운수사업법 시행규칙」 제14조제1항</mark>에 따라 소유대수가 1대인 용달화물자동차 운송사업자, 최대적재량 1.5톤 이하 개별화물자동차 운송사업자와 개인택시 운송사업자의 차고지 보유의 의무를 면제하여 생계형 영세운송사업자의 생활안정 도모를 목적으로 한다. &lt;개정 2011.11.01&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「화물자동차 운수사업법 시행규칙」 제13조</span></div><div class="act">「화물자동차 운수사업법 시행규칙」 제13조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2011-11-01</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2018-12-31</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제13조(허가기준) 법 <mark class="d">제3조제5항제2호에</mark> 따른 화물자동차 운송사업의 허가기준은 별표 1과 같다.<mark class="pt" title="&lt;개정 2018.12.31&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제13조(허가기준) 법 <mark class="i">제3조제7항제2호에</mark> 따른 화물자동차 운송사업의 허가기준은 별표 1과 같다.<mark class="i"> &lt;개정 2018.12.31&gt;</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 어르신 교통비 지원 조례</h2><div class="meta">시행 2025-05-08 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(지원체계 구축)  
+④ 도지사는 제3항에 따라 도시교통정비지역으로 지정ㆍ고시한 경우에는 국토교통부장관에게 그 지정에 관한 사항을 통보하여야 한다. &lt;신설 2025.12.2&gt;</mark></span></div></div></div></div></div></div><div class="ord"><h2>군포시 사업용자동차 운송사업자 차고지 보유의무 면제 조례</h2><div class="meta">시행 2011-11-01 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="화물자동차 운수사업법 시행규칙제13조">「화물자동차 운수사업법 시행규칙」 제13조</mark>와 <mark class="cite-law" title="여객자동차 운수사업법 시행규칙제14조">「여객자동차 운수사업법 시행규칙」 제14조제1항</mark>에 따라 소유대수가 1대인 용달화물자동차 운송사업자, 최대적재량 1.5톤 이하 개별화물자동차 운송사업자와 개인택시 운송사업자의 차고지 보유의 의무를 면제하여 생계형 영세운송사업자의 생활안정 도모를 목적으로 한다. &lt;개정 2011.11.01&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「화물자동차 운수사업법 시행규칙」 제13조</span></div><div class="act">「화물자동차 운수사업법 시행규칙」 제13조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2011-11-01</b> · 당시 법령본 <b>원제정</b> → 현행 조문 <b>2018-12-31</b></div><div class="diff"><div class="diff-uni">제13조(허가기준) 법 <mark class="d">제3조제5항제2호에</mark><mark class="i">제3조제7항제2호에</mark> 따른 화물자동차 운송사업의 허가기준은 별표 1과 같다.<mark class="i"> &lt;개정 2018.12.31&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제13조(허가기준) 법 <mark class="d">제3조제5항제2호에</mark> 따른 화물자동차 운송사업의 허가기준은 별표 1과 같다.<mark class="pt" title="&lt;개정 2018.12.31&gt; 추가됨">‸</mark></span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제13조(허가기준) 법 <mark class="i">제3조제7항제2호에</mark> 따른 화물자동차 운송사업의 허가기준은 별표 1과 같다.<mark class="i"> &lt;개정 2018.12.31&gt;</mark></span></div></div></div></div></div></div><div class="ord"><h2>군포시 어르신 교통비 지원 조례</h2><div class="meta">시행 2025-05-08 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(지원체계 구축)  
 ① 시장은 이 조례에 따른 사업이 원활히 추진될 수 있도록 교통비 지원 시스템을 구축ㆍ운영할 수 있다. 
 ② 시장은 교통비 지원 사업의 원할한 추진을 위하여 <mark class="cite-law" title="대중교통의 육성 및 이용촉진에 관한 법률제10조의8">「대중교통의 육성 및 이용촉진에 관한 법률」제10조의8제2항</mark>에 해당하는 자 (이하 “교통카드정산사업자등”라 한다) 및 <mark class="cite-law" title="은행법제2조">「은행법」제2조</mark>에 따른 은행, <mark class="cite-law" title="여신전문금융업법제2조">「여신전문금융업법」제2조</mark>에 따른 신용카드업 등과 교통비 지원 사업에 관한 업무 제휴, 협약 또는 위탁 계약 등을 체결할 수 있다. 
 ③ 제2항에 따른 위탁 계약에 대하여는 <mark class="cite-local" title="군포시 사무의 민간위탁에 관한 조례">「군포시 사무의 민간위탁에 관한 조례」</mark>를 준용한다. 
-④ 시장은 교통카드정산사업자등이 제1항에 따른 시스템 구축ㆍ운영 및 그 밖에 필요한 시설ㆍ장비를 확충 또는 개선하는 경우 그 필요한 경비의 전부 또는 일부를 보조할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「여신전문금융업법」 제2조</span></div><div class="act">「여신전문금융업법」 제2조 개정 내용을 반영하여 이 조례 제5조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2018-02-21</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2010.3.12, 2012.3.21, 2015.1.20, 2015.7.31, 2016.3.29, 2018.2.21<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
+④ 시장은 교통카드정산사업자등이 제1항에 따른 시스템 구축ㆍ운영 및 그 밖에 필요한 시설ㆍ장비를 확충 또는 개선하는 경우 그 필요한 경비의 전부 또는 일부를 보조할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「여신전문금융업법」 제2조</span></div><div class="act">「여신전문금융업법」 제2조 개정 내용을 반영하여 이 조례 제5조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2025-05-08</b> · 당시 법령본 <b>2018-02-21</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="diff-uni">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2010.3.12, 2012.3.21, 2015.1.20, 2015.7.31, 2016.3.29, 2018.2.21<mark class="i">, 2025.10.1</mark>&gt;
+1.  &quot;여신전문금융업(與信專門金融業)&quot;이란 신용카드업, 시설대여업, 할부금융업 또는 신기술사업금융업을 말한다.
+2.  &quot;신용카드업&quot;이란 다음 각 목의 업무 중 나목의 업무를 포함한 둘 이상의 업무를 업(業)으로 하는 것을 말한다.
+가.  신용카드의 발행 및 관리
+나.  신용카드 이용과 관련된 대금(代金)의 결제
+다.  신용카드가맹점의 모집 및 관리
+2의2.  &quot;신용카드업자&quot;란 제3조제1항에 따라 신용카드업의 허가를 받거나 등록을 한 자를 말한다. 다만, 제3조제3항제1호의 요건에 해당하는 자가 제13조제1항제2호 및 제3호의 업무를 하는 경우에는 그 업무에 관하여만 신용카드업자로 본다.
+3.  &quot;신용카드&quot;란 이를 제시함으로써 반복하여 신용카드가맹점에서 다음 각 목을 제외한 사항을 결제할 수 있는 증표(證票)로서 신용카드업자(외국에서 신용카드업에 상당하는 영업을 영위하는 자를 포함한다)가 발행한 것을 말한다.
+가.  금전채무의 상환
+나.  「자본시장과 금융투자업에 관한 법률」 제3조제1항에 따른 금융투자상품 등 대통령령으로 정하는 금융상품
+다.  「게임산업진흥에 관한 법률」 제2조제1호의2에 따른 사행성게임물의 이용 대가 및 이용에 따른 금전의 지급. 다만, 외국인(「해외이주법」 제2조에 따른 해외이주자를 포함한다)이 「관광진흥법」에 따라 허가받은 카지노영업소에서 외국에서 신용카드업에 상당하는 영업을 영위하는 자가 발행한 신용카드로 결제하는 것은 제외한다.
+라.  그 밖에 사행행위 등 건전한 국민생활을 저해하고 선량한 풍속을 해치는 행위로 대통령령으로 정하는 사항의 이용 대가 및 이용에 따른 금전의 지급
+4.  &quot;신용카드회원&quot;이란 신용카드업자와의 계약에 따라 그로부터 신용카드를 발급받은 자를 말한다.
+5.  &quot;신용카드가맹점&quot;이란 다음 각 목의 자를 말한다.
+가.  신용카드업자와의 계약에 따라 신용카드회원ㆍ직불카드회원 또는 선불카드소지자(이하 &quot;신용카드회원등&quot;이라 한다)에게 신용카드ㆍ직불(直拂)카드 또는 선불(先拂)카드(이하 &quot;신용카드등&quot;이라 한다)를 사용한 거래에 의하여 물품의 판매 또는 용역의 제공 등을 하는 자
+나.  신용카드업자와의 계약에 따라 신용카드회원등에게 물품의 판매 또는 용역의 제공 등을 하는 자를 위하여 신용카드등에 의한 거래를 대행(代行)하는 자(이하 &quot;결제대행업체&quot;라 한다)
+5의2.  &quot;수납대행가맹점&quot;이란 신용카드업자와의 별도의 계약에 따라 다른 신용카드가맹점을 위하여 신용카드등에 의한 거래에 필요한 행위로서 대통령령으로 정하는 사항을 대행하는 신용카드가맹점을 말한다.
+5의3.  &quot;가맹점모집인&quot;이란 신용카드업자를 위하여 가맹점계약의 체결을 중개 또는 대리하고 부가통신업자를 위하여 신용카드 단말기를 설치하는 자로서 제16조의3에 따라 금융위원회에 등록을 한 자를 말한다.
+5의4.  &quot;신용카드포인트&quot;란 신용카드업자가 신용카드의 이용금액 등에 따라 신용카드회원에게 적립하여 재화를 구매하거나 서비스를 이용할 수 있도록 하는 경제상의 이익을 말한다.
+6.  &quot;직불카드&quot;란 직불카드회원과 신용카드가맹점 간에 전자적(電子的) 또는 자기적(磁氣的) 방법으로 금융거래계좌에 이체(移替)하는 등의 방법으로 결제가 이루어질 수 있도록 신용카드업자가 발행한 증표{자금(資金)을 융통받을 수 있는 증표는 제외한다}를 말한다.
+7.  &quot;직불카드회원&quot;이란 신용카드업자와의 계약에 따라 그로부터 직불카드를 발급받은 자를 말한다.
+8.  &quot;선불카드&quot;란 신용카드업자가 대금을 미리 받고 이에 해당하는 금액을 기록(전자적 또는 자기적 방법에 따른 기록을 말한다)하여 발행한 증표로서 선불카드소지자가 신용카드가맹점에 제시하여 그 카드에 기록된 금액의 범위에서 결제할 수 있게 한 증표를 말한다.
+8의2.  &quot;신용카드등부가통신업&quot;이란 신용카드업자 및 신용카드가맹점과의 계약에 따라 단말기 설치, 신용카드등의 조회ㆍ승인 및 매출전표 매입ㆍ자금정산 등 신용카드등의 대금결제를 승인ㆍ중계하기 위한 전기통신서비스 제공을 업으로 하는 것을 말한다.
+8의3.  &quot;부가통신업자&quot;란 신용카드등부가통신업에 대하여 제27조의2에 따라 금융위원회에 등록을 한 자를 말한다.
+9.  &quot;시설대여업&quot;이란 시설대여를 업으로 하는 것을 말한다.
+10.  &quot;시설대여&quot;란 대통령령으로 정하는 물건(이하 &quot;특정물건&quot;이라 한다)을 새로 취득하거나 대여받아 거래상대방에게 대통령령으로 정하는 일정 기간 이상 사용하게 하고, 그 사용 기간 동안 일정한 대가를 정기적으로 나누어 지급받으며, 그 사용 기간이 끝난 후의 물건의 처분에 관하여는 당사자 간의 약정(約定)으로 정하는 방식의 금융을 말한다.
+10의2.  &quot;시설대여업자&quot;란 시설대여업에 대하여 제3조제2항에 따라 금융위원회에 등록한 자를 말한다.
+11.  &quot;연불판매(延拂販賣)&quot;란 특정물건을 새로 취득하여 거래상대방에게 넘겨주고, 그 물건의 대금ㆍ이자 등을 대통령령으로 정하는 일정한 기간 이상 동안 정기적으로 나누어 지급받으며, 그 물건의 소유권 이전 시기와 그 밖의 조건에 관하여는 당사자 간의 약정으로 정하는 방식의 금융을 말한다.
+12.  &quot;할부금융업&quot;이란 할부금융을 업으로 하는 것을 말한다.
+13.  &quot;할부금융&quot;이란 재화(財貨)와 용역의 매매계약(賣買契約)에 대하여 매도인(賣渡人) 및 매수인(買受人)과 각각 약정을 체결하여 매수인에게 융자한 재화와 용역의 구매자금을 매도인에게 지급하고 매수인으로부터 그 원리금(元利金)을 나누어 상환(償還)받는 방식의 금융을 말한다.
+13의2.  &quot;할부금융업자&quot;란 할부금융업에 대하여 제3조제2항에 따라 금융위원회에 등록한 자를 말한다.
+14.  &quot;신기술사업금융업&quot;이란 제41조제1항 각 호에 따른 업무를 종합적으로 업으로서 하는 것을 말한다.
+14의2.  &quot;신기술사업자&quot;란 「기술보증기금법」 제2조제1호에 따른 신기술사업자와 기술 및 저작권ㆍ지적재산권 등과 관련된 연구ㆍ개발ㆍ개량ㆍ제품화 또는 이를 응용하여 사업화하는 사업(이하 &quot;신기술사업&quot;이라 한다)을 영위하는<mark class="d"> 「중소기업기본법」 제</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2010.3.12, 2012.3.21, 2015.1.20, 2015.7.31, 2016.3.29, 2018.2.21<mark class="pt" title=", 2025.10.1 추가됨">‸</mark>&gt;
 1.  &quot;여신전문금융업(與信專門金融業)&quot;이란 신용카드업, 시설대여업, 할부금융업 또는 신기술사업금융업을 말한다.
 2.  &quot;신용카드업&quot;이란 다음 각 목의 업무 중 나목의 업무를 포함한 둘 이상의 업무를 업(業)으로 하는 것을 말한다.
 가.  신용카드의 발행 및 관리
@@ -496,7 +666,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 13.  &quot;할부금융&quot;이란 재화(財貨)와 용역의 매매계약(賣買契約)에 대하여 매도인(賣渡人) 및 매수인(買受人)과 각각 약정을 체결하여 매수인에게 융자한 재화와 용역의 구매자금을 매도인에게 지급하고 매수인으로부터 그 원리금(元利金)을 나누어 상환(償還)받는 방식의 금융을 말한다.
 13의2.  &quot;할부금융업자&quot;란 할부금융업에 대하여 제3조제2항에 따라 금융위원회에 등록한 자를 말한다.
 14.  &quot;신기술사업금융업&quot;이란 제41조제1항 각 호에 따른 업무를 종합적으로 업으로서 하는 것을 말한다.
-14의2.  &quot;신기술사업자&quot;란 「기술보증기금법」 제2조제1호에 따른 신기술사업자와 기술 및 저작권ㆍ지적재산권 등과 관련된 연구ㆍ개발ㆍ개량ㆍ제품화 또는 이를 응용하여 사업화하는 사업(이하 &quot;신기술사업&quot;이라 한다)을 영위하는<mark class="pt" title="「중소기업기본법」 제 삭제됨">‸</mark></span></div></div></div></div></div><div class="ord"><h2>군포시 교통약자의 이동편의 증진에 관한 조례 시행규칙</h2><div class="meta">시행 2026-04-22 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-chk">📋 확인 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(특별교통수단 등의 이용대상자 등록·심사) &lt;개정 2023.12.12.&gt;
+14의2.  &quot;신기술사업자&quot;란 「기술보증기금법」 제2조제1호에 따른 신기술사업자와 기술 및 저작권ㆍ지적재산권 등과 관련된 연구ㆍ개발ㆍ개량ㆍ제품화 또는 이를 응용하여 사업화하는 사업(이하 &quot;신기술사업&quot;이라 한다)을 영위하는<mark class="pt" title="「중소기업기본법」 제 삭제됨">‸</mark></span></div></div></div></div></div></div><div class="ord"><h2>군포시 교통약자의 이동편의 증진에 관한 조례 시행규칙</h2><div class="meta">시행 2026-04-22 · 정비 항목 1건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-chk">📋 확인 필요 1</span></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(특별교통수단 등의 이용대상자 등록·심사) &lt;개정 2023.12.12.&gt;
 ① <mark class="cite-local" title="군포시 교통약자의 이동편의 증진에 관한 조례제12조">「군포시 교통약자의 이동편의 증진에 관한 조례」(이하 “조례”라 한다) 제12조</mark>에 따른 이용대상자가 특별교통수단 등을 이용하고자 하는 경우에는 별지 제1호 서식의 등록 신청서를 시장에게 미리 제출하여야 한다.&lt;개정 2026.4.22.&gt;
 ② 제1항에 따라 등록 신청을 하려는 사람은 별지 제1호서식의 등록 신청서에 다음 각 호의 서류를 첨부하여야 한다.&lt;개정 2026.4.22.&gt;
 1. 본인 확인 서류
@@ -517,4 +687,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 ① 특별교통수단 등의 이용요금은 목적지까지의 편도요금으로 한다.
 ② 특별교통수단의 이용요금은 <mark class="cite-law" title="경기도 특별교통수단 광역이동서비스 표준지침">「경기도 특별교통수단 광역이동서비스 표준지침」</mark>을 따른다. &lt;개정 2026.4.22.&gt;
 ③ 특별교통수단 외의 차량 이용요금은 위원회의 심의를 거쳐 정하되, 세부기준은 시장이 별도로 정한다. &lt;신설 2026.4.22.&gt;
-④ 시장은 특별교통수단 등의 이용요금을 결정하거나 변경하고자 하는 경우에는 공보 및 인터넷 홈페이지에 게시하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-chk">지자체행정규칙</span><span class="law">「경기도 특별교통수단 광역이동서비스 표준지침」</span></div><div class="act">「경기도 특별교통수단 광역이동서비스 표준지침」는 지자체 자체 행정규칙 — 국가법령정보에 없어 자동 대조 불가. 이 조례 제2조, 제5조 인용을 최신 원문과 수기 대조</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+④ 시장은 특별교통수단 등의 이용요금을 결정하거나 변경하고자 하는 경우에는 공보 및 인터넷 홈페이지에 게시하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-chk">지자체행정규칙</span><span class="law"><span class="ki" title="행정규칙">📕</span> 「경기도 특별교통수단 광역이동서비스 표준지침」</span></div><div class="act">「경기도 특별교통수단 광역이동서비스 표준지침」는 지자체 자체 행정규칙 — 국가법령정보에 없어 자동 대조 불가. 이 조례 제2조, 제5조 인용을 최신 원문과 수기 대조</div><div class="basis">기준일 — 조례 시행 <b>2026-04-22</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

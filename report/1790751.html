@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,14 +124,18 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 안전취약계층 이용건물의 화재예방 안전시설 지원 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">5</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">2</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 안전취약계층 이용건물의 화재예방 안전시설 지원 조례</h2><div class="meta">시행 2023-03-16 · 정비 항목 7건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 5</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="재난 및 안전관리 기본법제4조">「재난 및 안전관리 기본법」 제4조</mark>에 따라 노인ㆍ장애인ㆍ어린이 등 안전취약계층이 이용하는 건물에 대하여 화재예방 안전시설 지원에 필요한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「재난 및 안전관리 기본법」 제4조</span></div><div class="act">「재난 및 안전관리 기본법」 제4조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2019-12-03</b> → 현행 조문 <b>2024-01-16</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제4조(국가 등의 책무)
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 안전취약계층 이용건물의 화재예방 안전시설 지원 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">5</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">2</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 안전취약계층 이용건물의 화재예방 안전시설 지원 조례</h2><div class="meta">시행 2023-03-16 · 정비 항목 7건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 5</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는 <mark class="cite-law" title="재난 및 안전관리 기본법제4조">「재난 및 안전관리 기본법」 제4조</mark>에 따라 노인ㆍ장애인ㆍ어린이 등 안전취약계층이 이용하는 건물에 대하여 화재예방 안전시설 지원에 필요한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「재난 및 안전관리 기본법」 제4조</span></div><div class="act">「재난 및 안전관리 기본법」 제4조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2019-12-03</b> → 현행 조문 <b>2024-01-16</b></div><div class="diff"><div class="diff-uni">제4조(국가 등의 책무)
+① 국가와 지방자치단체는 재난이나 그 밖의 각종 사고로부터 국민의 생명ㆍ신체 및 재산을 보호할 책무를 지고, 재난이나 그 밖의 각종 사고를 예방하고 피해를 줄이기 위하여 노력하여야 하며, 발생한 피해를 신속히 <mark class="d">대응ㆍ복구하기</mark><mark class="i">대응ㆍ복구하여 일상으로 회복할 수 있도록 지원하기</mark> 위한 계획을 수립ㆍ시행하여야 한다. &lt;개정 2013.8.6<mark class="i">, 2023.5.16</mark>&gt;
+② 국가와 지방자치단체는 안전에 관한 정보를 적극적으로 공개하여야 하며, 누구든지 이를 편리하게 이용할 수 있도록 하여야 한다. &lt;신설 2019.12.3&gt;
+③<mark class="i"> 국가와 지방자치단체는 재난이나 그 밖의 각종 사고를 수습하는 과정에서 피해자의 인권이 침해받지 아니하도록 노력하여야 한다. &lt;신설 2024.1.16&gt;
+④</mark> 제3조제5호나목에 따른 재난관리책임기관의 장은 소관 업무와 관련된 안전관리에 관한 계획을 수립하고 시행하여야 하며, 그 소재지를 관할하는 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도(이하 &quot;시ㆍ도&quot;라 한다)와 시(「제주특별자치도 설치 및 국제자유도시 조성을 위한 특별법」 제10조제2항에 따른 행정시를 포함한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 재난 및 안전관리업무에 협조하여야 한다. &lt;개정 2012.2.22, 2014.12.30, 2015.7.24, 2019.12.3<mark class="i">, 2024.1.16</mark>&gt;</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제4조(국가 등의 책무)
 ① 국가와 지방자치단체는 재난이나 그 밖의 각종 사고로부터 국민의 생명ㆍ신체 및 재산을 보호할 책무를 지고, 재난이나 그 밖의 각종 사고를 예방하고 피해를 줄이기 위하여 노력하여야 하며, 발생한 피해를 신속히 <mark class="d">대응ㆍ복구하기</mark> 위한 계획을 수립ㆍ시행하여야 한다. &lt;개정 2013.8.6<mark class="pt" title=", 2023.5.16 추가됨">‸</mark>&gt;
 ② 국가와 지방자치단체는 안전에 관한 정보를 적극적으로 공개하여야 하며, 누구든지 이를 편리하게 이용할 수 있도록 하여야 한다. &lt;신설 2019.12.3&gt;
 ③<mark class="pt" title="국가와 지방자치단체는 재난이나 그 밖의 각종 사고를 수습하는 과정에서 피 추가됨">‸</mark> 제3조제5호나목에 따른 재난관리책임기관의 장은 소관 업무와 관련된 안전관리에 관한 계획을 수립하고 시행하여야 하며, 그 소재지를 관할하는 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도(이하 &quot;시ㆍ도&quot;라 한다)와 시(「제주특별자치도 설치 및 국제자유도시 조성을 위한 특별법」 제10조제2항에 따른 행정시를 포함한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 재난 및 안전관리업무에 협조하여야 한다. &lt;개정 2012.2.22, 2014.12.30, 2015.7.24, 2019.12.3<mark class="pt" title=", 2024.1.16 추가됨">‸</mark>&gt;</span></div><div class="drow"><span class="dlabel now">현행</span><span class="dtext">제4조(국가 등의 책무)
 ① 국가와 지방자치단체는 재난이나 그 밖의 각종 사고로부터 국민의 생명ㆍ신체 및 재산을 보호할 책무를 지고, 재난이나 그 밖의 각종 사고를 예방하고 피해를 줄이기 위하여 노력하여야 하며, 발생한 피해를 신속히 <mark class="i">대응ㆍ복구하여 일상으로 회복할 수 있도록 지원하기</mark> 위한 계획을 수립ㆍ시행하여야 한다. &lt;개정 2013.8.6<mark class="i">, 2023.5.16</mark>&gt;
 ② 국가와 지방자치단체는 안전에 관한 정보를 적극적으로 공개하여야 하며, 누구든지 이를 편리하게 이용할 수 있도록 하여야 한다. &lt;신설 2019.12.3&gt;
 ③<mark class="i"> 국가와 지방자치단체는 재난이나 그 밖의 각종 사고를 수습하는 과정에서 피해자의 인권이 침해받지 아니하도록 노력하여야 한다. &lt;신설 2024.1.16&gt;
-④</mark> 제3조제5호나목에 따른 재난관리책임기관의 장은 소관 업무와 관련된 안전관리에 관한 계획을 수립하고 시행하여야 하며, 그 소재지를 관할하는 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도(이하 &quot;시ㆍ도&quot;라 한다)와 시(「제주특별자치도 설치 및 국제자유도시 조성을 위한 특별법」 제10조제2항에 따른 행정시를 포함한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 재난 및 안전관리업무에 협조하여야 한다. &lt;개정 2012.2.22, 2014.12.30, 2015.7.24, 2019.12.3<mark class="i">, 2024.1.16</mark>&gt;</span></div></div></div></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
+④</mark> 제3조제5호나목에 따른 재난관리책임기관의 장은 소관 업무와 관련된 안전관리에 관한 계획을 수립하고 시행하여야 하며, 그 소재지를 관할하는 특별시ㆍ광역시ㆍ특별자치시ㆍ도ㆍ특별자치도(이하 &quot;시ㆍ도&quot;라 한다)와 시(「제주특별자치도 설치 및 국제자유도시 조성을 위한 특별법」 제10조제2항에 따른 행정시를 포함한다. 이하 같다)ㆍ군ㆍ구(자치구를 말한다. 이하 같다)의 재난 및 안전관리업무에 협조하여야 한다. &lt;개정 2012.2.22, 2014.12.30, 2015.7.24, 2019.12.3<mark class="i">, 2024.1.16</mark>&gt;</span></div></div></div></div></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. 
 ① “안전취약계층 이용건물”이란 화재 발생 시 신속한 대피가 곤란하여 인명피해가 우려되는 다음 각 호의 시설을 말한다. 
 1. <mark class="cite-law" title="노인복지법제31조">「노인복지법」 제31조</mark>에 따른 노인복지시설 
 2. <mark class="cite-law" title="장애인복지법제58조">「장애인복지법」 제58조</mark>에 따른 장애인복지시설 
@@ -133,7 +144,14 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 5. <mark class="cite-law" title="청소년복지 지원법제31조">「청소년복지 지원법」 제31조</mark>에 따른 청소년복지시설 
 6. <mark class="cite-law" title="한부모가족지원법제19조">「한부모가족지원법」 제19조제1항</mark>에 따른 한부모가족복지시설 
 7. 그 밖에 안전시설의 개선 지원이 필요하다고 군포시장(이하 “시장”이라 한다)이 인정하는 시설 
-② “소공간용 소화용구”란 수전반, 배전반, 분전반, 제어반 등의 소공간에서 발생하는 화재를 자동으로 소화하는 간이형 소화용구를 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「노인복지법」 제31조</span></div><div class="act">「노인복지법」 제31조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2017-03-14</b> → 현행 조문 <b>2023-10-31</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제31조(노인복지시설의 종류) 노인복지시설의 종류는 다음 각호와 같다. &lt;개정 2004.1.29, 2013.6.4, 2017.3.14<mark class="pt" title=", 2023.10.31 추가됨">‸</mark>&gt;
+② “소공간용 소화용구”란 수전반, 배전반, 분전반, 제어반 등의 소공간에서 발생하는 화재를 자동으로 소화하는 간이형 소화용구를 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「노인복지법」 제31조</span></div><div class="act">「노인복지법」 제31조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2017-03-14</b> → 현행 조문 <b>2023-10-31</b></div><div class="diff"><div class="diff-uni">제31조(노인복지시설의 종류) 노인복지시설의 종류는 다음 각호와 같다. &lt;개정 2004.1.29, 2013.6.4, 2017.3.14<mark class="i">, 2023.10.31</mark>&gt;
+1.  노인주거복지시설
+2.  노인의료복지시설
+3.  노인여가복지시설
+4.  재가노인복지시설
+5.  노인보호전문기관
+6.  <mark class="d">제23조의2제1항제2호의</mark><mark class="i">「노인 일자리 및 사회활동 지원에 관한 법률」 제9조제1항제2호에 따른</mark> 노인일자리지원기관
+7.  제39조의19에 따른 학대피해노인 전용쉼터</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제31조(노인복지시설의 종류) 노인복지시설의 종류는 다음 각호와 같다. &lt;개정 2004.1.29, 2013.6.4, 2017.3.14<mark class="pt" title=", 2023.10.31 추가됨">‸</mark>&gt;
 1.  노인주거복지시설
 2.  노인의료복지시설
 3.  노인여가복지시설
@@ -147,7 +165,15 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 4.  재가노인복지시설
 5.  노인보호전문기관
 6.  <mark class="i">「노인 일자리 및 사회활동 지원에 관한 법률」 제9조제1항제2호에 따른</mark> 노인일자리지원기관
-7.  제39조의19에 따른 학대피해노인 전용쉼터</span></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「장애인복지법」 제58조</span></div><div class="act">「장애인복지법」 제58조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2024-01-02</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제58조(장애인복지시설)
+7.  제39조의19에 따른 학대피해노인 전용쉼터</span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「장애인복지법」 제58조</span></div><div class="act">「장애인복지법」 제58조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2024-01-02</b></div><div class="diff"><div class="diff-uni">제58조(장애인복지시설)
+①장애인복지시설의 종류는 다음 각 호와 같다. &lt;개정 2011.3.30, 2020.12.29<mark class="i">, 2024.1.2</mark>&gt;
+1.  장애인 거주시설: 거주공간을 활용하여 일반가정에서 생활하기 어려운 장애인에게 일정 기간 동안 거주ㆍ요양ㆍ지원 등의 서비스를 제공하는 동시에 지역사회생활을 지원하는 시설
+2.  장애인 지역사회재활시설 : 장애인을 전문적으로 상담ㆍ치료ㆍ훈련하거나 장애인의 일상생활, 여가활동 및 사회참여활동 등을 지원하는<mark class="i"> 시설
+2의2.  장애인 자립생활지원시설: 장애인의 자립생활 역량을 강화하기 위하여 동료상담, 지역사회의 물리적ㆍ사회적 환경개선 사업, 장애인의 권익 옹호ㆍ증진, 장애인 적합 서비스 등을 제공하는</mark> 시설
+3.  장애인 직업재활시설 : 일반 작업환경에서는 일하기 어려운 장애인이 특별히 준비된 작업환경에서 직업훈련을 받거나 직업 생활을 할 수 있도록 하는 시설(직업훈련 및 직업 생활을 위하여 필요한 제조ㆍ가공 시설, 공장 및 영업장 등 부속용도의 시설로서 보건복지부령으로 정하는 시설을 포함한다)
+4.  장애인 의료재활시설: 장애인을 입원 또는 통원하게 하여 상담, 진단ㆍ판정, 치료 등 의료재활서비스를 제공하는 시설
+5.  그 밖에 대통령령으로 정하는 시설
+②제1항 각 호에 따른 장애인복지시설의 구체적인 종류와 사업 등에 관한 사항은 보건복지부령으로 정한다. &lt;개정 2008.2.29, 2010.1.18&gt;</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제58조(장애인복지시설)
 ①장애인복지시설의 종류는 다음 각 호와 같다. &lt;개정 2011.3.30, 2020.12.29<mark class="pt" title=", 2024.1.2 추가됨">‸</mark>&gt;
 1.  장애인 거주시설: 거주공간을 활용하여 일반가정에서 생활하기 어려운 장애인에게 일정 기간 동안 거주ㆍ요양ㆍ지원 등의 서비스를 제공하는 동시에 지역사회생활을 지원하는 시설
 2.  장애인 지역사회재활시설 : 장애인을 전문적으로 상담ㆍ치료ㆍ훈련하거나 장애인의 일상생활, 여가활동 및 사회참여활동 등을 지원하는<mark class="pt" title="시설
@@ -163,7 +189,23 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 3.  장애인 직업재활시설 : 일반 작업환경에서는 일하기 어려운 장애인이 특별히 준비된 작업환경에서 직업훈련을 받거나 직업 생활을 할 수 있도록 하는 시설(직업훈련 및 직업 생활을 위하여 필요한 제조ㆍ가공 시설, 공장 및 영업장 등 부속용도의 시설로서 보건복지부령으로 정하는 시설을 포함한다)
 4.  장애인 의료재활시설: 장애인을 입원 또는 통원하게 하여 상담, 진단ㆍ판정, 치료 등 의료재활서비스를 제공하는 시설
 5.  그 밖에 대통령령으로 정하는 시설
-②제1항 각 호에 따른 장애인복지시설의 구체적인 종류와 사업 등에 관한 사항은 보건복지부령으로 정한다. &lt;개정 2008.2.29, 2010.1.18&gt;</span></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「노숙인 등의 복지 및 자립지원에 관한 법률」 제16조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2018-12-11</b> → 현행 조문 <b>2018-12-11</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「아동복지법」 제52조제1항</span></div><div class="act">「아동복지법」 제52조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2021-12-21</b> → 현행 조문 <b>2025-04-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 아동복지시설의 종류는 다음과 같다. &lt;개정 2016.3.22, 2017.10.24, 2019.1.15<mark class="pt" title=", 2021.12.21, 2023.7.18, 2025.4.1 추가됨">‸</mark>&gt;
+②제1항 각 호에 따른 장애인복지시설의 구체적인 종류와 사업 등에 관한 사항은 보건복지부령으로 정한다. &lt;개정 2008.2.29, 2010.1.18&gt;</span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「노숙인 등의 복지 및 자립지원에 관한 법률」 제16조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2018-12-11</b> → 현행 조문 <b>2018-12-11</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「아동복지법」 제52조제1항</span></div><div class="act">「아동복지법」 제52조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2021-12-21</b> → 현행 조문 <b>2025-04-01</b></div><div class="diff"><div class="diff-uni">① 아동복지시설의 종류는 다음과 같다. &lt;개정 2016.3.22, 2017.10.24, 2019.1.15<mark class="i">, 2021.12.21, 2023.7.18, 2025.4.1</mark>&gt;
+1.  아동양육시설: 보호대상아동을 입소시켜 보호, 양육 및 취업훈련, 자립지원 서비스 등을 제공하는 것을 목적으로 하는 시설
+2.  아동일시보호시설: 보호대상아동을 일시보호하고 아동에 대한 향후의 양육대책수립 및 보호조치를 행하는 것을 목적으로 하는 시설
+3.  아동보호치료시설: 아동에게 보호 및 치료 서비스를 제공하는 다음 각 목의 시설
+가.  불량행위를 하거나 불량행위를 할 우려가 있는 아동으로서 보호자가 없거나 친권자나 후견인이 입소를 신청한 아동 또는 가정법원, 지방법원소년부지원에서 보호위탁된 19세 미만인 사람을 입소시켜 치료와 선도를 통하여 건전한 사회인으로 육성하는 것을 목적으로 하는 시설
+나.  정서적ㆍ행동적 장애로 인하여 어려움을 겪고 있는 아동 또는 학대로 인하여 부모로부터 일시 격리되어 치료받을 필요가 있는 아동을 보호ㆍ치료하는 시설
+4.  공동생활가정: 보호대상아동에게 가정과 같은 주거여건과 보호, 양육, 자립지원 서비스를 제공하는 것을 목적으로 하는 시설
+5.  자립지원시설: 아동복지시설에서 퇴소한 사람에게 취업준비기간 또는 취업 후 일정 기간 동안 보호함으로써 자립을 지원하는 것을 목적으로 하는 시설
+6.  아동상담소: 아동과 그 가족의 문제에 관한 상담, 치료, 예방 및 연구 등을 목적으로 하는 시설
+7.  아동전용시설: 어린이공원, 어린이놀이터, 아동회관, 체육ㆍ연극ㆍ영화ㆍ과학실험전시 시설, 아동휴게숙박시설, 야영장 등 아동에게 건전한 놀이ㆍ오락, 그 밖의 각종 편의를 제공하여 심신의 건강유지와 복지증진에 필요한 서비스를 제공하는 것을 목적으로 하는 시설
+8.  지역아동센터: 지역사회 아동의 보호ㆍ교육, 건전한 놀이와 오락의 제공, 보호자와 지역사회의 연계 등 아동의 건전육성을 위하여 종합적인 아동복지서비스를 제공하는 시설
+9.  <mark class="i">협동돌봄센터: 보호자 또는 보호자와 돌봄종사자가 조합(영리를 목적으로 하지 아니하는 조합에 한정한다)을 결성하여 초등학교의 정규교육 이외의 시간 동안 방과 후 돌봄서비스를 제공하는 시설
+10.  </mark>아동보호전문기관
+<mark class="d">10</mark><mark class="i">11</mark>.  제48조에 따른 가정위탁지원센터
+<mark class="d">11</mark><mark class="i">12</mark>.  제10조의2에 따른 보장원<mark class="i">
+13.  제39조의2에 따른 자립지원전담기관
+14.  제53조의2에 따른 학대피해아동쉼터</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 아동복지시설의 종류는 다음과 같다. &lt;개정 2016.3.22, 2017.10.24, 2019.1.15<mark class="pt" title=", 2021.12.21, 2023.7.18, 2025.4.1 추가됨">‸</mark>&gt;
 1.  아동양육시설: 보호대상아동을 입소시켜 보호, 양육 및 취업훈련, 자립지원 서비스 등을 제공하는 것을 목적으로 하는 시설
 2.  아동일시보호시설: 보호대상아동을 일시보호하고 아동에 대한 향후의 양육대책수립 및 보호조치를 행하는 것을 목적으로 하는 시설
 3.  아동보호치료시설: 아동에게 보호 및 치료 서비스를 제공하는 다음 각 목의 시설
@@ -193,7 +235,23 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 <mark class="i">11</mark>.  제48조에 따른 가정위탁지원센터
 <mark class="i">12</mark>.  제10조의2에 따른 보장원<mark class="i">
 13.  제39조의2에 따른 자립지원전담기관
-14.  제53조의2에 따른 학대피해아동쉼터</mark></span></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「청소년복지 지원법」 제31조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2021-03-23</b> → 현행 조문 <b>2021-03-23</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「한부모가족지원법」 제19조제1항</span></div><div class="act">「한부모가족지원법」 제19조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2018-01-16</b> → 현행 조문 <b>2023-04-11</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 한부모가족복지시설은 다음 각 호의 시설로 한다. &lt;개정 2018.1.16<mark class="pt" title=", 2023.4.11 추가됨">‸</mark>&gt;
+14.  제53조의2에 따른 학대피해아동쉼터</mark></span></div></div></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「청소년복지 지원법」 제31조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2021-03-23</b> → 현행 조문 <b>2021-03-23</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「한부모가족지원법」 제19조제1항</span></div><div class="act">「한부모가족지원법」 제19조 개정 내용을 반영하여 이 조례 제2조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-03-16</b> · 당시 법령본 <b>2018-01-16</b> → 현행 조문 <b>2023-04-11</b></div><div class="diff"><div class="diff-uni">① 한부모가족복지시설은 다음 각 호의 시설로 한다. &lt;개정 2018.1.16<mark class="i">, 2023.4.11</mark>&gt;
+1.  <mark class="d">모자가족복지시설</mark><mark class="i">출산지원시설</mark>:<mark class="d"> 모자가족에게</mark> 다음 각 목의 어느 <mark class="d">하나</mark><mark class="i">하나에</mark> <mark class="d">이상의</mark><mark class="i">해당하는</mark> <mark class="d">편의를</mark><mark class="i">자의</mark> <mark class="d">제공하는</mark><mark class="i">임신ㆍ출산 및 그 출산 아동(3세 미만에 한정한다)의 양육을 위하여 주거 등을 지원하는</mark> 시설
+가.  <mark class="d">기본생활지원:</mark><mark class="i">제4조제1호의</mark> <mark class="d">생계가 어려운 모자가족에게 일정 기간 동안 주거와 생계를 지원</mark><mark class="i">모</mark>
+나.  <mark class="d">공동생활지원</mark><mark class="i">혼인 관계에 있지 아니한 자로서 출산 전 임신부
+다.  혼인 관계에 있지 아니한 자로서 출산 후 해당 아동을 양육하지 아니하는 모
+2.  양육지원시설</mark>: <mark class="d">독립적인</mark><mark class="i">6세</mark> <mark class="d">생활이</mark><mark class="i">미만</mark> <mark class="d">어려운</mark><mark class="i">자녀를</mark> <mark class="d">모자가족에게</mark><mark class="i">동반한</mark> <mark class="d">일정</mark><mark class="i">한부모가족에게</mark> <mark class="d">기간</mark><mark class="i">자녀를</mark> <mark class="d">동안</mark><mark class="i">양육할</mark> <mark class="d">공동생활을</mark><mark class="i">수</mark> <mark class="d">통하여</mark><mark class="i">있도록 주거 등을 지원하는 시설
+3.  생활지원시설: 18세 미만(취학 중인 경우에는 22세 미만을 말하되, 「병역법」에 따른 병역의무를 이행하고 취학 중인 경우에는 병역의무를 이행한 기간을 가산한 연령 미만을 말한다) 자녀를 동반한 한부모가족에게</mark> 자립을 준비할 수 있도록 주거 등을 <mark class="d">지원
+다.  자립생활지원: 자립욕구가 강한 모자가족에게 일정 기간 동안 주거를 지원
+2.  부자가족복지시설: 부자가족에게 다음 각 목의 어느 하나 이상의 편의를 제공하는</mark><mark class="i">지원하는</mark> 시설<mark class="d">
+가.  기본생활지원: 생계가 어려운 부자가족에게 일정 기간 동안 주거와 생계를 지원
+나.  공동생활지원: 독립적인 생활이 어려운 부자가족에게 일정 기간 동안 공동생활을 통하여 자립을 준비할 수 있도록 주거 등을 지원
+다.  자립생활지원: 자립욕구가 강한 부자가족에게 일정 기간 동안 주거를 지원
+3.  미혼모자가족복지시설: 미혼모자가족과 출산 미혼모 등에게 다음 각 목의 어느 하나 이상의 편의를 제공하는 시설
+가.  기본생활지원: 미혼 여성의 임신ㆍ출산 시 안전 분만 및 심신의 건강 회복과 출산 후의 아동의 양육 지원을 위하여 일정 기간 동안 주거와 생계를 지원(제5조에 따른 지원대상자 중 미혼이 아닌 여성의 임신ㆍ출산 시 안전 분만과 출산 후 양육 지원을 포함한다)
+나.  공동생활지원: 출산 후 해당 아동을 양육하지 아니하는 미혼모 또는 미혼모와 그 출산 아동으로 구성된 미혼모자가족에게 일정 기간 동안 공동생활을 통하여 자립을 준비할 수 있도록 주거 등을 지원</mark>
+4.  <mark class="d">일시지원복지시설</mark><mark class="i">일시지원시설</mark>: 배우자(사실혼 관계에 있는 사람을 포함한다)가 있으나 배우자의 물리적ㆍ정신적 학대로 아동의 건전한 양육이나 <mark class="d">모의</mark><mark class="i">모 또는 부의</mark> 건강에 지장을 초래할 우려가 있을 경우 일시적 또는 일정 기간 동안 모와 아동<mark class="i">, 부와 아동, 모</mark> 또는 <mark class="d">모에게</mark><mark class="i">부에게</mark> <mark class="d">주거와</mark><mark class="i">주거</mark> <mark class="d">생계를</mark><mark class="i">등을</mark> 지원하는 시설
+5.  한부모가족복지상담소: 한부모가족에 대한 위기ㆍ자립 상담 또는 문제해결 지원 등을 목적으로 하는 시설</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 한부모가족복지시설은 다음 각 호의 시설로 한다. &lt;개정 2018.1.16<mark class="pt" title=", 2023.4.11 추가됨">‸</mark>&gt;
 1.  <mark class="d">모자가족복지시설</mark>:<mark class="d"> 모자가족에게</mark> 다음 각 목의 어느 <mark class="d">하나</mark> <mark class="d">이상의</mark> <mark class="d">편의를</mark> <mark class="d">제공하는</mark> 시설
 가.  <mark class="d">기본생활지원:</mark> <mark class="d">생계가 어려운 모자가족에게 일정 기간 동안 주거와 생계를 지원</mark>
 나.  <mark class="d">공동생활지원</mark>: <mark class="d">독립적인</mark> <mark class="d">생활이</mark> <mark class="d">어려운</mark> <mark class="d">모자가족에게</mark> <mark class="d">일정</mark> <mark class="d">기간</mark> <mark class="d">동안</mark> <mark class="d">공동생활을</mark> <mark class="d">통하여</mark> 자립을 준비할 수 있도록 주거 등을 <mark class="d">지원
@@ -214,4 +272,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 2.  양육지원시설</mark>: <mark class="i">6세</mark> <mark class="i">미만</mark> <mark class="i">자녀를</mark> <mark class="i">동반한</mark> <mark class="i">한부모가족에게</mark> <mark class="i">자녀를</mark> <mark class="i">양육할</mark> <mark class="i">수</mark> <mark class="i">있도록 주거 등을 지원하는 시설
 3.  생활지원시설: 18세 미만(취학 중인 경우에는 22세 미만을 말하되, 「병역법」에 따른 병역의무를 이행하고 취학 중인 경우에는 병역의무를 이행한 기간을 가산한 연령 미만을 말한다) 자녀를 동반한 한부모가족에게</mark> 자립을 준비할 수 있도록 주거 등을 <mark class="i">지원하는</mark> 시설<mark class="pt" title="가.  기본생활지원: 생계가 어려운 부자가족에게 일정 기간 동안 주거와  삭제됨">‸</mark>
 4.  <mark class="i">일시지원시설</mark>: 배우자(사실혼 관계에 있는 사람을 포함한다)가 있으나 배우자의 물리적ㆍ정신적 학대로 아동의 건전한 양육이나 <mark class="i">모 또는 부의</mark> 건강에 지장을 초래할 우려가 있을 경우 일시적 또는 일정 기간 동안 모와 아동<mark class="i">, 부와 아동, 모</mark> 또는 <mark class="i">부에게</mark> <mark class="i">주거</mark> <mark class="i">등을</mark> 지원하는 시설
-5.  한부모가족복지상담소: 한부모가족에 대한 위기ㆍ자립 상담 또는 문제해결 지원 등을 목적으로 하는 시설</span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+5.  한부모가족복지상담소: 한부모가족에 대한 위기ㆍ자립 상담 또는 문제해결 지원 등을 목적으로 하는 시설</span></div></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

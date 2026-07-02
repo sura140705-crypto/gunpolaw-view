@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,12 +124,28 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 한부모가족 지원 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">2</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 한부모가족 지원 조례</h2><div class="meta">시행 2023-05-01 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(지원 대상) 
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 한부모가족 지원 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">2</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 한부모가족 지원 조례</h2><div class="meta">시행 2023-05-01 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(지원 대상) 
 ① 시장은 다음 각 호의 어느 하나에 해당하는 사람에게 생활 안정 및 복지 증진을 위한 사업을 지원할 수 있다.
 1. <mark class="cite-law" title="한부모가족지원법제5조,제5조의2">법 제5조 및 제5조의2</mark>에 해당하는 사람으로서 시에 주민등록을 두고 실제 거주하는 사람
 2. <mark class="cite-law" title="한부모가족지원법제19조">법 제19조제1항</mark>에서 정하는 한부모가족복지시설에서 보호를 받는 사람과 같은 시설을 이용하는 사람
 3. 그 밖에 지원이 필요하다고 시장이 인정하는 사람
-② 시장은 지원 대상자가 <mark class="cite-law" title="국민기초생활 보장법">「국민기초생활 보장법」</mark> 등 다른 법령에 따라 지원을 받고 있는 경우에는 지원 대상에서 제외할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「한부모가족지원법」 제5조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2014-01-21</b> → 현행 조문 <b>2014-01-21</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「한부모가족지원법」 제5조의2</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2023-04-11</b> → 현행 조문 <b>2023-04-11</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「한부모가족지원법」 제19조제1항</span></div><div class="act">「한부모가족지원법」 제19조 개정 내용을 반영하여 이 조례 제4조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2023-04-11</b> → 현행 조문 <b>2023-04-11</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 한부모가족복지시설은 다음 각 호의 시설로 한다. &lt;개정 2018.1.16<mark class="pt" title=", 2023.4.11 추가됨">‸</mark>&gt;
+② 시장은 지원 대상자가 <mark class="cite-law" title="국민기초생활 보장법">「국민기초생활 보장법」</mark> 등 다른 법령에 따라 지원을 받고 있는 경우에는 지원 대상에서 제외할 수 있다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「한부모가족지원법」 제5조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2014-01-21</b> → 현행 조문 <b>2014-01-21</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「한부모가족지원법」 제5조의2</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2023-04-11</b> → 현행 조문 <b>2023-04-11</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「한부모가족지원법」 제19조제1항</span></div><div class="act">「한부모가족지원법」 제19조 개정 내용을 반영하여 이 조례 제4조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2023-05-01</b> · 당시 법령본 <b>2023-04-11</b> → 현행 조문 <b>2023-04-11</b></div><div class="diff"><div class="diff-uni">① 한부모가족복지시설은 다음 각 호의 시설로 한다. &lt;개정 2018.1.16<mark class="i">, 2023.4.11</mark>&gt;
+1.  <mark class="d">모자가족복지시설</mark><mark class="i">출산지원시설</mark>:<mark class="d"> 모자가족에게</mark> 다음 각 목의 어느 <mark class="d">하나</mark><mark class="i">하나에</mark> <mark class="d">이상의</mark><mark class="i">해당하는</mark> <mark class="d">편의를</mark><mark class="i">자의</mark> <mark class="d">제공하는</mark><mark class="i">임신ㆍ출산 및 그 출산 아동(3세 미만에 한정한다)의 양육을 위하여 주거 등을 지원하는</mark> 시설
+가.  <mark class="d">기본생활지원:</mark><mark class="i">제4조제1호의</mark> <mark class="d">생계가 어려운 모자가족에게 일정 기간 동안 주거와 생계를 지원</mark><mark class="i">모</mark>
+나.  <mark class="d">공동생활지원</mark><mark class="i">혼인 관계에 있지 아니한 자로서 출산 전 임신부
+다.  혼인 관계에 있지 아니한 자로서 출산 후 해당 아동을 양육하지 아니하는 모
+2.  양육지원시설</mark>: <mark class="d">독립적인</mark><mark class="i">6세</mark> <mark class="d">생활이</mark><mark class="i">미만</mark> <mark class="d">어려운</mark><mark class="i">자녀를</mark> <mark class="d">모자가족에게</mark><mark class="i">동반한</mark> <mark class="d">일정</mark><mark class="i">한부모가족에게</mark> <mark class="d">기간</mark><mark class="i">자녀를</mark> <mark class="d">동안</mark><mark class="i">양육할</mark> <mark class="d">공동생활을</mark><mark class="i">수</mark> <mark class="d">통하여</mark><mark class="i">있도록 주거 등을 지원하는 시설
+3.  생활지원시설: 18세 미만(취학 중인 경우에는 22세 미만을 말하되, 「병역법」에 따른 병역의무를 이행하고 취학 중인 경우에는 병역의무를 이행한 기간을 가산한 연령 미만을 말한다) 자녀를 동반한 한부모가족에게</mark> 자립을 준비할 수 있도록 주거 등을 <mark class="d">지원
+다.  자립생활지원: 자립욕구가 강한 모자가족에게 일정 기간 동안 주거를 지원
+2.  부자가족복지시설: 부자가족에게 다음 각 목의 어느 하나 이상의 편의를 제공하는</mark><mark class="i">지원하는</mark> 시설<mark class="d">
+가.  기본생활지원: 생계가 어려운 부자가족에게 일정 기간 동안 주거와 생계를 지원
+나.  공동생활지원: 독립적인 생활이 어려운 부자가족에게 일정 기간 동안 공동생활을 통하여 자립을 준비할 수 있도록 주거 등을 지원
+다.  자립생활지원: 자립욕구가 강한 부자가족에게 일정 기간 동안 주거를 지원
+3.  미혼모자가족복지시설: 미혼모자가족과 출산 미혼모 등에게 다음 각 목의 어느 하나 이상의 편의를 제공하는 시설
+가.  기본생활지원: 미혼 여성의 임신ㆍ출산 시 안전 분만 및 심신의 건강 회복과 출산 후의 아동의 양육 지원을 위하여 일정 기간 동안 주거와 생계를 지원(제5조에 따른 지원대상자 중 미혼이 아닌 여성의 임신ㆍ출산 시 안전 분만과 출산 후 양육 지원을 포함한다)
+나.  공동생활지원: 출산 후 해당 아동을 양육하지 아니하는 미혼모 또는 미혼모와 그 출산 아동으로 구성된 미혼모자가족에게 일정 기간 동안 공동생활을 통하여 자립을 준비할 수 있도록 주거 등을 지원</mark>
+4.  <mark class="d">일시지원복지시설</mark><mark class="i">일시지원시설</mark>: 배우자(사실혼 관계에 있는 사람을 포함한다)가 있으나 배우자의 물리적ㆍ정신적 학대로 아동의 건전한 양육이나 <mark class="d">모의</mark><mark class="i">모 또는 부의</mark> 건강에 지장을 초래할 우려가 있을 경우 일시적 또는 일정 기간 동안 모와 아동<mark class="i">, 부와 아동, 모</mark> 또는 <mark class="d">모에게</mark><mark class="i">부에게</mark> <mark class="d">주거와</mark><mark class="i">주거</mark> <mark class="d">생계를</mark><mark class="i">등을</mark> 지원하는 시설
+5.  한부모가족복지상담소: 한부모가족에 대한 위기ㆍ자립 상담 또는 문제해결 지원 등을 목적으로 하는 시설</div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">① 한부모가족복지시설은 다음 각 호의 시설로 한다. &lt;개정 2018.1.16<mark class="pt" title=", 2023.4.11 추가됨">‸</mark>&gt;
 1.  <mark class="d">모자가족복지시설</mark>:<mark class="d"> 모자가족에게</mark> 다음 각 목의 어느 <mark class="d">하나</mark> <mark class="d">이상의</mark> <mark class="d">편의를</mark> <mark class="d">제공하는</mark> 시설
 가.  <mark class="d">기본생활지원:</mark> <mark class="d">생계가 어려운 모자가족에게 일정 기간 동안 주거와 생계를 지원</mark>
 나.  <mark class="d">공동생활지원</mark>: <mark class="d">독립적인</mark> <mark class="d">생활이</mark> <mark class="d">어려운</mark> <mark class="d">모자가족에게</mark> <mark class="d">일정</mark> <mark class="d">기간</mark> <mark class="d">동안</mark> <mark class="d">공동생활을</mark> <mark class="d">통하여</mark> 자립을 준비할 수 있도록 주거 등을 <mark class="d">지원
@@ -143,4 +166,4 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 2.  양육지원시설</mark>: <mark class="i">6세</mark> <mark class="i">미만</mark> <mark class="i">자녀를</mark> <mark class="i">동반한</mark> <mark class="i">한부모가족에게</mark> <mark class="i">자녀를</mark> <mark class="i">양육할</mark> <mark class="i">수</mark> <mark class="i">있도록 주거 등을 지원하는 시설
 3.  생활지원시설: 18세 미만(취학 중인 경우에는 22세 미만을 말하되, 「병역법」에 따른 병역의무를 이행하고 취학 중인 경우에는 병역의무를 이행한 기간을 가산한 연령 미만을 말한다) 자녀를 동반한 한부모가족에게</mark> 자립을 준비할 수 있도록 주거 등을 <mark class="i">지원하는</mark> 시설<mark class="pt" title="가.  기본생활지원: 생계가 어려운 부자가족에게 일정 기간 동안 주거와  삭제됨">‸</mark>
 4.  <mark class="i">일시지원시설</mark>: 배우자(사실혼 관계에 있는 사람을 포함한다)가 있으나 배우자의 물리적ㆍ정신적 학대로 아동의 건전한 양육이나 <mark class="i">모 또는 부의</mark> 건강에 지장을 초래할 우려가 있을 경우 일시적 또는 일정 기간 동안 모와 아동<mark class="i">, 부와 아동, 모</mark> 또는 <mark class="i">부에게</mark> <mark class="i">주거</mark> <mark class="i">등을</mark> 지원하는 시설
-5.  한부모가족복지상담소: 한부모가족에 대한 위기ㆍ자립 상담 또는 문제해결 지원 등을 목적으로 하는 시설</span></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+5.  한부모가족복지상담소: 한부모가족에 대한 위기ㆍ자립 상담 또는 문제해결 지원 등을 목적으로 하는 시설</span></div></div></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

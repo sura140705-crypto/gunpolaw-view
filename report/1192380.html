@@ -74,6 +74,7 @@ details.citem > .act { padding:2px 10px 0; } details.citem > .basis { padding:0 
 details.citem > .diff { margin:6px 10px 10px; }
 details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
+.item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
@@ -96,6 +97,12 @@ mark.cite-local { background:#f1f5f9; color:#475569;
 .item .ev { font-size:12px; color:#6b7280; white-space:pre-wrap;
             background:#f9fafb; border-radius:6px; padding:7px 9px; margin-top:6px; }
 .diff { border:1px solid #eef0f3; border-radius:6px; overflow:hidden; margin-top:6px; }
+.diff .diff-uni { font-size:12px; padding:7px 9px; white-space:pre-wrap;
+  word-break:keep-all; overflow-wrap:anywhere; color:#374151; line-height:1.55; }
+.diff .diff-split { display:none; }                 /* 대시보드 기본 = 통합(합쳐) 보기 */
+/* 나란히 모드(대시보드 토글) · 인쇄 권고서(.page)는 당시·현행 나란히 */
+.diff-mode-split .diff .diff-uni, .page .diff .diff-uni { display:none; }
+.diff-mode-split .diff .diff-split, .page .diff .diff-split { display:block; }
 .drow { display:flex; gap:8px; font-size:12px; padding:6px 9px; }
 .drow + .drow { border-top:1px solid #f1f3f5; }
 .dlabel { flex:0 0 34px; font-weight:700; font-size:11px; padding-top:1px; }
@@ -117,7 +124,12 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 녹색제품 구매촉진 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 기계적 개정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정비</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 녹색제품 구매촉진 조례</h2><div class="meta">시행 2015-10-12 · 정비 항목 4건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는<mark class="cite-law" title="녹색제품 구매촉진에 관한 법률제11조">「녹색제품 구매촉진에 관한 법률」제11조</mark>에 따라 군포시가 녹색제품의 구매를 촉진하는데 필요한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law">「녹색제품 구매촉진에 관한 법률」 제11조</span></div><div class="act">「녹색제품 구매촉진에 관한 법률」 제11조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2015-10-12</b> · 당시 법령본 <b>2012-02-01</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제11조(지방자치단체의 녹색제품 구매촉진 등)
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 녹색제품 구매촉진 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">1</div><div class="t">⚠️ 실질 검토</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 녹색제품 구매촉진 조례</h2><div class="meta">시행 2015-10-12 · 정비 항목 4건 · 조례 조문 순서로 정렬</div><div class="badges"><span class="badge b-rev">⚠️ 실질 검토 1</span></div><div class="artsec" data-oc="제1조"><div class="arthd">조례 제1조</div><div class="ordtext"><b>제1조</b> 제1조(목적) 이 조례는<mark class="cite-law" title="녹색제품 구매촉진에 관한 법률제11조">「녹색제품 구매촉진에 관한 법률」제11조</mark>에 따라 군포시가 녹색제품의 구매를 촉진하는데 필요한 사항을 규정함을 목적으로 한다.</div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「녹색제품 구매촉진에 관한 법률」 제11조</span></div><div class="act">「녹색제품 구매촉진에 관한 법률」 제11조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2015-10-12</b> · 당시 법령본 <b>2012-02-01</b> → 현행 조문 <b>2025-10-01</b></div><div class="diff"><div class="diff-uni">제11조(지방자치단체의 녹색제품 구매촉진 등)
+①특별시ㆍ광역시ㆍ도ㆍ특별자치도(이하 &quot;시ㆍ도&quot;라 한다) 또는 시ㆍ군ㆍ구는 녹색제품의 구매를 촉진하기 위하여 필요하다고 인정되는 때에는 다음 각호의 내용을 조례로 정하여 시행할 수 있다. &lt;개정 2011.4.5, 2012.2.1&gt;
+1.  제6조의 규정에 의한 녹색제품 의무구매를 이행하기 위하여 필요한 사항
+2.  녹색제품 대상품목외의 품목에 대한 녹색제품 판단기준의 설정ㆍ운영
+3.  그 밖에 녹색제품의 구매촉진을 위하여 필요한 사항
+②시ㆍ도 또는 시ㆍ군ㆍ구는 제1항의 규정에 의한 조례를 제정 또는 개정한 때에는 지체없이 이를 <mark class="d">환경부장관에게</mark><mark class="i">기후에너지환경부장관에게</mark> 제출하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></div><div class="diff-split"><div class="drow"><span class="dlabel was">당시</span><span class="dtext">제11조(지방자치단체의 녹색제품 구매촉진 등)
 ①특별시ㆍ광역시ㆍ도ㆍ특별자치도(이하 &quot;시ㆍ도&quot;라 한다) 또는 시ㆍ군ㆍ구는 녹색제품의 구매를 촉진하기 위하여 필요하다고 인정되는 때에는 다음 각호의 내용을 조례로 정하여 시행할 수 있다. &lt;개정 2011.4.5, 2012.2.1&gt;
 1.  제6조의 규정에 의한 녹색제품 의무구매를 이행하기 위하여 필요한 사항
 2.  녹색제품 대상품목외의 품목에 대한 녹색제품 판단기준의 설정ㆍ운영
@@ -127,15 +139,15 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 1.  제6조의 규정에 의한 녹색제품 의무구매를 이행하기 위하여 필요한 사항
 2.  녹색제품 대상품목외의 품목에 대한 녹색제품 판단기준의 설정ㆍ운영
 3.  그 밖에 녹색제품의 구매촉진을 위하여 필요한 사항
-②시ㆍ도 또는 시ㆍ군ㆍ구는 제1항의 규정에 의한 조례를 제정 또는 개정한 때에는 지체없이 이를 <mark class="i">기후에너지환경부장관에게</mark> 제출하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(적용대상 공공기관) 이 조례의 적용을 받는 공공기관은 <mark class="cite-law" title="녹색제품 구매촉진에 관한 법률제2조">「녹색제품 구매촉진에 관한 법률」(이하 “법”이라 한다) 제2조제2호</mark>의 정의를 따른다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「녹색제품 구매촉진에 관한 법률」 제2조제2호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2015-10-12</b> · 당시 법령본 <b>2011-04-05</b> → 현행 조문 <b>2021-09-24</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(녹색제품 구매촉진 시책의 수립) 
+②시ㆍ도 또는 시ㆍ군ㆍ구는 제1항의 규정에 의한 조례를 제정 또는 개정한 때에는 지체없이 이를 <mark class="i">기후에너지환경부장관에게</mark> 제출하여야 한다.<mark class="i"> &lt;개정 2025.10.1&gt;</mark></span></div></div></div></div></div><div class="artsec" data-oc="제4조"><div class="arthd">조례 제4조</div><div class="ordtext"><b>제4조</b> 제4조(적용대상 공공기관) 이 조례의 적용을 받는 공공기관은 <mark class="cite-law" title="녹색제품 구매촉진에 관한 법률제2조">「녹색제품 구매촉진에 관한 법률」(이하 “법”이라 한다) 제2조제2호</mark>의 정의를 따른다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「녹색제품 구매촉진에 관한 법률」 제2조제2호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2015-10-12</b> · 당시 법령본 <b>2011-04-05</b> → 현행 조문 <b>2021-09-24</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(녹색제품 구매촉진 시책의 수립) 
 ① 시장은 <mark class="cite-law" title="녹색제품 구매촉진에 관한 법률제3조">법 제3조제1항</mark>에 따라 녹색제품 구매촉진 시책을 수립하여 시행할 수 있다.
 ② 구매촉진 계획에는 다음 각 호의 사항이 포함되어야 한다.
 1. 녹색제품의 구매촉진을 위한 중장기 계획에 관한 사항
 2. 녹색제품 구매촉진을 위한 교육·홍보 및 인력양성에 관한 사항
 3. 관내 녹색제품 생산·유통·판매사업자에 지원에 관한 사항
-4. 그 밖에 녹색제품 구매촉진을 위한 사항</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「녹색제품 구매촉진에 관한 법률」 제3조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2015-10-12</b> · 당시 법령본 <b>2011-04-05</b> → 현행 조문 <b>2011-04-05</b></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(녹색제품 구매이행계획의 수립) 
+4. 그 밖에 녹색제품 구매촉진을 위한 사항</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「녹색제품 구매촉진에 관한 법률」 제3조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2015-10-12</b> · 당시 법령본 <b>2011-04-05</b> → 현행 조문 <b>2011-04-05</b></div></div></div><div class="artsec" data-oc="제6조"><div class="arthd">조례 제6조</div><div class="ordtext"><b>제6조</b> 제6조(녹색제품 구매이행계획의 수립) 
 ① 시장은 <mark class="cite-law" title="녹색제품 구매촉진에 관한 법률제8조">법 제8조제1항</mark>에 따라 환경부장관이 통보한 녹색제품 구매지침을 참고하여 매 회계연도의 시작 후 2개월 이내에 해당 회계연도의 녹색제품 구매이행계획(이하 &quot;이행계획&quot;이라 한다)을 수립하고, 시 홈페이지와 시보 등에 공표하여야 한다.
 ② 제1항의 이행계획에는 다음 각 호의 사항이 포함되어야 한다.
 1. 녹색제품 구매품목 및 구매목표율 등 녹색제품 구매계획
 2. 계약 특수조건 규정, 구매실적의 평가, 제도 개선 사항 등 녹색제품 구매촉진을 위하여 필요하다고 인정하는 사항
-③ 시장은 이행계획을 수립·공표한 경우에는 지체 없이 이를 경기도지사에게 제출하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law">「녹색제품 구매촉진에 관한 법률」 제8조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2015-10-12</b> · 당시 법령본 <b>2012-02-01</b> → 현행 조문 <b>2025-10-01</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
+③ 시장은 이행계획을 수립·공표한 경우에는 지체 없이 이를 경기도지사에게 제출하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「녹색제품 구매촉진에 관한 법률」 제8조제1항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2015-10-12</b> · 당시 법령본 <b>2012-02-01</b> → 현행 조문 <b>2025-10-01</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>
