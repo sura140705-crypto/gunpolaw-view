@@ -76,6 +76,11 @@ details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
 .item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+/* 검토 문안 내 정정 강조 — 현재 표기(회색) → 정정 표기(초록), 삽입 「」는 진한 초록 */
+.act .fx-old { background:#f1f5f9; color:#64748b; border-radius:3px; padding:0 3px; }
+.act .fx-new { background:#eafaf0; color:#15803d; border-radius:3px; padding:0 3px; font-weight:600; }
+.act .fx-new .fx-brk { background:#bbf7d0; color:#166534; font-weight:800; border-radius:2px;
+    padding:0 1px; margin:0 1px; text-decoration:none; }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
 .ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
@@ -132,7 +137,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 3. “의료기관”이란 <mark class="cite-law" title="의료법제3조">「의료법」 제3조제2항제3호</mark>에 따른 병원급 의료기관을 말한다. 
 4. “보육시설”이란 <mark class="cite-law" title="영유아보육법제2조">「영유아보육법」 제2조제2호</mark>에 따라 보육을 제공하는 시설을 말한다. 
 5. “복지시설”이란 <mark class="cite-law" title="노인복지법제31조">「노인복지법」 제31조</mark>에 따른 노인복지시설, <mark class="cite-law" title="장애인복지법제58조">「장애인복지법」 제58조</mark>에 따른 장애인복지시설을 말한다. 
-6. “안전교육”이란 <mark class="cite-law" title="국민 안전교육 진흥 기본법제2조">「국민 안전교육 진흥 기본법」 제2조</mark>에 따른 안전교육을 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「의료법」</span></div><div class="act">인용한 「의료법」이(가) 현행 「공공보건의료에 관한 법률」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「재난 및 안전관리 기본법」 제4조</span></div><div class="act">「재난 및 안전관리 기본법」 제4조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2019-12-03</b> → 현행 조문 <b>2024-01-16</b></div><div class="diff"><div class="diff-uni">제4조(국가 등의 책무)
+6. “안전교육”이란 <mark class="cite-law" title="국민 안전교육 진흥 기본법제2조">「국민 안전교육 진흥 기본법」 제2조</mark>에 따른 안전교육을 말한다.</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「의료법」</span></div><div class="act">인용한 <span class="fx-old">「의료법」</span>이(가) 현행 <span class="fx-new">「공공보건의료에 관한 법률」</span>(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「재난 및 안전관리 기본법」 제4조</span></div><div class="act">「재난 및 안전관리 기본법」 제4조 개정 내용을 반영하여 이 조례 제1조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2020-09-29</b> · 당시 법령본 <b>2019-12-03</b> → 현행 조문 <b>2024-01-16</b></div><div class="diff"><div class="diff-uni">제4조(국가 등의 책무)
 ① 국가와 지방자치단체는 재난이나 그 밖의 각종 사고로부터 국민의 생명ㆍ신체 및 재산을 보호할 책무를 지고, 재난이나 그 밖의 각종 사고를 예방하고 피해를 줄이기 위하여 노력하여야 하며, 발생한 피해를 신속히 <mark class="d">대응ㆍ복구하기</mark><mark class="i">대응ㆍ복구하여 일상으로 회복할 수 있도록 지원하기</mark> 위한 계획을 수립ㆍ시행하여야 한다. &lt;개정 2013.8.6<mark class="i">, 2023.5.16</mark>&gt;
 ② 국가와 지방자치단체는 안전에 관한 정보를 적극적으로 공개하여야 하며, 누구든지 이를 편리하게 이용할 수 있도록 하여야 한다. &lt;신설 2019.12.3&gt;
 ③<mark class="i"> 국가와 지방자치단체는 재난이나 그 밖의 각종 사고를 수습하는 과정에서 피해자의 인권이 침해받지 아니하도록 노력하여야 한다. &lt;신설 2024.1.16&gt;

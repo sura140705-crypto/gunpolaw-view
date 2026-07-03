@@ -76,6 +76,11 @@ details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
 .item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+/* 검토 문안 내 정정 강조 — 현재 표기(회색) → 정정 표기(초록), 삽입 「」는 진한 초록 */
+.act .fx-old { background:#f1f5f9; color:#64748b; border-radius:3px; padding:0 3px; }
+.act .fx-new { background:#eafaf0; color:#15803d; border-radius:3px; padding:0 3px; font-weight:600; }
+.act .fx-new .fx-brk { background:#bbf7d0; color:#166534; font-weight:800; border-radius:2px;
+    padding:0 1px; margin:0 1px; text-decoration:none; }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
 .ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
@@ -496,7 +501,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 4. <mark class="cite-law" title="음악산업진흥에 관한 법률제2조">「음악산업진흥에 관한 법률」 제2조제13호</mark>에 따른 노래연습장업
 5. <mark class="cite-law" title="모자보건법제2조">「모자보건법」 제2조제10호</mark>에 따른 산후조리업
 6. 고시원업[구획된 실(室) 안에 학습자가 공부할 수 있는 시설을 갖추고 숙박 또는 숙식을 제공하는 형태의 영업]
-7. <mark class="cite-law" title="의료법제82조">「의료법」 제82조제4항</mark>에 따른 안마시술소</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「의료법」</span></div><div class="act">인용한 「의료법」이(가) 현행 「공공보건의료에 관한 법률」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「다중이용업소의 안전관리에 관한 특별법 시행령」 제2조</span></div><div class="act">「다중이용업소의 안전관리에 관한 특별법 시행령」 제2조 개정 내용을 반영하여 이 조례 제4조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2022-03-15</b> → 현행 조문 <b>2023-12-12</b></div><div class="diff"><div class="diff-uni">제2조(다중이용업) 「다중이용업소의 안전관리에 관한 특별법」(이하 &quot;법&quot;이라 한다) 제2조제1항제1호에서 &quot;대통령령으로 정하는 영업&quot;이란 다음 각 호의 영업을 말한다. 다만, 영업을 옥외 시설 또는 옥외 장소에서 하는 경우 그 영업은 제외한다. &lt;개정 2008.12.24, 2009.7.1, 2009.8.6, 2010.8.11, 2012.1.31, 2013.3.23, 2013.11.20, 2014.11.19, 2014.12.23, 2016.1.19, 2017.7.26, 2018.7.10, 2021.3.2, 2021.12.30, 2022.3.15<mark class="i">, 2022.11.29, 2023.12.12</mark>&gt;
+7. <mark class="cite-law" title="의료법제82조">「의료법」 제82조제4항</mark>에 따른 안마시술소</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「의료법」</span></div><div class="act">인용한 <span class="fx-old">「의료법」</span>이(가) 현행 <span class="fx-new">「공공보건의료에 관한 법률」</span>(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「다중이용업소의 안전관리에 관한 특별법 시행령」 제2조</span></div><div class="act">「다중이용업소의 안전관리에 관한 특별법 시행령」 제2조 개정 내용을 반영하여 이 조례 제4조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-08-12</b> · 당시 법령본 <b>2022-03-15</b> → 현행 조문 <b>2023-12-12</b></div><div class="diff"><div class="diff-uni">제2조(다중이용업) 「다중이용업소의 안전관리에 관한 특별법」(이하 &quot;법&quot;이라 한다) 제2조제1항제1호에서 &quot;대통령령으로 정하는 영업&quot;이란 다음 각 호의 영업을 말한다. 다만, 영업을 옥외 시설 또는 옥외 장소에서 하는 경우 그 영업은 제외한다. &lt;개정 2008.12.24, 2009.7.1, 2009.8.6, 2010.8.11, 2012.1.31, 2013.3.23, 2013.11.20, 2014.11.19, 2014.12.23, 2016.1.19, 2017.7.26, 2018.7.10, 2021.3.2, 2021.12.30, 2022.3.15<mark class="i">, 2022.11.29, 2023.12.12</mark>&gt;
 1.  「식품위생법 시행령」 제21조제8호에 따른 식품접객업 중 다음 각 목의 어느 하나에 해당하는 것
 가.  휴게음식점영업ㆍ제과점영업 또는 일반음식점영업으로서 영업장으로 사용하는 바닥면적(「건축법 시행령」 제119조제1항제3호에 따라 산정한 면적을 말한다. 이하 같다)의 합계가 100제곱미터(영업장이 지하층에 설치된 경우에는 그 영업장의 바닥면적 합계가 66제곱미터) 이상인 것. 다만, 영업장(내부계단으로 연결된 복층구조의 영업장을 제외한다)이 다음의 어느 하나에 해당하는 층에 설치되고 그 영업장의 주된 출입구가 건축물 외부의 지면과 직접 연결되는 곳에서 하는 영업을 제외한다.						
 

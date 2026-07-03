@@ -76,6 +76,11 @@ details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
 .item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+/* 검토 문안 내 정정 강조 — 현재 표기(회색) → 정정 표기(초록), 삽입 「」는 진한 초록 */
+.act .fx-old { background:#f1f5f9; color:#64748b; border-radius:3px; padding:0 3px; }
+.act .fx-new { background:#eafaf0; color:#15803d; border-radius:3px; padding:0 3px; font-weight:600; }
+.act .fx-new .fx-brk { background:#bbf7d0; color:#166534; font-weight:800; border-radius:2px;
+    padding:0 1px; margin:0 1px; text-decoration:none; }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
 .ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);

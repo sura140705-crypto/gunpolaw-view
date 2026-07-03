@@ -76,6 +76,11 @@ details.citem.focus { box-shadow:inset 3px 0 0 var(--navy2); }
 .item .law { font-size:13px; font-weight:600; color:#374151; }
 .item .law .ki { font-weight:400; font-size:12px; margin-right:1px; }
 .item .act { font-size:13.5px; margin:3px 0; color:var(--ink); }
+/* 검토 문안 내 정정 강조 — 현재 표기(회색) → 정정 표기(초록), 삽입 「」는 진한 초록 */
+.act .fx-old { background:#f1f5f9; color:#64748b; border-radius:3px; padding:0 3px; }
+.act .fx-new { background:#eafaf0; color:#15803d; border-radius:3px; padding:0 3px; font-weight:600; }
+.act .fx-new .fx-brk { background:#bbf7d0; color:#166534; font-weight:800; border-radius:2px;
+    padding:0 1px; margin:0 1px; text-decoration:none; }
 .basis { font-size:11.5px; color:var(--muted); margin:4px 0 6px; }
 .basis b { color:#374151; font-weight:600; }
 .ordtext { font-size:12.5px; color:var(--ink); background:var(--soft); border:1px solid var(--line);
@@ -134,7 +139,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 6. <mark class="cite-law" title="공무원 여비 규정제27조">영 제27조</mark>는 준용하지 아니한다. 
 7. <mark class="cite-law" title="공무원 여비 규정제29조">영 제29조제1항</mark>과 4항 중 인사혁신처장 및 기획재정부장관과의 협의 절차와 같은 조 제2항중 인사혁신처장 및 기획재정부장관의 청취 절차는 각각 거치지 아니하고, 같은 조 제3항은 준용하지 아니한다. 
 8. 영 별표 1의 규정 중 “연구직 및 지도직공무원 임용 등에 관한 규정”은 “지방 연구직 및 지도직공무원의 임용 등에 관한 규정”으로, “공무원보수규정”은 “지방공무원 보수규정”으로, “공무원임용령”은 “지방공무원 임용령”으로, “일반임기제 공무원”은 “개방형직위에 임용되는 임기제공무원”으로, “전문임기제공무원”은 “개방형직위가 아닌 직위에 임용되는 임기제공무원”으로 한다.
-&lt;본조개정 2015.3.23 제5조에서 이동&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공용차량 관리 규정」</span></div><div class="act">인용한 「공용차량 관리 규정」이(가) 현행 「공무용 차량 관리 규정」(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2022-01-13</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「국가공무원법」 제71조제2항</span></div><div class="act">「국가공무원법」 제71조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-01-13</b> · 당시 법령본 <b>2021-06-08</b> → 현행 조문 <b>2026-06-02</b></div><div class="diff"><div class="diff-uni">② 임용권자는 공무원이 다음 각 호의 어느 하나에 해당하는 사유로 휴직을 원하면 휴직을 명할 수 있다. 다만, <mark class="d">제4호의</mark><mark class="i">제4호 및 제4호의2의</mark> 경우에는 대통령령으로 정하는 특별한 사정이 없으면 휴직을 명하여야 한다. &lt;개정 2008.3.28, 2011.5.23, 2013.8.6, 2015.5.18, 2015.12.24<mark class="i">, 2021.6.8, 2024.12.31, 2026.6.2</mark>&gt;
+&lt;본조개정 2015.3.23 제5조에서 이동&gt;</div><div class="item"><div class="iline"><span class="tag t-rev">제명변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「공용차량 관리 규정」</span></div><div class="act">인용한 <span class="fx-old">「공용차량 관리 규정」</span>이(가) 현행 <span class="fx-new">「공무용 차량 관리 규정」</span>(으)로 제명변경(개칭·통폐합)됨 — 법령 자체가 바뀌었으니 인용 법령명을 현행화하고 관련 조문을 전면 검토. (조문번호·내용이 재편됐을 수 있어 개별 조문 비교는 생략) [개칭 아니면 인용 오기 확인]</div><div class="basis">기준일 — 조례 시행 <b>2022-01-13</b> · 당시 법령본 <b>—</b> → 현행 조문 <b>—</b></div></div><div class="item"><div class="iline"><span class="tag t-rev">내용변경</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「국가공무원법」 제71조제2항</span></div><div class="act">「국가공무원법」 제71조 개정 내용을 반영하여 이 조례 제6조을(를) 검토·정비</div><div class="basis">기준일 — 조례 시행 <b>2022-01-13</b> · 당시 법령본 <b>2021-06-08</b> → 현행 조문 <b>2026-06-02</b></div><div class="diff"><div class="diff-uni">② 임용권자는 공무원이 다음 각 호의 어느 하나에 해당하는 사유로 휴직을 원하면 휴직을 명할 수 있다. 다만, <mark class="d">제4호의</mark><mark class="i">제4호 및 제4호의2의</mark> 경우에는 대통령령으로 정하는 특별한 사정이 없으면 휴직을 명하여야 한다. &lt;개정 2008.3.28, 2011.5.23, 2013.8.6, 2015.5.18, 2015.12.24<mark class="i">, 2021.6.8, 2024.12.31, 2026.6.2</mark>&gt;
 1.  국제기구, 외국 기관, 국내외의 대학ㆍ연구기관, 다른 국가기관 또는 대통령령으로 정하는 민간기업, 그 밖의 기관에 임시로 채용될 때
 2.  국외 유학을 하게 된 때
 3.  중앙인사관장기관의 장이 지정하는 연구기관이나 교육기관 등에서 연수하게 된 때
