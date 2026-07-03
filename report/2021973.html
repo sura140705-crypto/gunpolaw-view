@@ -42,7 +42,14 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 .artsec { margin:0 0 8px; }
 .arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
          border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
-         margin:14px 0 6px; }
+         margin:14px 0 6px; display:flex; align-items:center; gap:7px; flex-wrap:wrap; }
+/* 조문별 검토 상태 칩 — 정비 대상 등급 or ✅검토완료(제외대상만) */
+.secst { font-size:11px; font-weight:700; border-radius:999px; padding:1px 9px; }
+.secst.st-ok { background:#dcfce7; color:#166534; }
+.secst.st-review { background:#fef3c7; color:#92400e; }
+.secst.st-check { background:#f3f4f6; color:#374151; }
+.secst.st-format { background:#ede9fe; color:#5b21b6; }
+.secst.st-mechanical { background:#dbeafe; color:#1e40af; }
 .item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
 .iline { margin-bottom:3px; }
 .item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
@@ -132,7 +139,7 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 금연환경 조성 및 간접흡연 피해방지 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 검토 필요</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 금연환경 조성 및 간접흡연 피해방지 조례</h2><div class="meta">시행 2025-03-17 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(금연구역의 지정) 
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 금연환경 조성 및 간접흡연 피해방지 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 검토 필요</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 금연환경 조성 및 간접흡연 피해방지 조례</h2><div class="meta">시행 2025-03-17 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조<span class="secst st-ok">✅ 검토완료</span></div><div class="ordtext"><b>제5조</b> 제5조(금연구역의 지정) 
 ① 시장은 <mark class="cite-law" title="국민건강증진법제9조">「국민건강증진법」제9조제7항</mark>에 따라 다음 각 호에 해당하는 장소의 전부 또는 일부를 금연구역으로 지정할 수 있다. &lt;개정 2025.3.17.&gt;
 1. <mark class="cite-law" title="도시공원 및 녹지 등에 관한 법률">「도시공원 및 녹지 등에 관한 법률」</mark>에 따른 도시공원
 2. <mark class="cite-law" title="교육환경 보호에 관한 법률">「교육환경 보호에 관한 법률」</mark>에 따른 교육환경보호구역 중 절대보호구역
@@ -146,6 +153,6 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
 10. 그 밖에 금연환경 조성과 시민건강증진을 위하여 필요하다고 인정하는 거리와 장소&lt;신설 2014.12.10, 2017.9.29 제8호 본호이동&gt;
 ② 시장은 금연구역을 지정하거나 변경 또는 해제하는 때에는 관련단체와 지역주민 등의 의견을 수렴할 수 있다.
 ③ 제1항에 따라 금연구역으로 지정하거나 변경 또는 해제하는 경우에는 그 취지 및 장소와 범위에 대하여 시보 및 인터넷 홈페이지 등에 고시하여야 한다.
-④ 누구든지 제1항에 따라 지정된 금연구역에서 흡연을 하여서는 아니된다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「국민건강증진법」 제9조제7항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-03-17</b> · 당시 법령본 <b>2023-08-16</b> → 현행 조문 <b>2025-04-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「주차장법」 제2조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-03-17</b> · 당시 법령본 <b>2016-01-19</b> → 현행 조문 <b>2016-01-19</b></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조</div><div class="ordtext"><b>제9조</b> 제9조(과태료) 
+④ 누구든지 제1항에 따라 지정된 금연구역에서 흡연을 하여서는 아니된다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「국민건강증진법」 제9조제7항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-03-17</b> · 당시 법령본 <b>2023-08-16</b> → 현행 조문 <b>2025-04-01</b></div></div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「주차장법」 제2조</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-03-17</b> · 당시 법령본 <b>2016-01-19</b> → 현행 조문 <b>2016-01-19</b></div></div></div><div class="artsec" data-oc="제9조"><div class="arthd">조례 제9조<span class="secst st-ok">✅ 검토완료</span></div><div class="ordtext"><b>제9조</b> 제9조(과태료) 
 ① 제5조에 따라 지정된 금연구역에서 흡연한 사람에게는 <mark class="cite-law" title="국민건강증진법제34조">「국민건강증진법」제34조제3항</mark>에 따라 5만원의 과태료를 부과한다.
 ② 제1항에 따른 과태료의 부과ㆍ징수 절차는 <mark class="cite-law" title="질서위반행위규제법">「질서위반행위규제법」</mark>에 따른다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「국민건강증진법」 제34조제3항</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-03-17</b> · 당시 법령본 <b>2020-12-29</b> → 현행 조문 <b>2020-12-29</b></div></div></div></div><footer>본 권고서는 인용 조항의 시점·내용 비교로 자동 생성된 초안이며, 최종 개정 판단은 담당 부서의 검토를 따릅니다.</footer></div></body></html>

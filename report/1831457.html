@@ -42,7 +42,14 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 .artsec { margin:0 0 8px; }
 .arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
          border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
-         margin:14px 0 6px; }
+         margin:14px 0 6px; display:flex; align-items:center; gap:7px; flex-wrap:wrap; }
+/* 조문별 검토 상태 칩 — 정비 대상 등급 or ✅검토완료(제외대상만) */
+.secst { font-size:11px; font-weight:700; border-radius:999px; padding:1px 9px; }
+.secst.st-ok { background:#dcfce7; color:#166534; }
+.secst.st-review { background:#fef3c7; color:#92400e; }
+.secst.st-check { background:#f3f4f6; color:#374151; }
+.secst.st-format { background:#ede9fe; color:#5b21b6; }
+.secst.st-mechanical { background:#dbeafe; color:#1e40af; }
 .item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
 .iline { margin-bottom:3px; }
 .item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;

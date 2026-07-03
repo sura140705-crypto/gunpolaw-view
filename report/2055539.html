@@ -42,7 +42,14 @@ body.report { font-family: "Malgun Gothic","맑은 고딕",system-ui,sans-serif;
 .artsec { margin:0 0 8px; }
 .arthd { font-size:13px; font-weight:700; color:var(--navy); background:var(--soft);
          border-left:3px solid var(--navy2); padding:5px 11px; border-radius:0 4px 4px 0;
-         margin:14px 0 6px; }
+         margin:14px 0 6px; display:flex; align-items:center; gap:7px; flex-wrap:wrap; }
+/* 조문별 검토 상태 칩 — 정비 대상 등급 or ✅검토완료(제외대상만) */
+.secst { font-size:11px; font-weight:700; border-radius:999px; padding:1px 9px; }
+.secst.st-ok { background:#dcfce7; color:#166534; }
+.secst.st-review { background:#fef3c7; color:#92400e; }
+.secst.st-check { background:#f3f4f6; color:#374151; }
+.secst.st-format { background:#ede9fe; color:#5b21b6; }
+.secst.st-mechanical { background:#dbeafe; color:#1e40af; }
 .item { border-top:1px solid #f3f4f6; padding:9px 0 9px 10px; }
 .iline { margin-bottom:3px; }
 .item .tag { font-size:11px; font-weight:700; padding:1px 7px; border-radius:6px;
@@ -132,12 +139,12 @@ mark.pt { background:#fee2e2; color:#dc2626; font-weight:700; border-radius:2px;
   mark.d, mark.i, mark.pt, .ordtext mark, .card, .badge {
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
-</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 인구정책 추진 및 지원에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 검토 필요</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 인구정책 추진 및 지원에 관한 조례</h2><div class="meta">시행 2025-07-11 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조</div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2023.12.12.&gt;
+</style></head><body class="report"><div class="page"><div class="dochd"><div class="kicker">자치법규 정비 점검</div><h1>군포시 인구정책 추진 및 지원에 관한 조례 — 정비 권고(분석 결과)</h1><div class="sub">전체 1개 조례 중 정비 대상 1개 · 생성 </div></div><div class="cards"><div class="card g-mech"><div class="n">0</div><div class="t">🔧 조문번호 정정</div></div><div class="card g-rev"><div class="n">0</div><div class="t">⚠️ 검토 필요</div></div><div class="card g-chk"><div class="n">0</div><div class="t">📋 확인 필요</div></div><div class="card g-fmt"><div class="n">0</div><div class="t">📐 서식 정정</div></div><div class="card g-cur"><div class="n">3</div><div class="t">✅ 현행 유지</div></div></div><div class="leg">본문 밑줄 = 인용 표기 · <span><mark class="cite-law">상위법령</mark></span><span><mark class="cite-local">타 자치법규</mark></span><span><mark class="cite-naked">꺽쇠(「」) 누락</mark></span></div><div class="ord"><h2>군포시 인구정책 추진 및 지원에 관한 조례</h2><div class="meta">시행 2025-07-11 · 정비 항목 3건 · 조례 조문 순서로 정렬</div><div class="badges"></div><div class="artsec" data-oc="제2조"><div class="arthd">조례 제2조<span class="secst st-ok">✅ 검토완료</span></div><div class="ordtext"><b>제2조</b> 제2조(정의) 이 조례에서 사용하는 용어의 뜻은 다음과 같다. &lt;개정 2023.12.12.&gt;
 1. “인구정책”이란 인구 유출입ㆍ저출산ㆍ고령화 등  인구변화에 대응하여 군포시(이하 “시”라 한다)가  수립ㆍ시행하는 다음 각 목의 어느 하나에 해당하는 정책을 말한다.
 가.<mark class="cite-law" title="저출산ㆍ고령사회기본법제3조">「저출산ㆍ고령사회기본법」(이하“법”이라 한다) 제3조 제2호</mark>에 따른 저출산ㆍ고령사회정책
 나. 일자리ㆍ복지ㆍ주택 등 정주여건 개선을 위한 정책
 다. 그 밖에 시의 인구감소에 대응하고 인구 증가를 장려하기 위한 정책
-2. “다자녀가정”이란 시에 주민등록을 두고 있고, 자녀가 2명 이상인 가정을 말한다. 이 경우 자녀 중 1명 이상은 18세 이하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「저출산ㆍ고령사회기본법」 제3조제2호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2024-04-24</b> → 현행 조문 <b>2024-04-24</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조</div><div class="ordtext"><b>제5조</b> 제5조(시행계획) 
+2. “다자녀가정”이란 시에 주민등록을 두고 있고, 자녀가 2명 이상인 가정을 말한다. 이 경우 자녀 중 1명 이상은 18세 이하여야 한다.</div><div class="item"><div class="iline"><span class="tag t-cur">✅ 변경 없음</span><span class="law"><span class="ki" title="상위법령">⚖</span> 「저출산ㆍ고령사회기본법」 제3조제2호</span></div><div class="act">검토 완료 — 인용 조항이 조례 시행 이후 개정되지 않아 변경 없음.</div><div class="basis">기준일 — 조례 시행 <b>2025-07-11</b> · 당시 법령본 <b>2024-04-24</b> → 현행 조문 <b>2024-04-24</b></div></div></div><div class="artsec" data-oc="제5조"><div class="arthd">조례 제5조<span class="secst st-ok">✅ 검토완료</span></div><div class="ordtext"><b>제5조</b> 제5조(시행계획) 
 ① 시장은 <mark class="cite-law" title="저출산ㆍ고령사회기본법제21조">법 제21조</mark>에 따라 연도별 저출산ㆍ고령사회 시행계획(이하 “시행계획”이라 한다)을 수립ㆍ시행하여야 한다.
 ② 제1항에 따른 시행계획에는 <mark class="cite-law" title="저출산ㆍ고령사회기본법제20조">법 제20조</mark>의 저출산ㆍ고령사회 기본계획의 내용이 포함되어야 한다.
 ③ 시장은 제1항의 시행계획 수립을 위해 공무원 또는 관계 전문가의 의견을 듣거나 공공기관 및 단체 등에 필요한 자료제출 등 협조를 요청할 수 있다. 이 경우 협조요청을 받은 자는 특별한 사유가 없을 때에는 이에 응하여야 한다.
